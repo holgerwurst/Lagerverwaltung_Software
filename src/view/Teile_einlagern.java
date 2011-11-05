@@ -98,19 +98,19 @@ public class Teile_einlagern extends javax.swing.JFrame {
         label_fachnummer10 = new javax.swing.JLabel();
         einlagern_button = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        datei_menu = new javax.swing.JMenu();
+        bearbeiten_menu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusableWindowState(false);
         setForeground(java.awt.Color.white);
-        setMinimumSize(new java.awt.Dimension(900, 600));
+        setMinimumSize(new java.awt.Dimension(750, 600));
         getContentPane().setLayout(null);
 
         suchen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchen_button.setText("Suchen");
         getContentPane().add(suchen_button);
-        suchen_button.setBounds(730, 20, 90, 23);
+        suchen_button.setBounds(580, 20, 90, 23);
 
         label_eingabe_aufforderung_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabe_aufforderung_id.setText("Bitte geben Sie die Teile ID ein:");
@@ -135,22 +135,20 @@ public class Teile_einlagern extends javax.swing.JFrame {
         label_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bezeichnung.setText("Bezeichnung:");
         getContentPane().add(label_bezeichnung);
-        label_bezeichnung.setBounds(390, 60, 74, 20);
+        label_bezeichnung.setBounds(40, 90, 74, 20);
 
         label_anzeige_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_anzeige_bezeichnung.setText("Motorblock");
         getContentPane().add(label_anzeige_bezeichnung);
-        label_anzeige_bezeichnung.setBounds(470, 60, 120, 20);
+        label_anzeige_bezeichnung.setBounds(120, 90, 120, 20);
 
         label_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_mindestgroesse.setText("Mindestgröße:");
         getContentPane().add(label_mindestgroesse);
-        label_mindestgroesse.setBounds(600, 60, 90, 20);
+        label_mindestgroesse.setBounds(250, 90, 90, 20);
 
         label_anzeige_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_anzeige_mindestgroesse.setText("M");
         getContentPane().add(label_anzeige_mindestgroesse);
-        label_anzeige_mindestgroesse.setBounds(700, 60, 30, 20);
+        label_anzeige_mindestgroesse.setBounds(350, 90, 30, 20);
 
         label_eingabeaufforderung_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabeaufforderung_einlagern.setText("Bitte geben Sie die Fächer und die Menge an die eingelagert werden soll:");
@@ -460,13 +458,13 @@ public class Teile_einlagern extends javax.swing.JFrame {
         einlagern_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         einlagern_button.setText("Einlagern");
         getContentPane().add(einlagern_button);
-        einlagern_button.setBounds(730, 470, 90, 23);
+        einlagern_button.setBounds(580, 480, 90, 23);
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        datei_menu.setText("Datei");
+        jMenuBar1.add(datei_menu);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        bearbeiten_menu.setText("Bearbeiten");
+        jMenuBar1.add(bearbeiten_menu);
 
         setJMenuBar(jMenuBar1);
 
@@ -515,7 +513,9 @@ public class Teile_einlagern extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu bearbeiten_menu;
     private javax.swing.JButton bestaetigen_button;
+    private javax.swing.JMenu datei_menu;
     private javax.swing.JButton einlagern_button;
     private javax.swing.JTextField fachnummer_textfeld1;
     private javax.swing.JTextField fachnummer_textfeld10;
@@ -528,8 +528,6 @@ public class Teile_einlagern extends javax.swing.JFrame {
     private javax.swing.JTextField fachnummer_textfeld8;
     private javax.swing.JTextField fachnummer_textfeld9;
     private javax.swing.JTextField id_textfeld;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JButton kapazitaet_pruefen_button1;
     private javax.swing.JButton kapazitaet_pruefen_button10;
