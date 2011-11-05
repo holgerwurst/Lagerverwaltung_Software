@@ -26,18 +26,449 @@ public class Teile_einlagern extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        suchen_button = new javax.swing.JButton();
+        label_eingabe_aufforderung_id = new javax.swing.JLabel();
+        label_teile_id = new javax.swing.JLabel();
+        id_textfeld = new javax.swing.JTextField();
+        bestaetigen_button = new javax.swing.JButton();
+        label_bezeichnung = new javax.swing.JLabel();
+        label_anzeige_bezeichnung = new javax.swing.JLabel();
+        label_mindestgroesse = new javax.swing.JLabel();
+        label_anzeige_mindestgroesse = new javax.swing.JLabel();
+        label_eingabeaufforderung_einlagern = new javax.swing.JLabel();
+        label_einlagern_nummer1 = new javax.swing.JLabel();
+        label_fachnummer1 = new javax.swing.JLabel();
+        fachnummer_textfeld1 = new javax.swing.JTextField();
+        label_menge1 = new javax.swing.JLabel();
+        menge_textfeld1 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button1 = new javax.swing.JButton();
+        label_einlagern_nummer2 = new javax.swing.JLabel();
+        label_fachnummer2 = new javax.swing.JLabel();
+        fachnummer_textfeld2 = new javax.swing.JTextField();
+        label_menge2 = new javax.swing.JLabel();
+        menge_textfeld2 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button2 = new javax.swing.JButton();
+        fachnummer_textfeld3 = new javax.swing.JTextField();
+        label_einlagern_nummer3 = new javax.swing.JLabel();
+        menge_textfeld3 = new javax.swing.JTextField();
+        label_menge3 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button3 = new javax.swing.JButton();
+        label_fachnummer3 = new javax.swing.JLabel();
+        menge_textfeld4 = new javax.swing.JTextField();
+        label_fachnummer4 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button4 = new javax.swing.JButton();
+        label_einlagern_nummer4 = new javax.swing.JLabel();
+        label_menge4 = new javax.swing.JLabel();
+        fachnummer_textfeld4 = new javax.swing.JTextField();
+        label_fachnummer5 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button5 = new javax.swing.JButton();
+        fachnummer_textfeld5 = new javax.swing.JTextField();
+        menge_textfeld5 = new javax.swing.JTextField();
+        label_einlagern_nummer5 = new javax.swing.JLabel();
+        label_menge5 = new javax.swing.JLabel();
+        label_fachnummer6 = new javax.swing.JLabel();
+        menge_textfeld6 = new javax.swing.JTextField();
+        label_menge6 = new javax.swing.JLabel();
+        label_einlagern_nummer6 = new javax.swing.JLabel();
+        fachnummer_textfeld6 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button6 = new javax.swing.JButton();
+        menge_textfeld7 = new javax.swing.JTextField();
+        label_einlagern_nummer7 = new javax.swing.JLabel();
+        fachnummer_textfeld7 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button7 = new javax.swing.JButton();
+        label_menge7 = new javax.swing.JLabel();
+        label_fachnummer7 = new javax.swing.JLabel();
+        label_einlagern_nummer8 = new javax.swing.JLabel();
+        label_fachnummer8 = new javax.swing.JLabel();
+        fachnummer_textfeld8 = new javax.swing.JTextField();
+        menge_textfeld8 = new javax.swing.JTextField();
+        label_menge8 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button8 = new javax.swing.JButton();
+        label_fachnummer9 = new javax.swing.JLabel();
+        fachnummer_textfeld9 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button9 = new javax.swing.JButton();
+        label_einlagern_nummer9 = new javax.swing.JLabel();
+        menge_textfeld9 = new javax.swing.JTextField();
+        label_menge9 = new javax.swing.JLabel();
+        menge_textfeld10 = new javax.swing.JTextField();
+        fachnummer_textfeld10 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button10 = new javax.swing.JButton();
+        label_menge10 = new javax.swing.JLabel();
+        label_einlagern_nummer10 = new javax.swing.JLabel();
+        label_fachnummer10 = new javax.swing.JLabel();
+        einlagern_button = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusableWindowState(false);
+        setForeground(java.awt.Color.white);
+        setMinimumSize(new java.awt.Dimension(900, 600));
+        getContentPane().setLayout(null);
+
+        suchen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        suchen_button.setText("Suchen");
+        getContentPane().add(suchen_button);
+        suchen_button.setBounds(730, 20, 90, 23);
+
+        label_eingabe_aufforderung_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_eingabe_aufforderung_id.setText("Bitte geben Sie die Teile ID ein:");
+        getContentPane().add(label_eingabe_aufforderung_id);
+        label_eingabe_aufforderung_id.setBounds(40, 30, 180, 20);
+
+        label_teile_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_teile_id.setText("Teile ID:");
+        getContentPane().add(label_teile_id);
+        label_teile_id.setBounds(40, 60, 60, 20);
+
+        id_textfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        id_textfeld.setToolTipText("");
+        getContentPane().add(id_textfeld);
+        id_textfeld.setBounds(110, 60, 100, 21);
+
+        bestaetigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        bestaetigen_button.setText("Bestätigen");
+        getContentPane().add(bestaetigen_button);
+        bestaetigen_button.setBounds(220, 60, 100, 23);
+
+        label_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_bezeichnung.setText("Bezeichnung:");
+        getContentPane().add(label_bezeichnung);
+        label_bezeichnung.setBounds(390, 60, 74, 20);
+
+        label_anzeige_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_bezeichnung.setText("Motorblock");
+        getContentPane().add(label_anzeige_bezeichnung);
+        label_anzeige_bezeichnung.setBounds(470, 60, 120, 20);
+
+        label_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_mindestgroesse.setText("Mindestgröße:");
+        getContentPane().add(label_mindestgroesse);
+        label_mindestgroesse.setBounds(600, 60, 90, 20);
+
+        label_anzeige_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_mindestgroesse.setText("M");
+        getContentPane().add(label_anzeige_mindestgroesse);
+        label_anzeige_mindestgroesse.setBounds(700, 60, 30, 20);
+
+        label_eingabeaufforderung_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_eingabeaufforderung_einlagern.setText("Bitte geben Sie die Fächer und die Menge an die eingelagert werden soll:");
+        getContentPane().add(label_eingabeaufforderung_einlagern);
+        label_eingabeaufforderung_einlagern.setBounds(40, 130, 410, 20);
+
+        label_einlagern_nummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer1.setText("1.");
+        getContentPane().add(label_einlagern_nummer1);
+        label_einlagern_nummer1.setBounds(40, 170, 20, 20);
+
+        label_fachnummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer1.setText("Fachnummer:");
+        label_fachnummer1.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer1);
+        label_fachnummer1.setBounds(70, 170, 80, 20);
+
+        fachnummer_textfeld1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld1.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld1);
+        fachnummer_textfeld1.setBounds(160, 169, 80, 21);
+
+        label_menge1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge1.setText("Menge:");
+        getContentPane().add(label_menge1);
+        label_menge1.setBounds(270, 170, 50, 20);
+
+        menge_textfeld1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld1);
+        menge_textfeld1.setBounds(330, 170, 80, 21);
+
+        kapazitaet_pruefen_button1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button1.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button1);
+        kapazitaet_pruefen_button1.setBounds(430, 170, 120, 23);
+
+        label_einlagern_nummer2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer2.setText("2.");
+        getContentPane().add(label_einlagern_nummer2);
+        label_einlagern_nummer2.setBounds(40, 200, 20, 20);
+
+        label_fachnummer2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer2.setText("Fachnummer:");
+        label_fachnummer2.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer2);
+        label_fachnummer2.setBounds(70, 200, 80, 20);
+
+        fachnummer_textfeld2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld2.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld2);
+        fachnummer_textfeld2.setBounds(160, 200, 80, 21);
+
+        label_menge2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge2.setText("Menge:");
+        getContentPane().add(label_menge2);
+        label_menge2.setBounds(270, 200, 50, 20);
+
+        menge_textfeld2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld2);
+        menge_textfeld2.setBounds(330, 200, 80, 21);
+
+        kapazitaet_pruefen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button2.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button2);
+        kapazitaet_pruefen_button2.setBounds(430, 200, 120, 23);
+
+        fachnummer_textfeld3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld3.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld3);
+        fachnummer_textfeld3.setBounds(160, 230, 80, 21);
+
+        label_einlagern_nummer3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer3.setText("3.");
+        getContentPane().add(label_einlagern_nummer3);
+        label_einlagern_nummer3.setBounds(40, 230, 20, 20);
+
+        menge_textfeld3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld3);
+        menge_textfeld3.setBounds(330, 230, 80, 21);
+
+        label_menge3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge3.setText("Menge:");
+        getContentPane().add(label_menge3);
+        label_menge3.setBounds(270, 230, 50, 20);
+
+        kapazitaet_pruefen_button3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button3.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button3);
+        kapazitaet_pruefen_button3.setBounds(430, 230, 120, 23);
+
+        label_fachnummer3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer3.setText("Fachnummer:");
+        label_fachnummer3.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer3);
+        label_fachnummer3.setBounds(70, 230, 80, 20);
+
+        menge_textfeld4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld4);
+        menge_textfeld4.setBounds(330, 260, 80, 21);
+
+        label_fachnummer4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer4.setText("Fachnummer:");
+        label_fachnummer4.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer4);
+        label_fachnummer4.setBounds(70, 260, 80, 20);
+
+        kapazitaet_pruefen_button4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button4.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button4);
+        kapazitaet_pruefen_button4.setBounds(430, 260, 120, 23);
+
+        label_einlagern_nummer4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer4.setText("4.");
+        getContentPane().add(label_einlagern_nummer4);
+        label_einlagern_nummer4.setBounds(40, 260, 20, 20);
+
+        label_menge4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge4.setText("Menge:");
+        getContentPane().add(label_menge4);
+        label_menge4.setBounds(270, 260, 50, 20);
+
+        fachnummer_textfeld4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld4.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld4);
+        fachnummer_textfeld4.setBounds(160, 260, 80, 21);
+
+        label_fachnummer5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer5.setText("Fachnummer:");
+        label_fachnummer5.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer5);
+        label_fachnummer5.setBounds(70, 290, 80, 20);
+
+        kapazitaet_pruefen_button5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button5.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button5);
+        kapazitaet_pruefen_button5.setBounds(430, 290, 120, 23);
+
+        fachnummer_textfeld5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld5.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld5);
+        fachnummer_textfeld5.setBounds(160, 290, 80, 21);
+
+        menge_textfeld5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld5);
+        menge_textfeld5.setBounds(330, 290, 80, 21);
+
+        label_einlagern_nummer5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer5.setText("5.");
+        getContentPane().add(label_einlagern_nummer5);
+        label_einlagern_nummer5.setBounds(40, 290, 20, 20);
+
+        label_menge5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge5.setText("Menge:");
+        getContentPane().add(label_menge5);
+        label_menge5.setBounds(270, 290, 50, 20);
+
+        label_fachnummer6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer6.setText("Fachnummer:");
+        label_fachnummer6.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer6);
+        label_fachnummer6.setBounds(70, 320, 80, 20);
+
+        menge_textfeld6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld6);
+        menge_textfeld6.setBounds(330, 320, 80, 21);
+
+        label_menge6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge6.setText("Menge:");
+        getContentPane().add(label_menge6);
+        label_menge6.setBounds(270, 320, 50, 20);
+
+        label_einlagern_nummer6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer6.setText("6.");
+        getContentPane().add(label_einlagern_nummer6);
+        label_einlagern_nummer6.setBounds(40, 320, 20, 20);
+
+        fachnummer_textfeld6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld6.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld6);
+        fachnummer_textfeld6.setBounds(160, 320, 80, 21);
+
+        kapazitaet_pruefen_button6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button6.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button6);
+        kapazitaet_pruefen_button6.setBounds(430, 320, 120, 23);
+
+        menge_textfeld7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld7);
+        menge_textfeld7.setBounds(330, 350, 80, 21);
+
+        label_einlagern_nummer7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer7.setText("7.");
+        getContentPane().add(label_einlagern_nummer7);
+        label_einlagern_nummer7.setBounds(40, 350, 20, 20);
+
+        fachnummer_textfeld7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld7.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld7);
+        fachnummer_textfeld7.setBounds(160, 350, 80, 21);
+
+        kapazitaet_pruefen_button7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button7.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button7);
+        kapazitaet_pruefen_button7.setBounds(430, 350, 120, 23);
+
+        label_menge7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge7.setText("Menge:");
+        getContentPane().add(label_menge7);
+        label_menge7.setBounds(270, 350, 50, 20);
+
+        label_fachnummer7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer7.setText("Fachnummer:");
+        label_fachnummer7.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer7);
+        label_fachnummer7.setBounds(70, 350, 80, 20);
+
+        label_einlagern_nummer8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer8.setText("8.");
+        getContentPane().add(label_einlagern_nummer8);
+        label_einlagern_nummer8.setBounds(40, 380, 20, 20);
+
+        label_fachnummer8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer8.setText("Fachnummer:");
+        label_fachnummer8.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer8);
+        label_fachnummer8.setBounds(70, 380, 80, 20);
+
+        fachnummer_textfeld8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld8.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld8);
+        fachnummer_textfeld8.setBounds(160, 380, 80, 21);
+
+        menge_textfeld8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld8);
+        menge_textfeld8.setBounds(330, 380, 80, 21);
+
+        label_menge8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge8.setText("Menge:");
+        getContentPane().add(label_menge8);
+        label_menge8.setBounds(270, 380, 50, 20);
+
+        kapazitaet_pruefen_button8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button8.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button8);
+        kapazitaet_pruefen_button8.setBounds(430, 380, 120, 23);
+
+        label_fachnummer9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer9.setText("Fachnummer:");
+        label_fachnummer9.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer9);
+        label_fachnummer9.setBounds(70, 410, 80, 20);
+
+        fachnummer_textfeld9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld9.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld9);
+        fachnummer_textfeld9.setBounds(160, 410, 80, 21);
+
+        kapazitaet_pruefen_button9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button9.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button9);
+        kapazitaet_pruefen_button9.setBounds(430, 410, 120, 23);
+
+        label_einlagern_nummer9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer9.setText("9.");
+        getContentPane().add(label_einlagern_nummer9);
+        label_einlagern_nummer9.setBounds(40, 410, 20, 20);
+
+        menge_textfeld9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld9);
+        menge_textfeld9.setBounds(330, 410, 80, 21);
+
+        label_menge9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge9.setText("Menge:");
+        getContentPane().add(label_menge9);
+        label_menge9.setBounds(270, 410, 50, 20);
+
+        menge_textfeld10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(menge_textfeld10);
+        menge_textfeld10.setBounds(330, 440, 80, 21);
+
+        fachnummer_textfeld10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        fachnummer_textfeld10.setFocusTraversalPolicyProvider(true);
+        getContentPane().add(fachnummer_textfeld10);
+        fachnummer_textfeld10.setBounds(160, 440, 80, 21);
+
+        kapazitaet_pruefen_button10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        kapazitaet_pruefen_button10.setText("Kapazität prüfen");
+        getContentPane().add(kapazitaet_pruefen_button10);
+        kapazitaet_pruefen_button10.setBounds(430, 440, 120, 23);
+
+        label_menge10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge10.setText("Menge:");
+        getContentPane().add(label_menge10);
+        label_menge10.setBounds(270, 440, 50, 20);
+
+        label_einlagern_nummer10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_einlagern_nummer10.setText("10.");
+        getContentPane().add(label_einlagern_nummer10);
+        label_einlagern_nummer10.setBounds(40, 440, 20, 20);
+
+        label_fachnummer10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_fachnummer10.setText("Fachnummer:");
+        label_fachnummer10.setInheritsPopupMenu(false);
+        getContentPane().add(label_fachnummer10);
+        label_fachnummer10.setBounds(70, 440, 80, 20);
+
+        einlagern_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        einlagern_button.setText("Einlagern");
+        getContentPane().add(einlagern_button);
+        einlagern_button.setBounds(730, 470, 90, 23);
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -84,5 +515,79 @@ public class Teile_einlagern extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bestaetigen_button;
+    private javax.swing.JButton einlagern_button;
+    private javax.swing.JTextField fachnummer_textfeld1;
+    private javax.swing.JTextField fachnummer_textfeld10;
+    private javax.swing.JTextField fachnummer_textfeld2;
+    private javax.swing.JTextField fachnummer_textfeld3;
+    private javax.swing.JTextField fachnummer_textfeld4;
+    private javax.swing.JTextField fachnummer_textfeld5;
+    private javax.swing.JTextField fachnummer_textfeld6;
+    private javax.swing.JTextField fachnummer_textfeld7;
+    private javax.swing.JTextField fachnummer_textfeld8;
+    private javax.swing.JTextField fachnummer_textfeld9;
+    private javax.swing.JTextField id_textfeld;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JButton kapazitaet_pruefen_button1;
+    private javax.swing.JButton kapazitaet_pruefen_button10;
+    private javax.swing.JButton kapazitaet_pruefen_button2;
+    private javax.swing.JButton kapazitaet_pruefen_button3;
+    private javax.swing.JButton kapazitaet_pruefen_button4;
+    private javax.swing.JButton kapazitaet_pruefen_button5;
+    private javax.swing.JButton kapazitaet_pruefen_button6;
+    private javax.swing.JButton kapazitaet_pruefen_button7;
+    private javax.swing.JButton kapazitaet_pruefen_button8;
+    private javax.swing.JButton kapazitaet_pruefen_button9;
+    private javax.swing.JLabel label_anzeige_bezeichnung;
+    private javax.swing.JLabel label_anzeige_mindestgroesse;
+    private javax.swing.JLabel label_bezeichnung;
+    private javax.swing.JLabel label_eingabe_aufforderung_id;
+    private javax.swing.JLabel label_eingabeaufforderung_einlagern;
+    private javax.swing.JLabel label_einlagern_nummer1;
+    private javax.swing.JLabel label_einlagern_nummer10;
+    private javax.swing.JLabel label_einlagern_nummer2;
+    private javax.swing.JLabel label_einlagern_nummer3;
+    private javax.swing.JLabel label_einlagern_nummer4;
+    private javax.swing.JLabel label_einlagern_nummer5;
+    private javax.swing.JLabel label_einlagern_nummer6;
+    private javax.swing.JLabel label_einlagern_nummer7;
+    private javax.swing.JLabel label_einlagern_nummer8;
+    private javax.swing.JLabel label_einlagern_nummer9;
+    private javax.swing.JLabel label_fachnummer1;
+    private javax.swing.JLabel label_fachnummer10;
+    private javax.swing.JLabel label_fachnummer2;
+    private javax.swing.JLabel label_fachnummer3;
+    private javax.swing.JLabel label_fachnummer4;
+    private javax.swing.JLabel label_fachnummer5;
+    private javax.swing.JLabel label_fachnummer6;
+    private javax.swing.JLabel label_fachnummer7;
+    private javax.swing.JLabel label_fachnummer8;
+    private javax.swing.JLabel label_fachnummer9;
+    private javax.swing.JLabel label_menge1;
+    private javax.swing.JLabel label_menge10;
+    private javax.swing.JLabel label_menge2;
+    private javax.swing.JLabel label_menge3;
+    private javax.swing.JLabel label_menge4;
+    private javax.swing.JLabel label_menge5;
+    private javax.swing.JLabel label_menge6;
+    private javax.swing.JLabel label_menge7;
+    private javax.swing.JLabel label_menge8;
+    private javax.swing.JLabel label_menge9;
+    private javax.swing.JLabel label_mindestgroesse;
+    private javax.swing.JLabel label_teile_id;
+    private javax.swing.JTextField menge_textfeld1;
+    private javax.swing.JTextField menge_textfeld10;
+    private javax.swing.JTextField menge_textfeld2;
+    private javax.swing.JTextField menge_textfeld3;
+    private javax.swing.JTextField menge_textfeld4;
+    private javax.swing.JTextField menge_textfeld5;
+    private javax.swing.JTextField menge_textfeld6;
+    private javax.swing.JTextField menge_textfeld7;
+    private javax.swing.JTextField menge_textfeld8;
+    private javax.swing.JTextField menge_textfeld9;
+    private javax.swing.JButton suchen_button;
     // End of variables declaration//GEN-END:variables
 }
