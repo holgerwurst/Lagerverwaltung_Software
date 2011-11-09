@@ -41,6 +41,8 @@ public class Buchungshistorie_einsehen_ausdrucken extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Buchungshistorie einsehen und drucken");
+        setMinimumSize(new java.awt.Dimension(730, 400));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -87,7 +89,7 @@ public class Buchungshistorie_einsehen_ausdrucken extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 220, 730, 180);
+        jScrollPane1.setBounds(0, 120, 760, 280);
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton1.setText("anzeigen");
