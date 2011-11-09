@@ -39,6 +39,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Bearbeiten = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         einlagernButton.setFont(new java.awt.Font("Arial", 0, 12));
         einlagernButton.setText("Teile einlager");
@@ -47,27 +48,43 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 einlagernButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(einlagernButton);
+        einlagernButton.setBounds(51, 84, 119, 23);
 
         splittenButton.setFont(new java.awt.Font("Arial", 0, 12));
         splittenButton.setText("Teile Splitten");
+        getContentPane().add(splittenButton);
+        splittenButton.setBounds(188, 125, 159, 23);
 
         einsehenButton.setFont(new java.awt.Font("Arial", 0, 12));
         einsehenButton.setText("Teilebestand einsehen");
+        getContentPane().add(einsehenButton);
+        einsehenButton.setBounds(188, 84, 159, 23);
 
         HistorieButton.setFont(new java.awt.Font("Arial", 0, 12));
         HistorieButton.setText("Historie einsehen");
+        getContentPane().add(HistorieButton);
+        HistorieButton.setBounds(188, 166, 159, 23);
 
         verwaltenButton.setFont(new java.awt.Font("Arial", 0, 12));
         verwaltenButton.setText("Teile verwalten");
+        getContentPane().add(verwaltenButton);
+        verwaltenButton.setBounds(51, 125, 119, 23);
 
         auslagernButton.setFont(new java.awt.Font("Arial", 0, 12));
         auslagernButton.setText("Teile auslagern");
+        getContentPane().add(auslagernButton);
+        auslagernButton.setBounds(51, 166, 119, 23);
 
         umlagernButton.setFont(new java.awt.Font("Arial", 0, 12));
         umlagernButton.setText("Teile umlagern");
+        getContentPane().add(umlagernButton);
+        umlagernButton.setBounds(51, 207, 119, 23);
 
         LagerverwaltungLabel.setFont(new java.awt.Font("Arial", 0, 12));
         LagerverwaltungLabel.setText("Lagerverwaltung");
+        getContentPane().add(LagerverwaltungLabel);
+        LagerverwaltungLabel.setBounds(126, 11, 91, 46);
 
         Datei.setText("Datei");
         jMenuBar1.add(Datei);
@@ -76,51 +93,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jMenuBar1.add(Bearbeiten);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(einlagernButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(verwaltenButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(umlagernButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(auslagernButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(einsehenButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(splittenButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HistorieButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(LagerverwaltungLabel)))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LagerverwaltungLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(einlagernButton)
-                    .addComponent(einsehenButton))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(verwaltenButton)
-                    .addComponent(splittenButton))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HistorieButton)
-                    .addComponent(auslagernButton))
-                .addGap(18, 18, 18)
-                .addComponent(umlagernButton)
-                .addContainerGap(72, Short.MAX_VALUE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
