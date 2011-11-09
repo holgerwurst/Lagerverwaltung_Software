@@ -32,7 +32,6 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -50,113 +49,117 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
         jTextField12 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Teilestamm einsehen");
+        setMinimumSize(new java.awt.Dimension(850, 500));
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText("Teile Stammdaten");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 70, 101, 15);
+        jLabel1.setBounds(30, 30, 101, 15);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText("ID");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 100, 12, 15);
+        jLabel2.setBounds(50, 120, 12, 15);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText("Zeichn.Nr.");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 130, 56, 15);
+        jLabel3.setBounds(10, 170, 56, 15);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel4.setText("MAM");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 170, 25, 15);
+        jLabel4.setBounds(450, 170, 25, 15);
 
         jTextField1.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(80, 90, 100, 20);
+        jTextField1.setBounds(70, 110, 100, 30);
 
         jTextField2.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(80, 120, 100, 20);
+        jTextField2.setBounds(70, 160, 100, 30);
 
-        jTextField3.setMinimumSize(new java.awt.Dimension(100, 0));
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(80, 160, 100, 20);
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel5.setText("Bezeichnung");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(190, 100, 71, 15);
+        jLabel5.setBounds(200, 120, 71, 15);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel6.setText("Baugruppe");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(200, 130, 61, 15);
+        jLabel6.setBounds(210, 170, 61, 15);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel7.setText("MAG");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(210, 170, 25, 15);
+        jLabel7.setBounds(450, 220, 25, 15);
 
         jTextField4.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(270, 90, 108, 20);
+        jTextField4.setBounds(280, 110, 108, 30);
 
         jTextField5.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField5);
-        jTextField5.setBounds(270, 120, 108, 20);
+        jTextField5.setBounds(280, 160, 108, 30);
 
         jTextField6.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField6);
-        jTextField6.setBounds(270, 160, 108, 20);
+        jTextField6.setBounds(280, 210, 108, 30);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel8.setText("Teiletyp");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(400, 100, 42, 15);
+        jLabel8.setBounds(20, 220, 42, 15);
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel9.setText("Preis");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(400, 130, 29, 15);
+        jLabel9.setBounds(680, 170, 29, 15);
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel10.setText("Bestände");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(400, 170, 53, 15);
+        jLabel10.setBounds(210, 220, 53, 15);
 
         jTextField7.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField7);
-        jTextField7.setBounds(470, 160, 100, 20);
+        jTextField7.setBounds(490, 210, 100, 30);
 
         jTextField8.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField8);
-        jTextField8.setBounds(470, 120, 100, 20);
+        jTextField8.setBounds(490, 160, 100, 30);
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel11.setText("Materialgruppe");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(610, 100, 82, 15);
+        jLabel11.setBounds(630, 120, 82, 15);
 
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel12.setText("MAK");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(610, 130, 24, 15);
+        jLabel12.setBounds(450, 120, 24, 15);
 
-        jButton1.setText("anzeigen");
+        jButton1.setText("... suchen");
         getContentPane().add(jButton1);
-        jButton1.setBounds(610, 160, 82, 23);
+        jButton1.setBounds(730, 20, 90, 30);
 
-        jTextField12.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         getContentPane().add(jTextField12);
-        jTextField12.setBounds(470, 90, 100, 21);
+        jTextField12.setBounds(490, 111, 100, 30);
 
+        jTable1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -171,7 +174,24 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 286, 1128, 168);
+        jScrollPane1.setBounds(0, 270, 850, 230);
+        getContentPane().add(jTextField9);
+        jTextField9.setBounds(730, 110, 90, 30);
+        getContentPane().add(jTextField10);
+        jTextField10.setBounds(730, 160, 90, 30);
+
+        jButton2.setText("alle Stammdaten anzeigen");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(180, 20, 200, 30);
+
+        jButton3.setText("anzeigen");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(730, 210, 90, 30);
+
+        jComboBox1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "alle", "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(70, 210, 100, 30);
 
         jMenu1.setText("Datei");
         jMenuBar1.add(jMenu1);
@@ -227,6 +247,9 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -245,13 +268,14 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
