@@ -104,6 +104,7 @@ public class Teile_Splitten extends javax.swing.JFrame {
         bearbeiten_menu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Teil Splitten");
         setMinimumSize(new java.awt.Dimension(750, 600));
         getContentPane().setLayout(null);
 
@@ -444,7 +445,7 @@ public class Teile_Splitten extends javax.swing.JFrame {
         getContentPane().add(label_menge10);
         label_menge10.setBounds(260, 440, 50, 20);
 
-        label_splitten_nummer10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_splitten_nummer10.setFont(new java.awt.Font("Arial", 0, 12));
         label_splitten_nummer10.setText("10.");
         getContentPane().add(label_splitten_nummer10);
         label_splitten_nummer10.setBounds(30, 440, 20, 20);
@@ -460,7 +461,7 @@ public class Teile_Splitten extends javax.swing.JFrame {
         getContentPane().add(splitten_button);
         splitten_button.setBounds(570, 470, 90, 23);
 
-        label_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12));
         label_mindestgroesse.setText("Mindestgröße:");
         getContentPane().add(label_mindestgroesse);
         label_mindestgroesse.setBounds(430, 100, 90, 20);
