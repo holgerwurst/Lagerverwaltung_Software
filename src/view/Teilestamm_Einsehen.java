@@ -37,10 +37,8 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -83,10 +81,14 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(450, 170, 25, 15);
 
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField1.setToolTipText("00001 bis 10000");
         jTextField1.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField1);
         jTextField1.setBounds(70, 110, 100, 30);
 
+        jTextField2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField2.setToolTipText("lässt 2 bis 60 Zeichen zu.");
         jTextField2.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField2);
         jTextField2.setBounds(70, 160, 100, 30);
@@ -106,17 +108,16 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
         getContentPane().add(jLabel7);
         jLabel7.setBounds(450, 220, 25, 15);
 
+        jTextField4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField4.setToolTipText("lässt 2 bis 60 Zeichen zu.");
         jTextField4.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField4);
         jTextField4.setBounds(280, 110, 108, 30);
 
+        jTextField5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField5.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField5);
         jTextField5.setBounds(280, 160, 108, 30);
-
-        jTextField6.setMinimumSize(new java.awt.Dimension(100, 0));
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(280, 210, 108, 30);
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel8.setText("Teiletyp");
@@ -126,17 +127,16 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel9.setText("Preis");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(680, 170, 29, 15);
+        jLabel9.setBounds(670, 120, 29, 15);
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel10.setText("Bestände");
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(210, 220, 53, 15);
-
+        jTextField7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField7.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe groß passt");
         jTextField7.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField7);
         jTextField7.setBounds(490, 210, 100, 30);
 
+        jTextField8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField8.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe mittel passt");
         jTextField8.setMinimumSize(new java.awt.Dimension(100, 0));
         getContentPane().add(jTextField8);
         jTextField8.setBounds(490, 160, 100, 30);
@@ -144,7 +144,7 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel11.setText("Materialgruppe");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(630, 120, 82, 15);
+        jLabel11.setBounds(190, 220, 82, 15);
 
         jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel12.setText("MAK");
@@ -156,6 +156,7 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
         jButton1.setBounds(730, 20, 90, 30);
 
         jTextField12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField12.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe klein passt");
         getContentPane().add(jTextField12);
         jTextField12.setBounds(490, 111, 100, 30);
 
@@ -175,10 +176,15 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(0, 270, 850, 230);
+
+        jTextField9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField9.setToolTipText("lässt 2 bis 60 Zeichen zu.");
         getContentPane().add(jTextField9);
-        jTextField9.setBounds(730, 110, 90, 30);
+        jTextField9.setBounds(280, 210, 110, 30);
+
+        jTextField10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         getContentPane().add(jTextField10);
-        jTextField10.setBounds(730, 160, 90, 30);
+        jTextField10.setBounds(710, 110, 90, 30);
 
         jButton2.setText("alle Stammdaten anzeigen");
         getContentPane().add(jButton2);
@@ -186,7 +192,7 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
 
         jButton3.setText("anzeigen");
         getContentPane().add(jButton3);
-        jButton3.setBounds(730, 210, 90, 30);
+        jButton3.setBounds(710, 200, 90, 40);
 
         jComboBox1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "alle", "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
@@ -251,7 +257,6 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
@@ -273,7 +278,6 @@ public class Teilestamm_Einsehen extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
