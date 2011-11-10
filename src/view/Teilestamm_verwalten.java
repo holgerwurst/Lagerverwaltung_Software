@@ -59,95 +59,151 @@ public class Teilestamm_verwalten extends javax.swing.JFrame {
         menu_bearbeiten = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setFont(new java.awt.Font("Arial", 0, 12));
+        setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().setLayout(null);
 
-        label_eingabeaufforderung.setFont(new java.awt.Font("Arial", 1, 12));
+        label_eingabeaufforderung.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         label_eingabeaufforderung.setText("Bitte geben Sie die ID des Teiles ein:");
+        getContentPane().add(label_eingabeaufforderung);
+        label_eingabeaufforderung.setBounds(10, 11, 433, 15);
 
         label_id.setFont(new java.awt.Font("Arial", 0, 12));
         label_id.setText("ID:");
+        getContentPane().add(label_id);
+        label_id.setBounds(10, 48, 15, 15);
 
-        textfeld_id.setEditable(false);
-        textfeld_id.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         textfeld_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textfeld_idActionPerformed(evt);
             }
         });
+        getContentPane().add(textfeld_id);
+        textfeld_id.setBounds(29, 45, 59, 21);
 
         label_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
         label_bezeichnung.setText("Bezeichnnung:");
+        getContentPane().add(label_bezeichnung);
+        label_bezeichnung.setBounds(10, 88, 81, 15);
 
         label_teiltyp.setFont(new java.awt.Font("Arial", 0, 12));
         label_teiltyp.setText("Teiltyp:");
+        getContentPane().add(label_teiltyp);
+        label_teiltyp.setBounds(10, 120, 38, 15);
 
         label_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12));
         label_materialgruppe.setText("Materialgruppe:");
+        getContentPane().add(label_materialgruppe);
+        label_materialgruppe.setBounds(10, 152, 85, 15);
 
         label_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12));
         label_zeichnungsnummer.setText("Zeichnungsnr.:");
+        getContentPane().add(label_zeichnungsnummer);
+        label_zeichnungsnummer.setBounds(10, 184, 82, 15);
 
         label_baugruppe.setFont(new java.awt.Font("Arial", 0, 12));
         label_baugruppe.setText("Baugruppe:");
+        getContentPane().add(label_baugruppe);
+        label_baugruppe.setBounds(10, 216, 64, 15);
 
         textfeld_bezeichnung.setEditable(false);
         textfeld_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
+        getContentPane().add(textfeld_bezeichnung);
+        textfeld_bezeichnung.setBounds(99, 85, 161, 21);
 
         textfeld_materialgruppe.setEditable(false);
         textfeld_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        getContentPane().add(textfeld_materialgruppe);
+        textfeld_materialgruppe.setBounds(99, 149, 161, 21);
 
         textfeld_zeichnungsnummer.setEditable(false);
         textfeld_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12));
+        getContentPane().add(textfeld_zeichnungsnummer);
+        textfeld_zeichnungsnummer.setBounds(99, 181, 161, 21);
 
         textfeld_baugruppe.setEditable(false);
         textfeld_baugruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        getContentPane().add(textfeld_baugruppe);
+        textfeld_baugruppe.setBounds(99, 213, 161, 21);
 
         label_preis.setFont(new java.awt.Font("Arial", 0, 12));
         label_preis.setText("Preis:");
+        getContentPane().add(label_preis);
+        label_preis.setBounds(278, 88, 32, 15);
 
         label_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12));
         label_max_anz_klein.setText("Max. Anz. Klein:");
+        getContentPane().add(label_max_anz_klein);
+        label_max_anz_klein.setBounds(278, 120, 83, 15);
 
         label_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12));
         label_max_anz_mittel.setText("Max. Anz. Mittel:");
+        getContentPane().add(label_max_anz_mittel);
+        label_max_anz_mittel.setBounds(278, 152, 83, 15);
 
         label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12));
         label_max_anz_gross.setText("Max. Anz. Groß:");
+        getContentPane().add(label_max_anz_gross);
+        label_max_anz_gross.setBounds(278, 184, 83, 15);
 
         label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12));
         label_bemerkung.setText("Bemerkung:");
+        getContentPane().add(label_bemerkung);
+        label_bemerkung.setBounds(278, 216, 67, 15);
 
         textfeld_preis.setEditable(false);
         textfeld_preis.setFont(new java.awt.Font("Arial", 0, 12));
+        getContentPane().add(textfeld_preis);
+        textfeld_preis.setBounds(371, 85, 161, 21);
 
         textfeld_max_anz_klein.setEditable(false);
         textfeld_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12));
+        getContentPane().add(textfeld_max_anz_klein);
+        textfeld_max_anz_klein.setBounds(371, 117, 161, 21);
 
         textfeld_max_anz_mittel.setEditable(false);
         textfeld_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12));
+        getContentPane().add(textfeld_max_anz_mittel);
+        textfeld_max_anz_mittel.setBounds(371, 149, 161, 21);
 
         textfeld_max_anz_gross.setEditable(false);
         textfeld_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12));
+        getContentPane().add(textfeld_max_anz_gross);
+        textfeld_max_anz_gross.setBounds(371, 181, 161, 21);
 
         textfeld_bemerkung.setEditable(false);
         textfeld_bemerkung.setFont(new java.awt.Font("Arial", 0, 12));
+        getContentPane().add(textfeld_bemerkung);
+        textfeld_bemerkung.setBounds(371, 213, 161, 21);
 
         label_waehrung.setFont(new java.awt.Font("Arial", 0, 12));
         label_waehrung.setText("€");
+        getContentPane().add(label_waehrung);
+        label_waehrung.setBounds(536, 88, 7, 15);
 
         button_loeschen.setFont(new java.awt.Font("Arial", 1, 12));
         button_loeschen.setText("Löschen");
+        getContentPane().add(button_loeschen);
+        button_loeschen.setBounds(451, 44, 81, 23);
 
         textfeld_teiltyp.setEditable(false);
+        getContentPane().add(textfeld_teiltyp);
+        textfeld_teiltyp.setBounds(99, 118, 161, 20);
 
         button_suchen.setFont(new java.awt.Font("Arial", 1, 12));
         button_suchen.setText("Suchen");
+        getContentPane().add(button_suchen);
+        button_suchen.setBounds(197, 44, 75, 23);
 
         anzeigen_button.setFont(new java.awt.Font("Arial", 1, 12));
         anzeigen_button.setText("Anzeigen");
+        getContentPane().add(anzeigen_button);
+        anzeigen_button.setBounds(106, 44, 85, 23);
 
         aendern_button.setFont(new java.awt.Font("Arial", 1, 12));
         aendern_button.setText("Ändern");
+        getContentPane().add(aendern_button);
+        aendern_button.setBounds(459, 252, 73, 23);
 
         menu_datei.setText("File");
         menubar_teilestamm_verwalten.add(menu_datei);
@@ -156,109 +212,6 @@ public class Teilestamm_verwalten extends javax.swing.JFrame {
         menubar_teilestamm_verwalten.add(menu_bearbeiten);
 
         setJMenuBar(menubar_teilestamm_verwalten);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(aendern_button))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(label_id)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textfeld_id, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(anzeigen_button)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button_suchen)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(button_loeschen))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label_eingabeaufforderung, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
-                        .addGap(89, 89, 89))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_bezeichnung)
-                            .addComponent(label_teiltyp)
-                            .addComponent(label_materialgruppe)
-                            .addComponent(label_zeichnungsnummer)
-                            .addComponent(label_baugruppe))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textfeld_teiltyp)
-                            .addComponent(textfeld_materialgruppe)
-                            .addComponent(textfeld_zeichnungsnummer)
-                            .addComponent(textfeld_baugruppe)
-                            .addComponent(textfeld_bezeichnung))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_max_anz_mittel)
-                            .addComponent(label_max_anz_gross)
-                            .addComponent(label_preis)
-                            .addComponent(label_max_anz_klein)
-                            .addComponent(label_bemerkung))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textfeld_preis)
-                            .addComponent(textfeld_max_anz_mittel)
-                            .addComponent(textfeld_max_anz_gross)
-                            .addComponent(textfeld_bemerkung, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textfeld_max_anz_klein))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_waehrung)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_eingabeaufforderung)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_id)
-                    .addComponent(textfeld_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(anzeigen_button)
-                    .addComponent(button_suchen)
-                    .addComponent(button_loeschen))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_bezeichnung)
-                    .addComponent(textfeld_bezeichnung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_preis)
-                    .addComponent(textfeld_preis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_waehrung))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_teiltyp)
-                    .addComponent(label_max_anz_klein)
-                    .addComponent(textfeld_max_anz_klein, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textfeld_teiltyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_materialgruppe)
-                    .addComponent(textfeld_materialgruppe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_max_anz_mittel)
-                    .addComponent(textfeld_max_anz_mittel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_zeichnungsnummer)
-                    .addComponent(textfeld_zeichnungsnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_max_anz_gross)
-                    .addComponent(textfeld_max_anz_gross, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_baugruppe)
-                    .addComponent(textfeld_baugruppe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_bemerkung)
-                    .addComponent(textfeld_bemerkung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(aendern_button)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
