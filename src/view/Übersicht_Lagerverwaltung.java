@@ -26,20 +26,362 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        Übersicht_Lagerverwaltung = new javax.swing.JPanel();
+        LagerverwaltungLabel = new javax.swing.JLabel();
+        umlagernButton = new javax.swing.JButton();
         einlagernButton = new javax.swing.JButton();
-        splittenButton = new javax.swing.JButton();
-        einsehenButton = new javax.swing.JButton();
-        HistorieButton = new javax.swing.JButton();
         verwaltenButton = new javax.swing.JButton();
         auslagernButton = new javax.swing.JButton();
-        umlagernButton = new javax.swing.JButton();
-        LagerverwaltungLabel = new javax.swing.JLabel();
+        einsehenButton = new javax.swing.JButton();
+        HistorieButton = new javax.swing.JButton();
+        splittenButton = new javax.swing.JButton();
+        Buchungshistorie_einsehen_ausdrucken = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        Teile_Splitten = new javax.swing.JPanel();
+        suchen_button = new javax.swing.JButton();
+        label_eingabe_aufforderung_fachnummer = new javax.swing.JLabel();
+        label_ausgangsfachnummer = new javax.swing.JLabel();
+        ausgangsfachnummer_textfeld = new javax.swing.JTextField();
+        bestaetigen_button = new javax.swing.JButton();
+        label_teil_eingelagert = new javax.swing.JLabel();
+        label_anzeige_teile_id = new javax.swing.JLabel();
+        label_bezeichnung = new javax.swing.JLabel();
+        label_anzeige_bezeichnung = new javax.swing.JLabel();
+        label_eingabeaufforderung_splitten = new javax.swing.JLabel();
+        label_splitten_nummer1 = new javax.swing.JLabel();
+        label_fachnummer1 = new javax.swing.JLabel();
+        fachnummer_textfeld1 = new javax.swing.JTextField();
+        label_menge1 = new javax.swing.JLabel();
+        menge_textfeld1 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button1 = new javax.swing.JButton();
+        label_splitten_nummer2 = new javax.swing.JLabel();
+        label_fachnummer2 = new javax.swing.JLabel();
+        fachnummer_textfeld2 = new javax.swing.JTextField();
+        label_menge2 = new javax.swing.JLabel();
+        menge_textfeld2 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button2 = new javax.swing.JButton();
+        fachnummer_textfeld3 = new javax.swing.JTextField();
+        label_splitten_nummer3 = new javax.swing.JLabel();
+        menge_textfeld3 = new javax.swing.JTextField();
+        label_menge3 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button3 = new javax.swing.JButton();
+        label_fachnummer3 = new javax.swing.JLabel();
+        menge_textfeld4 = new javax.swing.JTextField();
+        label_fachnummer4 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button4 = new javax.swing.JButton();
+        label_splitten_nummer4 = new javax.swing.JLabel();
+        label_menge4 = new javax.swing.JLabel();
+        fachnummer_textfeld4 = new javax.swing.JTextField();
+        label_fachnummer5 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button5 = new javax.swing.JButton();
+        fachnummer_textfeld5 = new javax.swing.JTextField();
+        menge_textfeld5 = new javax.swing.JTextField();
+        label_splitten_nummer5 = new javax.swing.JLabel();
+        label_menge5 = new javax.swing.JLabel();
+        label_fachnummer6 = new javax.swing.JLabel();
+        menge_textfeld6 = new javax.swing.JTextField();
+        label_menge6 = new javax.swing.JLabel();
+        label_splitten_nummer6 = new javax.swing.JLabel();
+        fachnummer_textfeld6 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button6 = new javax.swing.JButton();
+        menge_textfeld7 = new javax.swing.JTextField();
+        label_splitten_nummer7 = new javax.swing.JLabel();
+        fachnummer_textfeld7 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button7 = new javax.swing.JButton();
+        label_menge7 = new javax.swing.JLabel();
+        label_fachnummer7 = new javax.swing.JLabel();
+        label_splitten_nummer8 = new javax.swing.JLabel();
+        label_fachnummer8 = new javax.swing.JLabel();
+        fachnummer_textfeld8 = new javax.swing.JTextField();
+        menge_textfeld8 = new javax.swing.JTextField();
+        label_menge8 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button8 = new javax.swing.JButton();
+        label_fachnummer9 = new javax.swing.JLabel();
+        fachnummer_textfeld9 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button9 = new javax.swing.JButton();
+        label_splitten_nummer9 = new javax.swing.JLabel();
+        menge_textfeld9 = new javax.swing.JTextField();
+        label_menge9 = new javax.swing.JLabel();
+        menge_textfeld10 = new javax.swing.JTextField();
+        fachnummer_textfeld10 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button10 = new javax.swing.JButton();
+        label_menge10 = new javax.swing.JLabel();
+        label_splitten_nummer10 = new javax.swing.JLabel();
+        label_fachnummer10 = new javax.swing.JLabel();
+        splitten_button = new javax.swing.JButton();
+        label_mindestgroesse = new javax.swing.JLabel();
+        label_anzeige_mindestgroesse = new javax.swing.JLabel();
+        Teile_auslagern = new javax.swing.JPanel();
+        TeileIDLabel = new javax.swing.JLabel();
+        BezeichnungLabel = new javax.swing.JLabel();
+        FachLabel = new javax.swing.JLabel();
+        BestandverringernLabel = new javax.swing.JLabel();
+        BemerkungLabel = new javax.swing.JLabel();
+        IDTextfield = new javax.swing.JTextField();
+        FachTextfield = new javax.swing.JTextField();
+        BestandTextfield = new javax.swing.JTextField();
+        AusführenButton = new javax.swing.JButton();
+        SuchenButton = new javax.swing.JButton();
+        BestätigenidButton = new javax.swing.JButton();
+        label_eingabe_aufforderung_id = new javax.swing.JLabel();
+        label_eingabe_aufforderung_fach = new javax.swing.JLabel();
+        Bezeichnung_ausgabeLabel = new javax.swing.JLabel();
+        BemerkungScrollPane = new javax.swing.JScrollPane();
+        BemerkungTextArea = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jPanel7 = new javax.swing.JPanel();
+        Teile_einlagern = new javax.swing.JTabbedPane();
+        jPanel8 = new javax.swing.JPanel();
+        bestaetigen_button2 = new javax.swing.JButton();
+        id_textfeld2 = new javax.swing.JTextField();
+        suchen_button2 = new javax.swing.JButton();
+        label_bezeichnung2 = new javax.swing.JLabel();
+        label_mindestgroesse2 = new javax.swing.JLabel();
+        label_anzeige_mindestgroesse2 = new javax.swing.JLabel();
+        label_eingabe_aufforderung_id2 = new javax.swing.JLabel();
+        menge_textfeld11 = new javax.swing.JTextField();
+        label_oder1 = new javax.swing.JLabel();
+        label_teile_id2 = new javax.swing.JLabel();
+        bezeichnung_textfeld1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jPanel9 = new javax.swing.JPanel();
+        menge_textfeld12 = new javax.swing.JTextField();
+        label_mindestgroesse1 = new javax.swing.JLabel();
+        menge_textfeld13 = new javax.swing.JTextField();
+        label_anzeige_bezeichnung1 = new javax.swing.JLabel();
+        fachnummer_textfeld11 = new javax.swing.JTextField();
+        label_anzeige_mindestgroesse1 = new javax.swing.JLabel();
+        menge_textfeld14 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button11 = new javax.swing.JButton();
+        kapazitaet_pruefen_button12 = new javax.swing.JButton();
+        kapazitaet_pruefen_button13 = new javax.swing.JButton();
+        label_bezeichnung1 = new javax.swing.JLabel();
+        fachnummer_textfeld12 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button14 = new javax.swing.JButton();
+        kapazitaet_pruefen_button15 = new javax.swing.JButton();
+        label_einlagern_nummer4 = new javax.swing.JLabel();
+        label_fachnummer11 = new javax.swing.JLabel();
+        fachnummer_textfeld13 = new javax.swing.JTextField();
+        menge_textfeld15 = new javax.swing.JTextField();
+        menge_textfeld16 = new javax.swing.JTextField();
+        label_einlagern_nummer3 = new javax.swing.JLabel();
+        label_fachnummer12 = new javax.swing.JLabel();
+        label_fachnummer13 = new javax.swing.JLabel();
+        label_menge11 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button16 = new javax.swing.JButton();
+        label_menge12 = new javax.swing.JLabel();
+        menge_textfeld17 = new javax.swing.JTextField();
+        label_menge13 = new javax.swing.JLabel();
+        label_einlagern_nummer1 = new javax.swing.JLabel();
+        label_einlagern_nummer2 = new javax.swing.JLabel();
+        label_einlagern_nummer9 = new javax.swing.JLabel();
+        button_fachnumer1 = new javax.swing.JButton();
+        label_einlagern_nummer10 = new javax.swing.JLabel();
+        label_fachnummer14 = new javax.swing.JLabel();
+        fachnummer_textfeld14 = new javax.swing.JTextField();
+        label_fachnummer15 = new javax.swing.JLabel();
+        label_menge14 = new javax.swing.JLabel();
+        label_menge15 = new javax.swing.JLabel();
+        label_menge16 = new javax.swing.JLabel();
+        label_fachnummer16 = new javax.swing.JLabel();
+        label_fachnummer17 = new javax.swing.JLabel();
+        menge_textfeld18 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button17 = new javax.swing.JButton();
+        fachnummer_textfeld15 = new javax.swing.JTextField();
+        fachnummer_textfeld16 = new javax.swing.JTextField();
+        menge_textfeld19 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button18 = new javax.swing.JButton();
+        menge_textfeld20 = new javax.swing.JTextField();
+        id_textfeld = new javax.swing.JTextField();
+        label_einlagern_nummer8 = new javax.swing.JLabel();
+        fachnummer_textfeld17 = new javax.swing.JTextField();
+        bestaetigen_button1 = new javax.swing.JButton();
+        label_menge17 = new javax.swing.JLabel();
+        fachnummer_textfeld18 = new javax.swing.JTextField();
+        kapazitaet_pruefen_button19 = new javax.swing.JButton();
+        label_teile_id = new javax.swing.JLabel();
+        label_eingabeaufforderung_einlagern = new javax.swing.JLabel();
+        label_einlagern_nummer5 = new javax.swing.JLabel();
+        fachnummer_textfeld19 = new javax.swing.JTextField();
+        label_fachnummer18 = new javax.swing.JLabel();
+        menge_textfeld21 = new javax.swing.JTextField();
+        label_menge18 = new javax.swing.JLabel();
+        einlagern_button = new javax.swing.JButton();
+        label_fachnummer19 = new javax.swing.JLabel();
+        label_eingabe_aufforderung_id1 = new javax.swing.JLabel();
+        label_menge19 = new javax.swing.JLabel();
+        fachnummer_textfeld20 = new javax.swing.JTextField();
+        label_einlagern_nummer6 = new javax.swing.JLabel();
+        label_einlagern_nummer7 = new javax.swing.JLabel();
+        label_menge20 = new javax.swing.JLabel();
+        label_fachnummer20 = new javax.swing.JLabel();
+        kapazitaet_pruefen_button20 = new javax.swing.JButton();
+        suchen_button1 = new javax.swing.JButton();
+        Teile_entfernen_loeschen = new javax.swing.JPanel();
+        suchenButton = new javax.swing.JButton();
+        Teilestammdatenbutton = new javax.swing.JButton();
+        bestätigenButton = new javax.swing.JButton();
+        IDTextfield1 = new javax.swing.JTextField();
+        IDLabel = new javax.swing.JLabel();
+        eingebenLabel = new javax.swing.JLabel();
+        StammdatenLabel = new javax.swing.JLabel();
+        BezeichnungLabel1 = new javax.swing.JLabel();
+        TeileLabel = new javax.swing.JLabel();
+        ZeichnungsnrLabel = new javax.swing.JLabel();
+        MaterialgruppeLabel = new javax.swing.JLabel();
+        BaugruppeLabel = new javax.swing.JLabel();
+        PreisLabel = new javax.swing.JLabel();
+        MAKLabel = new javax.swing.JLabel();
+        MAMLabel = new javax.swing.JLabel();
+        MAGLabel = new javax.swing.JLabel();
+        BemerkungLabel1 = new javax.swing.JLabel();
+        EuroLabel = new javax.swing.JLabel();
+        loeschenButton = new javax.swing.JButton();
+        MAKTextfield = new javax.swing.JLabel();
+        TypTextfield = new javax.swing.JLabel();
+        MaterialTextfield = new javax.swing.JLabel();
+        BezTextfield1 = new javax.swing.JLabel();
+        ZNrTextfield = new javax.swing.JLabel();
+        MAMTextfield = new javax.swing.JLabel();
+        BaugruppeTextfield = new javax.swing.JLabel();
+        PreisTextfield = new javax.swing.JLabel();
+        MAGTextfield = new javax.swing.JLabel();
+        BemerkungTextfield = new javax.swing.JLabel();
+        Teile_umlagern = new javax.swing.JPanel();
+        BitteeingebenLabel = new javax.swing.JLabel();
+        FachnummerLabel = new javax.swing.JLabel();
+        TeileLabel1 = new javax.swing.JLabel();
+        ZielfachLabel = new javax.swing.JLabel();
+        FachnrTextfield = new javax.swing.JTextField();
+        BestätigenButton = new javax.swing.JButton();
+        BezeichnungLabel2 = new javax.swing.JLabel();
+        MengeLabel = new javax.swing.JLabel();
+        FachnrLabel_Ziel = new javax.swing.JLabel();
+        FachnrTextfield_Ziel = new javax.swing.JTextField();
+        UmlagernButton = new javax.swing.JButton();
+        MengeTextfield = new javax.swing.JLabel();
+        BezeichnungTextfield = new javax.swing.JLabel();
+        IDTextfield2 = new javax.swing.JLabel();
+        SuchenButton1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        Teilestamm_Einsehen = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jTextField12 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
+        Teilestamm_erweitern = new javax.swing.JPanel();
+        label_eingabeaufforderung = new javax.swing.JLabel();
+        label_id = new javax.swing.JLabel();
+        label_bezeichnung3 = new javax.swing.JLabel();
+        label_teiltyp = new javax.swing.JLabel();
+        label_materialgruppe = new javax.swing.JLabel();
+        label_zeichnungsnummer = new javax.swing.JLabel();
+        label_baugruppe = new javax.swing.JLabel();
+        textfeld_bezeichnung = new javax.swing.JTextField();
+        combobox_teiltyp = new javax.swing.JComboBox();
+        textfeld_materialgruppe = new javax.swing.JTextField();
+        textfeld_zeichnungsnummer = new javax.swing.JTextField();
+        textfeld_baugruppe = new javax.swing.JTextField();
+        label_preis = new javax.swing.JLabel();
+        label_max_anz_klein = new javax.swing.JLabel();
+        label_max_anz_mittel = new javax.swing.JLabel();
+        label_max_anz_gross = new javax.swing.JLabel();
+        label_bemerkung = new javax.swing.JLabel();
+        textfeld_preis = new javax.swing.JTextField();
+        textfeld_max_anz_klein = new javax.swing.JTextField();
+        textfeld_max_anz_mittel = new javax.swing.JTextField();
+        textfeld_max_anz_gross = new javax.swing.JTextField();
+        textfeld_bemerkung = new javax.swing.JTextField();
+        label_waehrung = new javax.swing.JLabel();
+        button_anlegen = new javax.swing.JButton();
+        textfeld_id = new javax.swing.JLabel();
+        Teilestamm_verwalten = new javax.swing.JPanel();
+        label_eingabeaufforderung1 = new javax.swing.JLabel();
+        label_id1 = new javax.swing.JLabel();
+        textfeld_id1 = new javax.swing.JTextField();
+        label_bezeichnung4 = new javax.swing.JLabel();
+        label_teiltyp1 = new javax.swing.JLabel();
+        label_materialgruppe1 = new javax.swing.JLabel();
+        label_zeichnungsnummer1 = new javax.swing.JLabel();
+        label_baugruppe1 = new javax.swing.JLabel();
+        textfeld_bezeichnung1 = new javax.swing.JTextField();
+        textfeld_materialgruppe1 = new javax.swing.JTextField();
+        textfeld_zeichnungsnummer1 = new javax.swing.JTextField();
+        textfeld_baugruppe1 = new javax.swing.JTextField();
+        label_preis1 = new javax.swing.JLabel();
+        label_max_anz_klein1 = new javax.swing.JLabel();
+        label_max_anz_mittel1 = new javax.swing.JLabel();
+        label_max_anz_gross1 = new javax.swing.JLabel();
+        label_bemerkung1 = new javax.swing.JLabel();
+        textfeld_preis1 = new javax.swing.JTextField();
+        textfeld_max_anz_klein1 = new javax.swing.JTextField();
+        textfeld_max_anz_mittel1 = new javax.swing.JTextField();
+        textfeld_max_anz_gross1 = new javax.swing.JTextField();
+        textfeld_bemerkung1 = new javax.swing.JTextField();
+        label_waehrung1 = new javax.swing.JLabel();
+        button_loeschen = new javax.swing.JButton();
+        textfeld_teiltyp = new javax.swing.JTextField();
+        button_suchen = new javax.swing.JButton();
+        anzeigen_button = new javax.swing.JButton();
+        aendern_button = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Datei = new javax.swing.JMenu();
         Bearbeiten = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
+
+        Übersicht_Lagerverwaltung.setLayout(null);
+
+        LagerverwaltungLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        LagerverwaltungLabel.setText("Lagerverwaltung");
+        Übersicht_Lagerverwaltung.add(LagerverwaltungLabel);
+        LagerverwaltungLabel.setBounds(130, 10, 91, 46);
+
+        umlagernButton.setFont(new java.awt.Font("Arial", 0, 12));
+        umlagernButton.setText("Teile umlagern");
+        Übersicht_Lagerverwaltung.add(umlagernButton);
+        umlagernButton.setBounds(51, 207, 119, 27);
 
         einlagernButton.setFont(new java.awt.Font("Arial", 0, 12));
         einlagernButton.setText("Teile einlager");
@@ -48,43 +390,1773 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 einlagernButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(einlagernButton);
-        einlagernButton.setBounds(51, 84, 119, 23);
-
-        splittenButton.setFont(new java.awt.Font("Arial", 0, 12));
-        splittenButton.setText("Teile Splitten");
-        getContentPane().add(splittenButton);
-        splittenButton.setBounds(188, 125, 159, 23);
-
-        einsehenButton.setFont(new java.awt.Font("Arial", 0, 12));
-        einsehenButton.setText("Teilebestand einsehen");
-        getContentPane().add(einsehenButton);
-        einsehenButton.setBounds(188, 84, 159, 23);
-
-        HistorieButton.setFont(new java.awt.Font("Arial", 0, 12));
-        HistorieButton.setText("Historie einsehen");
-        getContentPane().add(HistorieButton);
-        HistorieButton.setBounds(188, 166, 159, 23);
+        Übersicht_Lagerverwaltung.add(einlagernButton);
+        einlagernButton.setBounds(51, 84, 119, 27);
 
         verwaltenButton.setFont(new java.awt.Font("Arial", 0, 12));
         verwaltenButton.setText("Teile verwalten");
-        getContentPane().add(verwaltenButton);
-        verwaltenButton.setBounds(51, 125, 119, 23);
+        Übersicht_Lagerverwaltung.add(verwaltenButton);
+        verwaltenButton.setBounds(51, 125, 119, 27);
 
         auslagernButton.setFont(new java.awt.Font("Arial", 0, 12));
         auslagernButton.setText("Teile auslagern");
-        getContentPane().add(auslagernButton);
-        auslagernButton.setBounds(51, 166, 119, 23);
+        Übersicht_Lagerverwaltung.add(auslagernButton);
+        auslagernButton.setBounds(51, 166, 98, 27);
 
-        umlagernButton.setFont(new java.awt.Font("Arial", 0, 12));
-        umlagernButton.setText("Teile umlagern");
-        getContentPane().add(umlagernButton);
-        umlagernButton.setBounds(51, 207, 119, 23);
+        einsehenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        einsehenButton.setText("Teilebestand einsehen");
+        Übersicht_Lagerverwaltung.add(einsehenButton);
+        einsehenButton.setBounds(188, 84, 139, 27);
 
-        LagerverwaltungLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        LagerverwaltungLabel.setText("Lagerverwaltung");
-        getContentPane().add(LagerverwaltungLabel);
-        LagerverwaltungLabel.setBounds(126, 11, 91, 46);
+        HistorieButton.setFont(new java.awt.Font("Arial", 0, 12));
+        HistorieButton.setText("Historie einsehen");
+        Übersicht_Lagerverwaltung.add(HistorieButton);
+        HistorieButton.setBounds(188, 166, 159, 27);
+
+        splittenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        splittenButton.setText("Teile Splitten");
+        Übersicht_Lagerverwaltung.add(splittenButton);
+        splittenButton.setBounds(188, 125, 159, 27);
+
+        jTabbedPane1.addTab("Überischt Lagerverwaltung", Übersicht_Lagerverwaltung);
+
+        Buchungshistorie_einsehen_ausdrucken.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel1.setText("Die Buchungshistorie zum Datum");
+        Buchungshistorie_einsehen_ausdrucken.add(jLabel1);
+        jLabel1.setBounds(40, 20, 200, 30);
+
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField1.setText("dd.mm.yyyy");
+        Buchungshistorie_einsehen_ausdrucken.add(jTextField1);
+        jTextField1.setBounds(120, 70, 80, 30);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel2.setText("Zeitraum vom");
+        Buchungshistorie_einsehen_ausdrucken.add(jLabel2);
+        jLabel2.setBounds(40, 70, 80, 30);
+
+        jTextField2.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField2.setText("dd.mm.yyyy");
+        Buchungshistorie_einsehen_ausdrucken.add(jTextField2);
+        jTextField2.setBounds(240, 70, 80, 30);
+
+        jTextField3.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField3.setText("dd.mm.yyyy");
+        Buchungshistorie_einsehen_ausdrucken.add(jTextField3);
+        jTextField3.setBounds(240, 20, 80, 30);
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel3.setText("und");
+        Buchungshistorie_einsehen_ausdrucken.add(jLabel3);
+        jLabel3.setBounds(460, 70, 30, 30);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        Buchungshistorie_einsehen_ausdrucken.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 130, 760, 200);
+
+        jButton1.setFont(new java.awt.Font("Arial", 0, 12));
+        jButton1.setText("Teilestammdaten suchen");
+        Buchungshistorie_einsehen_ausdrucken.add(jButton1);
+        jButton1.setBounds(20, 350, 180, 30);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel4.setText("oder im");
+        Buchungshistorie_einsehen_ausdrucken.add(jLabel4);
+        jLabel4.setBounds(340, 20, 60, 30);
+
+        jButton2.setFont(new java.awt.Font("Arial", 0, 12));
+        jButton2.setText("anzeigen");
+        Buchungshistorie_einsehen_ausdrucken.add(jButton2);
+        jButton2.setBounds(330, 70, 110, 30);
+
+        jButton3.setFont(new java.awt.Font("Arial", 0, 12));
+        jButton3.setText("drucken.");
+        Buchungshistorie_einsehen_ausdrucken.add(jButton3);
+        jButton3.setBounds(500, 70, 110, 30);
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel5.setText("bis");
+        Buchungshistorie_einsehen_ausdrucken.add(jLabel5);
+        jLabel5.setBounds(210, 70, 20, 30);
+
+        jButton4.setFont(new java.awt.Font("Arial", 0, 12));
+        jButton4.setText("Teile/Lagerplatz suchen");
+        Buchungshistorie_einsehen_ausdrucken.add(jButton4);
+        jButton4.setBounds(220, 350, 180, 30);
+
+        jTabbedPane1.addTab("Buchungshistorie einsehen", Buchungshistorie_einsehen_ausdrucken);
+
+        Teile_Splitten.setLayout(null);
+
+        suchen_button.setFont(new java.awt.Font("Arial", 0, 12));
+        suchen_button.setText("Suche Fachnummer");
+        Teile_Splitten.add(suchen_button);
+        suchen_button.setBounds(240, 60, 150, 27);
+
+        label_eingabe_aufforderung_fachnummer.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_fachnummer.setText("Bitte geben Sie die Fachnummer ein aus der gesplittet werden soll:");
+        Teile_Splitten.add(label_eingabe_aufforderung_fachnummer);
+        label_eingabe_aufforderung_fachnummer.setBounds(30, 30, 370, 20);
+
+        label_ausgangsfachnummer.setFont(new java.awt.Font("Arial", 0, 12));
+        label_ausgangsfachnummer.setText("Fachnummer:");
+        Teile_Splitten.add(label_ausgangsfachnummer);
+        label_ausgangsfachnummer.setBounds(30, 60, 80, 20);
+
+        ausgangsfachnummer_textfeld.setFont(new java.awt.Font("Arial", 0, 12));
+        ausgangsfachnummer_textfeld.setToolTipText("");
+        Teile_Splitten.add(ausgangsfachnummer_textfeld);
+        ausgangsfachnummer_textfeld.setBounds(110, 60, 100, 25);
+
+        bestaetigen_button.setFont(new java.awt.Font("Arial", 0, 12));
+        bestaetigen_button.setText("Bestätigen");
+        Teile_Splitten.add(bestaetigen_button);
+        bestaetigen_button.setBounds(430, 60, 100, 27);
+
+        label_teil_eingelagert.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teil_eingelagert.setText("Eingelagertes Teil:");
+        Teile_Splitten.add(label_teil_eingelagert);
+        label_teil_eingelagert.setBounds(30, 100, 103, 20);
+
+        label_anzeige_teile_id.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(label_anzeige_teile_id);
+        label_anzeige_teile_id.setBounds(140, 100, 50, 20);
+
+        label_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung.setText("Bezeichnung:");
+        Teile_Splitten.add(label_bezeichnung);
+        label_bezeichnung.setBounds(200, 100, 80, 20);
+
+        label_anzeige_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(label_anzeige_bezeichnung);
+        label_anzeige_bezeichnung.setBounds(280, 100, 150, 20);
+
+        label_eingabeaufforderung_splitten.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabeaufforderung_splitten.setText("Bitte geben Sie die Fächer und die Menge an in die gesplittet werden soll:");
+        Teile_Splitten.add(label_eingabeaufforderung_splitten);
+        label_eingabeaufforderung_splitten.setBounds(30, 130, 410, 20);
+
+        label_splitten_nummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer1.setText("1.");
+        Teile_Splitten.add(label_splitten_nummer1);
+        label_splitten_nummer1.setBounds(30, 170, 20, 20);
+
+        label_fachnummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer1.setText("Fachnummer:");
+        label_fachnummer1.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer1);
+        label_fachnummer1.setBounds(60, 170, 80, 20);
+
+        fachnummer_textfeld1.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld1.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld1);
+        fachnummer_textfeld1.setBounds(150, 170, 80, 25);
+
+        label_menge1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge1.setText("Menge:");
+        Teile_Splitten.add(label_menge1);
+        label_menge1.setBounds(260, 170, 50, 20);
+
+        menge_textfeld1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld1);
+        menge_textfeld1.setBounds(320, 170, 80, 25);
+
+        kapazitaet_pruefen_button1.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button1.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button1);
+        kapazitaet_pruefen_button1.setBounds(420, 170, 120, 27);
+
+        label_splitten_nummer2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer2.setText("2.");
+        Teile_Splitten.add(label_splitten_nummer2);
+        label_splitten_nummer2.setBounds(30, 200, 20, 20);
+
+        label_fachnummer2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer2.setText("Fachnummer:");
+        label_fachnummer2.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer2);
+        label_fachnummer2.setBounds(60, 200, 80, 20);
+
+        fachnummer_textfeld2.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld2.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld2);
+        fachnummer_textfeld2.setBounds(150, 200, 80, 25);
+
+        label_menge2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge2.setText("Menge:");
+        Teile_Splitten.add(label_menge2);
+        label_menge2.setBounds(260, 200, 50, 20);
+
+        menge_textfeld2.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld2);
+        menge_textfeld2.setBounds(320, 200, 80, 25);
+
+        kapazitaet_pruefen_button2.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button2.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button2);
+        kapazitaet_pruefen_button2.setBounds(420, 200, 120, 27);
+
+        fachnummer_textfeld3.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld3.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld3);
+        fachnummer_textfeld3.setBounds(150, 230, 80, 25);
+
+        label_splitten_nummer3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer3.setText("3.");
+        Teile_Splitten.add(label_splitten_nummer3);
+        label_splitten_nummer3.setBounds(30, 230, 20, 20);
+
+        menge_textfeld3.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld3);
+        menge_textfeld3.setBounds(320, 230, 80, 25);
+
+        label_menge3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge3.setText("Menge:");
+        Teile_Splitten.add(label_menge3);
+        label_menge3.setBounds(260, 230, 50, 20);
+
+        kapazitaet_pruefen_button3.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button3.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button3);
+        kapazitaet_pruefen_button3.setBounds(420, 230, 120, 27);
+
+        label_fachnummer3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer3.setText("Fachnummer:");
+        label_fachnummer3.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer3);
+        label_fachnummer3.setBounds(60, 230, 80, 20);
+
+        menge_textfeld4.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld4);
+        menge_textfeld4.setBounds(320, 260, 80, 25);
+
+        label_fachnummer4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer4.setText("Fachnummer:");
+        label_fachnummer4.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer4);
+        label_fachnummer4.setBounds(60, 260, 80, 20);
+
+        kapazitaet_pruefen_button4.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button4.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button4);
+        kapazitaet_pruefen_button4.setBounds(420, 260, 120, 27);
+
+        label_splitten_nummer4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer4.setText("4.");
+        Teile_Splitten.add(label_splitten_nummer4);
+        label_splitten_nummer4.setBounds(30, 260, 20, 20);
+
+        label_menge4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge4.setText("Menge:");
+        Teile_Splitten.add(label_menge4);
+        label_menge4.setBounds(260, 260, 50, 20);
+
+        fachnummer_textfeld4.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld4.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld4);
+        fachnummer_textfeld4.setBounds(150, 260, 80, 25);
+
+        label_fachnummer5.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer5.setText("Fachnummer:");
+        label_fachnummer5.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer5);
+        label_fachnummer5.setBounds(60, 290, 80, 20);
+
+        kapazitaet_pruefen_button5.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button5.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button5);
+        kapazitaet_pruefen_button5.setBounds(420, 290, 120, 27);
+
+        fachnummer_textfeld5.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld5.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld5);
+        fachnummer_textfeld5.setBounds(150, 290, 80, 25);
+
+        menge_textfeld5.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld5);
+        menge_textfeld5.setBounds(320, 290, 80, 25);
+
+        label_splitten_nummer5.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer5.setText("5.");
+        Teile_Splitten.add(label_splitten_nummer5);
+        label_splitten_nummer5.setBounds(30, 290, 20, 20);
+
+        label_menge5.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge5.setText("Menge:");
+        Teile_Splitten.add(label_menge5);
+        label_menge5.setBounds(260, 290, 50, 20);
+
+        label_fachnummer6.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer6.setText("Fachnummer:");
+        label_fachnummer6.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer6);
+        label_fachnummer6.setBounds(60, 320, 80, 20);
+
+        menge_textfeld6.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld6);
+        menge_textfeld6.setBounds(320, 320, 80, 25);
+
+        label_menge6.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge6.setText("Menge:");
+        Teile_Splitten.add(label_menge6);
+        label_menge6.setBounds(260, 320, 50, 20);
+
+        label_splitten_nummer6.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer6.setText("6.");
+        Teile_Splitten.add(label_splitten_nummer6);
+        label_splitten_nummer6.setBounds(30, 320, 20, 20);
+
+        fachnummer_textfeld6.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld6.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld6);
+        fachnummer_textfeld6.setBounds(150, 320, 80, 25);
+
+        kapazitaet_pruefen_button6.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button6.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button6);
+        kapazitaet_pruefen_button6.setBounds(420, 320, 120, 27);
+
+        menge_textfeld7.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld7);
+        menge_textfeld7.setBounds(320, 350, 80, 25);
+
+        label_splitten_nummer7.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer7.setText("7.");
+        Teile_Splitten.add(label_splitten_nummer7);
+        label_splitten_nummer7.setBounds(30, 350, 20, 20);
+
+        fachnummer_textfeld7.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld7.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld7);
+        fachnummer_textfeld7.setBounds(150, 350, 80, 25);
+
+        kapazitaet_pruefen_button7.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button7.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button7);
+        kapazitaet_pruefen_button7.setBounds(420, 350, 120, 27);
+
+        label_menge7.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge7.setText("Menge:");
+        Teile_Splitten.add(label_menge7);
+        label_menge7.setBounds(260, 350, 50, 20);
+
+        label_fachnummer7.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer7.setText("Fachnummer:");
+        label_fachnummer7.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer7);
+        label_fachnummer7.setBounds(60, 350, 80, 20);
+
+        label_splitten_nummer8.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer8.setText("8.");
+        Teile_Splitten.add(label_splitten_nummer8);
+        label_splitten_nummer8.setBounds(30, 380, 20, 20);
+
+        label_fachnummer8.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer8.setText("Fachnummer:");
+        label_fachnummer8.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer8);
+        label_fachnummer8.setBounds(60, 380, 80, 20);
+
+        fachnummer_textfeld8.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld8.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld8);
+        fachnummer_textfeld8.setBounds(150, 380, 80, 25);
+
+        menge_textfeld8.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld8);
+        menge_textfeld8.setBounds(320, 380, 80, 25);
+
+        label_menge8.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge8.setText("Menge:");
+        Teile_Splitten.add(label_menge8);
+        label_menge8.setBounds(260, 380, 50, 20);
+
+        kapazitaet_pruefen_button8.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button8.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button8);
+        kapazitaet_pruefen_button8.setBounds(420, 380, 120, 27);
+
+        label_fachnummer9.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer9.setText("Fachnummer:");
+        label_fachnummer9.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer9);
+        label_fachnummer9.setBounds(60, 410, 80, 20);
+
+        fachnummer_textfeld9.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld9.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld9);
+        fachnummer_textfeld9.setBounds(150, 410, 80, 25);
+
+        kapazitaet_pruefen_button9.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button9.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button9);
+        kapazitaet_pruefen_button9.setBounds(420, 410, 120, 27);
+
+        label_splitten_nummer9.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer9.setText("9.");
+        Teile_Splitten.add(label_splitten_nummer9);
+        label_splitten_nummer9.setBounds(30, 410, 20, 20);
+
+        menge_textfeld9.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld9);
+        menge_textfeld9.setBounds(320, 410, 80, 25);
+
+        label_menge9.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge9.setText("Menge:");
+        Teile_Splitten.add(label_menge9);
+        label_menge9.setBounds(260, 410, 50, 20);
+
+        menge_textfeld10.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(menge_textfeld10);
+        menge_textfeld10.setBounds(320, 440, 80, 25);
+
+        fachnummer_textfeld10.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld10.setFocusTraversalPolicyProvider(true);
+        Teile_Splitten.add(fachnummer_textfeld10);
+        fachnummer_textfeld10.setBounds(150, 440, 80, 25);
+
+        kapazitaet_pruefen_button10.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button10.setText("Kapazität prüfen");
+        Teile_Splitten.add(kapazitaet_pruefen_button10);
+        kapazitaet_pruefen_button10.setBounds(420, 440, 120, 27);
+
+        label_menge10.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge10.setText("Menge:");
+        Teile_Splitten.add(label_menge10);
+        label_menge10.setBounds(260, 440, 50, 20);
+
+        label_splitten_nummer10.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer10.setText("10.");
+        Teile_Splitten.add(label_splitten_nummer10);
+        label_splitten_nummer10.setBounds(30, 440, 20, 20);
+
+        label_fachnummer10.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer10.setText("Fachnummer:");
+        label_fachnummer10.setInheritsPopupMenu(false);
+        Teile_Splitten.add(label_fachnummer10);
+        label_fachnummer10.setBounds(60, 440, 80, 20);
+
+        splitten_button.setFont(new java.awt.Font("Arial", 0, 12));
+        splitten_button.setText("Splitten");
+        Teile_Splitten.add(splitten_button);
+        splitten_button.setBounds(30, 490, 110, 27);
+
+        label_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12));
+        label_mindestgroesse.setText("Mindestgröße:");
+        Teile_Splitten.add(label_mindestgroesse);
+        label_mindestgroesse.setBounds(430, 100, 90, 20);
+
+        label_anzeige_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_Splitten.add(label_anzeige_mindestgroesse);
+        label_anzeige_mindestgroesse.setBounds(530, 100, 30, 20);
+
+        jTabbedPane1.addTab("Teil Splitten", Teile_Splitten);
+
+        Teile_auslagern.setLayout(null);
+
+        TeileIDLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileIDLabel.setText("Teile ID:");
+        Teile_auslagern.add(TeileIDLabel);
+        TeileIDLabel.setBounds(50, 60, 45, 15);
+
+        BezeichnungLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel.setText("Bezeichnung:");
+        Teile_auslagern.add(BezeichnungLabel);
+        BezeichnungLabel.setBounds(50, 100, 74, 15);
+
+        FachLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachLabel.setText("Fach:");
+        Teile_auslagern.add(FachLabel);
+        FachLabel.setBounds(50, 330, 30, 15);
+
+        BestandverringernLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BestandverringernLabel.setText("Bestand verringern:");
+        Teile_auslagern.add(BestandverringernLabel);
+        BestandverringernLabel.setBounds(50, 370, 107, 15);
+
+        BemerkungLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BemerkungLabel.setText("Bemerkung:");
+        Teile_auslagern.add(BemerkungLabel);
+        BemerkungLabel.setBounds(50, 150, 67, 15);
+
+        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_auslagern.add(IDTextfield);
+        IDTextfield.setBounds(200, 60, 128, 25);
+
+        FachTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_auslagern.add(FachTextfield);
+        FachTextfield.setBounds(200, 320, 128, 25);
+
+        BestandTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        BestandTextfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BestandTextfieldActionPerformed(evt);
+            }
+        });
+        Teile_auslagern.add(BestandTextfield);
+        BestandTextfield.setBounds(200, 360, 128, 25);
+
+        AusführenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        AusführenButton.setText("Ausführen");
+        Teile_auslagern.add(AusführenButton);
+        AusführenButton.setBounds(350, 360, 68, 27);
+
+        SuchenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        SuchenButton.setText("Suche Teile ID");
+        Teile_auslagern.add(SuchenButton);
+        SuchenButton.setBounds(350, 60, 131, 27);
+
+        BestätigenidButton.setFont(new java.awt.Font("Arial", 0, 12));
+        BestätigenidButton.setText("Bestätigen");
+        BestätigenidButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BestätigenidButtonActionPerformed(evt);
+            }
+        });
+        Teile_auslagern.add(BestätigenidButton);
+        BestätigenidButton.setBounds(500, 60, 71, 27);
+
+        label_eingabe_aufforderung_id.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_id.setText("Bitte geben Sie die Teile ID ein:");
+        Teile_auslagern.add(label_eingabe_aufforderung_id);
+        label_eingabe_aufforderung_id.setBounds(50, 10, 180, 20);
+
+        label_eingabe_aufforderung_fach.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_fach.setText("Bitte geben Sie das Fach ein oder wählen Sie es aus der Tabelle aus:");
+        Teile_auslagern.add(label_eingabe_aufforderung_fach);
+        label_eingabe_aufforderung_fach.setBounds(50, 280, 520, 20);
+
+        Bezeichnung_ausgabeLabel.setText("bez");
+        Teile_auslagern.add(Bezeichnung_ausgabeLabel);
+        Bezeichnung_ausgabeLabel.setBounds(200, 100, 128, 23);
+
+        BemerkungTextArea.setColumns(20);
+        BemerkungTextArea.setRows(5);
+        BemerkungScrollPane.setViewportView(BemerkungTextArea);
+
+        Teile_auslagern.add(BemerkungScrollPane);
+        BemerkungScrollPane.setBounds(200, 150, 270, 100);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        Teile_auslagern.add(jScrollPane2);
+        jScrollPane2.setBounds(0, 400, 950, 160);
+
+        jTabbedPane1.addTab("Teile auslagern", Teile_auslagern);
+
+        jPanel7.setLayout(null);
+
+        jPanel8.setLayout(null);
+
+        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12));
+        bestaetigen_button2.setText("Bestätigen");
+        jPanel8.add(bestaetigen_button2);
+        bestaetigen_button2.setBounds(40, 120, 100, 27);
+
+        id_textfeld2.setFont(new java.awt.Font("Arial", 0, 12));
+        id_textfeld2.setToolTipText("");
+        jPanel8.add(id_textfeld2);
+        id_textfeld2.setBounds(190, 60, 100, 25);
+
+        suchen_button2.setFont(new java.awt.Font("Arial", 0, 12));
+        suchen_button2.setText("Suche Teile ID / Bezeichnung");
+        jPanel8.add(suchen_button2);
+        suchen_button2.setBounds(700, 60, 200, 27);
+
+        label_bezeichnung2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung2.setText("Bezeichnung:");
+        jPanel8.add(label_bezeichnung2);
+        label_bezeichnung2.setBounds(440, 60, 80, 20);
+
+        label_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_mindestgroesse2.setText("Mindestgröße:");
+        jPanel8.add(label_mindestgroesse2);
+        label_mindestgroesse2.setBounds(440, 180, 90, 20);
+
+        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_anzeige_mindestgroesse2.setText("größe");
+        jPanel8.add(label_anzeige_mindestgroesse2);
+        label_anzeige_mindestgroesse2.setBounds(580, 180, 50, 20);
+
+        label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_eingabe_aufforderung_id2.setText("Bitte geben Sie die Teile ID oder die Bezeichnung ein:");
+        jPanel8.add(label_eingabe_aufforderung_id2);
+        label_eingabe_aufforderung_id2.setBounds(30, 20, 300, 20);
+        jPanel8.add(menge_textfeld11);
+        menge_textfeld11.setBounds(190, 180, 96, 28);
+
+        label_oder1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_oder1.setText("oder");
+        jPanel8.add(label_oder1);
+        label_oder1.setBounds(340, 60, 34, 15);
+
+        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teile_id2.setText("Teile ID:");
+        jPanel8.add(label_teile_id2);
+        label_teile_id2.setBounds(40, 60, 60, 20);
+        jPanel8.add(bezeichnung_textfeld1);
+        bezeichnung_textfeld1.setBounds(570, 60, 100, 28);
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel7.setText("Einzulagernde Menge:");
+        jPanel8.add(jLabel7);
+        jLabel7.setBounds(40, 180, 122, 15);
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
+
+        jPanel8.add(jScrollPane4);
+        jScrollPane4.setBounds(0, 310, 950, 220);
+
+        Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
+
+        menge_textfeld12.setFont(new java.awt.Font("Arial", 0, 12));
+
+        label_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_mindestgroesse1.setText("Mindestgröße:");
+
+        menge_textfeld13.setFont(new java.awt.Font("Arial", 0, 12));
+
+        label_anzeige_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12));
+
+        fachnummer_textfeld11.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld11.setFocusTraversalPolicyProvider(true);
+
+        label_anzeige_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12));
+
+        menge_textfeld14.setFont(new java.awt.Font("Arial", 0, 12));
+
+        kapazitaet_pruefen_button11.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button11.setText("Kapazität prüfen");
+
+        kapazitaet_pruefen_button12.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button12.setText("Kapazität prüfen");
+
+        kapazitaet_pruefen_button13.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button13.setText("Kapazität prüfen");
+
+        label_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung1.setText("Bezeichnung:");
+
+        fachnummer_textfeld12.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld12.setFocusTraversalPolicyProvider(true);
+
+        kapazitaet_pruefen_button14.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button14.setText("Kapazität prüfen");
+
+        kapazitaet_pruefen_button15.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button15.setText("Kapazität prüfen");
+
+        label_einlagern_nummer4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer4.setText("4.");
+
+        label_fachnummer11.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer11.setText("Fachnummer:");
+        label_fachnummer11.setInheritsPopupMenu(false);
+
+        fachnummer_textfeld13.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld13.setFocusTraversalPolicyProvider(true);
+
+        menge_textfeld15.setFont(new java.awt.Font("Arial", 0, 12));
+
+        menge_textfeld16.setFont(new java.awt.Font("Arial", 0, 12));
+
+        label_einlagern_nummer3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer3.setText("3.");
+
+        label_fachnummer12.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer12.setText("Fachnummer:");
+        label_fachnummer12.setInheritsPopupMenu(false);
+
+        label_fachnummer13.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer13.setText("Fachnummer:");
+        label_fachnummer13.setInheritsPopupMenu(false);
+
+        label_menge11.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge11.setText("Menge:");
+
+        kapazitaet_pruefen_button16.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button16.setText("Kapazität prüfen");
+
+        label_menge12.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge12.setText("Menge:");
+
+        menge_textfeld17.setFont(new java.awt.Font("Arial", 0, 12));
+
+        label_menge13.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge13.setText("Menge:");
+
+        label_einlagern_nummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer1.setText("1.");
+
+        label_einlagern_nummer2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer2.setText("2.");
+
+        label_einlagern_nummer9.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer9.setText("9.");
+
+        button_fachnumer1.setFont(new java.awt.Font("Arial", 0, 12));
+        button_fachnumer1.setText("Suche Fachhnummer");
+
+        label_einlagern_nummer10.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer10.setText("10.");
+
+        label_fachnummer14.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer14.setText("Fachnummer:");
+        label_fachnummer14.setInheritsPopupMenu(false);
+
+        fachnummer_textfeld14.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld14.setFocusTraversalPolicyProvider(true);
+
+        label_fachnummer15.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer15.setText("Fachnummer:");
+        label_fachnummer15.setInheritsPopupMenu(false);
+
+        label_menge14.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge14.setText("Menge:");
+
+        label_menge15.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge15.setText("Menge:");
+
+        label_menge16.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge16.setText("Menge:");
+
+        label_fachnummer16.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer16.setText("Fachnummer:");
+        label_fachnummer16.setInheritsPopupMenu(false);
+
+        label_fachnummer17.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer17.setText("Fachnummer:");
+        label_fachnummer17.setInheritsPopupMenu(false);
+
+        menge_textfeld18.setFont(new java.awt.Font("Arial", 0, 12));
+
+        kapazitaet_pruefen_button17.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button17.setText("Kapazität prüfen");
+
+        fachnummer_textfeld15.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld15.setFocusTraversalPolicyProvider(true);
+
+        fachnummer_textfeld16.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld16.setFocusTraversalPolicyProvider(true);
+
+        menge_textfeld19.setFont(new java.awt.Font("Arial", 0, 12));
+
+        kapazitaet_pruefen_button18.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button18.setText("Kapazität prüfen");
+
+        menge_textfeld20.setFont(new java.awt.Font("Arial", 0, 12));
+
+        id_textfeld.setFont(new java.awt.Font("Arial", 0, 12));
+        id_textfeld.setToolTipText("");
+
+        label_einlagern_nummer8.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer8.setText("8.");
+
+        fachnummer_textfeld17.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld17.setFocusTraversalPolicyProvider(true);
+
+        bestaetigen_button1.setFont(new java.awt.Font("Arial", 0, 12));
+        bestaetigen_button1.setText("Bestätigen");
+
+        label_menge17.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge17.setText("Menge:");
+
+        fachnummer_textfeld18.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld18.setFocusTraversalPolicyProvider(true);
+
+        kapazitaet_pruefen_button19.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button19.setText("Kapazität prüfen");
+
+        label_teile_id.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teile_id.setText("Teile ID:");
+
+        label_eingabeaufforderung_einlagern.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabeaufforderung_einlagern.setText("Bitte geben Sie die Fächer und die Menge an die eingelagert werden soll:");
+
+        label_einlagern_nummer5.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer5.setText("5.");
+
+        fachnummer_textfeld19.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld19.setFocusTraversalPolicyProvider(true);
+
+        label_fachnummer18.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer18.setText("Fachnummer:");
+        label_fachnummer18.setInheritsPopupMenu(false);
+
+        menge_textfeld21.setFont(new java.awt.Font("Arial", 0, 12));
+
+        label_menge18.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge18.setText("Menge:");
+
+        einlagern_button.setFont(new java.awt.Font("Arial", 0, 12));
+        einlagern_button.setText("Einlagern");
+
+        label_fachnummer19.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer19.setText("Fachnummer:");
+        label_fachnummer19.setInheritsPopupMenu(false);
+
+        label_eingabe_aufforderung_id1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_id1.setText("Bitte geben Sie die Teile ID ein:");
+
+        label_menge19.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge19.setText("Menge:");
+
+        fachnummer_textfeld20.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld20.setFocusTraversalPolicyProvider(true);
+
+        label_einlagern_nummer6.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer6.setText("6.");
+
+        label_einlagern_nummer7.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer7.setText("7.");
+
+        label_menge20.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge20.setText("Menge:");
+
+        label_fachnummer20.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer20.setText("Fachnummer:");
+        label_fachnummer20.setInheritsPopupMenu(false);
+
+        kapazitaet_pruefen_button20.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button20.setText("Kapazität prüfen");
+
+        suchen_button1.setFont(new java.awt.Font("Arial", 0, 12));
+        suchen_button1.setText("Suche Teile ID");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_eingabe_aufforderung_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_bezeichnung1)
+                        .addGap(6, 6, 6)
+                        .addComponent(label_anzeige_bezeichnung1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(label_mindestgroesse1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(label_anzeige_mindestgroesse1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld17, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld19, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(kapazitaet_pruefen_button15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer13, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(kapazitaet_pruefen_button18, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld15, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld18, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(kapazitaet_pruefen_button17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld14, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld15, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(kapazitaet_pruefen_button11, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer15, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld13, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge18, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(kapazitaet_pruefen_button12, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer19, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge19, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld14, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(kapazitaet_pruefen_button13, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld19, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(kapazitaet_pruefen_button19, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer18, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld13, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(kapazitaet_pruefen_button14, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer17, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(kapazitaet_pruefen_button16, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_einlagern_nummer10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(label_fachnummer14, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(fachnummer_textfeld18, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(label_menge16, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(menge_textfeld17, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(kapazitaet_pruefen_button20, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(einlagern_button, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_eingabeaufforderung_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(label_teile_id, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(id_textfeld, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(suchen_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bestaetigen_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button_fachnumer1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(548, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(52, Short.MAX_VALUE)
+                .addComponent(label_eingabe_aufforderung_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_teile_id, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id_textfeld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(suchen_button1)
+                        .addComponent(bestaetigen_button1)))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_bezeichnung1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_anzeige_bezeichnung1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_mindestgroesse1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_anzeige_mindestgroesse1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_eingabeaufforderung_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_fachnumer1))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fachnummer_textfeld17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_einlagern_nummer1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_fachnummer11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_menge12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(menge_textfeld19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(kapazitaet_pruefen_button15)))))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_einlagern_nummer2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fachnummer13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fachnummer_textfeld16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_menge13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menge_textfeld20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kapazitaet_pruefen_button18))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_einlagern_nummer3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fachnummer16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fachnummer_textfeld15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_menge11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menge_textfeld18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kapazitaet_pruefen_button17))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_einlagern_nummer4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fachnummer12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fachnummer_textfeld14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_menge15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menge_textfeld15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kapazitaet_pruefen_button11))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_einlagern_nummer5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fachnummer15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fachnummer_textfeld13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_menge18, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menge_textfeld16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kapazitaet_pruefen_button12))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_einlagern_nummer6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fachnummer19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fachnummer_textfeld12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_menge19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menge_textfeld14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kapazitaet_pruefen_button13))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_einlagern_nummer7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fachnummer20, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fachnummer_textfeld19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_menge20, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menge_textfeld21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kapazitaet_pruefen_button19))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_einlagern_nummer8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fachnummer18, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fachnummer_textfeld20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_menge17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menge_textfeld13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kapazitaet_pruefen_button14))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_einlagern_nummer9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fachnummer17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fachnummer_textfeld11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_menge14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menge_textfeld12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kapazitaet_pruefen_button16))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_einlagern_nummer10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_fachnummer14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fachnummer_textfeld18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_menge16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menge_textfeld17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kapazitaet_pruefen_button20))
+                .addGap(17, 17, 17)
+                .addComponent(einlagern_button)
+                .addGap(28, 28, 28))
+        );
+
+        Teile_einlagern.addTab("Fächer manuell eintragen", jPanel9);
+
+        jPanel7.add(Teile_einlagern);
+        Teile_einlagern.setBounds(0, 0, 1180, 650);
+
+        jTabbedPane1.addTab("Teil einlagern", jPanel7);
+
+        Teile_entfernen_loeschen.setLayout(null);
+
+        suchenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        suchenButton.setText("Suche Teile ID");
+        Teile_entfernen_loeschen.add(suchenButton);
+        suchenButton.setBounds(180, 80, 129, 27);
+
+        Teilestammdatenbutton.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestammdatenbutton.setText("Teilestammdaten");
+        Teile_entfernen_loeschen.add(Teilestammdatenbutton);
+        Teilestammdatenbutton.setBounds(180, 120, 109, 27);
+
+        bestätigenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        bestätigenButton.setText("Bestätigen");
+        Teile_entfernen_loeschen.add(bestätigenButton);
+        bestätigenButton.setBounds(330, 80, 71, 27);
+
+        IDTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_entfernen_loeschen.add(IDTextfield1);
+        IDTextfield1.setBounds(70, 80, 93, 25);
+
+        IDLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        IDLabel.setText("ID:");
+        Teile_entfernen_loeschen.add(IDLabel);
+        IDLabel.setBounds(40, 80, 15, 15);
+
+        eingebenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        eingebenLabel.setText("Bitte Teile ID eingeben:");
+        Teile_entfernen_loeschen.add(eingebenLabel);
+        eingebenLabel.setBounds(50, 30, 223, 15);
+
+        StammdatenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        StammdatenLabel.setText("Stammdaten:");
+        Teile_entfernen_loeschen.add(StammdatenLabel);
+        StammdatenLabel.setBounds(50, 160, 74, 15);
+
+        BezeichnungLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel1.setText("Bezeichnung:");
+        Teile_entfernen_loeschen.add(BezeichnungLabel1);
+        BezeichnungLabel1.setBounds(50, 200, 74, 15);
+
+        TeileLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileLabel.setText("Teile Typ:");
+        Teile_entfernen_loeschen.add(TeileLabel);
+        TeileLabel.setBounds(50, 230, 52, 15);
+
+        ZeichnungsnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        ZeichnungsnrLabel.setText("Zeichnungsnr.:");
+        Teile_entfernen_loeschen.add(ZeichnungsnrLabel);
+        ZeichnungsnrLabel.setBounds(50, 300, 82, 15);
+
+        MaterialgruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MaterialgruppeLabel.setText("Materialgruppe:");
+        Teile_entfernen_loeschen.add(MaterialgruppeLabel);
+        MaterialgruppeLabel.setBounds(50, 270, 85, 15);
+
+        BaugruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BaugruppeLabel.setText("Baugruppe:");
+        Teile_entfernen_loeschen.add(BaugruppeLabel);
+        BaugruppeLabel.setBounds(50, 330, 64, 15);
+
+        PreisLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        PreisLabel.setText("Preis:");
+        Teile_entfernen_loeschen.add(PreisLabel);
+        PreisLabel.setBounds(340, 200, 32, 15);
+
+        MAKLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MAKLabel.setText("Max.Anzahl klein:");
+        Teile_entfernen_loeschen.add(MAKLabel);
+        MAKLabel.setBounds(340, 230, 92, 15);
+
+        MAMLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MAMLabel.setText("Max.Anzahl mittel:");
+        Teile_entfernen_loeschen.add(MAMLabel);
+        MAMLabel.setBounds(340, 260, 96, 15);
+
+        MAGLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MAGLabel.setText("Max.Anzahl groß:");
+        Teile_entfernen_loeschen.add(MAGLabel);
+        MAGLabel.setBounds(340, 290, 92, 15);
+
+        BemerkungLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        BemerkungLabel1.setText("Bemerkung");
+        Teile_entfernen_loeschen.add(BemerkungLabel1);
+        BemerkungLabel1.setBounds(340, 330, 64, 15);
+
+        EuroLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        EuroLabel.setText("€");
+        Teile_entfernen_loeschen.add(EuroLabel);
+        EuroLabel.setBounds(560, 200, 21, 15);
+
+        loeschenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        loeschenButton.setText("Löschen");
+        Teile_entfernen_loeschen.add(loeschenButton);
+        loeschenButton.setBounds(40, 390, 60, 27);
+
+        MAKTextfield.setText("text");
+        Teile_entfernen_loeschen.add(MAKTextfield);
+        MAKTextfield.setBounds(460, 230, 29, 18);
+
+        TypTextfield.setText("text");
+        Teile_entfernen_loeschen.add(TypTextfield);
+        TypTextfield.setBounds(170, 230, 29, 18);
+
+        MaterialTextfield.setText("text");
+        Teile_entfernen_loeschen.add(MaterialTextfield);
+        MaterialTextfield.setBounds(170, 270, 29, 18);
+
+        BezTextfield1.setText("text");
+        Teile_entfernen_loeschen.add(BezTextfield1);
+        BezTextfield1.setBounds(170, 200, 29, 18);
+
+        ZNrTextfield.setText("text");
+        Teile_entfernen_loeschen.add(ZNrTextfield);
+        ZNrTextfield.setBounds(170, 300, 29, 18);
+
+        MAMTextfield.setText("text");
+        Teile_entfernen_loeschen.add(MAMTextfield);
+        MAMTextfield.setBounds(460, 260, 29, 18);
+
+        BaugruppeTextfield.setText("text");
+        Teile_entfernen_loeschen.add(BaugruppeTextfield);
+        BaugruppeTextfield.setBounds(170, 330, 29, 18);
+
+        PreisTextfield.setText("text");
+        Teile_entfernen_loeschen.add(PreisTextfield);
+        PreisTextfield.setBounds(460, 190, 29, 18);
+
+        MAGTextfield.setText("text");
+        Teile_entfernen_loeschen.add(MAGTextfield);
+        MAGTextfield.setBounds(460, 290, 29, 18);
+
+        BemerkungTextfield.setText("text");
+        Teile_entfernen_loeschen.add(BemerkungTextfield);
+        BemerkungTextfield.setBounds(460, 330, 34, 18);
+
+        jTabbedPane1.addTab("Teil entfernen", Teile_entfernen_loeschen);
+
+        Teile_umlagern.setLayout(null);
+
+        BitteeingebenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BitteeingebenLabel.setText("Bitte geben Sie die Fachnummer ein aus der ausgelagert werden soll:");
+        Teile_umlagern.add(BitteeingebenLabel);
+        BitteeingebenLabel.setBounds(10, 11, 400, 23);
+
+        FachnummerLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachnummerLabel.setText("Fachnummer:");
+        Teile_umlagern.add(FachnummerLabel);
+        FachnummerLabel.setBounds(10, 55, 77, 15);
+
+        TeileLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileLabel1.setText("Teile ID:");
+        Teile_umlagern.add(TeileLabel1);
+        TeileLabel1.setBounds(10, 93, 45, 15);
+
+        ZielfachLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        ZielfachLabel.setText("Bitte geben Sie das Zielfach ein oder wählen Sie es aus:");
+        Teile_umlagern.add(ZielfachLabel);
+        ZielfachLabel.setBounds(10, 142, 309, 15);
+
+        FachnrTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_umlagern.add(FachnrTextfield);
+        FachnrTextfield.setBounds(124, 52, 113, 25);
+
+        BestätigenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        BestätigenButton.setText("Bestätigen");
+        Teile_umlagern.add(BestätigenButton);
+        BestätigenButton.setBounds(470, 50, 71, 27);
+
+        BezeichnungLabel2.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel2.setText("Bezeichnung:");
+        Teile_umlagern.add(BezeichnungLabel2);
+        BezeichnungLabel2.setBounds(282, 93, 91, 15);
+
+        MengeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MengeLabel.setText("Menge:");
+        Teile_umlagern.add(MengeLabel);
+        MengeLabel.setBounds(470, 90, 40, 15);
+
+        FachnrLabel_Ziel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachnrLabel_Ziel.setText("Fachnummer:");
+        Teile_umlagern.add(FachnrLabel_Ziel);
+        FachnrLabel_Ziel.setBounds(10, 190, 77, 15);
+
+        FachnrTextfield_Ziel.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_umlagern.add(FachnrTextfield_Ziel);
+        FachnrTextfield_Ziel.setBounds(120, 190, 113, 25);
+
+        UmlagernButton.setFont(new java.awt.Font("Arial", 0, 12));
+        UmlagernButton.setText("Umlagern");
+        Teile_umlagern.add(UmlagernButton);
+        UmlagernButton.setBounds(10, 440, 67, 27);
+
+        MengeTextfield.setText("text");
+        Teile_umlagern.add(MengeTextfield);
+        MengeTextfield.setBounds(540, 90, 29, 18);
+
+        BezeichnungTextfield.setText("text");
+        Teile_umlagern.add(BezeichnungTextfield);
+        BezeichnungTextfield.setBounds(400, 90, 29, 18);
+
+        IDTextfield2.setText("text");
+        Teile_umlagern.add(IDTextfield2);
+        IDTextfield2.setBounds(130, 90, 29, 18);
+
+        SuchenButton1.setFont(new java.awt.Font("Arial", 0, 12));
+        SuchenButton1.setText("Suche Fachnummer");
+        Teile_umlagern.add(SuchenButton1);
+        SuchenButton1.setBounds(282, 52, 124, 27);
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        Teile_umlagern.add(jScrollPane3);
+        jScrollPane3.setBounds(0, 250, 880, 170);
+
+        jTabbedPane1.addTab("Teil umlagern", Teile_umlagern);
+
+        Teilestamm_Einsehen.setLayout(null);
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel6.setText("Teile Stammdaten");
+        Teilestamm_Einsehen.add(jLabel6);
+        jLabel6.setBounds(30, 30, 101, 15);
+
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel8.setText("ID");
+        Teilestamm_Einsehen.add(jLabel8);
+        jLabel8.setBounds(50, 120, 12, 15);
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel9.setText("Zeichn.Nr.");
+        Teilestamm_Einsehen.add(jLabel9);
+        jLabel9.setBounds(10, 170, 56, 15);
+
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel10.setText("MAM");
+        Teilestamm_Einsehen.add(jLabel10);
+        jLabel10.setBounds(450, 170, 25, 15);
+
+        jTextField4.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField4.setToolTipText("00001 bis 10000");
+        jTextField4.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(jTextField4);
+        jTextField4.setBounds(70, 110, 100, 30);
+
+        jTextField5.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField5.setToolTipText("lässt 2 bis 60 Zeichen zu.");
+        jTextField5.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(jTextField5);
+        jTextField5.setBounds(70, 160, 100, 30);
+
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel11.setText("Bezeichnung");
+        Teilestamm_Einsehen.add(jLabel11);
+        jLabel11.setBounds(200, 120, 71, 15);
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel12.setText("Baugruppe");
+        Teilestamm_Einsehen.add(jLabel12);
+        jLabel12.setBounds(210, 170, 61, 15);
+
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel13.setText("MAG");
+        Teilestamm_Einsehen.add(jLabel13);
+        jLabel13.setBounds(450, 220, 25, 15);
+
+        jTextField6.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField6.setToolTipText("lässt 2 bis 60 Zeichen zu.");
+        jTextField6.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(jTextField6);
+        jTextField6.setBounds(280, 110, 108, 30);
+
+        jTextField7.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField7.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(jTextField7);
+        jTextField7.setBounds(280, 160, 108, 30);
+
+        jLabel14.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel14.setText("Teiletyp");
+        Teilestamm_Einsehen.add(jLabel14);
+        jLabel14.setBounds(20, 220, 42, 15);
+
+        jLabel15.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel15.setText("Preis");
+        Teilestamm_Einsehen.add(jLabel15);
+        jLabel15.setBounds(670, 120, 29, 15);
+
+        jTextField8.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField8.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe groß passt");
+        jTextField8.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(jTextField8);
+        jTextField8.setBounds(490, 210, 100, 30);
+
+        jTextField9.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField9.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe mittel passt");
+        jTextField9.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(jTextField9);
+        jTextField9.setBounds(490, 160, 100, 30);
+
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel16.setText("Materialgruppe");
+        Teilestamm_Einsehen.add(jLabel16);
+        jLabel16.setBounds(190, 220, 82, 15);
+
+        jLabel17.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel17.setText("MAK");
+        Teilestamm_Einsehen.add(jLabel17);
+        jLabel17.setBounds(450, 120, 24, 15);
+
+        jButton5.setText("... suchen");
+        Teilestamm_Einsehen.add(jButton5);
+        jButton5.setBounds(730, 20, 90, 30);
+
+        jTextField12.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField12.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe klein passt");
+        Teilestamm_Einsehen.add(jTextField12);
+        jTextField12.setBounds(490, 111, 100, 30);
+
+        jTable5.setFont(new java.awt.Font("Arial", 0, 12));
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable5);
+
+        Teilestamm_Einsehen.add(jScrollPane5);
+        jScrollPane5.setBounds(0, 270, 850, 230);
+
+        jTextField10.setFont(new java.awt.Font("Arial", 0, 12));
+        jTextField10.setToolTipText("lässt 2 bis 60 Zeichen zu.");
+        Teilestamm_Einsehen.add(jTextField10);
+        jTextField10.setBounds(280, 210, 110, 30);
+
+        jTextField11.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_Einsehen.add(jTextField11);
+        jTextField11.setBounds(710, 110, 90, 30);
+
+        jButton6.setText("alle Stammdaten anzeigen");
+        Teilestamm_Einsehen.add(jButton6);
+        jButton6.setBounds(180, 20, 200, 30);
+
+        jButton7.setText("anzeigen");
+        Teilestamm_Einsehen.add(jButton7);
+        jButton7.setBounds(710, 200, 90, 40);
+
+        jComboBox1.setFont(new java.awt.Font("Arial", 0, 12));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "alle", "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
+        Teilestamm_Einsehen.add(jComboBox1);
+        jComboBox1.setBounds(70, 210, 100, 30);
+
+        jTabbedPane1.addTab("Teilestamm Einsehen", Teilestamm_Einsehen);
+
+        Teilestamm_erweitern.setLayout(null);
+
+        label_eingabeaufforderung.setFont(new java.awt.Font("Arial", 1, 12));
+        label_eingabeaufforderung.setText("Bitte geben Sie die Stammdaten für ein neues Teil ein:");
+        Teilestamm_erweitern.add(label_eingabeaufforderung);
+        label_eingabeaufforderung.setBounds(30, 20, 515, 15);
+
+        label_id.setFont(new java.awt.Font("Arial", 0, 12));
+        label_id.setText("ID:");
+        Teilestamm_erweitern.add(label_id);
+        label_id.setBounds(30, 60, 15, 15);
+
+        label_bezeichnung3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung3.setText("Bezeichnnung:");
+        Teilestamm_erweitern.add(label_bezeichnung3);
+        label_bezeichnung3.setBounds(30, 100, 81, 15);
+
+        label_teiltyp.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teiltyp.setText("Teiltyp:");
+        Teilestamm_erweitern.add(label_teiltyp);
+        label_teiltyp.setBounds(30, 130, 38, 15);
+
+        label_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        label_materialgruppe.setText("Materialgruppe:");
+        Teilestamm_erweitern.add(label_materialgruppe);
+        label_materialgruppe.setBounds(30, 160, 85, 15);
+
+        label_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12));
+        label_zeichnungsnummer.setText("Zeichnungsnr.:");
+        Teilestamm_erweitern.add(label_zeichnungsnummer);
+        label_zeichnungsnummer.setBounds(30, 200, 82, 15);
+
+        label_baugruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        label_baugruppe.setText("Baugruppe:");
+        Teilestamm_erweitern.add(label_baugruppe);
+        label_baugruppe.setBounds(30, 230, 64, 15);
+
+        textfeld_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_erweitern.add(textfeld_bezeichnung);
+        textfeld_bezeichnung.setBounds(130, 100, 150, 25);
+
+        combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12));
+        combobox_teiltyp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Teilestamm_erweitern.add(combobox_teiltyp);
+        combobox_teiltyp.setBounds(130, 130, 150, 25);
+
+        textfeld_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_erweitern.add(textfeld_materialgruppe);
+        textfeld_materialgruppe.setBounds(130, 160, 150, 25);
+
+        textfeld_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_erweitern.add(textfeld_zeichnungsnummer);
+        textfeld_zeichnungsnummer.setBounds(130, 190, 150, 25);
+
+        textfeld_baugruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_erweitern.add(textfeld_baugruppe);
+        textfeld_baugruppe.setBounds(130, 220, 150, 25);
+
+        label_preis.setFont(new java.awt.Font("Arial", 0, 12));
+        label_preis.setText("Preis:");
+        Teilestamm_erweitern.add(label_preis);
+        label_preis.setBounds(350, 100, 32, 15);
+
+        label_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_klein.setText("Max. Anz. Klein:");
+        Teilestamm_erweitern.add(label_max_anz_klein);
+        label_max_anz_klein.setBounds(350, 130, 83, 15);
+
+        label_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_mittel.setText("Max. Anz. Mittel:");
+        Teilestamm_erweitern.add(label_max_anz_mittel);
+        label_max_anz_mittel.setBounds(350, 160, 83, 15);
+
+        label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_gross.setText("Max. Anz. Groß:");
+        Teilestamm_erweitern.add(label_max_anz_gross);
+        label_max_anz_gross.setBounds(350, 200, 83, 15);
+
+        label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bemerkung.setText("Bemerkung:");
+        Teilestamm_erweitern.add(label_bemerkung);
+        label_bemerkung.setBounds(350, 230, 67, 15);
+
+        textfeld_preis.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_erweitern.add(textfeld_preis);
+        textfeld_preis.setBounds(450, 100, 154, 25);
+
+        textfeld_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_erweitern.add(textfeld_max_anz_klein);
+        textfeld_max_anz_klein.setBounds(450, 130, 154, 25);
+
+        textfeld_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_erweitern.add(textfeld_max_anz_mittel);
+        textfeld_max_anz_mittel.setBounds(450, 160, 154, 25);
+
+        textfeld_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_erweitern.add(textfeld_max_anz_gross);
+        textfeld_max_anz_gross.setBounds(450, 190, 154, 25);
+
+        textfeld_bemerkung.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_erweitern.add(textfeld_bemerkung);
+        textfeld_bemerkung.setBounds(450, 220, 154, 25);
+
+        label_waehrung.setFont(new java.awt.Font("Arial", 0, 12));
+        label_waehrung.setText("€");
+        Teilestamm_erweitern.add(label_waehrung);
+        label_waehrung.setBounds(630, 100, 7, 15);
+
+        button_anlegen.setFont(new java.awt.Font("Arial", 0, 12));
+        button_anlegen.setText("Anlegen");
+        Teilestamm_erweitern.add(button_anlegen);
+        button_anlegen.setBounds(30, 280, 57, 27);
+
+        textfeld_id.setText("text");
+        textfeld_id.setToolTipText("");
+        Teilestamm_erweitern.add(textfeld_id);
+        textfeld_id.setBounds(130, 60, 34, 18);
+
+        jTabbedPane1.addTab("Teilestamm erweitern", Teilestamm_erweitern);
+
+        Teilestamm_verwalten.setLayout(null);
+
+        label_eingabeaufforderung1.setFont(new java.awt.Font("Arial", 1, 12));
+        label_eingabeaufforderung1.setText("Bitte geben Sie die ID des Teiles ein:");
+        Teilestamm_verwalten.add(label_eingabeaufforderung1);
+        label_eingabeaufforderung1.setBounds(40, 30, 433, 15);
+
+        label_id1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_id1.setText("ID:");
+        Teilestamm_verwalten.add(label_id1);
+        label_id1.setBounds(40, 70, 15, 15);
+
+        textfeld_id1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_id1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfeld_id1ActionPerformed(evt);
+            }
+        });
+        Teilestamm_verwalten.add(textfeld_id1);
+        textfeld_id1.setBounds(130, 70, 59, 25);
+
+        label_bezeichnung4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung4.setText("Bezeichnnung:");
+        Teilestamm_verwalten.add(label_bezeichnung4);
+        label_bezeichnung4.setBounds(40, 110, 81, 15);
+
+        label_teiltyp1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teiltyp1.setText("Teiltyp:");
+        Teilestamm_verwalten.add(label_teiltyp1);
+        label_teiltyp1.setBounds(40, 140, 38, 15);
+
+        label_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_materialgruppe1.setText("Materialgruppe:");
+        Teilestamm_verwalten.add(label_materialgruppe1);
+        label_materialgruppe1.setBounds(40, 170, 85, 15);
+
+        label_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_zeichnungsnummer1.setText("Zeichnungsnr.:");
+        Teilestamm_verwalten.add(label_zeichnungsnummer1);
+        label_zeichnungsnummer1.setBounds(40, 200, 82, 15);
+
+        label_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_baugruppe1.setText("Baugruppe:");
+        Teilestamm_verwalten.add(label_baugruppe1);
+        label_baugruppe1.setBounds(40, 240, 64, 15);
+
+        textfeld_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_verwalten.add(textfeld_bezeichnung1);
+        textfeld_bezeichnung1.setBounds(130, 110, 161, 25);
+
+        textfeld_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_verwalten.add(textfeld_materialgruppe1);
+        textfeld_materialgruppe1.setBounds(130, 170, 161, 25);
+
+        textfeld_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_verwalten.add(textfeld_zeichnungsnummer1);
+        textfeld_zeichnungsnummer1.setBounds(130, 200, 161, 25);
+
+        textfeld_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_verwalten.add(textfeld_baugruppe1);
+        textfeld_baugruppe1.setBounds(130, 230, 161, 25);
+
+        label_preis1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_preis1.setText("Preis:");
+        Teilestamm_verwalten.add(label_preis1);
+        label_preis1.setBounds(310, 110, 32, 15);
+
+        label_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_klein1.setText("Max. Anz. Klein:");
+        Teilestamm_verwalten.add(label_max_anz_klein1);
+        label_max_anz_klein1.setBounds(310, 140, 83, 15);
+
+        label_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_mittel1.setText("Max. Anz. Mittel:");
+        Teilestamm_verwalten.add(label_max_anz_mittel1);
+        label_max_anz_mittel1.setBounds(310, 170, 83, 15);
+
+        label_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_gross1.setText("Max. Anz. Groß:");
+        Teilestamm_verwalten.add(label_max_anz_gross1);
+        label_max_anz_gross1.setBounds(310, 200, 83, 15);
+
+        label_bemerkung1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bemerkung1.setText("Bemerkung:");
+        Teilestamm_verwalten.add(label_bemerkung1);
+        label_bemerkung1.setBounds(310, 240, 67, 15);
+
+        textfeld_preis1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_verwalten.add(textfeld_preis1);
+        textfeld_preis1.setBounds(400, 110, 161, 25);
+
+        textfeld_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_verwalten.add(textfeld_max_anz_klein1);
+        textfeld_max_anz_klein1.setBounds(400, 140, 161, 25);
+
+        textfeld_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_verwalten.add(textfeld_max_anz_mittel1);
+        textfeld_max_anz_mittel1.setBounds(400, 170, 161, 25);
+
+        textfeld_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_verwalten.add(textfeld_max_anz_gross1);
+        textfeld_max_anz_gross1.setBounds(400, 200, 161, 25);
+
+        textfeld_bemerkung1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestamm_verwalten.add(textfeld_bemerkung1);
+        textfeld_bemerkung1.setBounds(400, 230, 161, 25);
+
+        label_waehrung1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_waehrung1.setText("€");
+        Teilestamm_verwalten.add(label_waehrung1);
+        label_waehrung1.setBounds(570, 110, 7, 15);
+
+        button_loeschen.setFont(new java.awt.Font("Arial", 1, 12));
+        button_loeschen.setText("Löschen");
+        Teilestamm_verwalten.add(button_loeschen);
+        button_loeschen.setBounds(480, 70, 61, 27);
+        Teilestamm_verwalten.add(textfeld_teiltyp);
+        textfeld_teiltyp.setBounds(130, 140, 161, 28);
+
+        button_suchen.setFont(new java.awt.Font("Arial", 1, 12));
+        button_suchen.setText("Suchen");
+        Teilestamm_verwalten.add(button_suchen);
+        button_suchen.setBounds(210, 70, 55, 27);
+
+        anzeigen_button.setFont(new java.awt.Font("Arial", 1, 12));
+        anzeigen_button.setText("Anzeigen");
+        Teilestamm_verwalten.add(anzeigen_button);
+        anzeigen_button.setBounds(310, 70, 64, 27);
+
+        aendern_button.setFont(new java.awt.Font("Arial", 1, 12));
+        aendern_button.setText("Ändern");
+        Teilestamm_verwalten.add(aendern_button);
+        aendern_button.setBounds(40, 280, 53, 27);
+
+        jTabbedPane1.addTab("Stammdaten verwalten", Teilestamm_verwalten);
+
+        getContentPane().add(jTabbedPane1);
+        jTabbedPane1.setBounds(0, 0, 1230, 750);
 
         Datei.setText("Datei");
         jMenuBar1.add(Datei);
@@ -97,14 +2169,28 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void einlagernButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_einlagernButtonActionPerformed
-        // TODO add your handling code here:
+    private void BestätigenidButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BestätigenidButtonActionPerformed
+
+    }//GEN-LAST:event_BestätigenidButtonActionPerformed
+
+    private void BestandTextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BestandTextfieldActionPerformed
+
+    }//GEN-LAST:event_BestandTextfieldActionPerformed
+
+    private void textfeld_id1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfeld_id1ActionPerformed
+
+        // TODO add your handling code here:}//GEN-LAST:event_textfeld_id1ActionPerformed
+
+        private void einlagernButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_einlagernButtonActionPerformed
+
     }//GEN-LAST:event_einlagernButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+       
+    
         /*
          * Set the Nimbus look and feel
          */
@@ -138,21 +2224,351 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new Übersicht_Lagerverwaltung().setVisible(true);
+              //  new Übersicht_Lagerverwaltung().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AusführenButton;
+    private javax.swing.JLabel BaugruppeLabel;
+    private javax.swing.JLabel BaugruppeTextfield;
     private javax.swing.JMenu Bearbeiten;
+    private javax.swing.JLabel BemerkungLabel;
+    private javax.swing.JLabel BemerkungLabel1;
+    private javax.swing.JScrollPane BemerkungScrollPane;
+    private javax.swing.JTextArea BemerkungTextArea;
+    private javax.swing.JLabel BemerkungTextfield;
+    private javax.swing.JTextField BestandTextfield;
+    private javax.swing.JLabel BestandverringernLabel;
+    private javax.swing.JButton BestätigenButton;
+    private javax.swing.JButton BestätigenidButton;
+    private javax.swing.JLabel BezTextfield1;
+    private javax.swing.JLabel BezeichnungLabel;
+    private javax.swing.JLabel BezeichnungLabel1;
+    private javax.swing.JLabel BezeichnungLabel2;
+    private javax.swing.JLabel BezeichnungTextfield;
+    private javax.swing.JLabel Bezeichnung_ausgabeLabel;
+    private javax.swing.JLabel BitteeingebenLabel;
+    private javax.swing.JPanel Buchungshistorie_einsehen_ausdrucken;
     private javax.swing.JMenu Datei;
+    private javax.swing.JLabel EuroLabel;
+    private javax.swing.JLabel FachLabel;
+    private javax.swing.JTextField FachTextfield;
+    private javax.swing.JLabel FachnrLabel_Ziel;
+    private javax.swing.JTextField FachnrTextfield;
+    private javax.swing.JTextField FachnrTextfield_Ziel;
+    private javax.swing.JLabel FachnummerLabel;
     private javax.swing.JButton HistorieButton;
+    private javax.swing.JLabel IDLabel;
+    private javax.swing.JTextField IDTextfield;
+    private javax.swing.JTextField IDTextfield1;
+    private javax.swing.JLabel IDTextfield2;
     private javax.swing.JLabel LagerverwaltungLabel;
+    private javax.swing.JLabel MAGLabel;
+    private javax.swing.JLabel MAGTextfield;
+    private javax.swing.JLabel MAKLabel;
+    private javax.swing.JLabel MAKTextfield;
+    private javax.swing.JLabel MAMLabel;
+    private javax.swing.JLabel MAMTextfield;
+    private javax.swing.JLabel MaterialTextfield;
+    private javax.swing.JLabel MaterialgruppeLabel;
+    private javax.swing.JLabel MengeLabel;
+    private javax.swing.JLabel MengeTextfield;
+    private javax.swing.JLabel PreisLabel;
+    private javax.swing.JLabel PreisTextfield;
+    private javax.swing.JLabel StammdatenLabel;
+    private javax.swing.JButton SuchenButton;
+    private javax.swing.JButton SuchenButton1;
+    private javax.swing.JLabel TeileIDLabel;
+    private javax.swing.JLabel TeileLabel;
+    private javax.swing.JLabel TeileLabel1;
+    private javax.swing.JPanel Teile_Splitten;
+    private javax.swing.JPanel Teile_auslagern;
+    private javax.swing.JTabbedPane Teile_einlagern;
+    private javax.swing.JPanel Teile_entfernen_loeschen;
+    private javax.swing.JPanel Teile_umlagern;
+    private javax.swing.JPanel Teilestamm_Einsehen;
+    private javax.swing.JPanel Teilestamm_erweitern;
+    private javax.swing.JPanel Teilestamm_verwalten;
+    private javax.swing.JButton Teilestammdatenbutton;
+    private javax.swing.JLabel TypTextfield;
+    private javax.swing.JButton UmlagernButton;
+    private javax.swing.JLabel ZNrTextfield;
+    private javax.swing.JLabel ZeichnungsnrLabel;
+    private javax.swing.JLabel ZielfachLabel;
+    private javax.swing.JButton aendern_button;
+    private javax.swing.JButton anzeigen_button;
+    private javax.swing.JTextField ausgangsfachnummer_textfeld;
     private javax.swing.JButton auslagernButton;
+    private javax.swing.JButton bestaetigen_button;
+    private javax.swing.JButton bestaetigen_button1;
+    private javax.swing.JButton bestaetigen_button2;
+    private javax.swing.JButton bestätigenButton;
+    private javax.swing.JTextField bezeichnung_textfeld1;
+    private javax.swing.JButton button_anlegen;
+    private javax.swing.JButton button_fachnumer1;
+    private javax.swing.JButton button_loeschen;
+    private javax.swing.JButton button_suchen;
+    private javax.swing.JComboBox combobox_teiltyp;
+    private javax.swing.JLabel eingebenLabel;
     private javax.swing.JButton einlagernButton;
+    private javax.swing.JButton einlagern_button;
     private javax.swing.JButton einsehenButton;
+    private javax.swing.JTextField fachnummer_textfeld1;
+    private javax.swing.JTextField fachnummer_textfeld10;
+    private javax.swing.JTextField fachnummer_textfeld11;
+    private javax.swing.JTextField fachnummer_textfeld12;
+    private javax.swing.JTextField fachnummer_textfeld13;
+    private javax.swing.JTextField fachnummer_textfeld14;
+    private javax.swing.JTextField fachnummer_textfeld15;
+    private javax.swing.JTextField fachnummer_textfeld16;
+    private javax.swing.JTextField fachnummer_textfeld17;
+    private javax.swing.JTextField fachnummer_textfeld18;
+    private javax.swing.JTextField fachnummer_textfeld19;
+    private javax.swing.JTextField fachnummer_textfeld2;
+    private javax.swing.JTextField fachnummer_textfeld20;
+    private javax.swing.JTextField fachnummer_textfeld3;
+    private javax.swing.JTextField fachnummer_textfeld4;
+    private javax.swing.JTextField fachnummer_textfeld5;
+    private javax.swing.JTextField fachnummer_textfeld6;
+    private javax.swing.JTextField fachnummer_textfeld7;
+    private javax.swing.JTextField fachnummer_textfeld8;
+    private javax.swing.JTextField fachnummer_textfeld9;
+    private javax.swing.JTextField id_textfeld;
+    private javax.swing.JTextField id_textfeld2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton kapazitaet_pruefen_button1;
+    private javax.swing.JButton kapazitaet_pruefen_button10;
+    private javax.swing.JButton kapazitaet_pruefen_button11;
+    private javax.swing.JButton kapazitaet_pruefen_button12;
+    private javax.swing.JButton kapazitaet_pruefen_button13;
+    private javax.swing.JButton kapazitaet_pruefen_button14;
+    private javax.swing.JButton kapazitaet_pruefen_button15;
+    private javax.swing.JButton kapazitaet_pruefen_button16;
+    private javax.swing.JButton kapazitaet_pruefen_button17;
+    private javax.swing.JButton kapazitaet_pruefen_button18;
+    private javax.swing.JButton kapazitaet_pruefen_button19;
+    private javax.swing.JButton kapazitaet_pruefen_button2;
+    private javax.swing.JButton kapazitaet_pruefen_button20;
+    private javax.swing.JButton kapazitaet_pruefen_button3;
+    private javax.swing.JButton kapazitaet_pruefen_button4;
+    private javax.swing.JButton kapazitaet_pruefen_button5;
+    private javax.swing.JButton kapazitaet_pruefen_button6;
+    private javax.swing.JButton kapazitaet_pruefen_button7;
+    private javax.swing.JButton kapazitaet_pruefen_button8;
+    private javax.swing.JButton kapazitaet_pruefen_button9;
+    private javax.swing.JLabel label_anzeige_bezeichnung;
+    private javax.swing.JLabel label_anzeige_bezeichnung1;
+    private javax.swing.JLabel label_anzeige_mindestgroesse;
+    private javax.swing.JLabel label_anzeige_mindestgroesse1;
+    private javax.swing.JLabel label_anzeige_mindestgroesse2;
+    private javax.swing.JLabel label_anzeige_teile_id;
+    private javax.swing.JLabel label_ausgangsfachnummer;
+    private javax.swing.JLabel label_baugruppe;
+    private javax.swing.JLabel label_baugruppe1;
+    private javax.swing.JLabel label_bemerkung;
+    private javax.swing.JLabel label_bemerkung1;
+    private javax.swing.JLabel label_bezeichnung;
+    private javax.swing.JLabel label_bezeichnung1;
+    private javax.swing.JLabel label_bezeichnung2;
+    private javax.swing.JLabel label_bezeichnung3;
+    private javax.swing.JLabel label_bezeichnung4;
+    private javax.swing.JLabel label_eingabe_aufforderung_fach;
+    private javax.swing.JLabel label_eingabe_aufforderung_fachnummer;
+    private javax.swing.JLabel label_eingabe_aufforderung_id;
+    private javax.swing.JLabel label_eingabe_aufforderung_id1;
+    private javax.swing.JLabel label_eingabe_aufforderung_id2;
+    private javax.swing.JLabel label_eingabeaufforderung;
+    private javax.swing.JLabel label_eingabeaufforderung1;
+    private javax.swing.JLabel label_eingabeaufforderung_einlagern;
+    private javax.swing.JLabel label_eingabeaufforderung_splitten;
+    private javax.swing.JLabel label_einlagern_nummer1;
+    private javax.swing.JLabel label_einlagern_nummer10;
+    private javax.swing.JLabel label_einlagern_nummer2;
+    private javax.swing.JLabel label_einlagern_nummer3;
+    private javax.swing.JLabel label_einlagern_nummer4;
+    private javax.swing.JLabel label_einlagern_nummer5;
+    private javax.swing.JLabel label_einlagern_nummer6;
+    private javax.swing.JLabel label_einlagern_nummer7;
+    private javax.swing.JLabel label_einlagern_nummer8;
+    private javax.swing.JLabel label_einlagern_nummer9;
+    private javax.swing.JLabel label_fachnummer1;
+    private javax.swing.JLabel label_fachnummer10;
+    private javax.swing.JLabel label_fachnummer11;
+    private javax.swing.JLabel label_fachnummer12;
+    private javax.swing.JLabel label_fachnummer13;
+    private javax.swing.JLabel label_fachnummer14;
+    private javax.swing.JLabel label_fachnummer15;
+    private javax.swing.JLabel label_fachnummer16;
+    private javax.swing.JLabel label_fachnummer17;
+    private javax.swing.JLabel label_fachnummer18;
+    private javax.swing.JLabel label_fachnummer19;
+    private javax.swing.JLabel label_fachnummer2;
+    private javax.swing.JLabel label_fachnummer20;
+    private javax.swing.JLabel label_fachnummer3;
+    private javax.swing.JLabel label_fachnummer4;
+    private javax.swing.JLabel label_fachnummer5;
+    private javax.swing.JLabel label_fachnummer6;
+    private javax.swing.JLabel label_fachnummer7;
+    private javax.swing.JLabel label_fachnummer8;
+    private javax.swing.JLabel label_fachnummer9;
+    private javax.swing.JLabel label_id;
+    private javax.swing.JLabel label_id1;
+    private javax.swing.JLabel label_materialgruppe;
+    private javax.swing.JLabel label_materialgruppe1;
+    private javax.swing.JLabel label_max_anz_gross;
+    private javax.swing.JLabel label_max_anz_gross1;
+    private javax.swing.JLabel label_max_anz_klein;
+    private javax.swing.JLabel label_max_anz_klein1;
+    private javax.swing.JLabel label_max_anz_mittel;
+    private javax.swing.JLabel label_max_anz_mittel1;
+    private javax.swing.JLabel label_menge1;
+    private javax.swing.JLabel label_menge10;
+    private javax.swing.JLabel label_menge11;
+    private javax.swing.JLabel label_menge12;
+    private javax.swing.JLabel label_menge13;
+    private javax.swing.JLabel label_menge14;
+    private javax.swing.JLabel label_menge15;
+    private javax.swing.JLabel label_menge16;
+    private javax.swing.JLabel label_menge17;
+    private javax.swing.JLabel label_menge18;
+    private javax.swing.JLabel label_menge19;
+    private javax.swing.JLabel label_menge2;
+    private javax.swing.JLabel label_menge20;
+    private javax.swing.JLabel label_menge3;
+    private javax.swing.JLabel label_menge4;
+    private javax.swing.JLabel label_menge5;
+    private javax.swing.JLabel label_menge6;
+    private javax.swing.JLabel label_menge7;
+    private javax.swing.JLabel label_menge8;
+    private javax.swing.JLabel label_menge9;
+    private javax.swing.JLabel label_mindestgroesse;
+    private javax.swing.JLabel label_mindestgroesse1;
+    private javax.swing.JLabel label_mindestgroesse2;
+    private javax.swing.JLabel label_oder1;
+    private javax.swing.JLabel label_preis;
+    private javax.swing.JLabel label_preis1;
+    private javax.swing.JLabel label_splitten_nummer1;
+    private javax.swing.JLabel label_splitten_nummer10;
+    private javax.swing.JLabel label_splitten_nummer2;
+    private javax.swing.JLabel label_splitten_nummer3;
+    private javax.swing.JLabel label_splitten_nummer4;
+    private javax.swing.JLabel label_splitten_nummer5;
+    private javax.swing.JLabel label_splitten_nummer6;
+    private javax.swing.JLabel label_splitten_nummer7;
+    private javax.swing.JLabel label_splitten_nummer8;
+    private javax.swing.JLabel label_splitten_nummer9;
+    private javax.swing.JLabel label_teil_eingelagert;
+    private javax.swing.JLabel label_teile_id;
+    private javax.swing.JLabel label_teile_id2;
+    private javax.swing.JLabel label_teiltyp;
+    private javax.swing.JLabel label_teiltyp1;
+    private javax.swing.JLabel label_waehrung;
+    private javax.swing.JLabel label_waehrung1;
+    private javax.swing.JLabel label_zeichnungsnummer;
+    private javax.swing.JLabel label_zeichnungsnummer1;
+    private javax.swing.JButton loeschenButton;
+    private javax.swing.JTextField menge_textfeld1;
+    private javax.swing.JTextField menge_textfeld10;
+    private javax.swing.JTextField menge_textfeld11;
+    private javax.swing.JTextField menge_textfeld12;
+    private javax.swing.JTextField menge_textfeld13;
+    private javax.swing.JTextField menge_textfeld14;
+    private javax.swing.JTextField menge_textfeld15;
+    private javax.swing.JTextField menge_textfeld16;
+    private javax.swing.JTextField menge_textfeld17;
+    private javax.swing.JTextField menge_textfeld18;
+    private javax.swing.JTextField menge_textfeld19;
+    private javax.swing.JTextField menge_textfeld2;
+    private javax.swing.JTextField menge_textfeld20;
+    private javax.swing.JTextField menge_textfeld21;
+    private javax.swing.JTextField menge_textfeld3;
+    private javax.swing.JTextField menge_textfeld4;
+    private javax.swing.JTextField menge_textfeld5;
+    private javax.swing.JTextField menge_textfeld6;
+    private javax.swing.JTextField menge_textfeld7;
+    private javax.swing.JTextField menge_textfeld8;
+    private javax.swing.JTextField menge_textfeld9;
     private javax.swing.JButton splittenButton;
+    private javax.swing.JButton splitten_button;
+    private javax.swing.JButton suchenButton;
+    private javax.swing.JButton suchen_button;
+    private javax.swing.JButton suchen_button1;
+    private javax.swing.JButton suchen_button2;
+    private javax.swing.JTextField textfeld_baugruppe;
+    private javax.swing.JTextField textfeld_baugruppe1;
+    private javax.swing.JTextField textfeld_bemerkung;
+    private javax.swing.JTextField textfeld_bemerkung1;
+    private javax.swing.JTextField textfeld_bezeichnung;
+    private javax.swing.JTextField textfeld_bezeichnung1;
+    private javax.swing.JLabel textfeld_id;
+    private javax.swing.JTextField textfeld_id1;
+    private javax.swing.JTextField textfeld_materialgruppe;
+    private javax.swing.JTextField textfeld_materialgruppe1;
+    private javax.swing.JTextField textfeld_max_anz_gross;
+    private javax.swing.JTextField textfeld_max_anz_gross1;
+    private javax.swing.JTextField textfeld_max_anz_klein;
+    private javax.swing.JTextField textfeld_max_anz_klein1;
+    private javax.swing.JTextField textfeld_max_anz_mittel;
+    private javax.swing.JTextField textfeld_max_anz_mittel1;
+    private javax.swing.JTextField textfeld_preis;
+    private javax.swing.JTextField textfeld_preis1;
+    private javax.swing.JTextField textfeld_teiltyp;
+    private javax.swing.JTextField textfeld_zeichnungsnummer;
+    private javax.swing.JTextField textfeld_zeichnungsnummer1;
     private javax.swing.JButton umlagernButton;
     private javax.swing.JButton verwaltenButton;
+    private javax.swing.JPanel Übersicht_Lagerverwaltung;
     // End of variables declaration//GEN-END:variables
 }
