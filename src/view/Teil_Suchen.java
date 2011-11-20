@@ -593,7 +593,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
     private void mCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCBActionPerformed
 
         // TODO add your handling code here:}//GEN-LAST:event_mCBActionPerformed
-
+    }
     /**
      * @param args the command line arguments
      */

@@ -2145,9 +2145,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_BestandTextfieldActionPerformed
 
     private void textfeld_id1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfeld_id1ActionPerformed
-
+    
         // TODO add your handling code here:}//GEN-LAST:event_textfeld_id1ActionPerformed
-
+}
     /**
      * @param args the command line arguments
      */

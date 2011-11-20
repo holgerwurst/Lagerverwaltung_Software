@@ -9,66 +9,75 @@ package Model;
 
 //..begin "Imports"
 
+import java.util.GregorianCalendar;
+
+
 //..end "Imports"
 
 
 public class Lagerbestandskonto {
 
+    //Deklaration der Variablen
         private int id;
 	private String fachnummer;
 	private int menge;
 	private String anschaffungsgrund;
-	private java.util.GregorianCalendar haltbarkeitsdatum;
+	private GregorianCalendar haltbarkeitsdatum;
+         
+        //Konstruktor
 	public Lagerbestandskonto(int id, String fachnummer, int menge, String anschaffungsgrund,
-                java.util.GregorianCalendar datum) {
+                GregorianCalendar datum) {
         
         this.id = id;
         this.fachnummer = fachnummer;
         this.menge = menge;
         this.anschaffungsgrund = anschaffungsgrund;
-        this.haltbarkeitsdatum = haltbarkeitsdatum;
+        this.haltbarkeitsdatum = datum;
 	
 	}
+        
+        // getter Methoden
+        
 	public int get_TeileID() {
-		return 0;
+		return id;
 	}
 	
 	public String get_Fachnummer() {
-		return "";
+		return fachnummer;
 	}
 	
 	public int get_Menge() {
-		return 0;
+		return menge;
 	}
 	
 	public String get_Anschaffungsgrund() {
-		return "";
+		return anschaffungsgrund;
 	}
 	
-	public java.util.GregorianCalendar get_Haltbarkeitsdatum() {
-		return null;
+	public GregorianCalendar get_Haltbarkeitsdatum() {
+		return haltbarkeitsdatum;
 	}
 	
+	// setter Methoden
 	
-	
-	public void set_id() {
-	
+	public void set_id(int n_id) {
+                id=n_id;
 	}
 	
-	public void set_Fachnummer() {
-	
+	public void set_Fachnummer(String n_fachnummer) {
+                fachnummer=n_fachnummer;
 	}
 	
-	public void set_Menge() {
-	
+	public void set_Menge(int n_menge) {
+                menge=n_menge;
 	}
 	
-	public void set_Anschaffungsgrund() {
-	
+	public void set_Anschaffungsgrund(String n_asg) {
+                anschaffungsgrund=n_asg;
 	}
 	
-	public void set_Haltbarkeitsdatum() {
-	
+	public void set_Haltbarkeitsdatum(GregorianCalendar n_date) {
+                haltbarkeitsdatum=n_date;
 	}
 	
 	

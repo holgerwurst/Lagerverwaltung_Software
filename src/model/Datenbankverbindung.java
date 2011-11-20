@@ -42,8 +42,8 @@ public class Datenbankverbindung {
       }
      
      public void disconnect() throws ClassNotFoundException{
-          try{
-              
+          
+     try{              
         if(connection != null)
           connection.close();
       }

@@ -1,27 +1,28 @@
 package Model;
 
 //..begin "Imports"
-import TeileTypET;
+import model.TeileTypET;
 //..end "Imports"
 
 
 public class Teil_Stammdaten {
    
-        
+        //Deklaration der Variablen
 	private String materialgruppe;
 	private String zeichnungsnummer;
-        private int preis;
+        private double preis;
 	private String bezeichnung;
       	private String bemerkung;
 	private int max_anzahl_klein;
 	private int max_anzahl_mittel;
 	private int max_anzahl_gross;
 	private String baugruppe;
-        private String typ;
+        private TeileTypET typ;
         private int id;
         
-public Teil_Stammdaten(int id, String typ, String baugruppe, String zeichnungsnummer,
-        int preis, String bezeichnung, String bemerkung, int max_anzahl_klein, int max_anzahl_mittel, int max_anzahl_gross, String materialgruppe) {
+        //Konstruktor
+        public Teil_Stammdaten(int id, TeileTypET typ, String baugruppe, String zeichnungsnummer,
+        double preis, String bezeichnung, String bemerkung, int max_anzahl_klein, int max_anzahl_mittel, int max_anzahl_gross, String materialgruppe) {
     
         this.zeichnungsnummer = zeichnungsnummer;
         this.preis = preis;
@@ -35,94 +36,97 @@ public Teil_Stammdaten(int id, String typ, String baugruppe, String zeichnungsnu
         this.id = id;
         this.materialgruppe = materialgruppe;	
 	}
+        
+        // getter Methoden
 	public int get_id() {
-		return 0;
+		return id;
 	}
 	
 	public TeileTypET get_Teiletyp() {
-		return null;
+		return typ;
 	}
 	
 	public String get_Materialgruppe() {
-		return "";
+		return materialgruppe;
 	}
 	
 	public String get_Zeichnungsnummer() {
-		return "";
+		return zeichnungsnummer;
 	}
 	
 	public double get_Preis() {
-		return 0;
+		return preis;
 	}
 	
 	public String get_Bezeichnung() {
-		return "";
+		return bezeichnung;
 	}
 	
 	public String get_Bemerkung() {
-		return "";
+		return bemerkung;
 	}
 	
 	public int get_max_anz_klein() {
-		return 0;
+		return max_anzahl_klein;
 	}
 	
 	public int get_max_anz_mittel() {
-		return 0;
+		return max_anzahl_mittel;
 	}
 	
 	public int get_max_anz_gross() {
-		return 0;
+		return max_anzahl_gross;
 	}
 	
 	public String get_Baugruppe() {
-		return "";
+		return baugruppe;
 	}
 	
 	
+	// setter Methoden
+	public void set_id(int neue_id) {
 	
-	public void set_id() {
-	
+            id=neue_id;
 	}
 	
-	public void set_Teiletyp() {
-	
+	public void set_Teiletyp(TeileTypET neuer_typ) {
+            typ=neuer_typ;
 	}
 	
-	public void set_Materialgruppe() {
-	
+	public void set_Materialgruppe(String neue_msgrp) {
+	materialgruppe=neue_msgrp;
 	}
 	
-	public void set_zeichnungsnummer() {
-	
+	public void set_zeichnungsnummer(String neue_znr) {
+	zeichnungsnummer=neue_znr;
 	}
 	
-	public void set_preis() {
-	
+	public void set_preis(double neuer_preis) {
+	preis=neuer_preis;
 	}
 	
-	public void set_Bezeichnung() {
-	
+	public void set_Bezeichnung(String neue_bez) {
+	bezeichnung=neue_bez;
 	}
 	
-	public void set_bemerkung() {
-	
+	public void set_bemerkung(String neue_bem) {
+	bemerkung=neue_bem;
 	}
 	
-	public void set_max_anzahl_klein() {
-	
+	public void set_max_anzahl_klein(int n_mak) {
+	max_anzahl_klein=n_mak;
 	}
 	
-	public void set_max_anzahl_mittel() {
-	
+	public void set_max_anzahl_mittel(int n_mam) {
+	max_anzahl_mittel=n_mam;
 	}
 	
-	public void set_max_anzahl_gross() {
-	
+	public void set_max_anzahl_gross(int n_mag) {
+	max_anzahl_gross=n_mag;
 	}
 	
-	public void set_Baugruppe() {
-	
+	public void set_Baugruppe(String neue_bgrp) {
+	baugruppe=neue_bgrp;
 	}
 	
 	

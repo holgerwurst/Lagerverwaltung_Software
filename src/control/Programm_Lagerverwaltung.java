@@ -4,6 +4,7 @@
  */
 package control;
 
+
 /**
  *
  * @author Wayne
@@ -15,5 +16,6 @@ public class Programm_Lagerverwaltung {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+            
     }
 }
