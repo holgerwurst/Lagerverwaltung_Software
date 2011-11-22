@@ -178,23 +178,23 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         textarea_bemerkung_verwalten = new javax.swing.JTextArea();
         Teilestamm_Einsehen = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        stEi_labelTeileStammdaten = new javax.swing.JLabel();
+        stEi_labelid = new javax.swing.JLabel();
+        stEi_labelZeichnNr = new javax.swing.JLabel();
+        stEi_labelMAM = new javax.swing.JLabel();
         stEi_idfeld = new javax.swing.JTextField();
         stEi_ZNrfeld = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        stEi_labelBezeichnung = new javax.swing.JLabel();
+        stEi_labelBaugruppe = new javax.swing.JLabel();
+        stEi_labelMAG = new javax.swing.JLabel();
         stEi_Bezeichnungsfeld = new javax.swing.JTextField();
         stEi_Baugruppenfeld = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        stEi_labelTeiletyp = new javax.swing.JLabel();
+        stEi_labelPreis = new javax.swing.JLabel();
         stEi_MAGfeld = new javax.swing.JTextField();
         stEi_MAMfeld = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        stEi_labelMaterialgruppe = new javax.swing.JLabel();
+        stEi_labelMAK = new javax.swing.JLabel();
         stEi_Suchbutton = new javax.swing.JButton();
         stEi_MAKfeld = new javax.swing.JTextField();
         stEi_jScrollPane5 = new javax.swing.JScrollPane();
@@ -401,7 +401,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_anzeige_mindestgroesse2);
         label_anzeige_mindestgroesse2.setBounds(620, 110, 50, 20);
 
-        label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabe_aufforderung_id2.setText("Bitte geben Sie die Teile ID oder die Bezeichnung ein:");
         jPanel8.add(label_eingabe_aufforderung_id2);
         label_eingabe_aufforderung_id2.setBounds(30, 20, 300, 20);
@@ -1205,25 +1205,25 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teilestamm_Einsehen.setLayout(null);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel6.setText("Teile Stammdaten");
-        Teilestamm_Einsehen.add(jLabel6);
-        jLabel6.setBounds(30, 30, 101, 15);
+        stEi_labelTeileStammdaten.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelTeileStammdaten.setText("Teile Stammdaten");
+        Teilestamm_Einsehen.add(stEi_labelTeileStammdaten);
+        stEi_labelTeileStammdaten.setBounds(30, 30, 101, 15);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 12));
-        jLabel8.setText("ID");
-        Teilestamm_Einsehen.add(jLabel8);
-        jLabel8.setBounds(50, 120, 12, 15);
+        stEi_labelid.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelid.setText("ID");
+        Teilestamm_Einsehen.add(stEi_labelid);
+        stEi_labelid.setBounds(50, 120, 12, 15);
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 12));
-        jLabel9.setText("Zeichn.Nr.");
-        Teilestamm_Einsehen.add(jLabel9);
-        jLabel9.setBounds(10, 170, 56, 15);
+        stEi_labelZeichnNr.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelZeichnNr.setText("Zeichn.Nr.");
+        Teilestamm_Einsehen.add(stEi_labelZeichnNr);
+        stEi_labelZeichnNr.setBounds(10, 170, 56, 15);
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 12));
-        jLabel10.setText("MAM");
-        Teilestamm_Einsehen.add(jLabel10);
-        jLabel10.setBounds(450, 170, 25, 15);
+        stEi_labelMAM.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelMAM.setText("MAM");
+        Teilestamm_Einsehen.add(stEi_labelMAM);
+        stEi_labelMAM.setBounds(450, 170, 25, 15);
 
         stEi_idfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         stEi_idfeld.setToolTipText("00001 bis 10000");
@@ -1237,20 +1237,20 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(stEi_ZNrfeld);
         stEi_ZNrfeld.setBounds(70, 160, 100, 30);
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel11.setText("Bezeichnung");
-        Teilestamm_Einsehen.add(jLabel11);
-        jLabel11.setBounds(200, 120, 71, 15);
+        stEi_labelBezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelBezeichnung.setText("Bezeichnung");
+        Teilestamm_Einsehen.add(stEi_labelBezeichnung);
+        stEi_labelBezeichnung.setBounds(200, 120, 71, 15);
 
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 12));
-        jLabel12.setText("Baugruppe");
-        Teilestamm_Einsehen.add(jLabel12);
-        jLabel12.setBounds(210, 170, 61, 15);
+        stEi_labelBaugruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelBaugruppe.setText("Baugruppe");
+        Teilestamm_Einsehen.add(stEi_labelBaugruppe);
+        stEi_labelBaugruppe.setBounds(210, 170, 61, 15);
 
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 12));
-        jLabel13.setText("MAG");
-        Teilestamm_Einsehen.add(jLabel13);
-        jLabel13.setBounds(450, 220, 25, 15);
+        stEi_labelMAG.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelMAG.setText("MAG");
+        Teilestamm_Einsehen.add(stEi_labelMAG);
+        stEi_labelMAG.setBounds(450, 220, 25, 15);
 
         stEi_Bezeichnungsfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         stEi_Bezeichnungsfeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
@@ -1263,15 +1263,15 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(stEi_Baugruppenfeld);
         stEi_Baugruppenfeld.setBounds(280, 160, 108, 30);
 
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 12));
-        jLabel14.setText("Teiletyp");
-        Teilestamm_Einsehen.add(jLabel14);
-        jLabel14.setBounds(20, 220, 42, 15);
+        stEi_labelTeiletyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelTeiletyp.setText("Teiletyp");
+        Teilestamm_Einsehen.add(stEi_labelTeiletyp);
+        stEi_labelTeiletyp.setBounds(20, 220, 42, 15);
 
-        jLabel15.setFont(new java.awt.Font("Arial", 0, 12));
-        jLabel15.setText("Preis");
-        Teilestamm_Einsehen.add(jLabel15);
-        jLabel15.setBounds(670, 120, 29, 15);
+        stEi_labelPreis.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelPreis.setText("Preis");
+        Teilestamm_Einsehen.add(stEi_labelPreis);
+        stEi_labelPreis.setBounds(670, 120, 29, 15);
 
         stEi_MAGfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         stEi_MAGfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe groß passt");
@@ -1285,15 +1285,15 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(stEi_MAMfeld);
         stEi_MAMfeld.setBounds(490, 160, 100, 30);
 
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 12));
-        jLabel16.setText("Materialgruppe");
-        Teilestamm_Einsehen.add(jLabel16);
-        jLabel16.setBounds(190, 220, 82, 15);
+        stEi_labelMaterialgruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelMaterialgruppe.setText("Materialgruppe");
+        Teilestamm_Einsehen.add(stEi_labelMaterialgruppe);
+        stEi_labelMaterialgruppe.setBounds(190, 220, 82, 15);
 
-        jLabel17.setFont(new java.awt.Font("Arial", 0, 12));
-        jLabel17.setText("MAK");
-        Teilestamm_Einsehen.add(jLabel17);
-        jLabel17.setBounds(450, 120, 24, 15);
+        stEi_labelMAK.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelMAK.setText("MAK");
+        Teilestamm_Einsehen.add(stEi_labelMAK);
+        stEi_labelMAK.setBounds(450, 120, 24, 15);
 
         stEi_Suchbutton.setText("... suchen");
         Teilestamm_Einsehen.add(stEi_Suchbutton);
@@ -2301,17 +2301,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField fachnummer_textfeld9;
     private javax.swing.JTextField id_textfeld;
     private javax.swing.JTextField id_textfeld2;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -2500,6 +2489,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JButton stEi_anzeigenButton;
     private javax.swing.JTextField stEi_idfeld;
     private javax.swing.JScrollPane stEi_jScrollPane5;
+    private javax.swing.JLabel stEi_labelBaugruppe;
+    private javax.swing.JLabel stEi_labelBezeichnung;
+    private javax.swing.JLabel stEi_labelMAG;
+    private javax.swing.JLabel stEi_labelMAK;
+    private javax.swing.JLabel stEi_labelMAM;
+    private javax.swing.JLabel stEi_labelMaterialgruppe;
+    private javax.swing.JLabel stEi_labelPreis;
+    private javax.swing.JLabel stEi_labelTeileStammdaten;
+    private javax.swing.JLabel stEi_labelTeiletyp;
+    private javax.swing.JLabel stEi_labelZeichnNr;
+    private javax.swing.JLabel stEi_labelid;
     private javax.swing.JButton suchenButton;
     private javax.swing.JButton suchen_button;
     private javax.swing.JButton suchen_button1;
