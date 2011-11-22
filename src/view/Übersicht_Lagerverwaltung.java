@@ -182,28 +182,28 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        stEi_idfeld = new javax.swing.JTextField();
+        stEi_ZNrfeld = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        stEi_Bezeichnungsfeld = new javax.swing.JTextField();
+        stEi_Baugruppenfeld = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        stEi_MAGfeld = new javax.swing.JTextField();
+        stEi_MAMfeld = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jTextField12 = new javax.swing.JTextField();
-        jScrollPane5 = new javax.swing.JScrollPane();
+        stEi_Suchbutton = new javax.swing.JButton();
+        stEi_MAKfeld = new javax.swing.JTextField();
+        stEi_jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        stEi_Materialgruppefeld = new javax.swing.JTextField();
+        stEi_Preisfeld = new javax.swing.JTextField();
+        stEi_alleAnzeigenButton = new javax.swing.JButton();
+        stEi_anzeigenButton = new javax.swing.JButton();
+        stEi_TeiletypCombobox = new javax.swing.JComboBox();
         Teile_umlagern = new javax.swing.JPanel();
         BitteeingebenLabel = new javax.swing.JLabel();
         FachnummerLabel = new javax.swing.JLabel();
@@ -371,7 +371,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         jPanel8.setLayout(null);
 
-        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12));
         bestaetigen_button2.setText("Bestätigen");
         jPanel8.add(bestaetigen_button2);
         bestaetigen_button2.setBounds(40, 180, 100, 23);
@@ -391,12 +391,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_bezeichnung2);
         label_bezeichnung2.setBounds(440, 60, 80, 20);
 
-        label_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
         label_mindestgroesse2.setText("Mindestgröße:");
         jPanel8.add(label_mindestgroesse2);
         label_mindestgroesse2.setBounds(440, 110, 90, 20);
 
-        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
         label_anzeige_mindestgroesse2.setText("größe");
         jPanel8.add(label_anzeige_mindestgroesse2);
         label_anzeige_mindestgroesse2.setBounds(620, 110, 50, 20);
@@ -420,7 +420,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(bezeichnung_textfeld1);
         bezeichnung_textfeld1.setBounds(630, 60, 100, 20);
 
-        label_menge.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge.setFont(new java.awt.Font("Arial", 0, 12));
         label_menge.setText("Einzulagernde Menge:");
         jPanel8.add(label_menge);
         label_menge.setBounds(40, 110, 122, 15);
@@ -429,7 +429,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_menge_übrig);
         label_menge_übrig.setBounds(620, 180, 20, 14);
 
-        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12));
         laber_noch_einzulagern.setText("noch einzulagernde Menge:");
         jPanel8.add(laber_noch_einzulagern);
         laber_noch_einzulagern.setBounds(440, 180, 170, 15);
@@ -437,7 +437,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         einlagern_button_tabelle.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         einlagern_button_tabelle.setText("einlagern");
         jPanel8.add(einlagern_button_tabelle);
-        einlagern_button_tabelle.setBounds(10, 470, 110, 23);
+        einlagern_button_tabelle.setBounds(50, 460, 110, 23);
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -636,7 +636,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_menge18.setFont(new java.awt.Font("Arial", 0, 12));
         label_menge18.setText("Menge:");
 
-        einlagern_button_fach.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        einlagern_button_fach.setFont(new java.awt.Font("Arial", 0, 12));
         einlagern_button_fach.setText("Einlagern");
 
         label_fachnummer19.setFont(new java.awt.Font("Arial", 0, 12));
@@ -1066,7 +1066,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teilestamm_verwalten.setLayout(null);
 
-        label_eingabeaufforderung1.setFont(new java.awt.Font("Arial", 1, 12));
+        label_eingabeaufforderung1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         label_eingabeaufforderung1.setText("Bitte geben Sie die ID des Teiles ein:");
         Teilestamm_verwalten.add(label_eingabeaufforderung1);
         label_eingabeaufforderung1.setBounds(40, 30, 433, 15);
@@ -1205,7 +1205,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teilestamm_Einsehen.setLayout(null);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel6.setText("Teile Stammdaten");
         Teilestamm_Einsehen.add(jLabel6);
         jLabel6.setBounds(30, 30, 101, 15);
@@ -1225,19 +1225,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(jLabel10);
         jLabel10.setBounds(450, 170, 25, 15);
 
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 12));
-        jTextField4.setToolTipText("00001 bis 10000");
-        jTextField4.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(jTextField4);
-        jTextField4.setBounds(70, 110, 100, 30);
+        stEi_idfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_idfeld.setToolTipText("00001 bis 10000");
+        stEi_idfeld.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(stEi_idfeld);
+        stEi_idfeld.setBounds(70, 110, 100, 30);
 
-        jTextField5.setFont(new java.awt.Font("Arial", 0, 12));
-        jTextField5.setToolTipText("lässt 2 bis 60 Zeichen zu.");
-        jTextField5.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(jTextField5);
-        jTextField5.setBounds(70, 160, 100, 30);
+        stEi_ZNrfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_ZNrfeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
+        stEi_ZNrfeld.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(stEi_ZNrfeld);
+        stEi_ZNrfeld.setBounds(70, 160, 100, 30);
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 12));
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel11.setText("Bezeichnung");
         Teilestamm_Einsehen.add(jLabel11);
         jLabel11.setBounds(200, 120, 71, 15);
@@ -1252,16 +1252,16 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(jLabel13);
         jLabel13.setBounds(450, 220, 25, 15);
 
-        jTextField6.setFont(new java.awt.Font("Arial", 0, 12));
-        jTextField6.setToolTipText("lässt 2 bis 60 Zeichen zu.");
-        jTextField6.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(jTextField6);
-        jTextField6.setBounds(280, 110, 108, 30);
+        stEi_Bezeichnungsfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_Bezeichnungsfeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
+        stEi_Bezeichnungsfeld.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(stEi_Bezeichnungsfeld);
+        stEi_Bezeichnungsfeld.setBounds(280, 110, 108, 30);
 
-        jTextField7.setFont(new java.awt.Font("Arial", 0, 12));
-        jTextField7.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(jTextField7);
-        jTextField7.setBounds(280, 160, 108, 30);
+        stEi_Baugruppenfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_Baugruppenfeld.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(stEi_Baugruppenfeld);
+        stEi_Baugruppenfeld.setBounds(280, 160, 108, 30);
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 12));
         jLabel14.setText("Teiletyp");
@@ -1273,17 +1273,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(jLabel15);
         jLabel15.setBounds(670, 120, 29, 15);
 
-        jTextField8.setFont(new java.awt.Font("Arial", 0, 12));
-        jTextField8.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe groß passt");
-        jTextField8.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(jTextField8);
-        jTextField8.setBounds(490, 210, 100, 30);
+        stEi_MAGfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_MAGfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe groß passt");
+        stEi_MAGfeld.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(stEi_MAGfeld);
+        stEi_MAGfeld.setBounds(490, 210, 100, 30);
 
-        jTextField9.setFont(new java.awt.Font("Arial", 0, 12));
-        jTextField9.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe mittel passt");
-        jTextField9.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(jTextField9);
-        jTextField9.setBounds(490, 160, 100, 30);
+        stEi_MAMfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_MAMfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe mittel passt");
+        stEi_MAMfeld.setMinimumSize(new java.awt.Dimension(100, 0));
+        Teilestamm_Einsehen.add(stEi_MAMfeld);
+        stEi_MAMfeld.setBounds(490, 160, 100, 30);
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 12));
         jLabel16.setText("Materialgruppe");
@@ -1295,14 +1295,14 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(jLabel17);
         jLabel17.setBounds(450, 120, 24, 15);
 
-        jButton5.setText("... suchen");
-        Teilestamm_Einsehen.add(jButton5);
-        jButton5.setBounds(730, 20, 90, 30);
+        stEi_Suchbutton.setText("... suchen");
+        Teilestamm_Einsehen.add(stEi_Suchbutton);
+        stEi_Suchbutton.setBounds(730, 20, 90, 30);
 
-        jTextField12.setFont(new java.awt.Font("Arial", 0, 12));
-        jTextField12.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe klein passt");
-        Teilestamm_Einsehen.add(jTextField12);
-        jTextField12.setBounds(490, 111, 100, 30);
+        stEi_MAKfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_MAKfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe klein passt");
+        Teilestamm_Einsehen.add(stEi_MAKfeld);
+        stEi_MAKfeld.setBounds(490, 111, 100, 30);
 
         jTable5.setFont(new java.awt.Font("Arial", 0, 12));
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
@@ -1316,32 +1316,32 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        stEi_jScrollPane5.setViewportView(jTable5);
 
-        Teilestamm_Einsehen.add(jScrollPane5);
-        jScrollPane5.setBounds(0, 270, 850, 230);
+        Teilestamm_Einsehen.add(stEi_jScrollPane5);
+        stEi_jScrollPane5.setBounds(0, 270, 850, 230);
 
-        jTextField10.setFont(new java.awt.Font("Arial", 0, 12));
-        jTextField10.setToolTipText("lässt 2 bis 60 Zeichen zu.");
-        Teilestamm_Einsehen.add(jTextField10);
-        jTextField10.setBounds(280, 210, 110, 30);
+        stEi_Materialgruppefeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_Materialgruppefeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
+        Teilestamm_Einsehen.add(stEi_Materialgruppefeld);
+        stEi_Materialgruppefeld.setBounds(280, 210, 110, 30);
 
-        jTextField11.setFont(new java.awt.Font("Arial", 0, 12));
-        Teilestamm_Einsehen.add(jTextField11);
-        jTextField11.setBounds(710, 110, 90, 30);
+        stEi_Preisfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_Einsehen.add(stEi_Preisfeld);
+        stEi_Preisfeld.setBounds(710, 110, 90, 30);
 
-        jButton6.setText("alle Stammdaten anzeigen");
-        Teilestamm_Einsehen.add(jButton6);
-        jButton6.setBounds(180, 20, 200, 30);
+        stEi_alleAnzeigenButton.setText("alle Stammdaten anzeigen");
+        Teilestamm_Einsehen.add(stEi_alleAnzeigenButton);
+        stEi_alleAnzeigenButton.setBounds(180, 20, 200, 30);
 
-        jButton7.setText("anzeigen");
-        Teilestamm_Einsehen.add(jButton7);
-        jButton7.setBounds(710, 200, 90, 40);
+        stEi_anzeigenButton.setText("anzeigen");
+        Teilestamm_Einsehen.add(stEi_anzeigenButton);
+        stEi_anzeigenButton.setBounds(710, 200, 90, 40);
 
-        jComboBox1.setFont(new java.awt.Font("Arial", 0, 12));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "alle", "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
-        Teilestamm_Einsehen.add(jComboBox1);
-        jComboBox1.setBounds(70, 210, 100, 30);
+        stEi_TeiletypCombobox.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_TeiletypCombobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "alle", "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
+        Teilestamm_Einsehen.add(stEi_TeiletypCombobox);
+        stEi_TeiletypCombobox.setBounds(70, 210, 100, 30);
 
         jTabbedPane1.addTab("Teilestamm Einsehen", Teilestamm_Einsehen);
 
@@ -1484,12 +1484,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(AusführenButton);
         AusführenButton.setBounds(350, 360, 89, 23);
 
-        SuchenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        SuchenButton.setFont(new java.awt.Font("Arial", 0, 12));
         SuchenButton.setText("Suche Teile ID");
         Teile_auslagern.add(SuchenButton);
         SuchenButton.setBounds(350, 60, 131, 23);
 
-        BestätigenidButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        BestätigenidButton.setFont(new java.awt.Font("Arial", 0, 12));
         BestätigenidButton.setText("Bestätigen");
         BestätigenidButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1540,7 +1540,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teile_Splitten.setLayout(null);
 
-        suchen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        suchen_button.setFont(new java.awt.Font("Arial", 0, 12));
         suchen_button.setText("Suche Fachnummer");
         Teile_Splitten.add(suchen_button);
         suchen_button.setBounds(240, 60, 150, 23);
@@ -1560,7 +1560,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_Splitten.add(ausgangsfachnummer_textfeld);
         ausgangsfachnummer_textfeld.setBounds(110, 60, 100, 21);
 
-        bestaetigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        bestaetigen_button.setFont(new java.awt.Font("Arial", 0, 12));
         bestaetigen_button.setText("Bestätigen");
         Teile_Splitten.add(bestaetigen_button);
         bestaetigen_button.setBounds(430, 60, 100, 23);
@@ -1579,7 +1579,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_Splitten.add(label_bezeichnung);
         label_bezeichnung.setBounds(200, 100, 80, 20);
 
-        label_anzeige_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
         Teile_Splitten.add(label_anzeige_bezeichnung);
         label_anzeige_bezeichnung.setBounds(280, 100, 150, 20);
 
@@ -1911,7 +1911,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Buchungshistorie_einsehen_ausdrucken.add(datumLabel_historie);
         datumLabel_historie.setBounds(40, 20, 200, 30);
 
-        zeitraum_von_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        zeitraum_von_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         zeitraum_von_button_historie.setText("dd.mm.yyyy");
         Buchungshistorie_einsehen_ausdrucken.add(zeitraum_von_button_historie);
         zeitraum_von_button_historie.setBounds(120, 70, 80, 30);
@@ -1921,17 +1921,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Buchungshistorie_einsehen_ausdrucken.add(zeitraumLabel_historie);
         zeitraumLabel_historie.setBounds(40, 70, 80, 30);
 
-        zeitraum_bis_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        zeitraum_bis_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         zeitraum_bis_textfeld_historie.setText("dd.mm.yyyy");
         Buchungshistorie_einsehen_ausdrucken.add(zeitraum_bis_textfeld_historie);
         zeitraum_bis_textfeld_historie.setBounds(240, 70, 80, 30);
 
-        datum_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        datum_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         datum_textfeld_historie.setText("dd.mm.yyyy");
         Buchungshistorie_einsehen_ausdrucken.add(datum_textfeld_historie);
         datum_textfeld_historie.setBounds(240, 20, 80, 30);
 
-        undLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        undLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
         undLabel_historie.setText("und");
         Buchungshistorie_einsehen_ausdrucken.add(undLabel_historie);
         undLabel_historie.setBounds(460, 70, 30, 30);
@@ -1957,7 +1957,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Buchungshistorie_einsehen_ausdrucken.add(Teilestammdaten_suchen_historie);
         Teilestammdaten_suchen_historie.setBounds(20, 350, 180, 30);
 
-        oderLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        oderLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
         oderLabel_historie.setText("oder im");
         Buchungshistorie_einsehen_ausdrucken.add(oderLabel_historie);
         oderLabel_historie.setBounds(340, 20, 60, 30);
@@ -1967,17 +1967,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Buchungshistorie_einsehen_ausdrucken.add(anzeige_button_historie);
         anzeige_button_historie.setBounds(330, 70, 110, 30);
 
-        drucken_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        drucken_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
         drucken_button_historie.setText("drucken.");
         Buchungshistorie_einsehen_ausdrucken.add(drucken_button_historie);
         drucken_button_historie.setBounds(500, 70, 110, 30);
 
-        bisLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        bisLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
         bisLabel_historie.setText("bis");
         Buchungshistorie_einsehen_ausdrucken.add(bisLabel_historie);
         bisLabel_historie.setBounds(210, 70, 20, 30);
 
-        lagerplatz_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lagerplatz_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12));
         lagerplatz_suchen_historie.setText("Teile/Lagerplatz suchen");
         Buchungshistorie_einsehen_ausdrucken.add(lagerplatz_suchen_historie);
         lagerplatz_suchen_historie.setBounds(220, 350, 180, 30);
@@ -2301,10 +2301,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField fachnummer_textfeld9;
     private javax.swing.JTextField id_textfeld;
     private javax.swing.JTextField id_textfeld2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -2324,7 +2320,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
@@ -2333,15 +2328,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton kapazitaet_pruefen_button1;
     private javax.swing.JButton kapazitaet_pruefen_button10;
     private javax.swing.JButton kapazitaet_pruefen_button11;
@@ -2500,6 +2486,20 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField menge_textfeld9;
     private javax.swing.JLabel oderLabel_historie;
     private javax.swing.JButton splitten_button;
+    private javax.swing.JTextField stEi_Baugruppenfeld;
+    private javax.swing.JTextField stEi_Bezeichnungsfeld;
+    private javax.swing.JTextField stEi_MAGfeld;
+    private javax.swing.JTextField stEi_MAKfeld;
+    private javax.swing.JTextField stEi_MAMfeld;
+    private javax.swing.JTextField stEi_Materialgruppefeld;
+    private javax.swing.JTextField stEi_Preisfeld;
+    private javax.swing.JButton stEi_Suchbutton;
+    private javax.swing.JComboBox stEi_TeiletypCombobox;
+    private javax.swing.JTextField stEi_ZNrfeld;
+    private javax.swing.JButton stEi_alleAnzeigenButton;
+    private javax.swing.JButton stEi_anzeigenButton;
+    private javax.swing.JTextField stEi_idfeld;
+    private javax.swing.JScrollPane stEi_jScrollPane5;
     private javax.swing.JButton suchenButton;
     private javax.swing.JButton suchen_button;
     private javax.swing.JButton suchen_button1;
