@@ -147,6 +147,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         textfeld_id = new javax.swing.JLabel();
         textarea_bemerkung = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        AnschaffungsTextField = new javax.swing.JTextField();
+        AnschaffungsLabel = new javax.swing.JLabel();
         Teilestamm_verwalten = new javax.swing.JPanel();
         label_eingabeaufforderung1 = new javax.swing.JLabel();
         label_id1 = new javax.swing.JLabel();
@@ -204,24 +206,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         stEi_alleAnzeigenButton = new javax.swing.JButton();
         stEi_anzeigenButton = new javax.swing.JButton();
         stEi_TeiletypCombobox = new javax.swing.JComboBox();
-        Teile_umlagern = new javax.swing.JPanel();
-        BitteeingebenLabel = new javax.swing.JLabel();
-        FachnummerLabel = new javax.swing.JLabel();
-        TeileLabel1 = new javax.swing.JLabel();
-        ZielfachLabel = new javax.swing.JLabel();
-        FachnrTextfield = new javax.swing.JTextField();
-        BestätigenButton = new javax.swing.JButton();
-        BezeichnungLabel2 = new javax.swing.JLabel();
-        MengeLabel = new javax.swing.JLabel();
-        FachnrLabel_Ziel = new javax.swing.JLabel();
-        FachnrTextfield_Ziel = new javax.swing.JTextField();
-        UmlagernButton = new javax.swing.JButton();
-        MengeTextfield = new javax.swing.JLabel();
-        BezeichnungTextfield = new javax.swing.JLabel();
-        IDTextfield2 = new javax.swing.JLabel();
-        SuchenButton1 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
         Teile_auslagern = new javax.swing.JPanel();
         TeileIDLabel = new javax.swing.JLabel();
         BezeichnungLabel = new javax.swing.JLabel();
@@ -241,6 +225,51 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         BemerkungTextArea = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        Teile_entfernen_loeschen = new javax.swing.JPanel();
+        suchenButton = new javax.swing.JButton();
+        Teilestammdatenbutton = new javax.swing.JButton();
+        bestätigenButton = new javax.swing.JButton();
+        IDTextfield1 = new javax.swing.JTextField();
+        IDLabel = new javax.swing.JLabel();
+        eingebenLabel = new javax.swing.JLabel();
+        StammdatenLabel = new javax.swing.JLabel();
+        BezeichnungLabel1 = new javax.swing.JLabel();
+        TeileLabel = new javax.swing.JLabel();
+        ZeichnungsnrLabel = new javax.swing.JLabel();
+        MaterialgruppeLabel = new javax.swing.JLabel();
+        BaugruppeLabel = new javax.swing.JLabel();
+        PreisLabel = new javax.swing.JLabel();
+        MAKLabel = new javax.swing.JLabel();
+        MAMLabel = new javax.swing.JLabel();
+        MAGLabel = new javax.swing.JLabel();
+        BemerkungLabel1 = new javax.swing.JLabel();
+        EuroLabel = new javax.swing.JLabel();
+        loeschenButton = new javax.swing.JButton();
+        MAKTextfield = new javax.swing.JLabel();
+        TypTextfield = new javax.swing.JLabel();
+        MaterialTextfield = new javax.swing.JLabel();
+        BezTextfield1 = new javax.swing.JLabel();
+        ZNrTextfield = new javax.swing.JLabel();
+        MAMTextfield = new javax.swing.JLabel();
+        BaugruppeTextfield = new javax.swing.JLabel();
+        PreisTextfield = new javax.swing.JLabel();
+        MAGTextfield = new javax.swing.JLabel();
+        BemerkungTextfield = new javax.swing.JLabel();
+        Buchungshistorie_einsehen_ausdrucken = new javax.swing.JPanel();
+        datumLabel_historie = new javax.swing.JLabel();
+        zeitraum_von_button_historie = new javax.swing.JTextField();
+        zeitraumLabel_historie = new javax.swing.JLabel();
+        zeitraum_bis_textfeld_historie = new javax.swing.JTextField();
+        datum_textfeld_historie = new javax.swing.JTextField();
+        undLabel_historie = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        Teilestammdaten_suchen_historie = new javax.swing.JButton();
+        oderLabel_historie = new javax.swing.JLabel();
+        anzeige_button_historie = new javax.swing.JButton();
+        drucken_button_historie = new javax.swing.JButton();
+        bisLabel_historie = new javax.swing.JLabel();
+        lagerplatz_suchen_historie = new javax.swing.JButton();
         Teile_Splitten = new javax.swing.JPanel();
         suchen_button = new javax.swing.JButton();
         label_eingabe_aufforderung_fachnummer = new javax.swing.JLabel();
@@ -315,51 +344,24 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         splitten_button = new javax.swing.JButton();
         label_mindestgroesse = new javax.swing.JLabel();
         label_anzeige_mindestgroesse = new javax.swing.JLabel();
-        Buchungshistorie_einsehen_ausdrucken = new javax.swing.JPanel();
-        datumLabel_historie = new javax.swing.JLabel();
-        zeitraum_von_button_historie = new javax.swing.JTextField();
-        zeitraumLabel_historie = new javax.swing.JLabel();
-        zeitraum_bis_textfeld_historie = new javax.swing.JTextField();
-        datum_textfeld_historie = new javax.swing.JTextField();
-        undLabel_historie = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        Teilestammdaten_suchen_historie = new javax.swing.JButton();
-        oderLabel_historie = new javax.swing.JLabel();
-        anzeige_button_historie = new javax.swing.JButton();
-        drucken_button_historie = new javax.swing.JButton();
-        bisLabel_historie = new javax.swing.JLabel();
-        lagerplatz_suchen_historie = new javax.swing.JButton();
-        Teile_entfernen_loeschen = new javax.swing.JPanel();
-        suchenButton = new javax.swing.JButton();
-        Teilestammdatenbutton = new javax.swing.JButton();
-        bestätigenButton = new javax.swing.JButton();
-        IDTextfield1 = new javax.swing.JTextField();
-        IDLabel = new javax.swing.JLabel();
-        eingebenLabel = new javax.swing.JLabel();
-        StammdatenLabel = new javax.swing.JLabel();
-        BezeichnungLabel1 = new javax.swing.JLabel();
-        TeileLabel = new javax.swing.JLabel();
-        ZeichnungsnrLabel = new javax.swing.JLabel();
-        MaterialgruppeLabel = new javax.swing.JLabel();
-        BaugruppeLabel = new javax.swing.JLabel();
-        PreisLabel = new javax.swing.JLabel();
-        MAKLabel = new javax.swing.JLabel();
-        MAMLabel = new javax.swing.JLabel();
-        MAGLabel = new javax.swing.JLabel();
-        BemerkungLabel1 = new javax.swing.JLabel();
-        EuroLabel = new javax.swing.JLabel();
-        loeschenButton = new javax.swing.JButton();
-        MAKTextfield = new javax.swing.JLabel();
-        TypTextfield = new javax.swing.JLabel();
-        MaterialTextfield = new javax.swing.JLabel();
-        BezTextfield1 = new javax.swing.JLabel();
-        ZNrTextfield = new javax.swing.JLabel();
-        MAMTextfield = new javax.swing.JLabel();
-        BaugruppeTextfield = new javax.swing.JLabel();
-        PreisTextfield = new javax.swing.JLabel();
-        MAGTextfield = new javax.swing.JLabel();
-        BemerkungTextfield = new javax.swing.JLabel();
+        Teile_umlagern = new javax.swing.JPanel();
+        BitteeingebenLabel = new javax.swing.JLabel();
+        FachnummerLabel = new javax.swing.JLabel();
+        TeileLabel1 = new javax.swing.JLabel();
+        ZielfachLabel = new javax.swing.JLabel();
+        FachnrTextfield = new javax.swing.JTextField();
+        BestätigenButton = new javax.swing.JButton();
+        BezeichnungLabel2 = new javax.swing.JLabel();
+        MengeLabel = new javax.swing.JLabel();
+        FachnrLabel_Ziel = new javax.swing.JLabel();
+        FachnrTextfield_Ziel = new javax.swing.JTextField();
+        UmlagernButton = new javax.swing.JButton();
+        MengeTextfield = new javax.swing.JLabel();
+        BezeichnungTextfield = new javax.swing.JLabel();
+        IDTextfield2 = new javax.swing.JLabel();
+        SuchenButton1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         Datei = new javax.swing.JMenu();
         Bearbeiten = new javax.swing.JMenu();
@@ -371,68 +373,68 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         jPanel8.setLayout(null);
 
-        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12));
+        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bestaetigen_button2.setText("Bestätigen");
         jPanel8.add(bestaetigen_button2);
         bestaetigen_button2.setBounds(40, 180, 100, 23);
 
-        id_textfeld2.setFont(new java.awt.Font("Arial", 0, 12));
+        id_textfeld2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         id_textfeld2.setToolTipText("");
         jPanel8.add(id_textfeld2);
-        id_textfeld2.setBounds(190, 60, 100, 21);
+        id_textfeld2.setBounds(220, 60, 100, 21);
 
         suchen_button2.setFont(new java.awt.Font("Arial", 0, 12));
         suchen_button2.setText("Suche Teile ID / Bezeichnung");
         jPanel8.add(suchen_button2);
-        suchen_button2.setBounds(750, 60, 200, 23);
+        suchen_button2.setBounds(780, 60, 200, 23);
 
         label_bezeichnung2.setFont(new java.awt.Font("Arial", 0, 12));
         label_bezeichnung2.setText("Bezeichnung:");
         jPanel8.add(label_bezeichnung2);
-        label_bezeichnung2.setBounds(440, 60, 80, 20);
+        label_bezeichnung2.setBounds(470, 60, 80, 20);
 
         label_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
         label_mindestgroesse2.setText("Mindestgröße:");
         jPanel8.add(label_mindestgroesse2);
-        label_mindestgroesse2.setBounds(440, 110, 90, 20);
+        label_mindestgroesse2.setBounds(470, 110, 90, 20);
 
         label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
         label_anzeige_mindestgroesse2.setText("größe");
         jPanel8.add(label_anzeige_mindestgroesse2);
-        label_anzeige_mindestgroesse2.setBounds(620, 110, 50, 20);
+        label_anzeige_mindestgroesse2.setBounds(650, 110, 50, 20);
 
-        label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 0, 12));
         label_eingabe_aufforderung_id2.setText("Bitte geben Sie die Teile ID oder die Bezeichnung ein:");
         jPanel8.add(label_eingabe_aufforderung_id2);
         label_eingabe_aufforderung_id2.setBounds(30, 20, 300, 20);
         jPanel8.add(menge_textfeld11);
-        menge_textfeld11.setBounds(190, 110, 96, 20);
+        menge_textfeld11.setBounds(220, 110, 96, 20);
 
         label_oder1.setFont(new java.awt.Font("Arial", 0, 12));
         label_oder1.setText("oder");
         jPanel8.add(label_oder1);
-        label_oder1.setBounds(340, 60, 34, 15);
+        label_oder1.setBounds(370, 60, 34, 15);
 
         label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12));
         label_teile_id2.setText("Teile ID:");
         jPanel8.add(label_teile_id2);
         label_teile_id2.setBounds(40, 60, 60, 20);
         jPanel8.add(bezeichnung_textfeld1);
-        bezeichnung_textfeld1.setBounds(630, 60, 100, 20);
+        bezeichnung_textfeld1.setBounds(660, 60, 100, 20);
 
-        label_menge.setFont(new java.awt.Font("Arial", 0, 12));
-        label_menge.setText("Einzulagernde Menge:");
+        label_menge.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge.setText("Gesamt einzulagernde Menge:");
         jPanel8.add(label_menge);
-        label_menge.setBounds(40, 110, 122, 15);
+        label_menge.setBounds(40, 110, 180, 15);
 
         label_menge_übrig.setText("text");
         jPanel8.add(label_menge_übrig);
-        label_menge_übrig.setBounds(620, 180, 20, 14);
+        label_menge_übrig.setBounds(650, 180, 20, 14);
 
-        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12));
+        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         laber_noch_einzulagern.setText("noch einzulagernde Menge:");
         jPanel8.add(laber_noch_einzulagern);
-        laber_noch_einzulagern.setBounds(440, 180, 170, 15);
+        laber_noch_einzulagern.setBounds(470, 180, 170, 15);
 
         einlagern_button_tabelle.setFont(new java.awt.Font("Arial", 0, 12));
         einlagern_button_tabelle.setText("einlagern");
@@ -453,7 +455,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTable4);
 
         jPanel8.add(jScrollPane4);
-        jScrollPane4.setBounds(50, 220, 590, 220);
+        jScrollPane4.setBounds(0, 230, 990, 220);
 
         Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
 
@@ -821,7 +823,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bestaetigen_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button_fachnumer1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(365, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -937,7 +939,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_einlagern.addTab("Fächer manuell eintragen", jPanel9);
 
         jPanel7.add(Teile_einlagern);
-        Teile_einlagern.setBounds(0, 0, 980, 560);
+        Teile_einlagern.setBounds(0, 0, 990, 560);
 
         jTabbedPane1.addTab("Teil einlagern", jPanel7);
 
@@ -971,33 +973,33 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12));
         label_zeichnungsnummer.setText("Zeichnungsnr.:");
         Teilestamm_erweitern.add(label_zeichnungsnummer);
-        label_zeichnungsnummer.setBounds(30, 200, 82, 15);
+        label_zeichnungsnummer.setBounds(30, 190, 82, 15);
 
         label_baugruppe.setFont(new java.awt.Font("Arial", 0, 12));
         label_baugruppe.setText("Baugruppe:");
         Teilestamm_erweitern.add(label_baugruppe);
-        label_baugruppe.setBounds(30, 230, 64, 15);
+        label_baugruppe.setBounds(30, 220, 64, 15);
 
-        textfeld_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(textfeld_bezeichnung);
-        textfeld_bezeichnung.setBounds(130, 100, 150, 21);
+        textfeld_bezeichnung.setBounds(150, 100, 150, 21);
 
-        combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12));
+        combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         combobox_teiltyp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Teilestamm_erweitern.add(combobox_teiltyp);
-        combobox_teiltyp.setBounds(130, 130, 150, 21);
+        combobox_teiltyp.setBounds(150, 130, 150, 21);
 
-        textfeld_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(textfeld_materialgruppe);
-        textfeld_materialgruppe.setBounds(130, 160, 150, 21);
+        textfeld_materialgruppe.setBounds(150, 160, 150, 21);
 
-        textfeld_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(textfeld_zeichnungsnummer);
-        textfeld_zeichnungsnummer.setBounds(130, 190, 150, 21);
+        textfeld_zeichnungsnummer.setBounds(150, 190, 150, 21);
 
-        textfeld_baugruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_baugruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(textfeld_baugruppe);
-        textfeld_baugruppe.setBounds(130, 220, 150, 21);
+        textfeld_baugruppe.setBounds(150, 220, 150, 21);
 
         label_preis.setFont(new java.awt.Font("Arial", 0, 12));
         label_preis.setText("Preis:");
@@ -1014,15 +1016,15 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(label_max_anz_mittel);
         label_max_anz_mittel.setBounds(350, 160, 83, 15);
 
-        label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_max_anz_gross.setText("Max. Anz. Groß:");
         Teilestamm_erweitern.add(label_max_anz_gross);
-        label_max_anz_gross.setBounds(350, 200, 83, 15);
+        label_max_anz_gross.setBounds(350, 190, 83, 15);
 
-        label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bemerkung.setText("Bemerkung:");
         Teilestamm_erweitern.add(label_bemerkung);
-        label_bemerkung.setBounds(350, 230, 67, 15);
+        label_bemerkung.setBounds(350, 220, 67, 15);
 
         textfeld_preis.setFont(new java.awt.Font("Arial", 0, 12));
         Teilestamm_erweitern.add(textfeld_preis);
@@ -1062,11 +1064,20 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(textarea_bemerkung);
         textarea_bemerkung.setBounds(450, 220, 166, 96);
 
+        AnschaffungsTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_erweitern.add(AnschaffungsTextField);
+        AnschaffungsTextField.setBounds(150, 250, 150, 21);
+
+        AnschaffungsLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        AnschaffungsLabel.setText("Anschaffungsgrund:");
+        Teilestamm_erweitern.add(AnschaffungsLabel);
+        AnschaffungsLabel.setBounds(30, 250, 110, 15);
+
         jTabbedPane1.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
         Teilestamm_verwalten.setLayout(null);
 
-        label_eingabeaufforderung1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        label_eingabeaufforderung1.setFont(new java.awt.Font("Arial", 1, 12));
         label_eingabeaufforderung1.setText("Bitte geben Sie die ID des Teiles ein:");
         Teilestamm_verwalten.add(label_eingabeaufforderung1);
         label_eingabeaufforderung1.setBounds(40, 30, 433, 15);
@@ -1205,92 +1216,92 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teilestamm_Einsehen.setLayout(null);
 
-        stEi_labelTeileStammdaten.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelTeileStammdaten.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelTeileStammdaten.setText("Teile Stammdaten");
         Teilestamm_Einsehen.add(stEi_labelTeileStammdaten);
         stEi_labelTeileStammdaten.setBounds(30, 30, 101, 15);
 
-        stEi_labelid.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelid.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelid.setText("ID");
         Teilestamm_Einsehen.add(stEi_labelid);
         stEi_labelid.setBounds(50, 120, 12, 15);
 
-        stEi_labelZeichnNr.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelZeichnNr.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelZeichnNr.setText("Zeichn.Nr.");
         Teilestamm_Einsehen.add(stEi_labelZeichnNr);
         stEi_labelZeichnNr.setBounds(10, 170, 56, 15);
 
-        stEi_labelMAM.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelMAM.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelMAM.setText("MAM");
         Teilestamm_Einsehen.add(stEi_labelMAM);
         stEi_labelMAM.setBounds(450, 170, 25, 15);
 
-        stEi_idfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_idfeld.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_idfeld.setToolTipText("00001 bis 10000");
         stEi_idfeld.setMinimumSize(new java.awt.Dimension(100, 0));
         Teilestamm_Einsehen.add(stEi_idfeld);
         stEi_idfeld.setBounds(70, 110, 100, 30);
 
-        stEi_ZNrfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_ZNrfeld.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_ZNrfeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
         stEi_ZNrfeld.setMinimumSize(new java.awt.Dimension(100, 0));
         Teilestamm_Einsehen.add(stEi_ZNrfeld);
         stEi_ZNrfeld.setBounds(70, 160, 100, 30);
 
-        stEi_labelBezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelBezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelBezeichnung.setText("Bezeichnung");
         Teilestamm_Einsehen.add(stEi_labelBezeichnung);
         stEi_labelBezeichnung.setBounds(200, 120, 71, 15);
 
-        stEi_labelBaugruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelBaugruppe.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelBaugruppe.setText("Baugruppe");
         Teilestamm_Einsehen.add(stEi_labelBaugruppe);
         stEi_labelBaugruppe.setBounds(210, 170, 61, 15);
 
-        stEi_labelMAG.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelMAG.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelMAG.setText("MAG");
         Teilestamm_Einsehen.add(stEi_labelMAG);
         stEi_labelMAG.setBounds(450, 220, 25, 15);
 
-        stEi_Bezeichnungsfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_Bezeichnungsfeld.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_Bezeichnungsfeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
         stEi_Bezeichnungsfeld.setMinimumSize(new java.awt.Dimension(100, 0));
         Teilestamm_Einsehen.add(stEi_Bezeichnungsfeld);
         stEi_Bezeichnungsfeld.setBounds(280, 110, 108, 30);
 
-        stEi_Baugruppenfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_Baugruppenfeld.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_Baugruppenfeld.setMinimumSize(new java.awt.Dimension(100, 0));
         Teilestamm_Einsehen.add(stEi_Baugruppenfeld);
         stEi_Baugruppenfeld.setBounds(280, 160, 108, 30);
 
-        stEi_labelTeiletyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelTeiletyp.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelTeiletyp.setText("Teiletyp");
         Teilestamm_Einsehen.add(stEi_labelTeiletyp);
         stEi_labelTeiletyp.setBounds(20, 220, 42, 15);
 
-        stEi_labelPreis.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelPreis.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelPreis.setText("Preis");
         Teilestamm_Einsehen.add(stEi_labelPreis);
         stEi_labelPreis.setBounds(670, 120, 29, 15);
 
-        stEi_MAGfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_MAGfeld.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_MAGfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe groß passt");
         stEi_MAGfeld.setMinimumSize(new java.awt.Dimension(100, 0));
         Teilestamm_Einsehen.add(stEi_MAGfeld);
         stEi_MAGfeld.setBounds(490, 210, 100, 30);
 
-        stEi_MAMfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_MAMfeld.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_MAMfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe mittel passt");
         stEi_MAMfeld.setMinimumSize(new java.awt.Dimension(100, 0));
         Teilestamm_Einsehen.add(stEi_MAMfeld);
         stEi_MAMfeld.setBounds(490, 160, 100, 30);
 
-        stEi_labelMaterialgruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelMaterialgruppe.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelMaterialgruppe.setText("Materialgruppe");
         Teilestamm_Einsehen.add(stEi_labelMaterialgruppe);
         stEi_labelMaterialgruppe.setBounds(190, 220, 82, 15);
 
-        stEi_labelMAK.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_labelMAK.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_labelMAK.setText("MAK");
         Teilestamm_Einsehen.add(stEi_labelMAK);
         stEi_labelMAK.setBounds(450, 120, 24, 15);
@@ -1299,7 +1310,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(stEi_Suchbutton);
         stEi_Suchbutton.setBounds(730, 20, 90, 30);
 
-        stEi_MAKfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_MAKfeld.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_MAKfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe klein passt");
         Teilestamm_Einsehen.add(stEi_MAKfeld);
         stEi_MAKfeld.setBounds(490, 111, 100, 30);
@@ -1321,12 +1332,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(stEi_jScrollPane5);
         stEi_jScrollPane5.setBounds(0, 270, 850, 230);
 
-        stEi_Materialgruppefeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_Materialgruppefeld.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_Materialgruppefeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
         Teilestamm_Einsehen.add(stEi_Materialgruppefeld);
         stEi_Materialgruppefeld.setBounds(280, 210, 110, 30);
 
-        stEi_Preisfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_Preisfeld.setFont(new java.awt.Font("Arial", 0, 12));
         Teilestamm_Einsehen.add(stEi_Preisfeld);
         stEi_Preisfeld.setBounds(710, 110, 90, 30);
 
@@ -1338,102 +1349,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_Einsehen.add(stEi_anzeigenButton);
         stEi_anzeigenButton.setBounds(710, 200, 90, 40);
 
-        stEi_TeiletypCombobox.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        stEi_TeiletypCombobox.setFont(new java.awt.Font("Arial", 0, 12));
         stEi_TeiletypCombobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "alle", "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
         Teilestamm_Einsehen.add(stEi_TeiletypCombobox);
         stEi_TeiletypCombobox.setBounds(70, 210, 100, 30);
 
         jTabbedPane1.addTab("Teilestamm Einsehen", Teilestamm_Einsehen);
-
-        Teile_umlagern.setLayout(null);
-
-        BitteeingebenLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        BitteeingebenLabel.setText("Bitte geben Sie die Fachnummer ein aus der ausgelagert werden soll:");
-        Teile_umlagern.add(BitteeingebenLabel);
-        BitteeingebenLabel.setBounds(10, 11, 400, 23);
-
-        FachnummerLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        FachnummerLabel.setText("Fachnummer:");
-        Teile_umlagern.add(FachnummerLabel);
-        FachnummerLabel.setBounds(10, 55, 77, 15);
-
-        TeileLabel1.setFont(new java.awt.Font("Arial", 0, 12));
-        TeileLabel1.setText("Teile ID:");
-        Teile_umlagern.add(TeileLabel1);
-        TeileLabel1.setBounds(10, 93, 45, 15);
-
-        ZielfachLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        ZielfachLabel.setText("Bitte geben Sie das Zielfach ein oder wählen Sie es aus:");
-        Teile_umlagern.add(ZielfachLabel);
-        ZielfachLabel.setBounds(10, 142, 309, 15);
-
-        FachnrTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        Teile_umlagern.add(FachnrTextfield);
-        FachnrTextfield.setBounds(124, 52, 113, 21);
-
-        BestätigenButton.setFont(new java.awt.Font("Arial", 0, 12));
-        BestätigenButton.setText("Bestätigen");
-        Teile_umlagern.add(BestätigenButton);
-        BestätigenButton.setBounds(470, 50, 91, 23);
-
-        BezeichnungLabel2.setFont(new java.awt.Font("Arial", 0, 12));
-        BezeichnungLabel2.setText("Bezeichnung:");
-        Teile_umlagern.add(BezeichnungLabel2);
-        BezeichnungLabel2.setBounds(282, 93, 91, 15);
-
-        MengeLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        MengeLabel.setText("Menge:");
-        Teile_umlagern.add(MengeLabel);
-        MengeLabel.setBounds(470, 90, 40, 15);
-
-        FachnrLabel_Ziel.setFont(new java.awt.Font("Arial", 0, 12));
-        FachnrLabel_Ziel.setText("Fachnummer:");
-        Teile_umlagern.add(FachnrLabel_Ziel);
-        FachnrLabel_Ziel.setBounds(10, 190, 77, 15);
-
-        FachnrTextfield_Ziel.setFont(new java.awt.Font("Arial", 0, 12));
-        Teile_umlagern.add(FachnrTextfield_Ziel);
-        FachnrTextfield_Ziel.setBounds(120, 190, 113, 21);
-
-        UmlagernButton.setFont(new java.awt.Font("Arial", 0, 12));
-        UmlagernButton.setText("Umlagern");
-        Teile_umlagern.add(UmlagernButton);
-        UmlagernButton.setBounds(10, 440, 87, 23);
-
-        MengeTextfield.setText("text");
-        Teile_umlagern.add(MengeTextfield);
-        MengeTextfield.setBounds(540, 90, 20, 14);
-
-        BezeichnungTextfield.setText("text");
-        Teile_umlagern.add(BezeichnungTextfield);
-        BezeichnungTextfield.setBounds(400, 90, 20, 14);
-
-        IDTextfield2.setText("text");
-        Teile_umlagern.add(IDTextfield2);
-        IDTextfield2.setBounds(130, 90, 20, 14);
-
-        SuchenButton1.setFont(new java.awt.Font("Arial", 0, 12));
-        SuchenButton1.setText("Suche Fachnummer");
-        Teile_umlagern.add(SuchenButton1);
-        SuchenButton1.setBounds(282, 52, 145, 23);
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable3);
-
-        Teile_umlagern.add(jScrollPane3);
-        jScrollPane3.setBounds(0, 250, 880, 170);
-
-        jTabbedPane1.addTab("Teil umlagern", Teile_umlagern);
 
         Teile_auslagern.setLayout(null);
 
@@ -1447,28 +1368,28 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(BezeichnungLabel);
         BezeichnungLabel.setBounds(50, 100, 74, 15);
 
-        FachLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        FachLabel.setFont(new java.awt.Font("Arial", 0, 12));
         FachLabel.setText("Fachnummer:");
         Teile_auslagern.add(FachLabel);
         FachLabel.setBounds(50, 330, 90, 15);
 
-        BestandverringernLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        BestandverringernLabel.setText("Bestand verringern:");
+        BestandverringernLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        BestandverringernLabel.setText("Bestand um die Menge X verringern:");
         Teile_auslagern.add(BestandverringernLabel);
-        BestandverringernLabel.setBounds(50, 370, 107, 15);
+        BestandverringernLabel.setBounds(50, 370, 210, 15);
 
         BemerkungLabel.setFont(new java.awt.Font("Arial", 0, 12));
         BemerkungLabel.setText("Bemerkung:");
         Teile_auslagern.add(BemerkungLabel);
         BemerkungLabel.setBounds(50, 150, 67, 15);
 
-        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_auslagern.add(IDTextfield);
-        IDTextfield.setBounds(200, 60, 128, 21);
+        IDTextfield.setBounds(280, 60, 128, 21);
 
         FachTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         Teile_auslagern.add(FachTextfield);
-        FachTextfield.setBounds(200, 320, 128, 21);
+        FachTextfield.setBounds(280, 320, 128, 21);
 
         BestandTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         BestandTextfield.addActionListener(new java.awt.event.ActionListener() {
@@ -1477,17 +1398,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teile_auslagern.add(BestandTextfield);
-        BestandTextfield.setBounds(200, 360, 128, 21);
+        BestandTextfield.setBounds(280, 360, 128, 21);
 
         AusführenButton.setFont(new java.awt.Font("Arial", 0, 12));
         AusführenButton.setText("Ausführen");
         Teile_auslagern.add(AusführenButton);
-        AusführenButton.setBounds(350, 360, 89, 23);
+        AusführenButton.setBounds(430, 360, 89, 23);
 
         SuchenButton.setFont(new java.awt.Font("Arial", 0, 12));
         SuchenButton.setText("Suche Teile ID");
         Teile_auslagern.add(SuchenButton);
-        SuchenButton.setBounds(350, 60, 131, 23);
+        SuchenButton.setBounds(430, 60, 131, 23);
 
         BestätigenidButton.setFont(new java.awt.Font("Arial", 0, 12));
         BestätigenidButton.setText("Bestätigen");
@@ -1497,7 +1418,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teile_auslagern.add(BestätigenidButton);
-        BestätigenidButton.setBounds(500, 60, 91, 23);
+        BestätigenidButton.setBounds(580, 60, 91, 23);
 
         label_eingabe_aufforderung_id.setFont(new java.awt.Font("Arial", 0, 12));
         label_eingabe_aufforderung_id.setText("Bitte geben Sie die Teile ID ein:");
@@ -1511,14 +1432,14 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Bezeichnung_ausgabeLabel.setText("bez");
         Teile_auslagern.add(Bezeichnung_ausgabeLabel);
-        Bezeichnung_ausgabeLabel.setBounds(200, 100, 128, 23);
+        Bezeichnung_ausgabeLabel.setBounds(280, 100, 128, 23);
 
         BemerkungTextArea.setColumns(20);
         BemerkungTextArea.setRows(5);
         BemerkungScrollPane.setViewportView(BemerkungTextArea);
 
         Teile_auslagern.add(BemerkungScrollPane);
-        BemerkungScrollPane.setBounds(200, 150, 248, 96);
+        BemerkungScrollPane.setBounds(280, 150, 248, 96);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1537,6 +1458,224 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jScrollPane2.setBounds(0, 400, 950, 160);
 
         jTabbedPane1.addTab("Teile auslagern", Teile_auslagern);
+
+        Teile_entfernen_loeschen.setLayout(null);
+
+        suchenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        suchenButton.setText("Suche Teile ID");
+        Teile_entfernen_loeschen.add(suchenButton);
+        suchenButton.setBounds(180, 80, 129, 23);
+
+        Teilestammdatenbutton.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestammdatenbutton.setText("Teilestammdaten");
+        Teile_entfernen_loeschen.add(Teilestammdatenbutton);
+        Teilestammdatenbutton.setBounds(180, 120, 129, 23);
+
+        bestätigenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        bestätigenButton.setText("Bestätigen");
+        Teile_entfernen_loeschen.add(bestätigenButton);
+        bestätigenButton.setBounds(330, 80, 91, 23);
+
+        IDTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_entfernen_loeschen.add(IDTextfield1);
+        IDTextfield1.setBounds(70, 80, 93, 21);
+
+        IDLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        IDLabel.setText("ID:");
+        Teile_entfernen_loeschen.add(IDLabel);
+        IDLabel.setBounds(40, 80, 15, 15);
+
+        eingebenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        eingebenLabel.setText("Bitte Teile ID eingeben:");
+        Teile_entfernen_loeschen.add(eingebenLabel);
+        eingebenLabel.setBounds(50, 30, 223, 15);
+
+        StammdatenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        StammdatenLabel.setText("Stammdaten:");
+        Teile_entfernen_loeschen.add(StammdatenLabel);
+        StammdatenLabel.setBounds(50, 160, 74, 15);
+
+        BezeichnungLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel1.setText("Bezeichnung:");
+        Teile_entfernen_loeschen.add(BezeichnungLabel1);
+        BezeichnungLabel1.setBounds(50, 200, 74, 15);
+
+        TeileLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileLabel.setText("Teile Typ:");
+        Teile_entfernen_loeschen.add(TeileLabel);
+        TeileLabel.setBounds(50, 230, 52, 15);
+
+        ZeichnungsnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        ZeichnungsnrLabel.setText("Zeichnungsnr.:");
+        Teile_entfernen_loeschen.add(ZeichnungsnrLabel);
+        ZeichnungsnrLabel.setBounds(50, 300, 82, 15);
+
+        MaterialgruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MaterialgruppeLabel.setText("Materialgruppe:");
+        Teile_entfernen_loeschen.add(MaterialgruppeLabel);
+        MaterialgruppeLabel.setBounds(50, 270, 85, 15);
+
+        BaugruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BaugruppeLabel.setText("Baugruppe:");
+        Teile_entfernen_loeschen.add(BaugruppeLabel);
+        BaugruppeLabel.setBounds(50, 330, 64, 15);
+
+        PreisLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        PreisLabel.setText("Preis:");
+        Teile_entfernen_loeschen.add(PreisLabel);
+        PreisLabel.setBounds(340, 200, 32, 15);
+
+        MAKLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MAKLabel.setText("Max.Anzahl klein:");
+        Teile_entfernen_loeschen.add(MAKLabel);
+        MAKLabel.setBounds(340, 230, 92, 15);
+
+        MAMLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MAMLabel.setText("Max.Anzahl mittel:");
+        Teile_entfernen_loeschen.add(MAMLabel);
+        MAMLabel.setBounds(340, 260, 96, 15);
+
+        MAGLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MAGLabel.setText("Max.Anzahl groß:");
+        Teile_entfernen_loeschen.add(MAGLabel);
+        MAGLabel.setBounds(340, 290, 92, 15);
+
+        BemerkungLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        BemerkungLabel1.setText("Bemerkung");
+        Teile_entfernen_loeschen.add(BemerkungLabel1);
+        BemerkungLabel1.setBounds(340, 330, 64, 15);
+
+        EuroLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        EuroLabel.setText("€");
+        Teile_entfernen_loeschen.add(EuroLabel);
+        EuroLabel.setBounds(560, 200, 21, 15);
+
+        loeschenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        loeschenButton.setText("Löschen");
+        Teile_entfernen_loeschen.add(loeschenButton);
+        loeschenButton.setBounds(40, 390, 81, 23);
+
+        MAKTextfield.setText("text");
+        Teile_entfernen_loeschen.add(MAKTextfield);
+        MAKTextfield.setBounds(460, 230, 20, 14);
+
+        TypTextfield.setText("text");
+        Teile_entfernen_loeschen.add(TypTextfield);
+        TypTextfield.setBounds(170, 230, 20, 14);
+
+        MaterialTextfield.setText("text");
+        Teile_entfernen_loeschen.add(MaterialTextfield);
+        MaterialTextfield.setBounds(170, 270, 20, 14);
+
+        BezTextfield1.setText("text");
+        Teile_entfernen_loeschen.add(BezTextfield1);
+        BezTextfield1.setBounds(170, 200, 20, 14);
+
+        ZNrTextfield.setText("text");
+        Teile_entfernen_loeschen.add(ZNrTextfield);
+        ZNrTextfield.setBounds(170, 300, 20, 14);
+
+        MAMTextfield.setText("text");
+        Teile_entfernen_loeschen.add(MAMTextfield);
+        MAMTextfield.setBounds(460, 260, 20, 14);
+
+        BaugruppeTextfield.setText("text");
+        Teile_entfernen_loeschen.add(BaugruppeTextfield);
+        BaugruppeTextfield.setBounds(170, 330, 20, 14);
+
+        PreisTextfield.setText("text");
+        Teile_entfernen_loeschen.add(PreisTextfield);
+        PreisTextfield.setBounds(460, 190, 20, 14);
+
+        MAGTextfield.setText("text");
+        Teile_entfernen_loeschen.add(MAGTextfield);
+        MAGTextfield.setBounds(460, 290, 20, 14);
+
+        BemerkungTextfield.setText("text");
+        Teile_entfernen_loeschen.add(BemerkungTextfield);
+        BemerkungTextfield.setBounds(460, 330, 34, 14);
+
+        jTabbedPane1.addTab("Teil entfernen", Teile_entfernen_loeschen);
+
+        Buchungshistorie_einsehen_ausdrucken.setLayout(null);
+
+        datumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        datumLabel_historie.setText("Die Buchungshistorie zum Datum");
+        Buchungshistorie_einsehen_ausdrucken.add(datumLabel_historie);
+        datumLabel_historie.setBounds(40, 20, 200, 30);
+
+        zeitraum_von_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        zeitraum_von_button_historie.setText("dd.mm.yyyy");
+        Buchungshistorie_einsehen_ausdrucken.add(zeitraum_von_button_historie);
+        zeitraum_von_button_historie.setBounds(120, 70, 80, 30);
+
+        zeitraumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        zeitraumLabel_historie.setText("Zeitraum vom");
+        Buchungshistorie_einsehen_ausdrucken.add(zeitraumLabel_historie);
+        zeitraumLabel_historie.setBounds(40, 70, 80, 30);
+
+        zeitraum_bis_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        zeitraum_bis_textfeld_historie.setText("dd.mm.yyyy");
+        Buchungshistorie_einsehen_ausdrucken.add(zeitraum_bis_textfeld_historie);
+        zeitraum_bis_textfeld_historie.setBounds(240, 70, 80, 30);
+
+        datum_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        datum_textfeld_historie.setText("dd.mm.yyyy");
+        Buchungshistorie_einsehen_ausdrucken.add(datum_textfeld_historie);
+        datum_textfeld_historie.setBounds(240, 20, 80, 30);
+
+        undLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        undLabel_historie.setText("und");
+        Buchungshistorie_einsehen_ausdrucken.add(undLabel_historie);
+        undLabel_historie.setBounds(460, 70, 30, 30);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        Buchungshistorie_einsehen_ausdrucken.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 130, 760, 200);
+
+        Teilestammdaten_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestammdaten_suchen_historie.setText("Teilestammdaten suchen");
+        Buchungshistorie_einsehen_ausdrucken.add(Teilestammdaten_suchen_historie);
+        Teilestammdaten_suchen_historie.setBounds(20, 350, 180, 30);
+
+        oderLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        oderLabel_historie.setText("oder im");
+        Buchungshistorie_einsehen_ausdrucken.add(oderLabel_historie);
+        oderLabel_historie.setBounds(340, 20, 60, 30);
+
+        anzeige_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        anzeige_button_historie.setText("anzeigen");
+        Buchungshistorie_einsehen_ausdrucken.add(anzeige_button_historie);
+        anzeige_button_historie.setBounds(330, 70, 110, 30);
+
+        drucken_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        drucken_button_historie.setText("drucken.");
+        Buchungshistorie_einsehen_ausdrucken.add(drucken_button_historie);
+        drucken_button_historie.setBounds(500, 70, 110, 30);
+
+        bisLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        bisLabel_historie.setText("bis");
+        Buchungshistorie_einsehen_ausdrucken.add(bisLabel_historie);
+        bisLabel_historie.setBounds(210, 70, 20, 30);
+
+        lagerplatz_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        lagerplatz_suchen_historie.setText("Teile/Lagerplatz suchen");
+        Buchungshistorie_einsehen_ausdrucken.add(lagerplatz_suchen_historie);
+        lagerplatz_suchen_historie.setBounds(220, 350, 180, 30);
+
+        jTabbedPane1.addTab("Buchungshistorie einsehen", Buchungshistorie_einsehen_ausdrucken);
 
         Teile_Splitten.setLayout(null);
 
@@ -1904,39 +2043,79 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Teil Splitten", Teile_Splitten);
 
-        Buchungshistorie_einsehen_ausdrucken.setLayout(null);
+        Teile_umlagern.setLayout(null);
 
-        datumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
-        datumLabel_historie.setText("Die Buchungshistorie zum Datum");
-        Buchungshistorie_einsehen_ausdrucken.add(datumLabel_historie);
-        datumLabel_historie.setBounds(40, 20, 200, 30);
+        BitteeingebenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BitteeingebenLabel.setText("Bitte geben Sie die Fachnummer ein aus der ausgelagert werden soll:");
+        Teile_umlagern.add(BitteeingebenLabel);
+        BitteeingebenLabel.setBounds(10, 11, 400, 23);
 
-        zeitraum_von_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        zeitraum_von_button_historie.setText("dd.mm.yyyy");
-        Buchungshistorie_einsehen_ausdrucken.add(zeitraum_von_button_historie);
-        zeitraum_von_button_historie.setBounds(120, 70, 80, 30);
+        FachnummerLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachnummerLabel.setText("Fachnummer:");
+        Teile_umlagern.add(FachnummerLabel);
+        FachnummerLabel.setBounds(10, 55, 77, 15);
 
-        zeitraumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
-        zeitraumLabel_historie.setText("Zeitraum vom");
-        Buchungshistorie_einsehen_ausdrucken.add(zeitraumLabel_historie);
-        zeitraumLabel_historie.setBounds(40, 70, 80, 30);
+        TeileLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileLabel1.setText("Teile ID:");
+        Teile_umlagern.add(TeileLabel1);
+        TeileLabel1.setBounds(10, 93, 45, 15);
 
-        zeitraum_bis_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        zeitraum_bis_textfeld_historie.setText("dd.mm.yyyy");
-        Buchungshistorie_einsehen_ausdrucken.add(zeitraum_bis_textfeld_historie);
-        zeitraum_bis_textfeld_historie.setBounds(240, 70, 80, 30);
+        ZielfachLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        ZielfachLabel.setText("Bitte geben Sie das Zielfach ein oder wählen Sie es aus:");
+        Teile_umlagern.add(ZielfachLabel);
+        ZielfachLabel.setBounds(10, 142, 309, 15);
 
-        datum_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        datum_textfeld_historie.setText("dd.mm.yyyy");
-        Buchungshistorie_einsehen_ausdrucken.add(datum_textfeld_historie);
-        datum_textfeld_historie.setBounds(240, 20, 80, 30);
+        FachnrTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_umlagern.add(FachnrTextfield);
+        FachnrTextfield.setBounds(124, 52, 113, 21);
 
-        undLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
-        undLabel_historie.setText("und");
-        Buchungshistorie_einsehen_ausdrucken.add(undLabel_historie);
-        undLabel_historie.setBounds(460, 70, 30, 30);
+        BestätigenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        BestätigenButton.setText("Bestätigen");
+        Teile_umlagern.add(BestätigenButton);
+        BestätigenButton.setBounds(470, 50, 91, 23);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        BezeichnungLabel2.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel2.setText("Bezeichnung:");
+        Teile_umlagern.add(BezeichnungLabel2);
+        BezeichnungLabel2.setBounds(282, 93, 91, 15);
+
+        MengeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MengeLabel.setText("Menge:");
+        Teile_umlagern.add(MengeLabel);
+        MengeLabel.setBounds(470, 90, 40, 15);
+
+        FachnrLabel_Ziel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachnrLabel_Ziel.setText("Fachnummer:");
+        Teile_umlagern.add(FachnrLabel_Ziel);
+        FachnrLabel_Ziel.setBounds(10, 190, 77, 15);
+
+        FachnrTextfield_Ziel.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_umlagern.add(FachnrTextfield_Ziel);
+        FachnrTextfield_Ziel.setBounds(120, 190, 113, 21);
+
+        UmlagernButton.setFont(new java.awt.Font("Arial", 0, 12));
+        UmlagernButton.setText("Umlagern");
+        Teile_umlagern.add(UmlagernButton);
+        UmlagernButton.setBounds(10, 440, 87, 23);
+
+        MengeTextfield.setText("text");
+        Teile_umlagern.add(MengeTextfield);
+        MengeTextfield.setBounds(540, 90, 20, 14);
+
+        BezeichnungTextfield.setText("text");
+        Teile_umlagern.add(BezeichnungTextfield);
+        BezeichnungTextfield.setBounds(400, 90, 20, 14);
+
+        IDTextfield2.setText("text");
+        Teile_umlagern.add(IDTextfield2);
+        IDTextfield2.setBounds(130, 90, 20, 14);
+
+        SuchenButton1.setFont(new java.awt.Font("Arial", 0, 12));
+        SuchenButton1.setText("Suche Fachnummer");
+        Teile_umlagern.add(SuchenButton1);
+        SuchenButton1.setBounds(282, 52, 145, 23);
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1947,183 +2126,15 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane3.setViewportView(jTable3);
 
-        Buchungshistorie_einsehen_ausdrucken.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 130, 760, 200);
+        Teile_umlagern.add(jScrollPane3);
+        jScrollPane3.setBounds(0, 250, 880, 170);
 
-        Teilestammdaten_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12));
-        Teilestammdaten_suchen_historie.setText("Teilestammdaten suchen");
-        Buchungshistorie_einsehen_ausdrucken.add(Teilestammdaten_suchen_historie);
-        Teilestammdaten_suchen_historie.setBounds(20, 350, 180, 30);
-
-        oderLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
-        oderLabel_historie.setText("oder im");
-        Buchungshistorie_einsehen_ausdrucken.add(oderLabel_historie);
-        oderLabel_historie.setBounds(340, 20, 60, 30);
-
-        anzeige_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
-        anzeige_button_historie.setText("anzeigen");
-        Buchungshistorie_einsehen_ausdrucken.add(anzeige_button_historie);
-        anzeige_button_historie.setBounds(330, 70, 110, 30);
-
-        drucken_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
-        drucken_button_historie.setText("drucken.");
-        Buchungshistorie_einsehen_ausdrucken.add(drucken_button_historie);
-        drucken_button_historie.setBounds(500, 70, 110, 30);
-
-        bisLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
-        bisLabel_historie.setText("bis");
-        Buchungshistorie_einsehen_ausdrucken.add(bisLabel_historie);
-        bisLabel_historie.setBounds(210, 70, 20, 30);
-
-        lagerplatz_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12));
-        lagerplatz_suchen_historie.setText("Teile/Lagerplatz suchen");
-        Buchungshistorie_einsehen_ausdrucken.add(lagerplatz_suchen_historie);
-        lagerplatz_suchen_historie.setBounds(220, 350, 180, 30);
-
-        jTabbedPane1.addTab("Buchungshistorie einsehen", Buchungshistorie_einsehen_ausdrucken);
-
-        Teile_entfernen_loeschen.setLayout(null);
-
-        suchenButton.setFont(new java.awt.Font("Arial", 0, 12));
-        suchenButton.setText("Suche Teile ID");
-        Teile_entfernen_loeschen.add(suchenButton);
-        suchenButton.setBounds(180, 80, 129, 23);
-
-        Teilestammdatenbutton.setFont(new java.awt.Font("Arial", 0, 12));
-        Teilestammdatenbutton.setText("Teilestammdaten");
-        Teile_entfernen_loeschen.add(Teilestammdatenbutton);
-        Teilestammdatenbutton.setBounds(180, 120, 129, 23);
-
-        bestätigenButton.setFont(new java.awt.Font("Arial", 0, 12));
-        bestätigenButton.setText("Bestätigen");
-        Teile_entfernen_loeschen.add(bestätigenButton);
-        bestätigenButton.setBounds(330, 80, 91, 23);
-
-        IDTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
-        Teile_entfernen_loeschen.add(IDTextfield1);
-        IDTextfield1.setBounds(70, 80, 93, 21);
-
-        IDLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        IDLabel.setText("ID:");
-        Teile_entfernen_loeschen.add(IDLabel);
-        IDLabel.setBounds(40, 80, 15, 15);
-
-        eingebenLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        eingebenLabel.setText("Bitte Teile ID eingeben:");
-        Teile_entfernen_loeschen.add(eingebenLabel);
-        eingebenLabel.setBounds(50, 30, 223, 15);
-
-        StammdatenLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        StammdatenLabel.setText("Stammdaten:");
-        Teile_entfernen_loeschen.add(StammdatenLabel);
-        StammdatenLabel.setBounds(50, 160, 74, 15);
-
-        BezeichnungLabel1.setFont(new java.awt.Font("Arial", 0, 12));
-        BezeichnungLabel1.setText("Bezeichnung:");
-        Teile_entfernen_loeschen.add(BezeichnungLabel1);
-        BezeichnungLabel1.setBounds(50, 200, 74, 15);
-
-        TeileLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        TeileLabel.setText("Teile Typ:");
-        Teile_entfernen_loeschen.add(TeileLabel);
-        TeileLabel.setBounds(50, 230, 52, 15);
-
-        ZeichnungsnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        ZeichnungsnrLabel.setText("Zeichnungsnr.:");
-        Teile_entfernen_loeschen.add(ZeichnungsnrLabel);
-        ZeichnungsnrLabel.setBounds(50, 300, 82, 15);
-
-        MaterialgruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        MaterialgruppeLabel.setText("Materialgruppe:");
-        Teile_entfernen_loeschen.add(MaterialgruppeLabel);
-        MaterialgruppeLabel.setBounds(50, 270, 85, 15);
-
-        BaugruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        BaugruppeLabel.setText("Baugruppe:");
-        Teile_entfernen_loeschen.add(BaugruppeLabel);
-        BaugruppeLabel.setBounds(50, 330, 64, 15);
-
-        PreisLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        PreisLabel.setText("Preis:");
-        Teile_entfernen_loeschen.add(PreisLabel);
-        PreisLabel.setBounds(340, 200, 32, 15);
-
-        MAKLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        MAKLabel.setText("Max.Anzahl klein:");
-        Teile_entfernen_loeschen.add(MAKLabel);
-        MAKLabel.setBounds(340, 230, 92, 15);
-
-        MAMLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        MAMLabel.setText("Max.Anzahl mittel:");
-        Teile_entfernen_loeschen.add(MAMLabel);
-        MAMLabel.setBounds(340, 260, 96, 15);
-
-        MAGLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        MAGLabel.setText("Max.Anzahl groß:");
-        Teile_entfernen_loeschen.add(MAGLabel);
-        MAGLabel.setBounds(340, 290, 92, 15);
-
-        BemerkungLabel1.setFont(new java.awt.Font("Arial", 0, 12));
-        BemerkungLabel1.setText("Bemerkung");
-        Teile_entfernen_loeschen.add(BemerkungLabel1);
-        BemerkungLabel1.setBounds(340, 330, 64, 15);
-
-        EuroLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        EuroLabel.setText("€");
-        Teile_entfernen_loeschen.add(EuroLabel);
-        EuroLabel.setBounds(560, 200, 21, 15);
-
-        loeschenButton.setFont(new java.awt.Font("Arial", 0, 12));
-        loeschenButton.setText("Löschen");
-        Teile_entfernen_loeschen.add(loeschenButton);
-        loeschenButton.setBounds(40, 390, 81, 23);
-
-        MAKTextfield.setText("text");
-        Teile_entfernen_loeschen.add(MAKTextfield);
-        MAKTextfield.setBounds(460, 230, 20, 14);
-
-        TypTextfield.setText("text");
-        Teile_entfernen_loeschen.add(TypTextfield);
-        TypTextfield.setBounds(170, 230, 20, 14);
-
-        MaterialTextfield.setText("text");
-        Teile_entfernen_loeschen.add(MaterialTextfield);
-        MaterialTextfield.setBounds(170, 270, 20, 14);
-
-        BezTextfield1.setText("text");
-        Teile_entfernen_loeschen.add(BezTextfield1);
-        BezTextfield1.setBounds(170, 200, 20, 14);
-
-        ZNrTextfield.setText("text");
-        Teile_entfernen_loeschen.add(ZNrTextfield);
-        ZNrTextfield.setBounds(170, 300, 20, 14);
-
-        MAMTextfield.setText("text");
-        Teile_entfernen_loeschen.add(MAMTextfield);
-        MAMTextfield.setBounds(460, 260, 20, 14);
-
-        BaugruppeTextfield.setText("text");
-        Teile_entfernen_loeschen.add(BaugruppeTextfield);
-        BaugruppeTextfield.setBounds(170, 330, 20, 14);
-
-        PreisTextfield.setText("text");
-        Teile_entfernen_loeschen.add(PreisTextfield);
-        PreisTextfield.setBounds(460, 190, 20, 14);
-
-        MAGTextfield.setText("text");
-        Teile_entfernen_loeschen.add(MAGTextfield);
-        MAGTextfield.setBounds(460, 290, 20, 14);
-
-        BemerkungTextfield.setText("text");
-        Teile_entfernen_loeschen.add(BemerkungTextfield);
-        BemerkungTextfield.setBounds(460, 330, 34, 14);
-
-        jTabbedPane1.addTab("Teil entfernen", Teile_entfernen_loeschen);
+        jTabbedPane1.addTab("Teil umlagern", Teile_umlagern);
 
         getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(0, 0, 1010, 560);
+        jTabbedPane1.setBounds(0, 10, 1010, 560);
 
         Datei.setText("Datei");
         jMenuBar1.add(Datei);
@@ -2190,6 +2201,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AnschaffungsLabel;
+    private javax.swing.JTextField AnschaffungsTextField;
     private javax.swing.JButton AusführenButton;
     private javax.swing.JLabel BaugruppeLabel;
     private javax.swing.JLabel BaugruppeTextfield;
