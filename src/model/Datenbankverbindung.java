@@ -70,7 +70,6 @@ public class Datenbankverbindung {
             ar = new String[val.size()];
             for (int i = 0; i <= val.size() - 1; i++) {
                 ar[i] = val.get(i);
-
                 //  System.out.println(ar[i]);
             }
             //System.out.println(ergebnis);
