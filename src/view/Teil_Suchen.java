@@ -125,7 +125,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         suche_Teil.add(PreisLabel);
         PreisLabel.setBounds(263, 104, 32, 15);
 
-        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suche_Teil.add(IDTextfield);
         IDTextfield.setBounds(114, 37, 112, 21);
 
@@ -134,10 +134,10 @@ public class Teil_Suchen extends javax.swing.JFrame {
         suche_Teil.add(MAKLabel);
         MAKLabel.setBounds(264, 136, 27, 15);
 
-        TeileStammdatenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileStammdatenLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         TeileStammdatenLabel.setText("Teile Stammdaten:");
         suche_Teil.add(TeileStammdatenLabel);
-        TeileStammdatenLabel.setBounds(10, 11, 104, 15);
+        TeileStammdatenLabel.setBounds(10, 11, 140, 15);
 
         TeiletypTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(TeiletypTextfield);
@@ -194,7 +194,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         suche_Teil.add(ZeichnungsnrLabel);
         ZeichnungsnrLabel.setBounds(10, 168, 82, 15);
 
-        PreisTextfield.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        PreisTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(PreisTextfield);
         PreisTextfield.setBounds(305, 101, 90, 21);
 
@@ -255,7 +255,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         RegalnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
         RegalnrLabel.setText("Regalnr.:");
 
-        BelegtLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        BelegtLabel.setFont(new java.awt.Font("Arial", 0, 12));
         BelegtLabel.setText("Belegt:");
 
         SpalteLabel.setFont(new java.awt.Font("Arial", 0, 12));
@@ -287,13 +287,8 @@ public class Teil_Suchen extends javax.swing.JFrame {
         GrößeLabel.setFont(new java.awt.Font("Arial", 0, 12));
         GrößeLabel.setText("Größe:");
 
-        mCB.setFont(new java.awt.Font("Arial", 0, 12));
+        mCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         mCB.setText("M");
-        mCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mCBActionPerformed(evt);
-            }
-        });
 
         SuchenmitteButton.setFont(new java.awt.Font("Arial", 0, 12));
         SuchenmitteButton.setText("Suchen");
@@ -469,10 +464,10 @@ public class Teil_Suchen extends javax.swing.JFrame {
         SuchenrechtsButton.setFont(new java.awt.Font("Arial", 0, 12));
         SuchenrechtsButton.setText("Suchen");
 
-        FachnrLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        FachnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
         FachnrLabel.setText("Fachnummer:");
 
-        HaltbarkeitsLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        HaltbarkeitsLabel.setFont(new java.awt.Font("Arial", 0, 12));
         HaltbarkeitsLabel.setText("Haltbarkeitsdatum:");
 
         MaxMengeLabel.setFont(new java.awt.Font("Arial", 0, 12));
@@ -589,11 +584,6 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void mCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCBActionPerformed
-
-        // TODO add your handling code here:}//GEN-LAST:event_mCBActionPerformed
-    }
     /**
      * @param args the command line arguments
      */

@@ -149,6 +149,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         AnschaffungsTextField = new javax.swing.JTextField();
         AnschaffungsLabel = new javax.swing.JLabel();
+        suchen_button_erweitern = new javax.swing.JButton();
         Teilestamm_verwalten = new javax.swing.JPanel();
         label_eingabeaufforderung1 = new javax.swing.JLabel();
         label_id1 = new javax.swing.JLabel();
@@ -179,33 +180,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         aendern_button = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         textarea_bemerkung_verwalten = new javax.swing.JTextArea();
-        Teilestamm_Einsehen = new javax.swing.JPanel();
-        stEi_labelTeileStammdaten = new javax.swing.JLabel();
-        stEi_labelid = new javax.swing.JLabel();
-        stEi_labelZeichnNr = new javax.swing.JLabel();
-        stEi_labelMAM = new javax.swing.JLabel();
-        stEi_idfeld = new javax.swing.JTextField();
-        stEi_ZNrfeld = new javax.swing.JTextField();
-        stEi_labelBezeichnung = new javax.swing.JLabel();
-        stEi_labelBaugruppe = new javax.swing.JLabel();
-        stEi_labelMAG = new javax.swing.JLabel();
-        stEi_Bezeichnungsfeld = new javax.swing.JTextField();
-        stEi_Baugruppenfeld = new javax.swing.JTextField();
-        stEi_labelTeiletyp = new javax.swing.JLabel();
-        stEi_labelPreis = new javax.swing.JLabel();
-        stEi_MAGfeld = new javax.swing.JTextField();
-        stEi_MAMfeld = new javax.swing.JTextField();
-        stEi_labelMaterialgruppe = new javax.swing.JLabel();
-        stEi_labelMAK = new javax.swing.JLabel();
-        stEi_Suchbutton = new javax.swing.JButton();
-        stEi_MAKfeld = new javax.swing.JTextField();
-        stEi_jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
-        stEi_Materialgruppefeld = new javax.swing.JTextField();
-        stEi_Preisfeld = new javax.swing.JTextField();
-        stEi_alleAnzeigenButton = new javax.swing.JButton();
-        stEi_anzeigenButton = new javax.swing.JButton();
-        stEi_TeiletypCombobox = new javax.swing.JComboBox();
         Teile_auslagern = new javax.swing.JPanel();
         TeileIDLabel = new javax.swing.JLabel();
         BezeichnungLabel = new javax.swing.JLabel();
@@ -362,6 +336,79 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         SuchenButton1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        suche_Teil = new javax.swing.JPanel();
+        MAMTextfield1 = new javax.swing.JTextField();
+        MAGTextfield1 = new javax.swing.JTextField();
+        SuchenlinksButton = new javax.swing.JButton();
+        EuroLabel1 = new javax.swing.JLabel();
+        PreisLabel1 = new javax.swing.JLabel();
+        IDTextfield3 = new javax.swing.JTextField();
+        MAKLabel1 = new javax.swing.JLabel();
+        TeileStammdatenLabel = new javax.swing.JLabel();
+        TeiletypTextfield = new javax.swing.JTextField();
+        BezeichnungLabel3 = new javax.swing.JLabel();
+        ZNrTextfield1 = new javax.swing.JTextField();
+        IDlinksLabel = new javax.swing.JLabel();
+        MaterialTextfield1 = new javax.swing.JTextField();
+        MaterialgruppeLabel1 = new javax.swing.JLabel();
+        BezTextfield = new javax.swing.JTextField();
+        TeiletypLabel = new javax.swing.JLabel();
+        BaugruppeLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        MAKTextfield1 = new javax.swing.JTextField();
+        ZeichnungsnrLabel1 = new javax.swing.JLabel();
+        PreisTextfield1 = new javax.swing.JTextField();
+        MAMLabel1 = new javax.swing.JLabel();
+        BaugruppeTextfield1 = new javax.swing.JTextField();
+        MAGLabel1 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        suche_Fach_lagerplatz = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        LagerortLabel = new javax.swing.JLabel();
+        LagerfachbestandLabel = new javax.swing.JLabel();
+        ZeileLabel = new javax.swing.JLabel();
+        RegalnrLabel = new javax.swing.JLabel();
+        BelegtLabel = new javax.swing.JLabel();
+        SpalteLabel = new javax.swing.JLabel();
+        FCB = new javax.swing.JCheckBox();
+        H3CB = new javax.swing.JCheckBox();
+        H1CB = new javax.swing.JCheckBox();
+        SpalteTextfield = new javax.swing.JTextField();
+        H4CB = new javax.swing.JCheckBox();
+        H2CB = new javax.swing.JCheckBox();
+        HCB = new javax.swing.JCheckBox();
+        gCB = new javax.swing.JCheckBox();
+        GrößeLabel = new javax.swing.JLabel();
+        mCB = new javax.swing.JCheckBox();
+        SuchenmitteButton = new javax.swing.JButton();
+        ZeileTextfield = new javax.swing.JTextField();
+        neinCB = new javax.swing.JCheckBox();
+        kCB = new javax.swing.JCheckBox();
+        jaCB = new javax.swing.JCheckBox();
+        H5CB = new javax.swing.JCheckBox();
+        LagerfachbestandTextfield = new javax.swing.JTextField();
+        zeile_label = new javax.swing.JLabel();
+        spalte_label = new javax.swing.JLabel();
+        suche_Inhalt = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTable7 = new javax.swing.JTable();
+        LagerbestandTextfield = new javax.swing.JTextField();
+        MinTextfield = new javax.swing.JTextField();
+        TeileIDLabel1 = new javax.swing.JLabel();
+        SuchenrechtsButton = new javax.swing.JButton();
+        FachnrLabel = new javax.swing.JLabel();
+        HaltbarkeitsLabel = new javax.swing.JLabel();
+        MaxMengeLabel = new javax.swing.JLabel();
+        TeileIDrechtsTextfield = new javax.swing.JTextField();
+        FachnrTextfield1 = new javax.swing.JTextField();
+        DatumTextfield = new javax.swing.JTextField();
+        MinMengeLabel = new javax.swing.JLabel();
+        MaxTextfield = new javax.swing.JTextField();
+        LagerbestandLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Datei = new javax.swing.JMenu();
         Bearbeiten = new javax.swing.JMenu();
@@ -373,12 +420,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         jPanel8.setLayout(null);
 
-        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12));
         bestaetigen_button2.setText("Bestätigen");
         jPanel8.add(bestaetigen_button2);
         bestaetigen_button2.setBounds(40, 180, 100, 23);
 
-        id_textfeld2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        id_textfeld2.setFont(new java.awt.Font("Arial", 0, 12));
         id_textfeld2.setToolTipText("");
         jPanel8.add(id_textfeld2);
         id_textfeld2.setBounds(220, 60, 100, 21);
@@ -415,14 +462,14 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_oder1);
         label_oder1.setBounds(370, 60, 34, 15);
 
-        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_teile_id2.setText("Teile ID:");
         jPanel8.add(label_teile_id2);
         label_teile_id2.setBounds(40, 60, 60, 20);
         jPanel8.add(bezeichnung_textfeld1);
         bezeichnung_textfeld1.setBounds(660, 60, 100, 20);
 
-        label_menge.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge.setFont(new java.awt.Font("Arial", 0, 12));
         label_menge.setText("Gesamt einzulagernde Menge:");
         jPanel8.add(label_menge);
         label_menge.setBounds(40, 110, 180, 15);
@@ -431,7 +478,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_menge_übrig);
         label_menge_übrig.setBounds(650, 180, 20, 14);
 
-        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12));
         laber_noch_einzulagern.setText("noch einzulagernde Menge:");
         jPanel8.add(laber_noch_einzulagern);
         laber_noch_einzulagern.setBounds(470, 180, 170, 15);
@@ -980,24 +1027,24 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(label_baugruppe);
         label_baugruppe.setBounds(30, 220, 64, 15);
 
-        textfeld_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textfeld_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
         Teilestamm_erweitern.add(textfeld_bezeichnung);
         textfeld_bezeichnung.setBounds(150, 100, 150, 21);
 
-        combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12));
         combobox_teiltyp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Teilestamm_erweitern.add(combobox_teiltyp);
         combobox_teiltyp.setBounds(150, 130, 150, 21);
 
-        textfeld_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textfeld_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12));
         Teilestamm_erweitern.add(textfeld_materialgruppe);
         textfeld_materialgruppe.setBounds(150, 160, 150, 21);
 
-        textfeld_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textfeld_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12));
         Teilestamm_erweitern.add(textfeld_zeichnungsnummer);
         textfeld_zeichnungsnummer.setBounds(150, 190, 150, 21);
 
-        textfeld_baugruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textfeld_baugruppe.setFont(new java.awt.Font("Arial", 0, 12));
         Teilestamm_erweitern.add(textfeld_baugruppe);
         textfeld_baugruppe.setBounds(150, 220, 150, 21);
 
@@ -1016,12 +1063,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(label_max_anz_mittel);
         label_max_anz_mittel.setBounds(350, 160, 83, 15);
 
-        label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12));
         label_max_anz_gross.setText("Max. Anz. Groß:");
         Teilestamm_erweitern.add(label_max_anz_gross);
         label_max_anz_gross.setBounds(350, 190, 83, 15);
 
-        label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12));
         label_bemerkung.setText("Bemerkung:");
         Teilestamm_erweitern.add(label_bemerkung);
         label_bemerkung.setBounds(350, 220, 67, 15);
@@ -1055,7 +1102,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         textfeld_id.setText("text");
         textfeld_id.setToolTipText("");
         Teilestamm_erweitern.add(textfeld_id);
-        textfeld_id.setBounds(130, 60, 34, 14);
+        textfeld_id.setBounds(160, 60, 34, 14);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -1064,14 +1111,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(textarea_bemerkung);
         textarea_bemerkung.setBounds(450, 220, 166, 96);
 
-        AnschaffungsTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        AnschaffungsTextField.setFont(new java.awt.Font("Arial", 0, 12));
         Teilestamm_erweitern.add(AnschaffungsTextField);
         AnschaffungsTextField.setBounds(150, 250, 150, 21);
 
-        AnschaffungsLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        AnschaffungsLabel.setFont(new java.awt.Font("Arial", 0, 12));
         AnschaffungsLabel.setText("Anschaffungsgrund:");
         Teilestamm_erweitern.add(AnschaffungsLabel);
         AnschaffungsLabel.setBounds(30, 250, 110, 15);
+
+        suchen_button_erweitern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        suchen_button_erweitern.setText("Suche Teile ID");
+        Teilestamm_erweitern.add(suchen_button_erweitern);
+        suchen_button_erweitern.setBounds(350, 50, 140, 23);
 
         jTabbedPane1.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
@@ -1183,22 +1235,22 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_verwalten.add(label_waehrung1);
         label_waehrung1.setBounds(570, 110, 7, 15);
 
-        button_loeschen.setFont(new java.awt.Font("Arial", 1, 12));
+        button_loeschen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_loeschen.setText("Löschen");
         Teilestamm_verwalten.add(button_loeschen);
         button_loeschen.setBounds(480, 70, 81, 23);
         Teilestamm_verwalten.add(textfeld_teiltyp);
         textfeld_teiltyp.setBounds(130, 140, 161, 20);
 
-        button_suchen.setFont(new java.awt.Font("Arial", 1, 12));
+        button_suchen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_suchen.setText("Suchen");
         Teilestamm_verwalten.add(button_suchen);
         button_suchen.setBounds(210, 70, 75, 23);
 
-        anzeigen_button.setFont(new java.awt.Font("Arial", 1, 12));
+        anzeigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         anzeigen_button.setText("Anzeigen");
         Teilestamm_verwalten.add(anzeigen_button);
-        anzeigen_button.setBounds(310, 70, 85, 23);
+        anzeigen_button.setBounds(310, 70, 83, 23);
 
         aendern_button.setFont(new java.awt.Font("Arial", 1, 12));
         aendern_button.setText("Ändern");
@@ -1212,149 +1264,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_verwalten.add(jScrollPane6);
         jScrollPane6.setBounds(400, 240, 166, 96);
 
-        jTabbedPane1.addTab("Stammdaten verwalten", Teilestamm_verwalten);
-
-        Teilestamm_Einsehen.setLayout(null);
-
-        stEi_labelTeileStammdaten.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelTeileStammdaten.setText("Teile Stammdaten");
-        Teilestamm_Einsehen.add(stEi_labelTeileStammdaten);
-        stEi_labelTeileStammdaten.setBounds(30, 30, 101, 15);
-
-        stEi_labelid.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelid.setText("ID");
-        Teilestamm_Einsehen.add(stEi_labelid);
-        stEi_labelid.setBounds(50, 120, 12, 15);
-
-        stEi_labelZeichnNr.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelZeichnNr.setText("Zeichn.Nr.");
-        Teilestamm_Einsehen.add(stEi_labelZeichnNr);
-        stEi_labelZeichnNr.setBounds(10, 170, 56, 15);
-
-        stEi_labelMAM.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelMAM.setText("MAM");
-        Teilestamm_Einsehen.add(stEi_labelMAM);
-        stEi_labelMAM.setBounds(450, 170, 25, 15);
-
-        stEi_idfeld.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_idfeld.setToolTipText("00001 bis 10000");
-        stEi_idfeld.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(stEi_idfeld);
-        stEi_idfeld.setBounds(70, 110, 100, 30);
-
-        stEi_ZNrfeld.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_ZNrfeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
-        stEi_ZNrfeld.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(stEi_ZNrfeld);
-        stEi_ZNrfeld.setBounds(70, 160, 100, 30);
-
-        stEi_labelBezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelBezeichnung.setText("Bezeichnung");
-        Teilestamm_Einsehen.add(stEi_labelBezeichnung);
-        stEi_labelBezeichnung.setBounds(200, 120, 71, 15);
-
-        stEi_labelBaugruppe.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelBaugruppe.setText("Baugruppe");
-        Teilestamm_Einsehen.add(stEi_labelBaugruppe);
-        stEi_labelBaugruppe.setBounds(210, 170, 61, 15);
-
-        stEi_labelMAG.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelMAG.setText("MAG");
-        Teilestamm_Einsehen.add(stEi_labelMAG);
-        stEi_labelMAG.setBounds(450, 220, 25, 15);
-
-        stEi_Bezeichnungsfeld.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_Bezeichnungsfeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
-        stEi_Bezeichnungsfeld.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(stEi_Bezeichnungsfeld);
-        stEi_Bezeichnungsfeld.setBounds(280, 110, 108, 30);
-
-        stEi_Baugruppenfeld.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_Baugruppenfeld.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(stEi_Baugruppenfeld);
-        stEi_Baugruppenfeld.setBounds(280, 160, 108, 30);
-
-        stEi_labelTeiletyp.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelTeiletyp.setText("Teiletyp");
-        Teilestamm_Einsehen.add(stEi_labelTeiletyp);
-        stEi_labelTeiletyp.setBounds(20, 220, 42, 15);
-
-        stEi_labelPreis.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelPreis.setText("Preis");
-        Teilestamm_Einsehen.add(stEi_labelPreis);
-        stEi_labelPreis.setBounds(670, 120, 29, 15);
-
-        stEi_MAGfeld.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_MAGfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe groß passt");
-        stEi_MAGfeld.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(stEi_MAGfeld);
-        stEi_MAGfeld.setBounds(490, 210, 100, 30);
-
-        stEi_MAMfeld.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_MAMfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe mittel passt");
-        stEi_MAMfeld.setMinimumSize(new java.awt.Dimension(100, 0));
-        Teilestamm_Einsehen.add(stEi_MAMfeld);
-        stEi_MAMfeld.setBounds(490, 160, 100, 30);
-
-        stEi_labelMaterialgruppe.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelMaterialgruppe.setText("Materialgruppe");
-        Teilestamm_Einsehen.add(stEi_labelMaterialgruppe);
-        stEi_labelMaterialgruppe.setBounds(190, 220, 82, 15);
-
-        stEi_labelMAK.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_labelMAK.setText("MAK");
-        Teilestamm_Einsehen.add(stEi_labelMAK);
-        stEi_labelMAK.setBounds(450, 120, 24, 15);
-
-        stEi_Suchbutton.setText("... suchen");
-        Teilestamm_Einsehen.add(stEi_Suchbutton);
-        stEi_Suchbutton.setBounds(730, 20, 90, 30);
-
-        stEi_MAKfeld.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_MAKfeld.setToolTipText("maximale Anzahl dieses Teiles, die in ein Fach der Größe klein passt");
-        Teilestamm_Einsehen.add(stEi_MAKfeld);
-        stEi_MAKfeld.setBounds(490, 111, 100, 30);
-
-        jTable5.setFont(new java.awt.Font("Arial", 0, 12));
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        stEi_jScrollPane5.setViewportView(jTable5);
-
-        Teilestamm_Einsehen.add(stEi_jScrollPane5);
-        stEi_jScrollPane5.setBounds(0, 270, 850, 230);
-
-        stEi_Materialgruppefeld.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_Materialgruppefeld.setToolTipText("lässt 2 bis 60 Zeichen zu.");
-        Teilestamm_Einsehen.add(stEi_Materialgruppefeld);
-        stEi_Materialgruppefeld.setBounds(280, 210, 110, 30);
-
-        stEi_Preisfeld.setFont(new java.awt.Font("Arial", 0, 12));
-        Teilestamm_Einsehen.add(stEi_Preisfeld);
-        stEi_Preisfeld.setBounds(710, 110, 90, 30);
-
-        stEi_alleAnzeigenButton.setText("alle Stammdaten anzeigen");
-        Teilestamm_Einsehen.add(stEi_alleAnzeigenButton);
-        stEi_alleAnzeigenButton.setBounds(180, 20, 200, 30);
-
-        stEi_anzeigenButton.setText("anzeigen");
-        Teilestamm_Einsehen.add(stEi_anzeigenButton);
-        stEi_anzeigenButton.setBounds(710, 200, 90, 40);
-
-        stEi_TeiletypCombobox.setFont(new java.awt.Font("Arial", 0, 12));
-        stEi_TeiletypCombobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "alle", "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
-        Teilestamm_Einsehen.add(stEi_TeiletypCombobox);
-        stEi_TeiletypCombobox.setBounds(70, 210, 100, 30);
-
-        jTabbedPane1.addTab("Teilestamm Einsehen", Teilestamm_Einsehen);
+        jTabbedPane1.addTab("Teilestammdaten verwalten", Teilestamm_verwalten);
 
         Teile_auslagern.setLayout(null);
 
@@ -1373,7 +1283,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(FachLabel);
         FachLabel.setBounds(50, 330, 90, 15);
 
-        BestandverringernLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        BestandverringernLabel.setFont(new java.awt.Font("Arial", 0, 12));
         BestandverringernLabel.setText("Bestand um die Menge X verringern:");
         Teile_auslagern.add(BestandverringernLabel);
         BestandverringernLabel.setBounds(50, 370, 210, 15);
@@ -1383,7 +1293,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(BemerkungLabel);
         BemerkungLabel.setBounds(50, 150, 67, 15);
 
-        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         Teile_auslagern.add(IDTextfield);
         IDTextfield.setBounds(280, 60, 128, 21);
 
@@ -1425,7 +1335,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(label_eingabe_aufforderung_id);
         label_eingabe_aufforderung_id.setBounds(50, 10, 180, 20);
 
-        label_eingabe_aufforderung_fach.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_eingabe_aufforderung_fach.setFont(new java.awt.Font("Arial", 0, 12));
         label_eingabe_aufforderung_fach.setText("Bitte geben Sie das Fach ein oder wählen Sie es aus der Tabelle aus:");
         Teile_auslagern.add(label_eingabe_aufforderung_fach);
         label_eingabe_aufforderung_fach.setBounds(50, 280, 520, 20);
@@ -2041,7 +1951,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_Splitten.add(label_anzeige_mindestgroesse);
         label_anzeige_mindestgroesse.setBounds(530, 100, 30, 20);
 
-        jTabbedPane1.addTab("Teil Splitten", Teile_Splitten);
+        jTabbedPane1.addTab("Teil splitten", Teile_Splitten);
 
         Teile_umlagern.setLayout(null);
 
@@ -2133,6 +2043,489 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Teil umlagern", Teile_umlagern);
 
+        suche_Teil.setLayout(null);
+
+        MAMTextfield1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        suche_Teil.add(MAMTextfield1);
+        MAMTextfield1.setBounds(320, 170, 113, 21);
+
+        MAGTextfield1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        suche_Teil.add(MAGTextfield1);
+        MAGTextfield1.setBounds(320, 200, 113, 21);
+
+        SuchenlinksButton.setFont(new java.awt.Font("Arial", 0, 12));
+        SuchenlinksButton.setText("Suchen");
+        suche_Teil.add(SuchenlinksButton);
+        SuchenlinksButton.setBounds(170, 270, 75, 23);
+
+        EuroLabel1.setText("€");
+        suche_Teil.add(EuroLabel1);
+        EuroLabel1.setBounds(420, 110, 19, 14);
+
+        PreisLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        PreisLabel1.setText("Preis:");
+        suche_Teil.add(PreisLabel1);
+        PreisLabel1.setBounds(280, 110, 32, 15);
+
+        IDTextfield3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        suche_Teil.add(IDTextfield3);
+        IDTextfield3.setBounds(130, 40, 112, 21);
+
+        MAKLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        MAKLabel1.setText("MAK:");
+        suche_Teil.add(MAKLabel1);
+        MAKLabel1.setBounds(280, 140, 27, 15);
+
+        TeileStammdatenLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        TeileStammdatenLabel.setText("Teile Stammdaten:");
+        suche_Teil.add(TeileStammdatenLabel);
+        TeileStammdatenLabel.setBounds(30, 20, 140, 15);
+
+        TeiletypTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        suche_Teil.add(TeiletypTextfield);
+        TeiletypTextfield.setBounds(130, 110, 112, 21);
+
+        BezeichnungLabel3.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel3.setText("Bezeichnung:");
+        suche_Teil.add(BezeichnungLabel3);
+        BezeichnungLabel3.setBounds(30, 80, 74, 15);
+
+        ZNrTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
+        suche_Teil.add(ZNrTextfield1);
+        ZNrTextfield1.setBounds(130, 170, 112, 21);
+
+        IDlinksLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        IDlinksLabel.setText("Teile ID:");
+        suche_Teil.add(IDlinksLabel);
+        IDlinksLabel.setBounds(30, 50, 45, 15);
+
+        MaterialTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
+        suche_Teil.add(MaterialTextfield1);
+        MaterialTextfield1.setBounds(130, 140, 112, 21);
+
+        MaterialgruppeLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        MaterialgruppeLabel1.setText("Materialgrupe:");
+        suche_Teil.add(MaterialgruppeLabel1);
+        MaterialgruppeLabel1.setBounds(30, 140, 78, 15);
+
+        BezTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        suche_Teil.add(BezTextfield);
+        BezTextfield.setBounds(130, 80, 112, 21);
+
+        TeiletypLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        TeiletypLabel.setText("Teiletyp:");
+        suche_Teil.add(TeiletypLabel);
+        TeiletypLabel.setBounds(30, 110, 45, 15);
+
+        BaugruppeLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        BaugruppeLabel1.setText("Baugruppe:");
+        suche_Teil.add(BaugruppeLabel1);
+        BaugruppeLabel1.setBounds(30, 210, 64, 15);
+
+        jButton1.setFont(new java.awt.Font("Arial", 0, 12));
+        jButton1.setText("alle Teile anzeigen");
+        suche_Teil.add(jButton1);
+        jButton1.setBounds(30, 270, 135, 23);
+
+        MAKTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
+        suche_Teil.add(MAKTextfield1);
+        MAKTextfield1.setBounds(320, 140, 113, 21);
+
+        ZeichnungsnrLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        ZeichnungsnrLabel1.setText("Zeichnungsnr.:");
+        suche_Teil.add(ZeichnungsnrLabel1);
+        ZeichnungsnrLabel1.setBounds(30, 180, 82, 15);
+
+        PreisTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
+        suche_Teil.add(PreisTextfield1);
+        PreisTextfield1.setBounds(320, 110, 90, 21);
+
+        MAMLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        MAMLabel1.setText("MAM:");
+        suche_Teil.add(MAMLabel1);
+        MAMLabel1.setBounds(280, 180, 28, 15);
+
+        BaugruppeTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
+        suche_Teil.add(BaugruppeTextfield1);
+        BaugruppeTextfield1.setBounds(130, 200, 112, 21);
+
+        MAGLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        MAGLabel1.setText("MAG:");
+        suche_Teil.add(MAGLabel1);
+        MAGLabel1.setBounds(280, 210, 28, 15);
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable5);
+
+        suche_Teil.add(jScrollPane5);
+        jScrollPane5.setBounds(20, 310, 630, 140);
+
+        jTabbedPane2.addTab("Teil suchen", suche_Teil);
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane7.setViewportView(jTable6);
+
+        LagerortLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        LagerortLabel.setText("Lagerort:");
+
+        LagerfachbestandLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        LagerfachbestandLabel.setText("Lagerfachbestand:");
+
+        ZeileLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        ZeileLabel.setText("Zeile:");
+
+        RegalnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        RegalnrLabel.setText("Regalnr.:");
+
+        BelegtLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BelegtLabel.setText("Belegt:");
+
+        SpalteLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        SpalteLabel.setText("Spalte:");
+
+        FCB.setFont(new java.awt.Font("Arial", 0, 12));
+        FCB.setText("F");
+
+        H3CB.setFont(new java.awt.Font("Arial", 0, 12));
+        H3CB.setText("H3");
+
+        H1CB.setFont(new java.awt.Font("Arial", 0, 12));
+        H1CB.setText("H1");
+
+        SpalteTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+
+        H4CB.setFont(new java.awt.Font("Arial", 0, 12));
+        H4CB.setText("H4");
+
+        H2CB.setFont(new java.awt.Font("Arial", 0, 12));
+        H2CB.setText("H2");
+
+        HCB.setFont(new java.awt.Font("Arial", 0, 12));
+        HCB.setText("H");
+
+        gCB.setFont(new java.awt.Font("Arial", 0, 12));
+        gCB.setText("G");
+
+        GrößeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        GrößeLabel.setText("Größe:");
+
+        mCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        mCB.setText("M");
+
+        SuchenmitteButton.setFont(new java.awt.Font("Arial", 0, 12));
+        SuchenmitteButton.setText("Suchen");
+
+        ZeileTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+
+        neinCB.setFont(new java.awt.Font("Arial", 0, 12));
+        neinCB.setText("nein");
+
+        kCB.setFont(new java.awt.Font("Arial", 0, 12));
+        kCB.setText("K");
+
+        jaCB.setFont(new java.awt.Font("Arial", 0, 12));
+        jaCB.setText("ja");
+
+        H5CB.setFont(new java.awt.Font("Arial", 0, 12));
+        H5CB.setText("H5");
+
+        LagerfachbestandTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+
+        zeile_label.setText("(Z1 - Z25)");
+
+        spalte_label.setText("(S1 - S25)");
+
+        javax.swing.GroupLayout suche_Fach_lagerplatzLayout = new javax.swing.GroupLayout(suche_Fach_lagerplatz);
+        suche_Fach_lagerplatz.setLayout(suche_Fach_lagerplatzLayout);
+        suche_Fach_lagerplatzLayout.setHorizontalGroup(
+            suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addComponent(LagerfachbestandLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(LagerfachbestandTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addComponent(LagerortLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(FCB)
+                        .addGap(11, 11, 11)
+                        .addComponent(HCB))
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addComponent(SpalteLabel)
+                        .addGap(30, 30, 30)
+                        .addComponent(SpalteTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(spalte_label))
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addComponent(BelegtLabel)
+                        .addGap(34, 34, 34)
+                        .addComponent(jaCB)
+                        .addGap(2, 2, 2)
+                        .addComponent(neinCB))
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addComponent(GrößeLabel)
+                        .addGap(34, 34, 34)
+                        .addComponent(kCB)
+                        .addGap(2, 2, 2)
+                        .addComponent(mCB)
+                        .addGap(2, 2, 2)
+                        .addComponent(gCB))
+                    .addComponent(SuchenmitteButton)
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                .addComponent(ZeileLabel)
+                                .addGap(38, 38, 38)
+                                .addComponent(ZeileTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(zeile_label))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                .addComponent(RegalnrLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(H1CB)
+                                .addGap(2, 2, 2)
+                                .addComponent(H2CB)
+                                .addGap(2, 2, 2)
+                                .addComponent(H3CB)
+                                .addGap(2, 2, 2)
+                                .addComponent(H4CB)))
+                        .addGap(2, 2, 2)
+                        .addComponent(H5CB)))
+                .addGap(322, 322, 322))
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        suche_Fach_lagerplatzLayout.setVerticalGroup(
+            suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(LagerfachbestandLabel))
+                    .addComponent(LagerfachbestandTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(LagerortLabel))
+                    .addComponent(FCB)
+                    .addComponent(HCB))
+                .addGap(8, 8, 8)
+                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(RegalnrLabel))
+                    .addComponent(H1CB)
+                    .addComponent(H2CB)
+                    .addComponent(H3CB)
+                    .addComponent(H4CB)
+                    .addComponent(H5CB))
+                .addGap(18, 18, 18)
+                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(ZeileLabel))
+                            .addComponent(ZeileTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(9, 9, 9)
+                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(SpalteLabel))
+                            .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(SpalteTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(spalte_label)))
+                        .addGap(18, 18, 18)
+                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(BelegtLabel))
+                            .addComponent(jaCB)
+                            .addComponent(neinCB))
+                        .addGap(18, 18, 18)
+                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(GrößeLabel))
+                            .addComponent(kCB)
+                            .addComponent(mCB)
+                            .addComponent(gCB))
+                        .addGap(18, 18, 18)
+                        .addComponent(SuchenmitteButton))
+                    .addComponent(zeile_label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPane2.addTab("Fach / Lagerplatz suchen", suche_Fach_lagerplatz);
+
+        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane8.setViewportView(jTable7);
+
+        LagerbestandTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+
+        MinTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+
+        TeileIDLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileIDLabel1.setText("Teile ID:");
+
+        SuchenrechtsButton.setFont(new java.awt.Font("Arial", 0, 12));
+        SuchenrechtsButton.setText("Suchen");
+
+        FachnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachnrLabel.setText("Fachnummer:");
+
+        HaltbarkeitsLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        HaltbarkeitsLabel.setText("Haltbarkeitsdatum:");
+
+        MaxMengeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MaxMengeLabel.setText("Max. Menge im Fach:");
+
+        TeileIDrechtsTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+
+        FachnrTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
+
+        DatumTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+
+        MinMengeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MinMengeLabel.setText("Mind. Menge im Fach:");
+
+        MaxTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+
+        LagerbestandLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        LagerbestandLabel.setText("Lagerbestand:");
+
+        javax.swing.GroupLayout suche_InhaltLayout = new javax.swing.GroupLayout(suche_Inhalt);
+        suche_Inhalt.setLayout(suche_InhaltLayout);
+        suche_InhaltLayout.setHorizontalGroup(
+            suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+            .addGroup(suche_InhaltLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SuchenrechtsButton)
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addComponent(LagerbestandLabel)
+                        .addGap(83, 83, 83)
+                        .addComponent(LagerbestandTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addComponent(MinMengeLabel)
+                        .addGap(44, 44, 44)
+                        .addComponent(MinTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addComponent(MaxMengeLabel)
+                        .addGap(49, 49, 49)
+                        .addComponent(MaxTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addComponent(HaltbarkeitsLabel)
+                        .addGap(59, 59, 59)
+                        .addComponent(DatumTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addComponent(FachnrLabel)
+                        .addGap(86, 86, 86)
+                        .addComponent(FachnrTextfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addComponent(TeileIDLabel1)
+                        .addGap(118, 118, 118)
+                        .addComponent(TeileIDrechtsTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        suche_InhaltLayout.setVerticalGroup(
+            suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, suche_InhaltLayout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(LagerbestandLabel))
+                    .addComponent(LagerbestandTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(MinMengeLabel))
+                    .addComponent(MinTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(MaxMengeLabel))
+                    .addComponent(MaxTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(HaltbarkeitsLabel))
+                    .addComponent(DatumTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(FachnrLabel))
+                    .addComponent(FachnrTextfield1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_InhaltLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(TeileIDLabel1))
+                    .addComponent(TeileIDrechtsTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(SuchenrechtsButton)
+                .addGap(69, 69, 69)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jTabbedPane2.addTab("Menge / Teil im Fach suchen", suche_Inhalt);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane2)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Teil suchen", jPanel1);
+
         getContentPane().add(jTabbedPane1);
         jTabbedPane1.setBounds(0, 10, 1010, 560);
 
@@ -2205,8 +2598,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField AnschaffungsTextField;
     private javax.swing.JButton AusführenButton;
     private javax.swing.JLabel BaugruppeLabel;
+    private javax.swing.JLabel BaugruppeLabel1;
     private javax.swing.JLabel BaugruppeTextfield;
+    private javax.swing.JTextField BaugruppeTextfield1;
     private javax.swing.JMenu Bearbeiten;
+    private javax.swing.JLabel BelegtLabel;
     private javax.swing.JLabel BemerkungLabel;
     private javax.swing.JLabel BemerkungLabel1;
     private javax.swing.JScrollPane BemerkungScrollPane;
@@ -2216,58 +2612,108 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel BestandverringernLabel;
     private javax.swing.JButton BestätigenButton;
     private javax.swing.JButton BestätigenidButton;
+    private javax.swing.JTextField BezTextfield;
     private javax.swing.JLabel BezTextfield1;
     private javax.swing.JLabel BezeichnungLabel;
     private javax.swing.JLabel BezeichnungLabel1;
     private javax.swing.JLabel BezeichnungLabel2;
+    private javax.swing.JLabel BezeichnungLabel3;
     private javax.swing.JLabel BezeichnungTextfield;
     private javax.swing.JLabel Bezeichnung_ausgabeLabel;
     private javax.swing.JLabel BitteeingebenLabel;
     private javax.swing.JPanel Buchungshistorie_einsehen_ausdrucken;
     private javax.swing.JMenu Datei;
+    private javax.swing.JTextField DatumTextfield;
     private javax.swing.JLabel EuroLabel;
+    private javax.swing.JLabel EuroLabel1;
+    private javax.swing.JCheckBox FCB;
     private javax.swing.JLabel FachLabel;
     private javax.swing.JTextField FachTextfield;
+    private javax.swing.JLabel FachnrLabel;
     private javax.swing.JLabel FachnrLabel_Ziel;
     private javax.swing.JTextField FachnrTextfield;
+    private javax.swing.JTextField FachnrTextfield1;
     private javax.swing.JTextField FachnrTextfield_Ziel;
     private javax.swing.JLabel FachnummerLabel;
+    private javax.swing.JLabel GrößeLabel;
+    private javax.swing.JCheckBox H1CB;
+    private javax.swing.JCheckBox H2CB;
+    private javax.swing.JCheckBox H3CB;
+    private javax.swing.JCheckBox H4CB;
+    private javax.swing.JCheckBox H5CB;
+    private javax.swing.JCheckBox HCB;
+    private javax.swing.JLabel HaltbarkeitsLabel;
     private javax.swing.JLabel IDLabel;
     private javax.swing.JTextField IDTextfield;
     private javax.swing.JTextField IDTextfield1;
     private javax.swing.JLabel IDTextfield2;
+    private javax.swing.JTextField IDTextfield3;
+    private javax.swing.JLabel IDlinksLabel;
+    private javax.swing.JLabel LagerbestandLabel;
+    private javax.swing.JTextField LagerbestandTextfield;
+    private javax.swing.JLabel LagerfachbestandLabel;
+    private javax.swing.JTextField LagerfachbestandTextfield;
+    private javax.swing.JLabel LagerortLabel;
     private javax.swing.JLabel MAGLabel;
+    private javax.swing.JLabel MAGLabel1;
     private javax.swing.JLabel MAGTextfield;
+    private javax.swing.JTextField MAGTextfield1;
     private javax.swing.JLabel MAKLabel;
+    private javax.swing.JLabel MAKLabel1;
     private javax.swing.JLabel MAKTextfield;
+    private javax.swing.JTextField MAKTextfield1;
     private javax.swing.JLabel MAMLabel;
+    private javax.swing.JLabel MAMLabel1;
     private javax.swing.JLabel MAMTextfield;
+    private javax.swing.JTextField MAMTextfield1;
     private javax.swing.JLabel MaterialTextfield;
+    private javax.swing.JTextField MaterialTextfield1;
     private javax.swing.JLabel MaterialgruppeLabel;
+    private javax.swing.JLabel MaterialgruppeLabel1;
+    private javax.swing.JLabel MaxMengeLabel;
+    private javax.swing.JTextField MaxTextfield;
     private javax.swing.JLabel MengeLabel;
     private javax.swing.JLabel MengeTextfield;
+    private javax.swing.JLabel MinMengeLabel;
+    private javax.swing.JTextField MinTextfield;
     private javax.swing.JLabel PreisLabel;
+    private javax.swing.JLabel PreisLabel1;
     private javax.swing.JLabel PreisTextfield;
+    private javax.swing.JTextField PreisTextfield1;
+    private javax.swing.JLabel RegalnrLabel;
+    private javax.swing.JLabel SpalteLabel;
+    private javax.swing.JTextField SpalteTextfield;
     private javax.swing.JLabel StammdatenLabel;
     private javax.swing.JButton SuchenButton;
     private javax.swing.JButton SuchenButton1;
+    private javax.swing.JButton SuchenlinksButton;
+    private javax.swing.JButton SuchenmitteButton;
+    private javax.swing.JButton SuchenrechtsButton;
     private javax.swing.JLabel TeileIDLabel;
+    private javax.swing.JLabel TeileIDLabel1;
+    private javax.swing.JTextField TeileIDrechtsTextfield;
     private javax.swing.JLabel TeileLabel;
     private javax.swing.JLabel TeileLabel1;
+    private javax.swing.JLabel TeileStammdatenLabel;
     private javax.swing.JPanel Teile_Splitten;
     private javax.swing.JPanel Teile_auslagern;
     private javax.swing.JTabbedPane Teile_einlagern;
     private javax.swing.JPanel Teile_entfernen_loeschen;
     private javax.swing.JPanel Teile_umlagern;
-    private javax.swing.JPanel Teilestamm_Einsehen;
     private javax.swing.JPanel Teilestamm_erweitern;
     private javax.swing.JPanel Teilestamm_verwalten;
     private javax.swing.JButton Teilestammdaten_suchen_historie;
     private javax.swing.JButton Teilestammdatenbutton;
+    private javax.swing.JLabel TeiletypLabel;
+    private javax.swing.JTextField TeiletypTextfield;
     private javax.swing.JLabel TypTextfield;
     private javax.swing.JButton UmlagernButton;
     private javax.swing.JLabel ZNrTextfield;
+    private javax.swing.JTextField ZNrTextfield1;
     private javax.swing.JLabel ZeichnungsnrLabel;
+    private javax.swing.JLabel ZeichnungsnrLabel1;
+    private javax.swing.JLabel ZeileLabel;
+    private javax.swing.JTextField ZeileTextfield;
     private javax.swing.JLabel ZielfachLabel;
     private javax.swing.JButton aendern_button;
     private javax.swing.JButton anzeige_button_historie;
@@ -2310,9 +2756,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField fachnummer_textfeld7;
     private javax.swing.JTextField fachnummer_textfeld8;
     private javax.swing.JTextField fachnummer_textfeld9;
+    private javax.swing.JCheckBox gCB;
     private javax.swing.JTextField id_textfeld;
     private javax.swing.JTextField id_textfeld2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
@@ -2320,14 +2769,22 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
+    private javax.swing.JTable jTable7;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JCheckBox jaCB;
+    private javax.swing.JCheckBox kCB;
     private javax.swing.JButton kapazitaet_pruefen_button1;
     private javax.swing.JButton kapazitaet_pruefen_button10;
     private javax.swing.JButton kapazitaet_pruefen_button11;
@@ -2463,6 +2920,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel laber_noch_einzulagern;
     private javax.swing.JButton lagerplatz_suchen_historie;
     private javax.swing.JButton loeschenButton;
+    private javax.swing.JCheckBox mCB;
     private javax.swing.JTextField menge_textfeld1;
     private javax.swing.JTextField menge_textfeld10;
     private javax.swing.JTextField menge_textfeld11;
@@ -2484,37 +2942,18 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField menge_textfeld7;
     private javax.swing.JTextField menge_textfeld8;
     private javax.swing.JTextField menge_textfeld9;
+    private javax.swing.JCheckBox neinCB;
     private javax.swing.JLabel oderLabel_historie;
+    private javax.swing.JLabel spalte_label;
     private javax.swing.JButton splitten_button;
-    private javax.swing.JTextField stEi_Baugruppenfeld;
-    private javax.swing.JTextField stEi_Bezeichnungsfeld;
-    private javax.swing.JTextField stEi_MAGfeld;
-    private javax.swing.JTextField stEi_MAKfeld;
-    private javax.swing.JTextField stEi_MAMfeld;
-    private javax.swing.JTextField stEi_Materialgruppefeld;
-    private javax.swing.JTextField stEi_Preisfeld;
-    private javax.swing.JButton stEi_Suchbutton;
-    private javax.swing.JComboBox stEi_TeiletypCombobox;
-    private javax.swing.JTextField stEi_ZNrfeld;
-    private javax.swing.JButton stEi_alleAnzeigenButton;
-    private javax.swing.JButton stEi_anzeigenButton;
-    private javax.swing.JTextField stEi_idfeld;
-    private javax.swing.JScrollPane stEi_jScrollPane5;
-    private javax.swing.JLabel stEi_labelBaugruppe;
-    private javax.swing.JLabel stEi_labelBezeichnung;
-    private javax.swing.JLabel stEi_labelMAG;
-    private javax.swing.JLabel stEi_labelMAK;
-    private javax.swing.JLabel stEi_labelMAM;
-    private javax.swing.JLabel stEi_labelMaterialgruppe;
-    private javax.swing.JLabel stEi_labelPreis;
-    private javax.swing.JLabel stEi_labelTeileStammdaten;
-    private javax.swing.JLabel stEi_labelTeiletyp;
-    private javax.swing.JLabel stEi_labelZeichnNr;
-    private javax.swing.JLabel stEi_labelid;
+    private javax.swing.JPanel suche_Fach_lagerplatz;
+    private javax.swing.JPanel suche_Inhalt;
+    private javax.swing.JPanel suche_Teil;
     private javax.swing.JButton suchenButton;
     private javax.swing.JButton suchen_button;
     private javax.swing.JButton suchen_button1;
     private javax.swing.JButton suchen_button2;
+    private javax.swing.JButton suchen_button_erweitern;
     private javax.swing.JScrollPane textarea_bemerkung;
     private javax.swing.JTextArea textarea_bemerkung_verwalten;
     private javax.swing.JTextField textfeld_baugruppe;
@@ -2537,6 +2976,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField textfeld_zeichnungsnummer;
     private javax.swing.JTextField textfeld_zeichnungsnummer1;
     private javax.swing.JLabel undLabel_historie;
+    private javax.swing.JLabel zeile_label;
     private javax.swing.JLabel zeitraumLabel_historie;
     private javax.swing.JTextField zeitraum_bis_textfeld_historie;
     private javax.swing.JTextField zeitraum_von_button_historie;
