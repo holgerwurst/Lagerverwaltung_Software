@@ -25,7 +25,7 @@ public class Lagerbestandskonto {
 	private GregorianCalendar haltbarkeitsdatum;
          
         //Konstruktor
-	public Lagerbestandskonto(int id, String fachnummer, int menge, String anschaffungsgrund,
+	public Lagerbestandskonto(String fachnummer,int id, int menge, String anschaffungsgrund,
                 GregorianCalendar datum) {
         
         this.id = id;

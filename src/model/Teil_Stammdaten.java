@@ -20,8 +20,8 @@ public class Teil_Stammdaten {
     private int id;
 
     //Konstruktor
-    public Teil_Stammdaten(int id, TeileTypET typ, String baugruppe, String zeichnungsnummer,
-            double preis, String bezeichnung, String bemerkung, int max_anzahl_klein, int max_anzahl_mittel, int max_anzahl_gross, String materialgruppe) {
+    public Teil_Stammdaten(int id, TeileTypET typ, String zeichnungsnummer, String materialgruppe,double preis,String bezeichnung,
+            String baugruppe, String bemerkung, int max_anzahl_klein, int max_anzahl_mittel, int max_anzahl_gross) {
 
         this.zeichnungsnummer = zeichnungsnummer;
         this.preis = preis;
