@@ -462,7 +462,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_oder1);
         label_oder1.setBounds(370, 60, 34, 15);
 
-        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12));
         label_teile_id2.setText("Teile ID:");
         jPanel8.add(label_teile_id2);
         label_teile_id2.setBounds(40, 60, 60, 20);
@@ -1027,7 +1027,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(label_baugruppe);
         label_baugruppe.setBounds(30, 220, 64, 15);
 
-        textfeld_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(textfeld_bezeichnung);
         textfeld_bezeichnung.setBounds(150, 100, 150, 21);
 
@@ -1094,8 +1094,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(label_waehrung);
         label_waehrung.setBounds(630, 100, 7, 15);
 
-        button_anlegen.setFont(new java.awt.Font("Arial", 0, 12));
+        button_anlegen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_anlegen.setText("Anlegen");
+        button_anlegen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_anlegenActionPerformed(evt);
+            }
+        });
         Teilestamm_erweitern.add(button_anlegen);
         button_anlegen.setBounds(30, 330, 77, 23);
 
@@ -1111,7 +1116,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(textarea_bemerkung);
         textarea_bemerkung.setBounds(450, 220, 166, 96);
 
-        AnschaffungsTextField.setFont(new java.awt.Font("Arial", 0, 12));
+        AnschaffungsTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(AnschaffungsTextField);
         AnschaffungsTextField.setBounds(150, 250, 150, 21);
 
@@ -1120,7 +1125,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(AnschaffungsLabel);
         AnschaffungsLabel.setBounds(30, 250, 110, 15);
 
-        suchen_button_erweitern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        suchen_button_erweitern.setFont(new java.awt.Font("Arial", 0, 12));
         suchen_button_erweitern.setText("Suche Teile ID");
         Teilestamm_erweitern.add(suchen_button_erweitern);
         suchen_button_erweitern.setBounds(350, 50, 140, 23);
@@ -1235,19 +1240,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_verwalten.add(label_waehrung1);
         label_waehrung1.setBounds(570, 110, 7, 15);
 
-        button_loeschen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        button_loeschen.setFont(new java.awt.Font("Arial", 0, 12));
         button_loeschen.setText("Löschen");
         Teilestamm_verwalten.add(button_loeschen);
         button_loeschen.setBounds(480, 70, 81, 23);
         Teilestamm_verwalten.add(textfeld_teiltyp);
         textfeld_teiltyp.setBounds(130, 140, 161, 20);
 
-        button_suchen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        button_suchen.setFont(new java.awt.Font("Arial", 0, 12));
         button_suchen.setText("Suchen");
         Teilestamm_verwalten.add(button_suchen);
         button_suchen.setBounds(210, 70, 75, 23);
 
-        anzeigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        anzeigen_button.setFont(new java.awt.Font("Arial", 0, 12));
         anzeigen_button.setText("Anzeigen");
         Teilestamm_verwalten.add(anzeigen_button);
         anzeigen_button.setBounds(310, 70, 83, 23);
@@ -2045,11 +2050,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         suche_Teil.setLayout(null);
 
-        MAMTextfield1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        MAMTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(MAMTextfield1);
         MAMTextfield1.setBounds(320, 170, 113, 21);
 
-        MAGTextfield1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        MAGTextfield1.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(MAGTextfield1);
         MAGTextfield1.setBounds(320, 200, 113, 21);
 
@@ -2067,16 +2072,16 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         suche_Teil.add(PreisLabel1);
         PreisLabel1.setBounds(280, 110, 32, 15);
 
-        IDTextfield3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        IDTextfield3.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(IDTextfield3);
         IDTextfield3.setBounds(130, 40, 112, 21);
 
-        MAKLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        MAKLabel1.setFont(new java.awt.Font("Arial", 0, 12));
         MAKLabel1.setText("MAK:");
         suche_Teil.add(MAKLabel1);
         MAKLabel1.setBounds(280, 140, 27, 15);
 
-        TeileStammdatenLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        TeileStammdatenLabel.setFont(new java.awt.Font("Arial", 1, 12));
         TeileStammdatenLabel.setText("Teile Stammdaten:");
         suche_Teil.add(TeileStammdatenLabel);
         TeileStammdatenLabel.setBounds(30, 20, 140, 15);
@@ -2229,7 +2234,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         GrößeLabel.setFont(new java.awt.Font("Arial", 0, 12));
         GrößeLabel.setText("Größe:");
 
-        mCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        mCB.setFont(new java.awt.Font("Arial", 0, 12));
         mCB.setText("M");
 
         SuchenmitteButton.setFont(new java.awt.Font("Arial", 0, 12));
@@ -2549,6 +2554,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void textfeld_id1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfeld_id1ActionPerformed
         // TODO add your handling code here:}//GEN-LAST:event_textfeld_id1ActionPerformed
     }
+        private void button_anlegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_anlegenActionPerformed
+        // TODO add your handling code here:
+            System.out.println("Teilestamm erweitern: anlegen button gedrückt!");
+            //control.TeileStamm_erweitern_controller.nutzeranforderung(
+                    
+    }//GEN-LAST:event_button_anlegenActionPerformed
+    
 
     /**
      * @param args the command line arguments
