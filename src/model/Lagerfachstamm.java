@@ -5,7 +5,7 @@
  *--------------------------------------------------------------------------------*/
 //..end "File Description"
 
-package Model;
+package model;
 
 //..begin "Imports"
 

@@ -1,8 +1,6 @@
-package Model;
+package model;
 
 //..begin "Imports"
-import model.TeileTypET;
-//..end "Imports"
 
 public class Teil_Stammdaten {
 
