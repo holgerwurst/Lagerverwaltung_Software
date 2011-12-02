@@ -263,6 +263,18 @@ public class Datenbankverbindung {
             System.err.println(e.getMessage());
         }
     }
+    /**
+    *
+    * Einfache Erstellung einer Verbindung ohne die Erstellung eines SQLStatements
+    */
+    
+    public void basic_connect() {
+        try {
+            connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 
     public void disconnect() throws ClassNotFoundException {
 

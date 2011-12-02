@@ -105,112 +105,112 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
         MAMTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(MAMTextfield);
-        MAMTextfield.setBounds(305, 165, 113, 21);
+        MAMTextfield.setBounds(305, 165, 113, 19);
 
         MAGTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(MAGTextfield);
-        MAGTextfield.setBounds(305, 197, 113, 21);
+        MAGTextfield.setBounds(305, 197, 113, 19);
 
         SuchenlinksButton.setFont(new java.awt.Font("Arial", 0, 12));
         SuchenlinksButton.setText("Suchen");
         suche_Teil.add(SuchenlinksButton);
-        SuchenlinksButton.setBounds(151, 259, 75, 23);
+        SuchenlinksButton.setBounds(151, 259, 81, 25);
 
         EuroLabel.setText("€");
         suche_Teil.add(EuroLabel);
-        EuroLabel.setBounds(405, 105, 19, 14);
+        EuroLabel.setBounds(405, 105, 19, 15);
 
         PreisLabel.setFont(new java.awt.Font("Arial", 0, 12));
         PreisLabel.setText("Preis:");
         suche_Teil.add(PreisLabel);
-        PreisLabel.setBounds(263, 104, 32, 15);
+        PreisLabel.setBounds(263, 104, 35, 15);
 
-        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(IDTextfield);
-        IDTextfield.setBounds(114, 37, 112, 21);
+        IDTextfield.setBounds(114, 37, 112, 19);
 
         MAKLabel.setFont(new java.awt.Font("Arial", 0, 12));
         MAKLabel.setText("MAK:");
         suche_Teil.add(MAKLabel);
-        MAKLabel.setBounds(264, 136, 27, 15);
+        MAKLabel.setBounds(264, 136, 29, 15);
 
-        TeileStammdatenLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        TeileStammdatenLabel.setFont(new java.awt.Font("Arial", 1, 12));
         TeileStammdatenLabel.setText("Teile Stammdaten:");
         suche_Teil.add(TeileStammdatenLabel);
         TeileStammdatenLabel.setBounds(10, 11, 140, 15);
 
         TeiletypTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(TeiletypTextfield);
-        TeiletypTextfield.setBounds(114, 101, 112, 21);
+        TeiletypTextfield.setBounds(114, 101, 112, 19);
 
         BezeichnungLabel.setFont(new java.awt.Font("Arial", 0, 12));
         BezeichnungLabel.setText("Bezeichnung:");
         suche_Teil.add(BezeichnungLabel);
-        BezeichnungLabel.setBounds(10, 72, 74, 15);
+        BezeichnungLabel.setBounds(10, 72, 83, 15);
 
         ZNrTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(ZNrTextfield);
-        ZNrTextfield.setBounds(114, 165, 112, 21);
+        ZNrTextfield.setBounds(114, 165, 112, 19);
 
         IDlinksLabel.setFont(new java.awt.Font("Arial", 0, 12));
         IDlinksLabel.setText("Teile ID:");
         suche_Teil.add(IDlinksLabel);
-        IDlinksLabel.setBounds(10, 40, 45, 15);
+        IDlinksLabel.setBounds(10, 40, 49, 15);
 
         MaterialTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(MaterialTextfield);
-        MaterialTextfield.setBounds(114, 133, 112, 21);
+        MaterialTextfield.setBounds(114, 133, 112, 19);
 
         MaterialgruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
         MaterialgruppeLabel.setText("Materialgrupe:");
         suche_Teil.add(MaterialgruppeLabel);
-        MaterialgruppeLabel.setBounds(10, 136, 78, 15);
+        MaterialgruppeLabel.setBounds(10, 136, 91, 15);
 
         BezTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(BezTextfield);
-        BezTextfield.setBounds(114, 69, 112, 21);
+        BezTextfield.setBounds(114, 69, 112, 19);
 
         TeiletypLabel.setFont(new java.awt.Font("Arial", 0, 12));
         TeiletypLabel.setText("Teiletyp:");
         suche_Teil.add(TeiletypLabel);
-        TeiletypLabel.setBounds(10, 107, 45, 15);
+        TeiletypLabel.setBounds(10, 107, 52, 15);
 
         BaugruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
         BaugruppeLabel.setText("Baugruppe:");
         suche_Teil.add(BaugruppeLabel);
-        BaugruppeLabel.setBounds(10, 200, 64, 15);
+        BaugruppeLabel.setBounds(10, 200, 73, 15);
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 12));
         jButton1.setText("alle Teile anzeigen");
         suche_Teil.add(jButton1);
-        jButton1.setBounds(10, 259, 135, 23);
+        jButton1.setBounds(10, 259, 149, 25);
 
         MAKTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(MAKTextfield);
-        MAKTextfield.setBounds(305, 133, 113, 21);
+        MAKTextfield.setBounds(305, 133, 113, 19);
 
         ZeichnungsnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
         ZeichnungsnrLabel.setText("Zeichnungsnr.:");
         suche_Teil.add(ZeichnungsnrLabel);
-        ZeichnungsnrLabel.setBounds(10, 168, 82, 15);
+        ZeichnungsnrLabel.setBounds(10, 168, 95, 15);
 
         PreisTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(PreisTextfield);
-        PreisTextfield.setBounds(305, 101, 90, 21);
+        PreisTextfield.setBounds(305, 101, 90, 19);
 
         MAMLabel.setFont(new java.awt.Font("Arial", 0, 12));
         MAMLabel.setText("MAM:");
         suche_Teil.add(MAMLabel);
-        MAMLabel.setBounds(263, 168, 28, 15);
+        MAMLabel.setBounds(263, 168, 32, 15);
 
         BaugruppeTextfield.setFont(new java.awt.Font("Arial", 0, 12));
         suche_Teil.add(BaugruppeTextfield);
-        BaugruppeTextfield.setBounds(114, 197, 112, 21);
+        BaugruppeTextfield.setBounds(114, 197, 112, 19);
 
         MAGLabel.setFont(new java.awt.Font("Arial", 0, 12));
         MAGLabel.setText("MAG:");
         suche_Teil.add(MAGLabel);
-        MAGLabel.setBounds(263, 200, 28, 15);
+        MAGLabel.setBounds(263, 200, 31, 15);
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -247,7 +247,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         LagerortLabel.setText("Lagerort:");
 
         LagerfachbestandLabel.setFont(new java.awt.Font("Arial", 0, 12));
-        LagerfachbestandLabel.setText("Lagerfachbestand:");
+        LagerfachbestandLabel.setText("Fachnummer:");
 
         ZeileLabel.setFont(new java.awt.Font("Arial", 0, 12));
         ZeileLabel.setText("Zeile:");
@@ -287,7 +287,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         GrößeLabel.setFont(new java.awt.Font("Arial", 0, 12));
         GrößeLabel.setText("Größe:");
 
-        mCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        mCB.setFont(new java.awt.Font("Arial", 0, 12));
         mCB.setText("M");
 
         SuchenmitteButton.setFont(new java.awt.Font("Arial", 0, 12));
@@ -491,7 +491,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         suche_Inhalt.setLayout(suche_InhaltLayout);
         suche_InhaltLayout.setHorizontalGroup(
             suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE)
             .addGroup(suche_InhaltLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -525,7 +525,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         suche_InhaltLayout.setVerticalGroup(
             suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, suche_InhaltLayout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(suche_InhaltLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
@@ -573,13 +573,17 @@ public class Teil_Suchen extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
