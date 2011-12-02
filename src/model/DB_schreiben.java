@@ -4,11 +4,6 @@
  */
 package model;
 
-import Model.Lagerbestandskonto;
-import Model.Teil_Stammdaten;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Franz Selent
