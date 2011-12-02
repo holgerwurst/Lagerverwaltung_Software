@@ -56,8 +56,25 @@ public class TeileStamm_erweitern_controller {
         return returnstatement;
     }
     
-   public void nutzeranforderung(String Bezeichnung, model.TeileTypET Typ, String Materialgruppe, String Zeichnungsnummer, String BaugruppeString, String Anschaffungsgrund, String PreisString, String MAKString, String MAMString, String MAGString, String Bemerkung)
+   /**Hauptmethode: hier wird die Nutzeranforderung ein neues Teil anzulegen aufgenommen, geprüft und weiterverarbeitet
+    * 
+    * @param Bezeichnung
+    * @param Typ Hier wird gleich ein Enum aus model.TeileTypET angenommen und nicht weiter geprüft
+    * @param Materialgruppe
+    * @param Zeichnungsnummer
+    * @param BaugruppeString
+    * @param Anschaffungsgrund
+    * @param PreisString
+    * @param MAKString
+    * @param MAMString
+    * @param MAGString
+    * @param Bemerkung 
+    */
+    public void nutzeranforderung(String Bezeichnung, model.TeileTypET Typ, String Materialgruppe, String Zeichnungsnummer, String BaugruppeString, String Anschaffungsgrund, String PreisString, String MAKString, String MAMString, String MAGString, String Bemerkung)
    {
+       //Belibige freie id von der db beziehen und als beispiel ins gui schreinen begin
+       
+       //Belibige freie id von der db beziehen und als beispiel ins gui schreinen end
        
        //Semantische Prüfung der Variablen entsprchend DD begin
        double Preis=StringZUdoublewandler(PreisString);
@@ -68,6 +85,17 @@ public class TeileStamm_erweitern_controller {
        
        
        //Semantische Prüfung der Variablen entsprchend DD end
+       
+       
+       //ID aus der DB (freie id tabelle) entfernen begin
+       
+       //ID aus der DB (freie id tabelle) entfernen end
+       
+       
+       //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben begin
+       
+       //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben end
+       
    }
     
 }
