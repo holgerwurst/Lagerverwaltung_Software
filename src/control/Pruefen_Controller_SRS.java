@@ -6,8 +6,8 @@ package control;
 
 /**
  *
- * @author Keleseth
+ * @author Arthas
  */
-public class pruefen_controller {
+public class Pruefen_Controller_SRS {
     
 }

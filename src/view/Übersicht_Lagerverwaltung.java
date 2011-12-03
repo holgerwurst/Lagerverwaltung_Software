@@ -1004,7 +1004,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(label_bemerkung);
         label_bemerkung.setBounds(350, 220, 67, 15);
 
-        textfeld_preis.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_preis.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(textfeld_preis);
         textfeld_preis.setBounds(450, 100, 154, 21);
 
@@ -2375,7 +2375,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField textfeld_max_anz_klein1;
     private javax.swing.JTextField textfeld_max_anz_mittel;
     private javax.swing.JTextField textfeld_max_anz_mittel1;
-    private javax.swing.JTextField textfeld_preis;
+    public javax.swing.JTextField textfeld_preis;
     private javax.swing.JTextField textfeld_preis1;
     private javax.swing.JTextField textfeld_teiltyp;
     private javax.swing.JTextField textfeld_zeichnungsnummer;
