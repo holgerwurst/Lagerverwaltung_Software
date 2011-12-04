@@ -4,6 +4,10 @@
  */
 package view;
 
+import control.Pruefen_Controller_SRS;
+import javax.swing.JFormattedTextField;
+import view.LagerTextfield.AllowedSequences;
+
 /**
  *
  * @author Stephan
@@ -31,17 +35,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_einlagern = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
         bestaetigen_button2 = new javax.swing.JButton();
-        id_textfeld2 = new javax.swing.JTextField();
         suchen_button2 = new javax.swing.JButton();
         label_bezeichnung2 = new javax.swing.JLabel();
         label_mindestgroesse2 = new javax.swing.JLabel();
         label_anzeige_mindestgroesse2 = new javax.swing.JLabel();
         label_eingabe_aufforderung_id2 = new javax.swing.JLabel();
         menge_textfeld11 = new javax.swing.JTextField();
+        bezeichnung_textfeld1 = new view.LagerTextfield(AllowedSequences.ALPHA);
         label_oder1 = new javax.swing.JLabel();
         label_teile_id2 = new javax.swing.JLabel();
-        bezeichnung_textfeld1 = new javax.swing.JTextField();
         label_menge = new javax.swing.JLabel();
+        id_textfeld2 = new view.LagerTextfield(AllowedSequences.NUM);
         label_menge_übrig = new javax.swing.JLabel();
         laber_noch_einzulagern = new javax.swing.JLabel();
         einlagern_button_tabelle = new javax.swing.JButton();
@@ -356,11 +360,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(bestaetigen_button2);
         bestaetigen_button2.setBounds(40, 180, 100, 23);
 
-        id_textfeld2.setFont(new java.awt.Font("Arial", 0, 12));
-        id_textfeld2.setToolTipText("");
-        jPanel8.add(id_textfeld2);
-        id_textfeld2.setBounds(220, 60, 100, 21);
-
         suchen_button2.setFont(new java.awt.Font("Arial", 0, 12));
         suchen_button2.setText("Suche Teile ID / Bezeichnung");
         jPanel8.add(suchen_button2);
@@ -376,7 +375,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_mindestgroesse2);
         label_mindestgroesse2.setBounds(470, 110, 90, 20);
 
-        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_anzeige_mindestgroesse2.setText("größe");
         jPanel8.add(label_anzeige_mindestgroesse2);
         label_anzeige_mindestgroesse2.setBounds(650, 110, 50, 20);
@@ -388,22 +387,36 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(menge_textfeld11);
         menge_textfeld11.setBounds(220, 110, 96, 20);
 
+        bezeichnung_textfeld1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bezeichnung_textfeld1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(bezeichnung_textfeld1);
+        bezeichnung_textfeld1.setBounds(590, 60, 180, 20);
+
         label_oder1.setFont(new java.awt.Font("Arial", 0, 12));
         label_oder1.setText("oder");
         jPanel8.add(label_oder1);
         label_oder1.setBounds(370, 60, 34, 15);
 
-        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_teile_id2.setText("Teile ID:");
         jPanel8.add(label_teile_id2);
         label_teile_id2.setBounds(40, 60, 60, 20);
-        jPanel8.add(bezeichnung_textfeld1);
-        bezeichnung_textfeld1.setBounds(660, 60, 100, 20);
 
         label_menge.setFont(new java.awt.Font("Arial", 0, 12));
         label_menge.setText("Gesamt einzulagernde Menge:");
         jPanel8.add(label_menge);
         label_menge.setBounds(40, 110, 180, 15);
+
+        id_textfeld2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                id_textfeld2ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(id_textfeld2);
+        id_textfeld2.setBounds(220, 60, 90, 20);
 
         label_menge_übrig.setText("text");
         jPanel8.add(label_menge_übrig);
@@ -1004,7 +1017,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(label_bemerkung);
         label_bemerkung.setBounds(350, 220, 67, 15);
 
-        textfeld_preis.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textfeld_preis.setFont(new java.awt.Font("Arial", 0, 12));
         Teilestamm_erweitern.add(textfeld_preis);
         textfeld_preis.setBounds(450, 100, 154, 21);
 
@@ -2021,6 +2034,29 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             //control.TeileStamm_erweitern_controller.nutzeranforderung(
                     
     }//GEN-LAST:event_button_anlegenActionPerformed
+
+    private void bezeichnung_textfeld1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bezeichnung_textfeld1ActionPerformed
+          pr = new Pruefen_Controller_SRS();
+        String bez="";
+               
+           bez = bezeichnung_textfeld1.getText();
+           pr.pruefe_bezeichnung(bez);
+     
+    }//GEN-LAST:event_bezeichnung_textfeld1ActionPerformed
+
+    private void id_textfeld2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_textfeld2ActionPerformed
+     pr = new Pruefen_Controller_SRS();
+        String sid="";
+        int id=0;
+        
+        try {
+            sid = id_textfeld2.getText();
+            id = Integer.parseInt(sid);
+            pr.pruefe_id(id);
+        }catch(NumberFormatException ex){
+            System.out.println("Bitte nur zahlen eingeben");
+        }
+    }//GEN-LAST:event_id_textfeld2ActionPerformed
     
 
     /**
@@ -2066,6 +2102,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
     }
+    Pruefen_Controller_SRS pr;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AnschaffungsLabel;
     private javax.swing.JTextField AnschaffungsTextField;
@@ -2143,7 +2180,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JButton bestaetigen_button1;
     private javax.swing.JButton bestaetigen_button2;
     private javax.swing.JButton bestätigenButton;
-    private javax.swing.JTextField bezeichnung_textfeld1;
+    private view.LagerTextfield bezeichnung_textfeld1;
     private javax.swing.JLabel bisLabel_historie;
     private javax.swing.JButton button_anlegen;
     private javax.swing.JButton button_fachnumer1;
@@ -2178,7 +2215,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField fachnummer_textfeld8;
     private javax.swing.JTextField fachnummer_textfeld9;
     private javax.swing.JTextField id_textfeld;
-    private javax.swing.JTextField id_textfeld2;
+    private view.LagerTextfield id_textfeld2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -2385,4 +2422,5 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField zeitraum_bis_textfeld_historie;
     private javax.swing.JTextField zeitraum_von_button_historie;
     // End of variables declaration//GEN-END:variables
+ 
 }

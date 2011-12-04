@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Datenbankverbindung {
 
     Connection connection = null;
-
+    ResultSet rs = null;
     /**
      * 
      * Methode für die Datenbankverbindung mit Selects von einzelnen Werten.
@@ -28,27 +28,27 @@ public class Datenbankverbindung {
      * @throws ClassNotFoundException 
      */
     
-    public String connect(String tabelle, String spalte, String woist, String select) throws ClassNotFoundException {
+    public void connect(String select) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
 
-        ResultSet rs = null;
-        String ergebnis = "";
+  
+       // String ergebnis = "";
 
         try {
             // create a database connection
             connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
-            rs = statement.executeQuery("select " + spalte + " from " + tabelle + " where " + woist + "='" + select + "' ");
-            ergebnis = rs.getString(spalte);
+            rs = statement.executeQuery(select);
+            //ergebnis = rs.getString(spalte);
             //System.out.println(ergebnis);
         } catch (SQLException e) {
             // if the error message is "out of memory",
             // it probably means no database file is found
             System.err.println(e.getMessage());
         }
-        return ergebnis;
+       // return ergebnis;
     }
 
     /**
