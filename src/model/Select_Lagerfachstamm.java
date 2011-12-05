@@ -20,23 +20,26 @@ public class Select_Lagerfachstamm {
     public String get_Lagerort_ausDB(String fnr) throws ClassNotFoundException {
 
         String temp = "";
-        temp = db.connect("Lagerfachstamm", "lagerort", "fachnummer", fnr);
+    //    temp = db.connect("Lagerfachstamm", "lagerort", "fachnummer", fnr);
         db.disconnect();
         //System.out.println(temp);
         return temp;
     }
 
-    public String get_Hochregalnummer_ausDB(String fnr) throws ClassNotFoundException {
-        String temp = "";
-        temp = db.connect("Lagerfachstamm", "Hochregalnummer", "fachnummer", fnr);
+    public String get_Hochregalnummer_ausDB(String fnr) throws Exception {
+        String ergebnis = "";
+       db.connect("Select hochregalnummer from Lagerfachstamm where fachnummer='"+fnr+"'");
+        ergebnis = db.rs.getString("hochregalnummer");    
         db.disconnect();
+        
         //System.out.println(temp);
-        return temp;
+        return ergebnis;
+        
     }
 
     public String get_Zeile_ausDB(String fnr) throws ClassNotFoundException {
         String temp = "";
-        temp = db.connect("Lagerfachstamm", "zeile", "fachnummer", fnr);
+       // temp = db.connect("Lagerfachstamm", "zeile", "fachnummer", fnr);
         db.disconnect();
         //System.out.println(temp);
         return temp;
@@ -44,7 +47,7 @@ public class Select_Lagerfachstamm {
 
     public String get_Spalte_ausDB(String fnr) throws ClassNotFoundException {
         String temp = "";
-        temp = db.connect("Lagerfachstamm", "spalte", "fachnummer", fnr);
+     //   temp = db.connect("Lagerfachstamm", "spalte", "fachnummer", fnr);
         db.disconnect();
         //System.out.println(temp);
         return temp;
@@ -52,7 +55,7 @@ public class Select_Lagerfachstamm {
 
     public String get_Groesse_ausDB(String fnr) throws ClassNotFoundException {
         String temp = "";
-        temp = db.connect("Lagerfachstamm", "groesse", "fachnummer", fnr);
+     //   temp = db.connect("Lagerfachstamm", "groesse", "fachnummer", fnr);
         db.disconnect();
         //System.out.println(temp);
         return temp;
@@ -60,7 +63,7 @@ public class Select_Lagerfachstamm {
 
     public String get_Belegung_ausDB(String fnr) throws ClassNotFoundException {
         String temp = "";
-        temp = db.connect("Lagerfachstamm", "belegt", "fachnummer", fnr);
+     //   temp = db.connect("Lagerfachstamm", "belegt", "fachnummer", fnr);
         db.disconnect();
         //System.out.println(temp);
         return temp;
@@ -131,15 +134,19 @@ public class Select_Lagerfachstamm {
         return tempar;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Select_Lagerfachstamm sf = new Select_Lagerfachstamm();
-        try {
+        
+        String a = sf.get_Hochregalnummer_ausDB("FH1Z01S01K");
+        System.out.println(a);
+        
+        /*try {
             String[] temp1 = sf.get_spalte_fachnummer_ausDB();
             for (int i = 0; i < temp1.length; i++) {
                 System.out.println(temp1[i]);
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Select_Lagerfachstamm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }
 }
