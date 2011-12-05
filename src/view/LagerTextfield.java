@@ -42,6 +42,8 @@ public class LagerTextfield extends JTextField {
                     break;
                 }
             }
+            
+           
             if (!isValid) {
                 e.setKeyChar(KeyEvent.CHAR_UNDEFINED);
                 /*
@@ -69,7 +71,9 @@ public class LagerTextfield extends JTextField {
 
         ALL(null, null),
         ALPHA("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ", "nur Buchstaben erlaubt"),
-        NUM("0123456789,.", "nur zahlen erlaubt");
+        NUM("0123456789,.", "nur zahlen erlaubt"),
+        PREIS("1234567890,.","nur Zahlen und höchstends 2 Nachkommastellen erlaubt"),
+        ZIFFERN("0987654321","nur ganze Zahlen erlaubt");
         private String sequence;
         private String desc;
 
