@@ -4,8 +4,6 @@
  */
 package model;
 
-import java.util.GregorianCalendar;
-
 /**
  *
  * @author Wayne
@@ -13,7 +11,7 @@ import java.util.GregorianCalendar;
 public class Select_Lagerbestandskonto {
 
     Datenbankverbindung db = new Datenbankverbindung();
-
+    
     public String get_ID_ausDB(String fachnummer) throws ClassNotFoundException {
         String temp = "";
         temp = db.connect("Teilestammdaten", "teile_ID", "fachnummer", fachnummer);

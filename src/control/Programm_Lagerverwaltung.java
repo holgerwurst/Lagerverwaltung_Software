@@ -4,13 +4,21 @@
  */
 package control;
 
-
 /**
  *
  * @author Wayne
  */
-public class Programm_Lagerverwaltung {
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
+public class Programm_Lagerverwaltung {
+    
+    
+    public DefaultTableModel get_alle_Teile() {
+        DefaultTableModel tablemodel = new DefaultTableModel();
+        ArrayList<String> columnnames = new ArrayList(); 
+        return new DefaultTableModel();
+    }
     /**
      * @param args the command line arguments
      */

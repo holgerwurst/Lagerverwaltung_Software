@@ -27,7 +27,6 @@ public class Datenbankverbindung {
      * @return
      * @throws ClassNotFoundException 
      */
-    
     public String connect(String tabelle, String spalte, String woist, String select) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
@@ -60,7 +59,6 @@ public class Datenbankverbindung {
      * @return
      * @throws ClassNotFoundException 
      */
-    
     public String[] connect_ganze_spalte(String tabelle, String spalte) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
@@ -102,7 +100,6 @@ public class Datenbankverbindung {
      * @param teil
      * @throws ClassNotFoundException 
      */
-    
     public void connect_schreiben_teilestamm(String kommando, Teil_Stammdaten teil) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
@@ -145,7 +142,6 @@ public class Datenbankverbindung {
      * @param lbk
      * @throws ClassNotFoundException 
      */
-    
     public void connect_schreiben_lagerbestandskonto(String kommando, Lagerbestandskonto lbk) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
@@ -181,7 +177,6 @@ public class Datenbankverbindung {
      * @param freieid
      * @throws ClassNotFoundException 
      */
-    
     public void connect_schreiben_freieid(int freieid) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
@@ -209,7 +204,6 @@ public class Datenbankverbindung {
      * @param belegung
      * @throws ClassNotFoundException 
      */
-    
     public void connect_schreiben_lagerfachstamm(String fach, boolean belegung) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
@@ -221,7 +215,7 @@ public class Datenbankverbindung {
             connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
-            rs = statement.executeQuery("UPDATE Lagerfachstamm SET belegt ='"+belegung+"' WHERE fachnummer='"+fach+"';");
+            rs = statement.executeQuery("UPDATE Lagerfachstamm SET belegt ='" + belegung + "' WHERE fachnummer='" + fach + "';");
 
         } catch (SQLException e) {
             // if the error message is "out of memory",
@@ -239,7 +233,6 @@ public class Datenbankverbindung {
      * @param loesch_fachnummer
      * @throws ClassNotFoundException 
      */
-    
     public void connect_löschen(int loesch_id, String tabelle, String loesch_fachnummer) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
@@ -263,11 +256,76 @@ public class Datenbankverbindung {
             System.err.println(e.getMessage());
         }
     }
+
     /**
-    *
-    * Einfache Erstellung einer Verbindung ohne die Erstellung eines SQLStatements
-    */
+     * Eine einfache Methode die einfach alle Werte einer Tabelle zurückgibt in einem zweidimensionalen Array
+     * @return 
+     */
+    public Object[][] connect_ganze_tabelle(String tabelle) {
+        basic_connect();
+        ResultSet rs = null;
+        try {
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            rs = statement.executeQuery("SELECT * FROM " + tabelle + ";");
+        } catch (SQLException e) {
+            // if the error message is "out of memory",
+            // it probably means no database file is found
+            System.err.println(e.getMessage());
+        }
+    }
+
+    /**
+     * 
+     * @param tabelle
+     * @param spaltenwerte
+     * @return 
+     */
+    public Object[][] connect_suchen(String tabelle, String[][] spaltenwerte) {
+        String query = "SELECT * FROM " + tabelle + "WHERE";
+        int i = 0;
+        for (String[] wert : spaltenwerte) {
+            if (i == 0) {
+                query = query + " " + wert[0] + "=" + wert[1];
+                i++;
+            }
+            else {
+                query = query + " OR " + wert[0] + "=" + wert[1]; 
+            }
+        }
+
+        ResultSet rs = null;
+
+        try {
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            rs = statement.executeQuery(query);
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        ArrayList<Object[]> zeilen = new ArrayList();
+        ResultSetMetaData rsmd = rs.getMetaData();
+        
+        while rs.next() {
+            int count = 0;
+            while (count < rsmd.getColumnCount())
+            if (== rs.getMetaData().getColumnTypeName(count)) { //typbezeichnung fehlt
+                
+            }
+            
+        }
+        
+        
+        
+        
+    }
+        /**
+         *
+         * Einfache Erstellung einer Verbindung ohne die Erstellung eines
+         * SQLStatements
+         */
     
+
     public void basic_connect() {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
