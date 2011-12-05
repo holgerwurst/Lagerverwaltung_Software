@@ -4,7 +4,7 @@
  */
 package view;
 
-import control.Pruefen_Controller_SRS;
+import control.Pruefen_Controller;
 import javax.swing.JFormattedTextField;
 import view.LagerTextfield.AllowedSequences;
 
@@ -2036,7 +2036,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_button_anlegenActionPerformed
 
     private void bezeichnung_textfeld1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bezeichnung_textfeld1ActionPerformed
-          pr = new Pruefen_Controller_SRS();
+          pr = new control.Pruefen_Controller();
         String bez="";
                
            bez = bezeichnung_textfeld1.getText();
@@ -2045,7 +2045,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_bezeichnung_textfeld1ActionPerformed
 
     private void id_textfeld2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_textfeld2ActionPerformed
-     pr = new Pruefen_Controller_SRS();
+     pr = new control.Pruefen_Controller();
         String sid="";
         int id=0;
         
@@ -2102,7 +2102,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
     }
-    Pruefen_Controller_SRS pr;
+    private control.Pruefen_Controller pr;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AnschaffungsLabel;
     private javax.swing.JTextField AnschaffungsTextField;

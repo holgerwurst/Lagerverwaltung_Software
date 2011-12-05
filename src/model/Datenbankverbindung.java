@@ -15,6 +15,9 @@ public class Datenbankverbindung {
 
     Connection connection = null;
     ResultSet rs = null;
+    String[] ar = new String[0];
+    ArrayList<String> val = new ArrayList<String>(0);
+
     /**
      * 
      * Methode für die Datenbankverbindung mit Selects von einzelnen Werten.
@@ -27,13 +30,12 @@ public class Datenbankverbindung {
      * @return
      * @throws ClassNotFoundException 
      */
-    
-    public void connect(String select) throws ClassNotFoundException {
+    public void connect2(String select) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
 
-  
-       // String ergebnis = "";
+
+        // String ergebnis = "";
 
         try {
             // create a database connection
@@ -48,49 +50,48 @@ public class Datenbankverbindung {
             // it probably means no database file is found
             System.err.println(e.getMessage());
         }
-       // return ergebnis;
+        // return ergebnis;
     }
 
     /**
      * 
      * Methode für die Verbindung zur Datenbank um den Inhalt einer ganzen Spalte zu bekommen.
      * 
-     * @param tabelle
+     * 
      * @param spalte
      * @return
      * @throws ClassNotFoundException 
      */
-    public String[] connect_ganze_spalte(String tabelle, String spalte) throws ClassNotFoundException {
+    public void connect(String select, String spalte) throws ClassNotFoundException {
         // load the sqlite-JDBC driver using the current class loader
         Class.forName("org.sqlite.JDBC");
 
-        ResultSet rs = null;
-        String temp = "";
-        String[] ar = new String[0];
-        ArrayList<String> val = new ArrayList<String>(0);
+        // ResultSet rs = null;
+        String ergebnis = "";
+
 
         try {
             // create a database connection
             connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
-            rs = statement.executeQuery("select * from " + tabelle + "");
+            rs = statement.executeQuery(select);
             while (rs.next()) {
-                // read the result set
-                temp = rs.getString("" + spalte + "");
-                val.add(temp);
+                ergebnis = rs.getString(spalte);
+                val.add(ergebnis);
             }
             ar = new String[val.size()];
             for (int i = 0; i <= val.size() - 1; i++) {
                 ar[i] = val.get(i);
-
             }
+
+
         } catch (SQLException e) {
             // if the error message is "out of memory",
             // it probably means no database file is found
             System.err.println(e.getMessage());
         }
-        return ar;
+        //    return ar;
     }
 
     /**
@@ -262,7 +263,7 @@ public class Datenbankverbindung {
      * Eine einfache Methode die einfach alle Werte einer Tabelle zurückgibt in einem zweidimensionalen Array
      * @return 
      */
-    public Object[][] connect_ganze_tabelle(String tabelle) {
+    /*   public Object[][] connect_ganze_tabelle(String tabelle) {
         basic_connect();
         ResultSet rs = null;
         try {
@@ -282,7 +283,7 @@ public class Datenbankverbindung {
      * @param spaltenwerte
      * @return 
      */
-    public Object[][] connect_suchen(String tabelle, String[][] spaltenwerte) {
+    /*  public Object[][] connect_suchen(String tabelle, String[][] spaltenwerte) {
         String query = "SELECT * FROM " + tabelle + "WHERE";
         int i = 0;
         for (String[] wert : spaltenwerte) {
@@ -305,7 +306,7 @@ public class Datenbankverbindung {
             System.err.println(e.getMessage());
         }
         ArrayList<Object[]> zeilen = new ArrayList();
-        ResultSetMetaData rsmd = rs.getMetaData();
+      //  ResultSetMetaData rsmd = rs.getMetaData();
         
         while rs.next() {
             int count = 0;
@@ -325,8 +326,6 @@ public class Datenbankverbindung {
          * Einfache Erstellung einer Verbindung ohne die Erstellung eines
          * SQLStatements
          */
-    
-
     public void basic_connect() {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
