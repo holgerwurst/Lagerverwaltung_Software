@@ -51,6 +51,19 @@ public class DB_schreiben {
         db.connect_schreiben_freieid(id);
         db.disconnect();
     }
+    
+    public String[] get_alle_freie_IDs(){
+            try {
+            db.connect("Select IDs from FreieIDs", "IDs");
+            db.disconnect();
+            
+        } catch (ClassNotFoundException ex) {
+            System.out.println("JDBC-Treiber nicht vorhanden");
+        }
+        return db.ar;
+    }
+        
+    
 
     public void delete_freie_id(int id) throws ClassNotFoundException {
         db.connect_löschen(id, "FreieIDs", null);
