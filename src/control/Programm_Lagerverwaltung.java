@@ -11,7 +11,9 @@ package control;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
+
 public class Programm_Lagerverwaltung {
+    private view.Übersicht_Lagerverwaltung Hauptfenster= new view.Übersicht_Lagerverwaltung();
     
     
     public DefaultTableModel get_alle_Teile() {

@@ -15,6 +15,13 @@ import javax.swing.JToolTip;
  * @author Arthas
  */
 public class LagerTextfield extends JTextField {
+    
+    
+    
+    
+    
+    
+    
 
     class LagerKeyListener implements KeyListener {
 
@@ -22,7 +29,7 @@ public class LagerTextfield extends JTextField {
         private String Fehlerbeschreibung;
         private LagerTextfield Sender;
         private JToolTip falscheEingabe = new JToolTip();
-        AllowedSequences seq;
+        private AllowedSequences seq;
 
         public LagerKeyListener(AllowedSequences seq, LagerTextfield Sender) {
             this.seq=seq;
@@ -123,9 +130,27 @@ public class LagerTextfield extends JTextField {
         public String getDesc() {
             return desc;
         }
+        public void setRule(AllowedSequences seq){
+            this.sequence=seq.sequence;
+            this.desc=seq.desc;
+        }
     }
     private LagerKeyListener akl;
+    
+    /**Legt nachträglich fest um welche Art LagerTextfield es sich handlen soll. zb. Preisfeld
+     * Diese Methode sollte benutzt werden nachdem der leere Konstruktor LagerTextfield() aufgerufen wurde.
+     * 
+     * @param seq Kann folgende werte annehmen:ZIFFERN =>0987654321, PREIS, NUM, ALPHA, ALL
+     * das sind halt die enums...
+     */
+    public void setRegeln(AllowedSequences seq){
+        akl.seq.setRule(seq);
+    }
 
+    /**Einfacher Konstruktor 
+     * benutze setRegeln(AllowedSequences seq) um das Verhalten festzulegen.
+     * 
+     */
     public LagerTextfield() {
         this(AllowedSequences.ALL);
     }

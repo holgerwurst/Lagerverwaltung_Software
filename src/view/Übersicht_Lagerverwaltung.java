@@ -2057,7 +2057,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             System.out.println("Bitte nur zahlen eingeben");
         }
     }//GEN-LAST:event_id_textfeld2ActionPerformed
-    
+    public void PATRICKsettextfeld_id(int id){
+        textfeld_id.setText(""+id);
+    }
 
     /**
      * @param args the command line arguments
