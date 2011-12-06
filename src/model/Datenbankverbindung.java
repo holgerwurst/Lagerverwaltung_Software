@@ -30,29 +30,6 @@ public class Datenbankverbindung {
      * @return
      * @throws ClassNotFoundException 
      */
-    public void connect2(String select) throws ClassNotFoundException {
-        // load the sqlite-JDBC driver using the current class loader
-        Class.forName("org.sqlite.JDBC");
-
-
-        // String ergebnis = "";
-
-        try {
-            // create a database connection
-            connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);  // set timeout to 30 sec.
-            rs = statement.executeQuery(select);
-            //ergebnis = rs.getString(spalte);
-            //System.out.println(ergebnis);
-        } catch (SQLException e) {
-            // if the error message is "out of memory",
-            // it probably means no database file is found
-            System.err.println(e.getMessage());
-        }
-        // return ergebnis;
-    }
-
     /**
      * 
      * Methode für die Verbindung zur Datenbank um den Inhalt einer ganzen Spalte zu bekommen.
