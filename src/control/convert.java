@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  * @author Keleseth
  */
 public class convert {
-    /**Methode Wandelt string zu int, fängt die Exception ab und leitet falls der string null ist dies einfach weiter
-     * sollte es zu problemen geben callt diese Methode den entsprechenden Nutzerhinweis
+    /**Methode Wandelt string zu int, fängt die Exception ab und spuckt sie aus 
+     * Die Fehlermeldung ist für euch und nicht für den nutzer gedacht
      * @param st übergebener string
      * @return umgewandelte zu int
      */
     public int StringTOint(String st)
     {
-        int returnstatement=new Integer(null);
+        int returnstatement=0;
         if(st==null){return returnstatement;}        
         try{
         returnstatement = Integer.parseInt(st);
@@ -31,8 +31,9 @@ public class convert {
         return returnstatement;
     }
     
-    /**Methode Wandelt string zu double, fängt die Exception ab und leitet falls der string null ist dies einfach weiter
-     * sollte es zu problemen geben callt diese Methode den entsprechenden Nutzerhinweis
+    /**Methode Wandelt string zu double, fängt die Exception ab 
+     * Die Fehlermeldung ist für euch und nicht für den nutzer gedacht
+     * 
      * @param st übergebener string
      * @return umgewandelte zu double
      */
@@ -40,7 +41,7 @@ public class convert {
     {
         st.replace(',', '.');
        
-        double returnstatement=new Double(null);
+        double returnstatement=0;
         if(st==null){return returnstatement;}        
         try{
         returnstatement = Double.parseDouble(st);
