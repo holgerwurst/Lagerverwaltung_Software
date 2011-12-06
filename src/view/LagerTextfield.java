@@ -22,10 +22,12 @@ public class LagerTextfield extends JTextField {
         private String Fehlerbeschreibung;
         private LagerTextfield Sender;
         private JToolTip falscheEingabe = new JToolTip();
+        AllowedSequences seq;
 
-        public LagerKeyListener(String Zeichenfolge, String Fehlerbeschreibung, LagerTextfield Sender) {
-            this.Zeichenfolge = Zeichenfolge;
-            this.Fehlerbeschreibung = Fehlerbeschreibung;
+        public LagerKeyListener(AllowedSequences seq, LagerTextfield Sender) {
+            this.seq=seq;
+            this.Zeichenfolge = seq.getSequence();
+            this.Fehlerbeschreibung = seq.getDesc();
             this.Sender = Sender;
         }
 
@@ -42,6 +44,38 @@ public class LagerTextfield extends JTextField {
                     break;
                 }
             }
+            //nachbehandling spezialfälle begin
+            switch(seq)
+            {
+                case PREIS:
+                {
+                    for(int i=Sender.getText().length()-1;i>=0;i--)//rückwärtiger durchlauf durch den text im aufrufenden textfeld
+                    {
+                        if(Sender.getText().length()-i>2
+                                &&(','==Sender.getText().charAt(i) 
+                                    ||'.'==Sender.getText().charAt(i)))
+                        {
+                            isValid=false;//mehr als 2 nachkomma erkannt => nicht valide
+                            break; //for break
+                        }else
+                        {
+                            isValid=true;
+                            break;//for break
+                        }
+                    }
+                    break;//case break           
+                    
+                }
+                        
+                case ZIFFERN:
+                {
+                    break;
+                }
+                    
+                default: break;
+                                                
+            }
+            //nachbehandlung spezialfälle end
             
            
             if (!isValid) {
@@ -101,7 +135,7 @@ public class LagerTextfield extends JTextField {
 
     public LagerTextfield(AllowedSequences seq) {
         super();
-        akl = new LagerKeyListener(seq.sequence, seq.desc, this);
+        akl = new LagerKeyListener(seq, this);
         this.addKeyListener(akl);
     }
 }
