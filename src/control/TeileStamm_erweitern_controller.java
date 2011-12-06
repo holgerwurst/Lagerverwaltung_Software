@@ -10,51 +10,9 @@ package control;
  */
 public class TeileStamm_erweitern_controller {
     
-    /**Methode Wandelt string zu int, fängt die Exception ab und leitet falls der string null ist dies einfach weiter
-     * sollte es zu problemen geben callt diese Methode den entsprechenden Nutzerhinweis
-     * @param st übergebener string
-     * @return umgewandelte zu int
-     */
-    public int StringZUintwandler(String st)
-    {
-        int returnstatement=new Integer(null);
-        if(st==null){return returnstatement;}        
-        try{
-        returnstatement = Integer.parseInt(st);
-        }catch(NumberFormatException nfe)
-        {
-            System.out.println(nfe.getMessage());
-            //nutzerhinweis gui starten
-        }
-        return returnstatement;
-    }
-    
-    /**Methode Wandelt string zu double, fängt die Exception ab und leitet falls der string null ist dies einfach weiter
-     * sollte es zu problemen geben callt diese Methode den entsprechenden Nutzerhinweis
-     * @param st übergebener string
-     * @return umgewandelte zu double
-     */
-    public double StringZUdoublewandler(String st)
-    {
-        double returnstatement=new Double(null);
-        if(st==null){return returnstatement;}        
-        try{
-        returnstatement = Double.parseDouble(st);
-        }catch(NumberFormatException nfe)
-        {
-            System.out.println(nfe.getMessage());
-            //nutzerhinweis gui starten
-            view.Nutzerhinweis1 nwh =new view.Nutzerhinweis1(null, true);
-            nwh.setHinweisfeld("Der Preis darf nur aus Ziffern bestehen. \nBuchstaben sind nicht erlaubt.");
-        }
-        if(returnstatement%0.01!=0)
-        {
-            view.Nutzerhinweis1 nwhB =new view.Nutzerhinweis1(null, true);
-            nwhB.setHinweisfeld("Es sind nur 2 Nachkommastellen erlaubt.");
-            
-        }
-        return returnstatement;
-    }
+    private convert converter =new convert();
+    private model.DB_schreiben dbwriter=new model.DB_schreiben();
+    private String[] idarr;
     
    /**Hauptmethode: hier wird die Nutzeranforderung ein neues Teil anzulegen aufgenommen, geprüft und weiterverarbeitet
     * 
@@ -77,25 +35,42 @@ public class TeileStamm_erweitern_controller {
        //Belibige freie id von der db beziehen und als beispiel ins gui schreinen end
        
        //Semantische Prüfung der Variablen entsprchend DD begin
-       double Preis=StringZUdoublewandler(PreisString);
-       int MAK = StringZUintwandler(MAKString);
-       int MAM = StringZUintwandler(MAMString);
-       int MAG = StringZUintwandler(MAGString);
-       
-       
-       
+       double Preis= converter.StringTOdouble(PreisString);
+       int MAK = converter.StringTOint(MAGString);
+       int MAM = converter.StringTOint(MAGString);
+       int MAG = converter.StringTOint(MAGString);   
        //Semantische Prüfung der Variablen entsprchend DD end
        
        
        //ID aus der DB (freie id tabelle) entfernen begin
-       
+       int id =popnewIDfromTable();
        //ID aus der DB (freie id tabelle) entfernen end
        
        
        //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben begin
+       model.Teil_Stammdaten neuTeil = new model.Teil_Stammdaten(id, Typ, Zeichnungsnummer, Materialgruppe, Preis, Bezeichnung, BaugruppeString, Bemerkung, MAK, MAM, MAG);
        
        //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben end
        
+   }
+    
+   
+    /**!!! BETAMETHODE !!!
+     * return 6;
+     * @return 
+     */
+    private int popnewIDfromTable()
+   {
+       idarr=new model.DB_schreiben().get_alle_freie_IDs();
+       
+       
+       
+       //gepoppte id noch aus der db löschen!
+       return converter.StringTOint(idarr[0]);
+       
+       
+       
+     
    }
     
 }
