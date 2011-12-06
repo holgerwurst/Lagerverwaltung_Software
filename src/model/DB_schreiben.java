@@ -62,7 +62,7 @@ public class DB_schreiben {
         db.disconnect();
     }
 
-    public static void main(String[] args) throws ClassNotFoundException {
+    /*public static void main(String[] args) throws ClassNotFoundException {
         Teil_Stammdaten ts = new Teil_Stammdaten(14, TeileTypET.kaufteile, "zeich1", "matgrp1", 12.98, "hugo", "bier", "erstes testteil", 12, 24, 36);
         Teil_Stammdaten ts2 = new Teil_Stammdaten(12, TeileTypET.unfertige_Baugruppen, "zeich2", "matgrp2", 22.98, "h2u2go", "2bier", "2 erstes testteil", 122, 242, 362);
         DB_schreiben dbs = new DB_schreiben();
@@ -80,5 +80,5 @@ public class DB_schreiben {
         //dbs.delete_lagerbestandskonto(13, "FH1Z1S2K");
         //dbs.update_lagerbestand(lbk3);
         //dbs.update_lagerfachstamm("FH1Z1S1K", false);
-    }
+    }*/
 }

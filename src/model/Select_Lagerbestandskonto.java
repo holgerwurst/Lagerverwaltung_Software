@@ -22,7 +22,8 @@ public class Select_Lagerbestandskonto {
         }
         return db.ar;
     }
-
+    
+    
     public String[] get_Fachnummer_ausDB(int id) throws ClassNotFoundException {
         try {
             db.connect("Select fachnummer from Lagerbestandskonto where teile_id =" + id + "", "fachnummer");

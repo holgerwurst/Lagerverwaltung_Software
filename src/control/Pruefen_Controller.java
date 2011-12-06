@@ -19,24 +19,35 @@ import view.Übersicht_Lagerverwaltung;
 public class Pruefen_Controller {
 
     private Select_Stammdaten std = new Select_Stammdaten();
+    
+    
+    
+    
 
-    public void pruefe_id(int id) {
+    public boolean pruefe_id(int id) {
 
         try {
 
             String[] vergleich = std.get_ID_ausDB(id);
             for (int i = 0; i < vergleich.length; i++) {
-                System.out.println(vergleich[i]);
+                
+               System.out.println("Teil mit ID " + vergleich[i] + " vorhanden");
+                
+                
             }
 
             if (vergleich.length == 0) {
                 System.out.println("Kein Teil vorhanden");
+                
+                return false;
             }
 
         } catch (SQLException e) {
 
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
+        
+        return true;
 
     }
 
