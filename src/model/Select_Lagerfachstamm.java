@@ -19,7 +19,7 @@ public class Select_Lagerfachstamm {
 
     public String[] get_Lagerort_ausDB(String fnr) throws ClassNotFoundException {
  try {
-            db.connect("Select lagerort from Lagerfachstamm where fachnummer =" + fnr + "", "lagerort");
+            db.connect("Select lagerort from Lagerfachstamm where fachnummer ='" + fnr + "'", "lagerort");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -30,7 +30,7 @@ public class Select_Lagerfachstamm {
 
     public String[] get_Hochregalnummer_ausDB(String fnr) throws Exception {
        try {
-            db.connect("Select hochregalnummer from Lagerfachstamm where fachnummer =" + fnr + "", "hochregalnummer");
+            db.connect("Select hochregalnummer from Lagerfachstamm where fachnummer ='" + fnr + "'", "hochregalnummer");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -42,7 +42,7 @@ public class Select_Lagerfachstamm {
 
     public String[] get_Zeile_ausDB(String fnr) throws ClassNotFoundException {
      try {
-            db.connect("Select zeile from Lagerfachstamm where fachnummer =" + fnr + "", "zeile");
+            db.connect("Select zeile from Lagerfachstamm where fachnummer ='" + fnr + "'", "zeile");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -54,7 +54,7 @@ public class Select_Lagerfachstamm {
 
     public String[] get_Spalte_ausDB(String fnr) throws ClassNotFoundException {
        try {
-            db.connect("Select spalte from Lagerfachstamm where fachnummer =" + fnr + "", "spalte");
+            db.connect("Select spalte from Lagerfachstamm where fachnummer ='" + fnr + "'", "spalte");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -66,7 +66,7 @@ public class Select_Lagerfachstamm {
 
     public String[] get_Groesse_ausDB(String fnr) throws ClassNotFoundException {
      try {
-            db.connect("Select groesse from Lagerfachstamm where fachnummer =" + fnr + "", "groesse");
+            db.connect("Select groesse from Lagerfachstamm where fachnummer ='" + fnr + "'", "groesse");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -78,7 +78,7 @@ public class Select_Lagerfachstamm {
 
     public String[] get_Belegung_ausDB(String fnr) throws ClassNotFoundException {
      try {
-            db.connect("Select belegung from Lagerfachstamm where fachnummer =" + fnr + "", "belegung");
+            db.connect("Select belegung from Lagerfachstamm where fachnummer ='" + fnr + "'", "belegung");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {

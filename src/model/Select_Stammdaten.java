@@ -17,7 +17,7 @@ public class Select_Stammdaten {
 
     Datenbankverbindung db = new Datenbankverbindung();
 
-    public String[] get_ID_ausDB(int id) throws SQLException {
+    public String[] get_ID_ausDB(int id)  throws ClassNotFoundException {
      
         try {
             db.connect("Select id from Teilestammdaten where id=" + id + "", "id");
@@ -30,7 +30,7 @@ public class Select_Stammdaten {
         return db.ar;
     }
     
-    public String[] get_Bezeichnung_ausDB(String bez) throws SQLException {
+    public String[] get_Bezeichnung_ausDB(String bez) throws ClassNotFoundException {
        
         try {
             db.connect("Select bezeichnung from Teilestammdaten where bezeichnung ='" + bez + "'", "bezeichnung");
@@ -45,7 +45,7 @@ public class Select_Stammdaten {
     public String[] get_Bezeichnung_ausDB(int id)throws ClassNotFoundException {
        
         try {
-            db.connect("Select bezeichnung from Teilestammdaten where id='" + id + "'", "bezeichnung");
+            db.connect("Select bezeichnung from Teilestammdaten where id=" + id + "", "bezeichnung");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -54,7 +54,7 @@ public class Select_Stammdaten {
         return db.ar;
     }
     
-    public String[] get_Teiletyp_ausDB(int id) throws Exception {
+    public String[] get_Teiletyp_ausDB(int id) throws ClassNotFoundException {
 
          try {
             db.connect("Select teiletyp from Teilestammdaten where bezeichnung =" + id + "", "teiletyp");
@@ -104,7 +104,7 @@ public class Select_Stammdaten {
 
     public String[] get_Bemerkung_ausDB(int id) throws ClassNotFoundException {
         try {
-            db.connect("Select bemerkung from Teilestammdaten where bezeichnung =" + id + "", "bemerkung");
+            db.connect("Select bemerkung from Teilestammdaten where id =" + id + "", "bemerkung");
             db.disconnect();
 
         } catch (ClassNotFoundException ex) {
