@@ -42,7 +42,7 @@ public class Pruefen_Controller {
                 return false;
             }
 
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException e) {
 
             System.out.println(e.getMessage());
         }
@@ -63,7 +63,7 @@ public class Pruefen_Controller {
                 System.out.println("Kein Teil vorhanden");
             }
 
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException e) {
             System.out.println("Kein Teil vorhanden");
         }
     }

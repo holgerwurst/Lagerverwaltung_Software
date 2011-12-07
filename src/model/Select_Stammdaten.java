@@ -57,7 +57,7 @@ public class Select_Stammdaten {
     public String[] get_Teiletyp_ausDB(int id) throws ClassNotFoundException {
 
          try {
-            db.connect("Select teiletyp from Teilestammdaten where bezeichnung =" + id + "", "teiletyp");
+            db.connect("Select teiletyp from Teilestammdaten where id =" + id + "", "teiletyp");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -69,7 +69,7 @@ public class Select_Stammdaten {
 
     public String[] get_Materialgruppe_ausDB(int id) throws ClassNotFoundException {
      try {
-            db.connect("Select materialgruppe from Teilestammdaten where bezeichnung =" + id + "", "materialgruppe");
+            db.connect("Select materialgruppe from Teilestammdaten where id =" + id + "", "materialgruppe");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -80,7 +80,7 @@ public class Select_Stammdaten {
 
     public String[] get_Zeichnungsnummer_ausDB(int id) throws ClassNotFoundException {
       try {
-            db.connect("Select zeichnungsnummer from Teilestammdaten where bezeichnung =" + id + "", "zeichnungsnummer");
+            db.connect("Select zeichnungsnummer from Teilestammdaten where id =" + id + "", "zeichnungsnummer");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -91,7 +91,7 @@ public class Select_Stammdaten {
     
     public String[] get_Preis_ausDB(int id) throws ClassNotFoundException {
       try {
-            db.connect("Select preis from Teilestammdaten where bezeichnung =" +id + "", "preis");
+            db.connect("Select preis from Teilestammdaten where id =" +id + "", "preis");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -115,7 +115,7 @@ public class Select_Stammdaten {
 
     public String[] get_max_anzahl_klein_ausDB(int id) throws ClassNotFoundException {
         try {
-            db.connect("Select max_anz_klein from Teilestammdaten where bezeichnung =" + id + "", "max_anz_klein");
+            db.connect("Select max_anz_klein from Teilestammdaten where id =" + id + "", "max_anz_klein");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -126,7 +126,7 @@ public class Select_Stammdaten {
 
     public String[] get_max_anzahl_mittel_ausDB(int id) throws ClassNotFoundException {
        try {
-            db.connect("Select max_anz_mittel from Teilestammdaten where bezeichnung =" + id + "", "max_anz_mittel");
+            db.connect("Select max_anz_mittel from Teilestammdaten where id =" + id + "", "max_anz_mittel");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -135,9 +135,9 @@ public class Select_Stammdaten {
         return db.ar;
     }
 
-    public String[] get_max_anzahl_gross_ausDB(String id) throws ClassNotFoundException {
+    public String[] get_max_anzahl_gross_ausDB(int id) throws ClassNotFoundException {
          try {
-            db.connect("Select max_anz_gross from Teilestammdaten where bezeichnung =" + id + "", "max_anz_gross");
+            db.connect("Select max_anz_gross from Teilestammdaten where id =" + id + "", "max_anz_gross");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
@@ -148,7 +148,7 @@ public class Select_Stammdaten {
 
     public String[] get_Baugruppe_ausDB(int id) throws ClassNotFoundException {
        try {
-            db.connect("Select baugruppe from Teilestammdaten where bezeichnung =" +id + "", "baugruppe");
+            db.connect("Select baugruppe from Teilestammdaten where id =" +id + "", "baugruppe");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
