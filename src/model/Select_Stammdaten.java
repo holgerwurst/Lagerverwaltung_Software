@@ -277,4 +277,12 @@ public class Select_Stammdaten {
         }
         return db.ar;
     }
+    // gibt zweidimensionale tabelle aller zeilen zurück
+    public ArrayList<ArrayList> get_ganze_tabelle_teilestammdaten() throws ClassNotFoundException {
+        String query = Select_Allgemein.create_select_ganze_tabelle("Teilestammdaten");
+        db.basic_connect(query);
+        ArrayList ganze_tabelle = db.resultset_to_arraylist();
+        db.disconnect();
+        return ganze_tabelle;
+    }
 }

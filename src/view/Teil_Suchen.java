@@ -4,17 +4,23 @@
  */
 package view;
 
+import control.Suchen_Controller;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Matthias Sommer
  */
 public class Teil_Suchen extends javax.swing.JFrame {
+    private Suchen_Controller suchen_controller;
 
     /**
      * Creates new form Teil_Suchen
      */
     public Teil_Suchen() {
         initComponents();
+        suchen_controller = new Suchen_Controller();
     }
 
     /** This method is called from within the constructor to
@@ -45,7 +51,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         BezTextfield = new javax.swing.JTextField();
         TeiletypLabel = new javax.swing.JLabel();
         BaugruppeLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        AlleTeileAnzeigenButton = new javax.swing.JButton();
         MAKTextfield = new javax.swing.JTextField();
         ZeichnungsnrLabel = new javax.swing.JLabel();
         PreisTextfield = new javax.swing.JTextField();
@@ -101,116 +107,71 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        suche_Teil.setLayout(null);
-
         MAMTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(MAMTextfield);
-        MAMTextfield.setBounds(305, 165, 113, 19);
 
         MAGTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(MAGTextfield);
-        MAGTextfield.setBounds(305, 197, 113, 19);
 
         SuchenlinksButton.setFont(new java.awt.Font("Arial", 0, 12));
         SuchenlinksButton.setText("Suchen");
-        suche_Teil.add(SuchenlinksButton);
-        SuchenlinksButton.setBounds(151, 259, 81, 25);
 
         EuroLabel.setText("€");
-        suche_Teil.add(EuroLabel);
-        EuroLabel.setBounds(405, 105, 19, 15);
 
         PreisLabel.setFont(new java.awt.Font("Arial", 0, 12));
         PreisLabel.setText("Preis:");
-        suche_Teil.add(PreisLabel);
-        PreisLabel.setBounds(263, 104, 35, 15);
 
         IDTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(IDTextfield);
-        IDTextfield.setBounds(114, 37, 112, 19);
 
         MAKLabel.setFont(new java.awt.Font("Arial", 0, 12));
         MAKLabel.setText("MAK:");
-        suche_Teil.add(MAKLabel);
-        MAKLabel.setBounds(264, 136, 29, 15);
 
         TeileStammdatenLabel.setFont(new java.awt.Font("Arial", 1, 12));
         TeileStammdatenLabel.setText("Teile Stammdaten:");
-        suche_Teil.add(TeileStammdatenLabel);
-        TeileStammdatenLabel.setBounds(10, 11, 140, 15);
 
         TeiletypTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(TeiletypTextfield);
-        TeiletypTextfield.setBounds(114, 101, 112, 19);
 
         BezeichnungLabel.setFont(new java.awt.Font("Arial", 0, 12));
         BezeichnungLabel.setText("Bezeichnung:");
-        suche_Teil.add(BezeichnungLabel);
-        BezeichnungLabel.setBounds(10, 72, 83, 15);
 
         ZNrTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(ZNrTextfield);
-        ZNrTextfield.setBounds(114, 165, 112, 19);
 
         IDlinksLabel.setFont(new java.awt.Font("Arial", 0, 12));
         IDlinksLabel.setText("Teile ID:");
-        suche_Teil.add(IDlinksLabel);
-        IDlinksLabel.setBounds(10, 40, 49, 15);
 
         MaterialTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(MaterialTextfield);
-        MaterialTextfield.setBounds(114, 133, 112, 19);
 
         MaterialgruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
         MaterialgruppeLabel.setText("Materialgrupe:");
-        suche_Teil.add(MaterialgruppeLabel);
-        MaterialgruppeLabel.setBounds(10, 136, 91, 15);
 
         BezTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(BezTextfield);
-        BezTextfield.setBounds(114, 69, 112, 19);
 
         TeiletypLabel.setFont(new java.awt.Font("Arial", 0, 12));
         TeiletypLabel.setText("Teiletyp:");
-        suche_Teil.add(TeiletypLabel);
-        TeiletypLabel.setBounds(10, 107, 52, 15);
 
         BaugruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
         BaugruppeLabel.setText("Baugruppe:");
-        suche_Teil.add(BaugruppeLabel);
-        BaugruppeLabel.setBounds(10, 200, 73, 15);
 
-        jButton1.setFont(new java.awt.Font("Arial", 0, 12));
-        jButton1.setText("alle Teile anzeigen");
-        suche_Teil.add(jButton1);
-        jButton1.setBounds(10, 259, 149, 25);
+        AlleTeileAnzeigenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        AlleTeileAnzeigenButton.setText("alle Teile anzeigen");
+        AlleTeileAnzeigenButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alle_teile_suchen(evt);
+            }
+        });
 
         MAKTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(MAKTextfield);
-        MAKTextfield.setBounds(305, 133, 113, 19);
 
         ZeichnungsnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
         ZeichnungsnrLabel.setText("Zeichnungsnr.:");
-        suche_Teil.add(ZeichnungsnrLabel);
-        ZeichnungsnrLabel.setBounds(10, 168, 95, 15);
 
         PreisTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(PreisTextfield);
-        PreisTextfield.setBounds(305, 101, 90, 19);
 
         MAMLabel.setFont(new java.awt.Font("Arial", 0, 12));
         MAMLabel.setText("MAM:");
-        suche_Teil.add(MAMLabel);
-        MAMLabel.setBounds(263, 168, 32, 15);
 
         BaugruppeTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        suche_Teil.add(BaugruppeTextfield);
-        BaugruppeTextfield.setBounds(114, 197, 112, 19);
 
         MAGLabel.setFont(new java.awt.Font("Arial", 0, 12));
         MAGLabel.setText("MAG:");
-        suche_Teil.add(MAGLabel);
-        MAGLabel.setBounds(263, 200, 31, 15);
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -225,8 +186,126 @@ public class Teil_Suchen extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable4);
 
-        suche_Teil.add(jScrollPane4);
-        jScrollPane4.setBounds(0, 300, 630, 140);
+        javax.swing.GroupLayout suche_TeilLayout = new javax.swing.GroupLayout(suche_Teil);
+        suche_Teil.setLayout(suche_TeilLayout);
+        suche_TeilLayout.setHorizontalGroup(
+            suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(suche_TeilLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TeileStammdatenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addComponent(IDlinksLabel)
+                        .addGap(55, 55, 55)
+                        .addComponent(IDTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addComponent(BezeichnungLabel)
+                        .addGap(21, 21, 21)
+                        .addComponent(BezTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addComponent(TeiletypLabel)
+                        .addGap(52, 52, 52)
+                        .addComponent(TeiletypTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(PreisLabel)
+                        .addGap(7, 7, 7)
+                        .addComponent(PreisTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(EuroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addComponent(MaterialgruppeLabel)
+                        .addGap(13, 13, 13)
+                        .addComponent(MaterialTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(MAKLabel)
+                        .addGap(12, 12, 12)
+                        .addComponent(MAKTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addComponent(ZeichnungsnrLabel)
+                        .addGap(9, 9, 9)
+                        .addComponent(ZNrTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(MAMLabel)
+                        .addGap(10, 10, 10)
+                        .addComponent(MAMTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addComponent(BaugruppeLabel)
+                        .addGap(31, 31, 31)
+                        .addComponent(BaugruppeTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(MAGLabel)
+                        .addGap(11, 11, 11)
+                        .addComponent(MAGTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addComponent(AlleTeileAnzeigenButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SuchenlinksButton))))
+        );
+        suche_TeilLayout.setVerticalGroup(
+            suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(suche_TeilLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(TeileStammdatenLabel)
+                .addGap(11, 11, 11)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(IDlinksLabel))
+                    .addComponent(IDTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(BezeichnungLabel))
+                    .addComponent(BezTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(TeiletypLabel))
+                    .addComponent(TeiletypTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(PreisLabel))
+                    .addComponent(PreisTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(EuroLabel)))
+                .addGap(11, 11, 11)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MaterialTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MAKTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(MaterialgruppeLabel)
+                            .addComponent(MAKLabel))))
+                .addGap(13, 13, 13)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ZNrTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MAMTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ZeichnungsnrLabel)
+                            .addComponent(MAMLabel))))
+                .addGap(13, 13, 13)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BaugruppeTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MAGTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BaugruppeLabel)
+                            .addComponent(MAGLabel))))
+                .addGap(43, 43, 43)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AlleTeileAnzeigenButton)
+                    .addComponent(SuchenlinksButton))
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jTabbedPane1.addTab("Teil suchen", suche_Teil);
 
@@ -588,6 +667,14 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void alle_teile_suchen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alle_teile_suchen
+        try {
+            suchen_controller.alle_teile_ausgeben();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_alle_teile_suchen
     /**
      * @param args the command line arguments
      */
@@ -630,6 +717,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AlleTeileAnzeigenButton;
     private javax.swing.JLabel BaugruppeLabel;
     private javax.swing.JTextField BaugruppeTextfield;
     private javax.swing.JLabel BelegtLabel;
@@ -685,7 +773,6 @@ public class Teil_Suchen extends javax.swing.JFrame {
     private javax.swing.JLabel ZeileLabel;
     private javax.swing.JTextField ZeileTextfield;
     private javax.swing.JCheckBox gCB;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
