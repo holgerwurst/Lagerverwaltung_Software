@@ -349,16 +349,17 @@ public class Datenbankverbindung {
                 for (int i = 1; i <= rmsd.getColumnCount(); i++) {
                     switch (rmsd.getColumnType(i)) {
                         case java.sql.Types.INTEGER:
-                            zeile.add(rs.getInt(i));
+                            zeile.add(rs.getInt(i)); break;
                         case java.sql.Types.VARCHAR:
-                            zeile.add(rs.getString(i));
+                            zeile.add(rs.getString(i)); break;
                         case java.sql.Types.FLOAT:
-                            zeile.add(rs.getDouble(i));
+                            zeile.add(rs.getDouble(i)); break;
                         case java.sql.Types.NULL:
-                            zeile.add(null);
+                            zeile.add(null); break;
                     }
                 }
                 zeilen.add(zeile);
+                
             }
 
         } catch (SQLException ex) {
