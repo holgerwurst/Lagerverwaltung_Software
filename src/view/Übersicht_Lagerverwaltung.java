@@ -11,6 +11,7 @@ import view.LagerTextfield.AllowedSequences;
 import control.Teil_auslagern_controller;
 import model.Select_Stammdaten;
 import control.convert;
+import view.LagerTextfield.*;
 
 /**
  *
@@ -204,9 +205,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         ausl_BemerkungTextArea = new javax.swing.JTextArea();
         auslager_jpane = new javax.swing.JScrollPane();
         auslager_jtable = new javax.swing.JTable();
-        auslagerTextfield_ID = new view.LagerTextfield();
-        auslagerTextfield_fnr = new view.LagerTextfield();
-        auslagerTextfield_mengeauslagern = new view.LagerTextfield();
+        auslagerTextfield_ID = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        auslagerTextfield_fnr = new view.LagerTextfield(AllowedSequences.ALL);
+        auslagerTextfield_mengeauslagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         Teile_entfernen_loeschen = new javax.swing.JPanel();
         suchenButton = new javax.swing.JButton();
         Teilestammdatenbutton = new javax.swing.JButton();
@@ -1246,7 +1247,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(BemerkungLabel);
         BemerkungLabel.setBounds(50, 150, 67, 15);
 
-        auslagern_AusfuehrenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        auslagern_AusfuehrenButton.setFont(new java.awt.Font("Arial", 0, 12));
         auslagern_AusfuehrenButton.setText("Ausführen");
         auslagern_AusfuehrenButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1261,7 +1262,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(SuchenButton);
         SuchenButton.setBounds(430, 60, 131, 23);
 
-        auslagern_BestaetigenidButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        auslagern_BestaetigenidButton.setFont(new java.awt.Font("Arial", 0, 12));
         auslagern_BestaetigenidButton.setText("Bestätigen");
         auslagern_BestaetigenidButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1341,8 +1342,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         auslagerTextfield_ID.setBounds(280, 60, 120, 21);
 
         auslagerTextfield_fnr.setFont(new java.awt.Font("Arial", 0, 12));
+        auslagerTextfield_fnr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                auslagerTextfield_fnrActionPerformed(evt);
+            }
+        });
         Teile_auslagern.add(auslagerTextfield_fnr);
-        auslagerTextfield_fnr.setBounds(280, 320, 130, 21);
+        auslagerTextfield_fnr.setBounds(280, 330, 130, 21);
 
         auslagerTextfield_mengeauslagern.setFont(new java.awt.Font("Arial", 0, 12));
         Teile_auslagern.add(auslagerTextfield_mengeauslagern);
@@ -2058,124 +2064,121 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         // TODO add your handling code here:}//GEN-LAST:event_textfeld_id1ActionPerformed
     }
         private void button_anlegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_anlegenActionPerformed
-        // TODO add your handling code here:
+            // TODO add your handling code here:
             System.out.println("Teilestamm erweitern: anlegen button gedrückt!");
             //control.TeileStamm_erweitern_controller.nutzeranforderung(
-                    
+
     }//GEN-LAST:event_button_anlegenActionPerformed
 
     private void bezeichnung_textfeld1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bezeichnung_textfeld1ActionPerformed
-          pr = new control.Pruefen_Controller();
-        String bez="";
-               
-           bez = bezeichnung_textfeld1.getText();
-           pr.pruefe_bezeichnung(bez);
-     
+        pr = new control.Pruefen_Controller();
+        String bez = "";
+
+        bez = bezeichnung_textfeld1.getText();
+        pr.pruefe_bezeichnung(bez);
+
     }//GEN-LAST:event_bezeichnung_textfeld1ActionPerformed
 
     private void id_textfeld2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_textfeld2ActionPerformed
-     pr = new control.Pruefen_Controller();
-        String sid="";
-        int id=0;
-        
+        pr = new control.Pruefen_Controller();
+        String sid = "";
+        int id = 0;
+
         try {
             sid = id_textfeld2.getText();
             id = Integer.parseInt(sid);
             pr.pruefe_id(id);
-        }catch(NumberFormatException ex){
+        } catch (NumberFormatException ex) {
             System.out.println("Bitte nur zahlen eingeben");
         }
     }//GEN-LAST:event_id_textfeld2ActionPerformed
 
     private void auslagerTextfield_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_IDActionPerformed
-        
-        
+
+
         pr = new Pruefen_Controller();
-        
-        
-             
-        int id=Integer.parseInt(auslagerTextfield_ID.getText());
-        
-        if(pr.pruefe_id(id)==true)
-        {
+
+
+
+        int id = Integer.parseInt(auslagerTextfield_ID.getText());
+
+        if (pr.pruefe_id(id) == true) {
             //ta= new Teil_auslagern_controller();
-            sst = new Select_Stammdaten();
             
-            try
-            {
+            
+
+            try {
                 ta.auslagern_vorbereitung(id);
-               
+
+                sst = new Select_Stammdaten();
                 auslager_bez_ausgabeLabel.setText(sst.get_Bezeichnung_ausDB(id)[0]);
-               
+                
+                
+                sst = new Select_Stammdaten();
                 ausl_BemerkungTextArea.setText(sst.get_Bemerkung_ausDB(id)[0]);
-                
-                
-            }
-            catch(ClassNotFoundException e)
-            {
+
+
+            } catch (ClassNotFoundException e) {
                 System.out.println(e.getMessage());
             }
-           
-            
-           
-            
-        
-            
+
             //fach
-            for(int i = 0; i<ta.getfachnummern().length ;i++)
-            {
-            
-                    
-            auslager_jtable.setValueAt(ta.getfachnummern()[i], i, 0);
-            
-            //id
-            auslager_jtable.setValueAt(ta.getID(), i, 1);
-            
-            //menge
-            auslager_jtable.setValueAt(ta.getaktuelle_menge()[i], i, 2);
-            
-            //anschaffungsgrund
-            auslager_jtable.setValueAt(ta.getanschaffungsgrund()[i], i, 3);
-            
-            
+            for (int i = 0; i < ta.getfachnummern().length; i++) {
+
+                auslager_jtable.setValueAt(ta.getfachnummern()[i], i, 0);
+
+                //id
+                auslager_jtable.setValueAt(ta.getID(), i, 1);
+
+                //menge
+                auslager_jtable.setValueAt(ta.getaktuelle_menge()[i], i, 2);
+
+                //anschaffungsgrund
+                auslager_jtable.setValueAt(ta.getanschaffungsgrund()[i], i, 3);
             }
-            
-            
         }
-        
-        
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagerTextfield_IDActionPerformed
 
     private void auslagern_AusfuehrenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_AusfuehrenButtonActionPerformed
-        
-        
-        
+
+        pr = new Pruefen_Controller();
+
+
+        String strtemp = auslagerTextfield_fnr.getText();
+
+
+
         cv = new convert();
-        String strtemp = auslagerTextfield_ID.getText();
         int inttemp = cv.StringTOint(auslagerTextfield_mengeauslagern.getText());
-     
-        for(int i=0; i<ta.getfachnummern().length; i++)
-        {
-            
-                if(ta.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[i]), inttemp) == true)
-                {
-                    int neumenge= cv.StringTOint(ta.getaktuelle_menge()[i]) - inttemp;
-                
-                    
-                    try{
-                    ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[i], ta.getID(), neumenge, ta.getanschaffungsgrund()[i]));
+
+        for (int i = 0; i < ta.getfachnummern().length; i++) {
+
+            if (pr.fachnummerkorrekt(ta.getfachnummern(), strtemp) == true) {
+                if (pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[i]), inttemp) == true) {
+                    int neumenge = cv.StringTOint(ta.getaktuelle_menge()[i]) - inttemp;
+
+
+                    try {
+                        ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[i], ta.getID(), neumenge, ta.getanschaffungsgrund()[i]));
+                    } catch (ClassNotFoundException e) {
+                        System.out.println(e.getMessage());
                     }
-                    catch(ClassNotFoundException e)
-                    {System.out.println(e.getMessage());}
-                }   
-            
+                }
+            }
+
         }
+
         
-        
+
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagern_AusfuehrenButtonActionPerformed
-    
+
+    private void auslagerTextfield_fnrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_fnrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_auslagerTextfield_fnrActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2543,5 +2546,4 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField zeitraum_bis_textfeld_historie;
     private javax.swing.JTextField zeitraum_von_button_historie;
     // End of variables declaration//GEN-END:variables
- 
 }

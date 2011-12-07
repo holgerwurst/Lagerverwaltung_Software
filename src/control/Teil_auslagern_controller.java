@@ -84,29 +84,7 @@ public class Teil_auslagern_controller {
     }
     
       
-    public boolean auszulagernde_menge_pruefen(int mengeaktuell, int mengeneu)
-    {
-        if(mengeneu<=0)
-        {
-            System.out.println("Auszulagernde Menge muss grösser als 0 sein");
-            return false;
-        }
-        
-        if(mengeaktuell<mengeneu)
-        {
-            System.out.println("Auszulagernde Menge kann max eingelagerter Menge entsprechen");
-            return false;
-        }
-        
-        if(mengeaktuell==mengeneu)
-        {
-            System.out.println("Möchten Sie das Teil löschen?");
-            return true;
-            
-        }
-        
-        return true;
-    }   
+     
     
     
     public Lagerbestandskonto erstelle_lbk(String fnr, int idt, int neue_menge, String ansgrund)
