@@ -6,6 +6,8 @@ package model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -303,9 +305,14 @@ public class Datenbankverbindung {
          * Einfache Erstellung einer Verbindung ohne die Erstellung eines
          * SQLStatements
          */
-    public void basic_connect() {
+    public void basic_connect(String select) throws ClassNotFoundException {
         try {
+            Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            rs = statement.executeQuery(select);
+
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
@@ -321,5 +328,42 @@ public class Datenbankverbindung {
             System.err.println(e);
         }
 
+    }
+
+    /**
+     * Methode die aus einem ResultSet ein zweidimensionales Array generiert.
+     * Im Moment werden nur die Strings, Integers, Double und Null Werte beachtet.
+     * Für Blob Werte fehlt die Erkennung des typs.
+     */
+    public ArrayList<ArrayList> resultset_to_arraylist() {
+        // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
+        ArrayList<ArrayList> zeilen = new ArrayList();
+        try {
+            // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
+            ResultSetMetaData rmsd = rs.getMetaData();
+
+            while (rs.next()) {
+                // ArrayList die eine Zeile darstellt
+                ArrayList zeile = new ArrayList();
+
+                for (int i = 1; i <= rmsd.getColumnCount(); i++) {
+                    switch (rmsd.getColumnType(i)) {
+                        case java.sql.Types.INTEGER:
+                            zeile.add(rs.getInt(i));
+                        case java.sql.Types.VARCHAR:
+                            zeile.add(rs.getString(i));
+                        case java.sql.Types.FLOAT:
+                            zeile.add(rs.getDouble(i));
+                        case java.sql.Types.NULL:
+                            zeile.add(null);
+                    }
+                }
+                zeilen.add(zeile);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankverbindung.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return zeilen;
     }
 }
