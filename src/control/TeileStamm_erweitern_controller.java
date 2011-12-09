@@ -4,8 +4,6 @@
  */
 package control;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -106,7 +104,7 @@ public class TeileStamm_erweitern_controller {
      * @param fake true: die id ist 1337, false: es wird nach einer validen id gesucht.
      * Hat keinen Einfluss darauf welche id das Teil tatsächlich erhält
      * 
-     */
+     *
     public void setEXAMPLEid(boolean fake){
         
         if(fake){
@@ -122,6 +120,12 @@ public class TeileStamm_erweitern_controller {
        
        }
         
-    }
+    }*/
     
+    
+    /*!das hier muss noch in Übersicht_Lagerverwaltung und wird von der methode public void setEXAMPLEid(bool) benutzt
+     public void PATRICKsettextfeld_id(int id){
+        textfeld_id.setText(""+id);
+    }
+    */
 }

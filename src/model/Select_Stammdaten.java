@@ -42,6 +42,18 @@ public class Select_Stammdaten {
         return db.ar;
     }
  
+    public String[] get_Bezeichnung_ausDB(int id)throws ClassNotFoundException {
+       
+        try {
+            db.connect("Select bezeichnung from Teilestammdaten where id='" + id + "'", "bezeichnung");
+            db.disconnect();
+            
+        } catch (ClassNotFoundException ex) {
+            System.out.println("JDBC-Treiber nicht vorhanden");
+        }
+        return db.ar;
+    }
+    
     public String[] get_Teiletyp_ausDB(int id) throws Exception {
 
          try {

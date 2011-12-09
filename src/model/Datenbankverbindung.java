@@ -94,7 +94,7 @@ public class Datenbankverbindung {
                 rs = statement.executeQuery("" + kommando + " into Teilestammdaten (id,typ, zeichnungsnummer,"
                         + "materialgruppe, preis, bezeichnung, baugruppe, bemerkung, max_anz_klein, "
                         + "max_anz_mittel, max_anz_gross) values (" + teil.get_id() + ",'" + teil.get_Teiletyp() + "',"
-                        + "'" + teil.get_Zeichnungsnummer() + "','" + teil.get_Materialgruppe() + "'," + teil.get_Preis() + ","
+                        + "'connect_schreiben_lagerbestandskonto" + teil.get_Zeichnungsnummer() + "','" + teil.get_Materialgruppe() + "'," + teil.get_Preis() + ","
                         + "'" + teil.get_Bezeichnung() + "','" + teil.get_Baugruppe() + "','" + teil.get_Bemerkung() + "',"
                         + "" + teil.get_max_anz_klein() + "," + teil.get_max_anz_mittel() + "," + teil.get_max_anz_gross() + ");");
             } else if ("update".equals(kommando)) {

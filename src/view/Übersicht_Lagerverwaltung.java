@@ -6,7 +6,10 @@ package view;
 
 import control.Pruefen_Controller;
 import javax.swing.JFormattedTextField;
+import javax.swing.table.*;
 import view.LagerTextfield.AllowedSequences;
+import control.Teil_auslagern_controller;
+import model.Select_Stammdaten;
 
 /**
  *
@@ -190,19 +193,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         FachLabel = new javax.swing.JLabel();
         BestandverringernLabel = new javax.swing.JLabel();
         BemerkungLabel = new javax.swing.JLabel();
-        IDTextfield = new javax.swing.JTextField();
-        FachTextfield = new javax.swing.JTextField();
-        BestandTextfield = new javax.swing.JTextField();
         AusführenButton = new javax.swing.JButton();
         SuchenButton = new javax.swing.JButton();
         BestätigenidButton = new javax.swing.JButton();
         label_eingabe_aufforderung_id = new javax.swing.JLabel();
         label_eingabe_aufforderung_fach = new javax.swing.JLabel();
-        Bezeichnung_ausgabeLabel = new javax.swing.JLabel();
+        auslager_bez_ausgabeLabel = new javax.swing.JLabel();
         BemerkungScrollPane = new javax.swing.JScrollPane();
-        BemerkungTextArea = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        ausl_BemerkungTextArea = new javax.swing.JTextArea();
+        auslager_jpane = new javax.swing.JScrollPane();
+        auslager_jtable = new javax.swing.JTable();
+        auslagerTextfield_ID = new view.LagerTextfield();
+        auslagerTextfield_fnr = new view.LagerTextfield();
+        auslagerTextfield_mengeauslagern = new view.LagerTextfield();
         Teile_entfernen_loeschen = new javax.swing.JPanel();
         suchenButton = new javax.swing.JButton();
         Teilestammdatenbutton = new javax.swing.JButton();
@@ -375,7 +378,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_mindestgroesse2);
         label_mindestgroesse2.setBounds(470, 110, 90, 20);
 
-        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
         label_anzeige_mindestgroesse2.setText("größe");
         jPanel8.add(label_anzeige_mindestgroesse2);
         label_anzeige_mindestgroesse2.setBounds(650, 110, 50, 20);
@@ -385,7 +388,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_eingabe_aufforderung_id2);
         label_eingabe_aufforderung_id2.setBounds(30, 20, 300, 20);
         jPanel8.add(menge_textfeld11);
-        menge_textfeld11.setBounds(220, 110, 96, 20);
+        menge_textfeld11.setBounds(220, 110, 96, 22);
 
         bezeichnung_textfeld1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -400,7 +403,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_oder1);
         label_oder1.setBounds(370, 60, 34, 15);
 
-        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12));
         label_teile_id2.setText("Teile ID:");
         jPanel8.add(label_teile_id2);
         label_teile_id2.setBounds(40, 60, 60, 20);
@@ -416,11 +419,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         jPanel8.add(id_textfeld2);
-        id_textfeld2.setBounds(220, 60, 90, 20);
+        id_textfeld2.setBounds(220, 60, 90, 22);
 
         label_menge_übrig.setText("text");
         jPanel8.add(label_menge_übrig);
-        label_menge_übrig.setBounds(650, 180, 20, 14);
+        label_menge_übrig.setBounds(650, 180, 21, 16);
 
         laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12));
         laber_noch_einzulagern.setText("noch einzulagernde Menge:");
@@ -819,7 +822,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(label_eingabe_aufforderung_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1051,7 +1054,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         textfeld_id.setText("text");
         textfeld_id.setToolTipText("");
         Teilestamm_erweitern.add(textfeld_id);
-        textfeld_id.setBounds(160, 60, 34, 14);
+        textfeld_id.setBounds(160, 60, 34, 16);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -1189,7 +1192,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_verwalten.add(button_loeschen);
         button_loeschen.setBounds(480, 70, 81, 23);
         Teilestamm_verwalten.add(textfeld_teiltyp);
-        textfeld_teiltyp.setBounds(130, 140, 161, 20);
+        textfeld_teiltyp.setBounds(130, 140, 161, 22);
 
         button_suchen.setFont(new java.awt.Font("Arial", 0, 12));
         button_suchen.setText("Suchen");
@@ -1222,7 +1225,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(TeileIDLabel);
         TeileIDLabel.setBounds(50, 60, 45, 15);
 
-        BezeichnungLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BezeichnungLabel.setText("Bezeichnung:");
         Teile_auslagern.add(BezeichnungLabel);
         BezeichnungLabel.setBounds(50, 100, 74, 15);
@@ -1241,23 +1244,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         BemerkungLabel.setText("Bemerkung:");
         Teile_auslagern.add(BemerkungLabel);
         BemerkungLabel.setBounds(50, 150, 67, 15);
-
-        IDTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        Teile_auslagern.add(IDTextfield);
-        IDTextfield.setBounds(280, 60, 128, 21);
-
-        FachTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        Teile_auslagern.add(FachTextfield);
-        FachTextfield.setBounds(280, 320, 128, 21);
-
-        BestandTextfield.setFont(new java.awt.Font("Arial", 0, 12));
-        BestandTextfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BestandTextfieldActionPerformed(evt);
-            }
-        });
-        Teile_auslagern.add(BestandTextfield);
-        BestandTextfield.setBounds(280, 360, 128, 21);
 
         AusführenButton.setFont(new java.awt.Font("Arial", 0, 12));
         AusführenButton.setText("Ausführen");
@@ -1288,33 +1274,73 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_eingabe_aufforderung_fach.setText("Bitte geben Sie das Fach ein oder wählen Sie es aus der Tabelle aus:");
         Teile_auslagern.add(label_eingabe_aufforderung_fach);
         label_eingabe_aufforderung_fach.setBounds(50, 280, 520, 20);
+        Teile_auslagern.add(auslager_bez_ausgabeLabel);
+        auslager_bez_ausgabeLabel.setBounds(280, 100, 128, 23);
 
-        Bezeichnung_ausgabeLabel.setText("bez");
-        Teile_auslagern.add(Bezeichnung_ausgabeLabel);
-        Bezeichnung_ausgabeLabel.setBounds(280, 100, 128, 23);
-
-        BemerkungTextArea.setColumns(20);
-        BemerkungTextArea.setRows(5);
-        BemerkungScrollPane.setViewportView(BemerkungTextArea);
+        ausl_BemerkungTextArea.setColumns(20);
+        ausl_BemerkungTextArea.setRows(5);
+        BemerkungScrollPane.setViewportView(ausl_BemerkungTextArea);
 
         Teile_auslagern.add(BemerkungScrollPane);
         BemerkungScrollPane.setBounds(280, 150, 248, 96);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        auslager_jtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Fachnummer", "ID", "Menge", "Anschaffungsgrund"
             }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
 
-        Teile_auslagern.add(jScrollPane2);
-        jScrollPane2.setBounds(0, 400, 950, 160);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        auslager_jpane.setViewportView(auslager_jtable);
+        auslager_jtable.getColumnModel().getColumn(0).setResizable(false);
+        auslager_jtable.getColumnModel().getColumn(1).setResizable(false);
+        auslager_jtable.getColumnModel().getColumn(2).setResizable(false);
+        auslager_jtable.getColumnModel().getColumn(3).setResizable(false);
+
+        Teile_auslagern.add(auslager_jpane);
+        auslager_jpane.setBounds(0, 400, 1000, 260);
+
+        auslagerTextfield_ID.setFont(new java.awt.Font("Arial", 0, 12));
+        auslagerTextfield_ID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                auslagerTextfield_IDActionPerformed(evt);
+            }
+        });
+        Teile_auslagern.add(auslagerTextfield_ID);
+        auslagerTextfield_ID.setBounds(280, 60, 120, 21);
+
+        auslagerTextfield_fnr.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_auslagern.add(auslagerTextfield_fnr);
+        auslagerTextfield_fnr.setBounds(280, 320, 6, 21);
+
+        auslagerTextfield_mengeauslagern.setFont(new java.awt.Font("Arial", 0, 12));
+        Teile_auslagern.add(auslagerTextfield_mengeauslagern);
+        auslagerTextfield_mengeauslagern.setBounds(280, 370, 6, 21);
 
         jTabbedPane1.addTab("Teile auslagern", Teile_auslagern);
 
@@ -1416,43 +1442,43 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         MAKTextfield.setText("text");
         Teile_entfernen_loeschen.add(MAKTextfield);
-        MAKTextfield.setBounds(460, 230, 20, 14);
+        MAKTextfield.setBounds(460, 230, 21, 16);
 
         TypTextfield.setText("text");
         Teile_entfernen_loeschen.add(TypTextfield);
-        TypTextfield.setBounds(170, 230, 20, 14);
+        TypTextfield.setBounds(170, 230, 21, 16);
 
         MaterialTextfield.setText("text");
         Teile_entfernen_loeschen.add(MaterialTextfield);
-        MaterialTextfield.setBounds(170, 270, 20, 14);
+        MaterialTextfield.setBounds(170, 270, 21, 16);
 
         BezTextfield1.setText("text");
         Teile_entfernen_loeschen.add(BezTextfield1);
-        BezTextfield1.setBounds(170, 200, 20, 14);
+        BezTextfield1.setBounds(170, 200, 21, 16);
 
         ZNrTextfield.setText("text");
         Teile_entfernen_loeschen.add(ZNrTextfield);
-        ZNrTextfield.setBounds(170, 300, 20, 14);
+        ZNrTextfield.setBounds(170, 300, 21, 16);
 
         MAMTextfield.setText("text");
         Teile_entfernen_loeschen.add(MAMTextfield);
-        MAMTextfield.setBounds(460, 260, 20, 14);
+        MAMTextfield.setBounds(460, 260, 21, 16);
 
         BaugruppeTextfield.setText("text");
         Teile_entfernen_loeschen.add(BaugruppeTextfield);
-        BaugruppeTextfield.setBounds(170, 330, 20, 14);
+        BaugruppeTextfield.setBounds(170, 330, 21, 16);
 
         PreisTextfield.setText("text");
         Teile_entfernen_loeschen.add(PreisTextfield);
-        PreisTextfield.setBounds(460, 190, 20, 14);
+        PreisTextfield.setBounds(460, 190, 21, 16);
 
         MAGTextfield.setText("text");
         Teile_entfernen_loeschen.add(MAGTextfield);
-        MAGTextfield.setBounds(460, 290, 20, 14);
+        MAGTextfield.setBounds(460, 290, 21, 16);
 
         BemerkungTextfield.setText("text");
         Teile_entfernen_loeschen.add(BemerkungTextfield);
-        BemerkungTextfield.setBounds(460, 330, 34, 14);
+        BemerkungTextfield.setBounds(460, 330, 34, 16);
 
         jTabbedPane1.addTab("Teil entfernen", Teile_entfernen_loeschen);
 
@@ -1959,15 +1985,15 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         MengeTextfield.setText("text");
         Teile_umlagern.add(MengeTextfield);
-        MengeTextfield.setBounds(540, 90, 20, 14);
+        MengeTextfield.setBounds(540, 90, 21, 16);
 
         BezeichnungTextfield.setText("text");
         Teile_umlagern.add(BezeichnungTextfield);
-        BezeichnungTextfield.setBounds(400, 90, 20, 14);
+        BezeichnungTextfield.setBounds(400, 90, 21, 16);
 
         IDTextfield2.setText("text");
         Teile_umlagern.add(IDTextfield2);
-        IDTextfield2.setBounds(130, 90, 20, 14);
+        IDTextfield2.setBounds(130, 90, 21, 16);
 
         SuchenButton1.setFont(new java.awt.Font("Arial", 0, 12));
         SuchenButton1.setText("Suche Fachnummer");
@@ -1993,7 +2019,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jTabbedPane1.addTab("Teil umlagern", Teile_umlagern);
 
         getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(0, 10, 1010, 560);
+        jTabbedPane1.setBounds(0, 10, 1010, 690);
 
         Datei.setText("Datei");
         jMenuBar1.add(Datei);
@@ -2021,9 +2047,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     private void BestätigenidButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BestätigenidButtonActionPerformed
     }//GEN-LAST:event_BestätigenidButtonActionPerformed
-
-    private void BestandTextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BestandTextfieldActionPerformed
-    }//GEN-LAST:event_BestandTextfieldActionPerformed
 
     private void textfeld_id1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfeld_id1ActionPerformed
         // TODO add your handling code here:}//GEN-LAST:event_textfeld_id1ActionPerformed
@@ -2057,9 +2080,78 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             System.out.println("Bitte nur zahlen eingeben");
         }
     }//GEN-LAST:event_id_textfeld2ActionPerformed
-    public void PATRICKsettextfeld_id(int id){
-        textfeld_id.setText(""+id);
-    }
+
+    private void auslagerTextfield_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_IDActionPerformed
+        
+        
+        pr = new Pruefen_Controller();
+        
+        
+             
+        int id=Integer.parseInt(auslagerTextfield_ID.getText());
+        
+        if(pr.pruefe_id(id)==true)
+        {
+            ta= new Teil_auslagern_controller();
+            sst = new Select_Stammdaten();
+            
+            try
+            {
+                ta.auslagern_vorbereitung(id);
+               
+                auslager_bez_ausgabeLabel.setText(sst.get_Bezeichnung_ausDB(id)[0]);
+                ausl_BemerkungTextArea.setText(sst.get_Bemerkung_ausDB(id)[0]);
+                
+            }
+            catch(ClassNotFoundException e)
+            {
+                System.out.println(e.getMessage());
+            }
+           
+            
+           
+            
+        
+            
+            //fach
+            for(int i = 0; i<ta.getfachnummern().length ;i++)
+            {
+            
+                    
+            auslager_jtable.setValueAt(ta.getfachnummern()[i], i, 0);
+            
+            //id
+            auslager_jtable.setValueAt(ta.getID(), i, 1);
+            
+            //menge
+            auslager_jtable.setValueAt(ta.getaktuelle_menge()[i], i, 2);
+            
+            //anschaffungsgrund
+            auslager_jtable.setValueAt(ta.getanschaffungsgrund()[i], i, 3);
+            
+            
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_auslagerTextfield_IDActionPerformed
+    
 
     /**
      * @param args the command line arguments
@@ -2105,6 +2197,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         });
     }
     private control.Pruefen_Controller pr;
+    private control.Teil_auslagern_controller ta;
+    private model.Select_Stammdaten sst;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AnschaffungsLabel;
     private javax.swing.JTextField AnschaffungsTextField;
@@ -2115,9 +2209,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel BemerkungLabel;
     private javax.swing.JLabel BemerkungLabel1;
     private javax.swing.JScrollPane BemerkungScrollPane;
-    private javax.swing.JTextArea BemerkungTextArea;
     private javax.swing.JLabel BemerkungTextfield;
-    private javax.swing.JTextField BestandTextfield;
     private javax.swing.JLabel BestandverringernLabel;
     private javax.swing.JButton BestätigenButton;
     private javax.swing.JButton BestätigenidButton;
@@ -2126,19 +2218,16 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel BezeichnungLabel1;
     private javax.swing.JLabel BezeichnungLabel2;
     private javax.swing.JLabel BezeichnungTextfield;
-    private javax.swing.JLabel Bezeichnung_ausgabeLabel;
     private javax.swing.JLabel BitteeingebenLabel;
     private javax.swing.JPanel Buchungshistorie_einsehen_ausdrucken;
     private javax.swing.JMenu Datei;
     private javax.swing.JLabel EuroLabel;
     private javax.swing.JLabel FachLabel;
-    private javax.swing.JTextField FachTextfield;
     private javax.swing.JLabel FachnrLabel_Ziel;
     private javax.swing.JTextField FachnrTextfield;
     private javax.swing.JTextField FachnrTextfield_Ziel;
     private javax.swing.JLabel FachnummerLabel;
     private javax.swing.JLabel IDLabel;
-    private javax.swing.JTextField IDTextfield;
     private javax.swing.JTextField IDTextfield1;
     private javax.swing.JLabel IDTextfield2;
     private javax.swing.JLabel MAGLabel;
@@ -2178,6 +2267,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JButton anzeige_button_historie;
     private javax.swing.JButton anzeigen_button;
     private javax.swing.JTextField ausgangsfachnummer_textfeld;
+    private javax.swing.JTextArea ausl_BemerkungTextArea;
+    private view.LagerTextfield auslagerTextfield_ID;
+    private view.LagerTextfield auslagerTextfield_fnr;
+    private view.LagerTextfield auslagerTextfield_mengeauslagern;
+    private javax.swing.JLabel auslager_bez_ausgabeLabel;
+    private javax.swing.JScrollPane auslager_jpane;
+    private javax.swing.JTable auslager_jtable;
     private javax.swing.JButton bestaetigen_button;
     private javax.swing.JButton bestaetigen_button1;
     private javax.swing.JButton bestaetigen_button2;
@@ -2223,13 +2319,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextArea jTextArea1;
