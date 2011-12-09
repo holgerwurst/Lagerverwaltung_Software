@@ -58,6 +58,8 @@ public class Select_Allgemein {
         ResultSetMetaData rmsd = db.rs.getMetaData();
         ArrayList<ArrayList> teilestammdaten = db.resultset_to_arraylist();
         System.out.println(teilestammdaten);
+       
+        
         //int columnType = rmsd.getColumnType(4);
         //String columnname = rmsd.getColumnName(4);
         //while (db.rs.next()) {
