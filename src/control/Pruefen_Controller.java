@@ -42,7 +42,7 @@ public class Pruefen_Controller {
                 return false;
             }
 
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException e) {
 
             System.out.println(e.getMessage());
         }
@@ -63,9 +63,41 @@ public class Pruefen_Controller {
                 System.out.println("Kein Teil vorhanden");
             }
 
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException e) {
             System.out.println("Kein Teil vorhanden");
         }
+    }
+    
+    
+    public boolean auszulagernde_menge_pruefen(int mengeaktuell, int mengeneu) {
+        if (mengeneu <= 0) {
+
+            System.out.println("Auszulagernde Menge muss grösser als 0 sein");
+            return false;
+        }
+
+        if (mengeaktuell < mengeneu) {
+            System.out.println("Auszulagernde Menge kann max eingelagerter Menge entsprechen");
+            return false;
+        }
+
+        if (mengeaktuell == mengeneu) {
+            System.out.println("Teil löschen nach Auslagervorgang anbieten");
+            return true;
+        }
+
+        return true;
+    }
+    
+    
+    
+    public boolean fachnummerkorrekt(String[] fnrs, String fnr) {
+        for (int i = 0; i < fnrs.length; i++) {
+            if (fnr.compareTo(fnrs[i]) == 0) {
+                return true;
+            }
+        }
+        return false;
     }
     /*
      * public static void main(String[] args) throws Exception{

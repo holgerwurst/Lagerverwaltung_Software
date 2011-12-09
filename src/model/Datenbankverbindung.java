@@ -6,6 +6,8 @@ package model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -91,14 +93,14 @@ public class Datenbankverbindung {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
             if ("insert".equals(kommando)) {
-                rs = statement.executeQuery("" + kommando + " into Teilestammdaten (id,typ, zeichnungsnummer,"
+                statement.executeQuery("" + kommando + " into Teilestammdaten (id,typ, zeichnungsnummer,"
                         + "materialgruppe, preis, bezeichnung, baugruppe, bemerkung, max_anz_klein, "
                         + "max_anz_mittel, max_anz_gross) values (" + teil.get_id() + ",'" + teil.get_Teiletyp() + "',"
                         + "'connect_schreiben_lagerbestandskonto" + teil.get_Zeichnungsnummer() + "','" + teil.get_Materialgruppe() + "'," + teil.get_Preis() + ","
                         + "'" + teil.get_Bezeichnung() + "','" + teil.get_Baugruppe() + "','" + teil.get_Bemerkung() + "',"
                         + "" + teil.get_max_anz_klein() + "," + teil.get_max_anz_mittel() + "," + teil.get_max_anz_gross() + ");");
             } else if ("update".equals(kommando)) {
-                rs = statement.executeQuery("" + kommando + " Teilestammdaten SET typ='" + teil.get_Teiletyp() + "',"
+                statement.executeQuery("" + kommando + " Teilestammdaten SET typ='" + teil.get_Teiletyp() + "',"
                         + "zeichnungsnummer='" + teil.get_Zeichnungsnummer() + "', materialgruppe='" + teil.get_Materialgruppe() + "',"
                         + "preis=" + teil.get_Preis() + ", bezeichnung='" + teil.get_Bezeichnung() + "',baugruppe='" + teil.get_Baugruppe() + "',"
                         + "bemerkung='" + teil.get_Bemerkung() + "',max_anz_klein=" + teil.get_max_anz_klein() + ", max_anz_mittel=" + teil.get_max_anz_mittel() + ""
@@ -133,11 +135,11 @@ public class Datenbankverbindung {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
             if ("insert".equals(kommando)) {
-                rs = statement.executeQuery("" + kommando + " into Lagerbestandskonto (fachnummer,teile_ID, menge,"
+                statement.executeQuery("" + kommando + " into Lagerbestandskonto (fachnummer,teile_ID, menge,"
                         + "anschaffungsgrund,haltbarkeitsdatum) values ('" + lbk.get_Fachnummer() + "'," + lbk.get_TeileID() + "," + lbk.get_Menge() + ""
                         + ",'" + lbk.get_Anschaffungsgrund() + "','" + lbk.get_Haltbarkeitsdatum() + "');");
             } else if ("update".equals(kommando)) {
-                rs = statement.executeQuery("" + kommando + " Lagerbestandskonto SET menge= " + lbk.get_Menge() + ","
+                statement.executeQuery("" + kommando + " Lagerbestandskonto SET menge= " + lbk.get_Menge() + ","
                         + "anschaffungsgrund='" + lbk.get_Anschaffungsgrund() + "', haltbarkeitsdatum='" + lbk.get_Haltbarkeitsdatum() + "' "
                         + " WHERE teile_ID=" + lbk.get_TeileID() + " AND fachnummer='" + lbk.get_Fachnummer() + "';");
             }
@@ -167,7 +169,7 @@ public class Datenbankverbindung {
             connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
-            rs = statement.executeQuery("insert into FreieIDs (IDs) values (" + freieid + ");");
+            statement.executeQuery("insert into FreieIDs (IDs) values (" + freieid + ");");
         } catch (SQLException e) {
             // if the error message is "out of memory",
             // it probably means no database file is found
@@ -194,7 +196,7 @@ public class Datenbankverbindung {
             connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
-            rs = statement.executeQuery("UPDATE Lagerfachstamm SET belegt ='" + belegung + "' WHERE fachnummer='" + fach + "';");
+            statement.executeQuery("UPDATE Lagerfachstamm SET belegt ='" + belegung + "' WHERE fachnummer='" + fach + "';");
 
         } catch (SQLException e) {
             // if the error message is "out of memory",
@@ -225,9 +227,9 @@ public class Datenbankverbindung {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
             if (loesch_fachnummer == null) {
-                rs = statement.executeQuery("DELETE FROM " + tabelle + " WHERE id=" + loesch_id + "; ");
+                statement.executeQuery("DELETE FROM " + tabelle + " WHERE id=" + loesch_id + "; ");
             } else if (loesch_fachnummer != null) {
-                rs = statement.executeQuery("DELETE FROM " + tabelle + " WHERE teile_ID=" + loesch_id + " AND fachnummer='" + loesch_fachnummer + "'; ");
+                statement.executeQuery("DELETE FROM " + tabelle + " WHERE teile_ID=" + loesch_id + " AND fachnummer='" + loesch_fachnummer + "'; ");
             }
         } catch (SQLException e) {
             // if the error message is "out of memory",
@@ -303,9 +305,14 @@ public class Datenbankverbindung {
          * Einfache Erstellung einer Verbindung ohne die Erstellung eines
          * SQLStatements
          */
-    public void basic_connect() {
+    public void basic_connect(String select) throws ClassNotFoundException {
         try {
+            Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);
+            rs = statement.executeQuery(select);
+
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
@@ -321,5 +328,43 @@ public class Datenbankverbindung {
             System.err.println(e);
         }
 
+    }
+
+    /**
+     * Methode die aus einem ResultSet ein zweidimensionales Array generiert.
+     * Im Moment werden nur die Strings, Integers, Double und Null Werte beachtet.
+     * Für Blob Werte fehlt die Erkennung des typs.
+     */
+    public ArrayList<ArrayList> resultset_to_arraylist() {
+        // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
+        ArrayList<ArrayList> zeilen = new ArrayList();
+        try {
+            // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
+            ResultSetMetaData rmsd = rs.getMetaData();
+
+            while (rs.next()) {
+                // ArrayList die eine Zeile darstellt
+                ArrayList zeile = new ArrayList();
+
+                for (int i = 1; i <= rmsd.getColumnCount(); i++) {
+                    switch (rmsd.getColumnType(i)) {
+                        case java.sql.Types.INTEGER:
+                            zeile.add(rs.getInt(i)); break;
+                        case java.sql.Types.VARCHAR:
+                            zeile.add(rs.getString(i)); break;
+                        case java.sql.Types.FLOAT:
+                            zeile.add(rs.getDouble(i)); break;
+                        case java.sql.Types.NULL:
+                            zeile.add(null); break;
+                    }
+                }
+                zeilen.add(zeile);
+                
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankverbindung.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return zeilen;
     }
 }

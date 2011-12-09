@@ -84,58 +84,35 @@ public class Teil_auslagern_controller {
     }
     
       
-    public void auszulagernde_menge_pruefen(int mengeaktuell, int mengeneu)
+     
+    
+    
+    public Lagerbestandskonto erstelle_lbk(String fnr, int idt, int neue_menge, String ansgrund)
     {
-        if(mengeneu<=0)
-        {
-            System.out.println("Auszulagernde Menge muss grösser als 0 sein");
-        }
-        
-        if(mengeaktuell<mengeneu)
-        {
-            System.out.println("Auszulagernde Menge kann max eingelagerter Menge entsprechen");
-        }
-        
-        if(mengeaktuell==mengeneu)
-        {
-            System.out.println("Möchten Sie das Teil löschen?");
-            
-        }
-        
-    }   
+         Lagerbestandskonto lbk = new Lagerbestandskonto(fnr, idt, neue_menge, ansgrund, null);
+         
+         return lbk;
+              
+    }
     
     
-    
-    public void auslagern_durchfuehrung(String fachnummer, int auszulagernde_menge) throws ClassNotFoundException {
-
+    public void auslagern_durchfuehrung(Lagerbestandskonto lbk) throws ClassNotFoundException {
 
 
         DB_schreiben dbs = new DB_schreiben();
 
-        int neue_menge = 0;
-        
-        String ansgrd="";
-        
-        for (int i = 0; i < fachnummern.length; i++) {
-            if (fachnummern[i].toString().compareTo(fachnummer) == 0) {
-                                
-                int temp = Integer.parseInt(aktuelle_menge[i]);
-
-                auszulagernde_menge_pruefen(temp, auszulagernde_menge);
-                
-                neue_menge = temp - auszulagernde_menge;
-                
-                ansgrd=anschaffungsgrund[i];
-            }
-        }
-
-
-        Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neue_menge, ansgrd, null);
-
-
+        System.out.println("LBK wurde mit folgenden Werten geschrieben: ");
+        System.out.println(lbk.get_Fachnummer());
+        System.out.println(lbk.get_TeileID());
+        System.out.println(lbk.get_Menge());
+        System.out.println(lbk.get_Anschaffungsgrund());
+        System.out.println(lbk.get_Haltbarkeitsdatum());
+             
         //dbs.update_lagerbestand(lbk);
 
     }
+    
+    
 
     public static void main(String[] args) throws ClassNotFoundException {
 
