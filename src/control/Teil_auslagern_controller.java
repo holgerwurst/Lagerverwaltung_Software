@@ -101,12 +101,12 @@ public class Teil_auslagern_controller {
 
         DB_schreiben dbs = new DB_schreiben();
 
-        System.out.println("LBK wurde mit folgenden Werten geschrieben: ");
-        System.out.println(lbk.get_Fachnummer());
-        System.out.println(lbk.get_TeileID());
+        //System.out.println("LBK wurde mit folgenden Werten geschrieben: ");
+        //System.out.println(lbk.get_Fachnummer());
+        //System.out.println(lbk.get_TeileID());
         System.out.println(lbk.get_Menge());
-        System.out.println(lbk.get_Anschaffungsgrund());
-        System.out.println(lbk.get_Haltbarkeitsdatum());
+        //System.out.println(lbk.get_Anschaffungsgrund());
+        //System.out.println(lbk.get_Haltbarkeitsdatum());
              
         //dbs.update_lagerbestand(lbk);
 

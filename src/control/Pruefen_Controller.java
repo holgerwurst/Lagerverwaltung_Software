@@ -91,13 +91,18 @@ public class Pruefen_Controller {
     
     
     
-    public boolean fachnummerkorrekt(String[] fnrs, String fnr) {
+    public int fachnummerkorrekt(String[] fnrs, String fnr) {
+       
         for (int i = 0; i < fnrs.length; i++) {
-            if (fnr.compareTo(fnrs[i]) == 0) {
-                return true;
+            
+            if (fnr.equals(fnrs[i])) {
+                
+                
+                return i;
+                
             }
         }
-        return false;
+        return 99999;
     }
     /*
      * public static void main(String[] args) throws Exception{
