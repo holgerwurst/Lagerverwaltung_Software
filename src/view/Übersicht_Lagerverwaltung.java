@@ -1262,7 +1262,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(SuchenButton);
         SuchenButton.setBounds(430, 60, 131, 23);
 
-        auslagern_BestaetigenidButton.setFont(new java.awt.Font("Arial", 0, 12));
+        auslagern_BestaetigenidButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         auslagern_BestaetigenidButton.setText("Bestätigen");
         auslagern_BestaetigenidButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1285,6 +1285,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         auslager_bez_ausgabeLabel.setBounds(280, 100, 128, 23);
 
         ausl_BemerkungTextArea.setColumns(20);
+        ausl_BemerkungTextArea.setEditable(false);
         ausl_BemerkungTextArea.setRows(5);
         BemerkungScrollPane.setViewportView(ausl_BemerkungTextArea);
 
@@ -1293,26 +1294,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         auslager_jtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Fachnummer", "ID", "Menge", "Anschaffungsgrund"
+                "Fachnummer", "Menge"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1323,11 +1315,14 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        auslager_jtable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                auslager_jtableMouseClicked(evt);
+            }
+        });
         auslager_jpane.setViewportView(auslager_jtable);
         auslager_jtable.getColumnModel().getColumn(0).setResizable(false);
         auslager_jtable.getColumnModel().getColumn(1).setResizable(false);
-        auslager_jtable.getColumnModel().getColumn(2).setResizable(false);
-        auslager_jtable.getColumnModel().getColumn(3).setResizable(false);
 
         Teile_auslagern.add(auslager_jpane);
         auslager_jpane.setBounds(0, 400, 1000, 260);
@@ -1341,6 +1336,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(auslagerTextfield_ID);
         auslagerTextfield_ID.setBounds(280, 60, 120, 21);
 
+        auslagerTextfield_fnr.setEditable(false);
         auslagerTextfield_fnr.setFont(new java.awt.Font("Arial", 0, 12));
         auslagerTextfield_fnr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2057,7 +2053,50 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+     /** 
+     * Daten der Bestandsmengen in JTable schreiben.
+     *  
+     * @param evt 
+     */
     private void auslagern_BestaetigenidButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_BestaetigenidButtonActionPerformed
+        
+        pr = new Pruefen_Controller();
+        int id = Integer.parseInt(auslagerTextfield_ID.getText());
+
+        if (pr.pruefe_id(id) == true) {
+
+            try {
+                ta.auslagern_vorbereitung(id);
+
+                sst = new Select_Stammdaten();
+                auslager_bez_ausgabeLabel.setText(sst.get_Bezeichnung_ausDB(id)[0]);
+
+                sst = new Select_Stammdaten();
+                ausl_BemerkungTextArea.setText(sst.get_Bemerkung_ausDB(id)[0]);
+
+            } catch (ClassNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+            
+            DefaultTableModel newmodel = new DefaultTableModel();
+             
+            newmodel.addColumn("Fachnummer", ta.getfachnummern());
+            newmodel.addColumn("Menge", ta.getaktuelle_menge());
+ 
+            auslager_jtable.setModel(newmodel);
+            
+            /*//fach
+            for (int i = 0; i < ta.getfachnummern().length; i++) {
+                auslager_jtable.setValueAt(ta.getfachnummern()[i], i, 0);
+                //id
+                auslager_jtable.setValueAt(ta.getID(), i, 1);
+                //menge
+                auslager_jtable.setValueAt(ta.getaktuelle_menge()[i], i, 2);
+                //anschaffungsgrund
+                auslager_jtable.setValueAt(ta.getanschaffungsgrund()[i], i, 3);
+            }*/
+        }
     }//GEN-LAST:event_auslagern_BestaetigenidButtonActionPerformed
 
     private void textfeld_id1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfeld_id1ActionPerformed
@@ -2093,92 +2132,53 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_id_textfeld2ActionPerformed
 
+
     private void auslagerTextfield_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_IDActionPerformed
-
-
-        pr = new Pruefen_Controller();
-
-
-
-        int id = Integer.parseInt(auslagerTextfield_ID.getText());
-
-        if (pr.pruefe_id(id) == true) {
-            //ta= new Teil_auslagern_controller();
-            
-            
-
-            try {
-                ta.auslagern_vorbereitung(id);
-
-                sst = new Select_Stammdaten();
-                auslager_bez_ausgabeLabel.setText(sst.get_Bezeichnung_ausDB(id)[0]);
-                
-                
-                sst = new Select_Stammdaten();
-                ausl_BemerkungTextArea.setText(sst.get_Bemerkung_ausDB(id)[0]);
-
-
-            } catch (ClassNotFoundException e) {
-                System.out.println(e.getMessage());
-            }
-
-            //fach
-            for (int i = 0; i < ta.getfachnummern().length; i++) {
-
-                auslager_jtable.setValueAt(ta.getfachnummern()[i], i, 0);
-
-                //id
-                auslager_jtable.setValueAt(ta.getID(), i, 1);
-
-                //menge
-                auslager_jtable.setValueAt(ta.getaktuelle_menge()[i], i, 2);
-
-                //anschaffungsgrund
-                auslager_jtable.setValueAt(ta.getanschaffungsgrund()[i], i, 3);
-            }
-        }
-
-
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagerTextfield_IDActionPerformed
 
+    /**
+ * 
+ * Neue Menge des gewählten Faches in Datenbank schreiben.
+ * 
+ * <
+ * @param evt 
+ */
     private void auslagern_AusfuehrenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_AusfuehrenButtonActionPerformed
 
         pr = new Pruefen_Controller();
-
-
         String strtemp = auslagerTextfield_fnr.getText();
-
-
 
         cv = new convert();
         int inttemp = cv.StringTOint(auslagerTextfield_mengeauslagern.getText());
 
-        for (int i = 0; i < ta.getfachnummern().length; i++) {
+        int fachnrstelle = pr.fachnummerkorrekt(ta.getfachnummern(), strtemp);
 
-            if (pr.fachnummerkorrekt(ta.getfachnummern(), strtemp) == true) {
-                if (pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[i]), inttemp) == true) {
-                    int neumenge = cv.StringTOint(ta.getaktuelle_menge()[i]) - inttemp;
+        if (pr.fachnummerkorrekt(ta.getfachnummern(), strtemp) != 99999) {
 
+            if (pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == true) {
 
-                    try {
-                        ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[i], ta.getID(), neumenge, ta.getanschaffungsgrund()[i]));
-                    } catch (ClassNotFoundException e) {
-                        System.out.println(e.getMessage());
-                    }
+                int neumenge = cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]) - inttemp;
+                try {
+                    ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[fachnrstelle], ta.getID(), neumenge, ta.getanschaffungsgrund()[fachnrstelle]));
+
+                } catch (ClassNotFoundException e) {
+                    System.out.println(e.getMessage());
                 }
             }
-
         }
-
-        
-
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagern_AusfuehrenButtonActionPerformed
 
     private void auslagerTextfield_fnrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_fnrActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagerTextfield_fnrActionPerformed
+
+    private void auslager_jtableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_auslager_jtableMouseClicked
+
+        auslagerTextfield_fnr.setText(ta.getfachnummern()[auslager_jtable.getSelectedRow()]);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_auslager_jtableMouseClicked
 
     /**
      * @param args the command line arguments
