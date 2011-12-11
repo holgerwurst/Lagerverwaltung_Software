@@ -2086,16 +2086,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
  
             auslager_jtable.setModel(newmodel);
             
-            /*//fach
-            for (int i = 0; i < ta.getfachnummern().length; i++) {
-                auslager_jtable.setValueAt(ta.getfachnummern()[i], i, 0);
-                //id
-                auslager_jtable.setValueAt(ta.getID(), i, 1);
-                //menge
-                auslager_jtable.setValueAt(ta.getaktuelle_menge()[i], i, 2);
-                //anschaffungsgrund
-                auslager_jtable.setValueAt(ta.getanschaffungsgrund()[i], i, 3);
-            }*/
+        
         }
     }//GEN-LAST:event_auslagern_BestaetigenidButtonActionPerformed
 
@@ -2150,23 +2141,64 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         String strtemp = auslagerTextfield_fnr.getText();
 
         cv = new convert();
+        
         int inttemp = cv.StringTOint(auslagerTextfield_mengeauslagern.getText());
-
+            
         int fachnrstelle = pr.fachnummerkorrekt(ta.getfachnummern(), strtemp);
 
         if (pr.fachnummerkorrekt(ta.getfachnummern(), strtemp) != 99999) {
 
-            if (pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == true) {
-
+            if (pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == 3) {
+                    
                 int neumenge = cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]) - inttemp;
+                
                 try {
+                
                     ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[fachnrstelle], ta.getID(), neumenge, ta.getanschaffungsgrund()[fachnrstelle]));
-
+                    
+                    int tmp = ta.getID();
+                    
+                    ta.auslagern_vorbereitung(tmp);
+                    
+                     DefaultTableModel newmodel = new DefaultTableModel();
+             
+            newmodel.addColumn("Fachnummer", ta.getfachnummern());
+            newmodel.addColumn("Menge", ta.getaktuelle_menge());
+ 
+            auslager_jtable.setModel(newmodel);
+                    
                 } catch (ClassNotFoundException e) {
                     System.out.println(e.getMessage());
                 }
             }
-        }
+            else if(pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == 2)
+            {
+                int neumenge = cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]) - inttemp;
+                
+                try {
+                
+                    ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[fachnrstelle], ta.getID(), neumenge, ta.getanschaffungsgrund()[fachnrstelle]));
+                    ta.fachfreigeben(ta.getID(), ta.getfachnummern().length, ta.getfachnummern()[fachnrstelle]);
+                    
+                    int tmp = ta.getID();
+                    
+                    ta.auslagern_vorbereitung(tmp);
+                    
+                     DefaultTableModel newmodel = new DefaultTableModel();
+             
+            newmodel.addColumn("Fachnummer", ta.getfachnummern());
+            newmodel.addColumn("Menge", ta.getaktuelle_menge());
+ 
+            auslager_jtable.setModel(newmodel);
+                    
+                } catch (ClassNotFoundException e) {
+                    System.out.println(e.getMessage());
+                }
+                
+            }
+          
+        
+    }
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagern_AusfuehrenButtonActionPerformed
 

@@ -42,6 +42,7 @@ public class Nutzerhinweis1 extends javax.swing.JDialog {
 
         Hinweisfeld.setColumns(20);
         Hinweisfeld.setEditable(false);
+        Hinweisfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Hinweisfeld.setRows(5);
         jScrollPane1.setViewportView(Hinweisfeld);
 
