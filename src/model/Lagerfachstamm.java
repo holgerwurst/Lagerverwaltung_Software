@@ -115,4 +115,8 @@ public class Lagerfachstamm {
     public void set_Fachnummer(String fnr) {
         fachnummer = fnr;
     }
+    
+    public Object[] get_Attribute() {
+        return this.attribute;
+    }
 }
