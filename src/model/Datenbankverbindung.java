@@ -19,21 +19,9 @@ public class Datenbankverbindung {
     ResultSet rs = null;
     String[] ar = new String[0];
     ArrayList<String> val = new ArrayList<String>(0);
+    String ergebnis = "";
 
-    /**
-     * 
-     * Methode für die Datenbankverbindung mit Selects von einzelnen Werten.
-     * 
-     * 
-     * @param tabelle
-     * @param spalte
-     * @param woist
-     * @param select
-     * @return
-     * @throws ClassNotFoundException 
-     */
-    /**
-     * 
+ /*  * 
      * Methode für die Verbindung zur Datenbank um den Inhalt einer ganzen Spalte zu bekommen.
      * 
      * 
@@ -46,7 +34,7 @@ public class Datenbankverbindung {
         Class.forName("org.sqlite.JDBC");
 
         // ResultSet rs = null;
-        String ergebnis = "";
+  
 
 
         try {

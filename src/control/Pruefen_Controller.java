@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import model.Datenbankverbindung;
 import model.Select_Stammdaten;
 import view.Übersicht_Lagerverwaltung;
 import view.Nutzerhinweis1;
-import view.Hinweisfenster;
 
 
 /**
@@ -22,48 +22,58 @@ import view.Hinweisfenster;
 public class Pruefen_Controller {
 
     private Select_Stammdaten std = new Select_Stammdaten();
+    private Teil_einlagern_Controller ei = new Teil_einlagern_Controller();
+    private convert cv = new convert();
+    private Übersicht_Lagerverwaltung lv = new Übersicht_Lagerverwaltung();
 
     public boolean pruefe_id(int id) {
 
         try {
 
-            String[] vergleich = std.get_ID_ausDB(id);
-            for (int i = 0; i < vergleich.length; i++) {
 
-                System.out.println("Teil mit ID " + vergleich[i] + " vorhanden");
+            String vergleich = std.get_ID_ausDB(id);
 
 
-            }
+            if (vergleich.isEmpty()) {
 
-            if (vergleich.length == 0) {
+                JOptionPane.showConfirmDialog(lv.auslagern_BestaetigenidButton,"BIER BIER BIER", "Falsche Eingabe",  JOptionPane.YES_NO_CANCEL_OPTION,1);
                 System.out.println("Kein Teil vorhanden");
-
                 return false;
+                
+            } else {
+
+                int zahl = cv.StringTOint(vergleich);
+                System.out.println("Teil mit ID " + zahl + " vorhanden");
+                ei.einlagern(zahl);
             }
 
-        } catch (ClassNotFoundException e) {
+
+        } catch (SQLException e) {
 
             System.out.println(e.getMessage());
         }
 
         return true;
 
+
     }
 
     public void pruefe_bezeichnung(String bezeichnung) {
         try {
-            String[] vergleich = std.get_Bezeichnung_ausDB(bezeichnung);
+            String vergleich = std.get_Bezeichnung_ausDB(bezeichnung);
 
-            for (int i = 0; i < vergleich.length; i++) {
-                System.out.println(vergleich[i]);
-            }
+            if (vergleich.isEmpty()) {
 
-            if (vergleich.length == 0) {
-                       
                 System.out.println("Kein Teil vorhanden");
+
+            } else {
+
+
+                System.out.println("Teil mit Bezeichnung " + vergleich + " vorhanden");
+
             }
 
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.println("Kein Teil vorhanden");
         }
     }
