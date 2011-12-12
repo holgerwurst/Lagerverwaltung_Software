@@ -7,6 +7,8 @@ package control;
 import model.Select_Lagerbestandskonto;
 import model.Lagerbestandskonto;
 import model.DB_schreiben;
+import javax.swing.*;
+import view.Übersicht_Lagerverwaltung;
 
 /**
  *
@@ -19,6 +21,7 @@ public class Teil_auslagern_controller {
     String[] aktuelle_menge;
     String[] anschaffungsgrund;
     int auszulagernde_menge;
+    
 
     public void auslagern_vorbereitung(int idt) throws ClassNotFoundException {
 
@@ -40,12 +43,7 @@ public class Teil_auslagern_controller {
             anschaffungsgrund = sl3.get_Anschaffungsgrund_ausDB(fachnummern[i]);
 
             //System.out.println("Fachnummern: " + fachnummern[i] + ", Menge:" + aktuelle_menge[i] + ", Ans.grund: " + anschaffungsgrund[i]);
-
         }
-
-
-
-
     }
 
     public void fachfreigeben(int id, int laenge, String fnr) throws ClassNotFoundException {
@@ -55,9 +53,7 @@ public class Teil_auslagern_controller {
             
             dbs.delete_lagerbestandskonto(id, fnr);
             dbs.update_lagerfachstamm(fnr, false);
-            
-            System.out.println("Fach freigegeben und zu Teil entfernen switchen");
-            
+  
         } else if (laenge > 1) {
             
             dbs.delete_lagerbestandskonto(id, fnr);
@@ -92,7 +88,6 @@ public class Teil_auslagern_controller {
 
     public void auslagern_durchfuehrung(Lagerbestandskonto lbk) throws ClassNotFoundException {
 
-
         DB_schreiben dbs = new DB_schreiben();
 
         //System.out.println("LBK wurde mit folgenden Werten geschrieben: ");
@@ -103,9 +98,9 @@ public class Teil_auslagern_controller {
         //System.out.println(lbk.get_Haltbarkeitsdatum());
 
         dbs.update_lagerbestand(lbk);
-
     }
 
+    
     public static void main(String[] args) throws ClassNotFoundException {
 
         Teil_auslagern_controller ta = new Teil_auslagern_controller();

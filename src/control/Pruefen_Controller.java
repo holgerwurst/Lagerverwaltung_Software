@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Datenbankverbindung;
 import model.Select_Stammdaten;
-import view.Übersicht_Lagerverwaltung;
 import view.Nutzerhinweis1;
+import view.Übersicht_Lagerverwaltung;
 
 
 /**
@@ -36,8 +36,9 @@ public class Pruefen_Controller {
 
             if (vergleich.isEmpty()) {
 
-                JOptionPane.showConfirmDialog(lv.auslagern_BestaetigenidButton,"BIER BIER BIER", "Falsche Eingabe",  JOptionPane.YES_NO_CANCEL_OPTION,1);
-                System.out.println("Kein Teil vorhanden");
+                JOptionPane.showMessageDialog(lv.auslagern_BestaetigenidButton, "Teil nicht vorhanden");
+                
+                //System.out.println("Kein Teil vorhanden");
                 return false;
                 
             } else {
@@ -96,12 +97,15 @@ public class Pruefen_Controller {
         }
 
         if (mengeaktuell < mengeneu) {
-            return 1;
+            
+                        
+            return 1;         
         }
 
         if (mengeaktuell == mengeneu) {
+            
             return 2;
-        }
+        }      
         return 3;
     }
 

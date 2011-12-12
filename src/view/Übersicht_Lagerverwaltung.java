@@ -11,6 +11,7 @@ import view.LagerTextfield.AllowedSequences;
 import control.Teil_auslagern_controller;
 import model.Select_Stammdaten;
 import control.convert;
+import javax.swing.JOptionPane;
 import view.LagerTextfield.*;
 
 /**
@@ -2184,17 +2185,23 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     
                     ta.auslagern_vorbereitung(tmp);
                     
-                     DefaultTableModel newmodel = new DefaultTableModel();
+                    DefaultTableModel newmodel = new DefaultTableModel();
              
             newmodel.addColumn("Fachnummer", ta.getfachnummern());
             newmodel.addColumn("Menge", ta.getaktuelle_menge());
  
             auslager_jtable.setModel(newmodel);
-                    
+            
+            JOptionPane.showConfirmDialog(auslagern_BestaetigenidButton,"Möchten Sie das Teil löschen?", "Meldung",  JOptionPane.YES_NO_OPTION,1);
+            
                 } catch (ClassNotFoundException e) {
                     System.out.println(e.getMessage());
                 }
                 
+            }
+            else if(pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == 1)
+            {
+                JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Eingetragende Menge zu groß.");
             }
           
         
