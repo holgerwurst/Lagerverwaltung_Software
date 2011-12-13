@@ -4,6 +4,8 @@
  */
 package control;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +19,9 @@ public class TeileStamm_erweitern_controller {
     private model.DB_schreiben dbwriter=new model.DB_schreiben();
     private String[] idarr;
     private view.Übersicht_Lagerverwaltung Hauptfenster;
+    
+    private model.DB_schreiben db_s =new model.DB_schreiben();
+   
     //declare variables end
 
     
@@ -58,20 +63,49 @@ public class TeileStamm_erweitern_controller {
        int MAG = converter.StringTOint(MAGString);   
        //Semantische Prüfung der Variablen entsprchend DD end
        
-       
-       //ID aus der DB (freie id tabelle) entfernen begin
-       int id =popnewIDfromTable();
-       //ID aus der DB (freie id tabelle) entfernen end
-       
-       
-       //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben begin
-       model.Teil_Stammdaten neuTeil = new model.Teil_Stammdaten(id, Typ, Zeichnungsnummer, Materialgruppe, Preis, Bezeichnung, BaugruppeString, Bemerkung, MAK, MAM, MAG);
-       
-       //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben end
-       
+       //prüfe ob ein teil mit gleicher bezeichnung schon vorhanden ist begin
+       if(bezSchonDa(Bezeichnung)){
+           JOptionPane.showMessageDialog(null, "ein Teil mit der Bezeichnung: "+Bezeichnung+" ist bereits vorhanden.", "Konsitenz", 1);
+       }else{
+            
+                //prüfe ob ein teil mit gleicher bezeichnung schon vorhanden ist end
+
+                
+                //ID aus der DB (freie id tabelle) entfernen begin
+                int id =popnewIDfromTable();
+                //ID aus der DB (freie id tabelle) entfernen end
+                
+                
+                //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben begin
+                model.Teil_Stammdaten neuTeil = new model.Teil_Stammdaten(id, Typ, Zeichnungsnummer, Materialgruppe, Preis, Bezeichnung, BaugruppeString, Bemerkung, MAK, MAM, MAG);
+                
+                //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben end
+           try {     
+                //Teil in die db stopfen begin
+                db_s.insert_teilestamm(neuTeil);
+                //Teil in die db stopfen end
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TeileStamm_erweitern_controller.class.getName()).log(Level.SEVERE, null, ex);
+                           JOptionPane.showMessageDialog(null, "geprüftes Teil konnte nocht zur db hinzugefügt werden", "Fehlschlag", 1);
+
+            }
+       }
    }
     
+   private boolean bezSchonDa(String bez){
+       String bezAUSdb[]=db_s.getSpalteAusTabelle("bezeichnung", "Teilestammdaten");
+       for(int i=bezAUSdb.length-1;i>=0;i--)
+       {
+           if(!bez.equals(bezAUSdb[i])){
+               return false;
+           }
+           
+       }
+       return true;
+       
+   }
    
+    
     /**Entfernt die erste ID in der freien id datenbank aus der tabelle und returnt diese.
      * @return verwendbare ID aus der db
      */

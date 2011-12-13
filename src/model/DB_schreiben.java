@@ -62,6 +62,24 @@ public class DB_schreiben {
         }
         return db.ar;
     }
+    
+    /**
+     * 
+     * @param spalte
+     * @param Tabelle
+     * @return 
+     */
+    public String[] getSpalteAusTabelle(String spalte, String Tabelle){
+        String query="Select "+spalte+" from "+Tabelle;
+        try{
+            
+            db.connect(query,spalte);
+        } catch(ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+        
+        return db.ar;
+    }
         
     
 
