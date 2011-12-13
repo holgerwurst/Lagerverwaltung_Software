@@ -14,12 +14,17 @@ import view.Übersicht_Lagerverwaltung;
  */
 public class Teil_einlagern_Controller {
 
-    private Übersicht_Lagerverwaltung lv = new Übersicht_Lagerverwaltung();
+    private Übersicht_Lagerverwaltung lv;
     private convert cv = new convert();
     private Select_Stammdaten st = new Select_Stammdaten();
 
-    public void einlagern(int id) {
+    public Teil_einlagern_Controller(Übersicht_Lagerverwaltung lv) {
+        this.lv = lv;
+    }
+    
+    
 
+    public void einlagern(int id) {
        // System.out.println("ID =" + id);
         try {
 
