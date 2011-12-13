@@ -36,7 +36,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        Teilentf_tabbedpane = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
         Teile_einlagern = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -209,11 +209,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         auslagerTextfield_ID = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         auslagerTextfield_fnr = new view.LagerTextfield(AllowedSequences.ALL);
         auslagerTextfield_mengeauslagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        Teile_entfernen_loeschen = new javax.swing.JPanel();
+        entfernenJTabbedPane = new javax.swing.JPanel();
         suchenButton = new javax.swing.JButton();
         Teilestammdatenbutton = new javax.swing.JButton();
         bestätigenButton = new javax.swing.JButton();
-        IDTextfield1 = new javax.swing.JTextField();
+        entfernenIDTextfield = new javax.swing.JTextField();
         IDLabel = new javax.swing.JLabel();
         eingebenLabel = new javax.swing.JLabel();
         StammdatenLabel = new javax.swing.JLabel();
@@ -938,7 +938,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel7.add(Teile_einlagern);
         Teile_einlagern.setBounds(0, 0, 990, 560);
 
-        jTabbedPane1.addTab("Teil einlagern", jPanel7);
+        Teilentf_tabbedpane.addTab("Teil einlagern", jPanel7);
 
         Teilestamm_erweitern.setLayout(null);
 
@@ -1080,7 +1080,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(suchen_button_erweitern);
         suchen_button_erweitern.setBounds(350, 50, 140, 23);
 
-        jTabbedPane1.addTab("Teilestamm erweitern", Teilestamm_erweitern);
+        Teilentf_tabbedpane.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
         Teilestamm_verwalten.setLayout(null);
 
@@ -1219,7 +1219,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_verwalten.add(jScrollPane6);
         jScrollPane6.setBounds(400, 240, 166, 96);
 
-        jTabbedPane1.addTab("Teilestammdaten verwalten", Teilestamm_verwalten);
+        Teilentf_tabbedpane.addTab("Teilestammdaten verwalten", Teilestamm_verwalten);
 
         Teile_auslagern.setLayout(null);
 
@@ -1351,145 +1351,145 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(auslagerTextfield_mengeauslagern);
         auslagerTextfield_mengeauslagern.setBounds(280, 370, 130, 21);
 
-        jTabbedPane1.addTab("Teile auslagern", Teile_auslagern);
+        Teilentf_tabbedpane.addTab("Teile auslagern", Teile_auslagern);
 
-        Teile_entfernen_loeschen.setLayout(null);
+        entfernenJTabbedPane.setLayout(null);
 
         suchenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchenButton.setText("Suche Teile ID");
-        Teile_entfernen_loeschen.add(suchenButton);
+        entfernenJTabbedPane.add(suchenButton);
         suchenButton.setBounds(180, 80, 129, 23);
 
         Teilestammdatenbutton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestammdatenbutton.setText("Teilestammdaten");
-        Teile_entfernen_loeschen.add(Teilestammdatenbutton);
+        entfernenJTabbedPane.add(Teilestammdatenbutton);
         Teilestammdatenbutton.setBounds(180, 120, 129, 23);
 
         bestätigenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bestätigenButton.setText("Bestätigen");
-        Teile_entfernen_loeschen.add(bestätigenButton);
+        entfernenJTabbedPane.add(bestätigenButton);
         bestätigenButton.setBounds(330, 80, 91, 23);
 
-        IDTextfield1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teile_entfernen_loeschen.add(IDTextfield1);
-        IDTextfield1.setBounds(70, 80, 93, 21);
+        entfernenIDTextfield.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        entfernenJTabbedPane.add(entfernenIDTextfield);
+        entfernenIDTextfield.setBounds(70, 80, 93, 21);
 
         IDLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         IDLabel.setText("ID:");
-        Teile_entfernen_loeschen.add(IDLabel);
+        entfernenJTabbedPane.add(IDLabel);
         IDLabel.setBounds(40, 80, 15, 15);
 
         eingebenLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         eingebenLabel.setText("Bitte Teile ID eingeben:");
-        Teile_entfernen_loeschen.add(eingebenLabel);
+        entfernenJTabbedPane.add(eingebenLabel);
         eingebenLabel.setBounds(50, 30, 223, 15);
 
         StammdatenLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         StammdatenLabel.setText("Stammdaten:");
-        Teile_entfernen_loeschen.add(StammdatenLabel);
+        entfernenJTabbedPane.add(StammdatenLabel);
         StammdatenLabel.setBounds(50, 160, 74, 15);
 
         BezeichnungLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BezeichnungLabel1.setText("Bezeichnung:");
-        Teile_entfernen_loeschen.add(BezeichnungLabel1);
+        entfernenJTabbedPane.add(BezeichnungLabel1);
         BezeichnungLabel1.setBounds(50, 200, 74, 15);
 
         TeileLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         TeileLabel.setText("Teile Typ:");
-        Teile_entfernen_loeschen.add(TeileLabel);
+        entfernenJTabbedPane.add(TeileLabel);
         TeileLabel.setBounds(50, 230, 52, 15);
 
         ZeichnungsnrLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         ZeichnungsnrLabel.setText("Zeichnungsnr.:");
-        Teile_entfernen_loeschen.add(ZeichnungsnrLabel);
+        entfernenJTabbedPane.add(ZeichnungsnrLabel);
         ZeichnungsnrLabel.setBounds(50, 300, 82, 15);
 
         MaterialgruppeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MaterialgruppeLabel.setText("Materialgruppe:");
-        Teile_entfernen_loeschen.add(MaterialgruppeLabel);
+        entfernenJTabbedPane.add(MaterialgruppeLabel);
         MaterialgruppeLabel.setBounds(50, 270, 85, 15);
 
         BaugruppeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BaugruppeLabel.setText("Baugruppe:");
-        Teile_entfernen_loeschen.add(BaugruppeLabel);
+        entfernenJTabbedPane.add(BaugruppeLabel);
         BaugruppeLabel.setBounds(50, 330, 64, 15);
 
         PreisLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         PreisLabel.setText("Preis:");
-        Teile_entfernen_loeschen.add(PreisLabel);
+        entfernenJTabbedPane.add(PreisLabel);
         PreisLabel.setBounds(340, 200, 32, 15);
 
         MAKLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MAKLabel.setText("Max.Anzahl klein:");
-        Teile_entfernen_loeschen.add(MAKLabel);
+        entfernenJTabbedPane.add(MAKLabel);
         MAKLabel.setBounds(340, 230, 92, 15);
 
         MAMLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MAMLabel.setText("Max.Anzahl mittel:");
-        Teile_entfernen_loeschen.add(MAMLabel);
+        entfernenJTabbedPane.add(MAMLabel);
         MAMLabel.setBounds(340, 260, 96, 15);
 
         MAGLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MAGLabel.setText("Max.Anzahl groß:");
-        Teile_entfernen_loeschen.add(MAGLabel);
+        entfernenJTabbedPane.add(MAGLabel);
         MAGLabel.setBounds(340, 290, 92, 15);
 
         BemerkungLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BemerkungLabel1.setText("Bemerkung");
-        Teile_entfernen_loeschen.add(BemerkungLabel1);
+        entfernenJTabbedPane.add(BemerkungLabel1);
         BemerkungLabel1.setBounds(340, 330, 64, 15);
 
         EuroLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         EuroLabel.setText("€");
-        Teile_entfernen_loeschen.add(EuroLabel);
+        entfernenJTabbedPane.add(EuroLabel);
         EuroLabel.setBounds(560, 200, 21, 15);
 
         loeschenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         loeschenButton.setText("Löschen");
-        Teile_entfernen_loeschen.add(loeschenButton);
+        entfernenJTabbedPane.add(loeschenButton);
         loeschenButton.setBounds(40, 390, 81, 23);
 
         MAKTextfield.setText("text");
-        Teile_entfernen_loeschen.add(MAKTextfield);
+        entfernenJTabbedPane.add(MAKTextfield);
         MAKTextfield.setBounds(460, 230, 20, 14);
 
         TypTextfield.setText("text");
-        Teile_entfernen_loeschen.add(TypTextfield);
+        entfernenJTabbedPane.add(TypTextfield);
         TypTextfield.setBounds(170, 230, 20, 14);
 
         MaterialTextfield.setText("text");
-        Teile_entfernen_loeschen.add(MaterialTextfield);
+        entfernenJTabbedPane.add(MaterialTextfield);
         MaterialTextfield.setBounds(170, 270, 20, 14);
 
         BezTextfield1.setText("text");
-        Teile_entfernen_loeschen.add(BezTextfield1);
+        entfernenJTabbedPane.add(BezTextfield1);
         BezTextfield1.setBounds(170, 200, 20, 14);
 
         ZNrTextfield.setText("text");
-        Teile_entfernen_loeschen.add(ZNrTextfield);
+        entfernenJTabbedPane.add(ZNrTextfield);
         ZNrTextfield.setBounds(170, 300, 20, 14);
 
         MAMTextfield.setText("text");
-        Teile_entfernen_loeschen.add(MAMTextfield);
+        entfernenJTabbedPane.add(MAMTextfield);
         MAMTextfield.setBounds(460, 260, 20, 14);
 
         BaugruppeTextfield.setText("text");
-        Teile_entfernen_loeschen.add(BaugruppeTextfield);
+        entfernenJTabbedPane.add(BaugruppeTextfield);
         BaugruppeTextfield.setBounds(170, 330, 20, 14);
 
         PreisTextfield.setText("text");
-        Teile_entfernen_loeschen.add(PreisTextfield);
+        entfernenJTabbedPane.add(PreisTextfield);
         PreisTextfield.setBounds(460, 190, 20, 14);
 
         MAGTextfield.setText("text");
-        Teile_entfernen_loeschen.add(MAGTextfield);
+        entfernenJTabbedPane.add(MAGTextfield);
         MAGTextfield.setBounds(460, 290, 20, 14);
 
         BemerkungTextfield.setText("text");
-        Teile_entfernen_loeschen.add(BemerkungTextfield);
+        entfernenJTabbedPane.add(BemerkungTextfield);
         BemerkungTextfield.setBounds(460, 330, 34, 14);
 
-        jTabbedPane1.addTab("Teil entfernen", Teile_entfernen_loeschen);
+        Teilentf_tabbedpane.addTab("Teil entfernen", entfernenJTabbedPane);
 
         Buchungshistorie_einsehen_ausdrucken.setLayout(null);
 
@@ -1569,7 +1569,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Buchungshistorie_einsehen_ausdrucken.add(lagerplatz_suchen_historie);
         lagerplatz_suchen_historie.setBounds(220, 350, 180, 30);
 
-        jTabbedPane1.addTab("Buchungshistorie einsehen", Buchungshistorie_einsehen_ausdrucken);
+        Teilentf_tabbedpane.addTab("Buchungshistorie einsehen", Buchungshistorie_einsehen_ausdrucken);
 
         Teile_Splitten.setLayout(null);
 
@@ -1935,7 +1935,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_Splitten.add(label_anzeige_mindestgroesse);
         label_anzeige_mindestgroesse.setBounds(530, 100, 30, 20);
 
-        jTabbedPane1.addTab("Teil splitten", Teile_Splitten);
+        Teilentf_tabbedpane.addTab("Teil splitten", Teile_Splitten);
 
         Teile_umlagern.setLayout(null);
 
@@ -2025,10 +2025,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_umlagern.add(jScrollPane3);
         jScrollPane3.setBounds(0, 250, 880, 170);
 
-        jTabbedPane1.addTab("Teil umlagern", Teile_umlagern);
+        Teilentf_tabbedpane.addTab("Teil umlagern", Teile_umlagern);
 
-        getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(0, 10, 1010, 690);
+        getContentPane().add(Teilentf_tabbedpane);
+        Teilentf_tabbedpane.setBounds(0, 10, 1010, 690);
 
         Datei.setText("Datei");
         jMenuBar1.add(Datei);
@@ -2142,58 +2142,84 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         String strtemp = auslagerTextfield_fnr.getText();
 
         cv = new convert();
-        
+    
         int inttemp = cv.StringTOint(auslagerTextfield_mengeauslagern.getText());
-            
+
         int fachnrstelle = pr.fachnummerkorrekt(ta.getfachnummern(), strtemp);
 
         if (pr.fachnummerkorrekt(ta.getfachnummern(), strtemp) != 99999) {
 
             if (pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == 3) {
-                    
+
                 int neumenge = cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]) - inttemp;
-                
+
                 try {
-                
+
                     ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[fachnrstelle], ta.getID(), neumenge, ta.getanschaffungsgrund()[fachnrstelle]));
-                    
+
                     int tmp = ta.getID();
-                    
+
                     ta.auslagern_vorbereitung(tmp);
-                    
-                     DefaultTableModel newmodel = new DefaultTableModel();
-             
-            newmodel.addColumn("Fachnummer", ta.getfachnummern());
-            newmodel.addColumn("Menge", ta.getaktuelle_menge());
- 
-            auslager_jtable.setModel(newmodel);
-                    
+
+                    DefaultTableModel newmodel = new DefaultTableModel();
+
+                    newmodel.addColumn("Fachnummer", ta.getfachnummern());
+                    newmodel.addColumn("Menge", ta.getaktuelle_menge());
+
+                    auslager_jtable.setModel(newmodel);
+
                 } catch (ClassNotFoundException e) {
                     System.out.println(e.getMessage());
                 }
             }
-            else if(pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == 2)
-            {
+            else if (pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == 2) {
+                
                 int neumenge = cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]) - inttemp;
-                
+
                 try {
-                
+
                     ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[fachnrstelle], ta.getID(), neumenge, ta.getanschaffungsgrund()[fachnrstelle]));
-                    ta.fachfreigeben(ta.getID(), ta.getfachnummern().length, ta.getfachnummern()[fachnrstelle]);
-                    
-                    int tmp = ta.getID();
-                    
-                    ta.auslagern_vorbereitung(tmp);
-                    
-                    DefaultTableModel newmodel = new DefaultTableModel();
-             
-            newmodel.addColumn("Fachnummer", ta.getfachnummern());
-            newmodel.addColumn("Menge", ta.getaktuelle_menge());
- 
-            auslager_jtable.setModel(newmodel);
-            
-            JOptionPane.showConfirmDialog(auslagern_BestaetigenidButton,"Möchten Sie das Teil löschen?", "Meldung",  JOptionPane.YES_NO_OPTION,1);
-            
+
+                    if (ta.fachfreigeben(ta.getID(), ta.getfachnummern().length, ta.getfachnummern()[fachnrstelle]) == 1) {
+                        
+                        int tmp = ta.getID();
+                           
+
+                        ta.auslagern_vorbereitung(tmp);
+
+                        DefaultTableModel newmodel = new DefaultTableModel();
+
+                        newmodel.addColumn("Fachnummer", ta.getfachnummern());
+                        newmodel.addColumn("Menge", ta.getaktuelle_menge());
+
+                        auslager_jtable.setModel(newmodel);
+
+                    } else if (ta.fachfreigeben(ta.getID(), ta.getfachnummern().length, ta.getfachnummern()[fachnrstelle]) == 0) {
+                        
+                        int tmp = ta.getID();
+                        
+                                              
+                        ta.auslagern_vorbereitung(tmp);
+
+                        DefaultTableModel newmodel = new DefaultTableModel();
+
+                        newmodel.addColumn("Fachnummer", ta.getfachnummern());
+                        newmodel.addColumn("Menge", ta.getaktuelle_menge());
+
+                        auslager_jtable.setModel(newmodel);
+                        
+                       int reply = JOptionPane.showConfirmDialog(auslagern_AusfuehrenButton,"Möchten Sie das Teil löschen?","Meldung",JOptionPane.YES_NO_OPTION);
+                       
+                       if(reply == JOptionPane.YES_OPTION)
+                       {
+                           entfernenIDTextfield.setText(ta.getID() + "");
+                           //entfernenJTabbedPane.
+                           
+                       }
+                           
+                                
+                    }
+
                 } catch (ClassNotFoundException e) {
                     System.out.println(e.getMessage());
                 }
@@ -2293,7 +2319,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField FachnrTextfield_Ziel;
     private javax.swing.JLabel FachnummerLabel;
     private javax.swing.JLabel IDLabel;
-    private javax.swing.JTextField IDTextfield1;
     private javax.swing.JLabel IDTextfield2;
     private javax.swing.JLabel MAGLabel;
     private javax.swing.JLabel MAGTextfield;
@@ -2317,8 +2342,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JPanel Teile_Splitten;
     private javax.swing.JPanel Teile_auslagern;
     private javax.swing.JTabbedPane Teile_einlagern;
-    private javax.swing.JPanel Teile_entfernen_loeschen;
     private javax.swing.JPanel Teile_umlagern;
+    private javax.swing.JTabbedPane Teilentf_tabbedpane;
     private javax.swing.JPanel Teilestamm_erweitern;
     private javax.swing.JPanel Teilestamm_verwalten;
     private javax.swing.JButton Teilestammdaten_suchen_historie;
@@ -2358,6 +2383,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel eingebenLabel;
     private javax.swing.JButton einlagern_button_fach;
     private javax.swing.JButton einlagern_button_tabelle;
+    private javax.swing.JTextField entfernenIDTextfield;
+    private javax.swing.JPanel entfernenJTabbedPane;
     private javax.swing.JMenuItem fach_suchen;
     private javax.swing.JTextField fachnummer_textfeld1;
     private javax.swing.JTextField fachnummer_textfeld10;
@@ -2389,7 +2416,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
