@@ -22,8 +22,7 @@ import view.Übersicht_Lagerverwaltung;
 public class Pruefen_Controller {
 
     private Select_Stammdaten std = new Select_Stammdaten();
-    private Teil_einlagern_Controller ei = new Teil_einlagern_Controller();
-    private convert cv = new convert();
+     private convert cv = new convert();
     private Übersicht_Lagerverwaltung lv = new Übersicht_Lagerverwaltung();
 
     public boolean pruefe_id(int id) {
@@ -45,7 +44,7 @@ public class Pruefen_Controller {
 
                 int zahl = cv.StringTOint(vergleich);
                 System.out.println("Teil mit ID " + zahl + " vorhanden");
-                ei.einlagern(zahl);
+        
             }
 
 

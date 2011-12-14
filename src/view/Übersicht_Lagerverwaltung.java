@@ -9,6 +9,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.table.*;
 import view.LagerTextfield.AllowedSequences;
 import control.Teil_auslagern_controller;
+import control.Teil_einlagern_Controller;
 import model.Select_Stammdaten;
 import control.convert;
 import javax.swing.JOptionPane;
@@ -57,6 +58,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         menge_textfeld_einlagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        lagerTextfield1 = new view.LagerTextfield(AllowedSequences.ALL);
         jPanel9 = new javax.swing.JPanel();
         menge_textfeld12 = new javax.swing.JTextField();
         label_mindestgroesse1 = new javax.swing.JLabel();
@@ -424,7 +427,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         label_menge_übrig.setText("text");
         jPanel8.add(label_menge_übrig);
-        label_menge_übrig.setBounds(650, 180, 20, 14);
+        label_menge_übrig.setBounds(650, 180, 120, 14);
 
         laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         laber_noch_einzulagern.setText("noch einzulagernde Menge:");
@@ -436,7 +439,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(einlagern_button_tabelle);
         einlagern_button_tabelle.setBounds(50, 460, 110, 23);
         jPanel8.add(menge_textfeld_einlagern);
-        menge_textfeld_einlagern.setBounds(230, 110, 80, 20);
+        menge_textfeld_einlagern.setBounds(220, 110, 90, 20);
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -452,7 +455,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTable4);
 
         jPanel8.add(jScrollPane4);
-        jScrollPane4.setBounds(0, 230, 990, 220);
+        jScrollPane4.setBounds(0, 230, 980, 220);
+
+        jLabel1.setText("Fachnummer");
+        jPanel8.add(jLabel1);
+        jLabel1.setBounds(50, 150, 80, 14);
+        jPanel8.add(lagerTextfield1);
+        lagerTextfield1.setBounds(220, 170, 120, 20);
 
         Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
 
@@ -2112,6 +2121,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     private void id_textfeld2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_textfeld2ActionPerformed
         pr = new control.Pruefen_Controller();
+        te= new Teil_einlagern_Controller(this);
         String sid = "";
         int id = 0;
 
@@ -2119,6 +2129,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             sid = id_textfeld2.getText();
             id = Integer.parseInt(sid);
             pr.pruefe_id(id);
+            te.einlagern(id);
         } catch (NumberFormatException ex) {
             System.out.println("Bitte nur zahlen eingeben");
         }
@@ -2214,7 +2225,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_auslagerTextfield_fnrActionPerformed
 
     private void auslager_jtableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_auslager_jtableMouseClicked
-
         auslagerTextfield_fnr.setText(ta.getfachnummern()[auslager_jtable.getSelectedRow()]);
         // TODO add your handling code here:
     }//GEN-LAST:event_auslager_jtableMouseClicked
@@ -2266,6 +2276,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private control.Teil_auslagern_controller ta = new Teil_auslagern_controller();
     private model.Select_Stammdaten sst;
     private control.convert cv;
+    private Teil_einlagern_Controller te;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AnschaffungsLabel;
     private javax.swing.JTextField AnschaffungsTextField;
@@ -2381,6 +2392,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField fachnummer_textfeld9;
     private javax.swing.JTextField id_textfeld;
     private view.LagerTextfield id_textfeld2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -2527,6 +2539,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel label_zeichnungsnummer;
     private javax.swing.JLabel label_zeichnungsnummer1;
     private javax.swing.JLabel laber_noch_einzulagern;
+    public view.LagerTextfield lagerTextfield1;
     private javax.swing.JButton lagerplatz_suchen_historie;
     private javax.swing.JButton loeschenButton;
     private javax.swing.JMenuItem menge_suchen;
