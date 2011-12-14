@@ -83,7 +83,7 @@ public class Datenbankverbindung {
             if ("insert".equals(kommando)) {
                 statement.executeQuery("" + kommando + " into Teilestammdaten (id,typ, zeichnungsnummer,"
                         + "materialgruppe, preis, bezeichnung, baugruppe, bemerkung, max_anz_klein, "
-                        + "max_anz_mittel, max_anz_gross) values (" + teil.get_id() + ",'" + teil.get_Teiletyp() + "',"
+                        + "max_anz_mittel, max_anz_gross) values (" + teil.get_Id() + ",'" + teil.get_Teiletyp() + "',"
                         + "'connect_schreiben_lagerbestandskonto" + teil.get_Zeichnungsnummer() + "','" + teil.get_Materialgruppe() + "'," + teil.get_Preis() + ","
                         + "'" + teil.get_Bezeichnung() + "','" + teil.get_Baugruppe() + "','" + teil.get_Bemerkung() + "',"
                         + "" + teil.get_max_anz_klein() + "," + teil.get_max_anz_mittel() + "," + teil.get_max_anz_gross() + ");");
@@ -93,7 +93,7 @@ public class Datenbankverbindung {
                         + "preis=" + teil.get_Preis() + ", bezeichnung='" + teil.get_Bezeichnung() + "',baugruppe='" + teil.get_Baugruppe() + "',"
                         + "bemerkung='" + teil.get_Bemerkung() + "',max_anz_klein=" + teil.get_max_anz_klein() + ", max_anz_mittel=" + teil.get_max_anz_mittel() + ""
                         + ",max_anz_gross=" + teil.get_max_anz_gross() + ""
-                        + " WHERE id=" + teil.get_id() + ";");
+                        + " WHERE id=" + teil.get_Id() + ";");
             }
 
         } catch (SQLException e) {
@@ -243,7 +243,25 @@ public class Datenbankverbindung {
             System.err.println(e.getMessage());
         }
     }
-
+    
+    /**
+     * Sollte ein Array von Teil_Stammdaten Objekte anhand einer query zurückgeben
+     * @param query Eine Query welche die Tabelle Teilestammdaten abfragen muss
+     * @return
+     * @throws ClassNotFoundException
+     * @throws Exception 
+     */
+    public ArrayList<Teil_Stammdaten> connect_Teil_Stammdaten(String query) throws ClassNotFoundException, Exception {
+        basic_connect(query);
+        //System.out.println(resultset_to_arraylist());
+        //ArrayList<Teil_Stammdaten> teil_stammdaten_array = new ArrayList<Teil_Stammdaten>();
+        ArrayList<Teil_Stammdaten> teil_stammdaten_array = resultset_to_teil_stammdaten();
+        disconnect();
+        return teil_stammdaten_array;
+    }
+    
+    
+    
     public void disconnect() throws ClassNotFoundException {
 
         try {
@@ -351,7 +369,7 @@ public class Datenbankverbindung {
      * @return
      * @throws Exception
      */
-    public Teil_Stammdaten[] resultset_to_teil_stammdaten() throws Exception {
+    public ArrayList<Teil_Stammdaten> resultset_to_teil_stammdaten() throws Exception {
         // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
         ArrayList<Teil_Stammdaten> teil_stammdaten_array = new ArrayList<Teil_Stammdaten>();
         try {
@@ -374,17 +392,18 @@ public class Datenbankverbindung {
                 teil_stamm.set_max_anzahl_klein(rs.getInt(9));
                 teil_stamm.set_max_anzahl_mittel(rs.getInt(10));
                 teil_stamm.set_max_anzahl_gross(rs.getInt(11));
-
+                teil_stammdaten_array.add(teil_stamm);
+                teil_stamm = new Teil_Stammdaten();
 
             }
-            teil_stammdaten_array.add(teil_stamm);
+            
 
 
 
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankverbindung.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return (Teil_Stammdaten[]) teil_stammdaten_array.toArray();
+        return teil_stammdaten_array;
 
     }
     
@@ -412,9 +431,11 @@ public class Datenbankverbindung {
                 bestandskonto.set_Menge(rs.getInt(3));
                 bestandskonto.set_Anschaffungsgrund(rs.getString(4));
                 bestandskonto.set_Haltbarkeitsdatum(null); //TODO: Richtigen Wert aus der Datenbank holen
+                bestandskonto_array.add(bestandskonto);
+                bestandskonto = new Lagerbestandskonto();
 
             }
-            bestandskonto_array.add(bestandskonto);
+            
 
 
 
