@@ -45,20 +45,38 @@ public class Teil_auslagern_controller {
             //System.out.println("Fachnummern: " + fachnummern[i] + ", Menge:" + aktuelle_menge[i] + ", Ans.grund: " + anschaffungsgrund[i]);
         }
     }
-
-    public void fachfreigeben(int id, int laenge, String fnr) throws ClassNotFoundException {
+/**
+ * 
+ * Kontrolle Anzahl vorhandener Faecher.
+ * Update des Lagerfachstammes, der Faecher, in denen Menge auf 0 fiel.
+ * 
+ * retunr 0 - letztes Fach fiel auf 0 -> Konto löschen und Teil entfernen anbieten.
+ * return 1 - 
+ * 
+ * @param id
+ * @param laenge
+ * @param fnr
+ * @throws ClassNotFoundException 
+ */
+    public int fachfreigeben(int id, int laenge, String fnr) throws ClassNotFoundException {
+        
         DB_schreiben dbs = new DB_schreiben();
 
         if (laenge == 1) {
             
             dbs.delete_lagerbestandskonto(id, fnr);
             dbs.update_lagerfachstamm(fnr, false);
+            return 0;
+            
   
         } else if (laenge > 1) {
             
             dbs.delete_lagerbestandskonto(id, fnr);
             dbs.update_lagerfachstamm(fnr, false);
+            return 1;
         }
+        
+        return 2;
     }
 
     public String[] getfachnummern() {

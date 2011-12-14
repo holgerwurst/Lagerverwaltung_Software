@@ -96,8 +96,7 @@ public class Pruefen_Controller {
         }
 
         if (mengeaktuell < mengeneu) {
-            
-                        
+               
             return 1;         
         }
 

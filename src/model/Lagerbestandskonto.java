@@ -23,7 +23,12 @@ public class Lagerbestandskonto {
 	private int menge;
 	private String anschaffungsgrund;
 	private GregorianCalendar haltbarkeitsdatum;
-         
+        private Object[] attribute;
+        
+        public Lagerbestandskonto() {
+            
+        }
+        
         //Konstruktor
 	public Lagerbestandskonto(String fachnummer,int id, int menge, String anschaffungsgrund,
                 GregorianCalendar datum) {
@@ -36,6 +41,14 @@ public class Lagerbestandskonto {
 	
 	}
         
+        
+/*        public Lagerbestandskonto(Object[] attribute) {
+            this.id = Integer.parseInt(attribute[0].toString()); // Eine komische Lösung
+            this.fachnummer = (String) attribute[1];
+            this.menge = Integer.parseInt(attribute[2].toString());
+            this.anschaffungsgrund = attribute[3];
+            this.haltbarkeitsdatum = attribute[4];
+        }*/
         // getter Methoden
         
 	public int get_TeileID() {
