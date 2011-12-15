@@ -16,5 +16,5 @@ public enum TeileTypET {
 	unfertige_Baugruppen (),
 	vorratsteile (),
 	;
-    
+        
 }
