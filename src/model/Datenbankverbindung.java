@@ -83,7 +83,7 @@ public class Datenbankverbindung {
             if ("insert".equals(kommando)) {
                 statement.executeQuery("" + kommando + " into Teilestammdaten (id,typ, zeichnungsnummer,"
                         + "materialgruppe, preis, bezeichnung, baugruppe, bemerkung, max_anz_klein, "
-                        + "max_anz_mittel, max_anz_gross) values (" + teil.get_Id() + ",'" + teil.get_Teiletyp() + "',"
+                        + "max_anz_mittel, max_anz_gross) values (" + teil.get_id() + ",'" + teil.get_Teiletyp() + "',"
                         + "'connect_schreiben_lagerbestandskonto" + teil.get_Zeichnungsnummer() + "','" + teil.get_Materialgruppe() + "'," + teil.get_Preis() + ","
                         + "'" + teil.get_Bezeichnung() + "','" + teil.get_Baugruppe() + "','" + teil.get_Bemerkung() + "',"
                         + "" + teil.get_max_anz_klein() + "," + teil.get_max_anz_mittel() + "," + teil.get_max_anz_gross() + ");");
@@ -93,7 +93,7 @@ public class Datenbankverbindung {
                         + "preis=" + teil.get_Preis() + ", bezeichnung='" + teil.get_Bezeichnung() + "',baugruppe='" + teil.get_Baugruppe() + "',"
                         + "bemerkung='" + teil.get_Bemerkung() + "',max_anz_klein=" + teil.get_max_anz_klein() + ", max_anz_mittel=" + teil.get_max_anz_mittel() + ""
                         + ",max_anz_gross=" + teil.get_max_anz_gross() + ""
-                        + " WHERE id=" + teil.get_Id() + ";");
+                        + " WHERE id=" + teil.get_id() + ";");
             }
 
         } catch (SQLException e) {

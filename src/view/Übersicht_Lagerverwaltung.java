@@ -57,7 +57,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         einlagern_button_tabelle = new javax.swing.JButton();
         menge_textfeld_einlagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        table_einlagern = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         lagerTextfield1 = new view.LagerTextfield(AllowedSequences.ALL);
         jPanel9 = new javax.swing.JPanel();
@@ -441,7 +441,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(menge_textfeld_einlagern);
         menge_textfeld_einlagern.setBounds(220, 110, 90, 20);
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        table_einlagern.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -452,7 +452,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(table_einlagern);
 
         jPanel8.add(jScrollPane4);
         jScrollPane4.setBounds(0, 230, 980, 220);
@@ -461,7 +461,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(jLabel1);
         jLabel1.setBounds(50, 150, 80, 14);
         jPanel8.add(lagerTextfield1);
-        lagerTextfield1.setBounds(220, 170, 120, 20);
+        lagerTextfield1.setBounds(220, 150, 120, 20);
 
         Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
 
@@ -2430,7 +2430,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton kapazitaet_pruefen_button1;
     private javax.swing.JButton kapazitaet_pruefen_button10;
@@ -2597,6 +2596,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JButton suchen_button1;
     private javax.swing.JButton suchen_button2;
     private javax.swing.JButton suchen_button_erweitern;
+    public javax.swing.JTable table_einlagern;
     private javax.swing.JMenuItem teil_suchen;
     private javax.swing.JScrollPane textarea_bemerkung;
     private javax.swing.JTextArea textarea_bemerkung_verwalten;
