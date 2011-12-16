@@ -4,8 +4,11 @@
  */
 package control;
 
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import model.Select_Lagerfachstamm;
 import model.Select_Stammdaten;
+import model.TeileTypET;
 
 /**
  *
@@ -34,8 +37,21 @@ public class Suchen_Controller {
             select_lagerfachstamm = new Select_Lagerfachstamm();
         }
     }
+    
+    public DefaultComboBoxModel get_TeileTyp_combo_box_model() {
+        ArrayList<String> teiletypen = new ArrayList<String>();
+        for (TeileTypET typ: TeileTypET.values()) {
+            teiletypen.add(typ.toString());
+        }
+        System.out.println(teiletypen);
+        DefaultComboBoxModel model = new DefaultComboBoxModel(teiletypen.toArray());
+        System.out.println(TeileTypET.values());
+        System.out.println(model);
+        return model;
+    }
     public static void main(String[] args) throws ClassNotFoundException {
         Suchen_Controller suchen_controller = new Suchen_Controller();
-        suchen_controller.alle_teile_ausgeben();
+        //suchen_controller.alle_teile_ausgeben();
+        suchen_controller.get_TeileTyp_combo_box_model();
     }
 }

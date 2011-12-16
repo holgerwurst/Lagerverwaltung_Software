@@ -16,7 +16,7 @@ public class Teil_Stammdaten {
     private String baugruppe;
     private TeileTypET typ;
     private int id;
-
+    
     //Konstruktor
     public Teil_Stammdaten(int id, TeileTypET typ, String zeichnungsnummer, String materialgruppe,double preis,String bezeichnung,
             String baugruppe, String bemerkung, int max_anzahl_klein, int max_anzahl_mittel, int max_anzahl_gross) {
@@ -34,8 +34,10 @@ public class Teil_Stammdaten {
         this.materialgruppe = materialgruppe;
     }
 
+    public Teil_Stammdaten() {
+    }
     // getter Methoden
-    public int get_id() {
+    public int get_Id() {
         return id;
     }
 
