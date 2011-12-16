@@ -758,8 +758,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                         teil.get_Baugruppe() + "\n" +
                         teil.get_Bemerkung() + "\n" +
                         teil.get_Preis() + "\n" +
-                        teil.get_Materialgruppe() + "\n" +
-                        teil.get_Teiletyp() + "\n"
+                        teil.get_Materialgruppe() + "\n"
                         ); 
             }
         } catch (ClassNotFoundException ex) {
