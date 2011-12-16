@@ -37,7 +37,7 @@ public class Teil_Stammdaten {
     public Teil_Stammdaten() {
     }
     // getter Methoden
-    public int get_id() {
+    public int get_Id() {
         return id;
     }
 
