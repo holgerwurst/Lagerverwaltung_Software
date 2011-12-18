@@ -2085,6 +2085,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         int id = Integer.parseInt(auslagerTextfield_ID.getText());
 
         if (pr.pruefe_id(id) == true) {
+            
+           
 
             try {
                 ta.auslagern_vorbereitung(id);
@@ -2094,7 +2096,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
                 sst = new Select_Stammdaten();
                 ausl_BemerkungTextArea.setText(sst.get_Bemerkung_ausDB(id));
-
+                
+                if(ta.getfachnummern().length==0)
+                {
+                    int reply = JOptionPane.showConfirmDialog(auslagern_AusfuehrenButton,"Teil nicht mehr eingelagert. Möchten Sie das Teil löschen?","Meldung",JOptionPane.YES_NO_OPTION);
+                       
+                       if(reply == JOptionPane.YES_OPTION)
+                       {
+                           entfernenIDTextfield.setText(ta.getID() + "");
+                           //entfernenJTabbedPane.
+                           
+                       }
+                }
+                
             } catch (ClassNotFoundException e) {
                 System.out.println(e.getMessage());
             }
@@ -2156,7 +2170,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagerTextfield_IDActionPerformed
 
-    /**
+ /**
  * 
  * Neue Menge des gewählten Faches in Datenbank schreiben.
  * 
