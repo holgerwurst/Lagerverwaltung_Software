@@ -2088,47 +2088,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      */
     private void auslagern_BestaetigenidButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_BestaetigenidButtonActionPerformed
         
-        pr = new Pruefen_Controller();
-        int id = Integer.parseInt(auslagerTextfield_ID.getText());
-
-        if (pr.pruefe_id(id) == true) {
-            
-           
-
-            try {
-                ta.auslagern_vorbereitung(id);
-
-                sst = new Select_Stammdaten();
-                auslager_bez_ausgabeLabel.setText(sst.get_Bezeichnung_ausDB(id));
-
-                sst = new Select_Stammdaten();
-                ausl_BemerkungTextArea.setText(sst.get_Bemerkung_ausDB(id));
-                
-                if(ta.getfachnummern().length==0)
-                {
-                    int reply = JOptionPane.showConfirmDialog(auslagern_AusfuehrenButton,"Teil nicht mehr eingelagert. Möchten Sie das Teil löschen?","Meldung",JOptionPane.YES_NO_OPTION);
-                       
-                       if(reply == JOptionPane.YES_OPTION)
-                       {
-                           entfernenIDTextfield.setText(ta.getID() + "");
-                           //entfernenJTabbedPane.
-                           
-                       }
-                }
-                
-            } catch (ClassNotFoundException e) {
-                System.out.println(e.getMessage());
-            }
-            
-            DefaultTableModel newmodel = new DefaultTableModel();
-             
-            newmodel.addColumn("Fachnummer", ta.getfachnummern());
-            newmodel.addColumn("Menge", ta.getaktuelle_menge());
- 
-            auslager_jtable.setModel(newmodel);
-            
-        
-        }
+        control.Teil_auslagern_controller_gui.auslagern_bestaetigen_button(this);
+    
     }//GEN-LAST:event_auslagern_BestaetigenidButtonActionPerformed
 
     private void textfeld_id1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfeld_id1ActionPerformed
@@ -2186,100 +2147,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
  */
     private void auslagern_AusfuehrenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_AusfuehrenButtonActionPerformed
 
-        pr = new Pruefen_Controller();
-        String strtemp = auslagerTextfield_fnr.getText();
-
-        cv = new convert();
-    
-        int inttemp = cv.StringTOint(auslagerTextfield_mengeauslagern.getText());
-
-        int fachnrstelle = pr.fachnummerkorrekt(ta.getfachnummern(), strtemp);
-
-        if (pr.fachnummerkorrekt(ta.getfachnummern(), strtemp) != 99999) {
-
-            if (pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == 3) {
-
-                int neumenge = cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]) - inttemp;
-
-                try {
-
-                    ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[fachnrstelle], ta.getID(), neumenge, ta.getanschaffungsgrund()[fachnrstelle]));
-
-                    int tmp = ta.getID();
-
-                    ta.auslagern_vorbereitung(tmp);
-
-                    DefaultTableModel newmodel = new DefaultTableModel();
-
-                    newmodel.addColumn("Fachnummer", ta.getfachnummern());
-                    newmodel.addColumn("Menge", ta.getaktuelle_menge());
-
-                    auslager_jtable.setModel(newmodel);
-
-                } catch (ClassNotFoundException e) {
-                    System.out.println(e.getMessage());
-                }
-            }
-            else if (pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == 2) {
-                
-                int neumenge = cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]) - inttemp;
-
-                try {
-
-                    ta.auslagern_durchfuehrung(ta.erstelle_lbk(ta.getfachnummern()[fachnrstelle], ta.getID(), neumenge, ta.getanschaffungsgrund()[fachnrstelle]));
-
-                    if (ta.fachfreigeben(ta.getID(), ta.getfachnummern().length, ta.getfachnummern()[fachnrstelle]) == 1) {
-                        
-                        int tmp = ta.getID();
-                           
-
-                        ta.auslagern_vorbereitung(tmp);
-
-                        DefaultTableModel newmodel = new DefaultTableModel();
-
-                        newmodel.addColumn("Fachnummer", ta.getfachnummern());
-                        newmodel.addColumn("Menge", ta.getaktuelle_menge());
-
-                        auslager_jtable.setModel(newmodel);
-
-                    } else if (ta.fachfreigeben(ta.getID(), ta.getfachnummern().length, ta.getfachnummern()[fachnrstelle]) == 0) {
-                        
-                        int tmp = ta.getID();
-                        
-                                              
-                        ta.auslagern_vorbereitung(tmp);
-
-                        DefaultTableModel newmodel = new DefaultTableModel();
-
-                        newmodel.addColumn("Fachnummer", ta.getfachnummern());
-                        newmodel.addColumn("Menge", ta.getaktuelle_menge());
-
-                        auslager_jtable.setModel(newmodel);
-                        
-                       int reply = JOptionPane.showConfirmDialog(auslagern_AusfuehrenButton,"Möchten Sie das Teil löschen?","Meldung",JOptionPane.YES_NO_OPTION);
-                       
-                       if(reply == JOptionPane.YES_OPTION)
-                       {
-                           entfernenIDTextfield.setText(ta.getID() + "");
-                           //entfernenJTabbedPane.
-                           
-                       }
-                           
-                                
-                    }
-
-                } catch (ClassNotFoundException e) {
-                    System.out.println(e.getMessage());
-                }
-                
-            }
-            else if(pr.auszulagernde_menge_pruefen(cv.StringTOint(ta.getaktuelle_menge()[fachnrstelle]), inttemp) == 1)
-            {
-                JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Eingetragende Menge zu groß.");
-            }
-          
-        
-    }
+      control.Teil_auslagern_controller_gui.auslagern_ausfuehren_button(this);
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagern_AusfuehrenButtonActionPerformed
 
@@ -2296,6 +2164,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textfeld_zeichnungsnummerActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
@@ -2339,10 +2208,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
     }
-    private control.Pruefen_Controller pr;
-    private control.Teil_auslagern_controller ta = new Teil_auslagern_controller();
-    private model.Select_Stammdaten sst;
-    private control.convert cv;
+    public control.Pruefen_Controller pr;
+    public control.Teil_auslagern_controller ta = new Teil_auslagern_controller();
+    public model.Select_Stammdaten sst;
+    public control.convert cv;
     private Teil_einlagern_Controller te;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AnschaffungsLabel;
@@ -2409,14 +2278,14 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JButton anzeige_button_historie;
     private javax.swing.JButton anzeigen_button;
     private javax.swing.JTextField ausgangsfachnummer_textfeld;
-    private javax.swing.JTextArea ausl_BemerkungTextArea;
-    private view.LagerTextfield auslagerTextfield_ID;
-    private view.LagerTextfield auslagerTextfield_fnr;
-    private view.LagerTextfield auslagerTextfield_mengeauslagern;
-    private javax.swing.JLabel auslager_bez_ausgabeLabel;
+    public javax.swing.JTextArea ausl_BemerkungTextArea;
+    public view.LagerTextfield auslagerTextfield_ID;
+    public view.LagerTextfield auslagerTextfield_fnr;
+    public view.LagerTextfield auslagerTextfield_mengeauslagern;
+    public javax.swing.JLabel auslager_bez_ausgabeLabel;
     private javax.swing.JScrollPane auslager_jpane;
-    private javax.swing.JTable auslager_jtable;
-    private javax.swing.JButton auslagern_AusfuehrenButton;
+    public javax.swing.JTable auslager_jtable;
+    public javax.swing.JButton auslagern_AusfuehrenButton;
     public javax.swing.JButton auslagern_BestaetigenidButton;
     private javax.swing.JButton bestaetigen_button;
     private javax.swing.JButton bestaetigen_button1;
@@ -2435,7 +2304,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel eingebenLabel;
     private javax.swing.JButton einlagern_button_fach;
     private javax.swing.JButton einlagern_button_tabelle;
-    private javax.swing.JTextField entfernenIDTextfield;
+    public javax.swing.JTextField entfernenIDTextfield;
     private javax.swing.JPanel entfernenJTabbedPane;
     private javax.swing.JMenuItem fach_suchen;
     private javax.swing.JTextField fachnummer_textfeld1;
