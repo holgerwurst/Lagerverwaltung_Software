@@ -113,7 +113,7 @@ public class Select_Stammdaten {
          return db.ergebnis;
     }
 
-    public String get_max_anzahl_klein_ausDB(int id) throws ClassNotFoundException {
+    public String get_max_anzahl_klein_ausDB(int id) throws SQLException {
         try {
             db.connect("Select max_anz_klein from Teilestammdaten where id =" + id + "", "max_anz_klein");
             db.disconnect();
@@ -124,7 +124,7 @@ public class Select_Stammdaten {
          return db.ergebnis;
     }
 
-    public String get_max_anzahl_mittel_ausDB(int id) throws ClassNotFoundException {
+    public String get_max_anzahl_mittel_ausDB(int id) throws SQLException {
        try {
             db.connect("Select max_anz_mittel from Teilestammdaten where id =" + id + "", "max_anz_mittel");
             db.disconnect();
@@ -135,7 +135,7 @@ public class Select_Stammdaten {
           return db.ergebnis;
     }
 
-    public String get_max_anzahl_gross_ausDB(int id) throws ClassNotFoundException {
+    public String get_max_anzahl_gross_ausDB(int id) throws SQLException {
          try {
             db.connect("Select max_anz_gross from Teilestammdaten where id =" + id + "", "max_anz_gross");
             db.disconnect();

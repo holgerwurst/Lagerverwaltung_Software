@@ -365,32 +365,32 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         jPanel8.setLayout(null);
 
-        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12));
+        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bestaetigen_button2.setText("Bestätigen");
         jPanel8.add(bestaetigen_button2);
         bestaetigen_button2.setBounds(40, 180, 100, 23);
 
-        suchen_button2.setFont(new java.awt.Font("Arial", 0, 12));
+        suchen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchen_button2.setText("Suche Teile ID / Bezeichnung");
         jPanel8.add(suchen_button2);
         suchen_button2.setBounds(780, 60, 200, 23);
 
-        label_bezeichnung2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bezeichnung2.setText("Bezeichnung:");
         jPanel8.add(label_bezeichnung2);
         label_bezeichnung2.setBounds(470, 60, 80, 20);
 
-        label_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_mindestgroesse2.setText("Mindestgröße:");
         jPanel8.add(label_mindestgroesse2);
         label_mindestgroesse2.setBounds(470, 110, 90, 20);
 
-        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_anzeige_mindestgroesse2.setText("größe");
         jPanel8.add(label_anzeige_mindestgroesse2);
         label_anzeige_mindestgroesse2.setBounds(650, 110, 50, 20);
 
-        label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabe_aufforderung_id2.setText("Bitte geben Sie die Teile ID oder die Bezeichnung ein:");
         jPanel8.add(label_eingabe_aufforderung_id2);
         label_eingabe_aufforderung_id2.setBounds(30, 20, 300, 20);
@@ -403,17 +403,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(bezeichnung_textfeld1);
         bezeichnung_textfeld1.setBounds(590, 60, 180, 20);
 
-        label_oder1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_oder1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_oder1.setText("oder");
         jPanel8.add(label_oder1);
         label_oder1.setBounds(370, 60, 34, 15);
 
-        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_teile_id2.setText("Teile ID:");
         jPanel8.add(label_teile_id2);
         label_teile_id2.setBounds(40, 60, 60, 20);
 
-        label_menge.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge.setText("Gesamt einzulagernde Menge:");
         jPanel8.add(label_menge);
         label_menge.setBounds(40, 110, 180, 15);
@@ -428,14 +428,14 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         label_menge_übrig.setText("text");
         jPanel8.add(label_menge_übrig);
-        label_menge_übrig.setBounds(650, 180, 120, 14);
+        label_menge_übrig.setBounds(650, 160, 120, 14);
 
-        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12));
+        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         laber_noch_einzulagern.setText("noch einzulagernde Menge:");
         jPanel8.add(laber_noch_einzulagern);
-        laber_noch_einzulagern.setBounds(470, 180, 170, 15);
+        laber_noch_einzulagern.setBounds(460, 160, 170, 15);
 
-        einlagern_button_tabelle.setFont(new java.awt.Font("Arial", 0, 12));
+        einlagern_button_tabelle.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         einlagern_button_tabelle.setText("einlagern");
         jPanel8.add(einlagern_button_tabelle);
         einlagern_button_tabelle.setBounds(50, 460, 110, 23);
@@ -444,16 +444,23 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         table_einlagern.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "fachnummer", "menge"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane4.setViewportView(table_einlagern);
+        table_einlagern.getColumnModel().getColumn(0).setResizable(false);
+        table_einlagern.getColumnModel().getColumn(1).setResizable(false);
 
         jPanel8.add(jScrollPane4);
         jScrollPane4.setBounds(0, 230, 980, 220);
@@ -466,218 +473,218 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
 
-        menge_textfeld12.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        label_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_mindestgroesse1.setText("Mindestgröße:");
 
-        menge_textfeld13.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        label_anzeige_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_anzeige_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        fachnummer_textfeld11.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld11.setFocusTraversalPolicyProvider(true);
 
-        label_anzeige_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_anzeige_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        menge_textfeld14.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        kapazitaet_pruefen_button11.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button11.setText("Kapazität prüfen");
 
-        kapazitaet_pruefen_button12.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button12.setText("Kapazität prüfen");
 
-        kapazitaet_pruefen_button13.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button13.setText("Kapazität prüfen");
 
-        label_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bezeichnung1.setText("Bezeichnung:");
 
-        fachnummer_textfeld12.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld12.setFocusTraversalPolicyProvider(true);
 
-        kapazitaet_pruefen_button14.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button14.setText("Kapazität prüfen");
 
-        kapazitaet_pruefen_button15.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button15.setText("Kapazität prüfen");
 
-        label_einlagern_nummer4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer4.setText("4.");
 
-        label_fachnummer11.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer11.setText("Fachnummer:");
         label_fachnummer11.setInheritsPopupMenu(false);
 
-        fachnummer_textfeld13.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld13.setFocusTraversalPolicyProvider(true);
 
-        menge_textfeld15.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        menge_textfeld16.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        label_einlagern_nummer3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer3.setText("3.");
 
-        label_fachnummer12.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer12.setText("Fachnummer:");
         label_fachnummer12.setInheritsPopupMenu(false);
 
-        label_fachnummer13.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer13.setText("Fachnummer:");
         label_fachnummer13.setInheritsPopupMenu(false);
 
-        label_menge11.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge11.setText("Menge:");
 
-        kapazitaet_pruefen_button16.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button16.setText("Kapazität prüfen");
 
-        label_menge12.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge12.setText("Menge:");
 
-        menge_textfeld17.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        label_menge13.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge13.setText("Menge:");
 
-        label_einlagern_nummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer1.setText("1.");
 
-        label_einlagern_nummer2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer2.setText("2.");
 
-        label_einlagern_nummer9.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer9.setText("9.");
 
-        button_fachnumer1.setFont(new java.awt.Font("Arial", 0, 12));
+        button_fachnumer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_fachnumer1.setText("Suche Fachhnummer");
 
-        label_einlagern_nummer10.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer10.setText("10.");
 
-        label_fachnummer14.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer14.setText("Fachnummer:");
         label_fachnummer14.setInheritsPopupMenu(false);
 
-        fachnummer_textfeld14.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld14.setFocusTraversalPolicyProvider(true);
 
-        label_fachnummer15.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer15.setText("Fachnummer:");
         label_fachnummer15.setInheritsPopupMenu(false);
 
-        label_menge14.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge14.setText("Menge:");
 
-        label_menge15.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge15.setText("Menge:");
 
-        label_menge16.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge16.setText("Menge:");
 
-        label_fachnummer16.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer16.setText("Fachnummer:");
         label_fachnummer16.setInheritsPopupMenu(false);
 
-        label_fachnummer17.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer17.setText("Fachnummer:");
         label_fachnummer17.setInheritsPopupMenu(false);
 
-        menge_textfeld18.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        kapazitaet_pruefen_button17.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button17.setText("Kapazität prüfen");
 
-        fachnummer_textfeld15.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld15.setFocusTraversalPolicyProvider(true);
 
-        fachnummer_textfeld16.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld16.setFocusTraversalPolicyProvider(true);
 
-        menge_textfeld19.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        kapazitaet_pruefen_button18.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button18.setText("Kapazität prüfen");
 
-        menge_textfeld20.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld20.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        id_textfeld.setFont(new java.awt.Font("Arial", 0, 12));
+        id_textfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         id_textfeld.setToolTipText("");
 
-        label_einlagern_nummer8.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer8.setText("8.");
 
-        fachnummer_textfeld17.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld17.setFocusTraversalPolicyProvider(true);
 
-        bestaetigen_button1.setFont(new java.awt.Font("Arial", 0, 12));
+        bestaetigen_button1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bestaetigen_button1.setText("Bestätigen");
 
-        label_menge17.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge17.setText("Menge:");
 
-        fachnummer_textfeld18.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld18.setFocusTraversalPolicyProvider(true);
 
-        kapazitaet_pruefen_button19.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button19.setText("Kapazität prüfen");
 
-        label_teile_id.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teile_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_teile_id.setText("Teile ID:");
 
-        label_eingabeaufforderung_einlagern.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabeaufforderung_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabeaufforderung_einlagern.setText("Bitte geben Sie die Fächer und die Menge an die eingelagert werden soll:");
 
-        label_einlagern_nummer5.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer5.setText("5.");
 
-        fachnummer_textfeld19.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld19.setFocusTraversalPolicyProvider(true);
 
-        label_fachnummer18.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer18.setText("Fachnummer:");
         label_fachnummer18.setInheritsPopupMenu(false);
 
-        menge_textfeld21.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld21.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        label_menge18.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge18.setText("Menge:");
 
-        einlagern_button_fach.setFont(new java.awt.Font("Arial", 0, 12));
+        einlagern_button_fach.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         einlagern_button_fach.setText("Einlagern");
 
-        label_fachnummer19.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer19.setText("Fachnummer:");
         label_fachnummer19.setInheritsPopupMenu(false);
 
-        label_eingabe_aufforderung_id1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_id1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabe_aufforderung_id1.setText("Bitte geben Sie die Teile ID ein:");
 
-        label_menge19.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge19.setText("Menge:");
 
-        fachnummer_textfeld20.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld20.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld20.setFocusTraversalPolicyProvider(true);
 
-        label_einlagern_nummer6.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer6.setText("6.");
 
-        label_einlagern_nummer7.setFont(new java.awt.Font("Arial", 0, 12));
+        label_einlagern_nummer7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer7.setText("7.");
 
-        label_menge20.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge20.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge20.setText("Menge:");
 
-        label_fachnummer20.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer20.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer20.setText("Fachnummer:");
         label_fachnummer20.setInheritsPopupMenu(false);
 
-        kapazitaet_pruefen_button20.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button20.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button20.setText("Kapazität prüfen");
 
-        suchen_button1.setFont(new java.awt.Font("Arial", 0, 12));
+        suchen_button1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchen_button1.setText("Suche Teile ID");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -952,37 +959,37 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teilestamm_erweitern.setLayout(null);
 
-        label_eingabeaufforderung.setFont(new java.awt.Font("Arial", 1, 12));
+        label_eingabeaufforderung.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         label_eingabeaufforderung.setText("Bitte geben Sie die Stammdaten für ein neues Teil ein:");
         Teilestamm_erweitern.add(label_eingabeaufforderung);
         label_eingabeaufforderung.setBounds(30, 20, 515, 15);
 
-        label_id.setFont(new java.awt.Font("Arial", 0, 12));
+        label_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_id.setText("ID:");
         Teilestamm_erweitern.add(label_id);
         label_id.setBounds(30, 60, 15, 15);
 
-        label_bezeichnung3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bezeichnung3.setText("Bezeichnnung:");
         Teilestamm_erweitern.add(label_bezeichnung3);
         label_bezeichnung3.setBounds(30, 100, 81, 15);
 
-        label_teiltyp.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teiltyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_teiltyp.setText("Teiltyp:");
         Teilestamm_erweitern.add(label_teiltyp);
         label_teiltyp.setBounds(30, 130, 38, 15);
 
-        label_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        label_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_materialgruppe.setText("Materialgruppe:");
         Teilestamm_erweitern.add(label_materialgruppe);
         label_materialgruppe.setBounds(30, 160, 85, 15);
 
-        label_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12));
+        label_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_zeichnungsnummer.setText("Zeichnungsnr.:");
         Teilestamm_erweitern.add(label_zeichnungsnummer);
         label_zeichnungsnummer.setBounds(30, 190, 82, 15);
 
-        label_baugruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        label_baugruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_baugruppe.setText("Baugruppe:");
         Teilestamm_erweitern.add(label_baugruppe);
         label_baugruppe.setBounds(30, 220, 64, 15);
@@ -992,7 +999,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(textfeld_bezeichnung);
         textfeld_bezeichnung.setBounds(150, 100, 150, 21);
 
-        combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12));
+        combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         combobox_teiltyp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Teilestamm_erweitern.add(combobox_teiltyp);
         combobox_teiltyp.setBounds(150, 130, 150, 21);
@@ -1010,55 +1017,55 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(textfeld_zeichnungsnummer);
         textfeld_zeichnungsnummer.setBounds(150, 190, 150, 21);
 
-        textfeld_baugruppe.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_baugruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(textfeld_baugruppe);
         textfeld_baugruppe.setBounds(150, 220, 150, 21);
 
-        label_preis.setFont(new java.awt.Font("Arial", 0, 12));
+        label_preis.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_preis.setText("Preis:");
         Teilestamm_erweitern.add(label_preis);
         label_preis.setBounds(350, 100, 32, 15);
 
-        label_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_max_anz_klein.setText("Max. Anz. Klein:");
         Teilestamm_erweitern.add(label_max_anz_klein);
         label_max_anz_klein.setBounds(350, 130, 83, 15);
 
-        label_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_max_anz_mittel.setText("Max. Anz. Mittel:");
         Teilestamm_erweitern.add(label_max_anz_mittel);
         label_max_anz_mittel.setBounds(350, 160, 83, 15);
 
-        label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_max_anz_gross.setText("Max. Anz. Groß:");
         Teilestamm_erweitern.add(label_max_anz_gross);
         label_max_anz_gross.setBounds(350, 190, 83, 15);
 
-        label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bemerkung.setText("Bemerkung:");
         Teilestamm_erweitern.add(label_bemerkung);
         label_bemerkung.setBounds(350, 220, 67, 15);
 
-        textfeld_preis.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_preis.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(textfeld_preis);
         textfeld_preis.setBounds(450, 100, 154, 21);
 
-        textfeld_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         textfeld_max_anz_klein.setToolTipText("Die maximale Anzahl dieses Teils, die in einen kleinen Lagerbehälter passen soll.");
         Teilestamm_erweitern.add(textfeld_max_anz_klein);
         textfeld_max_anz_klein.setBounds(450, 130, 154, 21);
 
-        textfeld_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         textfeld_max_anz_mittel.setToolTipText("Die maximale Anzahl dieses Teils, die in einen mittleren Lagerbehälter passen soll.");
         Teilestamm_erweitern.add(textfeld_max_anz_mittel);
         textfeld_max_anz_mittel.setBounds(450, 160, 154, 21);
 
-        textfeld_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         textfeld_max_anz_gross.setToolTipText("Die maximale Anzahl dieses Teils, die in einen großen Lagerbehälter passen soll.");
         Teilestamm_erweitern.add(textfeld_max_anz_gross);
         textfeld_max_anz_gross.setBounds(450, 190, 154, 21);
 
-        label_waehrung.setFont(new java.awt.Font("Arial", 0, 12));
+        label_waehrung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_waehrung.setText("€");
         Teilestamm_erweitern.add(label_waehrung);
         label_waehrung.setBounds(630, 100, 7, 15);
@@ -1085,16 +1092,16 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(textarea_bemerkung);
         textarea_bemerkung.setBounds(450, 220, 166, 96);
 
-        AnschaffungsTextField.setFont(new java.awt.Font("Arial", 0, 12));
+        AnschaffungsTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_erweitern.add(AnschaffungsTextField);
         AnschaffungsTextField.setBounds(150, 250, 150, 21);
 
-        AnschaffungsLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        AnschaffungsLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         AnschaffungsLabel.setText("Anschaffungsgrund:");
         Teilestamm_erweitern.add(AnschaffungsLabel);
         AnschaffungsLabel.setBounds(30, 250, 110, 15);
 
-        suchen_button_erweitern.setFont(new java.awt.Font("Arial", 0, 12));
+        suchen_button_erweitern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchen_button_erweitern.setText("Suche Teile ID");
         Teilestamm_erweitern.add(suchen_button_erweitern);
         suchen_button_erweitern.setBounds(350, 50, 140, 23);
@@ -1103,17 +1110,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teilestamm_verwalten.setLayout(null);
 
-        label_eingabeaufforderung1.setFont(new java.awt.Font("Arial", 1, 12));
+        label_eingabeaufforderung1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         label_eingabeaufforderung1.setText("Bitte geben Sie die ID des Teiles ein:");
         Teilestamm_verwalten.add(label_eingabeaufforderung1);
         label_eingabeaufforderung1.setBounds(40, 30, 433, 15);
 
-        label_id1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_id1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_id1.setText("ID:");
         Teilestamm_verwalten.add(label_id1);
         label_id1.setBounds(40, 70, 15, 15);
 
-        textfeld_id1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_id1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         textfeld_id1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textfeld_id1ActionPerformed(evt);
@@ -1122,111 +1129,111 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_verwalten.add(textfeld_id1);
         textfeld_id1.setBounds(130, 70, 59, 21);
 
-        label_bezeichnung4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bezeichnung4.setText("Bezeichnnung:");
         Teilestamm_verwalten.add(label_bezeichnung4);
         label_bezeichnung4.setBounds(40, 110, 81, 15);
 
-        label_teiltyp1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teiltyp1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_teiltyp1.setText("Teiltyp:");
         Teilestamm_verwalten.add(label_teiltyp1);
         label_teiltyp1.setBounds(40, 140, 38, 15);
 
-        label_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_materialgruppe1.setText("Materialgruppe:");
         Teilestamm_verwalten.add(label_materialgruppe1);
         label_materialgruppe1.setBounds(40, 170, 85, 15);
 
-        label_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_zeichnungsnummer1.setText("Zeichnungsnr.:");
         Teilestamm_verwalten.add(label_zeichnungsnummer1);
         label_zeichnungsnummer1.setBounds(40, 200, 82, 15);
 
-        label_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_baugruppe1.setText("Baugruppe:");
         Teilestamm_verwalten.add(label_baugruppe1);
         label_baugruppe1.setBounds(40, 240, 64, 15);
 
-        textfeld_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_bezeichnung1);
         textfeld_bezeichnung1.setBounds(130, 110, 161, 21);
 
-        textfeld_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_materialgruppe1);
         textfeld_materialgruppe1.setBounds(130, 170, 161, 21);
 
-        textfeld_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_zeichnungsnummer1);
         textfeld_zeichnungsnummer1.setBounds(130, 200, 161, 21);
 
-        textfeld_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_baugruppe1);
         textfeld_baugruppe1.setBounds(130, 230, 161, 21);
 
-        label_preis1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_preis1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_preis1.setText("Preis:");
         Teilestamm_verwalten.add(label_preis1);
         label_preis1.setBounds(310, 110, 32, 15);
 
-        label_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_max_anz_klein1.setText("Max. Anz. Klein:");
         Teilestamm_verwalten.add(label_max_anz_klein1);
         label_max_anz_klein1.setBounds(310, 140, 83, 15);
 
-        label_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_max_anz_mittel1.setText("Max. Anz. Mittel:");
         Teilestamm_verwalten.add(label_max_anz_mittel1);
         label_max_anz_mittel1.setBounds(310, 170, 83, 15);
 
-        label_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_max_anz_gross1.setText("Max. Anz. Groß:");
         Teilestamm_verwalten.add(label_max_anz_gross1);
         label_max_anz_gross1.setBounds(310, 200, 83, 15);
 
-        label_bemerkung1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bemerkung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bemerkung1.setText("Bemerkung:");
         Teilestamm_verwalten.add(label_bemerkung1);
         label_bemerkung1.setBounds(310, 240, 67, 15);
 
-        textfeld_preis1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_preis1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_preis1);
         textfeld_preis1.setBounds(400, 110, 161, 21);
 
-        textfeld_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_max_anz_klein1);
         textfeld_max_anz_klein1.setBounds(400, 140, 161, 21);
 
-        textfeld_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_max_anz_mittel1);
         textfeld_max_anz_mittel1.setBounds(400, 170, 161, 21);
 
-        textfeld_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12));
+        textfeld_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_max_anz_gross1);
         textfeld_max_anz_gross1.setBounds(400, 200, 161, 21);
 
-        label_waehrung1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_waehrung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_waehrung1.setText("€");
         Teilestamm_verwalten.add(label_waehrung1);
         label_waehrung1.setBounds(570, 110, 7, 15);
 
-        button_loeschen.setFont(new java.awt.Font("Arial", 0, 12));
+        button_loeschen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_loeschen.setText("Löschen");
         Teilestamm_verwalten.add(button_loeschen);
         button_loeschen.setBounds(480, 70, 81, 23);
         Teilestamm_verwalten.add(textfeld_teiltyp);
         textfeld_teiltyp.setBounds(130, 140, 161, 20);
 
-        button_suchen.setFont(new java.awt.Font("Arial", 0, 12));
+        button_suchen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_suchen.setText("Suchen");
         Teilestamm_verwalten.add(button_suchen);
         button_suchen.setBounds(210, 70, 75, 23);
 
-        anzeigen_button.setFont(new java.awt.Font("Arial", 0, 12));
+        anzeigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         anzeigen_button.setText("Anzeigen");
         Teilestamm_verwalten.add(anzeigen_button);
         anzeigen_button.setBounds(310, 70, 83, 23);
 
-        aendern_button.setFont(new java.awt.Font("Arial", 1, 12));
+        aendern_button.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         aendern_button.setText("Ändern");
         Teilestamm_verwalten.add(aendern_button);
         aendern_button.setBounds(30, 350, 73, 23);
@@ -1242,32 +1249,32 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teile_auslagern.setLayout(null);
 
-        TeileIDLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileIDLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         TeileIDLabel.setText("Teile ID:");
         Teile_auslagern.add(TeileIDLabel);
         TeileIDLabel.setBounds(50, 60, 45, 15);
 
-        BezeichnungLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BezeichnungLabel.setText("Bezeichnung:");
         Teile_auslagern.add(BezeichnungLabel);
         BezeichnungLabel.setBounds(50, 100, 74, 15);
 
-        FachLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         FachLabel.setText("Fachnummer:");
         Teile_auslagern.add(FachLabel);
         FachLabel.setBounds(50, 330, 90, 15);
 
-        BestandverringernLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BestandverringernLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BestandverringernLabel.setText("Bestand um die Menge X verringern:");
         Teile_auslagern.add(BestandverringernLabel);
         BestandverringernLabel.setBounds(50, 370, 210, 15);
 
-        BemerkungLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BemerkungLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BemerkungLabel.setText("Bemerkung:");
         Teile_auslagern.add(BemerkungLabel);
         BemerkungLabel.setBounds(50, 150, 67, 15);
 
-        auslagern_AusfuehrenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        auslagern_AusfuehrenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         auslagern_AusfuehrenButton.setText("Ausführen");
         auslagern_AusfuehrenButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1277,12 +1284,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(auslagern_AusfuehrenButton);
         auslagern_AusfuehrenButton.setBounds(430, 360, 89, 23);
 
-        SuchenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        SuchenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         SuchenButton.setText("Suche Teile ID");
         Teile_auslagern.add(SuchenButton);
         SuchenButton.setBounds(430, 60, 131, 23);
 
-        auslagern_BestaetigenidButton.setFont(new java.awt.Font("Arial", 0, 12));
+        auslagern_BestaetigenidButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         auslagern_BestaetigenidButton.setText("Bestätigen");
         auslagern_BestaetigenidButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1292,12 +1299,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(auslagern_BestaetigenidButton);
         auslagern_BestaetigenidButton.setBounds(580, 60, 91, 23);
 
-        label_eingabe_aufforderung_id.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabe_aufforderung_id.setText("Bitte geben Sie die Teile ID ein:");
         Teile_auslagern.add(label_eingabe_aufforderung_id);
         label_eingabe_aufforderung_id.setBounds(50, 10, 180, 20);
 
-        label_eingabe_aufforderung_fach.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_fach.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabe_aufforderung_fach.setText("Bitte geben Sie das Fach ein oder wählen Sie es aus der Tabelle aus:");
         Teile_auslagern.add(label_eingabe_aufforderung_fach);
         label_eingabe_aufforderung_fach.setBounds(50, 280, 520, 20);
@@ -1347,7 +1354,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(auslager_jpane);
         auslager_jpane.setBounds(0, 400, 1000, 260);
 
-        auslagerTextfield_ID.setFont(new java.awt.Font("Arial", 0, 12));
+        auslagerTextfield_ID.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         auslagerTextfield_ID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 auslagerTextfield_IDActionPerformed(evt);
@@ -1357,7 +1364,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         auslagerTextfield_ID.setBounds(280, 60, 120, 21);
 
         auslagerTextfield_fnr.setEditable(false);
-        auslagerTextfield_fnr.setFont(new java.awt.Font("Arial", 0, 12));
+        auslagerTextfield_fnr.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         auslagerTextfield_fnr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 auslagerTextfield_fnrActionPerformed(evt);
@@ -1366,7 +1373,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_auslagern.add(auslagerTextfield_fnr);
         auslagerTextfield_fnr.setBounds(280, 330, 130, 21);
 
-        auslagerTextfield_mengeauslagern.setFont(new java.awt.Font("Arial", 0, 12));
+        auslagerTextfield_mengeauslagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_auslagern.add(auslagerTextfield_mengeauslagern);
         auslagerTextfield_mengeauslagern.setBounds(280, 370, 130, 21);
 
@@ -1374,17 +1381,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         entfernenJTabbedPane.setLayout(null);
 
-        suchenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        suchenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchenButton.setText("Suche Teile ID");
         entfernenJTabbedPane.add(suchenButton);
         suchenButton.setBounds(180, 80, 129, 23);
 
-        Teilestammdatenbutton.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestammdatenbutton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestammdatenbutton.setText("Teilestammdaten");
         entfernenJTabbedPane.add(Teilestammdatenbutton);
         Teilestammdatenbutton.setBounds(180, 120, 129, 23);
 
-        bestätigenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        bestätigenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bestätigenButton.setText("Bestätigen");
         entfernenJTabbedPane.add(bestätigenButton);
         bestätigenButton.setBounds(330, 80, 91, 23);
@@ -1393,77 +1400,77 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         entfernenJTabbedPane.add(entfernenIDTextfield);
         entfernenIDTextfield.setBounds(70, 80, 93, 21);
 
-        IDLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        IDLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         IDLabel.setText("ID:");
         entfernenJTabbedPane.add(IDLabel);
         IDLabel.setBounds(40, 80, 15, 15);
 
-        eingebenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        eingebenLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         eingebenLabel.setText("Bitte Teile ID eingeben:");
         entfernenJTabbedPane.add(eingebenLabel);
         eingebenLabel.setBounds(50, 30, 223, 15);
 
-        StammdatenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        StammdatenLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         StammdatenLabel.setText("Stammdaten:");
         entfernenJTabbedPane.add(StammdatenLabel);
         StammdatenLabel.setBounds(50, 160, 74, 15);
 
-        BezeichnungLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BezeichnungLabel1.setText("Bezeichnung:");
         entfernenJTabbedPane.add(BezeichnungLabel1);
         BezeichnungLabel1.setBounds(50, 200, 74, 15);
 
-        TeileLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         TeileLabel.setText("Teile Typ:");
         entfernenJTabbedPane.add(TeileLabel);
         TeileLabel.setBounds(50, 230, 52, 15);
 
-        ZeichnungsnrLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        ZeichnungsnrLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         ZeichnungsnrLabel.setText("Zeichnungsnr.:");
         entfernenJTabbedPane.add(ZeichnungsnrLabel);
         ZeichnungsnrLabel.setBounds(50, 300, 82, 15);
 
-        MaterialgruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MaterialgruppeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MaterialgruppeLabel.setText("Materialgruppe:");
         entfernenJTabbedPane.add(MaterialgruppeLabel);
         MaterialgruppeLabel.setBounds(50, 270, 85, 15);
 
-        BaugruppeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BaugruppeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BaugruppeLabel.setText("Baugruppe:");
         entfernenJTabbedPane.add(BaugruppeLabel);
         BaugruppeLabel.setBounds(50, 330, 64, 15);
 
-        PreisLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        PreisLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         PreisLabel.setText("Preis:");
         entfernenJTabbedPane.add(PreisLabel);
         PreisLabel.setBounds(340, 200, 32, 15);
 
-        MAKLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MAKLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MAKLabel.setText("Max.Anzahl klein:");
         entfernenJTabbedPane.add(MAKLabel);
         MAKLabel.setBounds(340, 230, 92, 15);
 
-        MAMLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MAMLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MAMLabel.setText("Max.Anzahl mittel:");
         entfernenJTabbedPane.add(MAMLabel);
         MAMLabel.setBounds(340, 260, 96, 15);
 
-        MAGLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MAGLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MAGLabel.setText("Max.Anzahl groß:");
         entfernenJTabbedPane.add(MAGLabel);
         MAGLabel.setBounds(340, 290, 92, 15);
 
-        BemerkungLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        BemerkungLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BemerkungLabel1.setText("Bemerkung");
         entfernenJTabbedPane.add(BemerkungLabel1);
         BemerkungLabel1.setBounds(340, 330, 64, 15);
 
-        EuroLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        EuroLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         EuroLabel.setText("€");
         entfernenJTabbedPane.add(EuroLabel);
         EuroLabel.setBounds(560, 200, 21, 15);
 
-        loeschenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        loeschenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         loeschenButton.setText("Löschen");
         entfernenJTabbedPane.add(loeschenButton);
         loeschenButton.setBounds(40, 390, 81, 23);
@@ -1512,32 +1519,32 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Buchungshistorie_einsehen_ausdrucken.setLayout(null);
 
-        datumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        datumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         datumLabel_historie.setText("Die Buchungshistorie zum Datum");
         Buchungshistorie_einsehen_ausdrucken.add(datumLabel_historie);
         datumLabel_historie.setBounds(40, 20, 200, 30);
 
-        zeitraum_von_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        zeitraum_von_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         zeitraum_von_button_historie.setText("dd.mm.yyyy");
         Buchungshistorie_einsehen_ausdrucken.add(zeitraum_von_button_historie);
         zeitraum_von_button_historie.setBounds(120, 70, 80, 30);
 
-        zeitraumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        zeitraumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         zeitraumLabel_historie.setText("Zeitraum vom");
         Buchungshistorie_einsehen_ausdrucken.add(zeitraumLabel_historie);
         zeitraumLabel_historie.setBounds(40, 70, 80, 30);
 
-        zeitraum_bis_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        zeitraum_bis_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         zeitraum_bis_textfeld_historie.setText("dd.mm.yyyy");
         Buchungshistorie_einsehen_ausdrucken.add(zeitraum_bis_textfeld_historie);
         zeitraum_bis_textfeld_historie.setBounds(240, 70, 80, 30);
 
-        datum_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        datum_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         datum_textfeld_historie.setText("dd.mm.yyyy");
         Buchungshistorie_einsehen_ausdrucken.add(datum_textfeld_historie);
         datum_textfeld_historie.setBounds(240, 20, 80, 30);
 
-        undLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        undLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         undLabel_historie.setText("und");
         Buchungshistorie_einsehen_ausdrucken.add(undLabel_historie);
         undLabel_historie.setBounds(460, 70, 30, 30);
@@ -1558,32 +1565,32 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Buchungshistorie_einsehen_ausdrucken.add(jScrollPane1);
         jScrollPane1.setBounds(10, 130, 760, 200);
 
-        Teilestammdaten_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        Teilestammdaten_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestammdaten_suchen_historie.setText("Teilestammdaten suchen");
         Buchungshistorie_einsehen_ausdrucken.add(Teilestammdaten_suchen_historie);
         Teilestammdaten_suchen_historie.setBounds(20, 350, 180, 30);
 
-        oderLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        oderLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         oderLabel_historie.setText("oder im");
         Buchungshistorie_einsehen_ausdrucken.add(oderLabel_historie);
         oderLabel_historie.setBounds(340, 20, 60, 30);
 
-        anzeige_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        anzeige_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         anzeige_button_historie.setText("anzeigen");
         Buchungshistorie_einsehen_ausdrucken.add(anzeige_button_historie);
         anzeige_button_historie.setBounds(330, 70, 110, 30);
 
-        drucken_button_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        drucken_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         drucken_button_historie.setText("drucken.");
         Buchungshistorie_einsehen_ausdrucken.add(drucken_button_historie);
         drucken_button_historie.setBounds(500, 70, 110, 30);
 
-        bisLabel_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        bisLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bisLabel_historie.setText("bis");
         Buchungshistorie_einsehen_ausdrucken.add(bisLabel_historie);
         bisLabel_historie.setBounds(210, 70, 20, 30);
 
-        lagerplatz_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12));
+        lagerplatz_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lagerplatz_suchen_historie.setText("Teile/Lagerplatz suchen");
         Buchungshistorie_einsehen_ausdrucken.add(lagerplatz_suchen_historie);
         lagerplatz_suchen_historie.setBounds(220, 350, 180, 30);
@@ -1592,365 +1599,365 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teile_Splitten.setLayout(null);
 
-        suchen_button.setFont(new java.awt.Font("Arial", 0, 12));
+        suchen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchen_button.setText("Suche Fachnummer");
         Teile_Splitten.add(suchen_button);
         suchen_button.setBounds(240, 60, 150, 23);
 
-        label_eingabe_aufforderung_fachnummer.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabe_aufforderung_fachnummer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabe_aufforderung_fachnummer.setText("Bitte geben Sie die Fachnummer ein aus der gesplittet werden soll:");
         Teile_Splitten.add(label_eingabe_aufforderung_fachnummer);
         label_eingabe_aufforderung_fachnummer.setBounds(30, 30, 370, 20);
 
-        label_ausgangsfachnummer.setFont(new java.awt.Font("Arial", 0, 12));
+        label_ausgangsfachnummer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_ausgangsfachnummer.setText("Fachnummer:");
         Teile_Splitten.add(label_ausgangsfachnummer);
         label_ausgangsfachnummer.setBounds(30, 60, 80, 20);
 
-        ausgangsfachnummer_textfeld.setFont(new java.awt.Font("Arial", 0, 12));
+        ausgangsfachnummer_textfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         ausgangsfachnummer_textfeld.setToolTipText("");
         Teile_Splitten.add(ausgangsfachnummer_textfeld);
         ausgangsfachnummer_textfeld.setBounds(110, 60, 100, 21);
 
-        bestaetigen_button.setFont(new java.awt.Font("Arial", 0, 12));
+        bestaetigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bestaetigen_button.setText("Bestätigen");
         Teile_Splitten.add(bestaetigen_button);
         bestaetigen_button.setBounds(430, 60, 100, 23);
 
-        label_teil_eingelagert.setFont(new java.awt.Font("Arial", 0, 12));
+        label_teil_eingelagert.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_teil_eingelagert.setText("Eingelagertes Teil:");
         Teile_Splitten.add(label_teil_eingelagert);
         label_teil_eingelagert.setBounds(30, 100, 103, 20);
 
-        label_anzeige_teile_id.setFont(new java.awt.Font("Arial", 0, 12));
+        label_anzeige_teile_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(label_anzeige_teile_id);
         label_anzeige_teile_id.setBounds(140, 100, 50, 20);
 
-        label_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
+        label_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bezeichnung.setText("Bezeichnung:");
         Teile_Splitten.add(label_bezeichnung);
         label_bezeichnung.setBounds(200, 100, 80, 20);
 
-        label_anzeige_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12));
+        label_anzeige_bezeichnung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(label_anzeige_bezeichnung);
         label_anzeige_bezeichnung.setBounds(280, 100, 150, 20);
 
-        label_eingabeaufforderung_splitten.setFont(new java.awt.Font("Arial", 0, 12));
+        label_eingabeaufforderung_splitten.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabeaufforderung_splitten.setText("Bitte geben Sie die Fächer und die Menge an in die gesplittet werden soll:");
         Teile_Splitten.add(label_eingabeaufforderung_splitten);
         label_eingabeaufforderung_splitten.setBounds(30, 130, 410, 20);
 
-        label_splitten_nummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer1.setText("1.");
         Teile_Splitten.add(label_splitten_nummer1);
         label_splitten_nummer1.setBounds(30, 170, 20, 20);
 
-        label_fachnummer1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer1.setText("Fachnummer:");
         label_fachnummer1.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer1);
         label_fachnummer1.setBounds(60, 170, 80, 20);
 
-        fachnummer_textfeld1.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld1.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld1);
         fachnummer_textfeld1.setBounds(150, 170, 80, 21);
 
-        label_menge1.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge1.setText("Menge:");
         Teile_Splitten.add(label_menge1);
         label_menge1.setBounds(260, 170, 50, 20);
 
-        menge_textfeld1.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld1);
         menge_textfeld1.setBounds(320, 170, 80, 21);
 
-        kapazitaet_pruefen_button1.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button1.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button1);
         kapazitaet_pruefen_button1.setBounds(420, 170, 120, 23);
 
-        label_splitten_nummer2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer2.setText("2.");
         Teile_Splitten.add(label_splitten_nummer2);
         label_splitten_nummer2.setBounds(30, 200, 20, 20);
 
-        label_fachnummer2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer2.setText("Fachnummer:");
         label_fachnummer2.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer2);
         label_fachnummer2.setBounds(60, 200, 80, 20);
 
-        fachnummer_textfeld2.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld2.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld2);
         fachnummer_textfeld2.setBounds(150, 200, 80, 21);
 
-        label_menge2.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge2.setText("Menge:");
         Teile_Splitten.add(label_menge2);
         label_menge2.setBounds(260, 200, 50, 20);
 
-        menge_textfeld2.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld2);
         menge_textfeld2.setBounds(320, 200, 80, 21);
 
-        kapazitaet_pruefen_button2.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button2.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button2);
         kapazitaet_pruefen_button2.setBounds(420, 200, 120, 23);
 
-        fachnummer_textfeld3.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld3.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld3);
         fachnummer_textfeld3.setBounds(150, 230, 80, 21);
 
-        label_splitten_nummer3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer3.setText("3.");
         Teile_Splitten.add(label_splitten_nummer3);
         label_splitten_nummer3.setBounds(30, 230, 20, 20);
 
-        menge_textfeld3.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld3);
         menge_textfeld3.setBounds(320, 230, 80, 21);
 
-        label_menge3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge3.setText("Menge:");
         Teile_Splitten.add(label_menge3);
         label_menge3.setBounds(260, 230, 50, 20);
 
-        kapazitaet_pruefen_button3.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button3.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button3);
         kapazitaet_pruefen_button3.setBounds(420, 230, 120, 23);
 
-        label_fachnummer3.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer3.setText("Fachnummer:");
         label_fachnummer3.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer3);
         label_fachnummer3.setBounds(60, 230, 80, 20);
 
-        menge_textfeld4.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld4);
         menge_textfeld4.setBounds(320, 260, 80, 21);
 
-        label_fachnummer4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer4.setText("Fachnummer:");
         label_fachnummer4.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer4);
         label_fachnummer4.setBounds(60, 260, 80, 20);
 
-        kapazitaet_pruefen_button4.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button4.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button4);
         kapazitaet_pruefen_button4.setBounds(420, 260, 120, 23);
 
-        label_splitten_nummer4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer4.setText("4.");
         Teile_Splitten.add(label_splitten_nummer4);
         label_splitten_nummer4.setBounds(30, 260, 20, 20);
 
-        label_menge4.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge4.setText("Menge:");
         Teile_Splitten.add(label_menge4);
         label_menge4.setBounds(260, 260, 50, 20);
 
-        fachnummer_textfeld4.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld4.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld4);
         fachnummer_textfeld4.setBounds(150, 260, 80, 21);
 
-        label_fachnummer5.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer5.setText("Fachnummer:");
         label_fachnummer5.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer5);
         label_fachnummer5.setBounds(60, 290, 80, 20);
 
-        kapazitaet_pruefen_button5.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button5.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button5);
         kapazitaet_pruefen_button5.setBounds(420, 290, 120, 23);
 
-        fachnummer_textfeld5.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld5.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld5);
         fachnummer_textfeld5.setBounds(150, 290, 80, 21);
 
-        menge_textfeld5.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld5);
         menge_textfeld5.setBounds(320, 290, 80, 21);
 
-        label_splitten_nummer5.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer5.setText("5.");
         Teile_Splitten.add(label_splitten_nummer5);
         label_splitten_nummer5.setBounds(30, 290, 20, 20);
 
-        label_menge5.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge5.setText("Menge:");
         Teile_Splitten.add(label_menge5);
         label_menge5.setBounds(260, 290, 50, 20);
 
-        label_fachnummer6.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer6.setText("Fachnummer:");
         label_fachnummer6.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer6);
         label_fachnummer6.setBounds(60, 320, 80, 20);
 
-        menge_textfeld6.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld6);
         menge_textfeld6.setBounds(320, 320, 80, 21);
 
-        label_menge6.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge6.setText("Menge:");
         Teile_Splitten.add(label_menge6);
         label_menge6.setBounds(260, 320, 50, 20);
 
-        label_splitten_nummer6.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer6.setText("6.");
         Teile_Splitten.add(label_splitten_nummer6);
         label_splitten_nummer6.setBounds(30, 320, 20, 20);
 
-        fachnummer_textfeld6.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld6.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld6);
         fachnummer_textfeld6.setBounds(150, 320, 80, 21);
 
-        kapazitaet_pruefen_button6.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button6.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button6);
         kapazitaet_pruefen_button6.setBounds(420, 320, 120, 23);
 
-        menge_textfeld7.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld7);
         menge_textfeld7.setBounds(320, 350, 80, 21);
 
-        label_splitten_nummer7.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer7.setText("7.");
         Teile_Splitten.add(label_splitten_nummer7);
         label_splitten_nummer7.setBounds(30, 350, 20, 20);
 
-        fachnummer_textfeld7.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld7.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld7);
         fachnummer_textfeld7.setBounds(150, 350, 80, 21);
 
-        kapazitaet_pruefen_button7.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button7.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button7);
         kapazitaet_pruefen_button7.setBounds(420, 350, 120, 23);
 
-        label_menge7.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge7.setText("Menge:");
         Teile_Splitten.add(label_menge7);
         label_menge7.setBounds(260, 350, 50, 20);
 
-        label_fachnummer7.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer7.setText("Fachnummer:");
         label_fachnummer7.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer7);
         label_fachnummer7.setBounds(60, 350, 80, 20);
 
-        label_splitten_nummer8.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer8.setText("8.");
         Teile_Splitten.add(label_splitten_nummer8);
         label_splitten_nummer8.setBounds(30, 380, 20, 20);
 
-        label_fachnummer8.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer8.setText("Fachnummer:");
         label_fachnummer8.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer8);
         label_fachnummer8.setBounds(60, 380, 80, 20);
 
-        fachnummer_textfeld8.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld8.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld8);
         fachnummer_textfeld8.setBounds(150, 380, 80, 21);
 
-        menge_textfeld8.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld8);
         menge_textfeld8.setBounds(320, 380, 80, 21);
 
-        label_menge8.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge8.setText("Menge:");
         Teile_Splitten.add(label_menge8);
         label_menge8.setBounds(260, 380, 50, 20);
 
-        kapazitaet_pruefen_button8.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button8.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button8);
         kapazitaet_pruefen_button8.setBounds(420, 380, 120, 23);
 
-        label_fachnummer9.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer9.setText("Fachnummer:");
         label_fachnummer9.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer9);
         label_fachnummer9.setBounds(60, 410, 80, 20);
 
-        fachnummer_textfeld9.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld9.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld9);
         fachnummer_textfeld9.setBounds(150, 410, 80, 21);
 
-        kapazitaet_pruefen_button9.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button9.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button9);
         kapazitaet_pruefen_button9.setBounds(420, 410, 120, 23);
 
-        label_splitten_nummer9.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer9.setText("9.");
         Teile_Splitten.add(label_splitten_nummer9);
         label_splitten_nummer9.setBounds(30, 410, 20, 20);
 
-        menge_textfeld9.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld9);
         menge_textfeld9.setBounds(320, 410, 80, 21);
 
-        label_menge9.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge9.setText("Menge:");
         Teile_Splitten.add(label_menge9);
         label_menge9.setBounds(260, 410, 50, 20);
 
-        menge_textfeld10.setFont(new java.awt.Font("Arial", 0, 12));
+        menge_textfeld10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld10);
         menge_textfeld10.setBounds(320, 440, 80, 21);
 
-        fachnummer_textfeld10.setFont(new java.awt.Font("Arial", 0, 12));
+        fachnummer_textfeld10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld10.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld10);
         fachnummer_textfeld10.setBounds(150, 440, 80, 21);
 
-        kapazitaet_pruefen_button10.setFont(new java.awt.Font("Arial", 0, 12));
+        kapazitaet_pruefen_button10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button10.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button10);
         kapazitaet_pruefen_button10.setBounds(420, 440, 120, 23);
 
-        label_menge10.setFont(new java.awt.Font("Arial", 0, 12));
+        label_menge10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge10.setText("Menge:");
         Teile_Splitten.add(label_menge10);
         label_menge10.setBounds(260, 440, 50, 20);
 
-        label_splitten_nummer10.setFont(new java.awt.Font("Arial", 0, 12));
+        label_splitten_nummer10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer10.setText("10.");
         Teile_Splitten.add(label_splitten_nummer10);
         label_splitten_nummer10.setBounds(30, 440, 20, 20);
 
-        label_fachnummer10.setFont(new java.awt.Font("Arial", 0, 12));
+        label_fachnummer10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer10.setText("Fachnummer:");
         label_fachnummer10.setInheritsPopupMenu(false);
         Teile_Splitten.add(label_fachnummer10);
         label_fachnummer10.setBounds(60, 440, 80, 20);
 
-        splitten_button.setFont(new java.awt.Font("Arial", 0, 12));
+        splitten_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         splitten_button.setText("Splitten");
         Teile_Splitten.add(splitten_button);
         splitten_button.setBounds(30, 490, 110, 23);
 
-        label_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12));
+        label_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_mindestgroesse.setText("Mindestgröße:");
         Teile_Splitten.add(label_mindestgroesse);
         label_mindestgroesse.setBounds(430, 100, 90, 20);
 
-        label_anzeige_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12));
+        label_anzeige_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(label_anzeige_mindestgroesse);
         label_anzeige_mindestgroesse.setBounds(530, 100, 30, 20);
 
@@ -1958,55 +1965,55 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teile_umlagern.setLayout(null);
 
-        BitteeingebenLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        BitteeingebenLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BitteeingebenLabel.setText("Bitte geben Sie die Fachnummer ein aus der ausgelagert werden soll:");
         Teile_umlagern.add(BitteeingebenLabel);
         BitteeingebenLabel.setBounds(10, 11, 400, 23);
 
-        FachnummerLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachnummerLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         FachnummerLabel.setText("Fachnummer:");
         Teile_umlagern.add(FachnummerLabel);
         FachnummerLabel.setBounds(10, 55, 77, 15);
 
-        TeileLabel1.setFont(new java.awt.Font("Arial", 0, 12));
+        TeileLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         TeileLabel1.setText("Teile ID:");
         Teile_umlagern.add(TeileLabel1);
         TeileLabel1.setBounds(10, 93, 45, 15);
 
-        ZielfachLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        ZielfachLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         ZielfachLabel.setText("Bitte geben Sie das Zielfach ein oder wählen Sie es aus:");
         Teile_umlagern.add(ZielfachLabel);
         ZielfachLabel.setBounds(10, 142, 309, 15);
 
-        FachnrTextfield.setFont(new java.awt.Font("Arial", 0, 12));
+        FachnrTextfield.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_umlagern.add(FachnrTextfield);
         FachnrTextfield.setBounds(124, 52, 113, 21);
 
-        BestätigenButton.setFont(new java.awt.Font("Arial", 0, 12));
+        BestätigenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BestätigenButton.setText("Bestätigen");
         Teile_umlagern.add(BestätigenButton);
         BestätigenButton.setBounds(470, 50, 91, 23);
 
-        BezeichnungLabel2.setFont(new java.awt.Font("Arial", 0, 12));
+        BezeichnungLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BezeichnungLabel2.setText("Bezeichnung:");
         Teile_umlagern.add(BezeichnungLabel2);
         BezeichnungLabel2.setBounds(282, 93, 91, 15);
 
-        MengeLabel.setFont(new java.awt.Font("Arial", 0, 12));
+        MengeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MengeLabel.setText("Menge:");
         Teile_umlagern.add(MengeLabel);
         MengeLabel.setBounds(470, 90, 40, 15);
 
-        FachnrLabel_Ziel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachnrLabel_Ziel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         FachnrLabel_Ziel.setText("Fachnummer:");
         Teile_umlagern.add(FachnrLabel_Ziel);
         FachnrLabel_Ziel.setBounds(10, 190, 77, 15);
 
-        FachnrTextfield_Ziel.setFont(new java.awt.Font("Arial", 0, 12));
+        FachnrTextfield_Ziel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_umlagern.add(FachnrTextfield_Ziel);
         FachnrTextfield_Ziel.setBounds(120, 190, 113, 21);
 
-        UmlagernButton.setFont(new java.awt.Font("Arial", 0, 12));
+        UmlagernButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         UmlagernButton.setText("Umlagern");
         Teile_umlagern.add(UmlagernButton);
         UmlagernButton.setBounds(10, 440, 87, 23);
@@ -2023,7 +2030,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_umlagern.add(IDTextfield2);
         IDTextfield2.setBounds(130, 90, 20, 14);
 
-        SuchenButton1.setFont(new java.awt.Font("Arial", 0, 12));
+        SuchenButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         SuchenButton1.setText("Suche Fachnummer");
         Teile_umlagern.add(SuchenButton1);
         SuchenButton1.setBounds(282, 52, 145, 23);

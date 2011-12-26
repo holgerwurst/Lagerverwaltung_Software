@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Wayne
@@ -24,9 +26,9 @@ public class Select_Lagerbestandskonto {
     }
     
     
-    public String[] get_Fachnummer_ausDB(int id) throws ClassNotFoundException {
+    public String[] get_Fachnummer_ausDB(int id) throws SQLException {
         try {
-            db.connect("Select fachnummer from Lagerbestandskonto where teile_id =" + id + "", "fachnummer");
+            db.connect("Select fachnummer from Lagerbestandskonto where teile_ID =" + id + "", "fachnummer");
             db.disconnect();
 
         } catch (ClassNotFoundException ex) {
@@ -35,7 +37,7 @@ public class Select_Lagerbestandskonto {
         return db.ar;
     }
 
-    public String[] get_Menge_ausDB(String fachnummer) throws ClassNotFoundException {
+    public String[] get_Menge_ausDB(String fachnummer) throws SQLException {
           try {
             db.connect("Select menge from Lagerbestandskonto where fachnummer ='" + fachnummer + "'", "menge");
             db.disconnect();
@@ -46,7 +48,7 @@ public class Select_Lagerbestandskonto {
         return db.ar;
     }
 
-    public String[] get_Anschaffungsgrund_ausDB(String fachnummer) throws ClassNotFoundException {
+    public String[] get_Anschaffungsgrund_ausDB(String fachnummer) throws SQLException {
           try {
             db.connect("Select anschaffungsgrund from Lagerbestandskonto where fachnummer ='" + fachnummer + "'", "anschaffungsgrund");
             db.disconnect();
