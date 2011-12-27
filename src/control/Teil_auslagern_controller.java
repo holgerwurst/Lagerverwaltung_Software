@@ -4,6 +4,7 @@
  */
 package control;
 
+import java.sql.SQLException;
 import model.Select_Lagerbestandskonto;
 import model.Lagerbestandskonto;
 import model.DB_schreiben;
@@ -23,7 +24,7 @@ public class Teil_auslagern_controller {
     int auszulagernde_menge;
     
 
-    public void auslagern_vorbereitung(int idt) throws ClassNotFoundException {
+    public void auslagern_vorbereitung(int idt) throws SQLException {
 
         id = idt;
 
