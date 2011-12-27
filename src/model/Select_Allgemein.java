@@ -72,9 +72,9 @@ public class Select_Allgemein {
     }
     
     
-    public String[] get_fachnummer_ausDB(String groesse) throws SQLException {
+    public String[] get_menge_ausDB(String groesse, int id) throws SQLException {
           try {
-            db.connect("Select lf.fachnummer from Lagerfachstamm lf, Lagerbestandskonto lbk where lf.fachnummer=lbk.fachnummer and lbk.menge<(Select "+ groesse+" from Teilestammdaten) or belegt ='false'", "fachnummer");
+            db.connect("Select menge from Lagerbestandskonto where teile_ID="+id+" and menge<(Select "+groesse+" from Teilestammdaten);", "menge");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
