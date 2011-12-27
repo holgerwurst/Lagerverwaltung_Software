@@ -15,7 +15,6 @@ import model.Lagerbestandskonto;
 import model.Select_Allgemein;
 import model.Select_Lagerbestandskonto;
 import model.Select_Stammdaten;
-import model.WarteKlasse;
 import view.Übersicht_Lagerverwaltung;
 
 /**
