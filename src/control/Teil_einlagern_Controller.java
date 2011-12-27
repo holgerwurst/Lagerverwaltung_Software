@@ -12,6 +12,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.DB_schreiben;
 import model.Lagerbestandskonto;
+import model.Select_Allgemein;
 import model.Select_Lagerbestandskonto;
 import model.Select_Stammdaten;
 import view.Übersicht_Lagerverwaltung;
@@ -28,6 +29,7 @@ public class Teil_einlagern_Controller {
     private DB_schreiben dbs = new DB_schreiben();
     private JTable table = new JTable();
     private DefaultTableModel model = new DefaultTableModel();
+    private Select_Allgemein sa = new Select_Allgemein();
     private Select_Lagerbestandskonto lagerbes;
     private Select_Lagerbestandskonto lagerbes2;
 
@@ -39,20 +41,32 @@ public class Teil_einlagern_Controller {
         table = lv.table_einlagern;
         String max = "";
 
-        model = new javax.swing.table.DefaultTableModel(5, 3) {
-
-            @Override
-            public Class<?> getColumnClass(int column) {
-                if (column == 2) {
-                    return Boolean.class;
-                }
-                return super.getColumnClass(column);
-            }
-        };
-
-
-
         try {
+          
+            lagerbes =new Select_Lagerbestandskonto();
+            String[] fach = lagerbes.get_Fachnummer_ausDB(id);
+           
+         
+            for (int i = 0; i < fach.length; i++) {
+                if (fach[i].endsWith("K")) {
+                    sa.get_fachnummer_ausDB("max_anz_klein");
+                    System.out.println("kleines fach   " + fach[i]);
+           
+                }
+
+                if (fach[i].endsWith("M")) {
+                    sa.get_fachnummer_ausDB("max_anz_mittel");
+                    
+                }
+
+                if (fach[i].endsWith("G")) {
+                    sa.get_fachnummer_ausDB("max_anz_gross");
+                
+                }
+
+
+            }
+
 
             String anz = lv.lagerTextfield1.getText();
 
@@ -78,7 +92,7 @@ public class Teil_einlagern_Controller {
             int zahl = cv.StringTOint(max);
 
             System.out.println("Eingelagert: Teil mit ID " + id + " ins Fach " + anz + "  und  Menge  " + zahl + "   eingelagert.");
-
+            fachtest(max,id);
             //  String a = lv.menge_textfeld_einlagern.getText();
             //  int einzulagern = cv.StringTOint(a);
 
@@ -89,16 +103,23 @@ public class Teil_einlagern_Controller {
             //    lv.label_menge_übrig.setText(text);
 
             //  Lagerbestandskonto lbk = new Lagerbestandskonto(anz, id, zahl, null, null);
-            //   dbs.insert_lagerbestandskonto(lbk);            
+            //   dbs.insert_lagerbestandskonto(lbk);
+            // dbs.update_lagerfachstamm(anz, true);
+
         } catch (SQLException e) {
+            System.out.println(e);
         }
+
+    }
+
+    public void fachtest(String max, int id) {
 
         try {
             lagerbes = new Select_Lagerbestandskonto();
 
             String[] lager = lagerbes.get_Fachnummer_ausDB(id);
             String[] menge = new String[0];
-            ArrayList<String> mengear = new ArrayList<String>(0);
+            // ArrayList<String> mengear = new ArrayList<String>(0);
 
             String[] menge2 = new String[0];
             model.addColumn("fachnummer", lager);
@@ -113,41 +134,36 @@ public class Teil_einlagern_Controller {
                     // lagerbes = new Select_Lagerbestandskonto();
                     menge = new String[lager.length];
                     menge2 = new String[lager.length];
-                    
+
                     menge = lagerbes.get_Menge_ausDB(lager[0]);
                     menge2 = lagerbes2.get_Menge_ausDB(lager[1]);
-                  
-                   // mengear.add(menge[0]);
 
-                    System.out.println("Menge  " + menge[0]);
-                      System.out.println("Menge2  " + menge2[0]);
+                    //     mengear.add(menge[0]);
+                    //System.out.println("Mengearraylist  " + mengear.get(i));
+                    //System.out.println("Menge  " + menge[0]);
+                    //  System.out.println("Menge2  " + menge2[0]);
 
                     // lagerbes = new Select_Lagerbestandskonto();
-                //    for (int j = 0; j < mengear.size(); j++) {
-               //         menge[j] = mengear.get(0);
-               //     }          
-                    
-                    
+                    //    for (int j = 0; j < mengear.size(); j++) {
+                    //         menge[j] = mengear.get(0);
+                    //     }          
+
                 } catch (SQLException ex) {
                 }
 
             }
-String[] test = new String[2];
+            String[] test = new String[2];
 
-for (int j = 0; j < 2; j++) {
-                     test[0] = menge[0];
-                     test[1] = menge2[0];
-                }
+            for (int j = 0; j < 2; j++) {
+                test[0] = menge[0];
+                test[1] = menge2[0];
+            }
 
             model.addColumn("Menge", test);
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
+            System.out.println("Teil noch nicht eingelagert");
         }
-
-
-
-
-
 
 
         String[] array = new String[1];
@@ -169,6 +185,21 @@ for (int j = 0; j < 2; j++) {
 
         table.setModel(model);
 
+        create_tabel();
+
+    }
+
+    public void create_tabel() {
+        model = new javax.swing.table.DefaultTableModel(5, 3) {
+
+            @Override
+            public Class<?> getColumnClass(int column) {
+                if (column == 2) {
+                    return Boolean.class;
+                }
+                return super.getColumnClass(column);
+            }
+        };
 
     }
 }

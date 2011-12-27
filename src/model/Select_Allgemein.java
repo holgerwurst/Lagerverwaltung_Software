@@ -70,6 +70,23 @@ public class Select_Allgemein {
         //System.out.println(columnname + ": " + columnType);
         db.disconnect();
     }
+    
+    
+    public String[] get_fachnummer_ausDB(String groesse) throws SQLException {
+          try {
+            db.connect("Select lf.fachnummer from Lagerfachstamm lf, Lagerbestandskonto lbk where lf.fachnummer=lbk.fachnummer and lbk.menge<(Select "+ groesse+" from Teilestammdaten) or belegt ='false'", "fachnummer");
+            db.disconnect();
+            
+        } catch (ClassNotFoundException ex) {
+            System.out.println("JDBC-Treiber nicht vorhanden");
+        }
+        return db.ar;
+    }
+    
+    
+    
+    
+    
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Select_Allgemein sa = new Select_Allgemein();
