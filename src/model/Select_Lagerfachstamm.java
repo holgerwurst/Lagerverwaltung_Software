@@ -76,9 +76,31 @@ public class Select_Lagerfachstamm {
     }
 
 
-    public String[] get_Belegung_ausDB(String fnr) throws ClassNotFoundException {
+    public String[] get_Belegung_ausDB(String fnr) throws SQLException {
      try {
-            db.connect("Select belegung from Lagerfachstamm where fachnummer ='" + fnr + "'", "belegung");
+            db.connect("Select belegt from Lagerfachstamm where fachnummer ='" + fnr + "'", "belegung");
+            db.disconnect();
+            
+        } catch (ClassNotFoundException ex) {
+            System.out.println("JDBC-Treiber nicht vorhanden");
+        }
+        return db.ar;
+    }
+    
+     public String[] get_fachnummer_ausDB(Boolean belegung) throws SQLException {
+     try {
+            db.connect("Select fachnummer from Lagerfachstamm where belegt ='" + belegung + "'", "fachnummer");
+            db.disconnect();
+            
+        } catch (ClassNotFoundException ex) {
+            System.out.println("JDBC-Treiber nicht vorhanden");
+        }
+        return db.ar;
+    }
+     
+     public String[] get_fachnummer_2groessen_ausDB(Boolean belegung, String groesse){
+    try {
+            db.connect("Select fachnummer from Lagerfachstamm where groesse in ('"+groesse+"') and belegt='"+belegung+"'", "fachnummer");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {

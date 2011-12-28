@@ -2289,7 +2289,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     public javax.swing.JButton auslagern_BestaetigenidButton;
     private javax.swing.JButton bestaetigen_button;
     private javax.swing.JButton bestaetigen_button1;
-    private javax.swing.JButton bestaetigen_button2;
+    public javax.swing.JButton bestaetigen_button2;
     private javax.swing.JButton bestätigenButton;
     private view.LagerTextfield bezeichnung_textfeld1;
     private javax.swing.JLabel bisLabel_historie;
