@@ -4,6 +4,7 @@
  */
 package control;
 
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Select_Stammdaten;
@@ -15,7 +16,7 @@ import view.Übersicht_Lagerverwaltung;
  */
 public class Teil_auslagern_controller_gui {
     
-    public static void auslagern_ausfuehren_button(Übersicht_Lagerverwaltung ul)
+    public static void auslagern_ausfuehren_button(Übersicht_Lagerverwaltung ul) 
     {
         
         ul.pr = new Pruefen_Controller();
@@ -48,7 +49,7 @@ public class Teil_auslagern_controller_gui {
 
                     ul.auslager_jtable.setModel(newmodel);
 
-                } catch (ClassNotFoundException e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }
@@ -100,7 +101,7 @@ public class Teil_auslagern_controller_gui {
                                 
                     }
 
-                } catch (ClassNotFoundException e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 
@@ -141,7 +142,7 @@ public class Teil_auslagern_controller_gui {
                            //entfernenJTabbedPane. 
                        }
                 }    
-            } catch (ClassNotFoundException e) {
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }       
             DefaultTableModel newmodel = new DefaultTableModel();
