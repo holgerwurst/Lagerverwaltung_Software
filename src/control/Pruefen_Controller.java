@@ -14,7 +14,6 @@ import model.Select_Stammdaten;
 import view.Nutzerhinweis1;
 import view.Übersicht_Lagerverwaltung;
 
-
 /**
  *
  * @author Arthas
@@ -22,31 +21,29 @@ import view.Übersicht_Lagerverwaltung;
 public class Pruefen_Controller {
 
     private Select_Stammdaten std = new Select_Stammdaten();
-     private convert cv = new convert();
+    private convert cv = new convert();
     private Übersicht_Lagerverwaltung lv = new Übersicht_Lagerverwaltung();
 
+
+    /*public Pruefen_Controller(Übersicht_Lagerverwaltung lv) {
+        this.lv = lv;
+    }*/
+    
     public boolean pruefe_id(int id) {
-
+        
+       
         try {
-
-
+            
             String vergleich = std.get_ID_ausDB(id);
 
-
             if (vergleich.isEmpty()) {
-
+          
                 JOptionPane.showMessageDialog(lv.auslagern_BestaetigenidButton, "Teil nicht vorhanden");
-                
-                //System.out.println("Kein Teil vorhanden");
+
+                // System.out.println("Kein Teil vorhanden");
                 return false;
-                
-            } else {
 
-                int zahl = cv.StringTOint(vergleich);
-                System.out.println("Teil mit ID " + zahl + " vorhanden");
-        
-            }
-
+            } 
 
         } catch (SQLException e) {
 
@@ -67,7 +64,6 @@ public class Pruefen_Controller {
                 System.out.println("Kein Teil vorhanden");
 
             } else {
-
 
                 System.out.println("Teil mit Bezeichnung " + vergleich + " vorhanden");
 
@@ -96,14 +92,14 @@ public class Pruefen_Controller {
         }
 
         if (mengeaktuell < mengeneu) {
-               
-            return 1;         
+
+            return 1;
         }
 
         if (mengeaktuell == mengeneu) {
-            
+
             return 2;
-        }      
+        }
         return 3;
     }
 

@@ -4,13 +4,16 @@
  */
 package control;
 
+import java.awt.Component;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import model.DB_schreiben;
 import model.Lagerbestandskonto;
 import model.Lagerfachstamm;
@@ -40,6 +43,8 @@ public class Teil_einlagern_Controller {
         this.lv = lv;
     }
     String[] komplett = new String[0];
+    String[] fach = new String[0];
+    String[] menge = new String[0];
     String maxklein = "";
     String maxmittel = "";
     String maxgross = "";
@@ -50,12 +55,10 @@ public class Teil_einlagern_Controller {
     public void einlagern(int id) {
         table = lv.table_einlagern;
 
-
         try {
 
             lagerbes = new Select_Lagerbestandskonto();
-            String[] fach = lagerbes.get_Fachnummer_ausDB(id);
-            String[] menge = new String[0];
+            fach = lagerbes.get_Fachnummer_ausDB(id);
 
             int flag = 0;
             if (fach.length == 0) {
@@ -94,8 +97,7 @@ public class Teil_einlagern_Controller {
 
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
                         fach(id, belegung);
-                    }
-                    if (zahlgross == 0) {
+                    } else if (zahlgross == 0) {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
                         fach(id, belegung);
 
@@ -129,8 +131,7 @@ public class Teil_einlagern_Controller {
 
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
                         fach(id, belegung);
-                    }
-                    if (zahlgross == 0) {
+                    } else if (zahlgross == 0) {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
                         fach(id, belegung);
 
@@ -164,8 +165,7 @@ public class Teil_einlagern_Controller {
 
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
                         fach(id, belegung);
-                    }
-                    if (zahlklein == 0) {
+                    } else if (zahlklein == 0) {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
                         fach(id, belegung);
 
@@ -191,7 +191,6 @@ public class Teil_einlagern_Controller {
             String anz = lv.lagerTextfield1.getText();
 
 
-
             // System.out.println("Eingelagert: Teil mit ID " + id + " ins Fach " + anz + "  und  Menge  " + zahl + "   eingelagert.");
             fachtest();
             //  String a = lv.menge_textfeld_einlagern.getText();
@@ -214,6 +213,7 @@ public class Teil_einlagern_Controller {
     }
 
     public void erste_einlagerung(int id) throws SQLException {
+
         String[] maxarrayklein = new String[1];
         String[] maxarraymittel = new String[1];
         String[] maxarraygross = new String[1];
@@ -222,34 +222,27 @@ public class Teil_einlagern_Controller {
         if (zahlklein == 0 || zahlmittel == 0 || zahlgross == 0) {
 
             if (zahlklein == 0 && zahlmittel == 0 && zahlgross == 0) {
-             JOptionPane.showMessageDialog(lv.bestaetigen_button2, "Für dieses Teil gibt es kein passendes Fach.","Hinweis", 2);
-             //   System.out.println("Für dieses Teil gibt es kein passendes Fach");
-            }
-            if (zahlklein == 0 && zahlmittel == 0) {
+                JOptionPane.showMessageDialog(lv.bestaetigen_button2, "Für dieses Teil gibt es kein passendes Fach.", "Hinweis", 1);
+                //   System.out.println("Für dieses Teil gibt es kein passendes Fach");
+            } else if (zahlklein == 0 && zahlmittel == 0) {
 
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
                 fach(id, belegung);
-            }
-            if (zahlklein == 0 && zahlgross == 0) {
+            } else if (zahlklein == 0 && zahlgross == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
                 fach(id, belegung);
 
-            }
-            if (zahlmittel == 0 && zahlgross == 0) {
+            } else if (zahlmittel == 0 && zahlgross == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
                 fach(id, belegung);
-            }
-            if (zahlklein == 0) {
+            } else if (zahlklein == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
                 fach(id, belegung);
 
-            }
-            if (zahlmittel == 0) {
+            } else if (zahlmittel == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
                 fach(id, belegung);
-            }
-
-            if (zahlgross == 0) {
+            } else if (zahlgross == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
                 fach(id, belegung);
             }
@@ -262,9 +255,10 @@ public class Teil_einlagern_Controller {
         for (int i = 0; i < 1; i++) {
 
             maxarrayklein[i] = maxklein;
-            maxarraymittel[i] = maxklein;
-            maxarraygross[i] = maxklein;
+            maxarraymittel[i] = maxmittel;
+            maxarraygross[i] = maxgross;
         }
+
         model.addColumn("Maximale Anzahl kleines Fach", maxarrayklein);
         model.addColumn("Maximale Anzahl mittleres Fach", maxarraymittel);
         model.addColumn("Maximale Anzahl großes Fach", maxarraygross);
@@ -280,6 +274,7 @@ public class Teil_einlagern_Controller {
         zahlklein = cv.StringTOint(maxklein);
         zahlmittel = cv.StringTOint(maxmittel);
         zahlgross = cv.StringTOint(maxgross);
+
     }
 
     public void fach(int id, String[] belegung) throws SQLException {
@@ -315,12 +310,41 @@ public class Teil_einlagern_Controller {
     }
 
     public void fachtest() {
-        //   create_tabel(komplett.length, 4);
+
+        //  model.addColumn("einlagern?");
+        //  create_table(komplett.length, 5);
         table.setModel(model);
+
+        /*
+         * for (int i = 0; i <komplett.length; i++) { for (int j = 0; j < 4;
+         * j++) { // trinken[i] = domi.getName(i);
+         *
+         * if (j == 0) { // data[i][j] =test[i]; model.setValueAt(komplett[i],
+         * i, j);
+         *
+         * }
+         *
+         * if (j == 1) { // data[i][j] =test[i]; for(int k=0; k<fach.length;k++)
+         * model.setValueAt(menge[k], k, j); //
+         * tabelle.getColumn(domi.getHeadlines(1)).setPreferredWidth(100); } } }
+         *
+         */
+
+        //   table.setModel(model);
 
     }
 
-    public void create_tabel(int zeile, int spalte) {
+    /*
+     * public void create_tabel(int zeile, int spalte) { model = new
+     * javax.swing.table.DefaultTableModel(zeile, spalte) {
+     *
+     * @Override public Class<?> getColumnClass(int column) { if (column == 4) {
+     * return Boolean.class; } return super.getColumnClass(column); } };
+     *
+     * }
+     */
+    public void create_table(int zeile, int spalte) {
+
         model = new javax.swing.table.DefaultTableModel(zeile, spalte) {
 
             @Override
@@ -333,4 +357,12 @@ public class Teil_einlagern_Controller {
         };
 
     }
+
+    /*
+     * public JCheckBox getColumnClass(int column) { if (column == 4) {
+     * JCheckBox box = new JCheckBox(); box.setVisible(true); return box;
+     *
+     * }
+     * return getColumnClass(column); }
+     */
 }

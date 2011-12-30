@@ -15,10 +15,11 @@ import view.Übersicht_Lagerverwaltung;
  * @author Stephan
  */
 public class Teil_auslagern_controller_gui {
-    
+
+   
     public static void auslagern_ausfuehren_button(Übersicht_Lagerverwaltung ul) 
     {
-        
+   
         ul.pr = new Pruefen_Controller();
         String strtemp = ul.auslagerTextfield_fnr.getText();
 
