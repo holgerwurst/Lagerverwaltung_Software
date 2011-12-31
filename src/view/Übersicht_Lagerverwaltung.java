@@ -2092,7 +2092,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      */
     private void auslagern_BestaetigenidButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_BestaetigenidButtonActionPerformed
 
-        control.Teil_auslagern_controller_gui.auslagern_bestaetigen_button(this);
+        control.Teil_auslagern_controller.auslagern_bestaetigen_button(this);
 
     }//GEN-LAST:event_auslagern_BestaetigenidButtonActionPerformed
 
@@ -2147,7 +2147,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      */
     private void auslagern_AusfuehrenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_AusfuehrenButtonActionPerformed
 
-        control.Teil_auslagern_controller_gui.auslagern_ausfuehren_button(this);
+        control.Teil_auslagern_controller.auslagern_ausfuehren_button(this);
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagern_AusfuehrenButtonActionPerformed
 
