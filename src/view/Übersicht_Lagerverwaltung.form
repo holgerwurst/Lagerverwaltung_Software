@@ -41,6 +41,9 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[800, 600]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -388,15 +391,6 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="label_eingabe_aufforderung_id1" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="label_bezeichnung1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="6" pref="6" max="6" attributes="0"/>
-                                      <Component id="label_anzeige_bezeichnung1" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="0" attributes="0"/>
-                                      <Component id="label_mindestgroesse1" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="0" attributes="0"/>
-                                      <Component id="label_anzeige_mindestgroesse1" min="-2" pref="30" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="label_einlagern_nummer3" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                                       <Component id="label_fachnummer16" min="-2" pref="80" max="-2" attributes="0"/>
@@ -503,23 +497,6 @@
                                   <Component id="button_manuell_einlagern" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="label_eingabeaufforderung_einlagern" alignment="0" min="-2" pref="410" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="label_teile_id" min="-2" pref="60" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="lagerTextfield_teileID_manuell_einlagern" min="-2" pref="104" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="suchen_button1" min="-2" pref="130" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="bestaetigen_button_teileID_manuell_einlagern" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="button_fachnumer1" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="label_einlagern_nummer2" min="-2" pref="20" max="-2" attributes="0"/>
                                               <EmptySpace min="10" pref="10" max="10" attributes="0"/>
@@ -553,8 +530,41 @@
                                           </Group>
                                       </Group>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="label_bezeichnung1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="6" pref="6" max="6" attributes="0"/>
+                                      <Component id="label_anzeige_bez_manuell_einlagern" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="label_mindestgroesse1" min="-2" pref="178" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="label_anzeige_klein_einlagern_manuell" min="-2" pref="42" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="label_anzeige_minGR_einlagern_manuell1" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                      <Component id="label_anzeige_mittel_einlagern_manuell" min="-2" pref="42" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="label_anzeige_minGR_einlagern_manuell2" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="label_anzeige_gross_einlagern_manuell" min="-2" pref="42" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="label_anzeige_minGR_einlagern_manuell3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="label_teile_id" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_teileID_manuell_einlagern" min="-2" pref="104" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="suchen_button1" min="-2" pref="130" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Component id="bestaetigen_button_teileID_manuell_einlagern" min="-2" pref="100" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="label_eingabeaufforderung_einlagern" min="-2" pref="410" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="button_fachnumer1" min="-2" pref="180" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace pref="365" max="32767" attributes="0"/>
+                              <EmptySpace pref="316" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -574,19 +584,24 @@
                                       <Component id="bestaetigen_button_teileID_manuell_einlagern" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="7" pref="7" max="7" attributes="0"/>
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="label_bezeichnung1" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_anzeige_bezeichnung1" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_mindestgroesse1" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_anzeige_mindestgroesse1" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="label_anzeige_bez_manuell_einlagern" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="label_mindestgroesse1" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="label_anzeige_klein_einlagern_manuell" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="label_anzeige_minGR_einlagern_manuell1" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="label_anzeige_mittel_einlagern_manuell" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="label_anzeige_minGR_einlagern_manuell2" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="label_anzeige_gross_einlagern_manuell" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="label_anzeige_minGR_einlagern_manuell3" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="20" pref="20" max="20" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label_eingabeaufforderung_einlagern" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="button_fachnumer1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="label_eingabeaufforderung_einlagern" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="button_fachnumer1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="label_einlagern_nummer1" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -734,17 +749,17 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Mindestgr&#xf6;&#xdf;e:"/>
+                        <Property name="text" type="java.lang.String" value="Maximale Anzahl pro Fachgr&#xf6;&#xdf;e:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="label_anzeige_bezeichnung1">
+                    <Component class="javax.swing.JLabel" name="label_anzeige_bez_manuell_einlagern">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="label_anzeige_mindestgroesse1">
+                    <Component class="javax.swing.JLabel" name="label_anzeige_klein_einlagern_manuell">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
@@ -1005,6 +1020,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Best&#xe4;tigen"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bestaetigen_button_teileID_manuell_einlagernActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="label_menge17">
                       <Properties>
@@ -1394,6 +1412,44 @@
                         <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
                       </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="label_anzeige_minGR_einlagern_manuell1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="12" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Klein"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="label_anzeige_mittel_einlagern_manuell">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="12" style="0"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="label_anzeige_minGR_einlagern_manuell2">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="12" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Mittel"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="label_anzeige_minGR_einlagern_manuell3">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="12" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Gro&#xdf;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="label_anzeige_gross_einlagern_manuell">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="12" style="0"/>
+                        </Property>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>

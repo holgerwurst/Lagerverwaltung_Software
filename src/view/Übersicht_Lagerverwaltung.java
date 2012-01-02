@@ -12,6 +12,9 @@ import control.Teil_auslagern_controller;
 import control.Teil_einlagern_Controller;
 import model.Select_Stammdaten;
 import control.convert;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.TeileTypET;
 import view.LagerTextfield.*;
@@ -63,8 +66,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         lagerTextfield1 = new view.LagerTextfield(AllowedSequences.ALL);
         jPanel9 = new javax.swing.JPanel();
         label_mindestgroesse1 = new javax.swing.JLabel();
-        label_anzeige_bezeichnung1 = new javax.swing.JLabel();
-        label_anzeige_mindestgroesse1 = new javax.swing.JLabel();
+        label_anzeige_bez_manuell_einlagern = new javax.swing.JLabel();
+        label_anzeige_klein_einlagern_manuell = new javax.swing.JLabel();
         kapazitaet_pruefen_button11 = new javax.swing.JButton();
         kapazitaet_pruefen_button12 = new javax.swing.JButton();
         kapazitaet_pruefen_button13 = new javax.swing.JButton();
@@ -134,6 +137,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         view.LagerTextfield lagerTextfield_einlagern_manuell_menge8 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         view.LagerTextfield lagerTextfield_einlagern_manuell_menge9 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         view.LagerTextfield lagerTextfield_einlagern_manuell_menge10 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        label_anzeige_minGR_einlagern_manuell1 = new javax.swing.JLabel();
+        label_anzeige_mittel_einlagern_manuell = new javax.swing.JLabel();
+        label_anzeige_minGR_einlagern_manuell2 = new javax.swing.JLabel();
+        label_anzeige_minGR_einlagern_manuell3 = new javax.swing.JLabel();
+        label_anzeige_gross_einlagern_manuell = new javax.swing.JLabel();
         Teilestamm_erweitern = new javax.swing.JPanel();
         label_eingabeaufforderung = new javax.swing.JLabel();
         label_id = new javax.swing.JLabel();
@@ -359,6 +367,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         menge_suchen = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
         jPanel7.setLayout(null);
@@ -479,11 +488,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
 
         label_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_mindestgroesse1.setText("Mindestgröße:");
+        label_mindestgroesse1.setText("Maximale Anzahl pro Fachgröße:");
 
-        label_anzeige_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_bez_manuell_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        label_anzeige_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_klein_einlagern_manuell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         kapazitaet_pruefen_button11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button11.setText("Kapazität prüfen");
@@ -584,6 +593,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         bestaetigen_button_teileID_manuell_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bestaetigen_button_teileID_manuell_einlagern.setText("Bestätigen");
+        bestaetigen_button_teileID_manuell_einlagern.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bestaetigen_button_teileID_manuell_einlagernActionPerformed(evt);
+            }
+        });
 
         label_menge17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge17.setText("Menge:");
@@ -681,6 +695,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         lagerTextfield_einlagern_manuell_menge10.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        label_anzeige_minGR_einlagern_manuell1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_minGR_einlagern_manuell1.setText("Klein");
+
+        label_anzeige_mittel_einlagern_manuell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        label_anzeige_minGR_einlagern_manuell2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_minGR_einlagern_manuell2.setText("Mittel");
+
+        label_anzeige_minGR_einlagern_manuell3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_minGR_einlagern_manuell3.setText("Groß");
+
+        label_anzeige_gross_einlagern_manuell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -689,14 +716,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_eingabe_aufforderung_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(label_bezeichnung1)
-                        .addGap(6, 6, 6)
-                        .addComponent(label_anzeige_bezeichnung1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(label_mindestgroesse1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(label_anzeige_mindestgroesse1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(label_einlagern_nummer3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
@@ -796,19 +815,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     .addComponent(button_manuell_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_eingabeaufforderung_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(label_teile_id, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lagerTextfield_teileID_manuell_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(suchen_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bestaetigen_button_teileID_manuell_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button_fachnumer1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addComponent(label_einlagern_nummer2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
@@ -834,8 +840,38 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(lagerTextfield_einlagern_manuell_menge2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(20, 20, 20)
-                                .addComponent(kapazitaet_pruefen_button18, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(365, Short.MAX_VALUE))
+                                .addComponent(kapazitaet_pruefen_button18, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_bezeichnung1)
+                        .addGap(6, 6, 6)
+                        .addComponent(label_anzeige_bez_manuell_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_mindestgroesse1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_anzeige_klein_einlagern_manuell, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_anzeige_minGR_einlagern_manuell1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(label_anzeige_mittel_einlagern_manuell, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(label_anzeige_minGR_einlagern_manuell2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_anzeige_gross_einlagern_manuell, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(label_anzeige_minGR_einlagern_manuell3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_teile_id, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lagerTextfield_teileID_manuell_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(suchen_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(83, 83, 83)
+                        .addComponent(bestaetigen_button_teileID_manuell_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(label_eingabeaufforderung_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button_fachnumer1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(316, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -853,14 +889,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_bezeichnung1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_anzeige_bezeichnung1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_anzeige_bez_manuell_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_mindestgroesse1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_anzeige_mindestgroesse1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_anzeige_klein_einlagern_manuell, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_anzeige_minGR_einlagern_manuell1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_anzeige_mittel_einlagern_manuell, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_anzeige_minGR_einlagern_manuell2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_anzeige_gross_einlagern_manuell, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_anzeige_minGR_einlagern_manuell3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_eingabeaufforderung_einlagern, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button_fachnumer1))
-                .addGap(17, 17, 17)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_einlagern_nummer1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2141,8 +2182,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
          *
          * try { sid = id_textfeld2.getText(); id = Integer.parseInt(sid);
          * pr.pruefe_id(id); te.einlagern(id); } catch (NumberFormatException
-         * ex) { System.out.println("Bitte nur zahlen eingeben");
-        }
+         * ex) { System.out.println("Bitte nur zahlen eingeben"); }
          */
     }//GEN-LAST:event_id_textfeld2ActionPerformed
 
@@ -2155,6 +2195,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      * Neue Menge des gewählten Faches in Datenbank schreiben.
      *
      * <
+     *
+
      *
      * @param evt
      */
@@ -2188,13 +2230,34 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             sid = id_textfeld2.getText();
             id = Integer.parseInt(sid);
             Boolean vorhanden = pr.pruefe_id(id);
-           if(vorhanden==true){
-               te.einlagern(id);
-           }
+            if (vorhanden == true) {
+                te.einlagern(id);
+            }
         } catch (NumberFormatException ex) {
             System.out.println("Bitte nur zahlen eingeben");
         }
     }//GEN-LAST:event_id_textfeld2FocusLost
+
+    private void bestaetigen_button_teileID_manuell_einlagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestaetigen_button_teileID_manuell_einlagernActionPerformed
+        String txt=lagerTextfield_teileID_manuell_einlagern.getText();
+        convert con = new convert();
+        int id =con.StringTOint(txt);
+        pr.pruefe_id(id);
+        try {
+            
+            label_anzeige_bez_manuell_einlagern.setText(sst.get_Bezeichnung_ausDB(id));
+            label_anzeige_klein_einlagern_manuell.setText(sst.get_max_anzahl_klein_ausDB(id));
+            label_anzeige_mittel_einlagern_manuell.setText(sst.get_max_anzahl_mittel_ausDB(id));
+            label_anzeige_gross_einlagern_manuell.setText(sst.get_max_anzahl_gross_ausDB(id));
+        } catch (SQLException ex) {
+            Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+
+
+    }//GEN-LAST:event_bestaetigen_button_teileID_manuell_einlagernActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2381,11 +2444,16 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JButton kapazitaet_pruefen_button7;
     private javax.swing.JButton kapazitaet_pruefen_button8;
     private javax.swing.JButton kapazitaet_pruefen_button9;
+    private javax.swing.JLabel label_anzeige_bez_manuell_einlagern;
     private javax.swing.JLabel label_anzeige_bezeichnung;
-    private javax.swing.JLabel label_anzeige_bezeichnung1;
+    private javax.swing.JLabel label_anzeige_gross_einlagern_manuell;
+    private javax.swing.JLabel label_anzeige_klein_einlagern_manuell;
+    private javax.swing.JLabel label_anzeige_minGR_einlagern_manuell1;
+    private javax.swing.JLabel label_anzeige_minGR_einlagern_manuell2;
+    private javax.swing.JLabel label_anzeige_minGR_einlagern_manuell3;
     private javax.swing.JLabel label_anzeige_mindestgroesse;
-    private javax.swing.JLabel label_anzeige_mindestgroesse1;
     private javax.swing.JLabel label_anzeige_mindestgroesse2;
+    private javax.swing.JLabel label_anzeige_mittel_einlagern_manuell;
     private javax.swing.JLabel label_anzeige_teile_id;
     private javax.swing.JLabel label_ausgangsfachnummer;
     private javax.swing.JLabel label_baugruppe;
