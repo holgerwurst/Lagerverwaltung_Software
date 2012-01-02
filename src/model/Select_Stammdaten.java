@@ -29,20 +29,21 @@ public class Select_Stammdaten {
         }
         return db.ergebnis;
     }
+      
     
-    public String get_Bezeichnung_ausDB(String bez) throws SQLException {
+    public String[] get_ID_array_ausDB(String bez) throws SQLException {
        
         try {
-            db.connect("Select bezeichnung from Teilestammdaten where bezeichnung ='" + bez + "'", "bezeichnung");
+            db.connect("Select id from Teilestammdaten where bezeichnung like '" + bez + "%"+"'", "id");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {
             System.out.println("JDBC-Treiber nicht vorhanden");
         }
-        return db.ergebnis;
+        return db.ar;
     }
  
-    public String get_Bezeichnung_ausDB(int id)throws ClassNotFoundException {
+    public String get_Bezeichnung_ausDB(int id)throws SQLException {
        
         try {
             db.connect("Select bezeichnung from Teilestammdaten where id=" + id + "", "bezeichnung");
@@ -53,7 +54,7 @@ public class Select_Stammdaten {
         }
          return db.ergebnis;
     }
-    
+      
     public String get_Teiletyp_ausDB(int id) throws ClassNotFoundException {
 
          try {

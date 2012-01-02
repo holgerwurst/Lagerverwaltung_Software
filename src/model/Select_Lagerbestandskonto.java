@@ -40,7 +40,7 @@ public class Select_Lagerbestandskonto {
      
     public String[] get_Fachnummer_gueltig_ausDB(int id, String groesse) throws SQLException {
         try {
-            db.connect("Select fachnummer from Lagerbestandskonto where teile_ID="+id+" and menge<(Select "+groesse+" from Teilestammdaten where id="+id+")", "fachnummer");
+            db.connect("Select fachnummer from Lagerbestandskonto where teile_ID="+id+" and menge<(Select '"+groesse+"' from Teilestammdaten where id="+id+")", "fachnummer");
             db.disconnect();
 
         } catch (ClassNotFoundException ex) {
