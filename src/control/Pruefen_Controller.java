@@ -21,7 +21,6 @@ import view.Übersicht_Lagerverwaltung;
 public class Pruefen_Controller {
 
     private Select_Stammdaten std = new Select_Stammdaten();
-    private convert cv = new convert();
     private Übersicht_Lagerverwaltung lv = new Übersicht_Lagerverwaltung();
 
 
