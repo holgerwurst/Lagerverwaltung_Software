@@ -397,151 +397,160 @@
                                       <Component id="label_anzeige_mindestgroesse1" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="label_einlagern_nummer1" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="label_fachnummer11" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld17" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
-                                      <Component id="label_menge12" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld19" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="kapazitaet_pruefen_button15" min="-2" pref="120" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="label_einlagern_nummer2" min="-2" pref="20" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="label_fachnummer13" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld16" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
-                                      <Component id="label_menge13" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld20" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="20" attributes="0"/>
-                                      <Component id="kapazitaet_pruefen_button18" min="-2" pref="120" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="label_einlagern_nummer3" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                                       <Component id="label_fachnummer16" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld15" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr3" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="label_menge11" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld18" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge3" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="kapazitaet_pruefen_button17" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="label_einlagern_nummer4" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                                       <Component id="label_fachnummer12" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld14" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr4" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="label_menge15" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld15" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge4" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="kapazitaet_pruefen_button11" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="label_einlagern_nummer5" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                                       <Component id="label_fachnummer15" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld13" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr5" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="label_menge18" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld16" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge5" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="kapazitaet_pruefen_button12" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="label_einlagern_nummer6" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                                       <Component id="label_fachnummer19" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld12" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr6" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="label_menge19" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld14" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge6" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="kapazitaet_pruefen_button13" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="label_einlagern_nummer7" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                                       <Component id="label_fachnummer20" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld19" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr7" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="label_menge20" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld21" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge7" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="kapazitaet_pruefen_button19" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="label_einlagern_nummer8" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                                       <Component id="label_fachnummer18" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld20" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr8" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="label_menge17" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld13" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge8" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="kapazitaet_pruefen_button14" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="label_einlagern_nummer9" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                                       <Component id="label_fachnummer17" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld11" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr9" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="label_menge14" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld12" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge9" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="kapazitaet_pruefen_button16" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="label_einlagern_nummer10" min="-2" pref="20" max="-2" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                                       <Component id="label_fachnummer14" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="fachnummer_textfeld18" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="60" pref="60" max="60" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr10" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                       <Component id="label_menge16" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="menge_textfeld17" min="-2" pref="80" max="-2" attributes="0"/>
-                                      <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge10" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="kapazitaet_pruefen_button20" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="einlagern_button_fach" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="button_manuell_einlagern" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="label_eingabeaufforderung_einlagern" alignment="0" min="-2" pref="410" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="label_teile_id" min="-2" pref="60" max="-2" attributes="0"/>
-                                              <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                              <Component id="id_textfeld" min="-2" pref="100" max="-2" attributes="0"/>
-                                              <EmptySpace min="30" pref="30" max="30" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_teileID_manuell_einlagern" min="-2" pref="104" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="suchen_button1" min="-2" pref="130" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="bestaetigen_button1" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="bestaetigen_button_teileID_manuell_einlagern" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                           <Component id="button_fachnumer1" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="label_einlagern_nummer2" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <EmptySpace min="10" pref="10" max="10" attributes="0"/>
+                                              <Component id="label_fachnummer13" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_fnr2" min="-2" pref="80" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="label_einlagern_nummer1" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <EmptySpace min="10" pref="10" max="10" attributes="0"/>
+                                              <Component id="label_fachnummer11" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_fnr1" min="-2" pref="80" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="label_menge12" min="-2" pref="50" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_menge1" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="kapazitaet_pruefen_button15" min="-2" pref="120" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="label_menge13" min="-2" pref="50" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_menge2" min="-2" pref="80" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="kapazitaet_pruefen_button18" min="-2" pref="120" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -556,11 +565,13 @@
                               <Component id="label_eingabe_aufforderung_id1" min="-2" pref="20" max="-2" attributes="0"/>
                               <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label_teile_id" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="id_textfeld" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_teile_id" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_teileID_manuell_einlagern" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                       <Component id="suchen_button1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="bestaetigen_button1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bestaetigen_button_teileID_manuell_einlagern" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="7" pref="7" max="7" attributes="0"/>
@@ -575,131 +586,155 @@
                                   <Component id="label_eingabeaufforderung_einlagern" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                                   <Component id="button_fachnumer1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="16" pref="16" max="16" attributes="0"/>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="fachnummer_textfeld17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="label_einlagern_nummer1" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                          <Component id="label_fachnummer11" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                          <Component id="label_menge12" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                              <Component id="menge_textfeld19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="kapazitaet_pruefen_button15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                  <Component id="label_einlagern_nummer1" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_fachnummer11" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_menge12" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="kapazitaet_pruefen_button15" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="label_einlagern_nummer2" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_fachnummer13" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="fachnummer_textfeld16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_fachnummer13" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="label_menge13" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="menge_textfeld20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="kapazitaet_pruefen_button18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="kapazitaet_pruefen_button18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace min="7" pref="7" max="7" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="label_einlagern_nummer3" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_fachnummer16" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="fachnummer_textfeld15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="label_menge11" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="menge_textfeld18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_fachnummer16" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_menge11" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="kapazitaet_pruefen_button17" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="7" pref="7" max="7" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="label_einlagern_nummer4" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_fachnummer12" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="fachnummer_textfeld14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="label_menge15" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="menge_textfeld15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_fachnummer12" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_menge15" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="kapazitaet_pruefen_button11" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="7" pref="7" max="7" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="label_einlagern_nummer5" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_fachnummer15" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="fachnummer_textfeld13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="label_menge18" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="menge_textfeld16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_fachnummer15" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_menge18" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="kapazitaet_pruefen_button12" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="7" pref="7" max="7" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="label_einlagern_nummer6" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_fachnummer19" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="fachnummer_textfeld12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="label_fachnummer19" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="label_menge19" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="menge_textfeld14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="kapazitaet_pruefen_button13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="kapazitaet_pruefen_button13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_menge6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="7" pref="7" max="7" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label_einlagern_nummer7" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_fachnummer20" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="fachnummer_textfeld19" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="label_menge20" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="menge_textfeld21" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="kapazitaet_pruefen_button19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="7" pref="7" max="7" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="label_einlagern_nummer7" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Component id="label_fachnummer20" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="label_menge20" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_menge7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="kapazitaet_pruefen_button19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="7" pref="7" max="7" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="label_einlagern_nummer8" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="label_fachnummer18" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_fnr8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="label_menge17" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_menge8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="kapazitaet_pruefen_button14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="7" pref="7" max="7" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="label_einlagern_nummer9" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="label_fachnummer17" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_fnr9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="label_menge14" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_menge9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="kapazitaet_pruefen_button16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="7" pref="7" max="7" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="label_einlagern_nummer10" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="label_fachnummer14" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_fnr10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="label_menge16" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield_einlagern_manuell_menge10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="kapazitaet_pruefen_button20" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="17" pref="17" max="17" attributes="0"/>
+                                      <Component id="button_manuell_einlagern" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lagerTextfield_einlagern_manuell_fnr7" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="7" pref="7" max="7" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label_einlagern_nummer8" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_fachnummer18" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="fachnummer_textfeld20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="label_menge17" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="menge_textfeld13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="kapazitaet_pruefen_button14" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="7" pref="7" max="7" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label_einlagern_nummer9" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_fachnummer17" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="fachnummer_textfeld11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="label_menge14" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="menge_textfeld12" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="kapazitaet_pruefen_button16" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="7" pref="7" max="7" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label_einlagern_nummer10" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="label_fachnummer14" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="fachnummer_textfeld18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="label_menge16" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="menge_textfeld17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="kapazitaet_pruefen_button20" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="17" pref="17" max="17" attributes="0"/>
-                              <Component id="einlagern_button_fach" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld12">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="label_mindestgroesse1">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Mindestgr&#xf6;&#xdf;e:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld13">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="label_anzeige_bezeichnung1">
@@ -709,22 +744,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld11">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="label_anzeige_mindestgroesse1">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld14">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
@@ -763,14 +783,6 @@
                         <Property name="text" type="java.lang.String" value="Bezeichnung:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld12">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JButton" name="kapazitaet_pruefen_button14">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -802,28 +814,6 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Fachnummer:"/>
                         <Property name="inheritsPopupMenu" type="boolean" value="false"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld13">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld15">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld16">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="label_einlagern_nummer3">
@@ -876,13 +866,6 @@
                         <Property name="text" type="java.lang.String" value="Menge:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld17">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="label_menge13">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -920,7 +903,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Suche Fachhnummer"/>
+                        <Property name="text" type="java.lang.String" value="Suche Fachnummer"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="label_einlagern_nummer10">
@@ -938,14 +921,6 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Fachnummer:"/>
                         <Property name="inheritsPopupMenu" type="boolean" value="false"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld14">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="label_fachnummer15">
@@ -999,42 +974,12 @@
                         <Property name="inheritsPopupMenu" type="boolean" value="false"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld18">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JButton" name="kapazitaet_pruefen_button17">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Kapazit&#xe4;t pr&#xfc;fen"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld15">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld16">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld19">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="kapazitaet_pruefen_button18">
@@ -1045,21 +990,6 @@
                         <Property name="text" type="java.lang.String" value="Kapazit&#xe4;t pr&#xfc;fen"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld20">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="id_textfeld">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="toolTipText" type="java.lang.String" value=""/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="label_einlagern_nummer8">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1068,15 +998,7 @@
                         <Property name="text" type="java.lang.String" value="8."/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld17">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="bestaetigen_button1">
+                    <Component class="javax.swing.JButton" name="bestaetigen_button_teileID_manuell_einlagern">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
@@ -1090,14 +1012,6 @@
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Menge:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld18">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="kapazitaet_pruefen_button19">
@@ -1132,14 +1046,6 @@
                         <Property name="text" type="java.lang.String" value="5."/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld19">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="label_fachnummer18">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1147,13 +1053,6 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Fachnummer:"/>
                         <Property name="inheritsPopupMenu" type="boolean" value="false"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="menge_textfeld21">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="label_menge18">
@@ -1164,7 +1063,7 @@
                         <Property name="text" type="java.lang.String" value="Menge:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="einlagern_button_fach">
+                    <Component class="javax.swing.JButton" name="button_manuell_einlagern">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial" size="12" style="0"/>
@@ -1195,14 +1094,6 @@
                           <Font name="Arial" size="12" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Menge:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="fachnummer_textfeld20">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="12" style="0"/>
-                        </Property>
-                        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="label_einlagern_nummer6">
@@ -1253,6 +1144,256 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Suche Teile ID"/>
                       </Properties>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_teileID_manuell_einlagern">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge1">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr2">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr3">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr4">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr5">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr6">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr7">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr8">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr9">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_fnr10">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ALL)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge2">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge3">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge4">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge5">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge6">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge7">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge8">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge9">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="view.LagerTextfield" name="lagerTextfield_einlagern_manuell_menge10">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="11" style="0"/>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+                        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
