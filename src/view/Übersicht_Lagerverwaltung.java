@@ -116,25 +116,25 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         kapazitaet_pruefen_button20 = new javax.swing.JButton();
         suchen_button1 = new javax.swing.JButton();
         lagerTextfield_teileID_manuell_einlagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr1 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_menge1 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr2 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr3 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr4 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr5 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr6 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr7 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr8 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr9 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_fnr10 = new view.LagerTextfield(AllowedSequences.ALL);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_menge2 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_menge3 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_menge4 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_menge5 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_menge6 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_menge7 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_menge8 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        view.LagerTextfield lagerTextfield_einlagern_manuell_menge9 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        lagerTextfield_einlagern_manuell_fnr1 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_menge1 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        lagerTextfield_einlagern_manuell_fnr2 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_fnr3 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_fnr4 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_fnr5 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_fnr6 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_fnr7 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_fnr8 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_fnr9 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_fnr10 = new view.LagerTextfield(AllowedSequences.ALL);
+        lagerTextfield_einlagern_manuell_menge2 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        lagerTextfield_einlagern_manuell_menge3 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        lagerTextfield_einlagern_manuell_menge4 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        lagerTextfield_einlagern_manuell_menge5 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        lagerTextfield_einlagern_manuell_menge6 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        lagerTextfield_einlagern_manuell_menge7 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        lagerTextfield_einlagern_manuell_menge8 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        lagerTextfield_einlagern_manuell_menge9 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         view.LagerTextfield lagerTextfield_einlagern_manuell_menge10 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         label_anzeige_minGR_einlagern_manuell1 = new javax.swing.JLabel();
         label_anzeige_mittel_einlagern_manuell = new javax.swing.JLabel();
@@ -617,6 +617,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         button_manuell_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_manuell_einlagern.setText("Einlagern");
+        button_manuell_einlagern.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_manuell_einlagernActionPerformed(evt);
+            }
+        });
 
         label_fachnummer19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer19.setText("Fachnummer:");
@@ -649,44 +654,64 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         lagerTextfield_teileID_manuell_einlagern.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr1.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge1.setEditable(false);
         lagerTextfield_einlagern_manuell_menge1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr2.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr3.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr3.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr4.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr4.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr5.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr5.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr6.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr6.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr7.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr7.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr8.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr8.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr9.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr9.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_fnr10.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr10.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge2.setEditable(false);
         lagerTextfield_einlagern_manuell_menge2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge3.setEditable(false);
         lagerTextfield_einlagern_manuell_menge3.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge4.setEditable(false);
         lagerTextfield_einlagern_manuell_menge4.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge5.setEditable(false);
         lagerTextfield_einlagern_manuell_menge5.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge6.setEditable(false);
         lagerTextfield_einlagern_manuell_menge6.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge7.setEditable(false);
         lagerTextfield_einlagern_manuell_menge7.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge8.setEditable(false);
         lagerTextfield_einlagern_manuell_menge8.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge9.setEditable(false);
         lagerTextfield_einlagern_manuell_menge9.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
+        lagerTextfield_einlagern_manuell_menge10.setEditable(false);
         lagerTextfield_einlagern_manuell_menge10.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         label_anzeige_minGR_einlagern_manuell1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -2166,18 +2191,18 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         pr = new control.Pruefen_Controller();
         te = new Teil_einlagern_Controller(this);
         String bez = bezeichnung_textfeld1.getText();
-        
-            Boolean vorhanden =pr.pruefe_bezeichnung(bez);
-            
-            if (vorhanden == true) {       
+
+        Boolean vorhanden = pr.pruefe_bezeichnung(bez);
+
+        if (vorhanden == true) {
             te.teil_auswaehlen(bez);
-              
-            }
-       
-        
-        
-      
-   
+
+        }
+
+
+
+
+
 
     }//GEN-LAST:event_bezeichnung_textfeld1ActionPerformed
 
@@ -2201,6 +2226,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      * Neue Menge des gewählten Faches in Datenbank schreiben.
      *
      * <
+     *
+     *
      *
 
      *
@@ -2228,17 +2255,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void id_textfeld2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_id_textfeld2FocusLost
         pr = new control.Pruefen_Controller();
         te = new Teil_einlagern_Controller(this);
-        
+
         String sid = "";
         int id = 0;
-        
+
         try {
             sid = id_textfeld2.getText();
             id = Integer.parseInt(sid);
             Boolean vorhanden = pr.pruefe_id(id);
             if (vorhanden == true) {
-             te.einlagern(id);
-              
+                te.einlagern(id);
+
             }
         } catch (NumberFormatException ex) {
             System.out.println("Bitte nur zahlen eingeben");
@@ -2249,20 +2276,37 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         cv = new convert();
         pr = new control.Pruefen_Controller();
         sst = new Select_Stammdaten();
-        int id =cv.StringTOint(lagerTextfield_teileID_manuell_einlagern.getText());
-        pr.pruefe_id(id);
-        try {            
-            label_anzeige_bez_manuell_einlagern.setText(sst.get_Bezeichnung_ausDB(id));
-            label_anzeige_klein_einlagern_manuell.setText(sst.get_max_anzahl_klein_ausDB(id));
-            label_anzeige_mittel_einlagern_manuell.setText(sst.get_max_anzahl_mittel_ausDB(id));
-            label_anzeige_gross_einlagern_manuell.setText(sst.get_max_anzahl_gross_ausDB(id));
-        } catch (SQLException ex) {
-            Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+        int id = cv.StringTOint(lagerTextfield_teileID_manuell_einlagern.getText());
+        boolean check = pr.pruefe_id(id);
+        if (check == true) {
+            try {
+                label_anzeige_bez_manuell_einlagern.setText(sst.get_Bezeichnung_ausDB(id));
+                label_anzeige_klein_einlagern_manuell.setText(sst.get_max_anzahl_klein_ausDB(id));
+                label_anzeige_mittel_einlagern_manuell.setText(sst.get_max_anzahl_mittel_ausDB(id));
+                label_anzeige_gross_einlagern_manuell.setText(sst.get_max_anzahl_gross_ausDB(id));
+            } catch (SQLException ex) {
+                Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                lagerTextfield_einlagern_manuell_fnr1.setEditable(true);
+                lagerTextfield_einlagern_manuell_menge1.setEditable(true);
+        }else{
+        lagerTextfield_teileID_manuell_einlagern.setText("");
         }
         
 
 
+
+
+
+
     }//GEN-LAST:event_bestaetigen_button_teileID_manuell_einlagernActionPerformed
+
+    private void button_manuell_einlagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_manuell_einlagernActionPerformed
+        pr = new control.Pruefen_Controller();
+
+
+
+    }//GEN-LAST:event_button_manuell_einlagernActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2566,6 +2610,25 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel label_zeichnungsnummer;
     private javax.swing.JLabel label_zeichnungsnummer1;
     private javax.swing.JLabel laber_noch_einzulagern;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr1;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr10;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr2;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr3;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr4;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr5;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr6;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr7;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr8;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_fnr9;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_menge1;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_menge2;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_menge3;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_menge4;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_menge5;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_menge6;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_menge7;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_menge8;
+    private view.LagerTextfield lagerTextfield_einlagern_manuell_menge9;
     private view.LagerTextfield lagerTextfield_teileID_manuell_einlagern;
     private javax.swing.JButton lagerplatz_suchen_historie;
     private javax.swing.JButton loeschenButton;
