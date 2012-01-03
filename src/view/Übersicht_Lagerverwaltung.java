@@ -493,6 +493,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_anzeige_bez_manuell_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         label_anzeige_klein_einlagern_manuell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_klein_einlagern_manuell.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         kapazitaet_pruefen_button11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button11.setText("Kapazität prüfen");
@@ -699,6 +700,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_anzeige_minGR_einlagern_manuell1.setText("Klein");
 
         label_anzeige_mittel_einlagern_manuell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_mittel_einlagern_manuell.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         label_anzeige_minGR_einlagern_manuell2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_anzeige_minGR_einlagern_manuell2.setText("Mittel");
@@ -707,6 +709,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_anzeige_minGR_einlagern_manuell3.setText("Groß");
 
         label_anzeige_gross_einlagern_manuell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_gross_einlagern_manuell.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -2239,12 +2242,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_id_textfeld2FocusLost
 
     private void bestaetigen_button_teileID_manuell_einlagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestaetigen_button_teileID_manuell_einlagernActionPerformed
-        String txt=lagerTextfield_teileID_manuell_einlagern.getText();
-        convert con = new convert();
-        int id =con.StringTOint(txt);
+        cv = new convert();
+        pr = new control.Pruefen_Controller();
+        sst = new Select_Stammdaten();
+        int id =cv.StringTOint(lagerTextfield_teileID_manuell_einlagern.getText());
         pr.pruefe_id(id);
-        try {
-            
+        try {            
             label_anzeige_bez_manuell_einlagern.setText(sst.get_Bezeichnung_ausDB(id));
             label_anzeige_klein_einlagern_manuell.setText(sst.get_max_anzahl_klein_ausDB(id));
             label_anzeige_mittel_einlagern_manuell.setText(sst.get_max_anzahl_mittel_ausDB(id));
