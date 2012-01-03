@@ -74,7 +74,7 @@ public class Select_Allgemein {
     
     public String[] get_menge_ausDB(String groesse, int id) throws SQLException {
           try {
-            db.connect("Select menge from Lagerbestandskonto where teile_ID="+id+" and menge<(Select "+groesse+" from Teilestammdaten);", "menge");
+            db.connect("Select menge from Lagerbestandskonto where teile_ID="+id+" and menge<(Select "+groesse+" from Teilestammdaten where id="+id+")", "menge");
             db.disconnect();
             
         } catch (ClassNotFoundException ex) {

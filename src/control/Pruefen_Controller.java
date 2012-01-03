@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import model.Datenbankverbindung;
 import model.Select_Stammdaten;
 import view.Nutzerhinweis1;
@@ -21,14 +23,9 @@ import view.Übersicht_Lagerverwaltung;
 public class Pruefen_Controller {
 
     private Select_Stammdaten std = new Select_Stammdaten();
-    private convert cv = new convert();
     private Übersicht_Lagerverwaltung lv = new Übersicht_Lagerverwaltung();
 
-
-    /*public Pruefen_Controller(Übersicht_Lagerverwaltung lv) {
-        this.lv = lv;
-    }*/
-    
+ 
     public boolean pruefe_id(int id) {
         
        
@@ -55,23 +52,19 @@ public class Pruefen_Controller {
 
     }
 
-    public void pruefe_bezeichnung(String bezeichnung) {
+    public Boolean pruefe_bezeichnung(String bezeichnung) {
         try {
-            String vergleich = std.get_Bezeichnung_ausDB(bezeichnung);
+            String[] vergleich = std.get_ID_array_ausDB(bezeichnung);
 
-            if (vergleich.isEmpty()) {
+            if (vergleich.length == 0) {
 
-                System.out.println("Kein Teil vorhanden");
-
-            } else {
-
-                System.out.println("Teil mit Bezeichnung " + vergleich + " vorhanden");
-
-            }
-
+               JOptionPane.showMessageDialog(lv.auslagern_BestaetigenidButton, "Teil nicht vorhanden");
+               return false;
+            }           
         } catch (SQLException e) {
-            System.out.println("Kein Teil vorhanden");
+            System.out.println(e);
         }
+       return true;
     }
 
     /**
