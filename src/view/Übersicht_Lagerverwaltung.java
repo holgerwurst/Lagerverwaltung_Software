@@ -403,9 +403,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_eingabe_aufforderung_id2);
         label_eingabe_aufforderung_id2.setBounds(30, 20, 300, 20);
 
-        bezeichnung_textfeld1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bezeichnung_textfeld1ActionPerformed(evt);
+        bezeichnung_textfeld1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                bezeichnung_textfeld1FocusLost(evt);
             }
         });
         jPanel8.add(bezeichnung_textfeld1);
@@ -426,11 +426,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel8.add(label_menge);
         label_menge.setBounds(40, 110, 180, 15);
 
-        id_textfeld2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                id_textfeld2ActionPerformed(evt);
-            }
-        });
         id_textfeld2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 id_textfeld2FocusLost(evt);
@@ -469,6 +464,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        table_einlagern.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_einlagernMouseClicked(evt);
             }
         });
         jScrollPane4.setViewportView(table_einlagern);
@@ -2187,36 +2187,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     }//GEN-LAST:event_button_anlegenActionPerformed
 
-    private void bezeichnung_textfeld1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bezeichnung_textfeld1ActionPerformed
-        pr = new control.Pruefen_Controller();
-        te = new Teil_einlagern_Controller(this);
-        String bez = bezeichnung_textfeld1.getText();
-
-        Boolean vorhanden = pr.pruefe_bezeichnung(bez);
-
-        if (vorhanden == true) {
-            te.teil_auswaehlen(bez);
-
-        }
-
-
-
-
-
-
-    }//GEN-LAST:event_bezeichnung_textfeld1ActionPerformed
-
-    private void id_textfeld2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_textfeld2ActionPerformed
-        /*
-         * pr = new control.Pruefen_Controller(); te= new
-         * Teil_einlagern_Controller(this); String sid = ""; int id = 0;
-         *
-         * try { sid = id_textfeld2.getText(); id = Integer.parseInt(sid);
-         * pr.pruefe_id(id); te.einlagern(id); } catch (NumberFormatException
-         * ex) { System.out.println("Bitte nur zahlen eingeben"); }
-         */
-    }//GEN-LAST:event_id_textfeld2ActionPerformed
-
     private void auslagerTextfield_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_IDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagerTextfield_IDActionPerformed
@@ -2226,6 +2196,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      * Neue Menge des gewählten Faches in Datenbank schreiben.
      *
      * <
+     *
+     *
+     *
+     *
+     *
+     *
      *
      *
      *
@@ -2255,7 +2231,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void id_textfeld2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_id_textfeld2FocusLost
         pr = new control.Pruefen_Controller();
         te = new Teil_einlagern_Controller(this);
-
+        bezeichnung_textfeld1.setText("");
         String sid = "";
         int id = 0;
 
@@ -2268,7 +2244,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
             }
         } catch (NumberFormatException ex) {
-            System.out.println("Bitte nur zahlen eingeben");
+            System.out.println("Bitte eine Zahl eingeben");
         }
     }//GEN-LAST:event_id_textfeld2FocusLost
 
@@ -2287,12 +2263,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
             }
-                lagerTextfield_einlagern_manuell_fnr1.setEditable(true);
-                lagerTextfield_einlagern_manuell_menge1.setEditable(true);
-        }else{
-        lagerTextfield_teileID_manuell_einlagern.setText("");
+            lagerTextfield_einlagern_manuell_fnr1.setEditable(true);
+            lagerTextfield_einlagern_manuell_menge1.setEditable(true);
+        } else {
+            lagerTextfield_teileID_manuell_einlagern.setText("");
         }
-        
+
 
 
 
@@ -2307,6 +2283,47 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_button_manuell_einlagernActionPerformed
+
+    private void table_einlagernMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_einlagernMouseClicked
+        te = new Teil_einlagern_Controller(this);
+        cv = new convert();
+        String mar = "";
+        if (id_textfeld2.getText().isEmpty()) {
+            try {
+                mar = (String) (table_einlagern.getValueAt(table_einlagern.getSelectedRow(), 0));
+
+            } catch (Exception e) {
+                System.out.println("Bitte eine Zeile markieren.");
+            }
+            System.out.println(mar);
+
+            int antwort = JOptionPane.showConfirmDialog(this, "Möchte sieh diese ID übernehmen?", "Auswahl der Teile-ID", 2);
+
+            if (antwort == JOptionPane.OK_OPTION) {
+                id_textfeld2.setText(mar);
+                bezeichnung_textfeld1.setText("");
+                int id = cv.StringTOint(mar);
+                te.einlagern(id);
+
+            } else {
+            }
+        }
+    }//GEN-LAST:event_table_einlagernMouseClicked
+
+    private void bezeichnung_textfeld1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bezeichnung_textfeld1FocusLost
+        pr = new control.Pruefen_Controller();
+        te = new Teil_einlagern_Controller(this);
+
+        String bez = bezeichnung_textfeld1.getText();
+        if (bez.isEmpty()) {
+        } else {
+            id_textfeld2.setText("");
+            Boolean vorhanden = pr.pruefe_bezeichnung(bez);
+            if (vorhanden == true) {
+                te.teil_auswaehlen(bez);
+            }
+        }
+    }//GEN-LAST:event_bezeichnung_textfeld1FocusLost
 
     /**
      * @param args the command line arguments
