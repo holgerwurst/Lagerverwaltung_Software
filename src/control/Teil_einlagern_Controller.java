@@ -229,48 +229,6 @@ public class Teil_einlagern_Controller {
                 model.addColumn("Maximale Anzahl großes Fach", maxG);
             }
 
-
-
-            if (flag == 4) {
-                String[] maxK = new String[1];
-                menge = sa.get_menge_ausDB("max_anz_klein", id);
-
-                parse(id);
-
-                if (zahlmittel == 0 || zahlgross == 0) {
-
-                    if (zahlmittel == 0 && zahlgross == 0) {
-
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
-                        freieFaecher(id, belegung, "max_anz_klein");
-                    } else if (zahlgross == 0) {
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
-                        freieFaecher(id, belegung, "max_anz_klein");
-
-                    } else {
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
-                        freieFaecher(id, belegung, "max_anz_klein");
-                    }
-
-                } else {
-                    String[] belegung = lf.get_fachnummer_ausDB(false);
-                    freieFaecher(id, belegung, "max_anz_klein");
-                }
-
-                for (int i = 0; i < 1; i++) {
-                    maxK[i] = maxklein;
-                    //      System.out.println("Array   " + maxK[i]);
-                    //    System.out.println("max " + maxK[i]);
-                }
-
-                model.addColumn("aktuelle Menge", menge);
-                model.addColumn("Maximale Anzahl kleines Fach", maxK);
-
-            }
-
-
-
-
             // System.out.println("Eingelagert: Teil mit ID " + id + " ins Fach " + anz + "  und  Menge  " + zahl + "   eingelagert.");
             fachtest();
 
@@ -288,9 +246,9 @@ public class Teil_einlagern_Controller {
             cv = new convert();
 
             String menge = "";
-          
- // System.out.println("ID " + ids);
-           // int id = cv.StringTOint(ids);
+
+            // System.out.println("ID " + ids);
+            // int id = cv.StringTOint(ids);
 
             String inhalt = lv.menge_textfeld_einlagern.getText();
 
@@ -318,15 +276,17 @@ public class Teil_einlagern_Controller {
             String text = String.valueOf(neueMenge);
             lv.label_menge_übrig.setText(text);
 
-        //    Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, zahl, null, null);
-          //  dbs.insert_lagerbestandskonto(lbk);
-         //   dbs.update_lagerfachstamm(fachnummer, true);
+            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, zahl, null, null);
+            dbs.insert_lagerbestandskonto(lbk);
+            dbs.update_lagerfachstamm(fachnummer, true);
+
         } catch (Exception e) {
         }
     }
 
     public void erste_einlagerung(int id) throws SQLException {
-
+        lf = new Select_Lagerfachstamm();
+        
         String[] maxarrayklein = new String[1];
         String[] maxarraymittel = new String[1];
         String[] maxarraygross = new String[1];
