@@ -2466,8 +2466,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 try {
                 te = new Teil_einlagern_Controller(this);
                 String mar = (String) (table_einlagern.getValueAt(table_einlagern.getSelectedRow(), 0));
-               
+             
                 int id = cv.StringTOint(id_textfeld2.getText());
+                label_menge_übrig.setText(id_textfeld2.getText());
                 te.einlagern(mar, id);
 
             } catch (NumberFormatException e) {
@@ -2616,7 +2617,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField datum_textfeld_historie;
     private javax.swing.JButton drucken_button_historie;
     private javax.swing.JLabel eingebenLabel;
-    private javax.swing.JButton einlagern_button_tabelle;
+    public javax.swing.JButton einlagern_button_tabelle;
     public javax.swing.JTextField entfernenIDTextfield;
     private javax.swing.JPanel entfernenJTabbedPane;
     private javax.swing.JMenuItem fach_suchen;

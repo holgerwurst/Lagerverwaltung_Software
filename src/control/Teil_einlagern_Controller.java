@@ -246,12 +246,14 @@ public class Teil_einlagern_Controller {
             cv = new convert();
 
             String menge = "";
+            int neueMenge = 0;
 
             // System.out.println("ID " + ids);
             // int id = cv.StringTOint(ids);
 
             String inhalt = lv.menge_textfeld_einlagern.getText();
 
+        //    lv.label_menge_übrig.setText(inhalt);
             int einzulagern = cv.StringTOint(inhalt);
 
             System.out.println("zahl  " + inhalt);
@@ -272,21 +274,37 @@ public class Teil_einlagern_Controller {
             }
             int zahl = cv.StringTOint(menge);
 
-            int neueMenge = einzulagern - zahl;
+            //   int menge_uebrig = cv.StringTOint(lv.label_menge_übrig.getText());
+
+
+            if (einzulagern < zahl && einzulagern!=0) {
+                //zahl = einzulagern;
+                neueMenge = einzulagern;
+            } else if (einzulagern == 0) {
+                System.out.println("0");
+              //  neueMenge = einzulagern;
+            } else {
+                neueMenge = einzulagern - zahl;
+            }
+
             String text = String.valueOf(neueMenge);
+            //  int neueMenge = einzulagern - zahl;
+            //String text = String.valueOf(neueMenge);
             lv.label_menge_übrig.setText(text);
 
-            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, zahl, null, null);
+
+            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
             dbs.insert_lagerbestandskonto(lbk);
             dbs.update_lagerfachstamm(fachnummer, true);
-
+            
+        JOptionPane.showMessageDialog(lv.label_auswahl, "Teil erfolgreich eingelagert", "Teil eingelagert",2);
         } catch (Exception e) {
         }
     }
 
     public void erste_einlagerung(int id) throws SQLException {
         lf = new Select_Lagerfachstamm();
-        
+
         String[] maxarrayklein = new String[1];
         String[] maxarraymittel = new String[1];
         String[] maxarraygross = new String[1];
