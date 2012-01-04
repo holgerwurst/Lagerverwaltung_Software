@@ -14,7 +14,7 @@ public class Select_Lagerbestandskonto {
 
     Datenbankverbindung db = new Datenbankverbindung();
     
-    public String[] get_ID_ausDB(String fachnummer) throws ClassNotFoundException {
+    public String get_ID_ausDB(String fachnummer) throws SQLException {
         try {
             db.connect("Select teile_id from Lagerbestandskonto where fachnummer ='" + fachnummer + "'", "teile_id");
             db.disconnect();
@@ -22,7 +22,7 @@ public class Select_Lagerbestandskonto {
         } catch (ClassNotFoundException ex) {
             System.out.println("JDBC-Treiber nicht vorhanden");
         }
-        return db.ar;
+        return db.ergebnis;
     }
     
     

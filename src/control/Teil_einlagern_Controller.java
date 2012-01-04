@@ -76,7 +76,7 @@ public class Teil_einlagern_Controller {
                 System.out.println(bezeichnung);
 
                 for (int j = 0; j < 1; j++) {
-                  
+
                     bezeichnungarray[i] = bezeichnung;
                 }
             }
@@ -93,7 +93,7 @@ public class Teil_einlagern_Controller {
         //   te.einlagern(id);
     }
 
-    public void einlagern(int id) {
+    public void einlagern_vorbereiten(int id) {
         table = lv.table_einlagern;
 
         try {
@@ -273,23 +273,56 @@ public class Teil_einlagern_Controller {
 
             // System.out.println("Eingelagert: Teil mit ID " + id + " ins Fach " + anz + "  und  Menge  " + zahl + "   eingelagert.");
             fachtest();
-            //  String a = lv.menge_textfeld_einlagern.getText();
-            //  int einzulagern = cv.StringTOint(a);
 
-            //   System.out.println("zahl"+a);
-
-            // int neueMenge = einzulagern - zahl;
-            //    String text = String.valueOf(neueMenge);
-            //    lv.label_menge_übrig.setText(text);
-
-            //  Lagerbestandskonto lbk = new Lagerbestandskonto(anz, id, zahl, null, null);
-            //   dbs.insert_lagerbestandskonto(lbk);
-            // dbs.update_lagerfachstamm(anz, true);
 
         } catch (SQLException e) {
             System.out.println(e);
         }
 
+    }
+
+    public void einlagern(String fachnummer, int id) {
+        try {
+            lagerbes = new Select_Lagerbestandskonto();
+            st = new Select_Stammdaten();
+            cv = new convert();
+
+            String menge = "";
+          
+ // System.out.println("ID " + ids);
+           // int id = cv.StringTOint(ids);
+
+            String inhalt = lv.menge_textfeld_einlagern.getText();
+
+            int einzulagern = cv.StringTOint(inhalt);
+
+            System.out.println("zahl  " + inhalt);
+
+            //String mar = (String) (table.getValueAt(table.getSelectedRow(), 0));
+            System.out.println("Fachnummer " + fachnummer);
+
+            if (fachnummer.endsWith("K")) {
+                menge = st.get_max_anzahl_klein_ausDB(id);
+
+            } else if (fachnummer.endsWith("M")) {
+
+                menge = st.get_max_anzahl_mittel_ausDB(id);
+
+            } else if (fachnummer.endsWith("G")) {
+
+                menge = st.get_max_anzahl_gross_ausDB(id);
+            }
+            int zahl = cv.StringTOint(menge);
+
+            int neueMenge = einzulagern - zahl;
+            String text = String.valueOf(neueMenge);
+            lv.label_menge_übrig.setText(text);
+
+        //    Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, zahl, null, null);
+          //  dbs.insert_lagerbestandskonto(lbk);
+         //   dbs.update_lagerfachstamm(fachnummer, true);
+        } catch (Exception e) {
+        }
     }
 
     public void erste_einlagerung(int id) throws SQLException {
@@ -461,14 +494,7 @@ public class Teil_einlagern_Controller {
      * }
      * return getColumnClass(column); }
      */
-    
-    
-    
-    
-    
     /**
-     * 
+     *
      */
-    
-    
 }

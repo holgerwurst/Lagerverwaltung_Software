@@ -2240,7 +2240,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             id = Integer.parseInt(sid);
             Boolean vorhanden = pr.pruefe_id(id);
             if (vorhanden == true) {
-                te.einlagern(id);
+                te.einlagern_vorbereiten(id);
 
             }
         } catch (NumberFormatException ex) {
@@ -2303,11 +2303,23 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 id_textfeld2.setText(mar);
                 bezeichnung_textfeld1.setText("");
                 int id = cv.StringTOint(mar);
-                te.einlagern(id);
-
-            } else {
+                te.einlagern_vorbereiten(id);
             }
         }
+             if(bezeichnung_textfeld1.getText().isEmpty() && !menge_textfeld_einlagern.getText().isEmpty()){
+                try {
+                te = new Teil_einlagern_Controller(this);
+                mar = (String) (table_einlagern.getValueAt(table_einlagern.getSelectedRow(), 0));
+                int id = cv.StringTOint(id_textfeld2.getText());
+                te.einlagern(mar, id);
+
+            } catch (NumberFormatException e) {
+                System.out.println(e);
+            }
+                
+            
+            }
+        
     }//GEN-LAST:event_table_einlagernMouseClicked
 
     private void bezeichnung_textfeld1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bezeichnung_textfeld1FocusLost
