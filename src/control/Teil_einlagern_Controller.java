@@ -140,20 +140,28 @@ public class Teil_einlagern_Controller {
                 if (zahlmittel == 0 || zahlklein == 0 || zahlgross == 0) {
 
 
-                    if (zahlmittel == 0 && zahlklein == 0) {
+                   if (zahlklein == 0 && zahlmittel == 0) {
 
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
-                        freieFaecher(belegung);
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
+                  freieFaecher(belegung);
+            } else if (zahlklein == 0 && zahlgross == 0) {
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
+                   freieFaecher(belegung);
 
-                    } else if (zahlklein == 0) {
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
-                        freieFaecher(belegung);
+            } else if (zahlmittel == 0 && zahlgross == 0) {
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
+                 freieFaecher(belegung);
+            } else if (zahlklein == 0) {
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
+                  freieFaecher(belegung);
 
-                    } else {
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
-                        freieFaecher(belegung);
-
-                    }
+            } else if (zahlmittel == 0) {
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
+                  freieFaecher(belegung);
+            } else if (zahlgross == 0) {
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
+                 freieFaecher(belegung);
+            }
                 } else {
                     String[] belegung = lf.get_fachnummer_ausDB(false);
                     freieFaecher(belegung);
@@ -397,8 +405,8 @@ public class Teil_einlagern_Controller {
     /**
      *
      */
-    public void manuell_einlagern_fachcheck(String f1, String m1, int id) throws ClassNotFoundException, SQLException, Exception {
-        Pruefen_Controller pr = new Pruefen_Controller();
+   public void manuell_einlagern_fachcheck(String f1, String m1, int id) throws ClassNotFoundException, SQLException, Exception {
+    /*    Pruefen_Controller pr = new Pruefen_Controller();
         cv = new convert();
         Datenbankverbindung db = new Datenbankverbindung();
         Lagerbestandskonto[] lb = db.resultset_to_lagerbestandskontos();
@@ -420,7 +428,7 @@ public class Teil_einlagern_Controller {
                 break;
             }
         }
-
+*/
 
 
         /**
@@ -441,5 +449,5 @@ public class Teil_einlagern_Controller {
         }
          */
         //System.out.println(slf_arr[i]);
-    }
+   }
 }
