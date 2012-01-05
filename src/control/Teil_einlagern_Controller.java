@@ -17,13 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
-import model.DB_schreiben;
-import model.Lagerbestandskonto;
-import model.Lagerfachstamm;
-import model.Select_Allgemein;
-import model.Select_Lagerbestandskonto;
-import model.Select_Lagerfachstamm;
-import model.Select_Stammdaten;
+import model.*;
 import view.Übersicht_Lagerverwaltung;
 
 /**
@@ -48,8 +42,9 @@ public class Teil_einlagern_Controller {
     String[] komplett = new String[0];
     String[] fach = new String[0];
     String[] menge = new String[0];
-    //   String[] mengemittel = new String[0];
-    //   String[] mengegross = new String[0];
+    String[] ergebnis = new String[0];
+    ArrayList<String> werte = new ArrayList<String>();
+    ArrayList<String> menge_aktuell = new ArrayList<String>();
     String maxklein = "";
     String maxmittel = "";
     String maxgross = "";
@@ -100,136 +95,79 @@ public class Teil_einlagern_Controller {
             lagerbes = new Select_Lagerbestandskonto();
             sa = new Select_Allgemein();
             fach = lagerbes.get_Fachnummer_ausDB(id);
+            cv = new convert();
 
-            int flag = 0;
             if (fach.length == 0) {
                 erste_einlagerung(id);
             } else {
+                parse(id);
 
                 for (int i = 0; i < fach.length; i++) {
 
                     if (fach[i].endsWith("K")) {
+                        int menge = cv.StringTOint(lagerbes.get_Menge_aktuell_ausDB(fach[i]));
+                        if (menge < zahlklein) {
+                     
+                            String mengeS = String.valueOf(menge);
+                        
+                            menge_aktuell.add(mengeS);
+                            werte.add(fach[i]);
 
-                        flag = 1;
-                        System.out.println("kleines fach " + fach[i]);
-                        // System.out.println("Menge " + menge[i]);
-
+                        }
                     } else if (fach[i].endsWith("M")) {
-                        System.out.println("mittleres fach " + fach[i]);
-                        flag = 2;
 
+                        int menge = cv.StringTOint(lagerbes.get_Menge_aktuell_ausDB(fach[i]));
+                        if (menge < zahlmittel) {
+                        
+                            String mengeS = String.valueOf(menge);
+                            menge_aktuell.add(mengeS);
+                            werte.add(fach[i]);
+                        }
                     } else if (fach[i].endsWith("G")) {
-                        flag = 3;
-                    }
-                }
-            }
 
-            if (flag == 1) {
-                String[] maxK = new String[1];
-                menge = sa.get_menge_ausDB("'max_anz_klein'", id);
-
-                parse(id);
-
-                if (zahlmittel == 0 || zahlgross == 0) {
-
-                    if (zahlmittel == 0 && zahlgross == 0) {
-
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
-                        freieFaecher(id, belegung, "max_anz_klein");
-                    } else if (zahlgross == 0) {
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
-                        freieFaecher(id, belegung, "max_anz_klein");
-
-                    } else {
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
-                        freieFaecher(id, belegung, "max_anz_klein");
+                        int menge = cv.StringTOint(lagerbes.get_Menge_aktuell_ausDB(fach[i]));
+                        if (menge < zahlgross) {
+                          
+                            String mengeS = String.valueOf(menge);
+                            menge_aktuell.add(mengeS);
+                            werte.add(fach[i]);
+                        }
                     }
 
-                } else {
-                    String[] belegung = lf.get_fachnummer_ausDB(false);
-                    freieFaecher(id, belegung, "max_anz_klein");
                 }
 
-                for (int i = 0; i < 1; i++) {
-                    maxK[i] = maxklein;
-                    //      System.out.println("Array   " + maxK[i]);
-                    //    System.out.println("max " + maxK[i]);
-                }
 
-                model.addColumn("aktuelle Menge", menge);
-                model.addColumn("Maximale Anzahl kleines Fach", maxK);
+                if (zahlmittel == 0 || zahlklein == 0 || zahlgross == 0) {
 
-            }
-
-            if (flag == 2) {
-                String[] maxM = new String[1];
-                menge = sa.get_menge_ausDB("'max_anz_mittel'", id);
-                parse(id);
-
-                if (zahlklein == 0 || zahlgross == 0) {
-
-                    if (zahlklein == 0 && zahlgross == 0) {
-
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
-                        freieFaecher(id, belegung, "max_anz_mittel");
-                    } else if (zahlgross == 0) {
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
-                        freieFaecher(id, belegung, "max_anz_mittel");
-
-                    } else {
-                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
-                        freieFaecher(id, belegung, "max_anz_mittel");
-                    }
-
-                } else {
-                    String[] belegung = lf.get_fachnummer_ausDB(false);
-                    freieFaecher(id, belegung, "max_anz_mittel");
-                }
-
-                for (int i = 0; i < 1; i++) {
-                    maxM[i] = maxmittel;
-                    //     System.out.println("Array   " + array[i]);
-                    System.out.println("max  " + maxM[i]);
-                }
-
-                model.addColumn("aktuelle Menge", menge);
-                model.addColumn("Maximale Anzahl mittleres Fach", maxM);
-
-            }
-            if (flag == 3) {
-
-                String[] maxG = new String[1];
-                menge = sa.get_menge_ausDB("max_anz_gross", id);
-                parse(id);
-
-                if (zahlmittel == 0 || zahlklein == 0) {
 
                     if (zahlmittel == 0 && zahlklein == 0) {
 
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
-                        freieFaecher(id, belegung, "max_anz_gross");
+                        freieFaecher(belegung);
+
                     } else if (zahlklein == 0) {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
-                        freieFaecher(id, belegung, "max_anz_gross");
+                        freieFaecher(belegung);
 
                     } else {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
-                        freieFaecher(id, belegung, "max_anz_gross");
-                    }
+                        freieFaecher(belegung);
 
+                    }
                 } else {
                     String[] belegung = lf.get_fachnummer_ausDB(false);
-                    freieFaecher(id, belegung, "max_anz_gross");
-                }
-                for (int i = 0; i < 1; i++) {
-                    maxG[i] = maxgross;
-                }
+                    freieFaecher(belegung);
 
-                model.addColumn("aktuelle Menge", menge);
-                model.addColumn("Maximale Anzahl großes Fach", maxG);
+
+                }
+                 menge = new String[menge_aktuell.size()];
+                for (int i = 0; i < menge_aktuell.size(); i++) {
+                   menge[i] = menge_aktuell.get(i);
+                }
+                model.addColumn("Aktuelle Menge", menge);
+
             }
 
-            // System.out.println("Eingelagert: Teil mit ID " + id + " ins Fach " + anz + "  und  Menge  " + zahl + "   eingelagert.");
             fachtest();
 
 
@@ -244,16 +182,13 @@ public class Teil_einlagern_Controller {
             lagerbes = new Select_Lagerbestandskonto();
             st = new Select_Stammdaten();
             cv = new convert();
-
-            String menge = "";
+            parse(id);
+           int menge=0;
             int neueMenge = 0;
-
-            // System.out.println("ID " + ids);
-            // int id = cv.StringTOint(ids);
 
             String inhalt = lv.menge_textfeld_einlagern.getText();
 
-        //    lv.label_menge_übrig.setText(inhalt);
+            //    lv.label_menge_übrig.setText(inhalt);
             int einzulagern = cv.StringTOint(inhalt);
 
             System.out.println("zahl  " + inhalt);
@@ -262,29 +197,29 @@ public class Teil_einlagern_Controller {
             System.out.println("Fachnummer " + fachnummer);
 
             if (fachnummer.endsWith("K")) {
-                menge = st.get_max_anzahl_klein_ausDB(id);
+                menge = zahlklein;
 
             } else if (fachnummer.endsWith("M")) {
 
-                menge = st.get_max_anzahl_mittel_ausDB(id);
+                menge = zahlmittel;
 
             } else if (fachnummer.endsWith("G")) {
 
-                menge = st.get_max_anzahl_gross_ausDB(id);
+                menge = zahlgross;
             }
-            int zahl = cv.StringTOint(menge);
+            //int zahl = cv.StringTOint(menge);
 
             //   int menge_uebrig = cv.StringTOint(lv.label_menge_übrig.getText());
 
 
-            if (einzulagern < zahl && einzulagern!=0) {
+            if (einzulagern < menge && einzulagern != 0) {
                 //zahl = einzulagern;
                 neueMenge = einzulagern;
             } else if (einzulagern == 0) {
                 System.out.println("0");
-              //  neueMenge = einzulagern;
+                //  neueMenge = einzulagern;
             } else {
-                neueMenge = einzulagern - zahl;
+                neueMenge = einzulagern - menge;
             }
 
             String text = String.valueOf(neueMenge);
@@ -293,11 +228,13 @@ public class Teil_einlagern_Controller {
             lv.label_menge_übrig.setText(text);
 
 
-            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
-            dbs.insert_lagerbestandskonto(lbk);
-            dbs.update_lagerfachstamm(fachnummer, true);
-            
-        JOptionPane.showMessageDialog(lv.label_auswahl, "Teil erfolgreich eingelagert", "Teil eingelagert",2);
+            //    Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
+            //    dbs.insert_lagerbestandskonto(lbk);
+            //    dbs.update_lagerfachstamm(fachnummer, true);
+
+            einlagern_vorbereiten(id);
+
+            JOptionPane.showMessageDialog(lv.label_auswahl, "Teil erfolgreich eingelagert", "Teil eingelagert", 2);
         } catch (Exception e) {
         }
     }
@@ -368,36 +305,21 @@ public class Teil_einlagern_Controller {
 
     }
 
-    public void freieFaecher(int id, String[] belegung, String groesse) throws SQLException {
-        lagerbes = new Select_Lagerbestandskonto();
-        boolean flag = false;
+    public void freieFaecher(String[] belegung) throws SQLException {
 
-        String[] fach = lagerbes.get_Fachnummer_gueltig_ausDB(id, groesse);
-
-        int laengeinsgesamt = belegung.length + fach.length;
-        komplett = new String[laengeinsgesamt];
-
-        if (fach.length != 0) {
-
-            for (int j = 0; j < fach.length; j++) {
-                komplett[j] = fach[j];
-                //   System.out.println("inhalt  " + komplett[j]);
-                flag = true;
+        ergebnis = new String[werte.size() + belegung.length];
+        for (int j = 0; j < werte.size(); j++) {
+            if (werte.get(j) != null) {
+                ergebnis[j] = werte.get(j);
             }
-
-        } else {
-            flag = true;
-        }
-
-        if (flag == true) {
             for (int i = 0; i < belegung.length; i++) {
-                int laenge = fach.length;
-                //System.out.println("länge" + fach.length);        
-                komplett[i + laenge] = belegung[i];
+                ergebnis[i + werte.size()] = belegung[i];
             }
-
-            model.addColumn("Freie Fächer", komplett);
         }
+
+
+        model.addColumn("Freie Fächer", ergebnis);
+
     }
 
     public void fach(int id, String[] belegung) throws SQLException {
@@ -475,4 +397,49 @@ public class Teil_einlagern_Controller {
     /**
      *
      */
+    public void manuell_einlagern_fachcheck(String f1, String m1, int id) throws ClassNotFoundException, SQLException, Exception {
+        Pruefen_Controller pr = new Pruefen_Controller();
+        cv = new convert();
+        Datenbankverbindung db = new Datenbankverbindung();
+        Lagerbestandskonto[] lb = db.resultset_to_lagerbestandskontos();
+        Lagerfachstamm[] lfs = db.resultset_to_lagerfachstamm();
+        Teil_Stammdaten[] ts = (Teil_Stammdaten[]) db.resultset_to_teil_stammdaten().toArray();
+        int f;
+        int i = 0;
+        boolean eqls = false;
+        while (eqls == false) {
+            if (i < lfs.length) {
+                if (f1.equals(lfs[i].get_Fachnummer())) {
+                    eqls = true;
+                    f = i;
+                } else {
+                    i++;
+                }
+            } else {
+                JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Teil nicht vorhanden");
+                break;
+            }
+        }
+
+
+
+        /**
+         * for (int i = 0; i < lfs.length; i++) { if
+         * (f1.equals(lfs[i].get_Fachnummer())) { f = i; } }
+         *
+         * if (i != 99999) { slf = new Select_Lagerfachstamm(); String bel =
+         * slf.get_Belegung_ausDB(slf_arr[i]); Lagerbestandskonto[] lb =
+         * db.resultset_to_lagerbestandskontos(); if ("true".equals(bel)) { int
+         * chk_id = lb[1].get_TeileID(); if (chk_id == id) {
+         * lb[i].get_Fachnummer(); } } System.out.println(bel);
+         *
+         * //if()
+         *
+         * //belegung prüfen
+         *
+         * //
+        }
+         */
+        //System.out.println(slf_arr[i]);
+    }
 }
