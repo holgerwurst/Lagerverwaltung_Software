@@ -46,7 +46,7 @@ public class LagerTextfield extends JTextField {
             char key = e.getKeyChar();
             boolean isValid = false;
             for (int i = 0; i < Zeichenfolge.length(); i++) {
-                if (key == Zeichenfolge.charAt(i) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE) {
+                if (key == Zeichenfolge.charAt(i) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_DELETE) {
                     isValid = true;
                     break;
                 }

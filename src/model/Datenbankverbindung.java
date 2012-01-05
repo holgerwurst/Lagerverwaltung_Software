@@ -81,10 +81,21 @@ public class Datenbankverbindung {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
             if ("insert".equals(kommando)) {
+                /*alte query mit zeichnNr Fehler begin
                 statement.executeQuery("" + kommando + " into Teilestammdaten (id,typ, zeichnungsnummer,"
                         + "materialgruppe, preis, bezeichnung, baugruppe, bemerkung, max_anz_klein, "
                         + "max_anz_mittel, max_anz_gross) values (" + teil.get_Id() + ",'" + teil.get_Teiletyp() + "',"
                         + "'connect_schreiben_lagerbestandskonto" + teil.get_Zeichnungsnummer() + "','" + teil.get_Materialgruppe() + "'," + teil.get_Preis() + ","
+                        + "'" + teil.get_Bezeichnung() + "','" + teil.get_Baugruppe() + "','" + teil.get_Bemerkung() + "',"
+                        + "" + teil.get_max_anz_klein() + "," + teil.get_max_anz_mittel() + "," + teil.get_max_anz_gross() + ");");
+                alte query mit zeichnNr Fehler end*/
+                
+                
+                
+                statement.executeQuery("" + kommando + " into Teilestammdaten (id,typ, zeichnungsnummer,"
+                        + "materialgruppe, preis, bezeichnung, baugruppe, bemerkung, max_anz_klein, "
+                        + "max_anz_mittel, max_anz_gross) values (" + teil.get_Id() + ",'" + teil.get_Teiletyp() + "','"
+                        + teil.get_Zeichnungsnummer() + "','" + teil.get_Materialgruppe() + "'," + teil.get_Preis() + ","
                         + "'" + teil.get_Bezeichnung() + "','" + teil.get_Baugruppe() + "','" + teil.get_Bemerkung() + "',"
                         + "" + teil.get_max_anz_klein() + "," + teil.get_max_anz_mittel() + "," + teil.get_max_anz_gross() + ");");
             } else if ("update".equals(kommando)) {
@@ -215,7 +226,7 @@ public class Datenbankverbindung {
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
             if (loesch_fachnummer == null) {
-                statement.executeQuery("DELETE FROM " + tabelle + " WHERE id=" + loesch_id + "; ");
+                statement.executeQuery("DELETE FROM " + tabelle + " WHERE IDs=" + loesch_id + "; ");
             } else if (loesch_fachnummer != null) {
                 statement.executeQuery("DELETE FROM " + tabelle + " WHERE teile_ID=" + loesch_id + " AND fachnummer='" + loesch_fachnummer + "'; ");
             }
