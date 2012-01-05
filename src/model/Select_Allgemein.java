@@ -35,26 +35,35 @@ public class Select_Allgemein {
      * @param spaltenwerte
      * @return
      */
-    public static String create_select_suchen(String tabelle, String[][] spaltenwerte) {
-        String query = "SELECT * FROM " + tabelle;
+    public static String create_select_teile_suchen(String[][] spaltenwerte) {
+        String query = "SELECT * FROM Teilestammdaten";
         int i = 0;
 
         for (String[] wert : spaltenwerte) {
             {
                 if (!wert[1].equals("")) {
                     if (i == 0) {
+                        // IDs sollen exakt gesucht werden
                         if (wert[0].equals("id")) {
                             query = query + " WHERE " + wert[0] + "=" + wert[1];
-                        }
-                        else {
+
+                        } // Es soll nach allen Teilen gesucht werden die in ein Fach reinpassen
+                        else if (wert[0].equals("max_anz_klein") || wert[0].equals("max_anzahl_mittel")
+                                || wert[0].equals("max_anz_gross")) {
+
+                            query = query + " WHERE " + wert[0] + "<=" + wert[1];
+                        } else {
                             query = query + " WHERE " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
                         }
                         i++;
+
                     } else {
                         if (wert[0].equals("id")) {
                             query = query + " AND " + wert[0] + "=" + wert[1];
-                        }
-                        else {
+                        } else if (wert[0].equals("max_anz_klein") || wert[0].equals("max_anzahl_mittel")
+                                || wert[0].equals("max_anz_gross")) {
+                            query = query + " AND " + wert[0] + "<=" + wert[1];
+                        } else {
                             query = query + " AND " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
                         }
                     }
@@ -80,23 +89,17 @@ public class Select_Allgemein {
         //System.out.println(columnname + ": " + columnType);
         db.disconnect();
     }
-    
-    
+
     public String[] get_menge_ausDB(String groesse, int id) throws SQLException {
-          try {
-            db.connect("Select menge from Lagerbestandskonto where teile_ID="+id+" and menge<(Select "+groesse+" from Teilestammdaten where id="+id+")", "menge");
+        try {
+            db.connect("Select menge from Lagerbestandskonto where teile_ID=" + id + " and menge<(Select " + groesse + " from Teilestammdaten where id=" + id + ")", "menge");
             db.disconnect();
-            
+
         } catch (ClassNotFoundException ex) {
             System.out.println("JDBC-Treiber nicht vorhanden");
         }
         return db.ar;
     }
-    
-    
-    
-    
-    
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Select_Allgemein sa = new Select_Allgemein();

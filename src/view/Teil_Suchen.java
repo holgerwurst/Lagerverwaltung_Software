@@ -14,15 +14,14 @@ import model.TeileTypET;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import model.Datenbankverbindung;
-import model.Select_Allgemein;
+import model.*;
 
 /**
  *
  * @author Matthias Sommer
  */
 public class Teil_Suchen extends javax.swing.JFrame {
-    
+
     private Suchen_Controller suchen_controller;
 
     /**
@@ -508,53 +507,51 @@ public class Teil_Suchen extends javax.swing.JFrame {
         suche_TeilLayout.setHorizontalGroup(
             suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(suche_TeilLayout.createSequentialGroup()
-                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(10, 10, 10)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(suche_TeilLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addComponent(AlleTeileAnzeigenButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SuchenlinksButton))
+                    .addComponent(TeileStammdatenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
                         .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BaugruppeLabel)
+                            .addComponent(ZeichnungsnrLabel)
+                            .addComponent(MaterialgruppeLabel)
+                            .addComponent(TeiletypLabel)
+                            .addComponent(BezeichnungLabel)
+                            .addComponent(IDlinksLabel))
+                        .addGap(15, 15, 15)
+                        .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TeileIDlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BezeichnunglagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TeiletypComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MaterialgruppelagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ZeichnungsnummerlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BaugruppelagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BemerkungLabel)
+                            .addComponent(PreisLabel)
+                            .addComponent(MAKLabel)
+                            .addComponent(MAMLabel)
+                            .addComponent(MAGLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BemerkungslagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PreislagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MaximaleAnzahlMittellagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MaximaleAnzahlGroßlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(suche_TeilLayout.createSequentialGroup()
-                                .addComponent(AlleTeileAnzeigenButton)
+                                .addComponent(MaximaleAnzahlKleinlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SuchenlinksButton))
-                            .addComponent(TeileStammdatenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(suche_TeilLayout.createSequentialGroup()
-                                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BaugruppeLabel)
-                                    .addComponent(ZeichnungsnrLabel)
-                                    .addComponent(MaterialgruppeLabel)
-                                    .addComponent(TeiletypLabel)
-                                    .addComponent(BezeichnungLabel)
-                                    .addComponent(IDlinksLabel))
-                                .addGap(15, 15, 15)
-                                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TeileIDlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BezeichnunglagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TeiletypComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MaterialgruppelagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ZeichnungsnummerlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BaugruppelagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BemerkungLabel)
-                                    .addComponent(PreisLabel)
-                                    .addComponent(MAKLabel)
-                                    .addComponent(MAMLabel)
-                                    .addComponent(MAGLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(suche_TeilLayout.createSequentialGroup()
-                                        .addComponent(MaximaleAnzahlKleinlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                                        .addComponent(EuroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(suche_TeilLayout.createSequentialGroup()
-                                        .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(BemerkungslagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(PreislagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(MaximaleAnzahlMittellagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(MaximaleAnzahlGroßlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 51, Short.MAX_VALUE))
+                                .addComponent(EuroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 55, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, suche_TeilLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4)
+                .addContainerGap())
         );
 
         suche_TeilLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BaugruppelagerTextfield, BemerkungslagerTextfield, BezeichnunglagerTextfield, MaterialgruppelagerTextfield, MaximaleAnzahlGroßlagerTextfield, MaximaleAnzahlKleinlagerTextfield, MaximaleAnzahlMittellagerTextfield, PreislagerTextfield, TeileIDlagerTextfield, TeiletypComboBox, ZeichnungsnummerlagerTextfield});
@@ -604,7 +601,8 @@ public class Teil_Suchen extends javax.swing.JFrame {
                     .addComponent(AlleTeileAnzeigenButton)
                     .addComponent(SuchenlinksButton))
                 .addGap(16, 16, 16)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
         );
 
         suche_TeilLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {BaugruppelagerTextfield, BemerkungslagerTextfield, BezeichnunglagerTextfield, MaterialgruppelagerTextfield, MaximaleAnzahlGroßlagerTextfield, MaximaleAnzahlKleinlagerTextfield, MaximaleAnzahlMittellagerTextfield, PreislagerTextfield, TeileIDlagerTextfield, TeiletypComboBox, ZeichnungsnummerlagerTextfield});
@@ -624,8 +622,8 @@ public class Teil_Suchen extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
@@ -633,17 +631,29 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
     private void alle_teile_suchen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alle_teile_suchen
         try {
-            suchen_controller.alle_teile_ausgeben();
+            DefaultTableModel table_model = new DefaultTableModel();
+            ArrayList<Teil_Stammdaten> teile = suchen_controller.alle_teile_ausgeben();
+            for (String columnname : suchen_controller.table_column_names) {
+                table_model.addColumn(columnname);
+            }
+
+            for (Teil_Stammdaten teil : teile) {
+                table_model.addRow(teil.toArray());
+            }
+            this.TeilSuchenJtable.setModel(table_model);
+
         } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_alle_teile_suchen
 
     private void teile_suchen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teile_suchen
-
+        // Werte werden aus den Textfeldern und anderen Eingabefeldern ausgelesen und in ein zweidimensionales Array geschrieben
         String[][] spaltenwerte = new String[11][];
         String[] id = {"id", TeileIDlagerTextfield.getText()};
-        String teilstring = (String)TeiletypComboBox.getSelectedItem();
+        String teilstring = (String) TeiletypComboBox.getSelectedItem();
         if (" ".equals(teilstring)) {
             teilstring = "";
         }
@@ -670,52 +680,24 @@ public class Teil_Suchen extends javax.swing.JFrame {
         spaltenwerte[8] = maxanzahlmittel;
         spaltenwerte[9] = maxanzahlgross;
         spaltenwerte[10] = bemerkung;
-        
-        String query = Select_Allgemein.create_select_suchen("Teilestammdaten", spaltenwerte);
-        System.out.println(query);
-        Datenbankverbindung db = new Datenbankverbindung();
         try {
-            DefaultTableModel tablemodel = new DefaultTableModel();
-            tablemodel.addColumn("Teile ID");
-            tablemodel.addColumn("Teiletyp");
-            tablemodel.addColumn("Zeichnungsnummer");
-            tablemodel.addColumn("Preis");
-            tablemodel.addColumn("Bezeichnung");
-            tablemodel.addColumn("Baugruppe");
-            tablemodel.addColumn("Materialgruppe");
-            tablemodel.addColumn("Bemerkung");
-            tablemodel.addColumn("Maximale Anzahl Klein");
-            tablemodel.addColumn("Maximale Anzahl Mittel");
-            tablemodel.addColumn("Maximale Anzahl Groß");
-            
-            
-            ArrayList<Teil_Stammdaten> teile_stammdaten_array = db.connect_Teil_Stammdaten(query);
-            for (Iterator<Teil_Stammdaten> it = teile_stammdaten_array.iterator(); it.hasNext();) {
-                Teil_Stammdaten teil = it.next();
-                System.out.println(
-                        teil.get_Id() + "\n" +
-                        teil.get_Teiletyp() + "\n" +
-                        teil.get_Zeichnungsnummer() + "\n" +
-                        teil.get_Materialgruppe() + "\n" +
-                        teil.get_Preis() + "\n" +
-                        teil.get_Bezeichnung() + "\n" +
-                        teil.get_Baugruppe() + "\n" +
-                        teil.get_max_anz_klein() + "\n" +
-                        teil.get_max_anz_mittel() + "\n" +
-                        teil.get_max_anz_gross() + "\n" +
-                        teil.get_Bemerkung()
-                        );
-
-                tablemodel.addRow(teil.toArray());
+            // Mit den ausgelesenen Daten wird mit hilfe des Controllers gesucht
+            ArrayList<Teil_Stammdaten> teile = suchen_controller.teile_suchen(spaltenwerte);
+            DefaultTableModel table_model = new DefaultTableModel();
+            // Spaltennamen werden festgeelegt
+            for (String columnname : suchen_controller.table_column_names) {
+                table_model.addColumn(columnname);
             }
-            TeilSuchenJtable.setModel(tablemodel);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, ex);
+            // JTable wird mit Werten gefüllt
+            for (Teil_Stammdaten teil : teile) {
+                table_model.addRow(teil.toArray());
+            }
+            this.TeilSuchenJtable.setModel(table_model);
+        } catch (ClassNotFoundException e) {
+            Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, e);
+        } catch (Exception e) {
+            Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, e);
         }
-        
-        
 
     }//GEN-LAST:event_teile_suchen
     /**
