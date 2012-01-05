@@ -93,6 +93,7 @@ public class TeileStamm_erweitern_controller {
 
             }
            Hauptfenster.setpTSEStatusleiste(neuTeil.get_Bezeichnung()+" wurde erfolgreich angelegt. Sie können nun "+neuTeil.get_Bezeichnung()+" einlagern.",Color.green);
+           Hauptfenster.setpTSEBezeichnung("");
        }
    }
     

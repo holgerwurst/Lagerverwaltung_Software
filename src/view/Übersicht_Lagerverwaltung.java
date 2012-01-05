@@ -2096,7 +2096,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teilestamm_erweitern.add(button_anlegen);
-        button_anlegen.setBounds(530, 550, 77, 23);
+        button_anlegen.setBounds(540, 500, 77, 30);
 
         textfeld_idP.setText("text");
         textfeld_idP.setToolTipText("");
@@ -2212,13 +2212,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         magLTFP.setBounds(150, 320, 150, 30);
 
         pStatusleiste.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        pStatusleiste.setForeground(new java.awt.Color(0, 153, 0));
-        pStatusleiste.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        pStatusleiste.setAutoscrolls(true);
-        pStatusleiste.setFocusable(false);
-        pStatusleiste.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         Teilestamm_erweitern.add(pStatusleiste);
-        pStatusleiste.setBounds(10, 540, 500, 60);
+        pStatusleiste.setBounds(20, 540, 950, 20);
 
         Teilentf_tabbedpane.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
@@ -2437,9 +2432,21 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_button_anlegenActionPerformed
+    /**Patrick: schreibt was in die Statusleiste in Teilestamm erweitern und setzt ne farbe für den text
+     * 
+     * @param text
+     * @param farbe 
+     */
     public void setpTSEStatusleiste(String text, Color farbe){
         this.pStatusleiste.setText(text);
         this.pStatusleiste.setForeground(farbe);
+    }
+    /**Patrick: schreibt nen String in Die Bezeichnung von Teilestamm erweitern
+     * 
+     * @param s 
+     */
+    public void setpTSEBezeichnung(String s){
+        textfeld_bezeichnungLTFP.setText(s);
     }
     private void suchen_button_erweiternActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suchen_button_erweiternActionPerformed
         Teil_Suchen ts = new Teil_Suchen();
