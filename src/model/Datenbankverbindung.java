@@ -390,7 +390,12 @@ public class Datenbankverbindung {
     public ArrayList<Teil_Stammdaten> resultset_to_teil_stammdaten() throws Exception {
         // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
         ArrayList<Teil_Stammdaten> teil_stammdaten_array = new ArrayList<Teil_Stammdaten>();
+         Class.forName("org.sqlite.JDBC");
         try {
+            connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);  // set timeout to 30 sec
+            rs = statement.executeQuery("select * from Teilestammdaten");
             // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
             ResultSetMetaData rmsd = rs.getMetaData();
             if (rmsd.getColumnCount() > 11) {
@@ -435,11 +440,15 @@ public class Datenbankverbindung {
      * @return
      * @throws Exception 
      */
-    public Lagerbestandskonto[] resultset_to_lagerbestandskontos() throws Exception {
+    public ArrayList<Lagerbestandskonto> resultset_to_lagerbestandskontos() throws Exception {
         // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
         ArrayList<Lagerbestandskonto> bestandskonto_array = new ArrayList<Lagerbestandskonto>();
+        Class.forName("org.sqlite.JDBC");
         try {
-          
+            connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);  // set timeout to 30 sec
+            rs = statement.executeQuery("select * from Lagerbestandskonto");
             // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
             ResultSetMetaData rmsd = rs.getMetaData();
             if (rmsd.getColumnCount() > 5) {
@@ -462,7 +471,7 @@ public class Datenbankverbindung {
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankverbindung.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return (Lagerbestandskonto[]) bestandskonto_array.toArray();
+        return bestandskonto_array;
 
     }
 }
