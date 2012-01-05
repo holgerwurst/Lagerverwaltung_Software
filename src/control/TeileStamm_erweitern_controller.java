@@ -4,6 +4,7 @@
  */
 package control;
 
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -65,7 +66,8 @@ public class TeileStamm_erweitern_controller {
        
        //prüfe ob ein teil mit gleicher bezeichnung schon vorhanden ist begin
        if(bezSchonDa(Bezeichnung)){
-           JOptionPane.showMessageDialog(null, "Ein Teil mit der Bezeichnung: "+Bezeichnung+" ist bereits vorhanden.\nBezeichnungen müssen eindeutig sein.", "Konsitenz", 1);
+           //JOptionPane.showMessageDialog(null, "Ein Teil mit der Bezeichnung: "+Bezeichnung+" ist bereits vorhanden.\nBezeichnungen müssen eindeutig sein.", "Konsitenz", 1);
+           //mache nix, die fehlermeldung kommt schon beim focus lost wenn der button beim drücken den focus requestet
        }else{
             
                 //prüfe ob ein teil mit gleicher bezeichnung schon vorhanden ist end
@@ -90,6 +92,7 @@ public class TeileStamm_erweitern_controller {
                            JOptionPane.showMessageDialog(null, "geprüftes Teil konnte nocht zur db hinzugefügt werden", "Fehlschlag", 1);
 
             }
+           Hauptfenster.setpTSEStatusleiste(neuTeil.get_Bezeichnung()+" wurde erfolgreich angelegt. Sie können nun "+neuTeil.get_Bezeichnung()+" einlagern.",Color.green);
        }
    }
     
