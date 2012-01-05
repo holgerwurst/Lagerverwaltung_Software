@@ -97,7 +97,6 @@ public class Teil_einlagern_Controller {
             fach = lagerbes.get_Fachnummer_ausDB(id);
             cv = new convert();
 
-            int flag = 0;
             if (fach.length == 0) {
                 erste_einlagerung(id);
             } else {
@@ -183,8 +182,8 @@ public class Teil_einlagern_Controller {
             lagerbes = new Select_Lagerbestandskonto();
             st = new Select_Stammdaten();
             cv = new convert();
-
-            String menge = "";
+            parse(id);
+           int menge=0;
             int neueMenge = 0;
 
             String inhalt = lv.menge_textfeld_einlagern.getText();
@@ -198,29 +197,29 @@ public class Teil_einlagern_Controller {
             System.out.println("Fachnummer " + fachnummer);
 
             if (fachnummer.endsWith("K")) {
-                menge = st.get_max_anzahl_klein_ausDB(id);
+                menge = zahlklein;
 
             } else if (fachnummer.endsWith("M")) {
 
-                menge = st.get_max_anzahl_mittel_ausDB(id);
+                menge = zahlmittel;
 
             } else if (fachnummer.endsWith("G")) {
 
-                menge = st.get_max_anzahl_gross_ausDB(id);
+                menge = zahlgross;
             }
-            int zahl = cv.StringTOint(menge);
+            //int zahl = cv.StringTOint(menge);
 
             //   int menge_uebrig = cv.StringTOint(lv.label_menge_übrig.getText());
 
 
-            if (einzulagern < zahl && einzulagern != 0) {
+            if (einzulagern < menge && einzulagern != 0) {
                 //zahl = einzulagern;
                 neueMenge = einzulagern;
             } else if (einzulagern == 0) {
                 System.out.println("0");
                 //  neueMenge = einzulagern;
             } else {
-                neueMenge = einzulagern - zahl;
+                neueMenge = einzulagern - menge;
             }
 
             String text = String.valueOf(neueMenge);

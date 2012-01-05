@@ -32,9 +32,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -631,73 +631,68 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="AlleTeileAnzeigenButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="SuchenlinksButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="TeileStammdatenLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="AlleTeileAnzeigenButton" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BaugruppeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ZeichnungsnrLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MaterialgruppeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TeiletypLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BezeichnungLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IDlinksLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="TeileIDlagerTextfield" linkSize="5" min="-2" pref="119" max="-2" attributes="0"/>
+                                  <Component id="BezeichnunglagerTextfield" linkSize="5" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                                  <Component id="TeiletypComboBox" linkSize="5" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                                  <Component id="MaterialgruppelagerTextfield" linkSize="5" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
+                                  <Component id="ZeichnungsnummerlagerTextfield" linkSize="5" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="BaugruppelagerTextfield" linkSize="5" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="BemerkungLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PreisLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAKLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAMLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAGLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="BemerkungslagerTextfield" linkSize="5" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <Component id="PreislagerTextfield" linkSize="5" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="MaximaleAnzahlMittellagerTextfield" linkSize="5" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                                  <Component id="MaximaleAnzahlGroßlagerTextfield" linkSize="5" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="MaximaleAnzahlKleinlagerTextfield" linkSize="5" min="-2" pref="167" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="SuchenlinksButton" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="TeileStammdatenLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="BaugruppeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ZeichnungsnrLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MaterialgruppeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="TeiletypLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="BezeichnungLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="IDlinksLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="TeileIDlagerTextfield" linkSize="5" min="-2" pref="119" max="-2" attributes="0"/>
-                                          <Component id="BezeichnunglagerTextfield" linkSize="5" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
-                                          <Component id="TeiletypComboBox" linkSize="5" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
-                                          <Component id="MaterialgruppelagerTextfield" linkSize="5" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
-                                          <Component id="ZeichnungsnummerlagerTextfield" linkSize="5" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
-                                          <Component id="BaugruppelagerTextfield" linkSize="5" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="BemerkungLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="PreisLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MAKLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MAMLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MAGLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="MaximaleAnzahlKleinlagerTextfield" linkSize="5" min="-2" pref="167" max="-2" attributes="0"/>
-                                              <EmptySpace pref="16" max="32767" attributes="0"/>
-                                              <Component id="EuroLabel" min="-2" pref="19" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="BemerkungslagerTextfield" linkSize="5" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
-                                                  <Component id="PreislagerTextfield" linkSize="5" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                                  <Component id="MaximaleAnzahlMittellagerTextfield" linkSize="5" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                                                  <Component id="MaximaleAnzahlGroßlagerTextfield" linkSize="5" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="EuroLabel" min="-2" pref="19" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="jScrollPane4" min="-2" pref="630" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="51" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="11" pref="11" max="11" attributes="0"/>
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Component id="TeileStammdatenLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -746,7 +741,8 @@
                           <Component id="SuchenlinksButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" pref="140" max="32767" attributes="0"/>
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
