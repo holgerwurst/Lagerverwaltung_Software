@@ -108,9 +108,9 @@ public class Teil_einlagern_Controller {
                     if (fach[i].endsWith("K")) {
                         int menge = cv.StringTOint(lagerbes.get_Menge_aktuell_ausDB(fach[i]));
                         if (menge < zahlklein) {
-                     
+
                             String mengeS = String.valueOf(menge);
-                        
+
                             menge_aktuell.add(mengeS);
                             werte.add(fach[i]);
 
@@ -119,7 +119,7 @@ public class Teil_einlagern_Controller {
 
                         int menge = cv.StringTOint(lagerbes.get_Menge_aktuell_ausDB(fach[i]));
                         if (menge < zahlmittel) {
-                        
+
                             String mengeS = String.valueOf(menge);
                             menge_aktuell.add(mengeS);
                             werte.add(fach[i]);
@@ -128,7 +128,7 @@ public class Teil_einlagern_Controller {
 
                         int menge = cv.StringTOint(lagerbes.get_Menge_aktuell_ausDB(fach[i]));
                         if (menge < zahlgross) {
-                          
+
                             String mengeS = String.valueOf(menge);
                             menge_aktuell.add(mengeS);
                             werte.add(fach[i]);
@@ -161,9 +161,9 @@ public class Teil_einlagern_Controller {
 
 
                 }
-                 menge = new String[menge_aktuell.size()];
+                menge = new String[menge_aktuell.size()];
                 for (int i = 0; i < menge_aktuell.size(); i++) {
-                   menge[i] = menge_aktuell.get(i);
+                    menge[i] = menge_aktuell.get(i);
                 }
                 model.addColumn("Aktuelle Menge", menge);
 
@@ -401,29 +401,27 @@ public class Teil_einlagern_Controller {
     public void manuell_einlagern_fachcheck(String f1, String m1, int id) throws ClassNotFoundException, SQLException, Exception {
         Pruefen_Controller pr = new Pruefen_Controller();
         cv = new convert();
-        Datenbankverbindung db = new Datenbankverbindung();
-        Lagerbestandskonto[] lb = db.resultset_to_lagerbestandskontos();
-        Lagerfachstamm[] lfs = db.resultset_to_lagerfachstamm();
-        Teil_Stammdaten[] ts = (Teil_Stammdaten[]) db.resultset_to_teil_stammdaten().toArray();
-        int f;
-        int i = 0;
-        boolean eqls = false;
-        while (eqls == false) {
-            if (i < lfs.length) {
-                if (f1.equals(lfs[i].get_Fachnummer())) {
-                    eqls = true;
-                    f = i;
-                } else {
-                    i++;
-                }
-            } else {
-                JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Teil nicht vorhanden");
-                break;
-            }
-        }
+        Datenbankverbindung dbv = new Datenbankverbindung();
+        ArrayList<Lagerfachstamm> lfsa = new ArrayList<Lagerfachstamm>();
+        lfsa = dbv.resultset_to_lagerfachstamm();
+        ArrayList<Teil_Stammdaten> tsal = new ArrayList<Teil_Stammdaten>();
+        tsal = dbv.resultset_to_teil_stammdaten();
+        ArrayList<Lagerbestandskonto> lbal = new ArrayList<Lagerbestandskonto>();
+        lbal = dbv.resultset_to_lagerbestandskontos();
 
 
-
+        /**
+         * Datenbankverbindung db = new Datenbankverbindung();
+         * Lagerbestandskonto[] lb = db.resultset_to_lagerbestandskontos();
+         * Lagerfachstamm[] lfs = db.resultset_to_lagerfachstamm();
+         * Teil_Stammdaten[] ts = (Teil_Stammdaten[])
+         * db.resultset_to_teil_stammdaten().toArray(); int f; int i = 0;
+         * boolean eqls = false; while (eqls == false) { if (i < lfs.length) {
+         * if (f1.equals(lfs[i].get_Fachnummer())) { eqls = true; f = i; } else
+         * { i++; } } else {
+         * JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Teil
+         * nicht vorhanden"); break; } }
+         */
         /**
          * for (int i = 0; i < lfs.length; i++) { if
          * (f1.equals(lfs[i].get_Fachnummer())) { f = i; } }
@@ -438,8 +436,7 @@ public class Teil_einlagern_Controller {
          *
          * //belegung prüfen
          *
-         * //
-        }
+         * // }
          */
         //System.out.println(slf_arr[i]);
     }
