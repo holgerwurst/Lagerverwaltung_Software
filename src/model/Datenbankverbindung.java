@@ -407,9 +407,6 @@ public class Datenbankverbindung {
                 teil_stamm = new Teil_Stammdaten();
 
             }
-            
-
-
 
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankverbindung.class.getName()).log(Level.SEVERE, null, ex);
@@ -417,8 +414,7 @@ public class Datenbankverbindung {
         return teil_stammdaten_array;
 
     }
-    
-    
+   
     /**
      * Versucht ein ResultSet zu ein Array von Lagerbestandskonten Objekten  konvertieren
      * Achtung!: Das Haltbarkeitsdatum wird nicht aus der Datenbank gelesen sondern immer null gesetzt
@@ -429,6 +425,7 @@ public class Datenbankverbindung {
         // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
         ArrayList<Lagerbestandskonto> bestandskonto_array = new ArrayList<Lagerbestandskonto>();
         try {
+          
             // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
             ResultSetMetaData rmsd = rs.getMetaData();
             if (rmsd.getColumnCount() > 5) {
@@ -447,8 +444,6 @@ public class Datenbankverbindung {
 
             }
             
-
-
 
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankverbindung.class.getName()).log(Level.SEVERE, null, ex);
