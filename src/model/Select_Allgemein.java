@@ -43,10 +43,20 @@ public class Select_Allgemein {
             {
                 if (!wert[1].equals("")) {
                     if (i == 0) {
-                        query = query + " WHERE " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                        if (wert[0].equals("id")) {
+                            query = query + " WHERE " + wert[0] + "=" + wert[1];
+                        }
+                        else {
+                            query = query + " WHERE " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                        }
                         i++;
                     } else {
-                        query = query + " AND " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                        if (wert[0].equals("id")) {
+                            query = query + " AND " + wert[0] + "=" + wert[1];
+                        }
+                        else {
+                            query = query + " AND " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                        }
                     }
                 }
             }
