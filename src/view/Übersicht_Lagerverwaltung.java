@@ -639,6 +639,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         button_manuell_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_manuell_einlagern.setText("Einlagern");
+        button_manuell_einlagern.setToolTipText("");
+        button_manuell_einlagern.setEnabled(false);
         button_manuell_einlagern.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_manuell_einlagernActionPerformed(evt);
@@ -676,64 +678,44 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         lagerTextfield_teileID_manuell_einlagern.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr1.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge1.setEditable(false);
         lagerTextfield_einlagern_manuell_menge1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr2.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr3.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr3.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr4.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr4.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr5.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr5.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr6.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr6.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr7.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr7.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr8.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr8.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr9.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr9.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_fnr10.setEditable(false);
         lagerTextfield_einlagern_manuell_fnr10.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge2.setEditable(false);
         lagerTextfield_einlagern_manuell_menge2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge3.setEditable(false);
         lagerTextfield_einlagern_manuell_menge3.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge4.setEditable(false);
         lagerTextfield_einlagern_manuell_menge4.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge5.setEditable(false);
         lagerTextfield_einlagern_manuell_menge5.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge6.setEditable(false);
         lagerTextfield_einlagern_manuell_menge6.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge7.setEditable(false);
         lagerTextfield_einlagern_manuell_menge7.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge8.setEditable(false);
         lagerTextfield_einlagern_manuell_menge8.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge9.setEditable(false);
         lagerTextfield_einlagern_manuell_menge9.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        lagerTextfield_einlagern_manuell_menge10.setEditable(false);
         lagerTextfield_einlagern_manuell_menge10.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         label_anzeige_minGR_einlagern_manuell1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -2318,8 +2300,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
             }
-            lagerTextfield_einlagern_manuell_fnr1.setEditable(true);
-            lagerTextfield_einlagern_manuell_menge1.setEditable(true);
+            lagerTextfield_teileID_manuell_einlagern.setEditable(false);
+            button_manuell_einlagern.setEnabled(check);
+            
         } else {
             lagerTextfield_teileID_manuell_einlagern.setText("");
         }
@@ -2333,7 +2316,22 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_bestaetigen_button_teileID_manuell_einlagernActionPerformed
 
     private void button_manuell_einlagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_manuell_einlagernActionPerformed
-        pr = new control.Pruefen_Controller();
+        try {
+            pr = new control.Pruefen_Controller();
+            te = new control.Teil_einlagern_Controller(this);
+            cv = new convert();
+            int id = cv.StringTOint(lagerTextfield_teileID_manuell_einlagern.getText());
+            
+                    te.manuell_einlagern_fachcheck(lagerTextfield_einlagern_manuell_fnr1.getText(), lagerTextfield_einlagern_manuell_menge1.getText(), id);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
+        
 
 
 
@@ -2609,7 +2607,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JButton button_anlegen;
     private javax.swing.JButton button_fachnumer1;
     private javax.swing.JButton button_loeschen;
-    private javax.swing.JButton button_manuell_einlagern;
+    public javax.swing.JButton button_manuell_einlagern;
     private javax.swing.JButton button_suchen;
     private javax.swing.JComboBox combobox_teiltyp;
     private javax.swing.JLabel datumLabel_historie;

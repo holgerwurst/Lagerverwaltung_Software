@@ -17,13 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
-import model.DB_schreiben;
-import model.Lagerbestandskonto;
-import model.Lagerfachstamm;
-import model.Select_Allgemein;
-import model.Select_Lagerbestandskonto;
-import model.Select_Lagerfachstamm;
-import model.Select_Stammdaten;
+import model.*;
 import view.Übersicht_Lagerverwaltung;
 
 /**
@@ -286,7 +280,7 @@ public class Teil_einlagern_Controller {
 
     public void erste_einlagerung(int id) throws SQLException {
         lf = new Select_Lagerfachstamm();
-        
+
         String[] maxarrayklein = new String[1];
         String[] maxarraymittel = new String[1];
         String[] maxarraygross = new String[1];
@@ -457,4 +451,49 @@ public class Teil_einlagern_Controller {
     /**
      *
      */
+    public void manuell_einlagern_fachcheck(String f1, String m1, int id) throws ClassNotFoundException, SQLException, Exception {
+        Pruefen_Controller pr = new Pruefen_Controller();
+        cv = new convert();
+        Datenbankverbindung db = new Datenbankverbindung();
+        Lagerbestandskonto[] lb = db.resultset_to_lagerbestandskontos();
+        Lagerfachstamm[] lfs = db.resultset_to_lagerfachstamm();
+        Teil_Stammdaten[] ts = (Teil_Stammdaten[]) db.resultset_to_teil_stammdaten().toArray();
+        int f;
+        int i = 0;
+        boolean eqls = false;
+        while (eqls == false) {
+            if (i < lfs.length) {
+                if (f1.equals(lfs[i].get_Fachnummer())) {
+                    eqls = true;
+                    f = i;
+                } else {
+                    i++;
+                }
+            } else {
+                JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Teil nicht vorhanden");
+                break;
+            }
+        }
+
+
+
+        /**
+         * for (int i = 0; i < lfs.length; i++) { if
+         * (f1.equals(lfs[i].get_Fachnummer())) { f = i; } }
+         *
+         * if (i != 99999) { slf = new Select_Lagerfachstamm(); String bel =
+         * slf.get_Belegung_ausDB(slf_arr[i]); Lagerbestandskonto[] lb =
+         * db.resultset_to_lagerbestandskontos(); if ("true".equals(bel)) { int
+         * chk_id = lb[1].get_TeileID(); if (chk_id == id) {
+         * lb[i].get_Fachnummer(); } } System.out.println(bel);
+         *
+         * //if()
+         *
+         * //belegung prüfen
+         *
+         * //
+        }
+         */
+        //System.out.println(slf_arr[i]);
+    }
 }

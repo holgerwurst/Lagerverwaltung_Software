@@ -32,28 +32,35 @@ public class Lagerfachstamm {
         this.groesse = groesse;
         this.belegung = belegung;
         this.attribute = new Object[]{
-            this.lagerort, this.fachnummer, this.hochregalnummer, this.zeile,
+            this.fachnummer, this.lagerort, this.hochregalnummer, this.zeile,
             this.spalte, this.groesse, this.belegung
         };
     }
+
     /**
-     * Einfacher Konstruktor der nur ein Array der Attribute als Parameter braucht.
-     * @param attribute [lagerort, fachnummer, hochregalnummer, zeile, spalte, groesse, belegung]
+     * Einfacher Konstruktor der nur ein Array der Attribute als Parameter
+     * braucht.
+     *
+     * @param attribute [lagerort, fachnummer, hochregalnummer, zeile, spalte,
+     * groesse, belegung]
      */
     public Lagerfachstamm(Object[] attribute) throws Exception {
         if (attribute.length > 7) {
             throw new Exception("Array has too many members.");
         }
         this.attribute = attribute;
-        
-        this.lagerort = (String) attribute[0];
-        this.fachnummer = (String) attribute[1];
+
+        this.fachnummer= (String) attribute[0];
+        this.lagerort = (String) attribute[1];
         this.hochregalnummer = (String) attribute[2];
         this.zeile = (String) attribute[3];
         this.spalte = (String) attribute[4];
         this.groesse = (String) attribute[5];
-        this.belegung = (Boolean) attribute[6];
-
+        if (attribute[6].equals("false")) {
+            this.belegung = false;
+        } else {
+            this.belegung = true;
+        }
 
 
     }
@@ -115,7 +122,7 @@ public class Lagerfachstamm {
     public void set_Fachnummer(String fnr) {
         fachnummer = fnr;
     }
-    
+
     public Object[] get_Attribute() {
         return this.attribute;
     }

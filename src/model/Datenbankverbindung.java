@@ -336,11 +336,18 @@ public class Datenbankverbindung {
      *
      * @return Array von Lagerstammobjekten
      */
-    public Lagerfachstamm[] resultset_to_lagerfachstamm() throws Exception {
+    public ArrayList<Lagerfachstamm> resultset_to_lagerfachstamm() throws Exception {
         // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
         ArrayList<Lagerfachstamm> lagerfachstammarray = new ArrayList<Lagerfachstamm>();
+         Class.forName("org.sqlite.JDBC");
         try {
             // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
+           
+            connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
+            Statement statement = connection.createStatement();
+            statement.setQueryTimeout(30);  // set timeout to 30 sec
+            rs = statement.executeQuery("select * from Lagerfachstamm");
+            
             ResultSetMetaData rmsd = rs.getMetaData();
 
             while (rs.next()) {
@@ -370,7 +377,7 @@ public class Datenbankverbindung {
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankverbindung.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return (Lagerfachstamm[]) lagerfachstammarray.toArray();
+        return lagerfachstammarray;
     }
 
     /**
