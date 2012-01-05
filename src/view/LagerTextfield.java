@@ -15,13 +15,6 @@ import javax.swing.JToolTip;
  * @author Arthas
  */
 public class LagerTextfield extends JTextField {
-    
-    
-    
-    
-    
-    
-    
 
     class LagerKeyListener implements KeyListener {
 
@@ -32,7 +25,7 @@ public class LagerTextfield extends JTextField {
         private AllowedSequences seq;
 
         public LagerKeyListener(AllowedSequences seq, LagerTextfield Sender) {
-            this.seq=seq;
+            this.seq = seq;
             this.Zeichenfolge = seq.getSequence();
             this.Fehlerbeschreibung = seq.getDesc();
             this.Sender = Sender;
@@ -45,46 +38,55 @@ public class LagerTextfield extends JTextField {
             }
             char key = e.getKeyChar();
             boolean isValid = false;
-            for (int i = 0; i < Zeichenfolge.length(); i++) {
-                if (key == Zeichenfolge.charAt(i) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_DELETE) {
-                    isValid = true;
-                    break;
-                }
+            
+            if (isCharInString(key, Zeichenfolge) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_DELETE) {
+                isValid = true;
             }
             //nachbehandling spezialfälle begin
-            switch(seq)
-            {
-                case PREIS:
-                {
-                    for(int i=Sender.getText().length()-1;i>=0;i--)//rückwärtiger durchlauf durch den text im aufrufenden textfeld
-                    {
-                        if(Sender.getText().length()-i>2
-                                &&(','==Sender.getText().charAt(i) 
-                                    ||'.'==Sender.getText().charAt(i)))
+            if (isValid) {
+                switch (seq) {
+                    case PREIS: {
+                        int i2=0;//durchlaufzähler der for-schleife die ja rückwärts zählen muss
+                        boolean tz=false;//war schon ein trennzeichen im string?
+                        for (int i = Sender.getText().length() - 1; i >= 0; i--)//rückwärtiger durchlauf durch den text im aufrufenden textfeld
                         {
-                            isValid=false;//mehr als 2 nachkomma erkannt => nicht valide
-                            break; //for break
-                        }else
-                        {
-                            isValid=true;
-                            break;//for break
+                            //System.out.println(i2+""+tz);
+                            i2++;
+                            if((',' == Sender.getText().charAt(i)
+                                    || '.' == Sender.getText().charAt(i))){
+                                if(tz==true){
+                                    isValid=false;
+                                    break;//for break
+                                }else{
+                                    tz=true;
+                                }
+                            }
+                            if (i2>2
+                                    && (',' == Sender.getText().charAt(i)
+                                    || '.' == Sender.getText().charAt(i))) {
+                                isValid = false;//mehr als 2 nachkomma erkannt => nicht valide
+                            //System.out.println(""+i2+isValid);
+                                break; //for break
+                            }                                                      
                         }
+                        //System.out.println("-");
+                        i2=0;
+                        break;//case break           
+
                     }
-                    break;//case break           
-                    
+
+                    case ZIFFERN: {
+                        break;
+                    }
+
+                    default:
+                        break;
+
                 }
-                        
-                case ZIFFERN:
-                {
-                    break;
-                }
-                    
-                default: break;
-                                                
             }
             //nachbehandlung spezialfälle end
-            
-           
+
+
             if (!isValid) {
                 e.setKeyChar(KeyEvent.CHAR_UNDEFINED);
                 /*
@@ -108,13 +110,29 @@ public class LagerTextfield extends JTextField {
         }
     }
 
+    /**
+     * Die Methode in String ist zu blöd
+     *
+     * @param c
+     * @param s
+     * @return giebt true wenn der char im string enthalten ist
+     */
+    private boolean isCharInString(char c, String s) {
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (c == s.charAt(i)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public enum AllowedSequences {
 
         ALL(null, null),
         ALPHA("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ", "nur Buchstaben erlaubt"),
         NUM("0123456789,.", "nur zahlen erlaubt"),
-        PREIS("1234567890,.","nur Zahlen und höchstends 2 Nachkommastellen erlaubt"),
-        ZIFFERN("0987654321","nur ganze Zahlen erlaubt");
+        PREIS("1234567890,.", "nur Zahlen und höchstends 2 Nachkommastellen erlaubt"),
+        ZIFFERN("0987654321", "nur ganze Zahlen erlaubt");
         private String sequence;
         private String desc;
 
@@ -130,26 +148,30 @@ public class LagerTextfield extends JTextField {
         public String getDesc() {
             return desc;
         }
-        public void setRule(AllowedSequences seq){
-            this.sequence=seq.sequence;
-            this.desc=seq.desc;
+
+        public void setRule(AllowedSequences seq) {
+            this.sequence = seq.sequence;
+            this.desc = seq.desc;
         }
     }
     private LagerKeyListener akl;
-    
-    /**Legt nachträglich fest um welche Art LagerTextfield es sich handlen soll. zb. Preisfeld
-     * Diese Methode sollte benutzt werden nachdem der leere Konstruktor LagerTextfield() aufgerufen wurde.
-     * 
-     * @param seq Kann folgende werte annehmen:ZIFFERN =>0987654321, PREIS, NUM, ALPHA, ALL
-     * das sind halt die enums...
+
+    /**
+     * Legt nachträglich fest um welche Art LagerTextfield es sich handlen soll.
+     * zb. Preisfeld Diese Methode sollte benutzt werden nachdem der leere
+     * Konstruktor LagerTextfield() aufgerufen wurde.
+     *
+     * @param seq Kann folgende werte annehmen:ZIFFERN =>0987654321, PREIS, NUM,
+     * ALPHA, ALL das sind halt die enums...
      */
-    public void setRegeln(AllowedSequences seq){
+    public void setRegeln(AllowedSequences seq) {
         akl.seq.setRule(seq);
     }
 
-    /**Einfacher Konstruktor 
-     * benutze setRegeln(AllowedSequences seq) um das Verhalten festzulegen.
-     * 
+    /**
+     * Einfacher Konstruktor benutze setRegeln(AllowedSequences seq) um das
+     * Verhalten festzulegen.
+     *
      */
     public LagerTextfield() {
         this(AllowedSequences.ALL);

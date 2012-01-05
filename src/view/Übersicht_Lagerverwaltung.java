@@ -12,6 +12,7 @@ import control.Teil_auslagern_controller;
 import control.Teil_einlagern_Controller;
 import model.Select_Stammdaten;
 import control.convert;
+import java.awt.Color;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -50,25 +51,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilentf_tabbedpane = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
         Teile_einlagern = new javax.swing.JTabbedPane();
-        jPanel8 = new javax.swing.JPanel();
-        bestaetigen_button2 = new javax.swing.JButton();
-        suchen_button2 = new javax.swing.JButton();
-        label_bezeichnung2 = new javax.swing.JLabel();
-        label_mindestgroesse2 = new javax.swing.JLabel();
-        label_anzeige_mindestgroesse2 = new javax.swing.JLabel();
-        label_eingabe_aufforderung_id2 = new javax.swing.JLabel();
-        bezeichnung_textfeld1 = new view.LagerTextfield(AllowedSequences.ALPHA);
-        label_oder1 = new javax.swing.JLabel();
-        label_teile_id2 = new javax.swing.JLabel();
-        label_menge = new javax.swing.JLabel();
-        id_textfeld2 = new view.LagerTextfield(AllowedSequences.NUM);
-        label_menge_übrig = new javax.swing.JLabel();
-        laber_noch_einzulagern = new javax.swing.JLabel();
-        einlagern_button_tabelle = new javax.swing.JButton();
-        menge_textfeld_einlagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        jScrollPane4 = new javax.swing.JScrollPane();
-        table_einlagern = new javax.swing.JTable();
-        label_auswahl = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         label_mindestgroesse1 = new javax.swing.JLabel();
         label_anzeige_bez_manuell_einlagern = new javax.swing.JLabel();
@@ -147,6 +129,25 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_anzeige_minGR_einlagern_manuell2 = new javax.swing.JLabel();
         label_anzeige_minGR_einlagern_manuell3 = new javax.swing.JLabel();
         label_anzeige_gross_einlagern_manuell = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        bestaetigen_button2 = new javax.swing.JButton();
+        suchen_button2 = new javax.swing.JButton();
+        label_bezeichnung2 = new javax.swing.JLabel();
+        label_mindestgroesse2 = new javax.swing.JLabel();
+        label_anzeige_mindestgroesse2 = new javax.swing.JLabel();
+        label_eingabe_aufforderung_id2 = new javax.swing.JLabel();
+        bezeichnung_textfeld1 = new view.LagerTextfield(AllowedSequences.ALPHA);
+        label_oder1 = new javax.swing.JLabel();
+        label_teile_id2 = new javax.swing.JLabel();
+        label_menge = new javax.swing.JLabel();
+        id_textfeld2 = new view.LagerTextfield(AllowedSequences.NUM);
+        label_menge_übrig = new javax.swing.JLabel();
+        laber_noch_einzulagern = new javax.swing.JLabel();
+        einlagern_button_tabelle = new javax.swing.JButton();
+        menge_textfeld_einlagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        jScrollPane4 = new javax.swing.JScrollPane();
+        table_einlagern = new javax.swing.JTable();
+        label_auswahl = new javax.swing.JLabel();
         Teilestamm_verwalten = new javax.swing.JPanel();
         label_eingabeaufforderung1 = new javax.swing.JLabel();
         label_id1 = new javax.swing.JLabel();
@@ -369,6 +370,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         makLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
         mamLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
         magLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
+        pStatusleiste = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Datei = new javax.swing.JMenu();
         Bearbeiten = new javax.swing.JMenu();
@@ -378,129 +380,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         menge_suchen = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(1000, 700));
         getContentPane().setLayout(null);
 
         jPanel7.setLayout(null);
-
-        jPanel8.setLayout(null);
-
-        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        bestaetigen_button2.setText("Bestätigen");
-        jPanel8.add(bestaetigen_button2);
-        bestaetigen_button2.setBounds(40, 180, 100, 23);
-
-        suchen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        suchen_button2.setText("Suche Teile ID / Bezeichnung");
-        jPanel8.add(suchen_button2);
-        suchen_button2.setBounds(780, 60, 200, 23);
-
-        label_bezeichnung2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_bezeichnung2.setText("Bezeichnung:");
-        jPanel8.add(label_bezeichnung2);
-        label_bezeichnung2.setBounds(470, 60, 80, 20);
-
-        label_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_mindestgroesse2.setText("Mindestgröße:");
-        jPanel8.add(label_mindestgroesse2);
-        label_mindestgroesse2.setBounds(470, 110, 90, 20);
-
-        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_anzeige_mindestgroesse2.setText("größe");
-        jPanel8.add(label_anzeige_mindestgroesse2);
-        label_anzeige_mindestgroesse2.setBounds(650, 110, 50, 20);
-
-        label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_eingabe_aufforderung_id2.setText("Bitte geben Sie die Teile ID oder die Bezeichnung ein:");
-        jPanel8.add(label_eingabe_aufforderung_id2);
-        label_eingabe_aufforderung_id2.setBounds(30, 20, 300, 20);
-
-        bezeichnung_textfeld1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                bezeichnung_textfeld1FocusLost(evt);
-            }
-        });
-        jPanel8.add(bezeichnung_textfeld1);
-        bezeichnung_textfeld1.setBounds(590, 60, 180, 20);
-
-        label_oder1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_oder1.setText("oder");
-        jPanel8.add(label_oder1);
-        label_oder1.setBounds(370, 60, 34, 15);
-
-        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_teile_id2.setText("Teile ID:");
-        jPanel8.add(label_teile_id2);
-        label_teile_id2.setBounds(40, 60, 60, 20);
-
-        label_menge.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_menge.setText("Gesamt einzulagernde Menge:");
-        jPanel8.add(label_menge);
-        label_menge.setBounds(40, 110, 180, 15);
-
-        id_textfeld2.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                id_textfeld2FocusLost(evt);
-            }
-        });
-        jPanel8.add(id_textfeld2);
-        id_textfeld2.setBounds(220, 60, 90, 20);
-
-        label_menge_übrig.setText("text");
-        jPanel8.add(label_menge_übrig);
-        label_menge_übrig.setBounds(650, 160, 120, 14);
-
-        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        laber_noch_einzulagern.setText("noch einzulagernde Menge:");
-        jPanel8.add(laber_noch_einzulagern);
-        laber_noch_einzulagern.setBounds(460, 160, 170, 15);
-
-        einlagern_button_tabelle.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        einlagern_button_tabelle.setText("einlagern");
-        einlagern_button_tabelle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                einlagern_button_tabelleActionPerformed(evt);
-            }
-        });
-        jPanel8.add(einlagern_button_tabelle);
-        einlagern_button_tabelle.setBounds(50, 460, 110, 23);
-        jPanel8.add(menge_textfeld_einlagern);
-        menge_textfeld_einlagern.setBounds(220, 110, 90, 20);
-
-        table_einlagern.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "fachnummer", "menge"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        table_einlagern.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                table_einlagernMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(table_einlagern);
-        table_einlagern.getColumnModel().getColumn(0).setResizable(false);
-        table_einlagern.getColumnModel().getColumn(1).setResizable(false);
-
-        jPanel8.add(jScrollPane4);
-        jScrollPane4.setBounds(0, 230, 980, 220);
-
-        label_auswahl.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_auswahl.setText("Bitte wählen Sie ein Teil aus.");
-        jPanel8.add(label_auswahl);
-        label_auswahl.setBounds(370, 200, 190, 15);
-
-        Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
 
         label_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_mindestgroesse1.setText("Maximale Anzahl pro Fachgröße:");
@@ -1053,6 +936,125 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         );
 
         Teile_einlagern.addTab("Fächer manuell eintragen", jPanel9);
+
+        jPanel8.setLayout(null);
+
+        bestaetigen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        bestaetigen_button2.setText("Bestätigen");
+        jPanel8.add(bestaetigen_button2);
+        bestaetigen_button2.setBounds(40, 180, 100, 23);
+
+        suchen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        suchen_button2.setText("Suche Teile ID / Bezeichnung");
+        jPanel8.add(suchen_button2);
+        suchen_button2.setBounds(780, 60, 200, 23);
+
+        label_bezeichnung2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_bezeichnung2.setText("Bezeichnung:");
+        jPanel8.add(label_bezeichnung2);
+        label_bezeichnung2.setBounds(470, 60, 80, 20);
+
+        label_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_mindestgroesse2.setText("Mindestgröße:");
+        jPanel8.add(label_mindestgroesse2);
+        label_mindestgroesse2.setBounds(470, 110, 90, 20);
+
+        label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_anzeige_mindestgroesse2.setText("größe");
+        jPanel8.add(label_anzeige_mindestgroesse2);
+        label_anzeige_mindestgroesse2.setBounds(650, 110, 50, 20);
+
+        label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_eingabe_aufforderung_id2.setText("Bitte geben Sie die Teile ID oder die Bezeichnung ein:");
+        jPanel8.add(label_eingabe_aufforderung_id2);
+        label_eingabe_aufforderung_id2.setBounds(30, 20, 300, 20);
+
+        bezeichnung_textfeld1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                bezeichnung_textfeld1FocusLost(evt);
+            }
+        });
+        jPanel8.add(bezeichnung_textfeld1);
+        bezeichnung_textfeld1.setBounds(590, 60, 180, 20);
+
+        label_oder1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_oder1.setText("oder");
+        jPanel8.add(label_oder1);
+        label_oder1.setBounds(370, 60, 34, 15);
+
+        label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_teile_id2.setText("Teile ID:");
+        jPanel8.add(label_teile_id2);
+        label_teile_id2.setBounds(40, 60, 60, 20);
+
+        label_menge.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_menge.setText("Gesamt einzulagernde Menge:");
+        jPanel8.add(label_menge);
+        label_menge.setBounds(40, 110, 180, 15);
+
+        id_textfeld2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                id_textfeld2FocusLost(evt);
+            }
+        });
+        jPanel8.add(id_textfeld2);
+        id_textfeld2.setBounds(220, 60, 90, 20);
+
+        label_menge_übrig.setText("text");
+        jPanel8.add(label_menge_übrig);
+        label_menge_übrig.setBounds(650, 160, 120, 14);
+
+        laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        laber_noch_einzulagern.setText("noch einzulagernde Menge:");
+        jPanel8.add(laber_noch_einzulagern);
+        laber_noch_einzulagern.setBounds(460, 160, 170, 15);
+
+        einlagern_button_tabelle.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        einlagern_button_tabelle.setText("einlagern");
+        einlagern_button_tabelle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                einlagern_button_tabelleActionPerformed(evt);
+            }
+        });
+        jPanel8.add(einlagern_button_tabelle);
+        einlagern_button_tabelle.setBounds(50, 460, 110, 23);
+        jPanel8.add(menge_textfeld_einlagern);
+        menge_textfeld_einlagern.setBounds(220, 110, 90, 20);
+
+        table_einlagern.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "fachnummer", "menge"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table_einlagern.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_einlagernMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(table_einlagern);
+        table_einlagern.getColumnModel().getColumn(0).setResizable(false);
+        table_einlagern.getColumnModel().getColumn(1).setResizable(false);
+
+        jPanel8.add(jScrollPane4);
+        jScrollPane4.setBounds(0, 230, 980, 220);
+
+        label_auswahl.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_auswahl.setText("Bitte wählen Sie ein Teil aus.");
+        jPanel8.add(label_auswahl);
+        label_auswahl.setBounds(370, 200, 190, 15);
+
+        Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
 
         jPanel7.add(Teile_einlagern);
         Teile_einlagern.setBounds(0, 0, 990, 560);
@@ -2094,7 +2096,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teilestamm_erweitern.add(button_anlegen);
-        button_anlegen.setBounds(530, 550, 77, 23);
+        button_anlegen.setBounds(540, 500, 77, 30);
 
         textfeld_idP.setText("text");
         textfeld_idP.setToolTipText("");
@@ -2176,6 +2178,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         textfeld_zeichnungsnummerLTFP.setBounds(470, 260, 150, 30);
         Teilestamm_erweitern.add(textfeld_baugruppeLTFP);
         textfeld_baugruppeLTFP.setBounds(470, 210, 150, 30);
+
+        preisfeldLTFP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                preisfeldLTFPActionPerformed(evt);
+            }
+        });
         Teilestamm_erweitern.add(preisfeldLTFP);
         preisfeldLTFP.setBounds(470, 110, 150, 30);
 
@@ -2202,6 +2210,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         });
         Teilestamm_erweitern.add(magLTFP);
         magLTFP.setBounds(150, 320, 150, 30);
+
+        pStatusleiste.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_erweitern.add(pStatusleiste);
+        pStatusleiste.setBounds(20, 540, 950, 20);
 
         Teilentf_tabbedpane.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
@@ -2389,9 +2401,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void button_anlegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_anlegenActionPerformed
         // TODO add your handling code here:
         //System.out.println("Teilestamm erweitern: anlegen button gedrückt!");
+        setpTSEStatusleiste("",Color.BLACK);
+        button_anlegen.requestFocusInWindow();
 
         if ((textfeld_bezeichnungLTFP.getText().isEmpty()) || (makLTFP.getText().isEmpty()) || (mamLTFP.getText().isEmpty()) || (magLTFP.getText().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Füllen Sie bitte alle Pflichtfelder aus.");
+            setpTSEStatusleiste("Füllen Sie bitte alle Pflichtfelder aus.",Color.red);
 
         } else {
 
@@ -2417,7 +2432,22 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_button_anlegenActionPerformed
-
+    /**Patrick: schreibt was in die Statusleiste in Teilestamm erweitern und setzt ne farbe für den text
+     * 
+     * @param text
+     * @param farbe 
+     */
+    public void setpTSEStatusleiste(String text, Color farbe){
+        this.pStatusleiste.setText(text);
+        this.pStatusleiste.setForeground(farbe);
+    }
+    /**Patrick: schreibt nen String in Die Bezeichnung von Teilestamm erweitern
+     * 
+     * @param s 
+     */
+    public void setpTSEBezeichnung(String s){
+        textfeld_bezeichnungLTFP.setText(s);
+    }
     private void suchen_button_erweiternActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suchen_button_erweiternActionPerformed
         Teil_Suchen ts = new Teil_Suchen();
         ts.setVisible(true);// TODO add your handling code here:
@@ -2433,6 +2463,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         control.TeileStamm_erweitern_controller tecfocus = new control.TeileStamm_erweitern_controller(this);
         if (tecfocus.bezSchonDa(textfeld_bezeichnungLTFP.getText())) {
             JOptionPane.showMessageDialog(null, "Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.\nBezeichnungen müssen eindeutig sein.");
+            setpTSEStatusleiste("Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.",Color.red);
             textfeld_bezeichnungLTFP.requestFocusInWindow();
             tecfocus = null;
         }
@@ -2478,6 +2509,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             
             }
     }//GEN-LAST:event_einlagern_button_tabelleActionPerformed
+
+    private void preisfeldLTFPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preisfeldLTFPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_preisfeldLTFPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2826,6 +2861,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField menge_textfeld9;
     public view.LagerTextfield menge_textfeld_einlagern;
     private javax.swing.JLabel oderLabel_historie;
+    private javax.swing.JLabel pStatusleiste;
     private view.LagerTextfield preisfeldLTFP;
     private javax.swing.JButton splitten_button;
     private javax.swing.JButton suchenButton;
