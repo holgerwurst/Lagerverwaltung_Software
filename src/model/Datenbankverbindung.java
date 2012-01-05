@@ -399,13 +399,20 @@ public class Datenbankverbindung {
             Teil_Stammdaten teil_stamm = new Teil_Stammdaten();
             while (rs.next()) {
 
-                teil_stamm.set_id(rs.getInt(1));
-                teil_stamm.set_Teiletyp(TeileTypET.valueOf(rs.getString(2)));
+                teil_stamm.set_id(rs.getInt(1));                
+                
+                String teiletyp = rs.getString(2);                
+                // valueOf Methode kommt nicht mit nullwerten zurecht
+                if (teiletyp != null) {
+                         teil_stamm.set_Teiletyp(TeileTypET.valueOf(teiletyp));
+                }
+                else teil_stamm.set_Teiletyp(null);
+
                 teil_stamm.set_zeichnungsnummer(rs.getString(3));
-                teil_stamm.set_Materialgruppe(rs.getString(4));
-                teil_stamm.set_preis(rs.getDouble(5));
-                teil_stamm.set_Bezeichnung(rs.getString(6));
-                teil_stamm.set_Baugruppe(rs.getString(7));
+                teil_stamm.set_preis(rs.getDouble(4));
+                teil_stamm.set_Bezeichnung(rs.getString(5));
+                teil_stamm.set_Baugruppe(rs.getString(6));
+                teil_stamm.set_Materialgruppe(rs.getString(7));
                 teil_stamm.set_bemerkung(rs.getString(8));
                 teil_stamm.set_max_anzahl_klein(rs.getInt(9));
                 teil_stamm.set_max_anzahl_mittel(rs.getInt(10));
@@ -414,9 +421,6 @@ public class Datenbankverbindung {
                 teil_stamm = new Teil_Stammdaten();
 
             }
-            
-
-
 
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankverbindung.class.getName()).log(Level.SEVERE, null, ex);
@@ -424,8 +428,7 @@ public class Datenbankverbindung {
         return teil_stammdaten_array;
 
     }
-    
-    
+   
     /**
      * Versucht ein ResultSet zu ein Array von Lagerbestandskonten Objekten  konvertieren
      * Achtung!: Das Haltbarkeitsdatum wird nicht aus der Datenbank gelesen sondern immer null gesetzt
@@ -436,6 +439,7 @@ public class Datenbankverbindung {
         // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
         ArrayList<Lagerbestandskonto> bestandskonto_array = new ArrayList<Lagerbestandskonto>();
         try {
+          
             // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
             ResultSetMetaData rmsd = rs.getMetaData();
             if (rmsd.getColumnCount() > 5) {
@@ -454,8 +458,6 @@ public class Datenbankverbindung {
 
             }
             
-
-
 
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankverbindung.class.getName()).log(Level.SEVERE, null, ex);

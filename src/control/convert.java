@@ -25,7 +25,7 @@ public class convert {
         returnstatement = Integer.parseInt(st);
         }catch(NumberFormatException nfe)
         {
-            System.out.println(nfe.getMessage());
+            //System.out.println(nfe.getMessage());
             //nutzerhinweis gui starten
             //JOptionPane.showMessageDialog(null, nfe+"\n Konvertierungsfehler:Integer");
         }
@@ -48,7 +48,7 @@ public class convert {
         returnstatement = Double.parseDouble(st);
         }catch(NumberFormatException nfe)
         {
-            System.out.println(nfe.getMessage());
+            //System.out.println(nfe.getMessage());
             //nutzerhinweis gui starten
             //view.Nutzerhinweis1 nwh =new view.Nutzerhinweis1(null, true);
             //nwh.setHinweisfeld("Der Preis darf nur aus Ziffern bestehen. \nBuchstaben sind nicht erlaubt.");

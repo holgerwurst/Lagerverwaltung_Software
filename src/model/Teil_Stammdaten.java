@@ -126,4 +126,24 @@ public class Teil_Stammdaten {
     public void set_Baugruppe(String neue_bgrp) {
         baugruppe = neue_bgrp;
     }
+    
+    /**
+     * Diese Methode gibt alle Attribute in Form eine Object[] zurück
+     * @return ein Objekt[]
+     */
+    public Object[] toArray() {
+                Object[] rowarray = new Object[11];
+                rowarray[0] = this.get_Id();
+                rowarray[1] = this.get_Teiletyp();
+                rowarray[2] = this.get_Zeichnungsnummer();
+                rowarray[3] = this.get_Preis();
+                rowarray[4] = this.get_Bezeichnung();
+                rowarray[5] = this.get_Baugruppe();
+                rowarray[6] = this.get_Materialgruppe();
+                rowarray[7] = this.get_Bemerkung();
+                rowarray[8] = this.get_max_anz_klein();
+                rowarray[9] = this.get_max_anz_mittel();
+                rowarray[10] = this.get_max_anz_gross();
+                return rowarray;
+    }
 }

@@ -43,10 +43,20 @@ public class Select_Allgemein {
             {
                 if (!wert[1].equals("")) {
                     if (i == 0) {
-                        query = query + " WHERE " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                        if (wert[0].equals("id")) {
+                            query = query + " WHERE " + wert[0] + "=" + wert[1];
+                        }
+                        else {
+                            query = query + " WHERE " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                        }
                         i++;
                     } else {
-                        query = query + " AND " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                        if (wert[0].equals("id")) {
+                            query = query + " AND " + wert[0] + "=" + wert[1];
+                        }
+                        else {
+                            query = query + " AND " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                        }
                     }
                 }
             }
@@ -69,22 +79,7 @@ public class Select_Allgemein {
         //}
         //System.out.println(columnname + ": " + columnType);
         db.disconnect();
-    }
-    
-    
-    public String[] get_menge_ausDB(String groesse, int id) throws SQLException {
-          try {
-            db.connect("Select menge from Lagerbestandskonto where teile_ID="+id+" and menge<(Select "+groesse+" from Teilestammdaten where id="+id+")", "menge");
-            db.disconnect();
-            
-        } catch (ClassNotFoundException ex) {
-            System.out.println("JDBC-Treiber nicht vorhanden");
-        }
-        return db.ar;
-    }
-    
-    
-    
+    }  
     
     
 

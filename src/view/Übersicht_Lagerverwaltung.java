@@ -12,6 +12,7 @@ import control.Teil_auslagern_controller;
 import control.Teil_einlagern_Controller;
 import model.Select_Stammdaten;
 import control.convert;
+import java.awt.Color;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -369,6 +370,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         makLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
         mamLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
         magLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
+        pStatusleiste = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Datei = new javax.swing.JMenu();
         Bearbeiten = new javax.swing.JMenu();
@@ -378,7 +380,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         menge_suchen = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(1000, 700));
         getContentPane().setLayout(null);
 
         jPanel7.setLayout(null);
@@ -2076,7 +2078,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teilestamm_erweitern.add(button_anlegen);
-        button_anlegen.setBounds(530, 550, 77, 23);
+        button_anlegen.setBounds(540, 500, 77, 30);
 
         textfeld_idP.setText("text");
         textfeld_idP.setToolTipText("");
@@ -2158,6 +2160,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         textfeld_zeichnungsnummerLTFP.setBounds(470, 260, 150, 30);
         Teilestamm_erweitern.add(textfeld_baugruppeLTFP);
         textfeld_baugruppeLTFP.setBounds(470, 210, 150, 30);
+
+        preisfeldLTFP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                preisfeldLTFPActionPerformed(evt);
+            }
+        });
         Teilestamm_erweitern.add(preisfeldLTFP);
         preisfeldLTFP.setBounds(470, 110, 150, 30);
 
@@ -2184,6 +2192,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         });
         Teilestamm_erweitern.add(magLTFP);
         magLTFP.setBounds(150, 320, 150, 30);
+
+        pStatusleiste.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_erweitern.add(pStatusleiste);
+        pStatusleiste.setBounds(20, 540, 950, 20);
 
         Teilentf_tabbedpane.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
@@ -2387,9 +2399,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void button_anlegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_anlegenActionPerformed
         // TODO add your handling code here:
         //System.out.println("Teilestamm erweitern: anlegen button gedrückt!");
+        setpTSEStatusleiste("",Color.BLACK);
+        button_anlegen.requestFocusInWindow();
 
         if ((textfeld_bezeichnungLTFP.getText().isEmpty()) || (makLTFP.getText().isEmpty()) || (mamLTFP.getText().isEmpty()) || (magLTFP.getText().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Füllen Sie bitte alle Pflichtfelder aus.");
+            setpTSEStatusleiste("Füllen Sie bitte alle Pflichtfelder aus.",Color.red);
 
         } else {
 
@@ -2415,7 +2430,22 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_button_anlegenActionPerformed
-
+    /**Patrick: schreibt was in die Statusleiste in Teilestamm erweitern und setzt ne farbe für den text
+     * 
+     * @param text
+     * @param farbe 
+     */
+    public void setpTSEStatusleiste(String text, Color farbe){
+        this.pStatusleiste.setText(text);
+        this.pStatusleiste.setForeground(farbe);
+    }
+    /**Patrick: schreibt nen String in Die Bezeichnung von Teilestamm erweitern
+     * 
+     * @param s 
+     */
+    public void setpTSEBezeichnung(String s){
+        textfeld_bezeichnungLTFP.setText(s);
+    }
     private void suchen_button_erweiternActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suchen_button_erweiternActionPerformed
         Teil_Suchen ts = new Teil_Suchen();
         ts.setVisible(true);// TODO add your handling code here:
@@ -2431,6 +2461,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         control.TeileStamm_erweitern_controller tecfocus = new control.TeileStamm_erweitern_controller(this);
         if (tecfocus.bezSchonDa(textfeld_bezeichnungLTFP.getText())) {
             JOptionPane.showMessageDialog(null, "Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.\nBezeichnungen müssen eindeutig sein.");
+            setpTSEStatusleiste("Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.",Color.red);
             textfeld_bezeichnungLTFP.requestFocusInWindow();
             tecfocus = null;
         }
@@ -2464,8 +2495,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 try {
                 te = new Teil_einlagern_Controller(this);
                 String mar = (String) (table_einlagern.getValueAt(table_einlagern.getSelectedRow(), 0));
-               
+             
                 int id = cv.StringTOint(id_textfeld2.getText());
+                label_menge_übrig.setText(id_textfeld2.getText());
                 te.einlagern(mar, id);
 
             } catch (NumberFormatException e) {
@@ -2475,6 +2507,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             
             }
     }//GEN-LAST:event_einlagern_button_tabelleActionPerformed
+
+    private void preisfeldLTFPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preisfeldLTFPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_preisfeldLTFPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2614,7 +2650,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField datum_textfeld_historie;
     private javax.swing.JButton drucken_button_historie;
     private javax.swing.JLabel eingebenLabel;
-    private javax.swing.JButton einlagern_button_tabelle;
+    public javax.swing.JButton einlagern_button_tabelle;
     public javax.swing.JTextField entfernenIDTextfield;
     private javax.swing.JPanel entfernenJTabbedPane;
     private javax.swing.JMenuItem fach_suchen;
@@ -2823,6 +2859,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField menge_textfeld9;
     public view.LagerTextfield menge_textfeld_einlagern;
     private javax.swing.JLabel oderLabel_historie;
+    private javax.swing.JLabel pStatusleiste;
     private view.LagerTextfield preisfeldLTFP;
     private javax.swing.JButton splitten_button;
     private javax.swing.JButton suchenButton;
