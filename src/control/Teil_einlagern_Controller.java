@@ -236,9 +236,9 @@ public class Teil_einlagern_Controller {
             lv.label_menge_übrig.setText(text);
 
 
-            //    Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
-            //    dbs.insert_lagerbestandskonto(lbk);
-            //    dbs.update_lagerfachstamm(fachnummer, true);
+                Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
+                dbs.insert_lagerbestandskonto(lbk);
+                dbs.update_lagerfachstamm(fachnummer, true);
 
             einlagern_vorbereiten(id);
 

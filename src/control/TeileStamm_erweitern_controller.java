@@ -92,7 +92,7 @@ public class TeileStamm_erweitern_controller {
                            JOptionPane.showMessageDialog(null, "geprüftes Teil konnte nocht zur db hinzugefügt werden", "Fehlschlag", 1);
 
             }
-           Hauptfenster.setpTSEStatusleiste(neuTeil.get_Bezeichnung()+" wurde erfolgreich angelegt. Sie können nun "+neuTeil.get_Bezeichnung()+" einlagern.",Color.green);
+           Hauptfenster.setpTSEStatusleiste(neuTeil.get_Bezeichnung()+" wurde erfolgreich angelegt. Sie können nun "+neuTeil.get_Bezeichnung()+" einlagern.",Color.BLACK);
            Hauptfenster.setpTSEBezeichnung("");
        }
    }

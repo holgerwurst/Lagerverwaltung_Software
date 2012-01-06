@@ -24,6 +24,7 @@ public class Pruefen_Controller {
 
     private Select_Stammdaten std = new Select_Stammdaten();
     private Übersicht_Lagerverwaltung lv = new Übersicht_Lagerverwaltung();
+    private convert cv =new convert();
 
  
     public boolean pruefe_id(int id) {
@@ -117,6 +118,25 @@ public class Pruefen_Controller {
             }
         }
         return 99999;
+    }
+    /**Prüfmethode zur logisch richtigen angabe Eines Teils zur belegung der Boxgrößen
+     * 
+     * @param maks klein
+     * @param mams mittel
+     * @param mags groß
+     * @return 0: Alles ok, 1:alle felder sind 0, 2: es passen weniger Teile in große boxen als in kleinere
+     */
+    public int boxlogo(String maks, String mams, String mags){
+        int mak=cv.StringTOint(maks);
+        int mam=cv.StringTOint(mams);
+        int mag=cv.StringTOint(mags);
+        if(mak>mam){return 2;}else{
+            if(mam>mag)return 2;
+        
+        }
+      
+        
+       if(mak==0&&mam==0&&mag==0)return 1;else return 0;
     }
     /*
      * public static void main(String[] args) throws Exception{
