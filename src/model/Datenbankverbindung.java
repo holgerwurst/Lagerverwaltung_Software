@@ -255,24 +255,6 @@ public class Datenbankverbindung {
         }
     }
     
-    /**
-     * Sollte ein Array von Teil_Stammdaten Objekte anhand einer query zurückgeben
-     * @param query Eine Query welche die Tabelle Teilestammdaten abfragen muss
-     * @return
-     * @throws ClassNotFoundException
-     * @throws Exception 
-     */
-    public ArrayList<Teil_Stammdaten> connect_Teil_Stammdaten(String query) throws ClassNotFoundException, Exception {
-        basic_connect(query);
-        //System.out.println(resultset_to_arraylist());
-        //ArrayList<Teil_Stammdaten> teil_stammdaten_array = new ArrayList<Teil_Stammdaten>();
-        ArrayList<Teil_Stammdaten> teil_stammdaten_array = resultset_to_teil_stammdaten();
-        disconnect();
-        return teil_stammdaten_array;
-    }
-    
-    
-    
     public void disconnect() throws ClassNotFoundException {
 
         try {
@@ -330,23 +312,26 @@ public class Datenbankverbindung {
         return zeilen;
     }
 
+
+    public ArrayList<Lagerfachstamm> resultset_to_lagerfachstamm() throws Exception {
+        return resultset_to_lagerfachstamm("SELECT * FROM Lagerfachstamm");
+    }
+    
     /**
      * Methode die versucht ein ResultSet zu einem Array von Lagerfachstamm
      * Objekten umzuwandeln
      *
      * @return Array von Lagerstammobjekten
      */
-    public ArrayList<Lagerfachstamm> resultset_to_lagerfachstamm() throws Exception {
+                
+    public ArrayList<Lagerfachstamm> resultset_to_lagerfachstamm(String query) throws Exception {
         // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
         ArrayList<Lagerfachstamm> lagerfachstammarray = new ArrayList<Lagerfachstamm>();
          Class.forName("org.sqlite.JDBC");
         try {
             // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
            
-            connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);  // set timeout to 30 sec
-            rs = statement.executeQuery("select * from Lagerfachstamm");
+            basic_connect(query);
             
             ResultSetMetaData rmsd = rs.getMetaData();
 
@@ -379,7 +364,15 @@ public class Datenbankverbindung {
         }
         return lagerfachstammarray;
     }
-
+    /**
+     * Standartaufruf der resultset_to_teil_stammdaten Methode gibt die ganze Tabelle zurück
+     * @return ArrayList der ganzen Teilestammdatentabelle
+     * @throws Exception 
+     */
+    public ArrayList<Teil_Stammdaten> resultset_to_teil_stammdaten() throws Exception {
+        return resultset_to_teil_stammdaten("SELECT * FROM Teilestammdaten");
+    }
+    
     /**
      * Aus einem ResultSet wird versucht ein Array von Teil_Stammdaten zu
      * erzeugen.
@@ -387,15 +380,12 @@ public class Datenbankverbindung {
      * @return
      * @throws Exception
      */
-    public ArrayList<Teil_Stammdaten> resultset_to_teil_stammdaten() throws Exception {
+    public ArrayList<Teil_Stammdaten> resultset_to_teil_stammdaten(String query) throws Exception {
         // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
         ArrayList<Teil_Stammdaten> teil_stammdaten_array = new ArrayList<Teil_Stammdaten>();
          Class.forName("org.sqlite.JDBC");
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);  // set timeout to 30 sec
-            rs = statement.executeQuery("select * from Teilestammdaten");
+            basic_connect(query);
             // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
             ResultSetMetaData rmsd = rs.getMetaData();
             if (rmsd.getColumnCount() > 11) {
@@ -434,21 +424,22 @@ public class Datenbankverbindung {
 
     }
    
+    public ArrayList<Lagerbestandskonto> resultset_to_lagerbestandskontos() throws Exception {
+        return resultset_to_lagerbestandskontos("SELECT * FROM Lagerbestandskonto");
+    }
+    
     /**
      * Versucht ein ResultSet zu ein Array von Lagerbestandskonten Objekten  konvertieren
      * Achtung!: Das Haltbarkeitsdatum wird nicht aus der Datenbank gelesen sondern immer null gesetzt
      * @return
      * @throws Exception 
      */
-    public ArrayList<Lagerbestandskonto> resultset_to_lagerbestandskontos() throws Exception {
+    public ArrayList<Lagerbestandskonto> resultset_to_lagerbestandskontos(String query) throws Exception {
         // ArrayList von Zeilen(enthält ArrayList Objekte die die Zeilen darstellen)
         ArrayList<Lagerbestandskonto> bestandskonto_array = new ArrayList<Lagerbestandskonto>();
         Class.forName("org.sqlite.JDBC");
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:Lagerverwaltung.db");
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);  // set timeout to 30 sec
-            rs = statement.executeQuery("select * from Lagerbestandskonto");
+            basic_connect(query);
             // Object das aus dem die Spaltentypen und Anzahl der Spalten gewonnen werden kann
             ResultSetMetaData rmsd = rs.getMetaData();
             if (rmsd.getColumnCount() > 5) {
