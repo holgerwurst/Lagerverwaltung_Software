@@ -279,8 +279,6 @@ public class Select_Stammdaten {
     // gibt zweidimensionale tabelle aller zeilen zurück
 
     public ArrayList<Teil_Stammdaten> get_ganze_tabelle_teilestammdaten() throws ClassNotFoundException, Exception {
-        String query = Select_Allgemein.create_select_ganze_tabelle("Teilestammdaten");
-        db.basic_connect(query);
         ArrayList<Teil_Stammdaten> ganze_tabelle = db.resultset_to_teil_stammdaten();
         db.disconnect();
         return ganze_tabelle;
@@ -296,6 +294,7 @@ public class Select_Stammdaten {
     public ArrayList<Teil_Stammdaten> teile_suchen(String[][] spaltenwerte) throws ClassNotFoundException, Exception {
         String query = Select_Allgemein.create_select_teile_suchen(spaltenwerte);
         ArrayList<Teil_Stammdaten> teile_stammdaten_array = db.resultset_to_teil_stammdaten(query);
+        db.disconnect();
         for (Iterator<Teil_Stammdaten> it = teile_stammdaten_array.iterator(); it.hasNext();) {
             Teil_Stammdaten teil = it.next();
             System.out.println(
