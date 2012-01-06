@@ -82,23 +82,47 @@ public class Teil_auslagern_controller {
         return 2;
     }
 
+    /**
+     * gibt ein Array mit den aktuellen Fachnummern zurück
+     * @return 
+     */
     public String[] getfachnummern() {
         return fachnummern;
     }
-
+/**
+ * gibt die aktuelle ID zurück
+ * @return 
+ */
     public int getID() {
         return id;
     }
-
+/**
+ * gibt ein Array mit den aktuellen Mengen der Faecher zurueck
+ * @return 
+ */
     public String[] getaktuelle_menge() {
         return aktuelle_menge;
     }
-
+/**
+ * gibt ein Array mit den aktuellen Anschaffungsgruenden der Teile zurueck
+ * @return 
+ */
     public String[] getanschaffungsgrund() {
 
         return anschaffungsgrund;
     }
 
+    /**
+     * 
+     * Es wird ein Objekt vom Typ Lagerbestandskonto 
+     * aus den uebergebenen Werten erstellt.
+     * 
+     * @param fnr
+     * @param idt
+     * @param neue_menge
+     * @param ansgrund
+     * @return 
+     */
     public Lagerbestandskonto erstelle_lbk(String fnr, int idt, int neue_menge, String ansgrund) {
         
         Lagerbestandskonto lbk = new Lagerbestandskonto(fnr, idt, neue_menge, ansgrund, null);
@@ -107,25 +131,31 @@ public class Teil_auslagern_controller {
 
     }
 
+    /**
+     * 
+     * Das uebergebenen Lagerbestandskonto wird in die Datenbank geschrieben.
+     * 
+     * @param lbk
+     * @throws ClassNotFoundException 
+     */
     public void auslagern_durchfuehrung(Lagerbestandskonto lbk) throws ClassNotFoundException {
 
         DB_schreiben dbs = new DB_schreiben();
-
-        //System.out.println("LBK wurde mit folgenden Werten geschrieben: ");
-        //System.out.println(lbk.get_Fachnummer());
-        //System.out.println(lbk.get_TeileID());
-        //System.out.println(lbk.get_Menge());
-        //System.out.println(lbk.get_Anschaffungsgrund());
-        //System.out.println(lbk.get_Haltbarkeitsdatum());
 
         dbs.update_lagerbestand(lbk);
     }
 
     
     
-    // TEST
-    
-    
+   
+    /**
+     * 
+     * Die statische Methode fuehrt beim Ausloesen des ausfuehren_button
+     * das Auslagern aus und aktualiesiert die jTable.
+     * 
+     * 
+     * @param ul 
+     */
     
      public static void auslagern_ausfuehren_button(Übersicht_Lagerverwaltung ul) 
     {
@@ -228,6 +258,14 @@ public class Teil_auslagern_controller {
         
     }
     
+     /**
+      * 
+      * Die statische Methode zeigt alle Faecher und Mengenbelegungen
+      * der gewaehlten ID in der jTable an.
+      * 
+      * 
+      * @param ul 
+      */
     public static void auslagern_bestaetigen_button(Übersicht_Lagerverwaltung ul)
     {
             ul.pr = new Pruefen_Controller();
@@ -266,19 +304,4 @@ public class Teil_auslagern_controller {
     }
     
     
-    
-    public static void main(String[] args) throws ClassNotFoundException {
-
-        Teil_auslagern_controller ta = new Teil_auslagern_controller();
-
-        Pruefen_Controller pc = new Pruefen_Controller();
-
-        //System.out.println(pc.pruefe_id(55));
-
-        //ta.auslagern_vorbereitung(1);
-
-        //ta.auslagern_durchfuehrung("FH1Z1S1K", 66);
-
-
-    }
 }
