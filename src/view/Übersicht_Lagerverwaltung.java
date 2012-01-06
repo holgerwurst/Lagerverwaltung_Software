@@ -2193,7 +2193,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(magLTFP);
         magLTFP.setBounds(150, 320, 150, 30);
 
-        pStatusleiste.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        pStatusleiste.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Teilestamm_erweitern.add(pStatusleiste);
         pStatusleiste.setBounds(20, 540, 950, 20);
 
