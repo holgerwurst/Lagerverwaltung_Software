@@ -166,12 +166,12 @@ public class Teil_einlagern_Controller {
                     String[] belegung = lf.get_fachnummer_ausDB(false);
                     freieFaecher(belegung);
 
-
                 }
                 menge = new String[menge_aktuell.size()];
                 for (int i = 0; i < menge_aktuell.size(); i++) {
                     menge[i] = menge_aktuell.get(i);
                 }
+                
                 model.addColumn("Aktuelle Menge", menge);
 
             }
@@ -219,21 +219,24 @@ public class Teil_einlagern_Controller {
 
             //   int menge_uebrig = cv.StringTOint(lv.label_menge_übrig.getText());
 
+            if (!inhalt.equals(lv.label_menge_übrig.getText())) {
+                
+                if (menge < einzulagern && einzulagern != 0) {
+                    //zahl = einzulagern;
+                    neueMenge = menge;
+                } else if (menge > einzulagern && einzulagern != 0) {
+                    // System.out.println("0");
+                    neueMenge = einzulagern;
+                } else {
+                    System.out.println("0");
+                    // neueMenge = einzulagern - menge;
+                }
 
-            if (einzulagern < menge && einzulagern != 0) {
-                //zahl = einzulagern;
-                neueMenge = einzulagern;
-            } else if (einzulagern == 0) {
-                System.out.println("0");
-                //  neueMenge = einzulagern;
-            } else {
-                neueMenge = einzulagern - menge;
+                String text = String.valueOf(neueMenge);
+                //   int neueMenge = einzulagern - zahl;
+                // String text = String.valueOf(neueMenge);
+                lv.label_menge_übrig.setText(text);
             }
-
-            String text = String.valueOf(neueMenge);
-            //  int neueMenge = einzulagern - zahl;
-            //String text = String.valueOf(neueMenge);
-            lv.label_menge_übrig.setText(text);
 
 
             Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
@@ -498,7 +501,7 @@ public class Teil_einlagern_Controller {
 
 
             } else if (fachstamm.get(pif).get_Belegung() == false) {            //wenn das Fach noch nicht belegt ist 
-                                                                                //wird nachgesehen ob die Menge in das Fach passt
+                //wird nachgesehen ob die Menge in das Fach passt
                 if ("K".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_klein()) {
                         einlagern = true;
@@ -546,7 +549,7 @@ public class Teil_einlagern_Controller {
                 }
                 
             }
-            
+
         }
 
     }

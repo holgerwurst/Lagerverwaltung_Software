@@ -2558,7 +2558,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 String mar = (String) (table_einlagern.getValueAt(table_einlagern.getSelectedRow(), 0));
              
                 int id = cv.StringTOint(id_textfeld2.getText());
-                label_menge_übrig.setText(id_textfeld2.getText());
+               // label_menge_übrig.setText(id_textfeld2.getText());
                 te.einlagern(mar, id);
 
             } catch (NumberFormatException e) {
