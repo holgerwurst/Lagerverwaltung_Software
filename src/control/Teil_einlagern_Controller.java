@@ -140,28 +140,28 @@ public class Teil_einlagern_Controller {
                 if (zahlmittel == 0 || zahlklein == 0 || zahlgross == 0) {
 
 
-                   if (zahlklein == 0 && zahlmittel == 0) {
+                    if (zahlklein == 0 && zahlmittel == 0) {
 
-                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
-                  freieFaecher(belegung);
-            } else if (zahlklein == 0 && zahlgross == 0) {
-                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
-                   freieFaecher(belegung);
+                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
+                        freieFaecher(belegung);
+                    } else if (zahlklein == 0 && zahlgross == 0) {
+                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
+                        freieFaecher(belegung);
 
-            } else if (zahlmittel == 0 && zahlgross == 0) {
-                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
-                 freieFaecher(belegung);
-            } else if (zahlklein == 0) {
-                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
-                  freieFaecher(belegung);
+                    } else if (zahlmittel == 0 && zahlgross == 0) {
+                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
+                        freieFaecher(belegung);
+                    } else if (zahlklein == 0) {
+                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
+                        freieFaecher(belegung);
 
-            } else if (zahlmittel == 0) {
-                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
-                  freieFaecher(belegung);
-            } else if (zahlgross == 0) {
-                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
-                 freieFaecher(belegung);
-            }
+                    } else if (zahlmittel == 0) {
+                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
+                        freieFaecher(belegung);
+                    } else if (zahlgross == 0) {
+                        String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
+                        freieFaecher(belegung);
+                    }
                 } else {
                     String[] belegung = lf.get_fachnummer_ausDB(false);
                     freieFaecher(belegung);
@@ -191,7 +191,7 @@ public class Teil_einlagern_Controller {
             st = new Select_Stammdaten();
             cv = new convert();
             parse(id);
-           int menge=0;
+            int menge = 0;
             int neueMenge = 0;
 
             String inhalt = lv.menge_textfeld_einlagern.getText();
@@ -236,9 +236,9 @@ public class Teil_einlagern_Controller {
             lv.label_menge_übrig.setText(text);
 
 
-                Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
-                dbs.insert_lagerbestandskonto(lbk);
-                dbs.update_lagerfachstamm(fachnummer, true);
+            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
+            dbs.insert_lagerbestandskonto(lbk);
+            dbs.update_lagerfachstamm(fachnummer, true);
 
             einlagern_vorbereiten(id);
 
@@ -405,46 +405,120 @@ public class Teil_einlagern_Controller {
     /**
      *
      */
-   public void manuell_einlagern_fachcheck(String f1, String m1, int id) throws ClassNotFoundException, SQLException, Exception {
+    public void manuell_einlagern_fachcheck(String f1, String m1, int id) throws ClassNotFoundException, SQLException, Exception {
+        //Anlegen neuer Controller 
         Pruefen_Controller pr = new Pruefen_Controller();
         cv = new convert();
+        //neue Datenbankverbindung
         Datenbankverbindung dbv = new Datenbankverbindung();
-        ArrayList<Lagerfachstamm> lfsa = new ArrayList<Lagerfachstamm>();
-        lfsa = dbv.resultset_to_lagerfachstamm();
-        ArrayList<Teil_Stammdaten> tsal = new ArrayList<Teil_Stammdaten>();
-        tsal = dbv.resultset_to_teil_stammdaten();
-        ArrayList<Lagerbestandskonto> lbal = new ArrayList<Lagerbestandskonto>();
-        lbal = dbv.resultset_to_lagerbestandskontos();
+        //Arraylists der jeweiligen tabellen
+        ArrayList<Lagerfachstamm> fachstamm = new ArrayList<Lagerfachstamm>();
+        fachstamm = dbv.resultset_to_lagerfachstamm();
+        ArrayList<Teil_Stammdaten> stammdaten = new ArrayList<Teil_Stammdaten>();
+        stammdaten = dbv.resultset_to_teil_stammdaten();
+        ArrayList<Lagerbestandskonto> bestandsdaten = new ArrayList<Lagerbestandskonto>();
+        bestandsdaten = dbv.resultset_to_lagerbestandskontos();
+
+        //Deklaration von variablen
+        int menge = cv.StringTOint(m1); //konvertieren der menge zu int
+        int pif = 0; //position in dem Lagerfachstammarray 
+        int pib = 0;  //position in dem Bestandskontoarray
+        int pis = 0; //position in dem Stammdatenarray
+        int i = 0;   //Variable zum hochzählen
+        boolean eqls = false;//Variable ob Prüfung des Faches erfolgreich war
+        boolean chk_lbk = false; //Variable für die Prüfung ob das Fach im bestandskonto von der gleichen id belegt ist
+        int freier_platz = 0; //Variable wieviel platz in einem Fach noch frei ist (wird nur genutzt falls das fach bereits
+        //von der gleichen id belegt ist)
+        String groesse = ""; //Variable zum speichern der größe
+        boolean einlagern = false; //variable die festlegt ob das fach eingelagert werden kann
+
+        //suchen der id in der Stammdaten arraylist
+        for (int a = 0; a < stammdaten.size(); a++) {
+            if (id == stammdaten.get(a).get_Id()) {
+                pis = a;
+            }
+        }
+
+        //Prüfen ob das Fach richtig eingegeben wurde und im array ist
+        while (eqls == false) {                                     //solange eqls false ist
+            if (i < fachstamm.size()) {                             //und i kleiner als die größe der array list
+                if (f1.equals(fachstamm.get(i).get_Fachnummer())) { //wird verglichen ob die fachnummer in dem array vor kommt
+                    eqls = true;                                    //wenn ja wird sich der index gemerkt an der stelle wo das fach steht
+                    pif = i;                                        //und es wird die eqls variable auf true gesetzt
+                    groesse = fachstamm.get(pif).get_groesse();
+                    JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Fach gefunden gefunden"); //wieder entfernen
+                } else {
+                    i++;                                        //wenn nicht wird i hochgezählt und weitergesucht
+                }
+            } else {
+                JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Teil nicht vorhanden");
+                break;                                          //wurde das fach nicht gefunden, wird abgebrochen
+            }
+        }
+        //Prüfen ob das Fach Frei oder Belegt ist
+
+        if (eqls == true) {                                             //wenn die Fachprüfung erfolgreich war
+            if (fachstamm.get(pif).get_Belegung() == true) {            //wird die belegung geprüft, ist das fach schon belegt
+                int k = 0;
+                while (chk_lbk == false) {                              //wird das Fach in den Bestandsdaten gesucht und die id geprüft
+                    if (k < bestandsdaten.size()) {                     //durchlauf durch das Bestandsdatenarray
+                        if (f1.equals(bestandsdaten.get(k).get_Fachnummer())) {     // wird die Fachnummer in den bestandsdaten gefunden
+                            pib = k; //merken der Position in den bestandsdaten     // wird sich die position im array gemerkt
+                            if (bestandsdaten.get(k).get_TeileID() == id) {         // und es wird die id des einzulagernden teils mit dem eingelagerten verglichen
+                                chk_lbk = true;                                     // die prüfvariable wird true damit die schleife endet
+                                if ("K".equals(groesse)) { // danach wird ein größenvergleich durchgeführt und die freie menge im fach gespeichert
+                                    freier_platz = stammdaten.get(pis).get_max_anz_klein() - bestandsdaten.get(k).get_Menge();
+                                } else if ("M".equals(groesse)) {
+                                    freier_platz = stammdaten.get(pis).get_max_anz_mittel() - bestandsdaten.get(k).get_Menge();
+                                } else if ("G".equals(groesse)) {
+                                    freier_platz = stammdaten.get(pis).get_max_anz_gross() - bestandsdaten.get(k).get_Menge();
+                                }
+                            } else {
+                                JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Das Fach ist von einem anderen Teil belegt");
+                                break;
+                            }//ende bestandsdatenvergleich                          
+                        } else {
+                            k++;
+                        }//ende Fachnummer vergleich
+                    }
+                }//ende whileschleife
+
+                if (menge <= freier_platz) {        //letzter vergleich bei einem bereits belegtem fach
+                    einlagern = true;               //einlagern wird true wenn die einzulagernde menge kleiner gleich dem freien platz ist
+                } else {
+                    JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "In dem Fach ist nicht mehr genug platz frei");
+                }
 
 
-        /**
-         * Datenbankverbindung db = new Datenbankverbindung();
-         * Lagerbestandskonto[] lb = db.resultset_to_lagerbestandskontos();
-         * Lagerfachstamm[] lfs = db.resultset_to_lagerfachstamm();
-         * Teil_Stammdaten[] ts = (Teil_Stammdaten[])
-         * db.resultset_to_teil_stammdaten().toArray(); int f; int i = 0;
-         * boolean eqls = false; while (eqls == false) { if (i < lfs.length) {
-         * if (f1.equals(lfs[i].get_Fachnummer())) { eqls = true; f = i; } else
-         * { i++; } } else {
-         * JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Teil
-         * nicht vorhanden"); break; } }
-         */
-        /**
-         * for (int i = 0; i < lfs.length; i++) { if
-         * (f1.equals(lfs[i].get_Fachnummer())) { f = i; } }
-         *
-         * if (i != 99999) { slf = new Select_Lagerfachstamm(); String bel =
-         * slf.get_Belegung_ausDB(slf_arr[i]); Lagerbestandskonto[] lb =
-         * db.resultset_to_lagerbestandskontos(); if ("true".equals(bel)) { int
-         * chk_id = lb[1].get_TeileID(); if (chk_id == id) {
-         * lb[i].get_Fachnummer(); } } System.out.println(bel);
-         *
-         * //if()
-         *
-         * //belegung prüfen
-         *
-         * // }
-         */
-        //System.out.println(slf_arr[i]);
-   }
+            } else if (fachstamm.get(pif).get_Belegung() == false) {            //wenn das Fach noch nicht belegt ist 
+                                                                                //wird nachgesehen ob die Menge in das Fach passt
+                if ("K".equals(groesse)) {
+                    if (menge <= stammdaten.get(pis).get_max_anz_klein()) {
+                        einlagern = true;
+                    } else {
+                        JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Die Menge passt nicht ins fach");
+                    }
+                } else if ("M".equals(groesse)) {
+                    if (menge <= stammdaten.get(pis).get_max_anz_mittel()) {
+                        einlagern = true;
+                    } else {
+                        JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Die Menge passt nicht ins fach");
+                    }
+                } else if ("G".equals(groesse)) {
+                    if (menge <= stammdaten.get(pis).get_max_anz_gross()) {
+                        einlagern = true;
+                    } else {
+                        JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Die Menge passt nicht ins fach");
+                    }
+                }
+
+            }
+            if(einlagern=true)
+            {
+                
+            }
+            
+        }
+
+    }
 }
