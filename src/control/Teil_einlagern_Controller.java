@@ -405,7 +405,7 @@ public class Teil_einlagern_Controller {
     /**
      *
      */
-    public void manuell_einlagern_fachcheck(String f1, String m1, int id) throws ClassNotFoundException, SQLException, Exception {
+    public void manuell_einlagern_fachcheck(String f1, String m1, int id, String anschaffungsgrund) throws ClassNotFoundException, SQLException, Exception {
         //Anlegen neuer Controller 
         Pruefen_Controller pr = new Pruefen_Controller();
         cv = new convert();
@@ -418,6 +418,9 @@ public class Teil_einlagern_Controller {
         stammdaten = dbv.resultset_to_teil_stammdaten();
         ArrayList<Lagerbestandskonto> bestandsdaten = new ArrayList<Lagerbestandskonto>();
         bestandsdaten = dbv.resultset_to_lagerbestandskontos();
+        
+        Lagerbestandskonto einlagern_bestand=new Lagerbestandskonto(); //neues objekt vom typ Lagerbestandskonto zum einlagern
+        DB_schreiben writer= new DB_schreiben();
 
         //Deklaration von variablen
         int menge = cv.StringTOint(m1); //konvertieren der menge zu int
@@ -431,6 +434,9 @@ public class Teil_einlagern_Controller {
         //von der gleichen id belegt ist)
         String groesse = ""; //Variable zum speichern der größe
         boolean einlagern = false; //variable die festlegt ob das fach eingelagert werden kann
+        boolean einlagern_neu = false;
+        boolean einlagern_update=false;
+        
 
         //suchen der id in der Stammdaten arraylist
         for (int a = 0; a < stammdaten.size(); a++) {
@@ -446,7 +452,7 @@ public class Teil_einlagern_Controller {
                     eqls = true;                                    //wenn ja wird sich der index gemerkt an der stelle wo das fach steht
                     pif = i;                                        //und es wird die eqls variable auf true gesetzt
                     groesse = fachstamm.get(pif).get_groesse();
-                    JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Fach gefunden gefunden"); //wieder entfernen
+                    JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Fach gefunden"); //wieder entfernen
                 } else {
                     i++;                                        //wenn nicht wird i hochgezählt und weitergesucht
                 }
@@ -485,6 +491,7 @@ public class Teil_einlagern_Controller {
 
                 if (menge <= freier_platz) {        //letzter vergleich bei einem bereits belegtem fach
                     einlagern = true;               //einlagern wird true wenn die einzulagernde menge kleiner gleich dem freien platz ist
+                    einlagern_update=true;
                 } else {
                     JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "In dem Fach ist nicht mehr genug platz frei");
                 }
@@ -495,26 +502,48 @@ public class Teil_einlagern_Controller {
                 if ("K".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_klein()) {
                         einlagern = true;
+                        einlagern_neu=true;
                     } else {
                         JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Die Menge passt nicht ins fach");
                     }
                 } else if ("M".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_mittel()) {
                         einlagern = true;
+                        einlagern_neu=true;
                     } else {
                         JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Die Menge passt nicht ins fach");
                     }
                 } else if ("G".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_gross()) {
                         einlagern = true;
+                        einlagern_neu=true;
                     } else {
                         JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Die Menge passt nicht ins fach");
                     }
                 }
 
             }
-            if(einlagern=true)
+            if(einlagern==true)
             {
+                if(einlagern_neu==true)
+                {
+                    einlagern_bestand.set_Fachnummer(fachstamm.get(pif).get_Fachnummer());
+                    einlagern_bestand.set_Anschaffungsgrund(anschaffungsgrund);
+                    einlagern_bestand.set_id(id);
+                    einlagern_bestand.set_Menge(menge);
+                    einlagern_bestand.set_Haltbarkeitsdatum(null);
+                    writer.insert_lagerbestandskonto(einlagern_bestand);
+                    writer.update_lagerfachstamm(f1, true);
+                }else if(einlagern_update==true)
+                {
+                    einlagern_bestand.set_Fachnummer(bestandsdaten.get(pib).get_Fachnummer());
+                    einlagern_bestand.set_Anschaffungsgrund(bestandsdaten.get(pib).get_Anschaffungsgrund());
+                    einlagern_bestand.set_id(bestandsdaten.get(pib).get_TeileID());
+                    int neue_menge=bestandsdaten.get(pib).get_Menge()+menge;
+                    einlagern_bestand.set_Menge(neue_menge);
+                    einlagern_bestand.set_Haltbarkeitsdatum(bestandsdaten.get(pib).get_Haltbarkeitsdatum());
+                    writer.update_lagerbestand(einlagern_bestand);
+                }
                 
             }
             

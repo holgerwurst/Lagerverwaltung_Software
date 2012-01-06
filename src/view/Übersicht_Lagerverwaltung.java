@@ -2392,7 +2392,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             cv = new convert();
             int id = cv.StringTOint(lagerTextfield_teileID_manuell_einlagern.getText());
             
-                    te.manuell_einlagern_fachcheck(lagerTextfield_einlagern_manuell_fnr1.getText(), lagerTextfield_einlagern_manuell_menge1.getText(), id);
+                    te.manuell_einlagern_fachcheck(lagerTextfield_einlagern_manuell_fnr1.getText(), 
+                            lagerTextfield_einlagern_manuell_menge1.getText(), id,lagerTextfield_einlagern_manuell_asg1.getText());
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
