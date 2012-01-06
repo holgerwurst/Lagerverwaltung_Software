@@ -197,6 +197,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         auslagerTextfield_ID = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         auslagerTextfield_fnr = new view.LagerTextfield(AllowedSequences.ALL);
         auslagerTextfield_mengeauslagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        auslagerLabel_Anzeige = new javax.swing.JLabel();
         entfernenJTabbedPane = new javax.swing.JPanel();
         suchenButton = new javax.swing.JButton();
         Teilestammdatenbutton = new javax.swing.JButton();
@@ -380,7 +381,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         menge_suchen = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 700));
         getContentPane().setLayout(null);
 
         jPanel7.setLayout(null);
@@ -394,6 +394,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         suchen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchen_button2.setText("Suche Teile ID / Bezeichnung");
+        suchen_button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suchen_button2ActionPerformed(evt);
+            }
+        });
         jPanel8.add(suchen_button2);
         suchen_button2.setBounds(780, 60, 200, 23);
 
@@ -1160,6 +1165,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         button_suchen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_suchen.setText("Suchen");
+        button_suchen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_suchenActionPerformed(evt);
+            }
+        });
         Teilestamm_verwalten.add(button_suchen);
         button_suchen.setBounds(210, 70, 75, 23);
 
@@ -1221,6 +1231,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         SuchenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         SuchenButton.setText("Suche Teile ID");
+        SuchenButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SuchenButtonActionPerformed(evt);
+            }
+        });
         Teile_auslagern.add(SuchenButton);
         SuchenButton.setBounds(430, 60, 131, 23);
 
@@ -1240,7 +1255,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_eingabe_aufforderung_id.setBounds(50, 10, 180, 20);
 
         label_eingabe_aufforderung_fach.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_eingabe_aufforderung_fach.setText("Bitte geben Sie das Fach ein oder wählen Sie es aus der Tabelle aus:");
+        label_eingabe_aufforderung_fach.setText("Bitte klicken Sie auf eine Fachnummer in der Tabelle:");
         Teile_auslagern.add(label_eingabe_aufforderung_fach);
         label_eingabe_aufforderung_fach.setBounds(50, 280, 520, 20);
         Teile_auslagern.add(auslager_bez_ausgabeLabel);
@@ -1311,6 +1326,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         auslagerTextfield_mengeauslagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_auslagern.add(auslagerTextfield_mengeauslagern);
         auslagerTextfield_mengeauslagern.setBounds(280, 370, 130, 21);
+
+        auslagerLabel_Anzeige.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        auslagerLabel_Anzeige.setForeground(new java.awt.Color(255, 51, 51));
+        Teile_auslagern.add(auslagerLabel_Anzeige);
+        auslagerLabel_Anzeige.setBounds(560, 360, 430, 20);
 
         Teilentf_tabbedpane.addTab("Teile auslagern", Teile_auslagern);
 
@@ -2241,6 +2261,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         // TODO add your handling code here:}//GEN-LAST:event_textfeld_id1ActionPerformed
     }
     private void auslagerTextfield_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_IDActionPerformed
+        control.Teil_auslagern_controller.auslagern_bestaetigen_button(this);
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagerTextfield_IDActionPerformed
 
@@ -2265,6 +2286,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void auslagern_AusfuehrenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_AusfuehrenButtonActionPerformed
 
         control.Teil_auslagern_controller.auslagern_ausfuehren_button(this);
+        auslagerLabel_Anzeige.setText("Es wurde(n) " + auslagerTextfield_mengeauslagern.getText() + " Teil(e) ausgelagert.");
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagern_AusfuehrenButtonActionPerformed
 
@@ -2447,8 +2469,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         textfeld_bezeichnungLTFP.setText(s);
     }
     private void suchen_button_erweiternActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suchen_button_erweiternActionPerformed
+        
         Teil_Suchen ts = new Teil_Suchen();
-        ts.setVisible(true);// TODO add your handling code here:
+        ts.setVisible(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_suchen_button_erweiternActionPerformed
 
     private void textfeld_bezeichnungLTFPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfeld_bezeichnungLTFPActionPerformed
@@ -2511,6 +2535,22 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void preisfeldLTFPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preisfeldLTFPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_preisfeldLTFPActionPerformed
+
+    private void SuchenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuchenButtonActionPerformed
+
+            Teil_Suchen ts = new Teil_Suchen();
+            ts.setVisible(true);
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SuchenButtonActionPerformed
+
+    private void suchen_button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suchen_button2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_suchen_button2ActionPerformed
+
+    private void button_suchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_suchenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_suchenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2602,7 +2642,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel PreisTextfield;
     private javax.swing.JLabel StammdatenLabel;
     private javax.swing.JMenu Suchen;
-    private javax.swing.JButton SuchenButton;
+    public javax.swing.JButton SuchenButton;
     private javax.swing.JButton SuchenButton1;
     private javax.swing.JLabel TeileIDLabel;
     private javax.swing.JLabel TeileLabel;
@@ -2626,6 +2666,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JButton anzeigen_button;
     private javax.swing.JTextField ausgangsfachnummer_textfeld;
     public javax.swing.JTextArea ausl_BemerkungTextArea;
+    public javax.swing.JLabel auslagerLabel_Anzeige;
     public view.LagerTextfield auslagerTextfield_ID;
     public view.LagerTextfield auslagerTextfield_fnr;
     public view.LagerTextfield auslagerTextfield_mengeauslagern;
