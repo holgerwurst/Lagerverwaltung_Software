@@ -483,6 +483,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         });
         jPanel8.add(einlagern_button_tabelle);
         einlagern_button_tabelle.setBounds(50, 460, 110, 23);
+
+        menge_textfeld_einlagern.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                menge_textfeld_einlagernFocusLost(evt);
+            }
+        });
         jPanel8.add(menge_textfeld_einlagern);
         menge_textfeld_einlagern.setBounds(220, 110, 90, 20);
 
@@ -2598,6 +2604,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teil_Suchen ts = new Teil_Suchen();
         ts.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_button_suchen_teileid_manuell_einlagernActionPerformed
+
+    private void menge_textfeld_einlagernFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_menge_textfeld_einlagernFocusLost
+      label_menge_übrig.setText(menge_textfeld_einlagern.getText());
+    }//GEN-LAST:event_menge_textfeld_einlagernFocusLost
 
     /**
      * @param args the command line arguments

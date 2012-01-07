@@ -305,6 +305,9 @@
                       </Constraints>
                     </Component>
                     <Component class="view.LagerTextfield" name="menge_textfeld_einlagern">
+                      <Events>
+                        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="menge_textfeld_einlagernFocusLost"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
