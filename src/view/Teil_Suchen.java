@@ -118,7 +118,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         MaximaleAnzahlMittellagerTextfield = new view.LagerTextfield();
         MaximaleAnzahlGroßlagerTextfield = new view.LagerTextfield();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
