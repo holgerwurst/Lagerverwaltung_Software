@@ -8,10 +8,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-import model.Select_Lagerfachstamm;
-import model.Select_Stammdaten;
-import model.Teil_Stammdaten;
-import model.TeileTypET;
+import model.*;
 import view.Teil_Suchen;
 
 /**
@@ -22,18 +19,20 @@ public class Suchen_Controller {
 
     Select_Stammdaten select_stammdaten = null;
     Select_Lagerfachstamm select_lagerfachstamm = null;
-    public String[] table_column_names = {
-        "Teile ID", "Teiletyp", "Zeichnungsnummer"
-        , "Preis", "Bezeichnung", "Baugruppe", "Materialgruppe", "Bemerkung"
-        , "Maximale Anzahl Klein", "Maximale Anzahl Mittel"
-        , "Maximale Anzahl Groß"
+    Select_Lagerbestandskonto select_lagerbestandskonto = null;
+    public String[] table_column_names_teilestamm = {
+        "Teile ID", "Teiletyp", "Zeichnungsnummer", "Preis", "Bezeichnung", "Baugruppe", "Materialgruppe", "Bemerkung", "Maximale Anzahl Klein", "Maximale Anzahl Mittel", "Maximale Anzahl Groß"
     };
-    
+    public String[] table_column_names_lagerbestandskonto = {
+        "Fachnummer", "Teile ID", "Menge", "Anschaffungsgrund", "Haltbarkeitsdatum"
+    };
+
     /**
      * ruft ganze Teilestammtabelle aus Datenbank ab
+     *
      * @return Eine ArrayListe aller Teilestammdaten aus der Datenbank
      * @throws ClassNotFoundException
-     * @throws Exception 
+     * @throws Exception
      */
     public ArrayList<Teil_Stammdaten> alle_teile_ausgeben() throws ClassNotFoundException, Exception {
         if (select_stammdaten == null) {
@@ -44,11 +43,18 @@ public class Suchen_Controller {
         return ganze_tabelle;
     }
 
-    public ArrayList<Teil_Stammdaten> teile_suchen(String[][] spaltenwerte) throws ClassNotFoundException, Exception {
+    public ArrayList<Teil_Stammdaten> teile_suchen(String[][] suchwerte) throws ClassNotFoundException, Exception {
         if (select_stammdaten == null) {
             select_stammdaten = new Select_Stammdaten();
         }
-        return select_stammdaten.teile_suchen(spaltenwerte);
+        return select_stammdaten.teile_suchen(suchwerte);
+    }
+
+    public ArrayList<Lagerbestandskonto> teile_im_fach_suchen(String[][] suchwerte) throws Exception {
+        if (select_lagerbestandskonto == null) {
+            select_lagerbestandskonto = new Select_Lagerbestandskonto();
+        }
+        return select_lagerbestandskonto.teile_im_fach_suchen(suchwerte);
     }
 
     public void fach_suchen() {
@@ -56,10 +62,10 @@ public class Suchen_Controller {
             select_lagerfachstamm = new Select_Lagerfachstamm();
         }
     }
-    
+
     public DefaultComboBoxModel get_TeileTyp_combo_box_model() {
         ArrayList<String> teiletypen = new ArrayList<String>();
-        for (TeileTypET typ: TeileTypET.values()) {
+        for (TeileTypET typ : TeileTypET.values()) {
             teiletypen.add(typ.toString());
         }
         System.out.println(teiletypen);
@@ -68,6 +74,7 @@ public class Suchen_Controller {
         System.out.println(model);
         return model;
     }
+
     public static void main(String[] args) throws ClassNotFoundException {
         Suchen_Controller suchen_controller = new Suchen_Controller();
         //suchen_controller.alle_teile_ausgeben();

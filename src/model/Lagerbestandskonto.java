@@ -93,8 +93,17 @@ public class Lagerbestandskonto {
                 haltbarkeitsdatum=n_date;
 	}
 	
-	
-	
-
+	public void toArray() {
+            this.attribute = new Object[5];
+            attribute[0] = get_Fachnummer();
+            attribute[1] = get_TeileID();
+            attribute[2] = get_Menge();
+            attribute[3] = get_Anschaffungsgrund();
+            attribute[4] = get_Haltbarkeitsdatum();            
+        }
+        
+        public Object[] get_Attribute() {
+            return attribute;
+        }
 }
 

@@ -291,25 +291,10 @@ public class Select_Stammdaten {
      * @throws ClassNotFoundException
      * @throws Exception 
      */
-    public ArrayList<Teil_Stammdaten> teile_suchen(String[][] spaltenwerte) throws ClassNotFoundException, Exception {
-        String query = Select_Allgemein.create_select_teile_suchen(spaltenwerte);
+    public ArrayList<Teil_Stammdaten> teile_suchen(String[][] suchwerte) throws ClassNotFoundException, Exception {
+        String query = Select_Allgemein.create_select_teile_suchen(suchwerte);
         ArrayList<Teil_Stammdaten> teile_stammdaten_array = db.resultset_to_teil_stammdaten(query);
         db.disconnect();
-        for (Iterator<Teil_Stammdaten> it = teile_stammdaten_array.iterator(); it.hasNext();) {
-            Teil_Stammdaten teil = it.next();
-            System.out.println(
-                    teil.get_Id() + "\n"
-                    + teil.get_Teiletyp() + "\n"
-                    + teil.get_Zeichnungsnummer() + "\n"
-                    + teil.get_Materialgruppe() + "\n"
-                    + teil.get_Preis() + "\n"
-                    + teil.get_Bezeichnung() + "\n"
-                    + teil.get_Baugruppe() + "\n"
-                    + teil.get_max_anz_klein() + "\n"
-                    + teil.get_max_anz_mittel() + "\n"
-                    + teil.get_max_anz_gross() + "\n"
-                    + teil.get_Bemerkung());
-        }
         return teile_stammdaten_array;
     }
 }

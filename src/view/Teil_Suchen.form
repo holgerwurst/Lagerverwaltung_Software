@@ -200,7 +200,7 @@
                               <Component id="lagerTextfield2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="14" max="32767" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                       <Component id="jScrollPane6" min="-2" pref="160" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -428,81 +428,84 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="jScrollPane5" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                      <Component id="SuchenrechtsButton" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="LagerbestandLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MaxMengeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="FachnrLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lagerTextfield8" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="lagerTextfield6" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="lagerTextfield4" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="MinMengeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="HaltbarkeitsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="TeileIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lagerTextfield5" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="lagerTextfield7" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="lagerTextfield9" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane5" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="LagerbestandLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="TeileIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="TeileIdlagerTextfield2" linkSize="9" max="32767" attributes="0"/>
+                          <Component id="LagerbestandlagerTextfield2" linkSize="9" pref="142" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="FachnrLabel" max="32767" attributes="0"/>
+                          <Component id="AnschaffungsgrundLabel" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="FachnummerlagerTextfield2" linkSize="9" min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="AnschaffungsgrundlagerTextfield2" linkSize="9" min="-2" pref="142" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="MaxMengeLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="MinMengeLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="HaltbarkeitsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="HaltbarkeitsdatumlagerTextfield2" linkSize="9" min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="MindestensMengeimFachlagerTextfield2" linkSize="9" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="MaximaleMengeimFachlagerTextfield2" linkSize="9" min="-2" pref="52" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="69" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="SuchenrechtsButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="TeileIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TeileIdlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="FachnummerlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="FachnrLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaxMengeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaximaleMengeimFachlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="LagerbestandLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lagerTextfield4" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LagerbestandlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="MinMengeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lagerTextfield5" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MindestensMengeimFachlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnschaffungsgrundlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnschaffungsgrundLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lagerTextfield6" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="MaxMengeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="HaltbarkeitsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lagerTextfield7" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HaltbarkeitsdatumlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="FachnrLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lagerTextfield8" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lagerTextfield9" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TeileIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
                       <Component id="SuchenrechtsButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane5" pref="318" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane5" min="-2" pref="364" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -515,7 +518,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable5">
+                <Component class="javax.swing.JTable" name="TeileImFachSuchenJtable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="4">
@@ -545,7 +548,7 @@
                 <Property name="text" type="java.lang.String" value="Suchen"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SuchenrechtsButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TeilImFachSuchenActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="FachnrLabel">
@@ -588,34 +591,28 @@
                 <Property name="text" type="java.lang.String" value="Lagerbestand:"/>
               </Properties>
             </Component>
-            <Component class="view.LagerTextfield" name="lagerTextfield4">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="lagerTextfield4"/>
-              </Properties>
+            <Component class="view.LagerTextfield" name="LagerbestandlagerTextfield2">
             </Component>
-            <Component class="view.LagerTextfield" name="lagerTextfield5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="lagerTextfield5"/>
-              </Properties>
+            <Component class="view.LagerTextfield" name="FachnummerlagerTextfield2">
             </Component>
-            <Component class="view.LagerTextfield" name="lagerTextfield6">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="lagerTextfield6"/>
-              </Properties>
+            <Component class="view.LagerTextfield" name="MindestensMengeimFachlagerTextfield2">
             </Component>
-            <Component class="view.LagerTextfield" name="lagerTextfield7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="lagerTextfield7"/>
-              </Properties>
+            <Component class="view.LagerTextfield" name="HaltbarkeitsdatumlagerTextfield2">
             </Component>
-            <Component class="view.LagerTextfield" name="lagerTextfield8">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="lagerTextfield8"/>
-              </Properties>
+            <Component class="view.LagerTextfield" name="MaximaleMengeimFachlagerTextfield2">
             </Component>
-            <Component class="view.LagerTextfield" name="lagerTextfield9">
+            <Component class="view.LagerTextfield" name="TeileIdlagerTextfield2">
+            </Component>
+            <Component class="view.LagerTextfield" name="AnschaffungsgrundlagerTextfield2">
+            </Component>
+            <Component class="javax.swing.JLabel" name="AnschaffungsgrundLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="lagerTextfield9"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font bold="false" component="AnschaffungsgrundLabel" property="font" relativeSize="true" size="0"/>
+                  </FontInfo>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Anschaffungsgrund:"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -635,11 +632,6 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="AlleTeileAnzeigenButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="SuchenlinksButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="TeileStammdatenLabel" min="-2" pref="140" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -652,12 +644,12 @@
                               </Group>
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TeileIDlagerTextfield" pref="167" max="32767" attributes="0"/>
-                                  <Component id="BezeichnunglagerTextfield" alignment="0" pref="167" max="32767" attributes="0"/>
-                                  <Component id="TeiletypComboBox" alignment="0" pref="167" max="32767" attributes="0"/>
-                                  <Component id="MaterialgruppelagerTextfield" alignment="0" pref="167" max="32767" attributes="0"/>
-                                  <Component id="ZeichnungsnummerlagerTextfield" alignment="0" pref="167" max="32767" attributes="0"/>
-                                  <Component id="BaugruppelagerTextfield" alignment="0" pref="167" max="32767" attributes="0"/>
+                                  <Component id="TeileIdlagerTextfield" linkSize="10" min="-2" pref="230" max="-2" attributes="0"/>
+                                  <Component id="BezeichnunglagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                  <Component id="TeiletypComboBox" alignment="0" pref="259" max="32767" attributes="0"/>
+                                  <Component id="MaterialgruppelagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                  <Component id="ZeichnungsnummerlagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                  <Component id="BaugruppelagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -670,16 +662,16 @@
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="MaximaleAnzahlKleinlagerTextfield" pref="167" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="MaximaleAnzahlKleinlagerTextfield" linkSize="10" min="-2" pref="230" max="-2" attributes="0"/>
+                                      <EmptySpace pref="41" max="32767" attributes="0"/>
                                       <Component id="EuroLabel" min="-2" pref="19" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="BemerkungslagerTextfield" alignment="0" pref="167" max="32767" attributes="0"/>
-                                          <Component id="PreislagerTextfield" alignment="0" pref="167" max="32767" attributes="0"/>
-                                          <Component id="MaximaleAnzahlMittellagerTextfield" alignment="0" pref="167" max="32767" attributes="0"/>
-                                          <Component id="MaximaleAnzahlGroßlagerTextfield" alignment="0" pref="167" max="32767" attributes="0"/>
+                                          <Component id="BemerkungslagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="PreislagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="MaximaleAnzahlMittellagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="MaximaleAnzahlGroßlagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
                                   </Group>
@@ -693,6 +685,13 @@
                       <Component id="jScrollPane4" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="AlleTeileAnzeigenButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="SuchenlinksButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -703,7 +702,7 @@
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="IDlinksLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TeileIDlagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TeileIdlagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BemerkungLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BemerkungslagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -739,16 +738,16 @@
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="BaugruppeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="BaugruppelagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BaugruppelagerTextfield" linkSize="6" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="AlleTeileAnzeigenButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="SuchenlinksButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" pref="140" max="32767" attributes="0"/>
-                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" pref="211" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -889,7 +888,7 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="6">
-                    <StringItem index="0" value=" "/>
+                    <StringItem index="0" value="alle"/>
                     <StringItem index="1" value="Kaufteile"/>
                     <StringItem index="2" value="Werkzeuge"/>
                     <StringItem index="3" value="Vorrichtungen"/>
@@ -907,7 +906,7 @@
                 <Property name="text" type="java.lang.String" value="Bemerkung:"/>
               </Properties>
             </Component>
-            <Component class="view.LagerTextfield" name="TeileIDlagerTextfield">
+            <Component class="view.LagerTextfield" name="TeileIdlagerTextfield">
             </Component>
             <Component class="view.LagerTextfield" name="BezeichnunglagerTextfield">
             </Component>
