@@ -32,13 +32,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      */
     public Übersicht_Lagerverwaltung() {
         initComponents();
-        control.TeileStamm_erweitern_controller tecinit= new control.TeileStamm_erweitern_controller(this);
-        textfeld_idP.setText(""+tecinit.getEXAMPLEid());// so sollte es eigentlich gehen aber hier kommt das Workaroud
+        control.TeileStamm_erweitern_controller tecinit = new control.TeileStamm_erweitern_controller(this);
+        textfeld_idP.setText("" + tecinit.getEXAMPLEid());// so sollte es eigentlich gehen aber hier kommt das Workaroud
         //textfeld_idP.setText(""+tec.getWAid());//alter Workaroud
-        tecinit=null;
-       label_auswahl.setVisible(false);
+        tecinit = null;
+        label_auswahl.setVisible(false);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -2321,6 +2321,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      *
      *
      *
+     *
+     *
 
      *
      * @param evt
@@ -2378,7 +2380,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
             lagerTextfield_teileID_manuell_einlagern.setEditable(false);
             button_manuell_einlagern.setEnabled(check);
-            
+
         } else {
             lagerTextfield_teileID_manuell_einlagern.setText("");
         }
@@ -2393,13 +2395,38 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     private void button_manuell_einlagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_manuell_einlagernActionPerformed
         try {
+
             pr = new control.Pruefen_Controller();
             te = new control.Teil_einlagern_Controller(this);
             cv = new convert();
+            String returnstring = "";
+            String ausgabe = "";
             int id = cv.StringTOint(lagerTextfield_teileID_manuell_einlagern.getText());
+
+            if (!lagerTextfield_einlagern_manuell_fnr1.getText().isEmpty() && !lagerTextfield_einlagern_manuell_menge1.getText().isEmpty()) {
+                returnstring="";
+                returnstring =te.manuell_einlagern(lagerTextfield_einlagern_manuell_fnr1.getText(),
+                        lagerTextfield_einlagern_manuell_menge1.getText(), id, lagerTextfield_einlagern_manuell_asg1.getText());
+                if (!returnstring.equals("OK")) {
+                    ausgabe = ausgabe + "Fehler Fach 1: " + returnstring+"\n";
+                }
+            }
+            if (!lagerTextfield_einlagern_manuell_fnr2.getText().isEmpty() && !lagerTextfield_einlagern_manuell_menge2.getText().isEmpty()) {
+                returnstring="";
+                returnstring = te.manuell_einlagern(lagerTextfield_einlagern_manuell_fnr2.getText(),
+                        lagerTextfield_einlagern_manuell_menge2.getText(), id, lagerTextfield_einlagern_manuell_asg2.getText());
+                if (!returnstring.equals("OK")) {
+                    ausgabe = ausgabe + "Fehler Fach 2: " + returnstring+"\n";
+                }
+            }
             
-                    te.manuell_einlagern_fachcheck(lagerTextfield_einlagern_manuell_fnr1.getText(), 
-                            lagerTextfield_einlagern_manuell_menge1.getText(), id,lagerTextfield_einlagern_manuell_asg1.getText());
+            if(ausgabe.equals(""))
+            {
+            JOptionPane.showMessageDialog(lagerTextfield_einlagern_manuell_menge1, "Alle Fächer wurden erfolgreich eingelagert");
+            }else{
+            JOptionPane.showMessageDialog(lagerTextfield_einlagern_manuell_menge1, ausgabe);
+            }
+            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -2407,8 +2434,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
         }
-      
-        
+
+
 
 
 
@@ -2437,8 +2464,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 te.einlagern_vorbereiten(id);
             }
         }
-             
-        
+
+
     }//GEN-LAST:event_table_einlagernMouseClicked
 
     private void bezeichnung_textfeld1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bezeichnung_textfeld1FocusLost
@@ -2451,7 +2478,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             id_textfeld2.setText("");
             Boolean vorhanden = pr.pruefe_bezeichnung(bez);
             if (vorhanden == true) {
-                  label_auswahl.setVisible(true);
+                label_auswahl.setVisible(true);
                 te.teil_auswaehlen(bez);
             }
         }
@@ -2464,12 +2491,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void button_anlegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_anlegenActionPerformed
         // TODO add your handling code here:
         //System.out.println("Teilestamm erweitern: anlegen button gedrückt!");
-        setpTSEStatusleiste("",Color.BLACK);
+        setpTSEStatusleiste("", Color.BLACK);
         button_anlegen.requestFocusInWindow();
 
         if ((textfeld_bezeichnungLTFP.getText().isEmpty()) || (makLTFP.getText().isEmpty()) || (mamLTFP.getText().isEmpty()) || (magLTFP.getText().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Füllen Sie bitte alle Pflichtfelder aus.");
-            setpTSEStatusleiste("Füllen Sie bitte alle Pflichtfelder aus.",Color.red);
+            setpTSEStatusleiste("Füllen Sie bitte alle Pflichtfelder aus.", Color.red);
 
         } else {
 
@@ -2495,24 +2522,28 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_button_anlegenActionPerformed
-    /**Patrick: schreibt was in die Statusleiste in Teilestamm erweitern und setzt ne farbe für den text
-     * 
+    /**
+     * Patrick: schreibt was in die Statusleiste in Teilestamm erweitern und
+     * setzt ne farbe für den text
+     *
      * @param text
-     * @param farbe 
+     * @param farbe
      */
-    public void setpTSEStatusleiste(String text, Color farbe){
+    public void setpTSEStatusleiste(String text, Color farbe) {
         this.pStatusleiste.setText(text);
         this.pStatusleiste.setForeground(farbe);
     }
-    /**Patrick: schreibt nen String in Die Bezeichnung von Teilestamm erweitern
-     * 
-     * @param s 
+
+    /**
+     * Patrick: schreibt nen String in Die Bezeichnung von Teilestamm erweitern
+     *
+     * @param s
      */
-    public void setpTSEBezeichnung(String s){
+    public void setpTSEBezeichnung(String s) {
         textfeld_bezeichnungLTFP.setText(s);
     }
     private void suchen_button_erweiternActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suchen_button_erweiternActionPerformed
-        
+
         Teil_Suchen ts = new Teil_Suchen();
         ts.setVisible(true);
         // TODO add your handling code here:
@@ -2528,7 +2559,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         control.TeileStamm_erweitern_controller tecfocus = new control.TeileStamm_erweitern_controller(this);
         if (tecfocus.bezSchonDa(textfeld_bezeichnungLTFP.getText())) {
             JOptionPane.showMessageDialog(null, "Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.\nBezeichnungen müssen eindeutig sein.");
-            setpTSEStatusleiste("Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.",Color.red);
+            setpTSEStatusleiste("Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.", Color.red);
             textfeld_bezeichnungLTFP.requestFocusInWindow();
             tecfocus = null;
         }
@@ -2550,29 +2581,27 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     private void Teilestamm_erweiternFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Teilestamm_erweiternFocusGained
         // TODO add your handling code here:
-
-
   }//GEN-LAST:event_Teilestamm_erweiternFocusGained
 
     private void einlagern_button_tabelleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_einlagern_button_tabelleActionPerformed
-     te= new Teil_einlagern_Controller(this);
-     cv = new convert();
-        
-        if(bezeichnung_textfeld1.getText().isEmpty() && !menge_textfeld_einlagern.getText().isEmpty()){
-                try {
+        te = new Teil_einlagern_Controller(this);
+        cv = new convert();
+
+        if (bezeichnung_textfeld1.getText().isEmpty() && !menge_textfeld_einlagern.getText().isEmpty()) {
+            try {
                 te = new Teil_einlagern_Controller(this);
                 String mar = (String) (table_einlagern.getValueAt(table_einlagern.getSelectedRow(), 0));
-             
+
                 int id = cv.StringTOint(id_textfeld2.getText());
-               // label_menge_übrig.setText(id_textfeld2.getText());
+                // label_menge_übrig.setText(id_textfeld2.getText());
                 te.einlagern(mar, id);
 
             } catch (NumberFormatException e) {
                 System.out.println(e);
             }
-                
-            
-            }
+
+
+        }
     }//GEN-LAST:event_einlagern_button_tabelleActionPerformed
 
     private void preisfeldLTFPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preisfeldLTFPActionPerformed
@@ -2581,9 +2610,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     private void SuchenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuchenButtonActionPerformed
 
-            Teil_Suchen ts = new Teil_Suchen();
-            ts.setVisible(true);
-        
+        Teil_Suchen ts = new Teil_Suchen();
+        ts.setVisible(true);
+
         // TODO add your handling code here:
     }//GEN-LAST:event_SuchenButtonActionPerformed
 
@@ -2606,7 +2635,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_button_suchen_teileid_manuell_einlagernActionPerformed
 
     private void menge_textfeld_einlagernFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_menge_textfeld_einlagernFocusLost
-      label_menge_übrig.setText(menge_textfeld_einlagern.getText());
+        label_menge_übrig.setText(menge_textfeld_einlagern.getText());
     }//GEN-LAST:event_menge_textfeld_einlagernFocusLost
 
     /**

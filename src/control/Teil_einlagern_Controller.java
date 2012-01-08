@@ -372,7 +372,7 @@ public class Teil_einlagern_Controller {
     /**
      *
      */
-    public void manuell_einlagern_fachcheck(String f1, String m1, int id, String anschaffungsgrund) throws ClassNotFoundException, SQLException, Exception {
+    public String manuell_einlagern(String f1, String m1, int id, String anschaffungsgrund) throws ClassNotFoundException, SQLException, Exception {
         //Anlegen neuer Controller 
         Pruefen_Controller pr = new Pruefen_Controller();
         cv = new convert();
@@ -419,13 +419,11 @@ public class Teil_einlagern_Controller {
                     eqls = true;                                    //wenn ja wird sich der index gemerkt an der stelle wo das fach steht
                     pif = i;                                        //und es wird die eqls variable auf true gesetzt
                     groesse = fachstamm.get(pif).get_groesse();
-                    JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Fach gefunden"); //wieder entfernen
                 } else {
                     i++;                                        //wenn nicht wird i hochgezählt und weitergesucht
                 }
             } else {
-                JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Teil nicht vorhanden");
-                break;                                          //wurde das fach nicht gefunden, wird abgebrochen
+                return "Das Fach "+f1+" ist nicht vorhanden.";   //wurde das fach nicht gefunden, wird abgebrochen und ein String zurückgegeben
             }
         }
         //Prüfen ob das Fach Frei oder Belegt ist
@@ -447,8 +445,8 @@ public class Teil_einlagern_Controller {
                                     freier_platz = stammdaten.get(pis).get_max_anz_gross() - bestandsdaten.get(k).get_Menge();
                                 }
                             } else {
-                                JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Das Fach ist von einem anderen Teil belegt");
-                                break;
+                                return "Das Fach "+f1+" ist von einem anderen Teil belegt";
+                                
                             }//ende bestandsdatenvergleich                          
                         } else {
                             k++;
@@ -456,11 +454,14 @@ public class Teil_einlagern_Controller {
                     }
                 }//ende whileschleife
 
-                if (menge <= freier_platz) {        //letzter vergleich bei einem bereits belegtem fach
+                if(menge<1)
+                {
+                    return "Die Menge darf nicht 0 sein";
+                }else if (menge <= freier_platz) {        //letzter vergleich bei einem bereits belegtem fach
                     einlagern = true;               //einlagern wird true wenn die einzulagernde menge kleiner gleich dem freien platz ist
                     einlagern_update=true;
                 } else {
-                    JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "In dem Fach ist nicht mehr genug platz frei");
+                    return "In dem Fach "+f1+" ist nicht genug platz frei. Sie wollen "+menge+" einlagern. Die Kapazität reicht aber nur für "+freier_platz+". ";
                 }
 
 
@@ -471,21 +472,21 @@ public class Teil_einlagern_Controller {
                         einlagern = true;
                         einlagern_neu=true;
                     } else {
-                        JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Die Menge passt nicht ins fach");
+                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe "+groesse+" ist"+stammdaten.get(pis).get_max_anz_klein()+".";
                     }
                 } else if ("M".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_mittel()) {
                         einlagern = true;
                         einlagern_neu=true;
                     } else {
-                        JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Die Menge passt nicht ins fach");
+                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe "+groesse+" ist"+stammdaten.get(pis).get_max_anz_mittel()+".";
                     }
                 } else if ("G".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_gross()) {
                         einlagern = true;
                         einlagern_neu=true;
                     } else {
-                        JOptionPane.showMessageDialog(lv.button_manuell_einlagern, "Die Menge passt nicht ins fach");
+                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe "+groesse+" ist"+stammdaten.get(pis).get_max_anz_gross()+".";
                     }
                 }
 
@@ -512,9 +513,10 @@ public class Teil_einlagern_Controller {
                     writer.update_lagerbestand(einlagern_bestand);
                 }
                 
-            }
+            }//ende einlagern
 
-        }
+        }//ende 1. if
 
+        return "OK" ;
     }
 }
