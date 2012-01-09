@@ -4101,6 +4101,9 @@
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;Kaufteile&quot;, &quot;Werkzeuge&quot;, &quot;Vorrichtungen&quot;, &quot;unfertige Baugruppen&quot;, &quot;Vorratsteile&quot; })" type="code"/>
                 </Property>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="makLTFP"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combobox_teiltypActionPerformed"/>
@@ -4232,6 +4235,9 @@
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
+                    <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="button_anlegen"/>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -4253,6 +4259,11 @@
               </Constraints>
             </Component>
             <Component class="view.LagerTextfield" name="textfeld_bezeichnungLTFP">
+              <Properties>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="combobox_teiltyp"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfeld_bezeichnungLTFPActionPerformed"/>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textfeld_bezeichnungLTFPFocusLost"/>
@@ -4264,6 +4275,11 @@
               </Constraints>
             </Component>
             <Component class="view.LagerTextfield" name="textfeld_materialgruppeLTFP">
+              <Properties>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="textfeld_baugruppeLTFP"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="460" y="200" width="150" height="30"/>
@@ -4282,7 +4298,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="60" width="580" height="-1"/>
+                  <AbsoluteConstraints x="30" y="40" width="580" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -4352,6 +4368,11 @@
               </Constraints>
             </Component>
             <Component class="view.LagerTextfield" name="textfeld_zeichnungsnummerLTFP">
+              <Properties>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="button_anlegen"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="460" y="310" width="150" height="30"/>
@@ -4359,6 +4380,11 @@
               </Constraints>
             </Component>
             <Component class="view.LagerTextfield" name="textfeld_baugruppeLTFP">
+              <Properties>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="textfeld_zeichnungsnummerLTFP"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="460" y="250" width="150" height="30"/>
@@ -4366,6 +4392,11 @@
               </Constraints>
             </Component>
             <Component class="view.LagerTextfield" name="preisfeldLTFP">
+              <Properties>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="textfeld_materialgruppeLTFP"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="preisfeldLTFPActionPerformed"/>
               </Events>
@@ -4379,7 +4410,13 @@
               </Constraints>
             </Component>
             <Component class="view.LagerTextfield" name="makLTFP">
+              <Properties>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="mamLTFP"/>
+                </Property>
+              </Properties>
               <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="makLTFPActionPerformed"/>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="makLTFPFocusGained"/>
               </Events>
               <AuxValues>
@@ -4392,6 +4429,11 @@
               </Constraints>
             </Component>
             <Component class="view.LagerTextfield" name="mamLTFP">
+              <Properties>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="magLTFP"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="mamLTFPFocusGained"/>
               </Events>
@@ -4405,6 +4447,11 @@
               </Constraints>
             </Component>
             <Component class="view.LagerTextfield" name="magLTFP">
+              <Properties>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="preisfeldLTFP"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="magLTFPFocusGained"/>
               </Events>
@@ -4437,7 +4484,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="610" width="950" height="20"/>
+                  <AbsoluteConstraints x="20" y="570" width="950" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>

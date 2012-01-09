@@ -2094,6 +2094,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         combobox_teiltyp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
+        combobox_teiltyp.setNextFocusableComponent(makLTFP);
         combobox_teiltyp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combobox_teiltypActionPerformed(evt);
@@ -2149,6 +2150,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setNextFocusableComponent(button_anlegen);
         textarea_bemerkung.setViewportView(jTextArea1);
 
         Teilestamm_erweitern.add(textarea_bemerkung);
@@ -2164,6 +2166,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(suchen_button_erweitern);
         suchen_button_erweitern.setBounds(460, 10, 140, 23);
 
+        textfeld_bezeichnungLTFP.setNextFocusableComponent(combobox_teiltyp);
         textfeld_bezeichnungLTFP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textfeld_bezeichnungLTFPActionPerformed(evt);
@@ -2176,6 +2179,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         });
         Teilestamm_erweitern.add(textfeld_bezeichnungLTFP);
         textfeld_bezeichnungLTFP.setBounds(150, 150, 150, 30);
+
+        textfeld_materialgruppeLTFP.setNextFocusableComponent(textfeld_baugruppeLTFP);
         Teilestamm_erweitern.add(textfeld_materialgruppeLTFP);
         textfeld_materialgruppeLTFP.setBounds(460, 200, 150, 30);
 
@@ -2183,7 +2188,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 51, 51));
         jLabel2.setText("Füllen Sie bitte alle Pflichtfelder, die mit * gekennzeichnet sind aus.");
         Teilestamm_erweitern.add(jLabel2);
-        jLabel2.setBounds(30, 60, 580, 15);
+        jLabel2.setBounds(30, 40, 580, 15);
 
         jLabel4.setForeground(new java.awt.Color(255, 51, 51));
         jLabel4.setText("*");
@@ -2209,11 +2214,16 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jLabel8.setText("*");
         Teilestamm_erweitern.add(jLabel8);
         jLabel8.setBounds(310, 320, 20, 14);
+
+        textfeld_zeichnungsnummerLTFP.setNextFocusableComponent(button_anlegen);
         Teilestamm_erweitern.add(textfeld_zeichnungsnummerLTFP);
         textfeld_zeichnungsnummerLTFP.setBounds(460, 310, 150, 30);
+
+        textfeld_baugruppeLTFP.setNextFocusableComponent(textfeld_zeichnungsnummerLTFP);
         Teilestamm_erweitern.add(textfeld_baugruppeLTFP);
         textfeld_baugruppeLTFP.setBounds(460, 250, 150, 30);
 
+        preisfeldLTFP.setNextFocusableComponent(textfeld_materialgruppeLTFP);
         preisfeldLTFP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 preisfeldLTFPActionPerformed(evt);
@@ -2222,6 +2232,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(preisfeldLTFP);
         preisfeldLTFP.setBounds(460, 150, 150, 30);
 
+        makLTFP.setNextFocusableComponent(mamLTFP);
+        makLTFP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                makLTFPActionPerformed(evt);
+            }
+        });
         makLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 makLTFPFocusGained(evt);
@@ -2230,6 +2246,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(makLTFP);
         makLTFP.setBounds(150, 230, 150, 30);
 
+        mamLTFP.setNextFocusableComponent(magLTFP);
         mamLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 mamLTFPFocusGained(evt);
@@ -2238,6 +2255,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(mamLTFP);
         mamLTFP.setBounds(150, 280, 150, 30);
 
+        magLTFP.setNextFocusableComponent(preisfeldLTFP);
         magLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 magLTFPFocusGained(evt);
@@ -2252,7 +2270,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         pStatusleiste2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Teilestamm_erweitern.add(pStatusleiste2);
-        pStatusleiste2.setBounds(30, 610, 950, 20);
+        pStatusleiste2.setBounds(20, 570, 950, 20);
 
         Teilentf_tabbedpane.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
@@ -2576,6 +2594,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void makLTFPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_makLTFPFocusGained
         // TODO add your handling code here:
         makLTFP.setToolTipText("Wie viele " + textfeld_bezeichnungLTFP.getText() + " passen in ein kleines Fach?");
+        
 
     }//GEN-LAST:event_makLTFPFocusGained
 
@@ -2645,6 +2664,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void menge_textfeld_einlagernFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_menge_textfeld_einlagernFocusLost
         label_menge_übrig.setText(menge_textfeld_einlagern.getText());
     }//GEN-LAST:event_menge_textfeld_einlagernFocusLost
+
+    private void makLTFPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makLTFPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_makLTFPActionPerformed
 
     /**
      * @param args the command line arguments
