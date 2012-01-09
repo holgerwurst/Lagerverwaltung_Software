@@ -643,15 +643,15 @@
                                   <Component id="IDlinksLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TeileIdlagerTextfield" linkSize="10" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <Component id="BezeichnunglagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <Component id="TeiletypComboBox" alignment="0" pref="259" max="32767" attributes="0"/>
-                                  <Component id="MaterialgruppelagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <Component id="ZeichnungsnummerlagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
-                                  <Component id="BaugruppelagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="TeileIdlagerTextfield" linkSize="10" pref="230" max="32767" attributes="0"/>
+                                  <Component id="BezeichnunglagerTextfield" linkSize="10" alignment="0" pref="230" max="32767" attributes="0"/>
+                                  <Component id="MaterialgruppelagerTextfield" linkSize="10" alignment="0" pref="230" max="32767" attributes="0"/>
+                                  <Component id="ZeichnungsnummerlagerTextfield" linkSize="10" alignment="0" pref="230" max="32767" attributes="0"/>
+                                  <Component id="BaugruppelagerTextfield" linkSize="10" alignment="0" pref="230" max="32767" attributes="0"/>
+                                  <Component id="TeiletypComboBox" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="41" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="BemerkungLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="PreisLabel" alignment="0" min="-2" max="-2" attributes="0"/>

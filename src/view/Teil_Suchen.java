@@ -525,14 +525,14 @@ public class Teil_Suchen extends javax.swing.JFrame {
                             .addComponent(BezeichnungLabel)
                             .addComponent(IDlinksLabel))
                         .addGap(15, 15, 15)
-                        .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TeileIdlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BezeichnunglagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TeiletypComboBox, 0, 259, Short.MAX_VALUE)
-                            .addComponent(MaterialgruppelagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ZeichnungsnummerlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BaugruppelagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TeileIdlagerTextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(BezeichnunglagerTextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(MaterialgruppelagerTextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(ZeichnungsnummerlagerTextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(BaugruppelagerTextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(TeiletypComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                         .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BemerkungLabel)
                             .addComponent(PreisLabel)
@@ -665,7 +665,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         String[][] suchwerte = new String[11][];
         String[] id = {"id", TeileIdlagerTextfield.getText()};
         String teilstring = (String) TeiletypComboBox.getSelectedItem();
-        if (" ".equals(teilstring)) {
+        if ("alle".equals(teilstring)) {
             teilstring = "";
         }
         String[] teiletyp = {"typ", teilstring};
