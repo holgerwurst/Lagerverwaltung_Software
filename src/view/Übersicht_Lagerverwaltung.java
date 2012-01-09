@@ -50,6 +50,42 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void initComponents() {
 
         Teilentf_tabbedpane = new javax.swing.JTabbedPane();
+        Teilestamm_erweitern = new javax.swing.JPanel();
+        label_eingabeaufforderung = new javax.swing.JLabel();
+        label_id = new javax.swing.JLabel();
+        label_bezeichnung3 = new javax.swing.JLabel();
+        label_teiltyp = new javax.swing.JLabel();
+        label_materialgruppe = new javax.swing.JLabel();
+        label_zeichnungsnummer = new javax.swing.JLabel();
+        label_baugruppe = new javax.swing.JLabel();
+        combobox_teiltyp = new javax.swing.JComboBox();
+        label_preis = new javax.swing.JLabel();
+        label_max_anz_klein = new javax.swing.JLabel();
+        label_max_anz_mittel = new javax.swing.JLabel();
+        label_max_anz_gross = new javax.swing.JLabel();
+        label_bemerkung = new javax.swing.JLabel();
+        label_waehrung = new javax.swing.JLabel();
+        button_anlegen = new javax.swing.JButton();
+        textfeld_idP = new javax.swing.JLabel();
+        textarea_bemerkung = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        suchen_button_erweitern = new javax.swing.JButton();
+        textfeld_bezeichnungLTFP = new view.LagerTextfield();
+        textfeld_materialgruppeLTFP = new view.LagerTextfield();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        textfeld_zeichnungsnummerLTFP = new view.LagerTextfield();
+        textfeld_baugruppeLTFP = new view.LagerTextfield();
+        preisfeldLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.PREIS);
+        makLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
+        mamLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
+        magLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
+        pStatusleiste1 = new javax.swing.JLabel();
+        pStatusleiste2 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         Teile_einlagern = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
@@ -160,36 +196,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         lagerTextfield_einlagern_manuell_asg10 = new view.LagerTextfield(AllowedSequences.ALL);
         label_eingabeaufforderung_einlagern1 = new javax.swing.JLabel();
         button_manuell_einlagern = new javax.swing.JButton();
-        Teilestamm_verwalten = new javax.swing.JPanel();
-        label_eingabeaufforderung1 = new javax.swing.JLabel();
-        label_id1 = new javax.swing.JLabel();
-        textfeld_id1 = new javax.swing.JTextField();
-        label_bezeichnung4 = new javax.swing.JLabel();
-        label_teiltyp1 = new javax.swing.JLabel();
-        label_materialgruppe1 = new javax.swing.JLabel();
-        label_zeichnungsnummer1 = new javax.swing.JLabel();
-        label_baugruppe1 = new javax.swing.JLabel();
-        textfeld_bezeichnung1 = new javax.swing.JTextField();
-        textfeld_materialgruppe1 = new javax.swing.JTextField();
-        textfeld_zeichnungsnummer1 = new javax.swing.JTextField();
-        textfeld_baugruppe1 = new javax.swing.JTextField();
-        label_preis1 = new javax.swing.JLabel();
-        label_max_anz_klein1 = new javax.swing.JLabel();
-        label_max_anz_mittel1 = new javax.swing.JLabel();
-        label_max_anz_gross1 = new javax.swing.JLabel();
-        label_bemerkung1 = new javax.swing.JLabel();
-        textfeld_preis1 = new javax.swing.JTextField();
-        textfeld_max_anz_klein1 = new javax.swing.JTextField();
-        textfeld_max_anz_mittel1 = new javax.swing.JTextField();
-        textfeld_max_anz_gross1 = new javax.swing.JTextField();
-        label_waehrung1 = new javax.swing.JLabel();
-        button_loeschen = new javax.swing.JButton();
-        textfeld_teiltyp = new javax.swing.JTextField();
-        button_suchen = new javax.swing.JButton();
-        anzeigen_button = new javax.swing.JButton();
-        aendern_button = new javax.swing.JButton();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        textarea_bemerkung_verwalten = new javax.swing.JTextArea();
         Teile_auslagern = new javax.swing.JPanel();
         TeileIDLabel = new javax.swing.JLabel();
         BezeichnungLabel = new javax.swing.JLabel();
@@ -240,21 +246,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         PreisTextfield = new javax.swing.JLabel();
         MAGTextfield = new javax.swing.JLabel();
         BemerkungTextfield = new javax.swing.JLabel();
-        Buchungshistorie_einsehen_ausdrucken = new javax.swing.JPanel();
-        datumLabel_historie = new javax.swing.JLabel();
-        zeitraum_von_button_historie = new javax.swing.JTextField();
-        zeitraumLabel_historie = new javax.swing.JLabel();
-        zeitraum_bis_textfeld_historie = new javax.swing.JTextField();
-        datum_textfeld_historie = new javax.swing.JTextField();
-        undLabel_historie = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        Teilestammdaten_suchen_historie = new javax.swing.JButton();
-        oderLabel_historie = new javax.swing.JLabel();
-        anzeige_button_historie = new javax.swing.JButton();
-        drucken_button_historie = new javax.swing.JButton();
-        bisLabel_historie = new javax.swing.JLabel();
-        lagerplatz_suchen_historie = new javax.swing.JButton();
         Teile_Splitten = new javax.swing.JPanel();
         suchen_button = new javax.swing.JButton();
         label_eingabe_aufforderung_fachnummer = new javax.swing.JLabel();
@@ -347,42 +338,51 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         SuchenButton1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        Teilestamm_erweitern = new javax.swing.JPanel();
-        label_eingabeaufforderung = new javax.swing.JLabel();
-        label_id = new javax.swing.JLabel();
-        label_bezeichnung3 = new javax.swing.JLabel();
-        label_teiltyp = new javax.swing.JLabel();
-        label_materialgruppe = new javax.swing.JLabel();
-        label_zeichnungsnummer = new javax.swing.JLabel();
-        label_baugruppe = new javax.swing.JLabel();
-        combobox_teiltyp = new javax.swing.JComboBox();
-        label_preis = new javax.swing.JLabel();
-        label_max_anz_klein = new javax.swing.JLabel();
-        label_max_anz_mittel = new javax.swing.JLabel();
-        label_max_anz_gross = new javax.swing.JLabel();
-        label_bemerkung = new javax.swing.JLabel();
-        label_waehrung = new javax.swing.JLabel();
-        button_anlegen = new javax.swing.JButton();
-        textfeld_idP = new javax.swing.JLabel();
-        textarea_bemerkung = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        suchen_button_erweitern = new javax.swing.JButton();
-        textfeld_bezeichnungLTFP = new view.LagerTextfield();
-        textfeld_materialgruppeLTFP = new view.LagerTextfield();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        textfeld_zeichnungsnummerLTFP = new view.LagerTextfield();
-        textfeld_baugruppeLTFP = new view.LagerTextfield();
-        preisfeldLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.PREIS);
-        makLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
-        mamLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
-        magLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
-        pStatusleiste1 = new javax.swing.JLabel();
-        pStatusleiste2 = new javax.swing.JLabel();
+        Teilestamm_verwalten = new javax.swing.JPanel();
+        label_eingabeaufforderung1 = new javax.swing.JLabel();
+        label_id1 = new javax.swing.JLabel();
+        textfeld_id1 = new javax.swing.JTextField();
+        label_bezeichnung4 = new javax.swing.JLabel();
+        label_teiltyp1 = new javax.swing.JLabel();
+        label_materialgruppe1 = new javax.swing.JLabel();
+        label_zeichnungsnummer1 = new javax.swing.JLabel();
+        label_baugruppe1 = new javax.swing.JLabel();
+        textfeld_bezeichnung1 = new javax.swing.JTextField();
+        textfeld_materialgruppe1 = new javax.swing.JTextField();
+        textfeld_zeichnungsnummer1 = new javax.swing.JTextField();
+        textfeld_baugruppe1 = new javax.swing.JTextField();
+        label_preis1 = new javax.swing.JLabel();
+        label_max_anz_klein1 = new javax.swing.JLabel();
+        label_max_anz_mittel1 = new javax.swing.JLabel();
+        label_max_anz_gross1 = new javax.swing.JLabel();
+        label_bemerkung1 = new javax.swing.JLabel();
+        textfeld_preis1 = new javax.swing.JTextField();
+        textfeld_max_anz_klein1 = new javax.swing.JTextField();
+        textfeld_max_anz_mittel1 = new javax.swing.JTextField();
+        textfeld_max_anz_gross1 = new javax.swing.JTextField();
+        label_waehrung1 = new javax.swing.JLabel();
+        button_loeschen = new javax.swing.JButton();
+        textfeld_teiltyp = new javax.swing.JTextField();
+        button_suchen = new javax.swing.JButton();
+        anzeigen_button = new javax.swing.JButton();
+        aendern_button = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        textarea_bemerkung_verwalten = new javax.swing.JTextArea();
+        Buchungshistorie_einsehen_ausdrucken = new javax.swing.JPanel();
+        datumLabel_historie = new javax.swing.JLabel();
+        zeitraum_von_button_historie = new javax.swing.JTextField();
+        zeitraumLabel_historie = new javax.swing.JLabel();
+        zeitraum_bis_textfeld_historie = new javax.swing.JTextField();
+        datum_textfeld_historie = new javax.swing.JTextField();
+        undLabel_historie = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        Teilestammdaten_suchen_historie = new javax.swing.JButton();
+        oderLabel_historie = new javax.swing.JLabel();
+        anzeige_button_historie = new javax.swing.JButton();
+        drucken_button_historie = new javax.swing.JButton();
+        bisLabel_historie = new javax.swing.JLabel();
+        lagerplatz_suchen_historie = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Datei = new javax.swing.JMenu();
         Bearbeiten = new javax.swing.JMenu();
@@ -392,8 +392,233 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         menge_suchen = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Lagerverwaltung");
         setMinimumSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(null);
+
+        Teilestamm_erweitern.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Teilestamm_erweiternFocusGained(evt);
+            }
+        });
+        Teilestamm_erweitern.setLayout(null);
+
+        label_eingabeaufforderung.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        label_eingabeaufforderung.setText("Bitte geben Sie die Stammdaten für ein neues Teil ein:");
+        Teilestamm_erweitern.add(label_eingabeaufforderung);
+        label_eingabeaufforderung.setBounds(30, 20, 515, 15);
+
+        label_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_id.setText("ID:");
+        Teilestamm_erweitern.add(label_id);
+        label_id.setBounds(110, 110, 15, 15);
+
+        label_bezeichnung3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_bezeichnung3.setText("Bezeichnnung:");
+        Teilestamm_erweitern.add(label_bezeichnung3);
+        label_bezeichnung3.setBounds(50, 160, 81, 15);
+
+        label_teiltyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_teiltyp.setText("Teiltyp:");
+        Teilestamm_erweitern.add(label_teiltyp);
+        label_teiltyp.setBounds(90, 200, 38, 15);
+
+        label_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_materialgruppe.setText("Materialgruppe:");
+        Teilestamm_erweitern.add(label_materialgruppe);
+        label_materialgruppe.setBounds(360, 205, 85, 20);
+
+        label_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_zeichnungsnummer.setText("Zeichnungsnummer:");
+        Teilestamm_erweitern.add(label_zeichnungsnummer);
+        label_zeichnungsnummer.setBounds(330, 315, 120, 20);
+
+        label_baugruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_baugruppe.setText("Baugruppe:");
+        Teilestamm_erweitern.add(label_baugruppe);
+        label_baugruppe.setBounds(380, 255, 64, 20);
+
+        combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        combobox_teiltyp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
+        combobox_teiltyp.setNextFocusableComponent(makLTFP);
+        combobox_teiltyp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combobox_teiltypActionPerformed(evt);
+            }
+        });
+        Teilestamm_erweitern.add(combobox_teiltyp);
+        combobox_teiltyp.setBounds(150, 191, 150, 30);
+
+        label_preis.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_preis.setText("Preis:");
+        Teilestamm_erweitern.add(label_preis);
+        label_preis.setBounds(420, 160, 32, 15);
+
+        label_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_max_anz_klein.setText("Max. Anzahl Klein:");
+        Teilestamm_erweitern.add(label_max_anz_klein);
+        label_max_anz_klein.setBounds(33, 240, 100, 15);
+
+        label_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_max_anz_mittel.setText("Max. Anzahl Mittel:");
+        Teilestamm_erweitern.add(label_max_anz_mittel);
+        label_max_anz_mittel.setBounds(33, 280, 100, 15);
+
+        label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_max_anz_gross.setText("Max. Anzahl Groß:");
+        Teilestamm_erweitern.add(label_max_anz_gross);
+        label_max_anz_gross.setBounds(33, 320, 100, 15);
+
+        label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_bemerkung.setText("Bemerkung:");
+        Teilestamm_erweitern.add(label_bemerkung);
+        label_bemerkung.setBounds(60, 380, 67, 15);
+
+        label_waehrung.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        label_waehrung.setText("€");
+        Teilestamm_erweitern.add(label_waehrung);
+        label_waehrung.setBounds(630, 140, 20, 50);
+
+        button_anlegen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        button_anlegen.setText("Anlegen");
+        button_anlegen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_anlegenActionPerformed(evt);
+            }
+        });
+        Teilestamm_erweitern.add(button_anlegen);
+        button_anlegen.setBounds(540, 500, 77, 30);
+
+        textfeld_idP.setText("text");
+        textfeld_idP.setToolTipText("");
+        Teilestamm_erweitern.add(textfeld_idP);
+        textfeld_idP.setBounds(160, 110, 70, 20);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setNextFocusableComponent(button_anlegen);
+        textarea_bemerkung.setViewportView(jTextArea1);
+
+        Teilestamm_erweitern.add(textarea_bemerkung);
+        textarea_bemerkung.setBounds(150, 380, 470, 100);
+
+        suchen_button_erweitern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        suchen_button_erweitern.setText("Teile suchen");
+        suchen_button_erweitern.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suchen_button_erweiternActionPerformed(evt);
+            }
+        });
+        Teilestamm_erweitern.add(suchen_button_erweitern);
+        suchen_button_erweitern.setBounds(460, 10, 110, 20);
+
+        textfeld_bezeichnungLTFP.setNextFocusableComponent(combobox_teiltyp);
+        textfeld_bezeichnungLTFP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfeld_bezeichnungLTFPActionPerformed(evt);
+            }
+        });
+        textfeld_bezeichnungLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textfeld_bezeichnungLTFPFocusLost(evt);
+            }
+        });
+        Teilestamm_erweitern.add(textfeld_bezeichnungLTFP);
+        textfeld_bezeichnungLTFP.setBounds(150, 150, 150, 30);
+
+        textfeld_materialgruppeLTFP.setNextFocusableComponent(textfeld_baugruppeLTFP);
+        Teilestamm_erweitern.add(textfeld_materialgruppeLTFP);
+        textfeld_materialgruppeLTFP.setBounds(460, 200, 150, 30);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel2.setText("Füllen Sie bitte alle Pflichtfelder, die mit * gekennzeichnet sind aus.");
+        Teilestamm_erweitern.add(jLabel2);
+        jLabel2.setBounds(30, 40, 580, 15);
+
+        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel4.setText("*");
+        Teilestamm_erweitern.add(jLabel4);
+        jLabel4.setBounds(310, 150, 20, 14);
+
+        jLabel5.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel5.setText("*");
+        Teilestamm_erweitern.add(jLabel5);
+        jLabel5.setBounds(310, 190, 20, 14);
+
+        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel6.setText("*");
+        Teilestamm_erweitern.add(jLabel6);
+        jLabel6.setBounds(310, 230, 20, 14);
+
+        jLabel7.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel7.setText("*");
+        Teilestamm_erweitern.add(jLabel7);
+        jLabel7.setBounds(310, 280, 20, 14);
+
+        jLabel8.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel8.setText("*");
+        Teilestamm_erweitern.add(jLabel8);
+        jLabel8.setBounds(310, 320, 20, 14);
+
+        textfeld_zeichnungsnummerLTFP.setNextFocusableComponent(button_anlegen);
+        Teilestamm_erweitern.add(textfeld_zeichnungsnummerLTFP);
+        textfeld_zeichnungsnummerLTFP.setBounds(460, 310, 150, 30);
+
+        textfeld_baugruppeLTFP.setNextFocusableComponent(textfeld_zeichnungsnummerLTFP);
+        Teilestamm_erweitern.add(textfeld_baugruppeLTFP);
+        textfeld_baugruppeLTFP.setBounds(460, 250, 150, 30);
+
+        preisfeldLTFP.setNextFocusableComponent(textfeld_materialgruppeLTFP);
+        preisfeldLTFP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                preisfeldLTFPActionPerformed(evt);
+            }
+        });
+        Teilestamm_erweitern.add(preisfeldLTFP);
+        preisfeldLTFP.setBounds(460, 150, 150, 30);
+
+        makLTFP.setNextFocusableComponent(mamLTFP);
+        makLTFP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                makLTFPActionPerformed(evt);
+            }
+        });
+        makLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                makLTFPFocusGained(evt);
+            }
+        });
+        Teilestamm_erweitern.add(makLTFP);
+        makLTFP.setBounds(150, 230, 150, 30);
+
+        mamLTFP.setNextFocusableComponent(magLTFP);
+        mamLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                mamLTFPFocusGained(evt);
+            }
+        });
+        Teilestamm_erweitern.add(mamLTFP);
+        mamLTFP.setBounds(150, 280, 150, 30);
+
+        magLTFP.setNextFocusableComponent(preisfeldLTFP);
+        magLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                magLTFPFocusGained(evt);
+            }
+        });
+        Teilestamm_erweitern.add(magLTFP);
+        magLTFP.setBounds(150, 320, 150, 30);
+
+        pStatusleiste1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Teilestamm_erweitern.add(pStatusleiste1);
+        pStatusleiste1.setBounds(-30, 560, 950, 20);
+
+        pStatusleiste2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Teilestamm_erweitern.add(pStatusleiste2);
+        pStatusleiste2.setBounds(20, 570, 950, 20);
+
+        Teilentf_tabbedpane.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
         jPanel7.setLayout(null);
 
@@ -1090,150 +1315,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teilentf_tabbedpane.addTab("Teil einlagern", jPanel7);
 
-        Teilestamm_verwalten.setLayout(null);
-
-        label_eingabeaufforderung1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        label_eingabeaufforderung1.setText("Bitte geben Sie die ID des Teiles ein:");
-        Teilestamm_verwalten.add(label_eingabeaufforderung1);
-        label_eingabeaufforderung1.setBounds(40, 30, 433, 15);
-
-        label_id1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_id1.setText("ID:");
-        Teilestamm_verwalten.add(label_id1);
-        label_id1.setBounds(40, 70, 15, 15);
-
-        textfeld_id1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        textfeld_id1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfeld_id1ActionPerformed(evt);
-            }
-        });
-        Teilestamm_verwalten.add(textfeld_id1);
-        textfeld_id1.setBounds(130, 70, 59, 21);
-
-        label_bezeichnung4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_bezeichnung4.setText("Bezeichnnung:");
-        Teilestamm_verwalten.add(label_bezeichnung4);
-        label_bezeichnung4.setBounds(40, 110, 81, 15);
-
-        label_teiltyp1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_teiltyp1.setText("Teiltyp:");
-        Teilestamm_verwalten.add(label_teiltyp1);
-        label_teiltyp1.setBounds(40, 140, 38, 15);
-
-        label_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_materialgruppe1.setText("Materialgruppe:");
-        Teilestamm_verwalten.add(label_materialgruppe1);
-        label_materialgruppe1.setBounds(40, 170, 85, 15);
-
-        label_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_zeichnungsnummer1.setText("Zeichnungsnr.:");
-        Teilestamm_verwalten.add(label_zeichnungsnummer1);
-        label_zeichnungsnummer1.setBounds(40, 200, 82, 15);
-
-        label_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_baugruppe1.setText("Baugruppe:");
-        Teilestamm_verwalten.add(label_baugruppe1);
-        label_baugruppe1.setBounds(40, 240, 64, 15);
-
-        textfeld_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teilestamm_verwalten.add(textfeld_bezeichnung1);
-        textfeld_bezeichnung1.setBounds(130, 110, 161, 21);
-
-        textfeld_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teilestamm_verwalten.add(textfeld_materialgruppe1);
-        textfeld_materialgruppe1.setBounds(130, 170, 161, 21);
-
-        textfeld_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teilestamm_verwalten.add(textfeld_zeichnungsnummer1);
-        textfeld_zeichnungsnummer1.setBounds(130, 200, 161, 21);
-
-        textfeld_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teilestamm_verwalten.add(textfeld_baugruppe1);
-        textfeld_baugruppe1.setBounds(130, 230, 161, 21);
-
-        label_preis1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_preis1.setText("Preis:");
-        Teilestamm_verwalten.add(label_preis1);
-        label_preis1.setBounds(310, 110, 32, 15);
-
-        label_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_max_anz_klein1.setText("Max. Anz. Klein:");
-        Teilestamm_verwalten.add(label_max_anz_klein1);
-        label_max_anz_klein1.setBounds(310, 140, 83, 15);
-
-        label_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_max_anz_mittel1.setText("Max. Anz. Mittel:");
-        Teilestamm_verwalten.add(label_max_anz_mittel1);
-        label_max_anz_mittel1.setBounds(310, 170, 83, 15);
-
-        label_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_max_anz_gross1.setText("Max. Anz. Groß:");
-        Teilestamm_verwalten.add(label_max_anz_gross1);
-        label_max_anz_gross1.setBounds(310, 200, 83, 15);
-
-        label_bemerkung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_bemerkung1.setText("Bemerkung:");
-        Teilestamm_verwalten.add(label_bemerkung1);
-        label_bemerkung1.setBounds(310, 240, 67, 15);
-
-        textfeld_preis1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teilestamm_verwalten.add(textfeld_preis1);
-        textfeld_preis1.setBounds(400, 110, 161, 21);
-
-        textfeld_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teilestamm_verwalten.add(textfeld_max_anz_klein1);
-        textfeld_max_anz_klein1.setBounds(400, 140, 161, 21);
-
-        textfeld_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teilestamm_verwalten.add(textfeld_max_anz_mittel1);
-        textfeld_max_anz_mittel1.setBounds(400, 170, 161, 21);
-
-        textfeld_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teilestamm_verwalten.add(textfeld_max_anz_gross1);
-        textfeld_max_anz_gross1.setBounds(400, 200, 161, 21);
-
-        label_waehrung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_waehrung1.setText("€");
-        Teilestamm_verwalten.add(label_waehrung1);
-        label_waehrung1.setBounds(570, 110, 7, 15);
-
-        button_loeschen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        button_loeschen.setText("Löschen");
-        Teilestamm_verwalten.add(button_loeschen);
-        button_loeschen.setBounds(480, 70, 81, 23);
-        Teilestamm_verwalten.add(textfeld_teiltyp);
-        textfeld_teiltyp.setBounds(130, 140, 161, 20);
-
-        button_suchen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        button_suchen.setText("Suchen");
-        button_suchen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_suchenActionPerformed(evt);
-            }
-        });
-        Teilestamm_verwalten.add(button_suchen);
-        button_suchen.setBounds(210, 70, 75, 23);
-
-        anzeigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        anzeigen_button.setText("Anzeigen");
-        Teilestamm_verwalten.add(anzeigen_button);
-        anzeigen_button.setBounds(310, 70, 83, 23);
-
-        aendern_button.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        aendern_button.setText("Ändern");
-        Teilestamm_verwalten.add(aendern_button);
-        aendern_button.setBounds(30, 350, 73, 23);
-
-        textarea_bemerkung_verwalten.setColumns(20);
-        textarea_bemerkung_verwalten.setRows(5);
-        jScrollPane6.setViewportView(textarea_bemerkung_verwalten);
-
-        Teilestamm_verwalten.add(jScrollPane6);
-        jScrollPane6.setBounds(400, 240, 166, 96);
-
-        Teilentf_tabbedpane.addTab("Teilestammdaten verwalten", Teilestamm_verwalten);
-
         Teile_auslagern.setLayout(null);
 
         TeileIDLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -1513,86 +1594,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         BemerkungTextfield.setBounds(460, 330, 34, 14);
 
         Teilentf_tabbedpane.addTab("Teil entfernen", entfernenJTabbedPane);
-
-        Buchungshistorie_einsehen_ausdrucken.setLayout(null);
-
-        datumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        datumLabel_historie.setText("Die Buchungshistorie zum Datum");
-        Buchungshistorie_einsehen_ausdrucken.add(datumLabel_historie);
-        datumLabel_historie.setBounds(40, 20, 200, 30);
-
-        zeitraum_von_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        zeitraum_von_button_historie.setText("dd.mm.yyyy");
-        Buchungshistorie_einsehen_ausdrucken.add(zeitraum_von_button_historie);
-        zeitraum_von_button_historie.setBounds(120, 70, 80, 30);
-
-        zeitraumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        zeitraumLabel_historie.setText("Zeitraum vom");
-        Buchungshistorie_einsehen_ausdrucken.add(zeitraumLabel_historie);
-        zeitraumLabel_historie.setBounds(40, 70, 80, 30);
-
-        zeitraum_bis_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        zeitraum_bis_textfeld_historie.setText("dd.mm.yyyy");
-        Buchungshistorie_einsehen_ausdrucken.add(zeitraum_bis_textfeld_historie);
-        zeitraum_bis_textfeld_historie.setBounds(240, 70, 80, 30);
-
-        datum_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        datum_textfeld_historie.setText("dd.mm.yyyy");
-        Buchungshistorie_einsehen_ausdrucken.add(datum_textfeld_historie);
-        datum_textfeld_historie.setBounds(240, 20, 80, 30);
-
-        undLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        undLabel_historie.setText("und");
-        Buchungshistorie_einsehen_ausdrucken.add(undLabel_historie);
-        undLabel_historie.setBounds(460, 70, 30, 30);
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        Buchungshistorie_einsehen_ausdrucken.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 130, 760, 200);
-
-        Teilestammdaten_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Teilestammdaten_suchen_historie.setText("Teilestammdaten suchen");
-        Buchungshistorie_einsehen_ausdrucken.add(Teilestammdaten_suchen_historie);
-        Teilestammdaten_suchen_historie.setBounds(20, 350, 180, 30);
-
-        oderLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        oderLabel_historie.setText("oder im");
-        Buchungshistorie_einsehen_ausdrucken.add(oderLabel_historie);
-        oderLabel_historie.setBounds(340, 20, 60, 30);
-
-        anzeige_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        anzeige_button_historie.setText("anzeigen");
-        Buchungshistorie_einsehen_ausdrucken.add(anzeige_button_historie);
-        anzeige_button_historie.setBounds(330, 70, 110, 30);
-
-        drucken_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        drucken_button_historie.setText("drucken.");
-        Buchungshistorie_einsehen_ausdrucken.add(drucken_button_historie);
-        drucken_button_historie.setBounds(500, 70, 110, 30);
-
-        bisLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        bisLabel_historie.setText("bis");
-        Buchungshistorie_einsehen_ausdrucken.add(bisLabel_historie);
-        bisLabel_historie.setBounds(210, 70, 20, 30);
-
-        lagerplatz_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        lagerplatz_suchen_historie.setText("Teile/Lagerplatz suchen");
-        Buchungshistorie_einsehen_ausdrucken.add(lagerplatz_suchen_historie);
-        lagerplatz_suchen_historie.setBounds(220, 350, 180, 30);
-
-        Teilentf_tabbedpane.addTab("Buchungshistorie einsehen", Buchungshistorie_einsehen_ausdrucken);
 
         Teile_Splitten.setLayout(null);
 
@@ -2050,229 +2051,229 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         Teilentf_tabbedpane.addTab("Teil umlagern", Teile_umlagern);
 
-        Teilestamm_erweitern.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                Teilestamm_erweiternFocusGained(evt);
-            }
-        });
-        Teilestamm_erweitern.setLayout(null);
+        Teilestamm_verwalten.setLayout(null);
 
-        label_eingabeaufforderung.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        label_eingabeaufforderung.setText("Bitte geben Sie die Stammdaten für ein neues Teil ein:");
-        Teilestamm_erweitern.add(label_eingabeaufforderung);
-        label_eingabeaufforderung.setBounds(30, 20, 515, 15);
+        label_eingabeaufforderung1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        label_eingabeaufforderung1.setText("Bitte geben Sie die ID des Teiles ein:");
+        Teilestamm_verwalten.add(label_eingabeaufforderung1);
+        label_eingabeaufforderung1.setBounds(40, 30, 433, 15);
 
-        label_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_id.setText("ID:");
-        Teilestamm_erweitern.add(label_id);
-        label_id.setBounds(110, 110, 15, 15);
+        label_id1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_id1.setText("ID:");
+        Teilestamm_verwalten.add(label_id1);
+        label_id1.setBounds(40, 70, 15, 15);
 
-        label_bezeichnung3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_bezeichnung3.setText("Bezeichnnung:");
-        Teilestamm_erweitern.add(label_bezeichnung3);
-        label_bezeichnung3.setBounds(50, 160, 81, 15);
-
-        label_teiltyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_teiltyp.setText("Teiltyp:");
-        Teilestamm_erweitern.add(label_teiltyp);
-        label_teiltyp.setBounds(90, 200, 38, 15);
-
-        label_materialgruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_materialgruppe.setText("Materialgruppe:");
-        Teilestamm_erweitern.add(label_materialgruppe);
-        label_materialgruppe.setBounds(360, 205, 85, 20);
-
-        label_zeichnungsnummer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_zeichnungsnummer.setText("Zeichnungsnummer:");
-        Teilestamm_erweitern.add(label_zeichnungsnummer);
-        label_zeichnungsnummer.setBounds(330, 315, 120, 20);
-
-        label_baugruppe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_baugruppe.setText("Baugruppe:");
-        Teilestamm_erweitern.add(label_baugruppe);
-        label_baugruppe.setBounds(380, 255, 64, 20);
-
-        combobox_teiltyp.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        combobox_teiltyp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kaufteile", "Werkzeuge", "Vorrichtungen", "unfertige Baugruppen", "Vorratsteile" }));
-        combobox_teiltyp.setNextFocusableComponent(makLTFP);
-        combobox_teiltyp.addActionListener(new java.awt.event.ActionListener() {
+        textfeld_id1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textfeld_id1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combobox_teiltypActionPerformed(evt);
+                textfeld_id1ActionPerformed(evt);
             }
         });
-        Teilestamm_erweitern.add(combobox_teiltyp);
-        combobox_teiltyp.setBounds(150, 191, 150, 30);
+        Teilestamm_verwalten.add(textfeld_id1);
+        textfeld_id1.setBounds(130, 70, 59, 21);
 
-        label_preis.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_preis.setText("Preis:");
-        Teilestamm_erweitern.add(label_preis);
-        label_preis.setBounds(420, 160, 32, 15);
+        label_bezeichnung4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_bezeichnung4.setText("Bezeichnnung:");
+        Teilestamm_verwalten.add(label_bezeichnung4);
+        label_bezeichnung4.setBounds(40, 110, 81, 15);
 
-        label_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_max_anz_klein.setText("Max. Anzahl Klein:");
-        Teilestamm_erweitern.add(label_max_anz_klein);
-        label_max_anz_klein.setBounds(33, 240, 100, 15);
+        label_teiltyp1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_teiltyp1.setText("Teiltyp:");
+        Teilestamm_verwalten.add(label_teiltyp1);
+        label_teiltyp1.setBounds(40, 140, 38, 15);
 
-        label_max_anz_mittel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_max_anz_mittel.setText("Max. Anzahl Mittel:");
-        Teilestamm_erweitern.add(label_max_anz_mittel);
-        label_max_anz_mittel.setBounds(33, 280, 100, 15);
+        label_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_materialgruppe1.setText("Materialgruppe:");
+        Teilestamm_verwalten.add(label_materialgruppe1);
+        label_materialgruppe1.setBounds(40, 170, 85, 15);
 
-        label_max_anz_gross.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_max_anz_gross.setText("Max. Anzahl Groß:");
-        Teilestamm_erweitern.add(label_max_anz_gross);
-        label_max_anz_gross.setBounds(33, 320, 100, 15);
+        label_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_zeichnungsnummer1.setText("Zeichnungsnr.:");
+        Teilestamm_verwalten.add(label_zeichnungsnummer1);
+        label_zeichnungsnummer1.setBounds(40, 200, 82, 15);
 
-        label_bemerkung.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_bemerkung.setText("Bemerkung:");
-        Teilestamm_erweitern.add(label_bemerkung);
-        label_bemerkung.setBounds(60, 380, 67, 15);
+        label_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_baugruppe1.setText("Baugruppe:");
+        Teilestamm_verwalten.add(label_baugruppe1);
+        label_baugruppe1.setBounds(40, 240, 64, 15);
 
-        label_waehrung.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        label_waehrung.setText("€");
-        Teilestamm_erweitern.add(label_waehrung);
-        label_waehrung.setBounds(630, 140, 20, 50);
+        textfeld_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_verwalten.add(textfeld_bezeichnung1);
+        textfeld_bezeichnung1.setBounds(130, 110, 161, 21);
 
-        button_anlegen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        button_anlegen.setText("Anlegen");
-        button_anlegen.addActionListener(new java.awt.event.ActionListener() {
+        textfeld_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_verwalten.add(textfeld_materialgruppe1);
+        textfeld_materialgruppe1.setBounds(130, 170, 161, 21);
+
+        textfeld_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_verwalten.add(textfeld_zeichnungsnummer1);
+        textfeld_zeichnungsnummer1.setBounds(130, 200, 161, 21);
+
+        textfeld_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_verwalten.add(textfeld_baugruppe1);
+        textfeld_baugruppe1.setBounds(130, 230, 161, 21);
+
+        label_preis1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_preis1.setText("Preis:");
+        Teilestamm_verwalten.add(label_preis1);
+        label_preis1.setBounds(310, 110, 32, 15);
+
+        label_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_max_anz_klein1.setText("Max. Anz. Klein:");
+        Teilestamm_verwalten.add(label_max_anz_klein1);
+        label_max_anz_klein1.setBounds(310, 140, 83, 15);
+
+        label_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_max_anz_mittel1.setText("Max. Anz. Mittel:");
+        Teilestamm_verwalten.add(label_max_anz_mittel1);
+        label_max_anz_mittel1.setBounds(310, 170, 83, 15);
+
+        label_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_max_anz_gross1.setText("Max. Anz. Groß:");
+        Teilestamm_verwalten.add(label_max_anz_gross1);
+        label_max_anz_gross1.setBounds(310, 200, 83, 15);
+
+        label_bemerkung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_bemerkung1.setText("Bemerkung:");
+        Teilestamm_verwalten.add(label_bemerkung1);
+        label_bemerkung1.setBounds(310, 240, 67, 15);
+
+        textfeld_preis1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_verwalten.add(textfeld_preis1);
+        textfeld_preis1.setBounds(400, 110, 161, 21);
+
+        textfeld_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_verwalten.add(textfeld_max_anz_klein1);
+        textfeld_max_anz_klein1.setBounds(400, 140, 161, 21);
+
+        textfeld_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_verwalten.add(textfeld_max_anz_mittel1);
+        textfeld_max_anz_mittel1.setBounds(400, 170, 161, 21);
+
+        textfeld_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestamm_verwalten.add(textfeld_max_anz_gross1);
+        textfeld_max_anz_gross1.setBounds(400, 200, 161, 21);
+
+        label_waehrung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label_waehrung1.setText("€");
+        Teilestamm_verwalten.add(label_waehrung1);
+        label_waehrung1.setBounds(570, 110, 7, 15);
+
+        button_loeschen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        button_loeschen.setText("Löschen");
+        Teilestamm_verwalten.add(button_loeschen);
+        button_loeschen.setBounds(480, 70, 81, 23);
+        Teilestamm_verwalten.add(textfeld_teiltyp);
+        textfeld_teiltyp.setBounds(130, 140, 161, 20);
+
+        button_suchen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        button_suchen.setText("Suchen");
+        button_suchen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_anlegenActionPerformed(evt);
+                button_suchenActionPerformed(evt);
             }
         });
-        Teilestamm_erweitern.add(button_anlegen);
-        button_anlegen.setBounds(540, 500, 77, 30);
+        Teilestamm_verwalten.add(button_suchen);
+        button_suchen.setBounds(210, 70, 75, 23);
 
-        textfeld_idP.setText("text");
-        textfeld_idP.setToolTipText("");
-        Teilestamm_erweitern.add(textfeld_idP);
-        textfeld_idP.setBounds(160, 110, 70, 20);
+        anzeigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        anzeigen_button.setText("Anzeigen");
+        Teilestamm_verwalten.add(anzeigen_button);
+        anzeigen_button.setBounds(310, 70, 83, 23);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setNextFocusableComponent(button_anlegen);
-        textarea_bemerkung.setViewportView(jTextArea1);
+        aendern_button.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        aendern_button.setText("Ändern");
+        Teilestamm_verwalten.add(aendern_button);
+        aendern_button.setBounds(30, 350, 73, 23);
 
-        Teilestamm_erweitern.add(textarea_bemerkung);
-        textarea_bemerkung.setBounds(150, 380, 470, 100);
+        textarea_bemerkung_verwalten.setColumns(20);
+        textarea_bemerkung_verwalten.setRows(5);
+        jScrollPane6.setViewportView(textarea_bemerkung_verwalten);
 
-        suchen_button_erweitern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        suchen_button_erweitern.setText("Suche Teile ID");
-        suchen_button_erweitern.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                suchen_button_erweiternActionPerformed(evt);
+        Teilestamm_verwalten.add(jScrollPane6);
+        jScrollPane6.setBounds(400, 240, 166, 96);
+
+        Teilentf_tabbedpane.addTab("Teilestammdaten verwalten", Teilestamm_verwalten);
+
+        Buchungshistorie_einsehen_ausdrucken.setLayout(null);
+
+        datumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        datumLabel_historie.setText("Die Buchungshistorie zum Datum");
+        Buchungshistorie_einsehen_ausdrucken.add(datumLabel_historie);
+        datumLabel_historie.setBounds(40, 20, 200, 30);
+
+        zeitraum_von_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        zeitraum_von_button_historie.setText("dd.mm.yyyy");
+        Buchungshistorie_einsehen_ausdrucken.add(zeitraum_von_button_historie);
+        zeitraum_von_button_historie.setBounds(120, 70, 80, 30);
+
+        zeitraumLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        zeitraumLabel_historie.setText("Zeitraum vom");
+        Buchungshistorie_einsehen_ausdrucken.add(zeitraumLabel_historie);
+        zeitraumLabel_historie.setBounds(40, 70, 80, 30);
+
+        zeitraum_bis_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        zeitraum_bis_textfeld_historie.setText("dd.mm.yyyy");
+        Buchungshistorie_einsehen_ausdrucken.add(zeitraum_bis_textfeld_historie);
+        zeitraum_bis_textfeld_historie.setBounds(240, 70, 80, 30);
+
+        datum_textfeld_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        datum_textfeld_historie.setText("dd.mm.yyyy");
+        Buchungshistorie_einsehen_ausdrucken.add(datum_textfeld_historie);
+        datum_textfeld_historie.setBounds(240, 20, 80, 30);
+
+        undLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        undLabel_historie.setText("und");
+        Buchungshistorie_einsehen_ausdrucken.add(undLabel_historie);
+        undLabel_historie.setBounds(460, 70, 30, 30);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        });
-        Teilestamm_erweitern.add(suchen_button_erweitern);
-        suchen_button_erweitern.setBounds(460, 10, 140, 23);
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-        textfeld_bezeichnungLTFP.setNextFocusableComponent(combobox_teiltyp);
-        textfeld_bezeichnungLTFP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfeld_bezeichnungLTFPActionPerformed(evt);
-            }
-        });
-        textfeld_bezeichnungLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                textfeld_bezeichnungLTFPFocusLost(evt);
-            }
-        });
-        Teilestamm_erweitern.add(textfeld_bezeichnungLTFP);
-        textfeld_bezeichnungLTFP.setBounds(150, 150, 150, 30);
+        Buchungshistorie_einsehen_ausdrucken.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 130, 760, 200);
 
-        textfeld_materialgruppeLTFP.setNextFocusableComponent(textfeld_baugruppeLTFP);
-        Teilestamm_erweitern.add(textfeld_materialgruppeLTFP);
-        textfeld_materialgruppeLTFP.setBounds(460, 200, 150, 30);
+        Teilestammdaten_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Teilestammdaten_suchen_historie.setText("Teilestammdaten suchen");
+        Buchungshistorie_einsehen_ausdrucken.add(Teilestammdaten_suchen_historie);
+        Teilestammdaten_suchen_historie.setBounds(20, 350, 180, 30);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel2.setText("Füllen Sie bitte alle Pflichtfelder, die mit * gekennzeichnet sind aus.");
-        Teilestamm_erweitern.add(jLabel2);
-        jLabel2.setBounds(30, 40, 580, 15);
+        oderLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        oderLabel_historie.setText("oder im");
+        Buchungshistorie_einsehen_ausdrucken.add(oderLabel_historie);
+        oderLabel_historie.setBounds(340, 20, 60, 30);
 
-        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel4.setText("*");
-        Teilestamm_erweitern.add(jLabel4);
-        jLabel4.setBounds(310, 150, 20, 14);
+        anzeige_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        anzeige_button_historie.setText("anzeigen");
+        Buchungshistorie_einsehen_ausdrucken.add(anzeige_button_historie);
+        anzeige_button_historie.setBounds(330, 70, 110, 30);
 
-        jLabel5.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel5.setText("*");
-        Teilestamm_erweitern.add(jLabel5);
-        jLabel5.setBounds(310, 190, 20, 14);
+        drucken_button_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        drucken_button_historie.setText("drucken.");
+        Buchungshistorie_einsehen_ausdrucken.add(drucken_button_historie);
+        drucken_button_historie.setBounds(500, 70, 110, 30);
 
-        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel6.setText("*");
-        Teilestamm_erweitern.add(jLabel6);
-        jLabel6.setBounds(310, 230, 20, 14);
+        bisLabel_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        bisLabel_historie.setText("bis");
+        Buchungshistorie_einsehen_ausdrucken.add(bisLabel_historie);
+        bisLabel_historie.setBounds(210, 70, 20, 30);
 
-        jLabel7.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel7.setText("*");
-        Teilestamm_erweitern.add(jLabel7);
-        jLabel7.setBounds(310, 280, 20, 14);
+        lagerplatz_suchen_historie.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lagerplatz_suchen_historie.setText("Teile/Lagerplatz suchen");
+        Buchungshistorie_einsehen_ausdrucken.add(lagerplatz_suchen_historie);
+        lagerplatz_suchen_historie.setBounds(220, 350, 180, 30);
 
-        jLabel8.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel8.setText("*");
-        Teilestamm_erweitern.add(jLabel8);
-        jLabel8.setBounds(310, 320, 20, 14);
-
-        textfeld_zeichnungsnummerLTFP.setNextFocusableComponent(button_anlegen);
-        Teilestamm_erweitern.add(textfeld_zeichnungsnummerLTFP);
-        textfeld_zeichnungsnummerLTFP.setBounds(460, 310, 150, 30);
-
-        textfeld_baugruppeLTFP.setNextFocusableComponent(textfeld_zeichnungsnummerLTFP);
-        Teilestamm_erweitern.add(textfeld_baugruppeLTFP);
-        textfeld_baugruppeLTFP.setBounds(460, 250, 150, 30);
-
-        preisfeldLTFP.setNextFocusableComponent(textfeld_materialgruppeLTFP);
-        preisfeldLTFP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                preisfeldLTFPActionPerformed(evt);
-            }
-        });
-        Teilestamm_erweitern.add(preisfeldLTFP);
-        preisfeldLTFP.setBounds(460, 150, 150, 30);
-
-        makLTFP.setNextFocusableComponent(mamLTFP);
-        makLTFP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                makLTFPActionPerformed(evt);
-            }
-        });
-        makLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                makLTFPFocusGained(evt);
-            }
-        });
-        Teilestamm_erweitern.add(makLTFP);
-        makLTFP.setBounds(150, 230, 150, 30);
-
-        mamLTFP.setNextFocusableComponent(magLTFP);
-        mamLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                mamLTFPFocusGained(evt);
-            }
-        });
-        Teilestamm_erweitern.add(mamLTFP);
-        mamLTFP.setBounds(150, 280, 150, 30);
-
-        magLTFP.setNextFocusableComponent(preisfeldLTFP);
-        magLTFP.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                magLTFPFocusGained(evt);
-            }
-        });
-        Teilestamm_erweitern.add(magLTFP);
-        magLTFP.setBounds(150, 320, 150, 30);
-
-        pStatusleiste1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Teilestamm_erweitern.add(pStatusleiste1);
-        pStatusleiste1.setBounds(20, 540, 950, 20);
-
-        pStatusleiste2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Teilestamm_erweitern.add(pStatusleiste2);
-        pStatusleiste2.setBounds(20, 570, 950, 20);
-
-        Teilentf_tabbedpane.addTab("Teilestamm erweitern", Teilestamm_erweitern);
+        Teilentf_tabbedpane.addTab("Buchungshistorie einsehen", Buchungshistorie_einsehen_ausdrucken);
 
         getContentPane().add(Teilentf_tabbedpane);
         Teilentf_tabbedpane.setBounds(0, 10, 1010, 690);
