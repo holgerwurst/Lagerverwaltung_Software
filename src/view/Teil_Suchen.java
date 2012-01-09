@@ -172,9 +172,9 @@ public class Teil_Suchen extends javax.swing.JFrame {
             }
         });
 
-        zeile_label.setText("(Z1 - Z25)");
+        zeile_label.setText("(Z01 - Z25)");
 
-        spalte_label.setText("(S1 - S25)");
+        spalte_label.setText("(S01 - S25)");
 
         RegalnummerbuttonGroup.add(H1JRadioButton);
         H1JRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -569,7 +569,6 @@ public class Teil_Suchen extends javax.swing.JFrame {
             .addGroup(suche_TeilLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TeileStammdatenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(suche_TeilLayout.createSequentialGroup()
                         .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BaugruppeLabel)
@@ -586,7 +585,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                             .addComponent(ZeichnungsnummerlagerTextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(BaugruppelagerTextfield, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(TeiletypComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                         .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BemerkungLabel)
                             .addComponent(PreisLabel)
@@ -595,27 +594,29 @@ public class Teil_Suchen extends javax.swing.JFrame {
                             .addComponent(MAGLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BemerkungslagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(suche_TeilLayout.createSequentialGroup()
-                                .addComponent(MaximaleAnzahlKleinlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                .addComponent(PreislagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(EuroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(suche_TeilLayout.createSequentialGroup()
-                                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BemerkungslagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PreislagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MaximaleAnzahlMittellagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MaximaleAnzahlGroßlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(31, 31, 31)))))
-                .addGap(55, 55, 55))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, suche_TeilLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4)
-                .addContainerGap())
+                            .addComponent(MaximaleAnzahlMittellagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MaximaleAnzahlGroßlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MaximaleAnzahlKleinlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(112, Short.MAX_VALUE))
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addComponent(TeileStammdatenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55))))
             .addGroup(suche_TeilLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(AlleTeileAnzeigenButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SuchenlinksButton)
+                .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, suche_TeilLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4))
+                    .addGroup(suche_TeilLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(AlleTeileAnzeigenButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SuchenlinksButton)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -637,14 +638,14 @@ public class Teil_Suchen extends javax.swing.JFrame {
                     .addComponent(BezeichnungLabel)
                     .addComponent(BezeichnunglagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PreisLabel)
-                    .addComponent(PreislagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PreislagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EuroLabel))
                 .addGap(13, 13, 13)
                 .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TeiletypLabel)
                     .addComponent(TeiletypComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(MAKLabel)
-                    .addComponent(MaximaleAnzahlKleinlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EuroLabel))
+                    .addComponent(MaximaleAnzahlKleinlagerTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(suche_TeilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MaterialgruppeLabel)
@@ -768,13 +769,13 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
     private void TeilImFachSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeilImFachSuchenActionPerformed
         String[] teileid = {"teile_id", TeileIdlagerTextfield2.getText()};
-        String[] lagerbestand = {"menge" , LagerbestandlagerTextfield2.getText()};
+        String[] lagerbestand = {"menge", LagerbestandlagerTextfield2.getText()};
         String[] fachnummer = {"fachnummer", FachnummerlagerTextfield2.getText()};
         String[] anschaffungsgrund = {"anschaffungsgrund", AnschaffungsgrundlagerTextfield2.getText()};
         String[] maximale_menge = {"max_menge", MaximaleMengeimFachlagerTextfield2.getText()};
         String[] mindestens_menge = {"mind_menge", MindestensMengeimFachlagerTextfield2.getText()};
         String[] haltbarkeitsdatum = {"haltbarkeitsdatum", HaltbarkeitsdatumlagerTextfield2.getText()};
-        
+
         String[][] suchwerte = new String[7][];
         suchwerte[0] = fachnummer;
         suchwerte[1] = teileid;
@@ -783,7 +784,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         suchwerte[4] = mindestens_menge;
         suchwerte[5] = anschaffungsgrund;
         suchwerte[6] = haltbarkeitsdatum;
-        
+
         DefaultTableModel table_model = new DefaultTableModel();
         for (String columnname : suchen_controller.table_column_names_lagerbestandskonto) {
             table_model.addColumn(columnname);
@@ -791,30 +792,101 @@ public class Teil_Suchen extends javax.swing.JFrame {
         System.out.println(suchwerte[0][0] + "  " + suchwerte[0][1]);
         try {
             ArrayList<Lagerbestandskonto> lagerbestandskontos = suchen_controller.teile_im_fach_suchen(suchwerte);
-            for (Lagerbestandskonto lagerbestandskonto: lagerbestandskontos) {
+            for (Lagerbestandskonto lagerbestandskonto : lagerbestandskontos) {
                 lagerbestandskonto.toArray();
                 table_model.addRow(lagerbestandskonto.get_Attribute());
             }
         } catch (Exception ex) {
             Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         this.TeileImFachSuchenJtable.setModel(table_model);
 
-        
+
     }//GEN-LAST:event_TeilImFachSuchenActionPerformed
 
     private void fach_suchen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fach_suchen
+
+        // Auslesen aller Textfelder und RadioButtons
         String fachnummer = FachnummerlagerTextfield3.getText();
-        String regalnummer;
-        String groesse;
-        String belegt;
-        String lagerort;
+        String regalnummer = null;
+        String groesse = null;
+        String belegt = null;
+        String lagerort = null;
         String zeile = ZeilelagerTextfield3.getText();
         String spalte = SpaltelagerTextfield3.getText();
-        
+
         ButtonModel selected_regalnummer = RegalnummerbuttonGroup.getSelection();
-        //if ()
+        if (H1JRadioButton.getModel() == selected_regalnummer) {
+            regalnummer = "H1";
+        } else if (H2JRadioButton.getModel() == selected_regalnummer) {
+            regalnummer = "H2";
+        } else if (H3JRadioButton.getModel() == selected_regalnummer) {
+            regalnummer = "H3";
+        } else if (H4JRadioButton.getModel() == selected_regalnummer) {
+            regalnummer = "H4";
+        } else if (H5JRadioButton.getModel() == selected_regalnummer) {
+            regalnummer = "H5";
+        } else if (KeineAngabeRegalnummerJRadioButton.getModel() == selected_regalnummer) {
+            regalnummer = "";
+        }
+
+        ButtonModel selected_groesse = GroesseButtonGroup.getSelection();
+        if (KleinJRadiobutton.getModel() == selected_groesse) {
+            groesse = "K";
+        } else if (MittelJRadioButton.getModel() == selected_groesse) {
+            groesse = "M";
+        } else if (GrossJRadiobutton.getModel() == selected_groesse) {
+            groesse = "G";
+        } else if (KeineAngabeGroesseJRadioButton.getModel() == selected_groesse) {
+            groesse = "";
+        }
+
+        ButtonModel selected_belegt = BelegtButtonGroup.getSelection();
+        if (BelegtJRadioButton.getModel() == selected_belegt) {
+            belegt = "true";
+        } else if (NichtBelegtJRadioButton.getModel() == selected_belegt) {
+            belegt = "false";
+        } else {
+            belegt = "";
+        }
+
+        ButtonModel selected_lagerort = LagerortButtonGroup.getSelection();
+        if (HochregallagerJRadioButton.getModel() == selected_lagerort) {
+            lagerort = "H";
+        } else if (FreilagerJRadioButton.getModel() == selected_lagerort) {
+            lagerort = "F";
+        } else {
+            lagerort = "";
+        }
+
+        String[][] suchwerte = {
+            {"fachnummer", fachnummer},
+            {"lagerort", lagerort},
+            {"hochregalnummer", regalnummer},
+            {"zeile", zeile},
+            {"spalte", spalte},
+            {"groesse", groesse},
+            {"belegt", belegt},};
+        
+        DefaultTableModel table_model = new DefaultTableModel();
+        for (String columnname : suchen_controller.tabble_column_names_lagerfachstamm) {
+            table_model.addColumn(columnname);
+        }
+        
+        try {
+            ArrayList<Lagerfachstamm> lagerfachstaemme = suchen_controller.fach_suchen(suchwerte);
+            for (Lagerfachstamm lagerfachstamm : lagerfachstaemme) {
+                table_model.addRow(lagerfachstamm.get_Attribute());
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        FachSuchenJtable.setModel(table_model);
+
     }//GEN-LAST:event_fach_suchen
 
     private void H1JRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_H1JRadioButtonActionPerformed

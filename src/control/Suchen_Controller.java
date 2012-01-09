@@ -27,6 +27,10 @@ public class Suchen_Controller {
         "Fachnummer", "Teile ID", "Menge", "Anschaffungsgrund", "Haltbarkeitsdatum"
     };
 
+    public String[] tabble_column_names_lagerfachstamm = {
+        "Fachnummer", "Lagerort", "Hochregalnummer", "Zeile", "Spalte", "Größe", "Belegt"
+    
+    };
     /**
      * ruft ganze Teilestammtabelle aus Datenbank ab
      *
@@ -57,27 +61,10 @@ public class Suchen_Controller {
         return select_lagerbestandskonto.teile_im_fach_suchen(suchwerte);
     }
 
-    public void fach_suchen() {
+    public ArrayList<Lagerfachstamm> fach_suchen(String[][] suchwerte) throws ClassNotFoundException, Exception {
         if (select_lagerfachstamm == null) {
             select_lagerfachstamm = new Select_Lagerfachstamm();
         }
-    }
-
-    public DefaultComboBoxModel get_TeileTyp_combo_box_model() {
-        ArrayList<String> teiletypen = new ArrayList<String>();
-        for (TeileTypET typ : TeileTypET.values()) {
-            teiletypen.add(typ.toString());
-        }
-        System.out.println(teiletypen);
-        DefaultComboBoxModel model = new DefaultComboBoxModel(teiletypen.toArray());
-        System.out.println(TeileTypET.values());
-        System.out.println(model);
-        return model;
-    }
-
-    public static void main(String[] args) throws ClassNotFoundException {
-        Suchen_Controller suchen_controller = new Suchen_Controller();
-        //suchen_controller.alle_teile_ausgeben();
-        suchen_controller.get_TeileTyp_combo_box_model();
+        return select_lagerfachstamm.fach_suchen(suchwerte);
     }
 }
