@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="RegalnummerbuttonGroup">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="GroesseButtonGroup">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="BelegtButtonGroup">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="LagerortButtonGroup">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
@@ -59,149 +69,163 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="LagerfachbestandLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lagerTextfield1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="LagerortLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="18" pref="18" max="18" attributes="0"/>
-                              <Component id="FCB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="11" pref="11" max="11" attributes="0"/>
-                              <Component id="HCB" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="SpalteLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                              <Component id="spalte_label" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="BelegtLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="34" pref="34" max="34" attributes="0"/>
-                              <Component id="jaCB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                              <Component id="neinCB" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="GrößeLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="34" pref="34" max="34" attributes="0"/>
-                              <Component id="kCB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                              <Component id="mCB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                              <Component id="gCB" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="SuchenmitteButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="RegalnrLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="18" pref="18" max="18" attributes="0"/>
-                                      <Component id="H1CB" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                                      <Component id="H2CB" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                                      <Component id="H3CB" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                                      <Component id="H4CB" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="lagerTextfield3" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Component id="ZeileLabel" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="lagerTextfield2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane6" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="LagerfachbestandLabel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="FachnummerlagerTextfield3" min="-2" pref="135" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="RegalnrLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="GrößeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="BelegtLabel" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="KleinJRadiobutton" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="BelegtJRadioButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="NichtBelegtJRadioButton" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                              <Component id="KeineAngabeBelegtJRadioButton" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="MittelJRadioButton" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="GrossJRadiobutton" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="KeineAngabeGroesseJRadioButton" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                                                              <Component id="H4JRadioButton" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                                              <Component id="H5JRadioButton" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="KeineAngabeRegalnummerJRadioButton" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="H1JRadioButton" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="H2JRadioButton" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="H3JRadioButton" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="zeile_label" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="LagerortLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ZeileLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SpalteLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                                      <Component id="SpaltelagerTextfield3" min="-2" pref="133" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="ZeilelagerTextfield3" min="-2" pref="133" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="zeile_label" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="spalte_label" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="HochregallagerJRadioButton" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="FreilagerJRadioButton" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="KeineAngabeLagerortJRadioButton" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
+                                  <Component id="SuchenmitteButton" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="2" pref="2" max="2" attributes="0"/>
-                              <Component id="H5CB" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="322" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane6" alignment="1" min="-2" pref="630" max="-2" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="LagerfachbestandLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lagerTextfield1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                              <Component id="LagerortLabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="FCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="HCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="8" pref="8" max="8" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                              <Component id="RegalnrLabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="H1CB" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="H2CB" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="H3CB" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="H4CB" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="H5CB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="16" pref="16" max="16" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="3" pref="3" max="3" attributes="0"/>
-                              <Component id="ZeileLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="1" pref="1" max="1" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="SpalteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lagerTextfield3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="spalte_label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                                      <Component id="BelegtLabel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jaCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="neinCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="LagerfachbestandLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FachnummerlagerTextfield3" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="18" pref="18" max="18" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="4" pref="4" max="4" attributes="0"/>
-                                      <Component id="GrößeLabel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="kCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="mCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="gCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="SuchenmitteButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="zeile_label" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lagerTextfield2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                              <Component id="LagerortLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="HochregallagerJRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FreilagerJRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="KeineAngabeLagerortJRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="45" max="32767" attributes="0"/>
-                      <Component id="jScrollPane6" min="-2" pref="160" max="-2" attributes="0"/>
+                      <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="RegalnrLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="H1JRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="H2JRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="H3JRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="H4JRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="H5JRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="KeineAngabeRegalnummerJRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ZeileLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ZeilelagerTextfield3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="zeile_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="SpalteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="SpaltelagerTextfield3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="spalte_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="GrößeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="KleinJRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="MittelJRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="GrossJRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="KeineAngabeGroesseJRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="BelegtLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BelegtJRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NichtBelegtJRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="KeineAngabeBelegtJRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="SuchenmitteButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane6" pref="332" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -215,7 +239,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable6">
+                <Component class="javax.swing.JTable" name="FachSuchenJtable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="4">
@@ -277,76 +301,12 @@
                 <Property name="text" type="java.lang.String" value="Spalte:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="FCB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Freilager"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="H3CB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="H3"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="H1CB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="H1"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="H4CB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="H4"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="H2CB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="H2"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="HCB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Hochregallager"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="gCB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Gro&#xdf;"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="Gr&#xf6;&#xdf;eLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="12" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Gr&#xf6;&#xdf;e:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="mCB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Mittel"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="SuchenmitteButton">
@@ -356,38 +316,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Suchen"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="neinCB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="nein"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="kCB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Klein"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="jaCB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="ja"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="H5CB">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="H5"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fach_suchen"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="zeile_label">
               <Properties>
@@ -399,19 +330,193 @@
                 <Property name="text" type="java.lang.String" value="(S1 - S25)"/>
               </Properties>
             </Component>
-            <Component class="view.LagerTextfield" name="lagerTextfield1">
+            <Component class="view.LagerTextfield" name="FachnummerlagerTextfield3">
+            </Component>
+            <Component class="view.LagerTextfield" name="ZeilelagerTextfield3">
+            </Component>
+            <Component class="view.LagerTextfield" name="SpaltelagerTextfield3">
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="H1JRadioButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="lagerTextfield1"/>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="RegalnummerbuttonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H1"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="H1JRadioButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="H2JRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="RegalnummerbuttonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H2"/>
               </Properties>
             </Component>
-            <Component class="view.LagerTextfield" name="lagerTextfield2">
+            <Component class="javax.swing.JRadioButton" name="H3JRadioButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="lagerTextfield2"/>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="RegalnummerbuttonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H3"/>
               </Properties>
             </Component>
-            <Component class="view.LagerTextfield" name="lagerTextfield3">
+            <Component class="javax.swing.JRadioButton" name="H4JRadioButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="lagerTextfield3"/>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="RegalnummerbuttonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H4"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="H5JRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="RegalnummerbuttonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H5"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="KleinJRadiobutton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="GroesseButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Klein"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="MittelJRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="GroesseButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mittel"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="GrossJRadiobutton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="GroesseButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Gro&#xdf;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="BelegtJRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="BelegtButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="ja"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="NichtBelegtJRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="BelegtButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="nein"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="HochregallagerJRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="LagerortButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Hochregallager"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="FreilagerJRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="LagerortButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Freilager"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="KeineAngabeRegalnummerJRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="RegalnummerbuttonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="k.a."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="KeineAngabeGroesseJRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="GroesseButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="k.a."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="KeineAngabeBelegtJRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="BelegtButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="k.a."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="KeineAngabeLagerortJRadioButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="LagerortButtonGroup"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="k.a."/>
               </Properties>
             </Component>
           </SubComponents>

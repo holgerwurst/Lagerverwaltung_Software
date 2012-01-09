@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonModel;
 import model.Teil_Stammdaten;
 import model.TeileTypET;
 import javax.swing.DefaultComboBoxModel;
@@ -41,35 +43,43 @@ public class Teil_Suchen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        RegalnummerbuttonGroup = new javax.swing.ButtonGroup();
+        GroesseButtonGroup = new javax.swing.ButtonGroup();
+        BelegtButtonGroup = new javax.swing.ButtonGroup();
+        LagerortButtonGroup = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         suche_Fach_lagerplatz = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        FachSuchenJtable = new javax.swing.JTable();
         LagerortLabel = new javax.swing.JLabel();
         LagerfachbestandLabel = new javax.swing.JLabel();
         ZeileLabel = new javax.swing.JLabel();
         RegalnrLabel = new javax.swing.JLabel();
         BelegtLabel = new javax.swing.JLabel();
         SpalteLabel = new javax.swing.JLabel();
-        FCB = new javax.swing.JCheckBox();
-        H3CB = new javax.swing.JCheckBox();
-        H1CB = new javax.swing.JCheckBox();
-        H4CB = new javax.swing.JCheckBox();
-        H2CB = new javax.swing.JCheckBox();
-        HCB = new javax.swing.JCheckBox();
-        gCB = new javax.swing.JCheckBox();
         GrößeLabel = new javax.swing.JLabel();
-        mCB = new javax.swing.JCheckBox();
         SuchenmitteButton = new javax.swing.JButton();
-        neinCB = new javax.swing.JCheckBox();
-        kCB = new javax.swing.JCheckBox();
-        jaCB = new javax.swing.JCheckBox();
-        H5CB = new javax.swing.JCheckBox();
         zeile_label = new javax.swing.JLabel();
         spalte_label = new javax.swing.JLabel();
-        lagerTextfield1 = new view.LagerTextfield();
-        lagerTextfield2 = new view.LagerTextfield();
-        lagerTextfield3 = new view.LagerTextfield();
+        FachnummerlagerTextfield3 = new view.LagerTextfield();
+        ZeilelagerTextfield3 = new view.LagerTextfield();
+        SpaltelagerTextfield3 = new view.LagerTextfield();
+        H1JRadioButton = new javax.swing.JRadioButton();
+        H2JRadioButton = new javax.swing.JRadioButton();
+        H3JRadioButton = new javax.swing.JRadioButton();
+        H4JRadioButton = new javax.swing.JRadioButton();
+        H5JRadioButton = new javax.swing.JRadioButton();
+        KleinJRadiobutton = new javax.swing.JRadioButton();
+        MittelJRadioButton = new javax.swing.JRadioButton();
+        GrossJRadiobutton = new javax.swing.JRadioButton();
+        BelegtJRadioButton = new javax.swing.JRadioButton();
+        NichtBelegtJRadioButton = new javax.swing.JRadioButton();
+        HochregallagerJRadioButton = new javax.swing.JRadioButton();
+        FreilagerJRadioButton = new javax.swing.JRadioButton();
+        KeineAngabeRegalnummerJRadioButton = new javax.swing.JRadioButton();
+        KeineAngabeGroesseJRadioButton = new javax.swing.JRadioButton();
+        KeineAngabeBelegtJRadioButton = new javax.swing.JRadioButton();
+        KeineAngabeLagerortJRadioButton = new javax.swing.JRadioButton();
         suche_Inhalt = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         TeileImFachSuchenJtable = new javax.swing.JTable();
@@ -120,7 +130,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        FachSuchenJtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -131,7 +141,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane6.setViewportView(jTable6);
+        jScrollPane6.setViewportView(FachSuchenJtable);
 
         LagerortLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         LagerortLabel.setText("Lagerort:");
@@ -151,57 +161,93 @@ public class Teil_Suchen extends javax.swing.JFrame {
         SpalteLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         SpalteLabel.setText("Spalte:");
 
-        FCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        FCB.setText("Freilager");
-
-        H3CB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        H3CB.setText("H3");
-
-        H1CB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        H1CB.setText("H1");
-
-        H4CB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        H4CB.setText("H4");
-
-        H2CB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        H2CB.setText("H2");
-
-        HCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        HCB.setText("Hochregallager");
-
-        gCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        gCB.setText("Groß");
-
         GrößeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         GrößeLabel.setText("Größe:");
 
-        mCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        mCB.setText("Mittel");
-
         SuchenmitteButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         SuchenmitteButton.setText("Suchen");
-
-        neinCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        neinCB.setText("nein");
-
-        kCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        kCB.setText("Klein");
-
-        jaCB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jaCB.setText("ja");
-
-        H5CB.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        H5CB.setText("H5");
+        SuchenmitteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fach_suchen(evt);
+            }
+        });
 
         zeile_label.setText("(Z1 - Z25)");
 
         spalte_label.setText("(S1 - S25)");
 
-        lagerTextfield1.setText("lagerTextfield1");
+        RegalnummerbuttonGroup.add(H1JRadioButton);
+        H1JRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        H1JRadioButton.setText("H1");
+        H1JRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                H1JRadioButtonActionPerformed(evt);
+            }
+        });
 
-        lagerTextfield2.setText("lagerTextfield2");
+        RegalnummerbuttonGroup.add(H2JRadioButton);
+        H2JRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        H2JRadioButton.setText("H2");
 
-        lagerTextfield3.setText("lagerTextfield3");
+        RegalnummerbuttonGroup.add(H3JRadioButton);
+        H3JRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        H3JRadioButton.setText("H3");
+
+        RegalnummerbuttonGroup.add(H4JRadioButton);
+        H4JRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        H4JRadioButton.setText("H4");
+
+        RegalnummerbuttonGroup.add(H5JRadioButton);
+        H5JRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        H5JRadioButton.setText("H5");
+
+        GroesseButtonGroup.add(KleinJRadiobutton);
+        KleinJRadiobutton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        KleinJRadiobutton.setText("Klein");
+
+        GroesseButtonGroup.add(MittelJRadioButton);
+        MittelJRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        MittelJRadioButton.setText("Mittel");
+
+        GroesseButtonGroup.add(GrossJRadiobutton);
+        GrossJRadiobutton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        GrossJRadiobutton.setText("Groß");
+
+        BelegtButtonGroup.add(BelegtJRadioButton);
+        BelegtJRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        BelegtJRadioButton.setText("ja");
+
+        BelegtButtonGroup.add(NichtBelegtJRadioButton);
+        NichtBelegtJRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        NichtBelegtJRadioButton.setText("nein");
+
+        LagerortButtonGroup.add(HochregallagerJRadioButton);
+        HochregallagerJRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        HochregallagerJRadioButton.setText("Hochregallager");
+
+        LagerortButtonGroup.add(FreilagerJRadioButton);
+        FreilagerJRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        FreilagerJRadioButton.setText("Freilager");
+
+        RegalnummerbuttonGroup.add(KeineAngabeRegalnummerJRadioButton);
+        KeineAngabeRegalnummerJRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        KeineAngabeRegalnummerJRadioButton.setSelected(true);
+        KeineAngabeRegalnummerJRadioButton.setText("k.a.");
+
+        GroesseButtonGroup.add(KeineAngabeGroesseJRadioButton);
+        KeineAngabeGroesseJRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        KeineAngabeGroesseJRadioButton.setSelected(true);
+        KeineAngabeGroesseJRadioButton.setText("k.a.");
+
+        BelegtButtonGroup.add(KeineAngabeBelegtJRadioButton);
+        KeineAngabeBelegtJRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        KeineAngabeBelegtJRadioButton.setSelected(true);
+        KeineAngabeBelegtJRadioButton.setText("k.a.");
+
+        LagerortButtonGroup.add(KeineAngabeLagerortJRadioButton);
+        KeineAngabeLagerortJRadioButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        KeineAngabeLagerortJRadioButton.setSelected(true);
+        KeineAngabeLagerortJRadioButton.setText("k.a.");
 
         javax.swing.GroupLayout suche_Fach_lagerplatzLayout = new javax.swing.GroupLayout(suche_Fach_lagerplatz);
         suche_Fach_lagerplatz.setLayout(suche_Fach_lagerplatzLayout);
@@ -210,120 +256,128 @@ public class Teil_Suchen extends javax.swing.JFrame {
             .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6)
                     .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                        .addComponent(LagerfachbestandLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lagerTextfield1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                        .addComponent(LagerortLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(FCB)
-                        .addGap(11, 11, 11)
-                        .addComponent(HCB))
-                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                        .addComponent(SpalteLabel)
-                        .addGap(154, 154, 154)
-                        .addComponent(spalte_label))
-                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                        .addComponent(BelegtLabel)
-                        .addGap(34, 34, 34)
-                        .addComponent(jaCB)
-                        .addGap(2, 2, 2)
-                        .addComponent(neinCB))
-                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                        .addComponent(GrößeLabel)
-                        .addGap(34, 34, 34)
-                        .addComponent(kCB)
-                        .addGap(2, 2, 2)
-                        .addComponent(mCB)
-                        .addGap(2, 2, 2)
-                        .addComponent(gCB))
-                    .addComponent(SuchenmitteButton)
-                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, suche_Fach_lagerplatzLayout.createSequentialGroup()
-                                .addComponent(RegalnrLabel)
-                                .addGap(18, 18, 18)
-                                .addComponent(H1CB)
-                                .addGap(2, 2, 2)
-                                .addComponent(H2CB)
-                                .addGap(2, 2, 2)
-                                .addComponent(H3CB)
-                                .addGap(2, 2, 2)
-                                .addComponent(H4CB))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, suche_Fach_lagerplatzLayout.createSequentialGroup()
-                                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lagerTextfield3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                                        .addComponent(ZeileLabel)
+                                        .addComponent(LagerfachbestandLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(FachnummerlagerTextfield3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(RegalnrLabel)
+                                            .addComponent(GrößeLabel)
+                                            .addComponent(BelegtLabel))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(KleinJRadiobutton)
+                                                    .addComponent(BelegtJRadioButton))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                                        .addComponent(NichtBelegtJRadioButton)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(KeineAngabeBelegtJRadioButton))
+                                                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                                        .addComponent(MittelJRadioButton)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(GrossJRadiobutton)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(KeineAngabeGroesseJRadioButton))
+                                                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                                        .addGap(72, 72, 72)
+                                                        .addComponent(H4JRadioButton)
+                                                        .addGap(5, 5, 5)
+                                                        .addComponent(H5JRadioButton)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(KeineAngabeRegalnummerJRadioButton))))
+                                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                                .addComponent(H1JRadioButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(H2JRadioButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(H3JRadioButton)))))
+                                .addGap(220, 220, 220)
+                                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LagerortLabel)
+                                    .addComponent(ZeileLabel)
+                                    .addComponent(SpalteLabel))
+                                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                                .addGap(37, 37, 37)
+                                                .addComponent(SpaltelagerTextfield3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(ZeilelagerTextfield3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(lagerTextfield2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(zeile_label)))
-                        .addGap(2, 2, 2)
-                        .addComponent(H5CB)))
-                .addGap(322, 322, 322))
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(zeile_label)
+                                            .addComponent(spalte_label)))
+                                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(HochregallagerJRadioButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(FreilagerJRadioButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(KeineAngabeLagerortJRadioButton))))
+                            .addComponent(SuchenmitteButton))
+                        .addGap(0, 7, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         suche_Fach_lagerplatzLayout.setVerticalGroup(
             suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LagerfachbestandLabel)
-                    .addComponent(lagerTextfield1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
                 .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(LagerortLabel))
-                    .addComponent(FCB)
-                    .addComponent(HCB))
-                .addGap(8, 8, 8)
-                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(RegalnrLabel))
-                    .addComponent(H1CB)
-                    .addComponent(H2CB)
-                    .addComponent(H3CB)
-                    .addComponent(H4CB)
-                    .addComponent(H5CB))
-                .addGap(16, 16, 16)
-                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(ZeileLabel)
-                        .addGap(10, 10, 10)
-                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(SpalteLabel)
-                                    .addComponent(lagerTextfield3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(spalte_label))
                         .addGap(17, 17, 17)
-                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(BelegtLabel))
-                            .addComponent(jaCB)
-                            .addComponent(neinCB))
-                        .addGap(18, 18, 18)
-                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(suche_Fach_lagerplatzLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(GrößeLabel))
-                            .addComponent(kCB)
-                            .addComponent(mCB)
-                            .addComponent(gCB))
-                        .addGap(18, 18, 18)
-                        .addComponent(SuchenmitteButton))
+                        .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LagerfachbestandLabel)
+                            .addComponent(FachnummerlagerTextfield3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(LagerortLabel)
+                        .addComponent(HochregallagerJRadioButton)
+                        .addComponent(FreilagerJRadioButton)
+                        .addComponent(KeineAngabeLagerortJRadioButton)))
+                .addGap(4, 4, 4)
+                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RegalnrLabel)
+                    .addComponent(H1JRadioButton)
+                    .addComponent(H2JRadioButton)
+                    .addComponent(H3JRadioButton)
+                    .addComponent(H4JRadioButton)
+                    .addComponent(H5JRadioButton)
+                    .addComponent(KeineAngabeRegalnummerJRadioButton)
+                    .addComponent(ZeileLabel)
+                    .addComponent(ZeilelagerTextfield3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(zeile_label))
+                .addGap(2, 2, 2)
+                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(zeile_label)
-                        .addComponent(lagerTextfield2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SpalteLabel)
+                        .addComponent(SpaltelagerTextfield3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spalte_label))
+                    .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(GrößeLabel)
+                        .addComponent(KleinJRadiobutton)
+                        .addComponent(MittelJRadioButton)
+                        .addComponent(GrossJRadiobutton)
+                        .addComponent(KeineAngabeGroesseJRadioButton)))
+                .addGap(8, 8, 8)
+                .addGroup(suche_Fach_lagerplatzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BelegtLabel)
+                    .addComponent(BelegtJRadioButton)
+                    .addComponent(NichtBelegtJRadioButton)
+                    .addComponent(KeineAngabeBelegtJRadioButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SuchenmitteButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -749,6 +803,23 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_TeilImFachSuchenActionPerformed
+
+    private void fach_suchen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fach_suchen
+        String fachnummer = FachnummerlagerTextfield3.getText();
+        String regalnummer;
+        String groesse;
+        String belegt;
+        String lagerort;
+        String zeile = ZeilelagerTextfield3.getText();
+        String spalte = SpaltelagerTextfield3.getText();
+        
+        ButtonModel selected_regalnummer = RegalnummerbuttonGroup.getSelection();
+        //if ()
+    }//GEN-LAST:event_fach_suchen
+
+    private void H1JRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_H1JRadioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_H1JRadioButtonActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -796,28 +867,40 @@ public class Teil_Suchen extends javax.swing.JFrame {
     private view.LagerTextfield AnschaffungsgrundlagerTextfield2;
     private javax.swing.JLabel BaugruppeLabel;
     private view.LagerTextfield BaugruppelagerTextfield;
+    private javax.swing.ButtonGroup BelegtButtonGroup;
+    private javax.swing.JRadioButton BelegtJRadioButton;
     private javax.swing.JLabel BelegtLabel;
     private javax.swing.JLabel BemerkungLabel;
     private view.LagerTextfield BemerkungslagerTextfield;
     private javax.swing.JLabel BezeichnungLabel;
     private view.LagerTextfield BezeichnunglagerTextfield;
     private javax.swing.JLabel EuroLabel;
-    private javax.swing.JCheckBox FCB;
+    private javax.swing.JTable FachSuchenJtable;
     private javax.swing.JLabel FachnrLabel;
     private view.LagerTextfield FachnummerlagerTextfield2;
+    private view.LagerTextfield FachnummerlagerTextfield3;
+    private javax.swing.JRadioButton FreilagerJRadioButton;
+    private javax.swing.ButtonGroup GroesseButtonGroup;
+    private javax.swing.JRadioButton GrossJRadiobutton;
     private javax.swing.JLabel GrößeLabel;
-    private javax.swing.JCheckBox H1CB;
-    private javax.swing.JCheckBox H2CB;
-    private javax.swing.JCheckBox H3CB;
-    private javax.swing.JCheckBox H4CB;
-    private javax.swing.JCheckBox H5CB;
-    private javax.swing.JCheckBox HCB;
+    private javax.swing.JRadioButton H1JRadioButton;
+    private javax.swing.JRadioButton H2JRadioButton;
+    private javax.swing.JRadioButton H3JRadioButton;
+    private javax.swing.JRadioButton H4JRadioButton;
+    private javax.swing.JRadioButton H5JRadioButton;
     private javax.swing.JLabel HaltbarkeitsLabel;
     private view.LagerTextfield HaltbarkeitsdatumlagerTextfield2;
+    private javax.swing.JRadioButton HochregallagerJRadioButton;
     private javax.swing.JLabel IDlinksLabel;
+    private javax.swing.JRadioButton KeineAngabeBelegtJRadioButton;
+    private javax.swing.JRadioButton KeineAngabeGroesseJRadioButton;
+    private javax.swing.JRadioButton KeineAngabeLagerortJRadioButton;
+    private javax.swing.JRadioButton KeineAngabeRegalnummerJRadioButton;
+    private javax.swing.JRadioButton KleinJRadiobutton;
     private javax.swing.JLabel LagerbestandLabel;
     private view.LagerTextfield LagerbestandlagerTextfield2;
     private javax.swing.JLabel LagerfachbestandLabel;
+    private javax.swing.ButtonGroup LagerortButtonGroup;
     private javax.swing.JLabel LagerortLabel;
     private javax.swing.JLabel MAGLabel;
     private javax.swing.JLabel MAKLabel;
@@ -831,10 +914,14 @@ public class Teil_Suchen extends javax.swing.JFrame {
     private view.LagerTextfield MaximaleMengeimFachlagerTextfield2;
     private javax.swing.JLabel MinMengeLabel;
     private view.LagerTextfield MindestensMengeimFachlagerTextfield2;
+    private javax.swing.JRadioButton MittelJRadioButton;
+    private javax.swing.JRadioButton NichtBelegtJRadioButton;
     private javax.swing.JLabel PreisLabel;
     private view.LagerTextfield PreislagerTextfield;
     private javax.swing.JLabel RegalnrLabel;
+    private javax.swing.ButtonGroup RegalnummerbuttonGroup;
     private javax.swing.JLabel SpalteLabel;
+    private view.LagerTextfield SpaltelagerTextfield3;
     private javax.swing.JButton SuchenlinksButton;
     private javax.swing.JButton SuchenmitteButton;
     private javax.swing.JButton SuchenrechtsButton;
@@ -849,19 +936,11 @@ public class Teil_Suchen extends javax.swing.JFrame {
     private javax.swing.JLabel ZeichnungsnrLabel;
     private view.LagerTextfield ZeichnungsnummerlagerTextfield;
     private javax.swing.JLabel ZeileLabel;
-    private javax.swing.JCheckBox gCB;
+    private view.LagerTextfield ZeilelagerTextfield3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable6;
-    private javax.swing.JCheckBox jaCB;
-    private javax.swing.JCheckBox kCB;
-    private view.LagerTextfield lagerTextfield1;
-    private view.LagerTextfield lagerTextfield2;
-    private view.LagerTextfield lagerTextfield3;
-    private javax.swing.JCheckBox mCB;
-    private javax.swing.JCheckBox neinCB;
     private javax.swing.JLabel spalte_label;
     private javax.swing.JPanel suche_Fach_lagerplatz;
     private javax.swing.JPanel suche_Inhalt;
