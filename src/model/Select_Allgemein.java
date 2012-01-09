@@ -62,7 +62,7 @@ public class Select_Allgemein {
                 } else {
                     if (wert[0].equals("id")) {
                         query = query + " AND " + wert[0] + "=" + wert[1];
-                    } else if (wert[0].equals("max_anz_klein") || wert[0].equals("max_anzahl_mittel")
+                    } else if (wert[0].equals("max_anz_klein") || wert[0].equals("max_anz_mittel")
                             || wert[0].equals("max_anz_gross")) {
                         query = query + " AND " + wert[0] + "<=" + wert[1];
                     } else {
