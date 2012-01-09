@@ -33,10 +33,12 @@ public class LagerTextfield extends JTextField {
 
         @Override
         public void keyTyped(KeyEvent e) {
+            char key = e.getKeyChar();
+            if(key=='\'')e.setKeyChar('"');
+            
             if (Zeichenfolge == null) {
                 return;
             }
-            char key = e.getKeyChar();
             boolean isValid = false;
             
             if (isCharInString(key, Zeichenfolge) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_DELETE) {
@@ -78,6 +80,11 @@ public class LagerTextfield extends JTextField {
                     case ZIFFERN: {
                         break;
                     }
+                    case ALL: {
+                        
+                        break;
+                    }
+
 
                     default:
                         break;
@@ -185,4 +192,9 @@ public class LagerTextfield extends JTextField {
         akl = new LagerKeyListener(seq, this);
         this.addKeyListener(akl);
     }
+    
+    
+    
+    
+            
 }

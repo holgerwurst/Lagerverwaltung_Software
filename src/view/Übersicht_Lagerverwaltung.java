@@ -452,7 +452,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_preis.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_preis.setText("Preis:");
         Teilestamm_erweitern.add(label_preis);
-        label_preis.setBounds(420, 160, 32, 15);
+        label_preis.setBounds(410, 160, 32, 15);
 
         label_max_anz_klein.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_max_anz_klein.setText("Max. Anzahl Klein:");
