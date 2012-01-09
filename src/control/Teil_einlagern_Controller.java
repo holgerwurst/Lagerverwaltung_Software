@@ -372,7 +372,7 @@ public class Teil_einlagern_Controller {
     /**
      *
      */
-    public String manuell_einlagern(String f1, String m1, int id, String anschaffungsgrund) throws ClassNotFoundException, SQLException, Exception {
+    public String manuell_einlagern(String f1, int m1, int id, String anschaffungsgrund) throws ClassNotFoundException, SQLException, Exception {
         //Anlegen neuer Controller 
         Pruefen_Controller pr = new Pruefen_Controller();
         cv = new convert();
@@ -385,12 +385,12 @@ public class Teil_einlagern_Controller {
         stammdaten = dbv.resultset_to_teil_stammdaten();
         ArrayList<Lagerbestandskonto> bestandsdaten = new ArrayList<Lagerbestandskonto>();
         bestandsdaten = dbv.resultset_to_lagerbestandskontos();
-        
-        Lagerbestandskonto einlagern_bestand=new Lagerbestandskonto(); //neues objekt vom typ Lagerbestandskonto zum einlagern
-        DB_schreiben writer= new DB_schreiben();
+
+        Lagerbestandskonto einlagern_bestand = new Lagerbestandskonto(); //neues objekt vom typ Lagerbestandskonto zum einlagern
+        DB_schreiben writer = new DB_schreiben();
 
         //Deklaration von variablen
-        int menge = cv.StringTOint(m1); //konvertieren der menge zu int
+        int menge = m1; //konvertieren der menge zu int
         int pif = 0; //position in dem Lagerfachstammarray 
         int pib = 0;  //position in dem Bestandskontoarray
         int pis = 0; //position in dem Stammdatenarray
@@ -402,8 +402,8 @@ public class Teil_einlagern_Controller {
         String groesse = ""; //Variable zum speichern der größe
         boolean einlagern = false; //variable die festlegt ob das fach eingelagert werden kann
         boolean einlagern_neu = false;
-        boolean einlagern_update=false;
-        
+        boolean einlagern_update = false;
+
 
         //suchen der id in der Stammdaten arraylist
         for (int a = 0; a < stammdaten.size(); a++) {
@@ -423,7 +423,7 @@ public class Teil_einlagern_Controller {
                     i++;                                        //wenn nicht wird i hochgezählt und weitergesucht
                 }
             } else {
-                return "Das Fach "+f1+" ist nicht vorhanden.";   //wurde das fach nicht gefunden, wird abgebrochen und ein String zurückgegeben
+                return "Das Fach " + f1 + " ist nicht vorhanden.\n";   //wurde das fach nicht gefunden, wird abgebrochen und ein String zurückgegeben
             }
         }
         //Prüfen ob das Fach Frei oder Belegt ist
@@ -445,8 +445,8 @@ public class Teil_einlagern_Controller {
                                     freier_platz = stammdaten.get(pis).get_max_anz_gross() - bestandsdaten.get(k).get_Menge();
                                 }
                             } else {
-                                return "Das Fach "+f1+" ist von einem anderen Teil belegt";
-                                
+                                return "Das Fach " + f1 + " ist von einem anderen Teil belegt.\n";
+
                             }//ende bestandsdatenvergleich                          
                         } else {
                             k++;
@@ -454,14 +454,12 @@ public class Teil_einlagern_Controller {
                     }
                 }//ende whileschleife
 
-                if(menge<1)
-                {
-                    return "Die Menge darf nicht 0 sein";
-                }else if (menge <= freier_platz) {        //letzter vergleich bei einem bereits belegtem fach
+
+                if (menge <= freier_platz) {        //letzter vergleich bei einem bereits belegtem fach
                     einlagern = true;               //einlagern wird true wenn die einzulagernde menge kleiner gleich dem freien platz ist
-                    einlagern_update=true;
+                    einlagern_update = true;
                 } else {
-                    return "In dem Fach "+f1+" ist nicht genug platz frei. Sie wollen "+menge+" einlagern. Die Kapazität reicht aber nur für "+freier_platz+". ";
+                    return "In dem Fach " + f1 + " ist nicht genug platz frei. Sie wollen " + menge + " einlagern. Die Kapazität reicht aber nur für " + freier_platz + ".\n";
                 }
 
 
@@ -470,31 +468,29 @@ public class Teil_einlagern_Controller {
                 if ("K".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_klein()) {
                         einlagern = true;
-                        einlagern_neu=true;
+                        einlagern_neu = true;
                     } else {
-                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe "+groesse+" ist"+stammdaten.get(pis).get_max_anz_klein()+".";
+                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe " + groesse + " ist" + stammdaten.get(pis).get_max_anz_klein() + ".\n";
                     }
                 } else if ("M".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_mittel()) {
                         einlagern = true;
-                        einlagern_neu=true;
+                        einlagern_neu = true;
                     } else {
-                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe "+groesse+" ist"+stammdaten.get(pis).get_max_anz_mittel()+".";
+                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe " + groesse + " ist" + stammdaten.get(pis).get_max_anz_mittel() + ".\n";
                     }
                 } else if ("G".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_gross()) {
                         einlagern = true;
-                        einlagern_neu=true;
+                        einlagern_neu = true;
                     } else {
-                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe "+groesse+" ist"+stammdaten.get(pis).get_max_anz_gross()+".";
+                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe " + groesse + " ist" + stammdaten.get(pis).get_max_anz_gross() + ".\n";
                     }
                 }
 
             }
-            if(einlagern==true)
-            {
-                if(einlagern_neu==true)
-                {
+            if (einlagern == true) {
+                if (einlagern_neu == true) {
                     einlagern_bestand.set_Fachnummer(fachstamm.get(pif).get_Fachnummer());
                     einlagern_bestand.set_Anschaffungsgrund(anschaffungsgrund);
                     einlagern_bestand.set_id(id);
@@ -502,21 +498,55 @@ public class Teil_einlagern_Controller {
                     einlagern_bestand.set_Haltbarkeitsdatum(null);
                     writer.insert_lagerbestandskonto(einlagern_bestand);
                     writer.update_lagerfachstamm(f1, true);
-                }else if(einlagern_update==true)
-                {
+                } else if (einlagern_update == true) {
                     einlagern_bestand.set_Fachnummer(bestandsdaten.get(pib).get_Fachnummer());
                     einlagern_bestand.set_Anschaffungsgrund(bestandsdaten.get(pib).get_Anschaffungsgrund());
                     einlagern_bestand.set_id(bestandsdaten.get(pib).get_TeileID());
-                    int neue_menge=bestandsdaten.get(pib).get_Menge()+menge;
+                    int neue_menge = bestandsdaten.get(pib).get_Menge() + menge;
                     einlagern_bestand.set_Menge(neue_menge);
                     einlagern_bestand.set_Haltbarkeitsdatum(bestandsdaten.get(pib).get_Haltbarkeitsdatum());
                     writer.update_lagerbestand(einlagern_bestand);
                 }
-                
+
             }//ende einlagern
 
         }//ende 1. if
 
-        return "OK" ;
+        return "OK";
+    }
+
+    public String einlagern_manuell_anders(manuell_einlagern_strings[] mes, int id) throws Exception {
+        
+        String returnstring="";
+        int count=0;
+        for (int i = 0; i < mes.length; i++) {
+            //String returnstring;
+            String mer;
+            if (!"".equals(mes[i].get_fachnummer())) {      //Prüfung ob Fachnummer nicht leer ist
+                if (mes[i].get_menge() > 0) {
+                    
+                    mer = manuell_einlagern(mes[i].get_fachnummer(), mes[i].get_menge(), id, mes[i].get_anschaffungsgrund());
+                    if(!"OK".equals(mer)){
+                        int b = i+1;
+                        returnstring=returnstring+"Fach "+b+":"+mer;
+                    }                  
+                } else {
+                    int b = i+1;
+                    returnstring = returnstring+ "Fach " + b + ": Die Menge muss mindestens 1 sein. \n";
+                }
+            }else{
+                count++;
+                if(count==10)
+                {
+                    return "Sie müssen mindestens einmal Fachnummer und Menge ausfüllen.";
+                }
+            }           
+        }
+        
+        //return fehlerrueckgabestring;
+        return returnstring;
+
     }
 }
+
+
