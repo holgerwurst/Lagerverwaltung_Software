@@ -54,7 +54,9 @@ public class TeileStamm_erweitern_controller {
     * @param MAGString
     * @param Bemerkung 
     */
-    public void nutzeranforderung(String Bezeichnung, model.TeileTypET Typ, String Materialgruppe, String Zeichnungsnummer, String BaugruppeString, String Anschaffungsgrund, String PreisString, String MAKString, String MAMString, String MAGString, String Bemerkung)
+    public void nutzeranforderung(String Bezeichnung, model.TeileTypET Typ, String Materialgruppe, 
+            String Zeichnungsnummer, String BaugruppeString, String PreisString, 
+            String MAKString, String MAMString, String MAGString, String Bemerkung)
    {
        
        //Semantische Prüfung der Variablen entsprchend DD begin
