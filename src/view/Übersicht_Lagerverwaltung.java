@@ -35,6 +35,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         control.TeileStamm_erweitern_controller tecinit = new control.TeileStamm_erweitern_controller(this);
         textfeld_idP.setText("" + tecinit.getEXAMPLEid());// so sollte es eigentlich gehen aber hier kommt das Workaroud
         //textfeld_idP.setText(""+tec.getWAid());//alter Workaroud
+        setpTSEStatusleiste2("Die freie ID "+tecinit.getEXAMPLEid()+" wurde aus der Datenbank bezogen und wird dem neuen Teil beim anlegen zugewiesen.",Color.BLACK);
         tecinit = null;
         label_auswahl.setVisible(false);
     }
@@ -380,7 +381,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         makLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
         mamLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
         magLTFP = new view.LagerTextfield(view.LagerTextfield.AllowedSequences.NUM);
-        pStatusleiste = new javax.swing.JLabel();
+        pStatusleiste1 = new javax.swing.JLabel();
+        pStatusleiste2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Datei = new javax.swing.JMenu();
         Bearbeiten = new javax.swing.JMenu();
@@ -2244,9 +2246,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilestamm_erweitern.add(magLTFP);
         magLTFP.setBounds(150, 320, 150, 30);
 
-        pStatusleiste.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Teilestamm_erweitern.add(pStatusleiste);
-        pStatusleiste.setBounds(20, 540, 950, 20);
+        pStatusleiste1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Teilestamm_erweitern.add(pStatusleiste1);
+        pStatusleiste1.setBounds(20, 540, 950, 20);
+
+        pStatusleiste2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Teilestamm_erweitern.add(pStatusleiste2);
+        pStatusleiste2.setBounds(30, 610, 950, 20);
 
         Teilentf_tabbedpane.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
@@ -2480,12 +2486,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void button_anlegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_anlegenActionPerformed
         // TODO add your handling code here:
         //System.out.println("Teilestamm erweitern: anlegen button gedrückt!");
-        setpTSEStatusleiste("", Color.BLACK);
+        setpTSEStatusleiste1("", Color.BLACK);
         button_anlegen.requestFocusInWindow();
 
         if ((textfeld_bezeichnungLTFP.getText().isEmpty()) || (makLTFP.getText().isEmpty()) || (mamLTFP.getText().isEmpty()) || (magLTFP.getText().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Füllen Sie bitte alle Pflichtfelder aus.");
-            setpTSEStatusleiste("Füllen Sie bitte alle Pflichtfelder aus.", Color.red);
+            setpTSEStatusleiste1("Füllen Sie bitte alle Pflichtfelder aus.", Color.red);
 
         } else {
 
@@ -2502,7 +2508,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 testy = model.TeileTypET.werkzeuge;
             }
             control.TeileStamm_erweitern_controller tec = new control.TeileStamm_erweitern_controller(this);
-            tec.nutzeranforderung(textfeld_bezeichnungLTFP.getText(), testy, textfeld_materialgruppeLTFP.getText(), textfeld_zeichnungsnummerLTFP.getText(), textfeld_baugruppeLTFP.getText(), preisfeldLTFP.getText(), makLTFP.getText(), mamLTFP.getText(), magLTFP.getText(), jTextArea1.getText());
+            tec.nutzeranforderung(textfeld_bezeichnungLTFP.getText(), testy, textfeld_materialgruppeLTFP.getText(), 
+                    textfeld_zeichnungsnummerLTFP.getText(), textfeld_baugruppeLTFP.getText(), preisfeldLTFP.getText(), 
+                    makLTFP.getText(), mamLTFP.getText(), magLTFP.getText(), jTextArea1.getText());
 
             textfeld_idP.setText("" + tec.getEXAMPLEid());
             //textfeld_idP.setText(""+tec.getWAid());//WORKAROUD
@@ -2512,15 +2520,26 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     }//GEN-LAST:event_button_anlegenActionPerformed
     /**
-     * Patrick: schreibt was in die Statusleiste in Teilestamm erweitern und
+     * Patrick: schreibt was in die Statusleiste1 in Teilestamm erweitern und
      * setzt ne farbe für den text
      *
      * @param text
      * @param farbe
      */
-    public void setpTSEStatusleiste(String text, Color farbe) {
-        this.pStatusleiste.setText(text);
-        this.pStatusleiste.setForeground(farbe);
+    public void setpTSEStatusleiste1(String text, Color farbe) {
+        this.pStatusleiste1.setText(text);
+        this.pStatusleiste1.setForeground(farbe);
+    }
+    /**
+     * Patrick: schreibt was in die Statusleiste2 in Teilestamm erweitern und
+     * setzt ne farbe für den text
+     *
+     * @param text
+     * @param farbe
+     */
+    public void setpTSEStatusleiste2(String text, Color farbe) {
+        this.pStatusleiste2.setText(text);
+        this.pStatusleiste2.setForeground(farbe);
     }
 
     /**
@@ -2548,7 +2567,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         control.TeileStamm_erweitern_controller tecfocus = new control.TeileStamm_erweitern_controller(this);
         if (tecfocus.bezSchonDa(textfeld_bezeichnungLTFP.getText())) {
             JOptionPane.showMessageDialog(null, "Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.\nBezeichnungen müssen eindeutig sein.");
-            setpTSEStatusleiste("Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.", Color.red);
+            setpTSEStatusleiste1("Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.", Color.red);
             textfeld_bezeichnungLTFP.requestFocusInWindow();
             tecfocus = null;
         }
@@ -2985,7 +3004,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField menge_textfeld9;
     public view.LagerTextfield menge_textfeld_einlagern;
     private javax.swing.JLabel oderLabel_historie;
-    private javax.swing.JLabel pStatusleiste;
+    private javax.swing.JLabel pStatusleiste1;
+    private javax.swing.JLabel pStatusleiste2;
     private view.LagerTextfield preisfeldLTFP;
     private javax.swing.JButton splitten_button;
     private javax.swing.JButton suchenButton;

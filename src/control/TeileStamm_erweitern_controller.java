@@ -94,8 +94,9 @@ public class TeileStamm_erweitern_controller {
                            JOptionPane.showMessageDialog(null, "geprüftes Teil konnte nocht zur db hinzugefügt werden", "Fehlschlag", 1);
 
             }
-           Hauptfenster.setpTSEStatusleiste(neuTeil.get_Bezeichnung()+" wurde erfolgreich angelegt. Sie können nun "+neuTeil.get_Bezeichnung()+" einlagern.",Color.BLACK);
+           Hauptfenster.setpTSEStatusleiste1(neuTeil.get_Bezeichnung()+" wurde erfolgreich mit der ID "+neuTeil.get_Id()+" angelegt. Sie können das neue Teil nun einlagern.",Color.BLACK);
            Hauptfenster.setpTSEBezeichnung("");
+           Hauptfenster.setpTSEStatusleiste2("Die freie ID "+getEXAMPLEid()+" wurde aus der Datenbank bezogen und wird dem neuen Teil beim anlegen zugewiesen.", Color.BLACK);
        }
    }
     
