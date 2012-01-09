@@ -4,6 +4,7 @@
  */
 package control;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -150,29 +151,44 @@ public class Teil_einlagern_Controller {
 
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
                         freieFaecher(belegung);
+                        lv.label_mindestgroesse2.setText("Einzige Fachgröße:");
+                        lv.label_anzeige_mindestgroesse2.setText("Große Fächer");
+
                     } else if (zahlklein == 0 && zahlgross == 0) {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
                         freieFaecher(belegung);
+                        lv.label_mindestgroesse2.setText("Einzige Fachgröße:");
+                        lv.label_anzeige_mindestgroesse2.setText("Mittlere Fächer");
 
                     } else if (zahlmittel == 0 && zahlgross == 0) {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
                         freieFaecher(belegung);
+                        lv.label_mindestgroesse2.setText("Einzige Fachgröße:");
+                        lv.label_anzeige_mindestgroesse2.setText("Kleine Fächer");
+
                     } else if (zahlklein == 0) {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
-
                         freieFaecher(belegung);
-
+                        lv.label_anzeige_mindestgroesse2.setText("Mittlere Fächer");
                     } else if (zahlmittel == 0) {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
                         freieFaecher(belegung);
+                        lv.label_mindestgroesse2.setText("Fachgrößen:");
+                        lv.label_anzeige_mindestgroesse2.setText("Kleine und große Fächer");
                     } else if (zahlgross == 0) {
                         String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
                         freieFaecher(belegung);
+                        lv.label_mindestgroesse2.setText("Fachgrößen:");
+                        lv.label_anzeige_mindestgroesse2.setText("Kleine und mittlere Fächer");
                     }
                 } else {
                     String[] belegung = lf.get_fachnummer_ausDB(false);
                     freieFaecher(belegung);
+                    lv.label_anzeige_mindestgroesse2.setText("Kleine Fächer");
                 }
+                lv.label_mindestgroesse2.setVisible(true);
+                lv.label_anzeige_mindestgroesse2.setVisible(true);
+
 
                 menge = new String[menge_aktuell.size()];
                 for (int i = 0; i < menge_aktuell.size(); i++) {
@@ -184,7 +200,7 @@ public class Teil_einlagern_Controller {
 
             }
 
-             table.setModel(model);
+            table.setModel(model);
 
 
         } catch (SQLException e) {
@@ -193,7 +209,7 @@ public class Teil_einlagern_Controller {
 
     }
 
-     public void erste_einlagerung(int id) throws SQLException {
+    public void erste_einlagerung(int id) throws SQLException {
         lf = new Select_Lagerfachstamm();
 
         String[] maxarrayklein = new String[1];
@@ -205,34 +221,54 @@ public class Teil_einlagern_Controller {
 
             if (zahlklein == 0 && zahlmittel == 0 && zahlgross == 0) {
                 JOptionPane.showMessageDialog(lv.bestaetigen_button2, "Für dieses Teil gibt es kein passendes Fach.", "Hinweis", 1);
+                lv.label_anzeige_mindestgroesse2.setText("Keine passenden Fächer");
                 //   System.out.println("Für dieses Teil gibt es kein passendes Fach");
             } else if (zahlklein == 0 && zahlmittel == 0) {
 
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
                 fach(id, belegung);
+                lv.label_mindestgroesse2.setText("Einzige Fachgröße:");
+                lv.label_anzeige_mindestgroesse2.setText("Große Fächer");
             } else if (zahlklein == 0 && zahlgross == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
                 fach(id, belegung);
-
+                lv.label_mindestgroesse2.setText("Einzige Fachgröße:");
+                lv.label_anzeige_mindestgroesse2.setText("Mittlere Fächer");
             } else if (zahlmittel == 0 && zahlgross == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
                 fach(id, belegung);
+                lv.label_mindestgroesse2.setText("Einzige Fachgröße:");
+                lv.label_anzeige_mindestgroesse2.setText("Kleine Fächer");
             } else if (zahlklein == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
                 fach(id, belegung);
-
+                lv.label_anzeige_mindestgroesse2.setText("Mittlere Fächer");
             } else if (zahlmittel == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
                 fach(id, belegung);
+                lv.label_mindestgroesse2.setText("Fachgrößen:");
+                lv.label_anzeige_mindestgroesse2.setText("Kleine und große Fächer");
             } else if (zahlgross == 0) {
                 String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
                 fach(id, belegung);
+                lv.label_mindestgroesse2.setText("Fachgrößen:");
+                lv.label_anzeige_mindestgroesse2.setText("Kleine und mittlere Fächer");
             }
 
         } else {
             String[] belegung = lf.get_fachnummer_ausDB(false);
             fach(id, belegung);
+            lv.label_anzeige_mindestgroesse2.setText("Kleine Fächer");
         }
+        lv.label_mindestgroesse2.setVisible(true);
+        lv.label_anzeige_mindestgroesse2.setVisible(true);
+
+        lv.label_auswahl.setText("Dieses Teil befindet sich noch nicht im Lager.");
+        lv.label_auswahl.setForeground(Color.BLUE);
+        lv.label_auswahl.setVisible(true);
+
+
+
 
         for (int i = 0; i < 1; i++) {
 
@@ -241,9 +277,9 @@ public class Teil_einlagern_Controller {
             maxarraygross[i] = maxgross;
         }
 
-        model.addColumn("Maximale Anzahl kleines Fach", maxarrayklein);
-        model.addColumn("Maximale Anzahl mittleres Fach", maxarraymittel);
-        model.addColumn("Maximale Anzahl großes Fach", maxarraygross);
+        //       model.addColumn("Maximale Anzahl kleines Fach", maxarrayklein);
+        //       model.addColumn("Maximale Anzahl mittleres Fach", maxarraymittel);
+        //      model.addColumn("Maximale Anzahl großes Fach", maxarraygross);
 
     }
 
@@ -274,7 +310,10 @@ public class Teil_einlagern_Controller {
         }
 
 
-        model.addColumn("Freie Fächer", ergebnis);
+        model.addColumn("Fächer mit genügend Kapazität", ergebnis);
+        lv.label_auswahl.setText("Dieses Teil ist bereits im Lager vorhanden.");
+        lv.label_auswahl.setForeground(Color.BLUE);
+        lv.label_auswahl.setVisible(true);
 
     }
 
@@ -294,62 +333,80 @@ public class Teil_einlagern_Controller {
         }
     }
 
-       public void einlagern(String fachnummer, int id) {
+    public void einlagern(String fachnummer, int id) {
         try {
             lagerbes = new Select_Lagerbestandskonto();
             st = new Select_Stammdaten();
             cv = new convert();
+
             parse(id);
-            int menge = 0;
+            int menge_eingelagert = cv.StringTOint(lagerbes.get_Menge_aktuell_ausDB(fachnummer));
+            int max_menge = 0;
             int neueMenge = 0;
 
-            String inhalt = lv.menge_textfeld_einlagern.getText();
+            // String inhalt = lv.menge_textfeld_einlagern.getText();
 
             //    lv.label_menge_übrig.setText(inhalt);
-         int einzulagern = cv.StringTOint(lv.label_menge_übrig.getText());
+            int einzulagern = cv.StringTOint(lv.label_menge_übrig.getText());
 
-            System.out.println("zahl  " + inhalt);
+            // System.out.println("zahl  " + inhalt);
 
             //String mar = (String) (table.getValueAt(table.getSelectedRow(), 0));
             System.out.println("Fachnummer " + fachnummer);
 
             if (fachnummer.endsWith("K")) {
-                menge = zahlklein;
+                max_menge = zahlklein;
 
             } else if (fachnummer.endsWith("M")) {
 
-                menge = zahlmittel;
+                max_menge = zahlmittel;
 
             } else if (fachnummer.endsWith("G")) {
 
-                menge = zahlgross;
+                max_menge = zahlgross;
             }
-            
-            
-            if (menge < einzulagern && einzulagern != 0) {
-                //zahl = einzulagern;
-                neueMenge = menge;
-                // System.out.println(neueMenge);
-            } else if (menge > einzulagern && einzulagern != 0) {
+
+//if(menge_eingelagert!=0){
+        String text="";
+        
+            if (menge_eingelagert<max_menge && einzulagern>max_menge-menge_eingelagert) {
+                neueMenge =max_menge-menge_eingelagert;
+              text = String.valueOf(einzulagern-neueMenge);
+               
+                  System.out.println("max   "+max_menge);
+     System.out.println("menge_eingelagert<max_menge && einzulagern>max_menge-menge_eingelagert");
+            } 
+        //}
+            //else // if (max_menge < einzulagern && einzulagern != 0) {
+            //zahl = einzulagern;
+            //    neueMenge = max_menge;
+            // System.out.println(neueMenge);
+            //   } else 
+         /*   if (max_menge > einzulagern && einzulagern != 0) {
                 // System.out.println("0");
                 neueMenge = einzulagern;
+                 System.out.println("max_menge > einzulagern && einzulagern != 0");
             } else if (einzulagern == 0) {
 
                 System.out.println("0");
                 // neueMenge = einzulagern - menge;
 
-            }
+            }*/
 
-            String text = String.valueOf(einzulagern - neueMenge);
             //   int neueMenge = einzulagern - zahl;
             // String text = String.valueOf(neueMenge);
+            lv.label_menge_übrig.setVisible(true);
             lv.label_menge_übrig.setText(text);
             //     }
 
             if (einzulagern != 0) {
-                Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
-                dbs.insert_lagerbestandskonto(lbk);
-                dbs.update_lagerfachstamm(fachnummer, true);
+                String asg = "";
+                if (!lv.textfeld_asg_einlagern.getText().isEmpty()) {
+                    asg = lv.textfeld_asg_einlagern.getText();
+                }
+                Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
+     //           dbs.insert_lagerbestandskonto(lbk);
+    //            dbs.update_lagerfachstamm(fachnummer, true);
 
                 einlagern_vorbereiten(id);
 
@@ -359,8 +416,6 @@ public class Teil_einlagern_Controller {
         }
 
     }
-    
-
 
     /*
      * public JCheckBox getColumnClass(int column) { if (column == 4) {
