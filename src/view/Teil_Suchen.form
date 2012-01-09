@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="suche_Fach_lagerplatz">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Fach / Lagerplatz suchen">
+                <Property name="tabTitle" type="java.lang.String" value="Fach / Lagerplatz suchen"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="LagerfachbestandLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lagerTextfield1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="LagerortLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="18" pref="18" max="18" attributes="0"/>
+                              <Component id="FCB" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="11" pref="11" max="11" attributes="0"/>
+                              <Component id="HCB" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="SpalteLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="spalte_label" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="BelegtLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="34" pref="34" max="34" attributes="0"/>
+                              <Component id="jaCB" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="2" pref="2" max="2" attributes="0"/>
+                              <Component id="neinCB" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="GrößeLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="34" pref="34" max="34" attributes="0"/>
+                              <Component id="kCB" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="2" pref="2" max="2" attributes="0"/>
+                              <Component id="mCB" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="2" pref="2" max="2" attributes="0"/>
+                              <Component id="gCB" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="SuchenmitteButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="RegalnrLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="18" pref="18" max="18" attributes="0"/>
+                                      <Component id="H1CB" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="2" pref="2" max="2" attributes="0"/>
+                                      <Component id="H2CB" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="2" pref="2" max="2" attributes="0"/>
+                                      <Component id="H3CB" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="2" pref="2" max="2" attributes="0"/>
+                                      <Component id="H4CB" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="lagerTextfield3" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="ZeileLabel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="lagerTextfield2" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="zeile_label" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="2" pref="2" max="2" attributes="0"/>
+                              <Component id="H5CB" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="322" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane6" alignment="1" min="-2" pref="630" max="-2" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LagerfachbestandLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lagerTextfield1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                              <Component id="LagerortLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="FCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="HCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="8" pref="8" max="8" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                              <Component id="RegalnrLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="H1CB" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="H2CB" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="H3CB" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="H4CB" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="H5CB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="16" pref="16" max="16" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="3" pref="3" max="3" attributes="0"/>
+                              <Component id="ZeileLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="1" pref="1" max="1" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="SpalteLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lagerTextfield3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="spalte_label" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                                      <Component id="BelegtLabel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jaCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="neinCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="18" pref="18" max="18" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="4" pref="4" max="4" attributes="0"/>
+                                      <Component id="GrößeLabel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="kCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="gCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="SuchenmitteButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="zeile_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lagerTextfield2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
+                      <Component id="jScrollPane6" min="-2" pref="160" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable6">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="4">
+                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="LagerortLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Lagerort:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="LagerfachbestandLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Fachnummer:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ZeileLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Zeile:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RegalnrLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Regalnr.:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="BelegtLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Belegt:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="SpalteLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Spalte:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="FCB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Freilager"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="H3CB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H3"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="H1CB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="H4CB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H4"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="H2CB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="HCB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Hochregallager"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="gCB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Gro&#xdf;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="Gr&#xf6;&#xdf;eLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Gr&#xf6;&#xdf;e:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="mCB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mittel"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="SuchenmitteButton">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Suchen"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="neinCB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="nein"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="kCB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Klein"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jaCB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="ja"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="H5CB">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H5"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="zeile_label">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="(Z1 - Z25)"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="spalte_label">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="(S1 - S25)"/>
+              </Properties>
+            </Component>
+            <Component class="view.LagerTextfield" name="lagerTextfield1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="lagerTextfield1"/>
+              </Properties>
+            </Component>
+            <Component class="view.LagerTextfield" name="lagerTextfield2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="lagerTextfield2"/>
+              </Properties>
+            </Component>
+            <Component class="view.LagerTextfield" name="lagerTextfield3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="lagerTextfield3"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="suche_Inhalt">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Menge / Teil im Fach suchen">
+                <Property name="tabTitle" type="java.lang.String" value="Menge / Teil im Fach suchen"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="jScrollPane5" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="LagerbestandLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="TeileIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="TeileIdlagerTextfield2" linkSize="9" max="32767" attributes="0"/>
+                          <Component id="LagerbestandlagerTextfield2" linkSize="9" pref="142" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="FachnrLabel" max="32767" attributes="0"/>
+                          <Component id="AnschaffungsgrundLabel" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="FachnummerlagerTextfield2" linkSize="9" min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="AnschaffungsgrundlagerTextfield2" linkSize="9" min="-2" pref="142" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="MaxMengeLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="MinMengeLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="HaltbarkeitsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="HaltbarkeitsdatumlagerTextfield2" linkSize="9" min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="MindestensMengeimFachlagerTextfield2" linkSize="9" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="MaximaleMengeimFachlagerTextfield2" linkSize="9" min="-2" pref="52" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="69" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="SuchenrechtsButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="TeileIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TeileIdlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="FachnummerlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="FachnrLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaxMengeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaximaleMengeimFachlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LagerbestandLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LagerbestandlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MinMengeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MindestensMengeimFachlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnschaffungsgrundlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnschaffungsgrundLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="HaltbarkeitsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HaltbarkeitsdatumlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
+                      <Component id="SuchenrechtsButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane5" min="-2" pref="364" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="TeileImFachSuchenJtable">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="4">
+                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="TeileIDLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Teile ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="SuchenrechtsButton">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Suchen"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TeilImFachSuchenActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="FachnrLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Fachnummer:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="HaltbarkeitsLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Haltbarkeitsdatum:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="MaxMengeLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Max. Menge im Fach:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="MinMengeLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mind. Menge im Fach:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="LagerbestandLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Lagerbestand:"/>
+              </Properties>
+            </Component>
+            <Component class="view.LagerTextfield" name="LagerbestandlagerTextfield2">
+            </Component>
+            <Component class="view.LagerTextfield" name="FachnummerlagerTextfield2">
+            </Component>
+            <Component class="view.LagerTextfield" name="MindestensMengeimFachlagerTextfield2">
+            </Component>
+            <Component class="view.LagerTextfield" name="HaltbarkeitsdatumlagerTextfield2">
+            </Component>
+            <Component class="view.LagerTextfield" name="MaximaleMengeimFachlagerTextfield2">
+            </Component>
+            <Component class="view.LagerTextfield" name="TeileIdlagerTextfield2">
+            </Component>
+            <Component class="view.LagerTextfield" name="AnschaffungsgrundlagerTextfield2">
+            </Component>
+            <Component class="javax.swing.JLabel" name="AnschaffungsgrundLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+                  <FontInfo relative="true">
+                    <Font bold="false" component="AnschaffungsgrundLabel" property="font" relativeSize="true" size="0"/>
+                  </FontInfo>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Anschaffungsgrund:"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="suche_Teil">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Teil suchen">
+                <Property name="tabTitle" type="java.lang.String" value="Teil suchen"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="TeileStammdatenLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="BaugruppeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ZeichnungsnrLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MaterialgruppeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TeiletypLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BezeichnungLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IDlinksLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="TeileIdlagerTextfield" linkSize="10" pref="230" max="32767" attributes="0"/>
+                                  <Component id="BezeichnunglagerTextfield" linkSize="10" alignment="0" pref="230" max="32767" attributes="0"/>
+                                  <Component id="MaterialgruppelagerTextfield" linkSize="10" alignment="0" pref="230" max="32767" attributes="0"/>
+                                  <Component id="ZeichnungsnummerlagerTextfield" linkSize="10" alignment="0" pref="230" max="32767" attributes="0"/>
+                                  <Component id="BaugruppelagerTextfield" linkSize="10" alignment="0" pref="230" max="32767" attributes="0"/>
+                                  <Component id="TeiletypComboBox" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="41" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="BemerkungLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PreisLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAKLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAMLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAGLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="MaximaleAnzahlKleinlagerTextfield" linkSize="10" min="-2" pref="230" max="-2" attributes="0"/>
+                                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                                      <Component id="EuroLabel" min="-2" pref="19" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="BemerkungslagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="PreislagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="MaximaleAnzahlMittellagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="MaximaleAnzahlGroßlagerTextfield" linkSize="10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="AlleTeileAnzeigenButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="SuchenlinksButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Component id="TeileStammdatenLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="IDlinksLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TeileIdlagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BemerkungLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BemerkungslagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="BezeichnungLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BezeichnunglagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PreisLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PreislagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="TeiletypLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TeiletypComboBox" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MAKLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaximaleAnzahlKleinlagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EuroLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="MaterialgruppeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaterialgruppelagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MAMLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaximaleAnzahlMittellagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ZeichnungsnrLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ZeichnungsnummerlagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MAGLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaximaleAnzahlGroßlagerTextfield" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="BaugruppeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BaugruppelagerTextfield" linkSize="6" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AlleTeileAnzeigenButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SuchenlinksButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" pref="211" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="SuchenlinksButton">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Suchen"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="teile_suchen"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="EuroLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x20ac;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="PreisLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Preis:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="MAKLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Maximale Anzahl Klein:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="TeileStammdatenLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Teile Stammdaten:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="BezeichnungLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Bezeichnung:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="IDlinksLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Teile ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="MaterialgruppeLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Materialgrupe:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="TeiletypLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Teiletyp:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="BaugruppeLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Baugruppe:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="AlleTeileAnzeigenButton">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="alle Teile anzeigen"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alle_teile_suchen"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ZeichnungsnrLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Zeichnungsnummer:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="MAMLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Maximale Anzahl Mittel:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="MAGLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Maximale Anzahl Gro&#xdf;:"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="TeilSuchenJtable">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new DefaultTableModel()" type="code"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JComboBox" name="TeiletypComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="6">
+                    <StringItem index="0" value="alle"/>
+                    <StringItem index="1" value="Kaufteile"/>
+                    <StringItem index="2" value="Werkzeuge"/>
+                    <StringItem index="3" value="Vorrichtungen"/>
+                    <StringItem index="4" value="unfertige Baugruppen"/>
+                    <StringItem index="5" value="Vorratsteile"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="BemerkungLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Bemerkung:"/>
+              </Properties>
+            </Component>
+            <Component class="view.LagerTextfield" name="TeileIdlagerTextfield">
+            </Component>
+            <Component class="view.LagerTextfield" name="BezeichnunglagerTextfield">
+            </Component>
+            <Component class="view.LagerTextfield" name="MaterialgruppelagerTextfield">
+            </Component>
+            <Component class="view.LagerTextfield" name="ZeichnungsnummerlagerTextfield">
+            </Component>
+            <Component class="view.LagerTextfield" name="BaugruppelagerTextfield">
+            </Component>
+            <Component class="view.LagerTextfield" name="BemerkungslagerTextfield">
+            </Component>
+            <Component class="view.LagerTextfield" name="PreislagerTextfield">
+            </Component>
+            <Component class="view.LagerTextfield" name="MaximaleAnzahlKleinlagerTextfield">
+            </Component>
+            <Component class="view.LagerTextfield" name="MaximaleAnzahlMittellagerTextfield">
+            </Component>
+            <Component class="view.LagerTextfield" name="MaximaleAnzahlGro&#xdf;lagerTextfield">
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
