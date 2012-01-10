@@ -760,7 +760,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jScrollPane2.setViewportView(TextArea_einlagern);
 
         jPanel8.add(jScrollPane2);
-        jScrollPane2.setBounds(0, 520, 690, 50);
+        jScrollPane2.setBounds(0, 510, 980, 100);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 51, 51));
@@ -2721,6 +2721,9 @@ if (!bezeichnung_textfeld1.getText().isEmpty()) {
             }
         }
         
+if(!menge_textfeld_einlagern.getText().isEmpty()){
+   label_menge_übrig.setText(menge_textfeld_einlagern.getText());
+}
         if(bezeichnung_textfeld1.getText().isEmpty() && id_textfeld2.getText().isEmpty()){
             JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Tragen Sie Bitte eine ID oder eine Bezeichnung ein.","Hinweis",2);
         }
@@ -2888,7 +2891,7 @@ if (!bezeichnung_textfeld1.getText().isEmpty()) {
     private javax.swing.JPanel Teilestamm_verwalten;
     private javax.swing.JButton Teilestammdaten_suchen_historie;
     private javax.swing.JButton Teilestammdatenbutton;
-    private javax.swing.JTextArea TextArea_einlagern;
+    public javax.swing.JTextArea TextArea_einlagern;
     private javax.swing.JLabel TypTextfield;
     private javax.swing.JButton UmlagernButton;
     private javax.swing.JLabel ZNrTextfield;
