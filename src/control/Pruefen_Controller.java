@@ -37,6 +37,8 @@ public class Pruefen_Controller {
             if (vergleich.isEmpty()) {
           
                 JOptionPane.showMessageDialog(lv.auslagern_BestaetigenidButton, "Teil nicht vorhanden");
+                lv.label_auswahl.setText("");
+                
 
                 // System.out.println("Kein Teil vorhanden");
                 return false;

@@ -54,7 +54,9 @@ public class TeileStamm_erweitern_controller {
     * @param MAGString
     * @param Bemerkung 
     */
-    public void nutzeranforderung(String Bezeichnung, model.TeileTypET Typ, String Materialgruppe, String Zeichnungsnummer, String BaugruppeString, String Anschaffungsgrund, String PreisString, String MAKString, String MAMString, String MAGString, String Bemerkung)
+    public void nutzeranforderung(String Bezeichnung, model.TeileTypET Typ, String Materialgruppe, 
+            String Zeichnungsnummer, String BaugruppeString, String PreisString, 
+            String MAKString, String MAMString, String MAGString, String Bemerkung)
    {
        
        //Semantische Prüfung der Variablen entsprchend DD begin
@@ -92,8 +94,9 @@ public class TeileStamm_erweitern_controller {
                            JOptionPane.showMessageDialog(null, "geprüftes Teil konnte nocht zur db hinzugefügt werden", "Fehlschlag", 1);
 
             }
-           Hauptfenster.setpTSEStatusleiste(neuTeil.get_Bezeichnung()+" wurde erfolgreich angelegt. Sie können nun "+neuTeil.get_Bezeichnung()+" einlagern.",Color.BLACK);
+           Hauptfenster.setpTSEStatusleiste1(neuTeil.get_Bezeichnung()+" wurde erfolgreich mit der ID "+neuTeil.get_Id()+" angelegt. Sie können das neue Teil nun einlagern.",Color.BLACK);
            Hauptfenster.setpTSEBezeichnung("");
+           Hauptfenster.setpTSEStatusleiste2("Die freie ID "+getEXAMPLEid()+" wurde aus der Datenbank bezogen und wird dem neuen Teil beim anlegen zugewiesen.", Color.BLACK);
        }
    }
     
@@ -115,7 +118,7 @@ public class TeileStamm_erweitern_controller {
    
     
     /**Entfernt die erste ID in der freien id datenbank aus der tabelle und returnt diese.
-     * Fix: wenn die id tabelle leer ist werden die ids von 100-200 in die id tabelle reingeschrieben
+     * <disabled> Fix: wenn die id tabelle leer ist werden die ids von 100-200 in die id tabelle reingeschrieben
      * @return verwendbare ID aus der db
      */
     private int popnewIDfromTable()
@@ -126,8 +129,10 @@ public class TeileStamm_erweitern_controller {
        
       //fix start
        if(idarr.length==0){ 
-           System.out.println("keine ids in der tabelle fixe 100-200 hinzu");
-           generierefreieIDS(100,200); }
+           //System.out.println("keine ids in der tabelle fixe 100-200 hinzu");
+           //generierefreieIDS(100,200); 
+                   JOptionPane.showMessageDialog(null, "Keine IDs mehr verfügbar! \nWenden Sie sich bitte an den Hersteller zur generierung neuer IDs.");
+}
        //fix end
        
        //System.out.println("gefundene freie ID: "+idarr[0]);
@@ -159,8 +164,16 @@ public class TeileStamm_erweitern_controller {
        
       //fix start
        if(idarr2.length==0){ 
-           System.out.println("keine ids in der tabelle fixe 0-200 hinzu");
-           generierefreieIDS(0,200); }
+                              JOptionPane.showMessageDialog(null, 
+                                      "Keine IDs mehr verfügbar! \nWenden Sie sich bitte an den Hersteller zur generierung neuer IDs.\n"
+                                      + "Sollten keine TeileStammdaten angelegt sein müssen neue IDs geschrieben werden.\n"
+                                      + "Schnelle Lösung: im File TeileStamm_erweitern_controller.java in der methode getEXAMPLEid() den Kommentar wieder gültig machen.\n"
+                                      );
+           //System.out.println("keine ids in der tabelle! fixe 0-200 hinzu");
+           //generierefreieIDS(0,200); 
+           //generierefreieIDS(201,20000); 
+
+       }
        //fix end
         
        idarr=new model.DB_schreiben().get_alle_freie_IDs();      

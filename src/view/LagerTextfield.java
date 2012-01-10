@@ -33,10 +33,12 @@ public class LagerTextfield extends JTextField {
 
         @Override
         public void keyTyped(KeyEvent e) {
+            char key = e.getKeyChar();
+            if(key=='\'')e.setKeyChar('"');
+            
             if (Zeichenfolge == null) {
                 return;
             }
-            char key = e.getKeyChar();
             boolean isValid = false;
             
             if (isCharInString(key, Zeichenfolge) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_DELETE) {
@@ -78,6 +80,11 @@ public class LagerTextfield extends JTextField {
                     case ZIFFERN: {
                         break;
                     }
+                    case ALL: {
+                        
+                        break;
+                    }
+
 
                     default:
                         break;
@@ -128,11 +135,10 @@ public class LagerTextfield extends JTextField {
 
     public enum AllowedSequences {
 
-        ALL(null, null),
-        ALPHA("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ", "nur Buchstaben erlaubt"),
-        NUM("0123456789,.", "nur zahlen erlaubt"),
-        PREIS("1234567890,.", "nur Zahlen und höchstends 2 Nachkommastellen erlaubt"),
-        ZIFFERN("0987654321", "nur ganze Zahlen erlaubt");
+          ALL(null, null),
+        ALPHA("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ", "Bitte nur Buchstaben eingeben."),
+        PREIS("1234567890,.", "Hier sind nur Zahlen und hÃ¶chstends 2 Nachkommastellen erlaubt."),
+        ZIFFERN("0987654321", "Bitte nur ganze Zahlen eingeben.");
         private String sequence;
         private String desc;
 
@@ -185,4 +191,9 @@ public class LagerTextfield extends JTextField {
         akl = new LagerKeyListener(seq, this);
         this.addKeyListener(akl);
     }
+    
+    
+    
+    
+            
 }
