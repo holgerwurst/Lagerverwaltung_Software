@@ -427,7 +427,7 @@ public class Teil_einlagern_Controller {
     /**
      *
      */
-    public String manuell_einlagern(String f1, int m1, int id, String anschaffungsgrund) throws ClassNotFoundException, SQLException, Exception {
+   public String manuell_einlagern(String f1, int m1, int id, String anschaffungsgrund) throws ClassNotFoundException, SQLException, Exception {
         //Anlegen neuer Controller 
         Pruefen_Controller pr = new Pruefen_Controller();
         cv = new convert();
@@ -525,21 +525,21 @@ public class Teil_einlagern_Controller {
                         einlagern = true;
                         einlagern_neu = true;
                     } else {
-                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe " + groesse + " ist" + stammdaten.get(pis).get_max_anz_klein() + ".\n";
+                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe " + groesse + " ist " + stammdaten.get(pis).get_max_anz_klein() + ".\n";
                     }
                 } else if ("M".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_mittel()) {
                         einlagern = true;
                         einlagern_neu = true;
                     } else {
-                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe " + groesse + " ist" + stammdaten.get(pis).get_max_anz_mittel() + ".\n";
+                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe " + groesse + " ist " + stammdaten.get(pis).get_max_anz_mittel() + ".\n";
                     }
                 } else if ("G".equals(groesse)) {
                     if (menge <= stammdaten.get(pis).get_max_anz_gross()) {
                         einlagern = true;
                         einlagern_neu = true;
                     } else {
-                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe " + groesse + " ist" + stammdaten.get(pis).get_max_anz_gross() + ".\n";
+                        return "Die Menge passt nicht in das Fach die maximale Menge für ein Fach der Größe " + groesse + " ist " + stammdaten.get(pis).get_max_anz_gross() + ".\n";
                     }
                 }
 
@@ -570,10 +570,7 @@ public class Teil_einlagern_Controller {
         return "OK";
     }
 
-    public String einlagern_manuell_anders(manuell_einlagern_strings[] mes, int id) throws Exception {
-        
-        String returnstring="";
-        int count=0;
+    public manuell_einlagern_strings[] einlagern_manuell_check(manuell_einlagern_strings[] mes, int id) throws Exception {
         for (int i = 0; i < mes.length; i++) {
             //String returnstring;
             String mer;
@@ -582,25 +579,42 @@ public class Teil_einlagern_Controller {
                     
                     mer = manuell_einlagern(mes[i].get_fachnummer(), mes[i].get_menge(), id, mes[i].get_anschaffungsgrund());
                     if(!"OK".equals(mer)){
-                        int b = i+1;
-                        returnstring=returnstring+"Fach "+b+":"+mer;
-                    }                  
+                        mes[i].set_fnr_gui(i+1);
+                        mes[i].set_fehler(2);  //2 = richtiger Fehler
+                        mes[i].set_fehler_text(mer);
+                    }else
+                    {
+                        mes[i].set_fnr_gui(i+1);
+                        mes[i].set_fehler(1); //1 = kein Fehler
+                    }
                 } else {
-                    int b = i+1;
-                    returnstring = returnstring+ "Fach " + b + ": Die Menge muss mindestens 1 sein. \n";
+                        mes[i].set_fnr_gui(i+1);
+                        mes[i].set_fehler(2);  //2 = richtiger Fehler
+                        mes[i].set_fehler_text("Die Menge muss mindestens 1 sein. \n");
                 }
             }else{
-                count++;
-                if(count==10)
-                {
-                    return "Sie müssen mindestens einmal Fachnummer und Menge ausfüllen.";
-                }
+                mes[i].set_fnr_gui(i+1);
+                mes[i].set_fehler(0);  // 0 = Fach ist nicht ausgefüllt
             }           
         }
         
         //return fehlerrueckgabestring;
-        return returnstring;
+        return mes;
 
+    }
+    
+    public String fehlerausgabe(manuell_einlagern_strings[] mes)
+    {
+        String fehlerliste="";
+        for(int i =0;i<mes.length;i++)
+        {
+            if(mes[i].get_fehler()==2)
+            {
+                fehlerliste=fehlerliste+"Fach "+mes[i].get_fnr_gui()+": "+mes[i].get_fehler_text();
+            }
+        }
+        
+      return  fehlerliste;
     }
 }
 

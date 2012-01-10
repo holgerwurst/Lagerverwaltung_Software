@@ -2427,111 +2427,119 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_bestaetigen_button_teileID_manuell_einlagernActionPerformed
 
     private void button_manuell_einlagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_manuell_einlagernActionPerformed
-        try {
+       try {
 
             pr = new control.Pruefen_Controller();
             te = new control.Teil_einlagern_Controller(this);
             cv = new convert();
-          //  manuell_einlagern_strings[] mes = new manuell_einlagern_strings[9];
+            //  manuell_einlagern_strings[] mes = new manuell_einlagern_strings[9];
             manuell_einlagern_strings[] mes = new manuell_einlagern_strings[10];
-            mes[0] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr1.getText(),lagerTextfield_einlagern_manuell_menge1.getText(),lagerTextfield_einlagern_manuell_asg1.getText());
-            mes[1] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr2.getText(),lagerTextfield_einlagern_manuell_menge2.getText(),lagerTextfield_einlagern_manuell_asg2.getText());
-            mes[2] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr3.getText(),lagerTextfield_einlagern_manuell_menge3.getText(),lagerTextfield_einlagern_manuell_asg3.getText());
-            mes[3] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr4.getText(),lagerTextfield_einlagern_manuell_menge4.getText(),lagerTextfield_einlagern_manuell_asg4.getText());
-            mes[4] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr5.getText(),lagerTextfield_einlagern_manuell_menge5.getText(),lagerTextfield_einlagern_manuell_asg5.getText());
-            mes[5] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr6.getText(),lagerTextfield_einlagern_manuell_menge6.getText(),lagerTextfield_einlagern_manuell_asg6.getText());
-            mes[6] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr7.getText(),lagerTextfield_einlagern_manuell_menge7.getText(),lagerTextfield_einlagern_manuell_asg7.getText());
-            mes[7] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr8.getText(),lagerTextfield_einlagern_manuell_menge8.getText(),lagerTextfield_einlagern_manuell_asg8.getText());
-            mes[8] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr9.getText(),lagerTextfield_einlagern_manuell_menge9.getText(),lagerTextfield_einlagern_manuell_asg9.getText());
-            mes[9] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr10.getText(),lagerTextfield_einlagern_manuell_menge10.getText(),lagerTextfield_einlagern_manuell_asg10.getText());
+            mes[0] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr1.getText(), lagerTextfield_einlagern_manuell_menge1.getText(), lagerTextfield_einlagern_manuell_asg1.getText(), 0, 0, null);
+            mes[1] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr2.getText(), lagerTextfield_einlagern_manuell_menge2.getText(), lagerTextfield_einlagern_manuell_asg2.getText(), 0, 0, null);
+            mes[2] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr3.getText(), lagerTextfield_einlagern_manuell_menge3.getText(), lagerTextfield_einlagern_manuell_asg3.getText(), 0, 0, null);
+            mes[3] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr4.getText(), lagerTextfield_einlagern_manuell_menge4.getText(), lagerTextfield_einlagern_manuell_asg4.getText(), 0, 0, null);
+            mes[4] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr5.getText(), lagerTextfield_einlagern_manuell_menge5.getText(), lagerTextfield_einlagern_manuell_asg5.getText(), 0, 0, null);
+            mes[5] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr6.getText(), lagerTextfield_einlagern_manuell_menge6.getText(), lagerTextfield_einlagern_manuell_asg6.getText(), 0, 0, null);
+            mes[6] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr7.getText(), lagerTextfield_einlagern_manuell_menge7.getText(), lagerTextfield_einlagern_manuell_asg7.getText(), 0, 0, null);
+            mes[7] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr8.getText(), lagerTextfield_einlagern_manuell_menge8.getText(), lagerTextfield_einlagern_manuell_asg8.getText(), 0, 0, null);
+            mes[8] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr9.getText(), lagerTextfield_einlagern_manuell_menge9.getText(), lagerTextfield_einlagern_manuell_asg9.getText(), 0, 0, null);
+            mes[9] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr10.getText(), lagerTextfield_einlagern_manuell_menge10.getText(), lagerTextfield_einlagern_manuell_asg10.getText(), 0, 0, null);
 
-           
-            
-            String fehlerausgabe="";
-            
+            String fehlerausgabe = "";
+            String einlagernausgabe = "";
             int id = cv.StringTOint(lagerTextfield_teileID_manuell_einlagern.getText());
-            
-                
-                
-                        
-            fehlerausgabe = te.einlagern_manuell_anders(mes, id);
-            
-            if(fehlerausgabe!="")
-            {
-                JOptionPane.showMessageDialog(lagerTextfield_einlagern_manuell_menge1, fehlerausgabe);
+            mes = te.einlagern_manuell_check(mes, id);
+            fehlerausgabe = te.fehlerausgabe(mes);
+
+            if (mes[0].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[0].get_fnr_gui();
                 lagerTextfield_einlagern_manuell_fnr1.setText("");
                 lagerTextfield_einlagern_manuell_menge1.setText("");
                 lagerTextfield_einlagern_manuell_asg1.setText("");
-                lagerTextfield_einlagern_manuell_fnr2.setText("");
-                lagerTextfield_einlagern_manuell_menge2.setText("");
-                lagerTextfield_einlagern_manuell_asg2.setText("");
-                lagerTextfield_einlagern_manuell_fnr3.setText("");
-                lagerTextfield_einlagern_manuell_menge3.setText("");
-                lagerTextfield_einlagern_manuell_asg3.setText("");
-                lagerTextfield_einlagern_manuell_fnr4.setText("");
-                lagerTextfield_einlagern_manuell_menge4.setText("");
-                lagerTextfield_einlagern_manuell_asg4.setText("");
-                lagerTextfield_einlagern_manuell_fnr5.setText("");
-                lagerTextfield_einlagern_manuell_menge5.setText("");
-                lagerTextfield_einlagern_manuell_asg5.setText("");
-                lagerTextfield_einlagern_manuell_fnr6.setText("");
-                lagerTextfield_einlagern_manuell_menge6.setText("");
-                lagerTextfield_einlagern_manuell_asg6.setText("");
-                lagerTextfield_einlagern_manuell_fnr7.setText("");
-                lagerTextfield_einlagern_manuell_menge7.setText("");
-                lagerTextfield_einlagern_manuell_asg7.setText("");
-                lagerTextfield_einlagern_manuell_fnr8.setText("");
-                lagerTextfield_einlagern_manuell_menge8.setText("");
-                lagerTextfield_einlagern_manuell_asg8.setText("");
-                lagerTextfield_einlagern_manuell_fnr9.setText("");
-                lagerTextfield_einlagern_manuell_menge9.setText("");
-                lagerTextfield_einlagern_manuell_asg9.setText("");
-                lagerTextfield_teileID_manuell_einlagern.setText("");
-                lagerTextfield_teileID_manuell_einlagern.setEditable(true);
-                button_manuell_einlagern.setEnabled(false);
-                label_anzeige_klein_einlagern_manuell.setText("");
-                label_anzeige_mittel_einlagern_manuell.setText("");
-                label_anzeige_gross_einlagern_manuell.setText("");
-            }else{
-                lagerTextfield_einlagern_manuell_fnr1.setText("");
-                lagerTextfield_einlagern_manuell_menge1.setText("");
-                lagerTextfield_einlagern_manuell_asg1.setText("");
-                lagerTextfield_einlagern_manuell_fnr2.setText("");
-                lagerTextfield_einlagern_manuell_menge2.setText("");
-                lagerTextfield_einlagern_manuell_asg2.setText("");
-                lagerTextfield_einlagern_manuell_fnr3.setText("");
-                lagerTextfield_einlagern_manuell_menge3.setText("");
-                lagerTextfield_einlagern_manuell_asg3.setText("");
-                lagerTextfield_einlagern_manuell_fnr4.setText("");
-                lagerTextfield_einlagern_manuell_menge4.setText("");
-                lagerTextfield_einlagern_manuell_asg4.setText("");
-                lagerTextfield_einlagern_manuell_fnr5.setText("");
-                lagerTextfield_einlagern_manuell_menge5.setText("");
-                lagerTextfield_einlagern_manuell_asg5.setText("");
-                lagerTextfield_einlagern_manuell_fnr6.setText("");
-                lagerTextfield_einlagern_manuell_menge6.setText("");
-                lagerTextfield_einlagern_manuell_asg6.setText("");
-                lagerTextfield_einlagern_manuell_fnr7.setText("");
-                lagerTextfield_einlagern_manuell_menge7.setText("");
-                lagerTextfield_einlagern_manuell_asg7.setText("");
-                lagerTextfield_einlagern_manuell_fnr8.setText("");
-                lagerTextfield_einlagern_manuell_menge8.setText("");
-                lagerTextfield_einlagern_manuell_asg8.setText("");
-                lagerTextfield_einlagern_manuell_fnr9.setText("");
-                lagerTextfield_einlagern_manuell_menge9.setText("");
-                lagerTextfield_einlagern_manuell_asg9.setText("");
-                label_manuell_einlagern_erfolgreich.setForeground(Color.GREEN);
-                label_manuell_einlagern_erfolgreich.setText("Alles erfoglreich eingelagert!");
-                lagerTextfield_teileID_manuell_einlagern.setText("");
-                lagerTextfield_teileID_manuell_einlagern.setEditable(true);
-                button_manuell_einlagern.setEnabled(false);
-                label_anzeige_klein_einlagern_manuell.setText("");
-                label_anzeige_mittel_einlagern_manuell.setText("");
-                label_anzeige_gross_einlagern_manuell.setText("");
-                
+            } else if (mes[0].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[0].get_fehler_text();
             }
-            
-           
+            if (mes[1].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[1].get_fnr_gui();
+                lagerTextfield_einlagern_manuell_fnr2.setText("");
+                lagerTextfield_einlagern_manuell_menge2.setText("");
+                lagerTextfield_einlagern_manuell_asg2.setText("");
+            } else if (mes[1].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[1].get_fehler_text();
+            }
+            if (mes[2].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[2].get_fnr_gui();
+                lagerTextfield_einlagern_manuell_fnr3.setText("");
+                lagerTextfield_einlagern_manuell_menge3.setText("");
+                lagerTextfield_einlagern_manuell_asg3.setText("");
+            } else if (mes[2].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[2].get_fehler_text();
+            }
+            if (mes[3].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[3].get_fnr_gui();
+                lagerTextfield_einlagern_manuell_fnr4.setText("");
+                lagerTextfield_einlagern_manuell_menge4.setText("");
+                lagerTextfield_einlagern_manuell_asg4.setText("");
+            } else if (mes[3].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[3].get_fehler_text();
+            }
+            if (mes[4].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[4].get_fnr_gui();
+                lagerTextfield_einlagern_manuell_fnr5.setText("");
+                lagerTextfield_einlagern_manuell_menge5.setText("");
+                lagerTextfield_einlagern_manuell_asg5.setText("");
+            } else if (mes[4].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[4].get_fehler_text();
+            }
+            if (mes[5].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[5].get_fnr_gui();
+                lagerTextfield_einlagern_manuell_fnr6.setText("");
+                lagerTextfield_einlagern_manuell_menge6.setText("");
+                lagerTextfield_einlagern_manuell_asg6.setText("");
+            } else if (mes[5].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[5].get_fehler_text();
+            }
+            if (mes[6].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[6].get_fnr_gui();
+                lagerTextfield_einlagern_manuell_fnr7.setText("");
+                lagerTextfield_einlagern_manuell_menge7.setText("");
+                lagerTextfield_einlagern_manuell_asg7.setText("");
+            } else if (mes[6].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[6].get_fehler_text();
+            }
+            if (mes[7].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[7].get_fnr_gui();
+                lagerTextfield_einlagern_manuell_fnr8.setText("");
+                lagerTextfield_einlagern_manuell_menge8.setText("");
+                lagerTextfield_einlagern_manuell_asg8.setText("");
+            } else if (mes[7].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[7].get_fehler_text();
+            }
+            if (mes[8].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[8].get_fnr_gui();
+                lagerTextfield_einlagern_manuell_fnr9.setText("");
+                lagerTextfield_einlagern_manuell_menge9.setText("");
+                lagerTextfield_einlagern_manuell_asg9.setText("");
+            } else if (mes[8].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[8].get_fehler_text();
+            }
+            if (mes[9].get_fehler() == 1) {
+                einlagernausgabe = einlagernausgabe + mes[9].get_fnr_gui();
+                lagerTextfield_einlagern_manuell_fnr10.setText("");
+                lagerTextfield_einlagern_manuell_menge10.setText("");
+                lagerTextfield_einlagern_manuell_asg10.setText("");
+            } else if (mes[9].get_fehler() == 2) {
+                //fehlerausgabe = fehlerausgabe + mes[9].get_fehler_text();
+            }
+
+            if (!"".equals(einlagernausgabe)) {
+                label_manuell_einlagern_erfolgreich.setForeground(Color.GREEN);
+                label_manuell_einlagern_erfolgreich.setText("Folgende Fächer wurden korrekt eingelagert:" + einlagernausgabe);
+            }
+            if (!"".equals(fehlerausgabe)) {
+                JOptionPane.showMessageDialog(lagerTextfield_einlagern_manuell_menge2, fehlerausgabe, "Fehler", 2);
+            }
+
         } catch (Exception ex) {
             Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
         }
