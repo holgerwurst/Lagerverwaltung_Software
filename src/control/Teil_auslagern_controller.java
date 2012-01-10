@@ -189,6 +189,8 @@ public class Teil_auslagern_controller {
                     newmodel.addColumn("Menge", ul.ta.getaktuelle_menge());
 
                     ul.auslager_jtable.setModel(newmodel);
+                    
+                    ul.auslagerLabel_Anzeige.setText("Es wurde(n) " + ul.auslagerTextfield_mengeauslagern.getText() + " Teil(e) ausgelagert.");
 
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
@@ -229,6 +231,8 @@ public class Teil_auslagern_controller {
                         newmodel.addColumn("Menge", ul.ta.getaktuelle_menge());
 
                         ul.auslager_jtable.setModel(newmodel);
+                        
+                        ul.auslagerLabel_Anzeige.setText("Es wurde(n) " + ul.auslagerTextfield_mengeauslagern.getText() + " Teil(e) ausgelagert.");
                         
                        int reply = JOptionPane.showConfirmDialog(ul.auslagern_AusfuehrenButton,"Möchten Sie das Teil löschen?","Meldung",JOptionPane.YES_NO_OPTION);
                        
