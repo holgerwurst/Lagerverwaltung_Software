@@ -370,13 +370,21 @@ public class Teil_einlagern_Controller {
 //if(menge_eingelagert!=0){
         String text="";
         
-            if (menge_eingelagert<max_menge && einzulagern>max_menge-menge_eingelagert) {
+            if (einzulagern>max_menge && menge_eingelagert<max_menge) {
                 neueMenge =max_menge-menge_eingelagert;
-              text = String.valueOf(einzulagern-neueMenge);
+         //     text = String.valueOf(einzulagern-neueMenge);
                
-                  System.out.println("max   "+max_menge);
-     System.out.println("menge_eingelagert<max_menge && einzulagern>max_menge-menge_eingelagert");
-            } 
+               //   System.out.println("max   "+max_menge);
+     System.out.println("einzulagern>max_menge && menge_eingelagert<max_menge");
+            } else if(menge_eingelagert<max_menge && max_menge-menge_eingelagert<=einzulagern){
+                   neueMenge =einzulagern;
+                   System.out.println("menge_eingelagert<max_menge && max_menge-menge_eingelagert<=einzulagern");
+           //   text = String.valueOf(einzulagern-neueMenge);
+            }
+       /*     else if(einzulagern>max_menge && menge_eingelagert<max_menge){
+                neueMenge = max_menge-menge_eingelagert;
+                        menge_eingelagert<max_menge && einzulagern>max_menge-menge_eingelagert
+            }*/
         //}
             //else // if (max_menge < einzulagern && einzulagern != 0) {
             //zahl = einzulagern;
@@ -393,9 +401,9 @@ public class Teil_einlagern_Controller {
                 // neueMenge = einzulagern - menge;
 
             }*/
-
+    text = String.valueOf(einzulagern-neueMenge);
             //   int neueMenge = einzulagern - zahl;
-            // String text = String.valueOf(neueMenge);
+            
             lv.label_menge_übrig.setVisible(true);
             lv.label_menge_übrig.setText(text);
             //     }
@@ -406,8 +414,8 @@ public class Teil_einlagern_Controller {
                     asg = lv.textfeld_asg_einlagern.getText();
                 }
                 Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
-     //           dbs.insert_lagerbestandskonto(lbk);
-    //            dbs.update_lagerfachstamm(fachnummer, true);
+                dbs.insert_lagerbestandskonto(lbk);
+                dbs.update_lagerfachstamm(fachnummer, true);
 
                 einlagern_vorbereiten(id);
 

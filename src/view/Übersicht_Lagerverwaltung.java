@@ -2322,7 +2322,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilentf_tabbedpane.addTab("Buchungshistorie einsehen", Buchungshistorie_einsehen_ausdrucken);
 
         getContentPane().add(Teilentf_tabbedpane);
-        Teilentf_tabbedpane.setBounds(0, 10, 1010, 690);
+        Teilentf_tabbedpane.setBounds(0, 10, 1010, 720);
 
         Datei.setText("Datei");
         jMenuBar1.add(Datei);
