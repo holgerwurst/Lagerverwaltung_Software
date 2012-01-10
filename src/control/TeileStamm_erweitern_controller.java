@@ -165,7 +165,7 @@ public class TeileStamm_erweitern_controller {
       //fix start
        if(idarr2.length==0){ 
                               JOptionPane.showMessageDialog(null, 
-                                      "Keine IDs mehr verfügbar! \nWenden Sie sich bitte an den Hersteller zur generierung neuer IDs.\n"
+                                      "Keine IDs mehr verfügbar! \nWenden Sie sich bitte an den Hersteller zur Generierung neuer IDs.\n"
                                       + "Sollten keine TeileStammdaten angelegt sein müssen neue IDs geschrieben werden.\n"
                                       + "Schnelle Lösung: im File TeileStamm_erweitern_controller.java in der methode getEXAMPLEid() den Kommentar wieder gültig machen.\n"
                                       );

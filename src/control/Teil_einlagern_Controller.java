@@ -222,6 +222,7 @@ public class Teil_einlagern_Controller {
             if (zahlklein == 0 && zahlmittel == 0 && zahlgross == 0) {
                 JOptionPane.showMessageDialog(lv.bestaetigen_button2, "Für dieses Teil gibt es kein passendes Fach.", "Hinweis", 1);
                 lv.label_anzeige_mindestgroesse2.setText("Keine passenden Fächer");
+            
                 //   System.out.println("Für dieses Teil gibt es kein passendes Fach");
             } else if (zahlklein == 0 && zahlmittel == 0) {
 
