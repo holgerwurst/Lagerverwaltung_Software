@@ -405,7 +405,11 @@ public class Teil_einlagern_Controller {
                         dbs.insert_lagerbestandskonto(lbk);
                         dbs.update_lagerfachstamm(fachnummer, true);
                         System.out.println("geringer");
-                        lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert.\n");
+                        if (einzulagern == max_menge - menge_eingelagert) {
+                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert. Es steht nun nicht mehr zur Verfügung\n");
+                            } else {
+                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert.\n");
+                            }
                     }
                 } else {
                     neueMenge = max_menge; 
