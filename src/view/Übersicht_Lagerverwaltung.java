@@ -793,11 +793,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         label_klein_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel8.add(label_klein_einlagern);
-        label_klein_einlagern.setBounds(290, 160, 90, 20);
+        label_klein_einlagern.setBounds(290, 165, 90, 20);
 
         label_mittel_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel8.add(label_mittel_einlagern);
-        label_mittel_einlagern.setBounds(450, 160, 90, 20);
+        label_mittel_einlagern.setBounds(450, 165, 90, 20);
 
         jLabel42.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel42.setText("Fach Groß:");
@@ -806,7 +806,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         label_gross_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel8.add(label_gross_einlagern);
-        label_gross_einlagern.setBounds(660, 160, 90, 20);
+        label_gross_einlagern.setBounds(660, 165, 90, 20);
 
         table_einlagern.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2858,7 +2858,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
                 for (int i = 0; i < rowIndex.length; i++) {
                     int menge = cv.StringTOint(label_menge_übrig.getText());
-                    
+                      label_menge_übrig.setText(label_menge_übrig.getText());
                     if (menge != 0) {
                         String mar = (String) (table_einlagern.getValueAt(rowIndex[i], 0));
 
