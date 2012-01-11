@@ -832,7 +832,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jScrollPane4.setViewportView(table_einlagern);
 
         jPanel8.add(jScrollPane4);
-        jScrollPane4.setBounds(0, 340, 980, 220);
+        jScrollPane4.setBounds(0, 340, 1050, 220);
 
         label_auswahl.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         label_auswahl.setForeground(new java.awt.Color(255, 0, 51));
@@ -845,7 +845,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jScrollPane2.setViewportView(TextArea_einlagern);
 
         jPanel8.add(jScrollPane2);
-        jScrollPane2.setBounds(0, 560, 980, 100);
+        jScrollPane2.setBounds(0, 560, 1050, 100);
 
         Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
 

@@ -408,7 +408,7 @@ public class Teil_einlagern_Controller {
                         lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert.\n");
                     }
                 } else {
-                    neueMenge = max_menge;
+                    neueMenge = max_menge; 
                     text = String.valueOf(einzulagern - (max_menge - menge_eingelagert));
                     Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
                     dbs.delete_lagerbestandskonto(id, fachnummer);
@@ -422,7 +422,7 @@ public class Teil_einlagern_Controller {
                
                 lv.label_menge_übrig.setVisible(true);
                 lv.label_menge_übrig.setText(text);
-               // einlagern_vorbereiten(id);
+             
             } 
             //     }
         catch (Exception e) {
