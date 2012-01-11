@@ -2477,7 +2477,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         // TODO add your handling code here:}//GEN-LAST:event_textfeld_id1ActionPerformed
     }
     private void auslagerTextfield_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_IDActionPerformed
-
         try {
             control.Teil_auslagern_controller.auslagern_bestaetigen_button(this);
         } catch (Exception e) {
