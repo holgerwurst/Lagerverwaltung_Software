@@ -385,7 +385,7 @@ public class Teil_einlagern_Controller {
                             if (einzulagern == max_menge - menge_eingelagert) {
                                 lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert. Es steht nun nicht mehr zur Verfügung\n");
                             } else {
-                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert.\n");
+                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+(neueMenge)+" eingelagert.\n");
                             }
                             // lv.TextArea_einlagern.setVisible(true);
                         } else {
@@ -395,7 +395,7 @@ public class Teil_einlagern_Controller {
                             dbs.delete_lagerbestandskonto(id, fachnummer);
                             dbs.insert_lagerbestandskonto(lbk);
                             dbs.update_lagerbestand(lbk);
-                            lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert.  Es steht nun nicht mehr zur Verfügung\n");
+                            lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+(neueMenge-menge_eingelagert)+" eingelagert.  Es steht nun nicht mehr zur Verfügung\n");
                         }
 
                     } else {
@@ -419,7 +419,7 @@ public class Teil_einlagern_Controller {
                     dbs.insert_lagerbestandskonto(lbk);
                     dbs.update_lagerfachstamm(fachnummer, true);
                     System.out.println("hier");
-                    lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert. Es steht nun nicht mehr zur Verfügung\n");
+                    lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+(neueMenge-menge_eingelagert)+" eingelagert. Es steht nun nicht mehr zur Verfügung\n");
 
                 }
                // JOptionPane.showMessageDialog(lv.label_auswahl, "Teil erfolgreich eingelagert", "Teil eingelagert", 2);
