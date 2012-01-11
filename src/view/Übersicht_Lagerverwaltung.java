@@ -2925,7 +2925,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
             System.out.println(mar);
 
-            int antwort = JOptionPane.showConfirmDialog(this, "Möchte sieh diese ID übernehmen?", "Auswahl der Teile-ID", 2);
+            int antwort = JOptionPane.showConfirmDialog(this, "Möchten Sie diese ID übernehmen?", "Auswahl der Teile-ID", 2);
 
             if (antwort == JOptionPane.OK_OPTION) {
                 id_textfeld2.setText(mar);
