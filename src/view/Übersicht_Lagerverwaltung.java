@@ -228,6 +228,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         auslagerTextfield_fnr = new view.LagerTextfield(AllowedSequences.ALL);
         auslagerTextfield_mengeauslagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         auslagerLabel_Anzeige = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         entfernenJTabbedPane = new javax.swing.JPanel();
         suchenButton = new javax.swing.JButton();
         Teilestammdatenbutton = new javax.swing.JButton();
@@ -1396,7 +1400,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teile_auslagern.add(auslagern_AusfuehrenButton);
-        auslagern_AusfuehrenButton.setBounds(430, 360, 89, 23);
+        auslagern_AusfuehrenButton.setBounds(480, 360, 89, 23);
 
         SuchenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         SuchenButton.setText("Suche Teile ID");
@@ -1406,7 +1410,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teile_auslagern.add(SuchenButton);
-        SuchenButton.setBounds(430, 60, 131, 23);
+        SuchenButton.setBounds(480, 60, 131, 23);
 
         auslagern_BestaetigenidButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         auslagern_BestaetigenidButton.setText("Bestätigen");
@@ -1416,7 +1420,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teile_auslagern.add(auslagern_BestaetigenidButton);
-        auslagern_BestaetigenidButton.setBounds(580, 60, 91, 23);
+        auslagern_BestaetigenidButton.setBounds(630, 60, 91, 23);
 
         label_eingabe_aufforderung_id.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabe_aufforderung_id.setText("Bitte geben Sie die Teile ID ein:");
@@ -1480,7 +1484,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teile_auslagern.add(auslagerTextfield_ID);
-        auslagerTextfield_ID.setBounds(280, 60, 120, 21);
+        auslagerTextfield_ID.setBounds(280, 51, 120, 30);
 
         auslagerTextfield_fnr.setEditable(false);
         auslagerTextfield_fnr.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -1490,16 +1494,40 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teile_auslagern.add(auslagerTextfield_fnr);
-        auslagerTextfield_fnr.setBounds(280, 330, 130, 21);
+        auslagerTextfield_fnr.setBounds(280, 321, 130, 30);
 
         auslagerTextfield_mengeauslagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_auslagern.add(auslagerTextfield_mengeauslagern);
-        auslagerTextfield_mengeauslagern.setBounds(280, 370, 130, 21);
+        auslagerTextfield_mengeauslagern.setBounds(280, 361, 130, 30);
 
         auslagerLabel_Anzeige.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         auslagerLabel_Anzeige.setForeground(new java.awt.Color(255, 51, 51));
         Teile_auslagern.add(auslagerLabel_Anzeige);
-        auslagerLabel_Anzeige.setBounds(560, 360, 430, 20);
+        auslagerLabel_Anzeige.setBounds(620, 360, 370, 20);
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel9.setText("Füllen Sie bitte alle Pflichtfelder, die mit * gekennzeichnet sind aus.");
+        Teile_auslagern.add(jLabel9);
+        jLabel9.setBounds(620, 10, 370, 15);
+
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel11.setText("*");
+        Teile_auslagern.add(jLabel11);
+        jLabel11.setBounds(420, 360, 20, 15);
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel12.setText("*");
+        Teile_auslagern.add(jLabel12);
+        jLabel12.setBounds(410, 50, 20, 15);
+
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel13.setText("*");
+        Teile_auslagern.add(jLabel13);
+        jLabel13.setBounds(420, 320, 20, 15);
 
         Teilentf_tabbedpane.addTab("Teile auslagern", Teile_auslagern);
 
@@ -2363,7 +2391,14 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         // TODO add your handling code here:}//GEN-LAST:event_textfeld_id1ActionPerformed
     }
     private void auslagerTextfield_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_IDActionPerformed
-        control.Teil_auslagern_controller.auslagern_bestaetigen_button(this);
+         
+        try{
+            control.Teil_auslagern_controller.auslagern_bestaetigen_button(this);
+        }
+        catch(Exception e)
+        {
+            System.out.println("ID Feld leer.");
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagerTextfield_IDActionPerformed
 
@@ -2371,26 +2406,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      *
      * Neue Menge des gewählten Faches in Datenbank schreiben.
      *
-     * <
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-
-     *
      * @param evt
      */
     private void auslagern_AusfuehrenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_AusfuehrenButtonActionPerformed
-
-        control.Teil_auslagern_controller.auslagern_ausfuehren_button(this);
-        auslagerLabel_Anzeige.setText("Es wurde(n) " + auslagerTextfield_mengeauslagern.getText() + " Teil(e) ausgelagert.");
+    
+        control.Teil_auslagern_controller.auslagern_ausfuehren_button(this);     
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagern_AusfuehrenButtonActionPerformed
 
@@ -2945,6 +2965,9 @@ if(!menge_textfeld_einlagern.getText().isEmpty()){
     private view.LagerTextfield id_textfeld2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2952,6 +2975,7 @@ if(!menge_textfeld_einlagern.getText().isEmpty()){
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
