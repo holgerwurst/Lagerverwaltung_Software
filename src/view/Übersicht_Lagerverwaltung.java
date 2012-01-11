@@ -111,7 +111,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         einlagern_button_tabelle = new javax.swing.JButton();
         menge_textfeld_einlagern = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         jLabel3 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         textfeld_asg_einlagern = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
@@ -126,6 +125,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_auswahl = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TextArea_einlagern = new javax.swing.JTextArea();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         label_mindestgroesse1 = new javax.swing.JLabel();
         label_anzeige_bez_manuell_einlagern = new javax.swing.JLabel();
@@ -679,7 +684,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         jPanel8.add(bestaetigen_button2);
-        bestaetigen_button2.setBounds(40, 280, 110, 30);
+        bestaetigen_button2.setBounds(40, 300, 110, 30);
 
         suchen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchen_button2.setText("Suche Teile ID / Bezeichnung");
@@ -689,56 +694,56 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         jPanel8.add(suchen_button2);
-        suchen_button2.setBounds(800, 100, 210, 30);
+        suchen_button2.setBounds(820, 120, 210, 30);
 
         label_bezeichnung2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bezeichnung2.setText("Bezeichnung:");
         jPanel8.add(label_bezeichnung2);
-        label_bezeichnung2.setBounds(460, 100, 80, 20);
+        label_bezeichnung2.setBounds(460, 120, 80, 20);
 
         label_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_mindestgroesse2.setText("Mindestgröße:");
         jPanel8.add(label_mindestgroesse2);
-        label_mindestgroesse2.setBounds(50, 250, 160, 20);
+        label_mindestgroesse2.setBounds(50, 270, 160, 20);
 
         label_anzeige_mindestgroesse2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_anzeige_mindestgroesse2.setText("größe");
         jPanel8.add(label_anzeige_mindestgroesse2);
-        label_anzeige_mindestgroesse2.setBounds(230, 250, 230, 20);
+        label_anzeige_mindestgroesse2.setBounds(230, 270, 230, 20);
 
         label_eingabe_aufforderung_id2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         label_eingabe_aufforderung_id2.setText("Bitte geben Sie die Teile ID oder die Bezeichnung ein:");
         jPanel8.add(label_eingabe_aufforderung_id2);
         label_eingabe_aufforderung_id2.setBounds(20, 20, 300, 20);
         jPanel8.add(bezeichnung_textfeld1);
-        bezeichnung_textfeld1.setBounds(590, 100, 190, 30);
+        bezeichnung_textfeld1.setBounds(590, 120, 190, 30);
 
         label_oder1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         label_oder1.setText("oder");
         jPanel8.add(label_oder1);
-        label_oder1.setBounds(380, 100, 34, 15);
+        label_oder1.setBounds(380, 120, 34, 15);
 
         label_teile_id2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_teile_id2.setText("Teile ID:");
         jPanel8.add(label_teile_id2);
-        label_teile_id2.setBounds(40, 100, 60, 20);
+        label_teile_id2.setBounds(40, 120, 60, 20);
 
         label_menge.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge.setText("Gesamt einzulagernde Menge:");
         jPanel8.add(label_menge);
-        label_menge.setBounds(40, 200, 180, 15);
+        label_menge.setBounds(40, 220, 180, 15);
         jPanel8.add(id_textfeld2);
-        id_textfeld2.setBounds(220, 100, 100, 30);
+        id_textfeld2.setBounds(220, 120, 100, 30);
 
         label_menge_übrig.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge_übrig.setText("text");
         jPanel8.add(label_menge_übrig);
-        label_menge_übrig.setBounds(640, 250, 120, 15);
+        label_menge_übrig.setBounds(640, 270, 120, 15);
 
         laber_noch_einzulagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         laber_noch_einzulagern.setText("noch einzulagernde Menge:");
         jPanel8.add(laber_noch_einzulagern);
-        laber_noch_einzulagern.setBounds(460, 250, 170, 15);
+        laber_noch_einzulagern.setBounds(460, 270, 170, 15);
 
         einlagern_button_tabelle.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         einlagern_button_tabelle.setText("Einlagern");
@@ -748,7 +753,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         jPanel8.add(einlagern_button_tabelle);
-        einlagern_button_tabelle.setBounds(10, 680, 110, 30);
+        einlagern_button_tabelle.setBounds(10, 700, 110, 30);
 
         menge_textfeld_einlagern.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -756,57 +761,52 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         jPanel8.add(menge_textfeld_einlagern);
-        menge_textfeld_einlagern.setBounds(220, 200, 100, 30);
+        menge_textfeld_einlagern.setBounds(220, 220, 100, 30);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel3.setText("Füllen Sie bitte alle Pflichtfelder, die mit * gekennzeichnet sind aus.");
+        jLabel3.setText("Bei Fächern, die mit ** gekennzeichnet sind muss nur eins ausgefüllt werden.");
         jPanel8.add(jLabel3);
-        jLabel3.setBounds(20, 50, 580, 15);
-
-        jLabel10.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel10.setText("*");
-        jPanel8.add(jLabel10);
-        jLabel10.setBounds(330, 200, 20, 14);
+        jLabel3.setBounds(20, 70, 580, 15);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText("Anschaffungsgrund:");
         jPanel8.add(jLabel1);
-        jLabel1.setBounds(460, 200, 110, 15);
+        jLabel1.setBounds(460, 220, 110, 15);
         jPanel8.add(textfeld_asg_einlagern);
-        textfeld_asg_einlagern.setBounds(590, 200, 190, 30);
+        textfeld_asg_einlagern.setBounds(590, 220, 190, 30);
 
         jLabel37.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel37.setText("MaximalAnzahl pro Fach:");
         jPanel8.add(jLabel37);
-        jLabel37.setBounds(40, 150, 180, 15);
+        jLabel37.setBounds(40, 170, 180, 15);
 
         jLabel38.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel38.setText("Fach Klein:");
         jPanel8.add(jLabel38);
-        jLabel38.setBounds(220, 150, 80, 15);
+        jLabel38.setBounds(220, 170, 80, 15);
 
         jLabel39.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel39.setText("Fach Mittel:");
         jPanel8.add(jLabel39);
-        jLabel39.setBounds(380, 150, 80, 15);
+        jLabel39.setBounds(380, 170, 80, 15);
 
         label_klein_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel8.add(label_klein_einlagern);
-        label_klein_einlagern.setBounds(290, 146, 90, 20);
+        label_klein_einlagern.setBounds(290, 160, 90, 20);
 
         label_mittel_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel8.add(label_mittel_einlagern);
-        label_mittel_einlagern.setBounds(450, 146, 90, 20);
+        label_mittel_einlagern.setBounds(450, 160, 90, 20);
 
         jLabel42.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel42.setText("Fach Groß:");
         jPanel8.add(jLabel42);
-        jLabel42.setBounds(590, 150, 80, 15);
+        jLabel42.setBounds(590, 170, 80, 15);
 
         label_gross_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel8.add(label_gross_einlagern);
-        label_gross_einlagern.setBounds(660, 146, 90, 20);
+        label_gross_einlagern.setBounds(660, 160, 90, 20);
 
         table_einlagern.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -832,20 +832,51 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jScrollPane4.setViewportView(table_einlagern);
 
         jPanel8.add(jScrollPane4);
-        jScrollPane4.setBounds(0, 340, 1050, 220);
+        jScrollPane4.setBounds(0, 360, 1050, 220);
 
         label_auswahl.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         label_auswahl.setForeground(new java.awt.Color(255, 0, 51));
         label_auswahl.setText("Bitte wählen Sie ein Teil aus aus der Tabelle aus.");
         jPanel8.add(label_auswahl);
-        label_auswahl.setBounds(300, 310, 370, 15);
+        label_auswahl.setBounds(300, 330, 370, 15);
 
         TextArea_einlagern.setColumns(20);
         TextArea_einlagern.setRows(5);
         jScrollPane2.setViewportView(TextArea_einlagern);
 
         jPanel8.add(jScrollPane2);
-        jScrollPane2.setBounds(0, 560, 1050, 100);
+        jScrollPane2.setBounds(0, 580, 1050, 100);
+
+        jLabel40.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel40.setText("*");
+        jPanel8.add(jLabel40);
+        jLabel40.setBounds(330, 120, 20, 14);
+
+        jLabel41.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel41.setText("*");
+        jPanel8.add(jLabel41);
+        jLabel41.setBounds(340, 120, 20, 14);
+
+        jLabel43.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel43.setText("*");
+        jPanel8.add(jLabel43);
+        jLabel43.setBounds(330, 220, 20, 14);
+
+        jLabel44.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel44.setText("*");
+        jPanel8.add(jLabel44);
+        jLabel44.setBounds(790, 120, 20, 14);
+
+        jLabel45.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel45.setText("*");
+        jPanel8.add(jLabel45);
+        jLabel45.setBounds(800, 120, 20, 14);
+
+        jLabel46.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel46.setText("Füllen Sie bitte alle Pflichtfelder, die mit * gekennzeichnet sind aus.");
+        jPanel8.add(jLabel46);
+        jLabel46.setBounds(20, 50, 580, 15);
 
         Teile_einlagern.addTab("Fächer aus Tabelle wählen", jPanel8);
 
@@ -1416,7 +1447,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teile_einlagern.addTab("Fächer manuell eintragen", jPanel9);
 
         jPanel7.add(Teile_einlagern);
-        Teile_einlagern.setBounds(0, 0, 1050, 770);
+        Teile_einlagern.setBounds(0, 0, 1080, 790);
 
         Teilentf_tabbedpane.addTab("Teil einlagern", jPanel7);
 
@@ -2405,7 +2436,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teilentf_tabbedpane.addTab("Buchungshistorie einsehen", Buchungshistorie_einsehen_ausdrucken);
 
         getContentPane().add(Teilentf_tabbedpane);
-        Teilentf_tabbedpane.setBounds(0, 10, 1070, 790);
+        Teilentf_tabbedpane.setBounds(0, 10, 1070, 820);
 
         Datei.setText("Datei");
         jMenuBar1.add(Datei);
@@ -2827,6 +2858,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
                 for (int i = 0; i < rowIndex.length; i++) {
                     int menge = cv.StringTOint(label_menge_übrig.getText());
+                    
                     if (menge != 0) {
                         String mar = (String) (table_einlagern.getValueAt(rowIndex[i], 0));
 
@@ -3041,7 +3073,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField fachnummer_textfeld9;
     private view.LagerTextfield id_textfeld2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -3074,7 +3105,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
