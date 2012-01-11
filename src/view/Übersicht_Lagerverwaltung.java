@@ -134,7 +134,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         label_mindestgroesse1 = new javax.swing.JLabel();
         label_anzeige_bez_manuell_einlagern = new javax.swing.JLabel();
-        label_anzeige_klein_einlagern_manuell = new javax.swing.JLabel();
         label_bezeichnung1 = new javax.swing.JLabel();
         label_einlagern_nummer4 = new javax.swing.JLabel();
         label_fachnummer11 = new javax.swing.JLabel();
@@ -193,11 +192,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         lagerTextfield_einlagern_manuell_menge8 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         lagerTextfield_einlagern_manuell_menge9 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         lagerTextfield_einlagern_manuell_menge10 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
-        label_anzeige_minGR_einlagern_manuell1 = new javax.swing.JLabel();
-        label_anzeige_mittel_einlagern_manuell = new javax.swing.JLabel();
-        label_anzeige_minGR_einlagern_manuell2 = new javax.swing.JLabel();
-        label_anzeige_minGR_einlagern_manuell3 = new javax.swing.JLabel();
-        label_anzeige_gross_einlagern_manuell = new javax.swing.JLabel();
         label_anschaffungsgrund_me1 = new javax.swing.JLabel();
         label_anschaffungsgrund_me2 = new javax.swing.JLabel();
         label_anschaffungsgrund_me3 = new javax.swing.JLabel();
@@ -244,6 +238,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        label_klein_einlagern1 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        label_mittel_einlagern1 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        label_gross_einlagern1 = new javax.swing.JLabel();
         Teile_auslagern = new javax.swing.JPanel();
         TeileIDLabel = new javax.swing.JLabel();
         BezeichnungLabel = new javax.swing.JLabel();
@@ -883,23 +883,18 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel9.setLayout(null);
 
         label_mindestgroesse1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_mindestgroesse1.setText("Maximale Anzahl pro Fachgröße:");
+        label_mindestgroesse1.setText("Maximale Anzahl pro");
         jPanel9.add(label_mindestgroesse1);
-        label_mindestgroesse1.setBounds(216, 71, 178, 20);
+        label_mindestgroesse1.setBounds(216, 75, 112, 20);
 
         label_anzeige_bez_manuell_einlagern.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel9.add(label_anzeige_bez_manuell_einlagern);
-        label_anzeige_bez_manuell_einlagern.setBounds(90, 71, 120, 20);
-
-        label_anzeige_klein_einlagern_manuell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_anzeige_klein_einlagern_manuell.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel9.add(label_anzeige_klein_einlagern_manuell);
-        label_anzeige_klein_einlagern_manuell.setBounds(400, 71, 42, 20);
+        label_anzeige_bez_manuell_einlagern.setBounds(90, 75, 120, 20);
 
         label_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bezeichnung1.setText("Bezeichnung:");
         jPanel9.add(label_bezeichnung1);
-        label_bezeichnung1.setBounds(10, 71, 74, 20);
+        label_bezeichnung1.setBounds(10, 75, 74, 20);
 
         label_einlagern_nummer4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_einlagern_nummer4.setText("4.");
@@ -1191,31 +1186,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jPanel9.add(lagerTextfield_einlagern_manuell_menge10);
         lagerTextfield_einlagern_manuell_menge10.setBounds(330, 450, 80, 20);
 
-        label_anzeige_minGR_einlagern_manuell1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_anzeige_minGR_einlagern_manuell1.setText("Klein");
-        jPanel9.add(label_anzeige_minGR_einlagern_manuell1);
-        label_anzeige_minGR_einlagern_manuell1.setBounds(448, 71, 30, 20);
-
-        label_anzeige_mittel_einlagern_manuell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_anzeige_mittel_einlagern_manuell.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel9.add(label_anzeige_mittel_einlagern_manuell);
-        label_anzeige_mittel_einlagern_manuell.setBounds(489, 71, 42, 20);
-
-        label_anzeige_minGR_einlagern_manuell2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_anzeige_minGR_einlagern_manuell2.setText("Mittel");
-        jPanel9.add(label_anzeige_minGR_einlagern_manuell2);
-        label_anzeige_minGR_einlagern_manuell2.setBounds(1123, 71, 30, 20);
-
-        label_anzeige_minGR_einlagern_manuell3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_anzeige_minGR_einlagern_manuell3.setText("Groß");
-        jPanel9.add(label_anzeige_minGR_einlagern_manuell3);
-        label_anzeige_minGR_einlagern_manuell3.setBounds(1211, 71, 30, 20);
-
-        label_anzeige_gross_einlagern_manuell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label_anzeige_gross_einlagern_manuell.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel9.add(label_anzeige_gross_einlagern_manuell);
-        label_anzeige_gross_einlagern_manuell.setBounds(1159, 71, 42, 20);
-
         label_anschaffungsgrund_me1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_anschaffungsgrund_me1.setText("Anschaffungsgrund:");
         jPanel9.add(label_anschaffungsgrund_me1);
@@ -1443,6 +1413,33 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jLabel36.setText("*");
         jPanel9.add(jLabel36);
         jLabel36.setBounds(300, 420, 20, 14);
+
+        jLabel47.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel47.setText("Fach Klein:");
+        jPanel9.add(jLabel47);
+        jLabel47.setBounds(350, 78, 80, 15);
+
+        label_klein_einlagern1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jPanel9.add(label_klein_einlagern1);
+        label_klein_einlagern1.setBounds(420, 73, 90, 20);
+
+        jLabel48.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel48.setText("Fach Mittel:");
+        jPanel9.add(jLabel48);
+        jLabel48.setBounds(510, 78, 80, 15);
+
+        label_mittel_einlagern1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jPanel9.add(label_mittel_einlagern1);
+        label_mittel_einlagern1.setBounds(580, 73, 90, 20);
+
+        jLabel49.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel49.setText("Fach Groß:");
+        jPanel9.add(jLabel49);
+        jLabel49.setBounds(670, 78, 80, 15);
+
+        label_gross_einlagern1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jPanel9.add(label_gross_einlagern1);
+        label_gross_einlagern1.setBounds(740, 73, 90, 20);
 
         Teile_einlagern.addTab("Fächer manuell eintragen", jPanel9);
 
@@ -2533,13 +2530,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             if (check == true) {
                 try {
                     label_anzeige_bez_manuell_einlagern.setText(sst.get_Bezeichnung_ausDB(id));
-                    label_anzeige_klein_einlagern_manuell.setText(sst.get_max_anzahl_klein_ausDB(id));
-                    label_anzeige_mittel_einlagern_manuell.setText(sst.get_max_anzahl_mittel_ausDB(id));
-                    label_anzeige_gross_einlagern_manuell.setText(sst.get_max_anzahl_gross_ausDB(id));
+                    label_klein_einlagern1.setText(sst.get_max_anzahl_klein_ausDB(id));
+                    label_mittel_einlagern1.setText(sst.get_max_anzahl_mittel_ausDB(id));
+                    label_gross_einlagern1.setText(sst.get_max_anzahl_gross_ausDB(id));
                 } catch (SQLException ex) {
                     Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                lagerTextfield_teileID_manuell_einlagern.setEditable(false);
                 button_manuell_einlagern.setEnabled(true);
 
             } else {
@@ -2549,15 +2545,15 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_bestaetigen_button_teileID_manuell_einlagernActionPerformed
 
     private void button_manuell_einlagernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_manuell_einlagernActionPerformed
+        if (lagerTextfield_teileID_manuell_einlagern.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Tragen Sie bitte eine ID ein.", "Hinweis", 2);
+        } else {
         try {
 
             pr = new control.Pruefen_Controller();
             te = new control.Teil_einlagern_Controller(this);
             cv = new convert();
             //  manuell_einlagern_strings[] mes = new manuell_einlagern_strings[9];
-            if (lagerTextfield_teileID_manuell_einlagern.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Tragen Sie bitte eine ID ein.", "Hinweis", 2);
-            } else {
                 manuell_einlagern_strings[] mes = new manuell_einlagern_strings[10];
                 mes[0] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr1.getText(), lagerTextfield_einlagern_manuell_menge1.getText(), lagerTextfield_einlagern_manuell_asg1.getText(), 0, 0, null);
                 mes[1] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr2.getText(), lagerTextfield_einlagern_manuell_menge2.getText(), lagerTextfield_einlagern_manuell_asg2.getText(), 0, 0, null);
@@ -2665,11 +2661,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(lagerTextfield_einlagern_manuell_menge2, fehlerausgabe, "Fehler", 2);
                 }
 
-            }
+            
         } catch (Exception ex) {
             Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        }
     }//GEN-LAST:event_button_manuell_einlagernActionPerformed
 
     private void combobox_teiltypActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combobox_teiltypActionPerformed
@@ -3131,6 +3127,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -3170,14 +3169,8 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel label_anschaffungsgrund_me9;
     private javax.swing.JLabel label_anzeige_bez_manuell_einlagern;
     private javax.swing.JLabel label_anzeige_bezeichnung;
-    private javax.swing.JLabel label_anzeige_gross_einlagern_manuell;
-    private javax.swing.JLabel label_anzeige_klein_einlagern_manuell;
-    private javax.swing.JLabel label_anzeige_minGR_einlagern_manuell1;
-    private javax.swing.JLabel label_anzeige_minGR_einlagern_manuell2;
-    private javax.swing.JLabel label_anzeige_minGR_einlagern_manuell3;
     private javax.swing.JLabel label_anzeige_mindestgroesse;
     public javax.swing.JLabel label_anzeige_mindestgroesse2;
-    private javax.swing.JLabel label_anzeige_mittel_einlagern_manuell;
     private javax.swing.JLabel label_anzeige_teile_id;
     private javax.swing.JLabel label_ausgangsfachnummer;
     public javax.swing.JLabel label_auswahl;
@@ -3231,9 +3224,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel label_fachnummer8;
     private javax.swing.JLabel label_fachnummer9;
     public javax.swing.JLabel label_gross_einlagern;
+    public javax.swing.JLabel label_gross_einlagern1;
     private javax.swing.JLabel label_id;
     private javax.swing.JLabel label_id1;
     public javax.swing.JLabel label_klein_einlagern;
+    public javax.swing.JLabel label_klein_einlagern1;
     private javax.swing.JLabel label_manuell_einlagern_erfolgreich;
     private javax.swing.JLabel label_materialgruppe;
     private javax.swing.JLabel label_materialgruppe1;
@@ -3269,6 +3264,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel label_mindestgroesse1;
     public javax.swing.JLabel label_mindestgroesse2;
     public javax.swing.JLabel label_mittel_einlagern;
+    public javax.swing.JLabel label_mittel_einlagern1;
     private javax.swing.JLabel label_oder1;
     private javax.swing.JLabel label_preis;
     private javax.swing.JLabel label_preis1;
