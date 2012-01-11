@@ -33,7 +33,6 @@ public class Teil_einlagern_Controller {
     private DB_schreiben dbs = new DB_schreiben();
     private JTable table = new JTable();
     private DefaultTableModel model = new DefaultTableModel();
-    private Select_Allgemein sa;
     private Select_Lagerbestandskonto lagerbes;
     private Select_Lagerfachstamm lf = new Select_Lagerfachstamm();
 
@@ -94,8 +93,7 @@ public class Teil_einlagern_Controller {
 
         try {
             lagerbes = new Select_Lagerbestandskonto();
-            sa = new Select_Allgemein();
-            fach = lagerbes.get_Fachnummer_ausDB(id);
+              fach = lagerbes.get_Fachnummer_ausDB(id);
             cv = new convert();
 
             System.out.println("fach  " + fach.length);
@@ -196,6 +194,11 @@ public class Teil_einlagern_Controller {
                     System.out.println("Menge " + menge[i]);
                 }
 
+
+                lv.label_klein_einlagern.setText(maxklein);
+                lv.label_mittel_einlagern.setText(maxmittel);
+                lv.label_gross_einlagern.setText(maxgross);
+
                 model.addColumn("Aktuelle Menge", menge);
 
             }
@@ -278,9 +281,9 @@ public class Teil_einlagern_Controller {
             maxarraygross[i] = maxgross;
         }
 
-        //       model.addColumn("Maximale Anzahl kleines Fach", maxarrayklein);
-        //       model.addColumn("Maximale Anzahl mittleres Fach", maxarraymittel);
-        //      model.addColumn("Maximale Anzahl großes Fach", maxarraygross);
+        lv.label_klein_einlagern.setText(maxklein);
+        lv.label_mittel_einlagern.setText(maxmittel);
+        lv.label_gross_einlagern.setText(maxgross);
 
     }
 
@@ -369,8 +372,7 @@ public class Teil_einlagern_Controller {
 
 //if(menge_eingelagert!=0){
             String text = "";
-            if (einzulagern != 0) {
-
+       
                 if (einzulagern <= max_menge) {
 
                     if (menge_eingelagert != 0) {
@@ -381,9 +383,9 @@ public class Teil_einlagern_Controller {
                             dbs.delete_lagerbestandskonto(id, fachnummer);
                             dbs.insert_lagerbestandskonto(lbk);
                             if (einzulagern == max_menge - menge_eingelagert) {
-                                lv.TextArea_einlagern.setText("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " eingelagert. Es steht nun nicht mehr zur Verfügung");
+                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert. Es steht nun nicht mehr zur Verfügung\n");
                             } else {
-                                lv.TextArea_einlagern.setText("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " eingelagert.");
+                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert.\n");
                             }
                             // lv.TextArea_einlagern.setVisible(true);
                         } else {
@@ -393,7 +395,7 @@ public class Teil_einlagern_Controller {
                             dbs.delete_lagerbestandskonto(id, fachnummer);
                             dbs.insert_lagerbestandskonto(lbk);
                             dbs.update_lagerbestand(lbk);
-                            lv.TextArea_einlagern.setText("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " eingelagert.  Es steht nun nicht mehr zur Verfügung");
+                            lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert.  Es steht nun nicht mehr zur Verfügung\n");
                         }
 
                     } else {
@@ -403,7 +405,7 @@ public class Teil_einlagern_Controller {
                         dbs.insert_lagerbestandskonto(lbk);
                         dbs.update_lagerfachstamm(fachnummer, true);
                         System.out.println("geringer");
-                        lv.TextArea_einlagern.setText("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " eingelagert.");
+                        lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert.\n");
                     }
                 } else {
                     neueMenge = max_menge;
@@ -413,20 +415,17 @@ public class Teil_einlagern_Controller {
                     dbs.insert_lagerbestandskonto(lbk);
                     dbs.update_lagerfachstamm(fachnummer, true);
                     System.out.println("hier");
-                    lv.TextArea_einlagern.setText("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " eingelagert. Es steht nun nicht mehr zur Verfügung");
+                    lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert. Es steht nun nicht mehr zur Verfügung\n");
 
                 }
-                JOptionPane.showMessageDialog(lv.label_auswahl, "Teil erfolgreich eingelagert", "Teil eingelagert", 2);
+               // JOptionPane.showMessageDialog(lv.label_auswahl, "Teil erfolgreich eingelagert", "Teil eingelagert", 2);
+               
                 lv.label_menge_übrig.setVisible(true);
                 lv.label_menge_übrig.setText(text);
-                einlagern_vorbereiten(id);
-            } else {
-                JOptionPane.showMessageDialog(lv.bestaetigen_button2, "Die gesamte Menge wurde eingelagert.", "Hinweis", 1);
-                 lv.TextArea_einlagern.setText("");
-            }
+               // einlagern_vorbereiten(id);
+            } 
             //     }
-        } catch (Exception e) {
-            
+        catch (Exception e) {
         }
 
     }
