@@ -373,7 +373,7 @@ public class Teil_einlagern_Controller {
 //if(menge_eingelagert!=0){
             String text = "";
        
-                if (einzulagern <= max_menge) {
+                if (einzulagern <= max_menge) { 
 
                     if (menge_eingelagert != 0) {
                         if (einzulagern <= max_menge - menge_eingelagert) {
