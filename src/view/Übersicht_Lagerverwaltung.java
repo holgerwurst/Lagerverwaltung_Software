@@ -661,11 +661,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         pStatusleiste1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Teilestamm_erweitern.add(pStatusleiste1);
-        pStatusleiste1.setBounds(30, 540, 950, 20);
+        pStatusleiste1.setBounds(30, 560, 950, 20);
 
         pStatusleiste2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Teilestamm_erweitern.add(pStatusleiste2);
-        pStatusleiste2.setBounds(30, 570, 950, 20);
+        pStatusleiste2.setBounds(30, 590, 950, 20);
 
         Teilentf_tabbedpane.addTab("Teilestamm erweitern", Teilestamm_erweitern);
 
