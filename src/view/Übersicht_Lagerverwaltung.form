@@ -280,7 +280,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="520" width="-1" height="30"/>
+                  <AbsoluteConstraints x="30" y="540" width="-1" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -545,6 +545,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="0"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="Statusleiste1 ... der Text verschwindet bei der initialisierung und dient der Positionierung tritratrullalaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -557,6 +558,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="0"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="Statusleiste2 ... der Text verschwindet bei der initialisierung und dient der Positionierung tritratrullalaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

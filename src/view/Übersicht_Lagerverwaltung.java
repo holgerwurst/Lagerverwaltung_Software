@@ -34,12 +34,15 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      * Creates new form Übersicht_Lagerverwaltung
      */
     public Übersicht_Lagerverwaltung() {
-        initComponents();
+        initComponents();        
+          //befüllen des Teilestamm anlegen Tab mit der nächsten freien ID aus der DB und Erklärung in der Statusleiste. 
         control.TeileStamm_erweitern_controller tecinit = new control.TeileStamm_erweitern_controller(this);
         textfeld_idP.setText("" + tecinit.getEXAMPLEid());// so sollte es eigentlich gehen aber hier kommt das Workaroud
         //textfeld_idP.setText(""+tec.getWAid());//alter Workaroud
+        setpTSEStatusleiste1("",Color.BLACK);
         setpTSEStatusleiste2("Die freie ID " + tecinit.getEXAMPLEid() + " wurde aus der Datenbank bezogen und wird dem neuen Teil beim anlegen zugewiesen.", Color.BLACK);
         tecinit = null;
+        //befüllen des Teilestamm anlegen Tab mit der nächsten freien ID aus der DB und Erklärung in der Statusleiste. end 
         label_auswahl.setVisible(false);
         label_menge_übrig.setVisible(false);
         label_anzeige_mindestgroesse2.setVisible(false);
@@ -536,7 +539,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teilestamm_erweitern.add(button_anlegen);
-        button_anlegen.setBounds(30, 520, 77, 30);
+        button_anlegen.setBounds(30, 540, 77, 30);
 
         textfeld_idP.setText("text");
         textfeld_idP.setToolTipText("");
@@ -660,10 +663,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         magLTFP.setBounds(150, 310, 150, 30);
 
         pStatusleiste1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        pStatusleiste1.setText("Statusleiste1 ... der Text verschwindet bei der initialisierung und dient der Positionierung tritratrullalaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         Teilestamm_erweitern.add(pStatusleiste1);
         pStatusleiste1.setBounds(30, 560, 950, 20);
 
         pStatusleiste2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        pStatusleiste2.setText("Statusleiste2 ... der Text verschwindet bei der initialisierung und dient der Positionierung tritratrullalaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         Teilestamm_erweitern.add(pStatusleiste2);
         pStatusleiste2.setBounds(30, 590, 950, 20);
 
@@ -2668,14 +2673,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void button_anlegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_anlegenActionPerformed
         // TODO add your handling code here:
         //System.out.println("Teilestamm erweitern: anlegen button gedrückt!");
+        //Statusleiste leeren:
         setpTSEStatusleiste1("", Color.BLACK);
+        //verlangt den Focus. löst damit das Focus-lost event des Bezeichnungsfeldes aus. => Konsistenzprüfung 
         button_anlegen.requestFocusInWindow();
 
-        if ((textfeld_bezeichnungLTFP.getText().isEmpty()) || (makLTFP.getText().isEmpty()) || (mamLTFP.getText().isEmpty()) || (magLTFP.getText().isEmpty())) {
+        if (    //Pflichtfeldprüfung:
+                (textfeld_bezeichnungLTFP.getText().isEmpty()) || (makLTFP.getText().isEmpty()) || (mamLTFP.getText().isEmpty()) || (magLTFP.getText().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Füllen Sie bitte alle Pflichtfelder aus.");
             setpTSEStatusleiste1("Füllen Sie bitte alle Pflichtfelder aus.", Color.red);
 
-        } else {
+        } else { //Vorbereitung der Übergabewerte: 
 
             model.TeileTypET testy = model.TeileTypET.kaufteile;
             if (combobox_teiltyp.getSelectedItem().equals("Kaufteile")) {
@@ -2689,11 +2697,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             } else if (combobox_teiltyp.getSelectedItem().equals("Werkzeuge")) {
                 testy = model.TeileTypET.werkzeuge;
             }
+            //Absenden der Nutzeranforderung an den controller:
             control.TeileStamm_erweitern_controller tec = new control.TeileStamm_erweitern_controller(this);
             tec.nutzeranforderung(textfeld_bezeichnungLTFP.getText(), testy, textfeld_materialgruppeLTFP.getText(),
                     textfeld_zeichnungsnummerLTFP.getText(), textfeld_baugruppeLTFP.getText(), preisfeldLTFP.getText(),
                     makLTFP.getText(), mamLTFP.getText(), magLTFP.getText(), jTextArea1.getText());
-
+            //neue, freie ID vom controller beziehen und ins ID feld schreiben:
             textfeld_idP.setText("" + tec.getEXAMPLEid());
             //textfeld_idP.setText(""+tec.getWAid());//WORKAROUD
 
@@ -2746,11 +2755,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     private void textfeld_bezeichnungLTFPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfeld_bezeichnungLTFPFocusLost
         // TODO add your handling code here:
+        //Konsistenzprüfung: Testet, ob es bereits ein Teil mit dieser Bezeichnung bereits giebt
         //System.out.println("focus lost\nim Textfeld steht: "+textfeld_bezeichnungLTFP.getText());
         control.TeileStamm_erweitern_controller tecfocus = new control.TeileStamm_erweitern_controller(this);
         if (tecfocus.bezSchonDa(textfeld_bezeichnungLTFP.getText())) {
             JOptionPane.showMessageDialog(null, "Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.\nBezeichnungen müssen eindeutig sein.");
             setpTSEStatusleiste1("Ein Teil mit der Bezeichnung " + textfeld_bezeichnungLTFP.getText() + " ist bereits vorhanden.", Color.red);
+            //verhindern, dass das textfeld mit falschem Inhalt belassen werden kann:
             textfeld_bezeichnungLTFP.requestFocusInWindow();
             tecfocus = null;
         }
@@ -2758,21 +2769,23 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     private void makLTFPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_makLTFPFocusGained
         // TODO add your handling code here:
+        // dynamischer Tooltipptext zum besseren Verständniss:
         makLTFP.setToolTipText("Wie viele " + textfeld_bezeichnungLTFP.getText() + " passen in ein kleines Fach?");
-
 
     }//GEN-LAST:event_makLTFPFocusGained
 
     private void mamLTFPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mamLTFPFocusGained
+        // dynamischer Tooltipptext zum besseren Verständniss:
         mamLTFP.setToolTipText("Wie viele " + textfeld_bezeichnungLTFP.getText() + " passen in ein mittleres Fach?");        // TODO add your handling code here:
     }//GEN-LAST:event_mamLTFPFocusGained
 
     private void magLTFPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_magLTFPFocusGained
+        // dynamischer Tooltipptext zum besseren Verständniss:
         magLTFP.setToolTipText("Wie viele " + textfeld_bezeichnungLTFP.getText() + " passen in ein großes Fach?");        // TODO add your handling code here:
     }//GEN-LAST:event_magLTFPFocusGained
 
     private void Teilestamm_erweiternFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Teilestamm_erweiternFocusGained
-        // TODO add your handling code here:
+      
   }//GEN-LAST:event_Teilestamm_erweiternFocusGained
 
     private void preisfeldLTFPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preisfeldLTFPActionPerformed
@@ -2780,7 +2793,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_preisfeldLTFPActionPerformed
 
     private void SuchenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuchenButtonActionPerformed
-
+        //Aufruf des Teil- suchen Guis
         Teil_Suchen ts = new Teil_Suchen();
         ts.setVisible(true);
 

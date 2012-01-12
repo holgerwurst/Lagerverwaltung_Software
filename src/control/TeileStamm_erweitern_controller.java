@@ -41,7 +41,7 @@ public class TeileStamm_erweitern_controller {
     
     
    /**Hauptmethode: hier wird die Nutzeranforderung ein neues Teil anzulegen aufgenommen, geprüft und weiterverarbeitet
-    * 
+    * Methode wird aufgerufen, wenn der anlegen-button gedrückt wird.
     * @param Bezeichnung
     * @param Typ Hier wird gleich ein Enum aus model.TeileTypET angenommen und nicht weiter geprüft
     * @param Materialgruppe
@@ -69,7 +69,7 @@ public class TeileStamm_erweitern_controller {
        //prüfe ob ein teil mit gleicher bezeichnung schon vorhanden ist begin
        if(bezSchonDa(Bezeichnung)){
            //JOptionPane.showMessageDialog(null, "Ein Teil mit der Bezeichnung: "+Bezeichnung+" ist bereits vorhanden.\nBezeichnungen müssen eindeutig sein.", "Konsitenz", 1);
-           //mache nix, die fehlermeldung kommt schon beim focus lost wenn der button beim drücken den focus requestet
+           //mache nix, die fehlermeldung kommt jetzt beim focus lost wenn der button beim drücken den focus requestet
        }else{
             
                 //prüfe ob ein teil mit gleicher bezeichnung schon vorhanden ist end
@@ -84,7 +84,7 @@ public class TeileStamm_erweitern_controller {
                 //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben begin
                 model.Teil_Stammdaten neuTeil = new model.Teil_Stammdaten(id, Typ, Zeichnungsnummer, Materialgruppe, Preis, Bezeichnung, BaugruppeString, Bemerkung, MAK, MAM, MAG);
                 //System.out.println("stopfe neues Teil in die DB neues Teil:\nID:"+neuTeil.get_Id()+"\nBaugruppe:"+neuTeil.get_Baugruppe()+"\nBezeichnung: "+neuTeil.get_Bezeichnung()+"\nMatgrp:"+neuTeil.get_Materialgruppe()+"\nZnr"+neuTeil.get_Zeichnungsnummer()+"\ntyp"+neuTeil.get_Teiletyp()+"\nPreis"+neuTeil.get_Preis()+"€\nmag"+neuTeil.get_max_anz_gross()+"\nmam"+neuTeil.get_max_anz_mittel()+"\nmak"+neuTeil.get_max_anz_klein());
-                //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben end
+                
            try {     
                 //Teil in die db stopfen begin
                 db_s.insert_teilestamm(neuTeil);
@@ -97,9 +97,14 @@ public class TeileStamm_erweitern_controller {
            Hauptfenster.setpTSEStatusleiste1(neuTeil.get_Bezeichnung()+" wurde erfolgreich mit der ID "+neuTeil.get_Id()+" angelegt. Sie können das neue Teil nun einlagern.",Color.BLACK);
            Hauptfenster.setpTSEBezeichnung("");
            Hauptfenster.setpTSEStatusleiste2("Die freie ID "+getEXAMPLEid()+" wurde aus der Datenbank bezogen und wird dem neuen Teil beim anlegen zugewiesen.", Color.BLACK);
+       //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben end
        }
    }
-    
+   /**Testmethode für eindeutige Bezeichnungen
+    * 
+    * @param bez die zu prüfende Bezeichnung.
+    * @return Returnt nur true, wenn bereits ein Teil mit der Übergebenen bezeichnung in der DB steht. sonst false
+    */ 
    public boolean bezSchonDa(String bez){
        boolean returnval=false;
        String bezAUSdb[]=db_s.getSpalteAusTabelle("bezeichnung", "Teilestammdaten");
@@ -138,10 +143,10 @@ public class TeileStamm_erweitern_controller {
        //System.out.println("gefundene freie ID: "+idarr[0]);
        returnval=converter.StringTOint(idarr[0]);
         try {
-                   //System.out.println(" new model.DB_schreiben().delete_freie_id(returnval); ...begin");
+              //ID aus der Freie IDs Tabelle entfernen:     
 
             db_s.delete_freie_id(returnval);
-                  // System.out.println(" new model.DB_schreiben().delete_freie_id(returnval); ...end");
+                 
 
         } catch (ClassNotFoundException ex) {
             System.out.println("keine id mit dem wert "+returnval+"in der Datenbank gefunden.\n"+ex);
@@ -156,7 +161,7 @@ public class TeileStamm_erweitern_controller {
     
     /**Zeigt die erste ID in der freien id datenbank aus der tabelle und returnt diese.
      * die ID bleibt als frei erhalten
-     * @return 
+     * @return eien freie id
      */
     public int getEXAMPLEid(){
         int returnval;
@@ -165,8 +170,8 @@ public class TeileStamm_erweitern_controller {
       //fix start
        if(idarr2.length==0){ 
                               JOptionPane.showMessageDialog(null, 
-                                      "Keine IDs mehr verfügbar! \nWenden Sie sich bitte an den Hersteller zur Generierung neuer IDs.\n"
-                                      + "Sollten keine TeileStammdaten angelegt sein müssen neue IDs geschrieben werden.\n"
+                                      "Keine IDs oder Datenbankzugriff mehr verfügbar! \nWenden Sie sich bitte an den Hersteller zur Generierung neuer IDs.\n"
+                                      + "Sollten noch keine TeileStammdaten angelegt sein müssen neue IDs geschrieben werden.\n"
                                       + "Schnelle Lösung: im File TeileStamm_erweitern_controller.java in der methode getEXAMPLEid() den Kommentar wieder gültig machen.\n"
                                       );
            //System.out.println("keine ids in der tabelle! fixe 0-200 hinzu");
@@ -181,6 +186,11 @@ public class TeileStamm_erweitern_controller {
        return returnval;
     }
     
+    /**Methode zum generieren neuer IDs die param geben das Intervall an in dnenen die neuen neuen ids erzeugt werden 
+     * 
+     * @param untergrenze ...kleinste neu generierte ID
+     * @param obergrenze ...großte neu generierte ID
+     */
     private void generierefreieIDS(int untergrenze, int obergrenze){
         for(int i=untergrenze;i<=obergrenze;i++)
         {
@@ -194,7 +204,7 @@ public class TeileStamm_erweitern_controller {
         
     }
     /**Workaroud: durchsucht die bestehenden Teilestammdaten und ermittelt eine noch nicht vergebene ID
-     * wird verwendet im Übersicht_lagerveraltung line33,line2216, this.nuteranforderung line76
+     * wird nicht verwendet alt:im Übersicht_lagerveraltung line33,line2216, this.nuteranforderung line76
      * 
      * @return die nocht nicht vergebene ID
      */
@@ -207,33 +217,5 @@ public class TeileStamm_erweitern_controller {
     }
     
     
-    /**Setzt eine beispielid ins textfeld
-     * 
-     * @param fake true: die id ist 1337, false: es wird nach einer validen id gesucht.
-     * Hat keinen Einfluss darauf welche id das Teil tatsächlich erhält
-     * 
-     *
-    public void setEXAMPLEid(boolean fake){
-        
-        if(fake){
-            Hauptfenster.PATRICKsettextfeld_id(1337);
-        }else{
-            
-        
-        int exampleID;
-       //Belibige freie id von der db beziehen und als beispiel ins gui schreinen begin
-       exampleID=getEXAMPLEid();
-       Hauptfenster.PATRICKsettextfeld_id(exampleID);
-       //Belibige freie id von der db beziehen und als beispiel ins gui schreinen end
-       
-       }
-        
-    }*/
-    
-    
-    /*!das hier muss noch in Übersicht_Lagerverwaltung und wird von der methode public void setEXAMPLEid(bool) benutzt
-     public void PATRICKsettextfeld_id(int id){
-        textfeld_id.setText(""+id);
-    }
-    */
+
 }
