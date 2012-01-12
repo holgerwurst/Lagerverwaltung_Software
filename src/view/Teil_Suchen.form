@@ -162,7 +162,7 @@
                                   </Group>
                                   <Component id="SuchenmitteButton" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -563,15 +563,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="MaxMengeLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="MinMengeLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="HaltbarkeitsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="HaltbarkeitsdatumlagerTextfield2" linkSize="9" min="-2" pref="142" max="-2" attributes="0"/>
                           <Component id="MindestensMengeimFachlagerTextfield2" linkSize="9" min="-2" pref="47" max="-2" attributes="0"/>
                           <Component id="MaximaleMengeimFachlagerTextfield2" linkSize="9" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="69" max="32767" attributes="0"/>
+                      <EmptySpace pref="118" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -601,12 +599,7 @@
                           <Component id="AnschaffungsgrundlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="AnschaffungsgrundLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="HaltbarkeitsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="HaltbarkeitsdatumlagerTextfield2" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="8" max="32767" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                       <Component id="SuchenrechtsButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane5" min="-2" pref="364" max="-2" attributes="0"/>
@@ -664,14 +657,6 @@
                 <Property name="text" type="java.lang.String" value="Fachnummer:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="HaltbarkeitsLabel">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Haltbarkeitsdatum:"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="MaxMengeLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -697,16 +682,26 @@
               </Properties>
             </Component>
             <Component class="view.LagerTextfield" name="LagerbestandlagerTextfield2">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+              </AuxValues>
             </Component>
             <Component class="view.LagerTextfield" name="FachnummerlagerTextfield2">
             </Component>
             <Component class="view.LagerTextfield" name="MindestensMengeimFachlagerTextfield2">
-            </Component>
-            <Component class="view.LagerTextfield" name="HaltbarkeitsdatumlagerTextfield2">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+              </AuxValues>
             </Component>
             <Component class="view.LagerTextfield" name="MaximaleMengeimFachlagerTextfield2">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+              </AuxValues>
             </Component>
             <Component class="view.LagerTextfield" name="TeileIdlagerTextfield2">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+              </AuxValues>
             </Component>
             <Component class="view.LagerTextfield" name="AnschaffungsgrundlagerTextfield2">
             </Component>
@@ -784,13 +779,10 @@
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane4" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPane4" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="AlleTeileAnzeigenButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="SuchenlinksButton" min="-2" max="-2" attributes="0"/>
@@ -853,7 +845,7 @@
                           <Component id="SuchenlinksButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" pref="211" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" pref="242" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1014,6 +1006,9 @@
               </Properties>
             </Component>
             <Component class="view.LagerTextfield" name="TeileIdlagerTextfield">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+              </AuxValues>
             </Component>
             <Component class="view.LagerTextfield" name="BezeichnunglagerTextfield">
             </Component>
@@ -1026,12 +1021,24 @@
             <Component class="view.LagerTextfield" name="BemerkungslagerTextfield">
             </Component>
             <Component class="view.LagerTextfield" name="PreislagerTextfield">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.PREIS)"/>
+              </AuxValues>
             </Component>
             <Component class="view.LagerTextfield" name="MaximaleAnzahlKleinlagerTextfield">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+              </AuxValues>
             </Component>
             <Component class="view.LagerTextfield" name="MaximaleAnzahlMittellagerTextfield">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+              </AuxValues>
             </Component>
             <Component class="view.LagerTextfield" name="MaximaleAnzahlGro&#xdf;lagerTextfield">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.LagerTextfield(AllowedSequences.ZIFFERN)"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
