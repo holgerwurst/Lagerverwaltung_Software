@@ -17,6 +17,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import model.*;
+import view.LagerTextfield.AllowedSequences;
 
 /**
  *
@@ -86,16 +87,14 @@ public class Teil_Suchen extends javax.swing.JFrame {
         TeileIDLabel = new javax.swing.JLabel();
         SuchenrechtsButton = new javax.swing.JButton();
         FachnrLabel = new javax.swing.JLabel();
-        HaltbarkeitsLabel = new javax.swing.JLabel();
         MaxMengeLabel = new javax.swing.JLabel();
         MinMengeLabel = new javax.swing.JLabel();
         LagerbestandLabel = new javax.swing.JLabel();
-        LagerbestandlagerTextfield2 = new view.LagerTextfield();
+        LagerbestandlagerTextfield2 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         FachnummerlagerTextfield2 = new view.LagerTextfield();
-        MindestensMengeimFachlagerTextfield2 = new view.LagerTextfield();
-        HaltbarkeitsdatumlagerTextfield2 = new view.LagerTextfield();
-        MaximaleMengeimFachlagerTextfield2 = new view.LagerTextfield();
-        TeileIdlagerTextfield2 = new view.LagerTextfield();
+        MindestensMengeimFachlagerTextfield2 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        MaximaleMengeimFachlagerTextfield2 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        TeileIdlagerTextfield2 = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         AnschaffungsgrundlagerTextfield2 = new view.LagerTextfield();
         AnschaffungsgrundLabel = new javax.swing.JLabel();
         suche_Teil = new javax.swing.JPanel();
@@ -117,16 +116,16 @@ public class Teil_Suchen extends javax.swing.JFrame {
         TeilSuchenJtable = new javax.swing.JTable();
         TeiletypComboBox = new javax.swing.JComboBox();
         BemerkungLabel = new javax.swing.JLabel();
-        TeileIdlagerTextfield = new view.LagerTextfield();
+        TeileIdlagerTextfield = new view.LagerTextfield(AllowedSequences.ZIFFERN);
         BezeichnunglagerTextfield = new view.LagerTextfield();
         MaterialgruppelagerTextfield = new view.LagerTextfield();
         ZeichnungsnummerlagerTextfield = new view.LagerTextfield();
         BaugruppelagerTextfield = new view.LagerTextfield();
         BemerkungslagerTextfield = new view.LagerTextfield();
-        PreislagerTextfield = new view.LagerTextfield();
-        MaximaleAnzahlKleinlagerTextfield = new view.LagerTextfield();
-        MaximaleAnzahlMittellagerTextfield = new view.LagerTextfield();
-        MaximaleAnzahlGroßlagerTextfield = new view.LagerTextfield();
+        PreislagerTextfield = new view.LagerTextfield(AllowedSequences.PREIS);
+        MaximaleAnzahlKleinlagerTextfield = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        MaximaleAnzahlMittellagerTextfield = new view.LagerTextfield(AllowedSequences.ZIFFERN);
+        MaximaleAnzahlGroßlagerTextfield = new view.LagerTextfield(AllowedSequences.ZIFFERN);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -410,9 +409,6 @@ public class Teil_Suchen extends javax.swing.JFrame {
         FachnrLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         FachnrLabel.setText("Fachnummer:");
 
-        HaltbarkeitsLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        HaltbarkeitsLabel.setText("Haltbarkeitsdatum:");
-
         MaxMengeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         MaxMengeLabel.setText("Max. Menge im Fach:");
 
@@ -454,11 +450,9 @@ public class Teil_Suchen extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(MaxMengeLabel)
-                                    .addComponent(MinMengeLabel)
-                                    .addComponent(HaltbarkeitsLabel))
+                                    .addComponent(MinMengeLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(HaltbarkeitsdatumlagerTextfield2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(MindestensMengeimFachlagerTextfield2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(MaximaleMengeimFachlagerTextfield2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(SuchenrechtsButton))
@@ -466,7 +460,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        suche_InhaltLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AnschaffungsgrundlagerTextfield2, FachnummerlagerTextfield2, HaltbarkeitsdatumlagerTextfield2, LagerbestandlagerTextfield2, MaximaleMengeimFachlagerTextfield2, MindestensMengeimFachlagerTextfield2, TeileIdlagerTextfield2});
+        suche_InhaltLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AnschaffungsgrundlagerTextfield2, FachnummerlagerTextfield2, LagerbestandlagerTextfield2, MaximaleMengeimFachlagerTextfield2, MindestensMengeimFachlagerTextfield2, TeileIdlagerTextfield2});
 
         suche_InhaltLayout.setVerticalGroup(
             suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,18 +481,14 @@ public class Teil_Suchen extends javax.swing.JFrame {
                     .addComponent(MindestensMengeimFachlagerTextfield2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AnschaffungsgrundlagerTextfield2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AnschaffungsgrundLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HaltbarkeitsLabel)
-                    .addComponent(HaltbarkeitsdatumlagerTextfield2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(SuchenrechtsButton)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        suche_InhaltLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AnschaffungsgrundlagerTextfield2, FachnummerlagerTextfield2, HaltbarkeitsdatumlagerTextfield2, LagerbestandlagerTextfield2, MaximaleMengeimFachlagerTextfield2, MindestensMengeimFachlagerTextfield2, TeileIdlagerTextfield2});
+        suche_InhaltLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AnschaffungsgrundlagerTextfield2, FachnummerlagerTextfield2, LagerbestandlagerTextfield2, MaximaleMengeimFachlagerTextfield2, MindestensMengeimFachlagerTextfield2, TeileIdlagerTextfield2});
 
         jTabbedPane1.addTab("Menge / Teil im Fach suchen", suche_Inhalt);
 
@@ -683,7 +673,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -768,7 +758,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         String[] anschaffungsgrund = {"anschaffungsgrund", AnschaffungsgrundlagerTextfield2.getText()};
         String[] maximale_menge = {"max_menge", MaximaleMengeimFachlagerTextfield2.getText()};
         String[] mindestens_menge = {"mind_menge", MindestensMengeimFachlagerTextfield2.getText()};
-        String[] haltbarkeitsdatum = {"haltbarkeitsdatum", HaltbarkeitsdatumlagerTextfield2.getText()};
+        //String[] haltbarkeitsdatum = {"haltbarkeitsdatum", HaltbarkeitsdatumlagerTextfield2.getText()};
 
         String[][] suchwerte = new String[7][];
         suchwerte[0] = fachnummer;
@@ -777,7 +767,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         suchwerte[3] = maximale_menge;
         suchwerte[4] = mindestens_menge;
         suchwerte[5] = anschaffungsgrund;
-        suchwerte[6] = haltbarkeitsdatum;
+        //suchwerte[6] = haltbarkeitsdatum;
 
         DefaultTableModel table_model = new DefaultTableModel();
         for (String columnname : suchen_controller.table_column_names_lagerbestandskonto) {
@@ -954,8 +944,6 @@ public class Teil_Suchen extends javax.swing.JFrame {
     private javax.swing.JRadioButton H3JRadioButton;
     private javax.swing.JRadioButton H4JRadioButton;
     private javax.swing.JRadioButton H5JRadioButton;
-    private javax.swing.JLabel HaltbarkeitsLabel;
-    private view.LagerTextfield HaltbarkeitsdatumlagerTextfield2;
     private javax.swing.JRadioButton HochregallagerJRadioButton;
     private javax.swing.JLabel IDlinksLabel;
     private javax.swing.JRadioButton KeineAngabeBelegtJRadioButton;
