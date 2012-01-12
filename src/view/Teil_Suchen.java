@@ -6,17 +6,13 @@ package view;
 
 import control.Suchen_Controller;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.AbstractButton;
 import javax.swing.ButtonModel;
-import model.Teil_Stammdaten;
-import model.TeileTypET;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import model.*;
+import model.Lagerbestandskonto;
+import model.Lagerfachstamm;
+import model.Teil_Stammdaten;
 import view.LagerTextfield.AllowedSequences;
 
 /**
@@ -701,6 +697,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
     private void teile_suchen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teile_suchen
         // Werte werden aus den Textfeldern und anderen Eingabefeldern ausgelesen und in ein zweidimensionales Array geschrieben
+        // Es wird das Array erstellt was für die Erstellung des SELECTS wichtig ist
         String[][] suchwerte = new String[11][];
         String[] id = {"id", TeileIdlagerTextfield.getText()};
         String teilstring = (String) TeiletypComboBox.getSelectedItem();
@@ -733,6 +730,9 @@ public class Teil_Suchen extends javax.swing.JFrame {
         try {
             // Mit den ausgelesenen Daten wird mit hilfe des Controllers gesucht
             ArrayList<Teil_Stammdaten> teile = suchen_controller.teile_suchen(suchwerte);
+
+            // Es erfolgt die erstellung des TableModels für JTable zur darstellung der Ergebnisse
+
             DefaultTableModel table_model = new DefaultTableModel();
             // Spaltennamen werden festgeelegt
             for (String columnname : suchen_controller.table_column_names_teilestamm) {
@@ -752,6 +752,8 @@ public class Teil_Suchen extends javax.swing.JFrame {
     }//GEN-LAST:event_teile_suchen
 
     private void TeilImFachSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeilImFachSuchenActionPerformed
+
+        // Es wird das Array erstellt was für die Erstellung des SELECTS wichtig ist
         String[] teileid = {"teile_id", TeileIdlagerTextfield2.getText()};
         String[] lagerbestand = {"menge", LagerbestandlagerTextfield2.getText()};
         String[] fachnummer = {"fachnummer", FachnummerlagerTextfield2.getText()};
@@ -769,6 +771,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         suchwerte[5] = anschaffungsgrund;
         //suchwerte[6] = haltbarkeitsdatum;
 
+        // Es erfolgt die erstellung des TableModels für JTable zur darstellung der Ergebnisse
         DefaultTableModel table_model = new DefaultTableModel();
         for (String columnname : suchen_controller.table_column_names_lagerbestandskonto) {
             table_model.addColumn(columnname);
@@ -800,7 +803,9 @@ public class Teil_Suchen extends javax.swing.JFrame {
         String zeile = ZeilelagerTextfield3.getText();
         String spalte = SpaltelagerTextfield3.getText();
 
+
         ButtonModel selected_regalnummer = RegalnummerbuttonGroup.getSelection();
+        // Es wird nachgeschaut welcher RadioButton Selektiert ist indem die models verglichen werden
         if (H1JRadioButton.getModel() == selected_regalnummer) {
             regalnummer = "H1";
         } else if (H2JRadioButton.getModel() == selected_regalnummer) {
@@ -843,7 +848,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         } else {
             lagerort = "";
         }
-
+        // Es wird das Array erstellt was für die Erstellung des SELECTS wichtig ist
         String[][] suchwerte = {
             {"fachnummer", fachnummer},
             {"lagerort", lagerort},
@@ -852,12 +857,13 @@ public class Teil_Suchen extends javax.swing.JFrame {
             {"spalte", spalte},
             {"groesse", groesse},
             {"belegt", belegt},};
-        
+
+        // Es erfolgt die erstellung des TableModels für JTable zur darstellung der Ergebnisse
         DefaultTableModel table_model = new DefaultTableModel();
         for (String columnname : suchen_controller.tabble_column_names_lagerfachstamm) {
             table_model.addColumn(columnname);
         }
-        
+
         try {
             ArrayList<Lagerfachstamm> lagerfachstaemme = suchen_controller.fach_suchen(suchwerte);
             for (Lagerfachstamm lagerfachstamm : lagerfachstaemme) {

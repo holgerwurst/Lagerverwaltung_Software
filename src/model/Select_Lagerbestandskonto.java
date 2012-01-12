@@ -136,10 +136,19 @@ public class Select_Lagerbestandskonto {
         return db.ar;
     }
 
+    /**
+     * Es soll in der Datenbank nach Lagerbeständen gesucht werden
+     *
+     * @param suchwerte (Array mit {{Spaltenname, Suchwert}, ... }
+     * @return Eine ArrayList von Lagerbestandkonto Objekten die gefunden wurden
+     * @throws Exception
+     */
     public ArrayList<Lagerbestandskonto> teile_im_fach_suchen(String[][] suchwerte) throws Exception {
+        // SELECT wird erstellt
         String query = create_select_teil_im_fach_suchen(suchwerte);
-        System.out.println(query);
+        // Eine ArrayList von Lagerbestandkontos wird aus der Datenbank gelesen
         ArrayList<Lagerbestandskonto> lagerbestandskontos = db.resultset_to_lagerbestandskontos(query);
+        // Verbindung muss geschlossen werden da sie sonst die DB blockiert
         db.disconnect();
         return lagerbestandskontos;
 

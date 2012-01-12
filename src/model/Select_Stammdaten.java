@@ -284,17 +284,67 @@ public class Select_Stammdaten {
         return ganze_tabelle;
 
     }
-    /** 
+
+    /**
      * Erstellung des selcetes aus den werten und herausholen der Daten
+     *
      * @param spaltenwerte
      * @return
      * @throws ClassNotFoundException
-     * @throws Exception 
+     * @throws Exception
      */
     public ArrayList<Teil_Stammdaten> teile_suchen(String[][] suchwerte) throws ClassNotFoundException, Exception {
-        String query = Select_Allgemein.create_select_teile_suchen(suchwerte);
+        // Erstellt den SELECT
+        String query = create_select_teile_suchen(suchwerte);
+        // TeilstammdatenArray wird aus der Datenbank gelesen
         ArrayList<Teil_Stammdaten> teile_stammdaten_array = db.resultset_to_teil_stammdaten(query);
+        // Damit die Datenbank nicht blockiert wird muss die Verbindung disconnected werden
         db.disconnect();
         return teile_stammdaten_array;
+    }
+
+    /**
+     * Erstellt den Select für die Suche in den Teilestammdaten
+     * @param suchwerte Zweidimensionales Array {{spaltenname, suchwert}, ... }
+     * @return Select mit AND verknüpften Suchwerten nach WHERE
+     */
+    public static String create_select_teile_suchen(String[][] suchwerte) {
+        String query = "SELECT * FROM Teilestammdaten";
+        int i = 0;
+
+        for (String[] wert : suchwerte) {
+
+            // Wenn der Suchwert leer ist soll nichts zu dem Select hinzugefügt werden
+            if (!wert[1].equals("")) {
+                // Wenn es der erste Wert ist muss im Select WHERE vorher eingefügt werden nicht AND
+                if (i == 0) {
+                    // IDs sollen exakt gesucht werden
+                    if (wert[0].equals("id")) {
+                        query = query + " WHERE " + wert[0] + "=" + wert[1];
+
+                    } // Es soll nach allen Teilen gesucht werden die in ein Fach reinpassen
+                    else if (wert[0].equals("max_anz_klein") || wert[0].equals("max_anzahl_mittel")
+                            || wert[0].equals("max_anz_gross")) {
+
+                        query = query + " WHERE " + wert[0] + "<=" + wert[1];
+                    } else {
+                        query = query + " WHERE " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                    }
+                    i++;
+                    // Ab dem zweiten eintrag in Suchwerte wird alles mit AND hinzugefügt
+                } else {
+                    if (wert[0].equals("id")) {
+                        query = query + " AND " + wert[0] + "=" + wert[1];
+                    } else if (wert[0].equals("max_anz_klein") || wert[0].equals("max_anz_mittel")
+                            || wert[0].equals("max_anz_gross")) {
+                        query = query + " AND " + wert[0] + "<=" + wert[1];
+                    } else {
+                        query = query + " AND " + wert[0] + " LIKE \"%" + wert[1] + "%\"";
+                    }
+                }
+
+            }
+        }
+        return query + ";";
     }
 }

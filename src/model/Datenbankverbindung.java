@@ -285,8 +285,10 @@ public class Datenbankverbindung {
             while (rs.next()) {
                 // ArrayList die eine Zeile darstellt
                 ArrayList zeile = new ArrayList();
-
+                
+                // Durchlaufen einer zeile
                 for (int i = 1; i <= rmsd.getColumnCount(); i++) {
+                    // Es wird der Sql Typ abgefragt und die zugehörige Funktion zu Erhaltung des Wertes genutzt.
                     switch (rmsd.getColumnType(i)) {
                         case java.sql.Types.INTEGER:
                             zeile.add(rs.getInt(i));
@@ -312,7 +314,11 @@ public class Datenbankverbindung {
         return zeilen;
     }
 
-
+    /**
+     * Standartaufruf von resultset_to_lagerfachstamm()
+     * @return Gibt die komplette Lagerfachstamm Tabelle als Lagerfachstamm ArrayList zurück
+     * @throws Exception 
+     */
     public ArrayList<Lagerfachstamm> resultset_to_lagerfachstamm() throws Exception {
         return resultset_to_lagerfachstamm("SELECT * FROM Lagerfachstamm");
     }
@@ -338,8 +344,9 @@ public class Datenbankverbindung {
             while (rs.next()) {
                 // ArrayList die eine Zeile darstellt
                 ArrayList zeile = new ArrayList();
-
+                // Durchlaufen einer zeile und hinzufügen des richtigen Typs mit der get Methode
                 for (int i = 1; i <= rmsd.getColumnCount(); i++) {
+                    // Abfrage des richtigen Typs
                     switch (rmsd.getColumnType(i)) {
                         case java.sql.Types.INTEGER:
                             zeile.add(rs.getInt(i));
@@ -355,6 +362,7 @@ public class Datenbankverbindung {
                             break;
                     }
                 }
+                // Zeile wird zu der ArrayList hinzugefügt
                 lagerfachstammarray.add(new Lagerfachstamm(zeile.toArray()));
 
             }

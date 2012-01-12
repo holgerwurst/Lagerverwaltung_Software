@@ -4,11 +4,8 @@
  */
 package model;
 
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.Datenbankverbindung;
 
 /**
  *
@@ -189,8 +186,14 @@ public class Select_Lagerfachstamm {
         }
         return db.ar;
     }
-
-    private static String create_select_fach_suchen(String[][] suchwerte) {
+    
+    
+    /**
+     * SELECT der erstellt wird um nach einem fach zu suchen
+     * @param suchwerte (Array mit {{Spaltenname, Suchwert}, ... }
+     * @return SELECT für Fach suchen
+     */
+            private static String create_select_fach_suchen(String[][] suchwerte) {
         String query = "SELECT * FROM Lagerfachstamm";
         int i = 0;
 
@@ -211,10 +214,20 @@ public class Select_Lagerfachstamm {
         }
         return query;
     }
-
+            
+    /**
+     * Sucht in der Datenbank nach Fächern
+     * @param suchwerte Array mit {{Spaltenname, Suchwert}, ... }
+     * @return Array von Lagerfachstamm Objekten
+     * @throws ClassNotFoundException
+     * @throws Exception 
+     */
     public ArrayList<Lagerfachstamm> fach_suchen(String[][] suchwerte) throws ClassNotFoundException, Exception {
+        // SELECT wird erstellt
         String query = Select_Lagerfachstamm.create_select_fach_suchen(suchwerte);
+        // Aus der Datenbank wird LagerfachstammArray gelesen
         ArrayList<Lagerfachstamm> lagerfachstamm_array = db.resultset_to_lagerfachstamm(query);
+        // Verbindung muss geschlossen werden damit die Datenbank nicht blockiert wird
         db.disconnect();
         return lagerfachstamm_array;
     }
