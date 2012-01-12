@@ -834,20 +834,20 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jScrollPane4.setViewportView(table_einlagern);
 
         jPanel8.add(jScrollPane4);
-        jScrollPane4.setBounds(0, 360, 1050, 220);
+        jScrollPane4.setBounds(0, 360, 1050, 230);
 
         label_auswahl.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         label_auswahl.setForeground(new java.awt.Color(255, 0, 51));
         label_auswahl.setText("Bitte wählen Sie ein Teil aus aus der Tabelle aus.");
         jPanel8.add(label_auswahl);
-        label_auswahl.setBounds(300, 330, 370, 15);
+        label_auswahl.setBounds(380, 330, 370, 15);
 
         TextArea_einlagern.setColumns(20);
         TextArea_einlagern.setRows(5);
         jScrollPane2.setViewportView(TextArea_einlagern);
 
         jPanel8.add(jScrollPane2);
-        jScrollPane2.setBounds(0, 570, 1050, 110);
+        jScrollPane2.setBounds(0, 590, 1050, 90);
 
         jLabel40.setForeground(new java.awt.Color(255, 51, 51));
         jLabel40.setText("*");
