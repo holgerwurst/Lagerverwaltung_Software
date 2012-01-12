@@ -137,7 +137,7 @@ public class LagerTextfield extends JTextField {
 
           ALL(null, null),
         ALPHA("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ", "Bitte nur Buchstaben eingeben."),
-        PREIS("1234567890,.", "Hier sind nur Zahlen und hÃ¶chstends 2 Nachkommastellen erlaubt."),
+        PREIS("1234567890,.", "Hier sind nur Zahlen und hoechstens 2 Nachkommastellen erlaubt."),
         ZIFFERN("0987654321", "Bitte nur ganze Zahlen eingeben.");
         private String sequence;
         private String desc;
@@ -181,9 +181,6 @@ public class LagerTextfield extends JTextField {
      */
     public LagerTextfield() {
         this(AllowedSequences.ALL);
-    }
-
-    public void BLABLUBB(String bla) {
     }
 
     public LagerTextfield(AllowedSequences seq) {
