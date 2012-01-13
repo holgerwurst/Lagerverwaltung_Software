@@ -372,6 +372,8 @@ public class Teil_einlagern_Controller {
 
 //if(menge_eingelagert!=0){
             String text = "";
+            String asg="";
+            asg = lv.textfeld_asg_einlagern.getText();
        
                 if (einzulagern <= max_menge) { 
 
@@ -379,7 +381,7 @@ public class Teil_einlagern_Controller {
                         if (einzulagern <= max_menge - menge_eingelagert) {
                             neueMenge = einzulagern + menge_eingelagert;
                             text = String.valueOf(einzulagern - einzulagern);
-                            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
+                            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
                             dbs.delete_lagerbestandskonto(id, fachnummer);
                             dbs.insert_lagerbestandskonto(lbk);
                             if (einzulagern == max_menge - menge_eingelagert) {
@@ -391,7 +393,7 @@ public class Teil_einlagern_Controller {
                         } else {
                             neueMenge = max_menge;
                             text = String.valueOf(einzulagern - (max_menge - menge_eingelagert));
-                            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
+                            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
                             dbs.delete_lagerbestandskonto(id, fachnummer);
                             dbs.insert_lagerbestandskonto(lbk);
                             dbs.update_lagerbestand(lbk);
@@ -400,7 +402,7 @@ public class Teil_einlagern_Controller {
 
                     } else {
                         neueMenge = einzulagern;
-                        Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
+                        Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
                         text = String.valueOf(einzulagern - neueMenge);
                         dbs.insert_lagerbestandskonto(lbk);
                         dbs.update_lagerfachstamm(fachnummer, true);
@@ -414,7 +416,7 @@ public class Teil_einlagern_Controller {
                 } else {
                     neueMenge = max_menge; 
                     text = String.valueOf(einzulagern - (max_menge - menge_eingelagert));
-                    Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, null, null);
+                    Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
                     dbs.delete_lagerbestandskonto(id, fachnummer);
                     dbs.insert_lagerbestandskonto(lbk);
                     dbs.update_lagerfachstamm(fachnummer, true);

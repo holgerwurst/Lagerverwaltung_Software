@@ -280,7 +280,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="540" width="-1" height="30"/>
+                  <AbsoluteConstraints x="30" y="540" width="80" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -549,7 +549,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="560" width="950" height="20"/>
+                  <AbsoluteConstraints x="30" y="580" width="950" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -562,7 +562,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="590" width="950" height="20"/>
+                  <AbsoluteConstraints x="30" y="610" width="950" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -2265,7 +2265,6 @@
                         <Property name="text" type="java.lang.String" value="Einlagern"/>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
                         <Property name="enabled" type="boolean" value="false"/>
-                        <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_manuell_einlagernActionPerformed"/>
