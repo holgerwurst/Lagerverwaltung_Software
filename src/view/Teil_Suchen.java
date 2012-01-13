@@ -758,7 +758,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         String[] mindestens_menge = {"mind_menge", MindestensMengeimFachlagerTextfield2.getText()};
         //String[] haltbarkeitsdatum = {"haltbarkeitsdatum", HaltbarkeitsdatumlagerTextfield2.getText()};
 
-        String[][] suchwerte = new String[7][];
+        String[][] suchwerte = new String[6][];
         suchwerte[0] = fachnummer;
         suchwerte[1] = teileid;
         suchwerte[2] = lagerbestand;
