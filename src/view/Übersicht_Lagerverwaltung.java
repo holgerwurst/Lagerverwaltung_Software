@@ -34,12 +34,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
      * Creates new form Übersicht_Lagerverwaltung
      */
     public Übersicht_Lagerverwaltung() {
-        initComponents();        
-          //befüllen des Teilestamm anlegen Tab mit der nächsten freien ID aus der DB und Erklärung in der Statusleiste. 
+        initComponents();
+        //befüllen des Teilestamm anlegen Tab mit der nächsten freien ID aus der DB und Erklärung in der Statusleiste. 
         control.TeileStamm_erweitern_controller tecinit = new control.TeileStamm_erweitern_controller(this);
         textfeld_idP.setText("" + tecinit.getEXAMPLEid());// so sollte es eigentlich gehen aber hier kommt das Workaroud
         //textfeld_idP.setText(""+tec.getWAid());//alter Workaroud
-        setpTSEStatusleiste1("",Color.BLACK);
+        setpTSEStatusleiste1("", Color.BLACK);
         setpTSEStatusleiste2("Die freie ID " + tecinit.getEXAMPLEid() + " wurde aus der Datenbank bezogen und wird dem neuen Teil beim anlegen zugewiesen.", Color.BLACK);
         tecinit = null;
         //befüllen des Teilestamm anlegen Tab mit der nächsten freien ID aus der DB und Erklärung in der Statusleiste. end 
@@ -2456,7 +2456,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * Daten der Bestandsmengen in JTable schreiben.
+     * Methode um alle mit der ID belegten Faecher anzuzeigen, wenn "Bestaetigen
+     * Button" betaetigt wird. Alternativ - Option Teil zu löschen, wenn keine
+     * Faecher belegt sind, aber ID in Stammdaten enthalten.
      *
      * @param evt
      */
@@ -2474,6 +2476,15 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void textfeld_id1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfeld_id1ActionPerformed
         // TODO add your handling code here:}//GEN-LAST:event_textfeld_id1ActionPerformed
     }
+
+    /**
+     *
+     * Methode um alle mit der ID belegten Faecher anzuzeigen, wenn "Return" im
+     * Textfield betaetigt wird. Alternativ - Option Teil zu löschen, wenn keine
+     * Faecher belegt sind, aber ID in Stammdaten enthalten.
+     *
+     * @param evt
+     */
     private void auslagerTextfield_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagerTextfield_IDActionPerformed
         try {
             control.Teil_auslagern_controller.auslagern_bestaetigen_button(this);
@@ -2485,18 +2496,20 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     /**
      *
-     * Neue Menge des gewählten Faches in Datenbank schreiben.
+     * Neue Menge des gewählten Faches in Datenbank schreiben, sobald "Auslagern
+     * Button" betaetigt wurde. Hinweise, falls die Auswahl unvollstaendig ist,
+     * werden dem Anwender angezeigt.
      *
      * @param evt
      */
     private void auslagern_AusfuehrenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_auslagern_AusfuehrenButtonActionPerformed
         if (auslagerTextfield_mengeauslagern.getText().isEmpty() && auslagerTextfield_fnr.getText().isEmpty()) {
             JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Tragen Sie bitte eine Fachnummer und eine auszulagernde Menge ein.", "Hinweis", 2);
-        } else if(auslagerTextfield_mengeauslagern.getText().isEmpty()){
-           JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Tragen Sie bitte eine auszulagernde Menge ein.", "Hinweis", 2);
-        }else if(auslagerTextfield_fnr.getText().isEmpty()){
-              JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Tragen Sie bitte eine Fachnummer ein.", "Hinweis", 2);
-        }else{
+        } else if (auslagerTextfield_mengeauslagern.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Tragen Sie bitte eine auszulagernde Menge ein.", "Hinweis", 2);
+        } else if (auslagerTextfield_fnr.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Tragen Sie bitte eine Fachnummer ein.", "Hinweis", 2);
+        } else {
             try {
                 control.Teil_auslagern_controller.auslagern_ausfuehren_button(this);
             } catch (Exception e) {
@@ -2510,6 +2523,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_auslagerTextfield_fnrActionPerformed
 
+    /**
+     * Uebergibt das gewaehlte Fach der jTabel an Auslagern-Controller.
+     *
+     * @param evt
+     */
     private void auslager_jtableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_auslager_jtableMouseClicked
         auslagerTextfield_fnr.setText(ta.getfachnummern()[auslager_jtable.getSelectedRow()]);
         // TODO add your handling code here:
@@ -2545,12 +2563,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         if (lagerTextfield_teileID_manuell_einlagern.getText().isEmpty()) {
             JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Tragen Sie bitte eine ID ein.", "Hinweis", 2);
         } else {
-        try {
+            try {
 
-            pr = new control.Pruefen_Controller();
-            te = new control.Teil_einlagern_Controller(this);
-            cv = new convert();
-            //  manuell_einlagern_strings[] mes = new manuell_einlagern_strings[9];
+                pr = new control.Pruefen_Controller();
+                te = new control.Teil_einlagern_Controller(this);
+                cv = new convert();
+                //  manuell_einlagern_strings[] mes = new manuell_einlagern_strings[9];
                 manuell_einlagern_strings[] mes = new manuell_einlagern_strings[10];
                 mes[0] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr1.getText(), lagerTextfield_einlagern_manuell_menge1.getText(), lagerTextfield_einlagern_manuell_asg1.getText(), 0, 0, null);
                 mes[1] = new manuell_einlagern_strings(lagerTextfield_einlagern_manuell_fnr2.getText(), lagerTextfield_einlagern_manuell_menge2.getText(), lagerTextfield_einlagern_manuell_asg2.getText(), 0, 0, null);
@@ -2570,7 +2588,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 fehlerausgabe = te.fehlerausgabe(mes);
 
                 if (mes[0].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe +mes[0].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[0].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr1.setText("");
                     lagerTextfield_einlagern_manuell_menge1.setText("");
                     lagerTextfield_einlagern_manuell_asg1.setText("");
@@ -2578,7 +2596,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     //fehlerausgabe = fehlerausgabe + mes[0].get_fehler_text();
                 }
                 if (mes[1].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe +mes[1].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[1].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr2.setText("");
                     lagerTextfield_einlagern_manuell_menge2.setText("");
                     lagerTextfield_einlagern_manuell_asg2.setText("");
@@ -2586,7 +2604,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     //fehlerausgabe = fehlerausgabe + mes[1].get_fehler_text();
                 }
                 if (mes[2].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe + mes[2].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[2].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr3.setText("");
                     lagerTextfield_einlagern_manuell_menge3.setText("");
                     lagerTextfield_einlagern_manuell_asg3.setText("");
@@ -2594,7 +2612,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     //fehlerausgabe = fehlerausgabe + mes[2].get_fehler_text();
                 }
                 if (mes[3].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe + mes[3].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[3].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr4.setText("");
                     lagerTextfield_einlagern_manuell_menge4.setText("");
                     lagerTextfield_einlagern_manuell_asg4.setText("");
@@ -2602,7 +2620,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     //fehlerausgabe = fehlerausgabe + mes[3].get_fehler_text();
                 }
                 if (mes[4].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe + mes[4].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[4].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr5.setText("");
                     lagerTextfield_einlagern_manuell_menge5.setText("");
                     lagerTextfield_einlagern_manuell_asg5.setText("");
@@ -2610,7 +2628,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     //fehlerausgabe = fehlerausgabe + mes[4].get_fehler_text();
                 }
                 if (mes[5].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe + mes[5].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[5].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr6.setText("");
                     lagerTextfield_einlagern_manuell_menge6.setText("");
                     lagerTextfield_einlagern_manuell_asg6.setText("");
@@ -2618,7 +2636,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     //fehlerausgabe = fehlerausgabe + mes[5].get_fehler_text();
                 }
                 if (mes[6].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe +mes[6].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[6].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr7.setText("");
                     lagerTextfield_einlagern_manuell_menge7.setText("");
                     lagerTextfield_einlagern_manuell_asg7.setText("");
@@ -2626,7 +2644,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     //fehlerausgabe = fehlerausgabe + mes[6].get_fehler_text();
                 }
                 if (mes[7].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe + mes[7].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[7].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr8.setText("");
                     lagerTextfield_einlagern_manuell_menge8.setText("");
                     lagerTextfield_einlagern_manuell_asg8.setText("");
@@ -2634,7 +2652,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     //fehlerausgabe = fehlerausgabe + mes[7].get_fehler_text();
                 }
                 if (mes[8].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe + mes[8].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[8].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr9.setText("");
                     lagerTextfield_einlagern_manuell_menge9.setText("");
                     lagerTextfield_einlagern_manuell_asg9.setText("");
@@ -2642,7 +2660,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     //fehlerausgabe = fehlerausgabe + mes[8].get_fehler_text();
                 }
                 if (mes[9].get_fehler() == 1) {
-                    einlagernausgabe = einlagernausgabe +mes[9].get_fnr_gui()+ ", ";
+                    einlagernausgabe = einlagernausgabe + mes[9].get_fnr_gui() + ", ";
                     lagerTextfield_einlagern_manuell_fnr10.setText("");
                     lagerTextfield_einlagern_manuell_menge10.setText("");
                     lagerTextfield_einlagern_manuell_asg10.setText("");
@@ -2658,10 +2676,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(lagerTextfield_einlagern_manuell_menge2, fehlerausgabe, "Fehler", 2);
                 }
 
-            
-        } catch (Exception ex) {
-            Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+            } catch (Exception ex) {
+                Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_button_manuell_einlagernActionPerformed
 
@@ -2677,7 +2695,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         //verlangt den Focus. löst damit das Focus-lost event des Bezeichnungsfeldes aus. => Konsistenzprüfung 
         button_anlegen.requestFocusInWindow();
 
-        if (    //Pflichtfeldprüfung:
+        if ( //Pflichtfeldprüfung:
                 (textfeld_bezeichnungLTFP.getText().isEmpty()) || (makLTFP.getText().isEmpty()) || (mamLTFP.getText().isEmpty()) || (magLTFP.getText().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Füllen Sie bitte alle Pflichtfelder aus.");
             setpTSEStatusleiste1("Füllen Sie bitte alle Pflichtfelder aus.", Color.red);
@@ -2784,7 +2802,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_magLTFPFocusGained
 
     private void Teilestamm_erweiternFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Teilestamm_erweiternFocusGained
-      
   }//GEN-LAST:event_Teilestamm_erweiternFocusGained
 
     private void preisfeldLTFPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preisfeldLTFPActionPerformed
@@ -2867,45 +2884,44 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void einlagern_button_tabelleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_einlagern_button_tabelleActionPerformed
         te = new Teil_einlagern_Controller(this);
         cv = new convert();
-if(table_einlagern.getSelectedRow() == -1) {
-                JOptionPane.showMessageDialog(this, "Bitte eine Zeile markieren !", "Information", 1);
-            }else{
-        int id = cv.StringTOint(id_textfeld2.getText());
+        if (table_einlagern.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(this, "Bitte eine Zeile markieren !", "Information", 1);
+        } else {
+            int id = cv.StringTOint(id_textfeld2.getText());
 
-        if (bezeichnung_textfeld1.getText().isEmpty() && !menge_textfeld_einlagern.getText().isEmpty()) {
-            try {
-                TextArea_einlagern.setText("");
-                te = new Teil_einlagern_Controller(this);
-                int[] rowIndex = table_einlagern.getSelectedRows();
+            if (bezeichnung_textfeld1.getText().isEmpty() && !menge_textfeld_einlagern.getText().isEmpty()) {
+                try {
+                    TextArea_einlagern.setText("");
+                    te = new Teil_einlagern_Controller(this);
+                    int[] rowIndex = table_einlagern.getSelectedRows();
 
-                for (int i = 0; i < rowIndex.length; i++) {
-                    int menge = cv.StringTOint(label_menge_übrig.getText());
-                    label_menge_übrig.setText(label_menge_übrig.getText());
-                    if (menge != 0) {
-                        String mar = (String) (table_einlagern.getValueAt(rowIndex[i], 0));
+                    for (int i = 0; i < rowIndex.length; i++) {
+                        int menge = cv.StringTOint(label_menge_übrig.getText());
+                        label_menge_übrig.setText(label_menge_übrig.getText());
+                        if (menge != 0) {
+                            String mar = (String) (table_einlagern.getValueAt(rowIndex[i], 0));
 
-                        te.einlagern(mar, id);
-                    } else {
-                        //falls es mindestens 1 Fach gibt, in welches keine Menge eingelagert werden soll die Meldung nur einmal und nicht für jedes Fach kommen
-                        //z.B. Menge die eingelagert werden soll =6, max. Meneg pro Fach 5, es wurden 4 Fächer markiert obwohl nur 2 nötig sind, da wird dann bei i von 3 die meldung ausgegegebn da,
-                        // 4-3 = 1. Beim 2. leeren FAch wäre es 4-4, da 4-4 !=1 ist, wir die Meldung nicht mehr ausgeworfen.
-                        if (rowIndex.length - i == 1) {
-                            JOptionPane.showMessageDialog(bestaetigen_button2, "Die gesamte Menge wurde eingelagert.", "Hinweis", 1);
+                            te.einlagern(mar, id);
+                        } else {
+                            //falls es mindestens 1 Fach gibt, in welches keine Menge eingelagert werden soll die Meldung nur einmal und nicht für jedes Fach kommen
+                            //z.B. Menge die eingelagert werden soll =6, max. Meneg pro Fach 5, es wurden 4 Fächer markiert obwohl nur 2 nötig sind, da wird dann bei i von 3 die meldung ausgegegebn da,
+                            // 4-3 = 1. Beim 2. leeren FAch wäre es 4-4, da 4-4 !=1 ist, wir die Meldung nicht mehr ausgeworfen.
+                            if (rowIndex.length - i == 1) {
+                                JOptionPane.showMessageDialog(bestaetigen_button2, "Die gesamte Menge wurde eingelagert.", "Hinweis", 1);
+                            }
+
                         }
-
                     }
+
+
+                    te.einlagern_vorbereiten(id);
+
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Bitte markieren Sie mindestens eine Zeile.", "Hinweis", 2);
                 }
 
-
-                te.einlagern_vorbereiten(id);
-
             }
-         catch (ArrayIndexOutOfBoundsException e) {
-                JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Bitte markieren Sie mindestens eine Zeile.", "Hinweis", 2);
-            }
-
         }
-}
         if (menge_textfeld_einlagern.getText().isEmpty()) {
             JOptionPane.showMessageDialog(auslagern_BestaetigenidButton, "Bitte tragen Sie eine einzulagernde Menge ein. \nMarkieren Sei danach mindestens eine Zeile in der Tabelle.", "Hinweis", 2);
         }

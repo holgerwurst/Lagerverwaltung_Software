@@ -24,26 +24,23 @@ public class Pruefen_Controller {
 
     private Select_Stammdaten std = new Select_Stammdaten();
     private Übersicht_Lagerverwaltung lv = new Übersicht_Lagerverwaltung();
-    private convert cv =new convert();
+    private convert cv = new convert();
 
- 
     public boolean pruefe_id(int id) {
-        
-       
+
+
         try {
-            
+
             String vergleich = std.get_ID_ausDB(id);
 
             if (vergleich.isEmpty()) {
-          
+
                 JOptionPane.showMessageDialog(lv.auslagern_BestaetigenidButton, "Teil nicht vorhanden");
                 lv.label_auswahl.setText("");
-                
 
-                // System.out.println("Kein Teil vorhanden");
                 return false;
 
-            } 
+            }
 
         } catch (SQLException e) {
 
@@ -61,24 +58,25 @@ public class Pruefen_Controller {
 
             if (vergleich.length == 0) {
 
-               JOptionPane.showMessageDialog(lv.auslagern_BestaetigenidButton, "Teil nicht vorhanden");
-               return false;
-            }           
+                JOptionPane.showMessageDialog(lv.auslagern_BestaetigenidButton, "Teil nicht vorhanden");
+                return false;
+            }
         } catch (SQLException e) {
             System.out.println(e);
         }
-       return true;
+        return true;
     }
 
     /**
      * Auszulagernde Menge wird geprüft
      *
-     * return 0 - Menge kleiner 0 return 1 - Menge größer als alte Menge return
-     * 2 - Menge entspricht alter Menge - Fach muss nach auslagern freigeben
-     * werden return 3 - Menge ok
+     * return 0 - Menge kleiner 0;
+     * return 1 - Menge größer als alte Menge;
+     * return 2 - Menge entspricht alter Menge - Fach muss nach auslagern freigeben werden;
+     * return 3 - Menge ok;
      *
-     * @param mengeaktuell
-     * @param mengeneu
+     * @param mengeaktuell - Megne, die aktuell im Fach eingelagert ist
+     * @param mengeneu - neue vom User eingebener Wert
      * @return
      */
     public int auszulagernde_menge_pruefen(int mengeaktuell, int mengeneu) {
@@ -101,11 +99,11 @@ public class Pruefen_Controller {
 
     /**
      * Pruefung - ist die Fachnummer fnr im String[] fnrs enthalten? Wenn ja,
-     * wird die Stelle im String[] zurückgegeben. Wenn nein, wird 99999
+     * wird die Position i im Array zurückgegeben. Wenn nein, wird 99999
      * zurückgegeben.
      *
-     * @param fnrs
-     * @param fnr
+     * @param fnrs - fachnummern[]
+     * @param fnr - Fachnummer String
      * @return
      */
     public int fachnummerkorrekt(String[] fnrs, String fnr) {
@@ -114,31 +112,41 @@ public class Pruefen_Controller {
 
             if (fnr.equals(fnrs[i])) {
 
-
                 return i;
-
             }
         }
         return 99999;
     }
-    /**Prüfmethode zur logisch richtigen angabe Eines Teils zur belegung der Boxgrößen
-     * 
+
+    /**
+     * Prüfmethode zur logisch richtigen angabe Eines Teils zur belegung der
+     * Boxgrößen
+     *
      * @param maks klein
      * @param mams mittel
      * @param mags groß
-     * @return 0: Alles ok, 1:alle felder sind 0, 2: es passen weniger Teile in große boxen als in kleinere
+     * @return 0: Alles ok, 1:alle felder sind 0, 2: es passen weniger Teile in
+     * große boxen als in kleinere
      */
-    public int boxlogo(String maks, String mams, String mags){
-        int mak=cv.StringTOint(maks);
-        int mam=cv.StringTOint(mams);
-        int mag=cv.StringTOint(mags);
-        if(mak>mam){return 2;}else{
-            if(mam>mag)return 2;
-        
+    public int boxlogo(String maks, String mams, String mags) {
+        int mak = cv.StringTOint(maks);
+        int mam = cv.StringTOint(mams);
+        int mag = cv.StringTOint(mags);
+        if (mak > mam) {
+            return 2;
+        } else {
+            if (mam > mag) {
+                return 2;
+            }
+
         }
-      
-        
-       if(mak==0&&mam==0&&mag==0)return 1;else return 0;
+
+
+        if (mak == 0 && mam == 0 && mag == 0) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
     /*
      * public static void main(String[] args) throws Exception{
