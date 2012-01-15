@@ -33,14 +33,15 @@ public class LagerTextfield extends JTextField {
 
         @Override
         public void keyTyped(KeyEvent e) {
-            char key = e.getKeyChar();
-            if(key=='\'')e.setKeyChar('"');
+            char key = e.getKeyChar();// die gedrückte Taste
+            if(key=='\'')e.setKeyChar('"');// ' würde ein Datenbankproblem erzeugen und wird bereits im key event durch " ersetzt
             
-            if (Zeichenfolge == null) {
-                return;
+            if (Zeichenfolge == null) { //für .ALL
+                return;//nichts machen ... alles ist ok
             }
             boolean isValid = false;
             
+            //vilides zeichen, ENTER, Backspace ...erkannt
             if (isCharInString(key, Zeichenfolge) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_DELETE) {
                 isValid = true;
             }
@@ -48,10 +49,10 @@ public class LagerTextfield extends JTextField {
             if (isValid) {
                 switch (seq) {
                     case PREIS: {
-                        int i2=0;//durchlaufzähler der for-schleife die ja rückwärts zählen muss
+                        int i2=0;//durchlaufzähler der for-schleife die rückwärts zählt 
                         boolean tz=false;//war schon ein trennzeichen im string?
                         for (int i = Sender.getText().length() - 1; i >= 0; i--)//rückwärtiger durchlauf durch den text im aufrufenden textfeld
-                        {
+                        {   //wenn ein Trennzeichen erkannt wurde, obwohl bereits 2 Zeichen durchlafen wurden >>>isValid=false
                             //System.out.println(i2+""+tz);
                             i2++;
                             if((',' == Sender.getText().charAt(i)
@@ -118,11 +119,11 @@ public class LagerTextfield extends JTextField {
     }
 
     /**
-     * Die Methode in String ist zu blöd
+     * Die Methode in String war zu unhadlich
      *
      * @param c
      * @param s
-     * @return giebt true wenn der char im string enthalten ist
+     * @return giebt nur true, wenn der char im String min 1x enthalten ist
      */
     private boolean isCharInString(char c, String s) {
         for (int i = s.length() - 1; i >= 0; i--) {
@@ -134,8 +135,9 @@ public class LagerTextfield extends JTextField {
     }
 
     public enum AllowedSequences {
-
-          ALL(null, null),
+        
+        //Auswahl: Zeichenmenge, die das Textfeld zulassen soll und Fehlermeldung falls ein unzulässiges Zeichen auftritt.
+        ALL(null, null),
         ALPHA("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ", "Bitte nur Buchstaben eingeben."),
         PREIS("1234567890,.", "Hier sind nur Zahlen und hoechstens 2 Nachkommastellen erlaubt."),
         ZIFFERN("0987654321", "Bitte nur ganze Zahlen eingeben.");
@@ -164,10 +166,10 @@ public class LagerTextfield extends JTextField {
 
     /**
      * Legt nachträglich fest um welche Art LagerTextfield es sich handlen soll.
-     * zb. Preisfeld Diese Methode sollte benutzt werden nachdem der leere
+     * zb. Preisfeld Diese Methode kann benutzt werden nachdem der leere
      * Konstruktor LagerTextfield() aufgerufen wurde.
      *
-     * @param seq Kann folgende werte annehmen:ZIFFERN =>0987654321, PREIS, NUM,
+     * @param seq Kann folgende werte annehmen:ZIFFERN, PREIS, NUM, ALL
      * ALPHA, ALL das sind halt die enums...
      */
     public void setRegeln(AllowedSequences seq) {

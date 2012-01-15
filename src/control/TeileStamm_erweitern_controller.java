@@ -35,11 +35,6 @@ public class TeileStamm_erweitern_controller {
     public TeileStamm_erweitern_controller(view.Übersicht_Lagerverwaltung Hauptfenster){
         this.Hauptfenster=Hauptfenster;
     }
-    
-    
-
-    
-    
    /**Hauptmethode: hier wird die Nutzeranforderung ein neues Teil anzulegen aufgenommen, geprüft und weiterverarbeitet
     * Methode wird aufgerufen, wenn der anlegen-button gedrückt wird.
     * @param Bezeichnung
@@ -59,17 +54,18 @@ public class TeileStamm_erweitern_controller {
             String MAKString, String MAMString, String MAGString, String Bemerkung)
    {
        
-       //Semantische Prüfung der Variablen entsprchend DD begin
+       // umwandeln in den richtigen Datentyp begin
        double Preis= converter.StringTOdouble(PreisString);
        int MAK = converter.StringTOint(MAKString);
        int MAM = converter.StringTOint(MAMString);
        int MAG = converter.StringTOint(MAGString);   
-       //Semantische Prüfung der Variablen entsprchend DD end
+       // umwandeln in den richtigen Datentyp end
        
        //prüfe ob ein teil mit gleicher bezeichnung schon vorhanden ist begin
        if(bezSchonDa(Bezeichnung)){
            //JOptionPane.showMessageDialog(null, "Ein Teil mit der Bezeichnung: "+Bezeichnung+" ist bereits vorhanden.\nBezeichnungen müssen eindeutig sein.", "Konsitenz", 1);
-           //mache nix, die fehlermeldung kommt jetzt beim focus lost wenn der button beim drücken den focus requestet
+           //Behandlung verschoben, die fehlermeldung kommt jetzt beim focus lost wenn der button beim drücken den focus requestet (focusLostevent vom  Bez.Feld wurde bereits ausgelöst... Fall wurde schon bearbeitet.
+           
        }else{
             
                 //prüfe ob ein teil mit gleicher bezeichnung schon vorhanden ist end
@@ -91,12 +87,16 @@ public class TeileStamm_erweitern_controller {
                 //Teil in die db stopfen end
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(TeileStamm_erweitern_controller.class.getName()).log(Level.SEVERE, null, ex);
-                           JOptionPane.showMessageDialog(null, "geprüftes Teil konnte nocht zur db hinzugefügt werden", "Fehlschlag", 1);
+                           JOptionPane.showMessageDialog(null, "geprüftes Teil konnte nicht zur Datenbank hinzugefügt werden!", "Fehlschlag", 1);
 
             }
-           Hauptfenster.setpTSEStatusleiste1(neuTeil.get_Bezeichnung()+" wurde erfolgreich mit der ID "+neuTeil.get_Id()+" angelegt. Sie können das neue Teil nun einlagern.",Color.BLACK);
-           Hauptfenster.setpTSEBezeichnung("");
-           Hauptfenster.setpTSEStatusleiste2("Die freie ID "+getEXAMPLEid()+" wurde aus der Datenbank bezogen und wird dem neuen Teil beim anlegen zugewiesen.", Color.BLACK);
+           Hauptfenster.setpTSEStatusleiste1(neuTeil.get_Bezeichnung()+
+                   " wurde erfolgreich mit der ID "+neuTeil.get_Id()+
+                   " angelegt. Sie können das neue Teil nun einlagern.",Color.BLACK);//Statusleiste1 
+           Hauptfenster.setpTSEBezeichnung("");//Bezeichnungsfeld leeren
+           Hauptfenster.setpTSEStatusleiste2("Die freie ID "
+                   +getEXAMPLEid()+" wurde aus der Datenbank bezogen und wird"
+                   + " dem neuen Teil beim anlegen zugewiesen.", Color.BLACK); //Statusleiste2
        //Teil mit allen attributen in die DB schreiben und zur verwendung freigeben end
        }
    }
@@ -107,8 +107,8 @@ public class TeileStamm_erweitern_controller {
     */ 
    public boolean bezSchonDa(String bez){
        boolean returnval=false;
-       String bezAUSdb[]=db_s.getSpalteAusTabelle("bezeichnung", "Teilestammdaten");
-       for(int i=bezAUSdb.length-1;i>=0;i--)
+       String bezAUSdb[]=db_s.getSpalteAusTabelle("bezeichnung", "Teilestammdaten");//bezeichnungen aus der DB beziehen
+       for(int i=bezAUSdb.length-1;i>=0;i--)//durchlauf, ob dier Bez schon da 
        {
            //System.out.println(bezAUSdb[i]);
            if(bez.equals(bezAUSdb[i])){
@@ -122,7 +122,8 @@ public class TeileStamm_erweitern_controller {
    }
    
     
-    /**Entfernt die erste ID in der freien id datenbank aus der tabelle und returnt diese.
+    /**Entfernt die erste ID in der freien id datenbank aus der Tabelle und returnt diese.
+     * Die ID ist für ein Neuteil verwendbar.
      * <disabled> Fix: wenn die id tabelle leer ist werden die ids von 100-200 in die id tabelle reingeschrieben
      * @return verwendbare ID aus der db
      */
@@ -204,11 +205,14 @@ public class TeileStamm_erweitern_controller {
         
     }
     /**Workaroud: durchsucht die bestehenden Teilestammdaten und ermittelt eine noch nicht vergebene ID
-     * wird nicht verwendet alt:im Übersicht_lagerveraltung line33,line2216, this.nuteranforderung line76
-     * 
+     * wird nicht verwendet! alt:im Übersicht_lagerveraltung line33,line2216, this.nuteranforderung line76
+     * umgehen des alten id Problems
      * @return die nocht nicht vergebene ID
      */
     public int getWAid(){
+        //bezihe das maximum aus den bestehenden IDs
+        //konvertieren
+        //+1
         int returnval=converter.StringTOint(new model.DB_schreiben().getSpalteAusTabelle("max(id)", "Teilestammdaten")[0])+1;
         
         
