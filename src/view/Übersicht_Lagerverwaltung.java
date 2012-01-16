@@ -2761,6 +2761,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     public void setpTSEBezeichnung(String s) {
         textfeld_bezeichnungLTFP.setText(s);
     }
+    public void button_anlegen_sperren(){
+        button_anlegen.setEnabled(false);
+        setpTSEStatusleiste2("Datenbank voll oder nicht erkannt!",Color.RED);
+        setpTSEStatusleiste1("Datenbank voll oder nicht erkannt!",Color.RED);
+    }
     private void suchen_button_erweiternActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suchen_button_erweiternActionPerformed
 
         Teil_Suchen ts = new Teil_Suchen();
