@@ -166,9 +166,7 @@ public class LagerTextfield extends JTextField {
 
     /**
      * Legt nachträglich fest um welche Art LagerTextfield es sich handlen soll.
-     * zb. Preisfeld Diese Methode kann benutzt werden nachdem der leere
-     * Konstruktor LagerTextfield() aufgerufen wurde.
-     *
+     * 
      * @param seq Kann folgende werte annehmen:ZIFFERN, PREIS, NUM, ALL
      * ALPHA, ALL das sind halt die enums...
      */
@@ -177,9 +175,7 @@ public class LagerTextfield extends JTextField {
     }
 
     /**
-     * Einfacher Konstruktor benutze setRegeln(AllowedSequences seq) um das
-     * Verhalten festzulegen.
-     *
+     * Einfacher Konstruktor 
      */
     public LagerTextfield() {
         this(AllowedSequences.ALL);
