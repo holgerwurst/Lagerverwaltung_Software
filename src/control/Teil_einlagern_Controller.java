@@ -396,7 +396,8 @@ public class Teil_einlagern_Controller {
      * die Menge, die insgesamt einzulagern ist (int einzulagern) aus dem Textfeld bzw, aus dem label "label_menge_übrig".
      * Als nächstes wird nachgeschaut welche größe das Fach hat. Die jeweilige maximale einzulagernde Menge (max_menge) wird aus der Datenbank aus den teile Stammdaten bezogen.
      * Bei den if-Abfragen wird geprüft wieviel eingelagert werden soll, wie groß die maximale Menge ist und wieviel bereits eingelagert ist. Jenachdem welche Bedingung 
-     * zutrifft wird die bestimmte Menge eingelagert und von der maximal einzulagernden Menge abgezogen.
+     * zutrifft wird die bestimmte Menge eingelagert und von der maximal einzulagernden Menge abgezogen. 
+     * Zum Schluss wird das Teil mit der ID in das entsprechende Fach mit der errechneten Menge in die Datenbank geschrieben.
      *
      * @param fachnummer
      * @param id
@@ -442,7 +443,7 @@ public class Teil_einlagern_Controller {
                         dbs.delete_lagerbestandskonto(id, fachnummer);
                         dbs.insert_lagerbestandskonto(lbk);
                         if (einzulagern == max_menge - menge_eingelagert) {
-                            lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + neueMenge + " eingelagert. Es steht nun nicht mehr zur Verfügung\n");
+                            lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + neueMenge + " eingelagert. Es steht nun nicht mehr zur Verfügung.\n");
                         } else {
                             lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + (neueMenge) + " eingelagert.\n");
                         }
@@ -454,7 +455,7 @@ public class Teil_einlagern_Controller {
                         dbs.delete_lagerbestandskonto(id, fachnummer);
                         dbs.insert_lagerbestandskonto(lbk);
                         dbs.update_lagerbestand(lbk);
-                        lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + (neueMenge - menge_eingelagert) + " eingelagert.  Es steht nun nicht mehr zur Verfügung\n");
+                        lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + (neueMenge - menge_eingelagert) + " eingelagert.  Es steht nun nicht mehr zur Verfügung.\n");
                     }
 
                 } else {
@@ -465,7 +466,7 @@ public class Teil_einlagern_Controller {
                     dbs.update_lagerfachstamm(fachnummer, true);
                     //   System.out.println("geringer");
                     if (einzulagern == max_menge - menge_eingelagert) {
-                        lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + neueMenge + " eingelagert. Es steht nun nicht mehr zur Verfügung\n");
+                        lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + neueMenge + " eingelagert. Es steht nun nicht mehr zur Verfügung.\n");
                     } else {
                         lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + neueMenge + " eingelagert.\n");
                     }
