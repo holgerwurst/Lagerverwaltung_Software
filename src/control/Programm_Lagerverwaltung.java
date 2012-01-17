@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class Programm_Lagerverwaltung {
-    private view.Übersicht_Lagerverwaltung Hauptfenster= new view.Übersicht_Lagerverwaltung();
+    private view.Uebersicht_Lagerverwaltung Hauptfenster= new view.Uebersicht_Lagerverwaltung();
     
     
     public DefaultTableModel get_alle_Teile() {

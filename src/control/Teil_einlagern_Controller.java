@@ -19,7 +19,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import model.*;
-import view.Übersicht_Lagerverwaltung;
+import view.Uebersicht_Lagerverwaltung;
 
 /**
  *
@@ -27,7 +27,7 @@ import view.Übersicht_Lagerverwaltung;
  */
 public class Teil_einlagern_Controller {
 
-    private Übersicht_Lagerverwaltung lv;
+    private Uebersicht_Lagerverwaltung lv;
     private convert cv = new convert();
     private Select_Stammdaten st = new Select_Stammdaten();
     private DB_schreiben dbs = new DB_schreiben();
@@ -36,7 +36,7 @@ public class Teil_einlagern_Controller {
     private Select_Lagerbestandskonto lagerbes;
     private Select_Lagerfachstamm lf = new Select_Lagerfachstamm();
 
-    public Teil_einlagern_Controller(Übersicht_Lagerverwaltung lv) {
+    public Teil_einlagern_Controller(Uebersicht_Lagerverwaltung lv) {
         this.lv = lv;
     }
     String[] komplett = new String[0];

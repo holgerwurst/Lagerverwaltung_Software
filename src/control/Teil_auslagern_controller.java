@@ -11,7 +11,7 @@ import model.DB_schreiben;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import model.Select_Stammdaten;
-import view.Übersicht_Lagerverwaltung;
+import view.Uebersicht_Lagerverwaltung;
 
 /**
  *
@@ -173,7 +173,7 @@ public class Teil_auslagern_controller {
      *
      * @param ul - uebergebenes Übersicht_Lagerverwaltungsobjekt
      */
-    public static void auslagern_ausfuehren_button(Übersicht_Lagerverwaltung ul) {
+    public static void auslagern_ausfuehren_button(Uebersicht_Lagerverwaltung ul) {
 
 
         ul.pr = new Pruefen_Controller();           // neuen Pruefen_Controller anlegen
@@ -293,7 +293,7 @@ public class Teil_auslagern_controller {
      *
      * @param ul - uebergebenes Übersicht_Lagerverwaltung- Objekt
      */
-    public static void auslagern_bestaetigen_button(Übersicht_Lagerverwaltung ul) {
+    public static void auslagern_bestaetigen_button(Uebersicht_Lagerverwaltung ul) {
 
 
         ul.pr = new Pruefen_Controller(); //Pruefen Controller anlegen

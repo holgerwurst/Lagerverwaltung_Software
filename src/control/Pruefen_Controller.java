@@ -13,7 +13,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Datenbankverbindung;
 import model.Select_Stammdaten;
-import view.Übersicht_Lagerverwaltung;
+import view.Uebersicht_Lagerverwaltung;
 
 /**
  *
@@ -23,7 +23,7 @@ import view.Übersicht_Lagerverwaltung;
 public class Pruefen_Controller {
 
     private Select_Stammdaten std = new Select_Stammdaten();
-    private Übersicht_Lagerverwaltung lv = new Übersicht_Lagerverwaltung();
+    private Uebersicht_Lagerverwaltung lv = new Uebersicht_Lagerverwaltung();
     private convert cv = new convert();
 
     public boolean pruefe_id(int id) {

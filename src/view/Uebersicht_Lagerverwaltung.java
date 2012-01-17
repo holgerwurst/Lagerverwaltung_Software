@@ -28,12 +28,12 @@ import view.LagerTextfield.*;
  *
  * @author Stephan
  */
-public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
+public class Uebersicht_Lagerverwaltung extends javax.swing.JFrame {
 
     /**
      * Creates new form Übersicht_Lagerverwaltung
      */
-    public Übersicht_Lagerverwaltung() {
+    public Uebersicht_Lagerverwaltung() {
         initComponents();
         //befüllen des Teilestamm anlegen Tab mit der nächsten freien ID aus der DB und Erklärung in der Statusleiste. 
         control.TeileStamm_erweitern_controller tecinit = new control.TeileStamm_erweitern_controller(this);
@@ -591,27 +591,27 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 51, 51));
         jLabel4.setText("*");
         Teilestamm_erweitern.add(jLabel4);
-        jLabel4.setBounds(310, 150, 20, 18);
+        jLabel4.setBounds(310, 150, 20, 14);
 
         jLabel5.setForeground(new java.awt.Color(255, 51, 51));
         jLabel5.setText("*");
         Teilestamm_erweitern.add(jLabel5);
-        jLabel5.setBounds(310, 190, 20, 18);
+        jLabel5.setBounds(310, 190, 20, 14);
 
         jLabel6.setForeground(new java.awt.Color(255, 51, 51));
         jLabel6.setText("*");
         Teilestamm_erweitern.add(jLabel6);
-        jLabel6.setBounds(310, 230, 20, 18);
+        jLabel6.setBounds(310, 230, 20, 14);
 
         jLabel7.setForeground(new java.awt.Color(255, 51, 51));
         jLabel7.setText("*");
         Teilestamm_erweitern.add(jLabel7);
-        jLabel7.setBounds(310, 270, 20, 18);
+        jLabel7.setBounds(310, 270, 20, 14);
 
         jLabel8.setForeground(new java.awt.Color(255, 51, 51));
         jLabel8.setText("*");
         Teilestamm_erweitern.add(jLabel8);
-        jLabel8.setBounds(310, 310, 20, 18);
+        jLabel8.setBounds(310, 310, 20, 14);
 
         textfeld_zeichnungsnummerLTFP.setNextFocusableComponent(button_anlegen);
         Teilestamm_erweitern.add(textfeld_zeichnungsnummerLTFP);
@@ -852,27 +852,27 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jLabel40.setForeground(new java.awt.Color(255, 51, 51));
         jLabel40.setText("*");
         jPanel8.add(jLabel40);
-        jLabel40.setBounds(330, 120, 20, 18);
+        jLabel40.setBounds(330, 120, 20, 14);
 
         jLabel41.setForeground(new java.awt.Color(255, 51, 51));
         jLabel41.setText("*");
         jPanel8.add(jLabel41);
-        jLabel41.setBounds(340, 120, 20, 18);
+        jLabel41.setBounds(340, 120, 20, 14);
 
         jLabel43.setForeground(new java.awt.Color(255, 51, 51));
         jLabel43.setText("*");
         jPanel8.add(jLabel43);
-        jLabel43.setBounds(330, 220, 20, 18);
+        jLabel43.setBounds(330, 220, 20, 14);
 
         jLabel44.setForeground(new java.awt.Color(255, 51, 51));
         jLabel44.setText("*");
         jPanel8.add(jLabel44);
-        jLabel44.setBounds(840, 120, 20, 18);
+        jLabel44.setBounds(840, 120, 20, 14);
 
         jLabel45.setForeground(new java.awt.Color(255, 51, 51));
         jLabel45.setText("*");
         jPanel8.add(jLabel45);
-        jLabel45.setBounds(850, 120, 20, 18);
+        jLabel45.setBounds(850, 120, 20, 14);
 
         jLabel46.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(255, 51, 51));
@@ -1308,112 +1308,112 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(255, 51, 51));
         jLabel15.setText("*");
         jPanel9.add(jLabel15);
-        jLabel15.setBounds(150, 630, 20, 18);
+        jLabel15.setBounds(150, 630, 20, 14);
 
         jLabel16.setForeground(new java.awt.Color(255, 51, 51));
         jLabel16.setText("*");
         jPanel9.add(jLabel16);
-        jLabel16.setBounds(80, 110, 20, 18);
+        jLabel16.setBounds(80, 110, 20, 14);
 
         jLabel17.setForeground(new java.awt.Color(255, 51, 51));
         jLabel17.setText("*");
         jPanel9.add(jLabel17);
-        jLabel17.setBounds(80, 110, 20, 18);
+        jLabel17.setBounds(80, 110, 20, 14);
 
         jLabel18.setForeground(new java.awt.Color(255, 51, 51));
         jLabel18.setText("*");
         jPanel9.add(jLabel18);
-        jLabel18.setBounds(150, 270, 20, 18);
+        jLabel18.setBounds(150, 270, 20, 14);
 
         jLabel19.setForeground(new java.awt.Color(255, 51, 51));
         jLabel19.setText("*");
         jPanel9.add(jLabel19);
-        jLabel19.setBounds(150, 310, 20, 18);
+        jLabel19.setBounds(150, 310, 20, 14);
 
         jLabel20.setForeground(new java.awt.Color(255, 51, 51));
         jLabel20.setText("*");
         jPanel9.add(jLabel20);
-        jLabel20.setBounds(150, 350, 20, 18);
+        jLabel20.setBounds(150, 350, 20, 14);
 
         jLabel21.setForeground(new java.awt.Color(255, 51, 51));
         jLabel21.setText("*");
         jPanel9.add(jLabel21);
-        jLabel21.setBounds(150, 390, 20, 18);
+        jLabel21.setBounds(150, 390, 20, 14);
 
         jLabel22.setForeground(new java.awt.Color(255, 51, 51));
         jLabel22.setText("*");
         jPanel9.add(jLabel22);
-        jLabel22.setBounds(150, 430, 20, 18);
+        jLabel22.setBounds(150, 430, 20, 14);
 
         jLabel23.setForeground(new java.awt.Color(255, 51, 51));
         jLabel23.setText("*");
         jPanel9.add(jLabel23);
-        jLabel23.setBounds(150, 470, 20, 18);
+        jLabel23.setBounds(150, 470, 20, 14);
 
         jLabel24.setForeground(new java.awt.Color(255, 51, 51));
         jLabel24.setText("*");
         jPanel9.add(jLabel24);
-        jLabel24.setBounds(150, 510, 20, 18);
+        jLabel24.setBounds(150, 510, 20, 14);
 
         jLabel25.setForeground(new java.awt.Color(255, 51, 51));
         jLabel25.setText("*");
         jPanel9.add(jLabel25);
-        jLabel25.setBounds(150, 550, 20, 18);
+        jLabel25.setBounds(150, 550, 20, 14);
 
         jLabel26.setForeground(new java.awt.Color(255, 51, 51));
         jLabel26.setText("*");
         jPanel9.add(jLabel26);
-        jLabel26.setBounds(150, 590, 20, 18);
+        jLabel26.setBounds(150, 590, 20, 14);
 
         jLabel27.setForeground(new java.awt.Color(255, 51, 51));
         jLabel27.setText("*");
         jPanel9.add(jLabel27);
-        jLabel27.setBounds(320, 630, 20, 18);
+        jLabel27.setBounds(320, 630, 20, 14);
 
         jLabel28.setForeground(new java.awt.Color(255, 51, 51));
         jLabel28.setText("*");
         jPanel9.add(jLabel28);
-        jLabel28.setBounds(320, 270, 20, 18);
+        jLabel28.setBounds(320, 270, 20, 14);
 
         jLabel29.setForeground(new java.awt.Color(255, 51, 51));
         jLabel29.setText("*");
         jPanel9.add(jLabel29);
-        jLabel29.setBounds(320, 310, 20, 18);
+        jLabel29.setBounds(320, 310, 20, 14);
 
         jLabel30.setForeground(new java.awt.Color(255, 51, 51));
         jLabel30.setText("*");
         jPanel9.add(jLabel30);
-        jLabel30.setBounds(320, 350, 20, 18);
+        jLabel30.setBounds(320, 350, 20, 14);
 
         jLabel31.setForeground(new java.awt.Color(255, 51, 51));
         jLabel31.setText("*");
         jPanel9.add(jLabel31);
-        jLabel31.setBounds(320, 390, 20, 18);
+        jLabel31.setBounds(320, 390, 20, 14);
 
         jLabel32.setForeground(new java.awt.Color(255, 51, 51));
         jLabel32.setText("*");
         jPanel9.add(jLabel32);
-        jLabel32.setBounds(320, 430, 20, 18);
+        jLabel32.setBounds(320, 430, 20, 14);
 
         jLabel33.setForeground(new java.awt.Color(255, 51, 51));
         jLabel33.setText("*");
         jPanel9.add(jLabel33);
-        jLabel33.setBounds(320, 470, 20, 18);
+        jLabel33.setBounds(320, 470, 20, 14);
 
         jLabel34.setForeground(new java.awt.Color(255, 51, 51));
         jLabel34.setText("*");
         jPanel9.add(jLabel34);
-        jLabel34.setBounds(320, 510, 20, 18);
+        jLabel34.setBounds(320, 510, 20, 14);
 
         jLabel35.setForeground(new java.awt.Color(255, 51, 51));
         jLabel35.setText("*");
         jPanel9.add(jLabel35);
-        jLabel35.setBounds(320, 550, 20, 18);
+        jLabel35.setBounds(320, 550, 20, 14);
 
         jLabel36.setForeground(new java.awt.Color(255, 51, 51));
         jLabel36.setText("*");
         jPanel9.add(jLabel36);
-        jLabel36.setBounds(320, 590, 20, 18);
+        jLabel36.setBounds(320, 590, 20, 14);
 
         jLabel47.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel47.setText("Fach Klein:");
@@ -1524,7 +1524,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         BemerkungScrollPane.setViewportView(ausl_BemerkungTextArea);
 
         Teile_auslagern.add(BemerkungScrollPane);
-        BemerkungScrollPane.setBounds(280, 200, 248, 92);
+        BemerkungScrollPane.setBounds(280, 200, 248, 96);
 
         auslager_jtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1620,21 +1620,21 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         suchenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchenButton.setText("Suche Teile ID");
         entfernenJTabbedPane.add(suchenButton);
-        suchenButton.setBounds(180, 80, 129, 27);
+        suchenButton.setBounds(180, 80, 129, 23);
 
         Teilestammdatenbutton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestammdatenbutton.setText("Teilestammdaten");
         entfernenJTabbedPane.add(Teilestammdatenbutton);
-        Teilestammdatenbutton.setBounds(180, 120, 109, 27);
+        Teilestammdatenbutton.setBounds(180, 120, 129, 23);
 
         bestätigenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bestätigenButton.setText("Bestätigen");
         entfernenJTabbedPane.add(bestätigenButton);
-        bestätigenButton.setBounds(330, 80, 71, 27);
+        bestätigenButton.setBounds(330, 80, 91, 23);
 
         entfernenIDTextfield.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         entfernenJTabbedPane.add(entfernenIDTextfield);
-        entfernenIDTextfield.setBounds(70, 80, 93, 25);
+        entfernenIDTextfield.setBounds(70, 80, 93, 21);
 
         IDLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         IDLabel.setText("ID:");
@@ -1709,47 +1709,47 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         loeschenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         loeschenButton.setText("Löschen");
         entfernenJTabbedPane.add(loeschenButton);
-        loeschenButton.setBounds(40, 390, 60, 27);
+        loeschenButton.setBounds(40, 390, 81, 23);
 
         MAKTextfield.setText("text");
         entfernenJTabbedPane.add(MAKTextfield);
-        MAKTextfield.setBounds(460, 230, 29, 18);
+        MAKTextfield.setBounds(460, 230, 20, 14);
 
         TypTextfield.setText("text");
         entfernenJTabbedPane.add(TypTextfield);
-        TypTextfield.setBounds(170, 230, 29, 18);
+        TypTextfield.setBounds(170, 230, 20, 14);
 
         MaterialTextfield.setText("text");
         entfernenJTabbedPane.add(MaterialTextfield);
-        MaterialTextfield.setBounds(170, 270, 29, 18);
+        MaterialTextfield.setBounds(170, 270, 20, 14);
 
         BezTextfield1.setText("text");
         entfernenJTabbedPane.add(BezTextfield1);
-        BezTextfield1.setBounds(170, 200, 29, 18);
+        BezTextfield1.setBounds(170, 200, 20, 14);
 
         ZNrTextfield.setText("text");
         entfernenJTabbedPane.add(ZNrTextfield);
-        ZNrTextfield.setBounds(170, 300, 29, 18);
+        ZNrTextfield.setBounds(170, 300, 20, 14);
 
         MAMTextfield.setText("text");
         entfernenJTabbedPane.add(MAMTextfield);
-        MAMTextfield.setBounds(460, 260, 29, 18);
+        MAMTextfield.setBounds(460, 260, 20, 14);
 
         BaugruppeTextfield.setText("text");
         entfernenJTabbedPane.add(BaugruppeTextfield);
-        BaugruppeTextfield.setBounds(170, 330, 29, 18);
+        BaugruppeTextfield.setBounds(170, 330, 20, 14);
 
         PreisTextfield.setText("text");
         entfernenJTabbedPane.add(PreisTextfield);
-        PreisTextfield.setBounds(460, 190, 29, 18);
+        PreisTextfield.setBounds(460, 190, 20, 14);
 
         MAGTextfield.setText("text");
         entfernenJTabbedPane.add(MAGTextfield);
-        MAGTextfield.setBounds(460, 290, 29, 18);
+        MAGTextfield.setBounds(460, 290, 20, 14);
 
         BemerkungTextfield.setText("text");
         entfernenJTabbedPane.add(BemerkungTextfield);
-        BemerkungTextfield.setBounds(460, 330, 34, 18);
+        BemerkungTextfield.setBounds(460, 330, 34, 14);
 
         Teilentf_tabbedpane.addTab("Teil entfernen", entfernenJTabbedPane);
 
@@ -1758,7 +1758,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         suchen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         suchen_button.setText("Suche Fachnummer");
         Teile_Splitten.add(suchen_button);
-        suchen_button.setBounds(240, 60, 150, 27);
+        suchen_button.setBounds(240, 60, 150, 23);
 
         label_eingabe_aufforderung_fachnummer.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_eingabe_aufforderung_fachnummer.setText("Bitte geben Sie die Fachnummer ein aus der gesplittet werden soll:");
@@ -1773,12 +1773,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         ausgangsfachnummer_textfeld.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         ausgangsfachnummer_textfeld.setToolTipText("");
         Teile_Splitten.add(ausgangsfachnummer_textfeld);
-        ausgangsfachnummer_textfeld.setBounds(110, 60, 100, 25);
+        ausgangsfachnummer_textfeld.setBounds(110, 60, 100, 21);
 
         bestaetigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         bestaetigen_button.setText("Bestätigen");
         Teile_Splitten.add(bestaetigen_button);
-        bestaetigen_button.setBounds(430, 60, 100, 27);
+        bestaetigen_button.setBounds(430, 60, 100, 23);
 
         label_teil_eingelagert.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_teil_eingelagert.setText("Eingelagertes Teil:");
@@ -1817,7 +1817,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         fachnummer_textfeld1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld1.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld1);
-        fachnummer_textfeld1.setBounds(150, 170, 80, 25);
+        fachnummer_textfeld1.setBounds(150, 170, 80, 21);
 
         label_menge1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge1.setText("Menge:");
@@ -1826,12 +1826,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         menge_textfeld1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld1);
-        menge_textfeld1.setBounds(320, 170, 80, 25);
+        menge_textfeld1.setBounds(320, 170, 80, 21);
 
         kapazitaet_pruefen_button1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button1.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button1);
-        kapazitaet_pruefen_button1.setBounds(420, 170, 120, 27);
+        kapazitaet_pruefen_button1.setBounds(420, 170, 120, 23);
 
         label_splitten_nummer2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer2.setText("2.");
@@ -1847,7 +1847,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         fachnummer_textfeld2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld2.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld2);
-        fachnummer_textfeld2.setBounds(150, 200, 80, 25);
+        fachnummer_textfeld2.setBounds(150, 200, 80, 21);
 
         label_menge2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge2.setText("Menge:");
@@ -1856,17 +1856,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         menge_textfeld2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld2);
-        menge_textfeld2.setBounds(320, 200, 80, 25);
+        menge_textfeld2.setBounds(320, 200, 80, 21);
 
         kapazitaet_pruefen_button2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button2.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button2);
-        kapazitaet_pruefen_button2.setBounds(420, 200, 120, 27);
+        kapazitaet_pruefen_button2.setBounds(420, 200, 120, 23);
 
         fachnummer_textfeld3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld3.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld3);
-        fachnummer_textfeld3.setBounds(150, 230, 80, 25);
+        fachnummer_textfeld3.setBounds(150, 230, 80, 21);
 
         label_splitten_nummer3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer3.setText("3.");
@@ -1875,7 +1875,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         menge_textfeld3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld3);
-        menge_textfeld3.setBounds(320, 230, 80, 25);
+        menge_textfeld3.setBounds(320, 230, 80, 21);
 
         label_menge3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge3.setText("Menge:");
@@ -1885,7 +1885,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         kapazitaet_pruefen_button3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button3.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button3);
-        kapazitaet_pruefen_button3.setBounds(420, 230, 120, 27);
+        kapazitaet_pruefen_button3.setBounds(420, 230, 120, 23);
 
         label_fachnummer3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer3.setText("Fachnummer:");
@@ -1895,7 +1895,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         menge_textfeld4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld4);
-        menge_textfeld4.setBounds(320, 260, 80, 25);
+        menge_textfeld4.setBounds(320, 260, 80, 21);
 
         label_fachnummer4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer4.setText("Fachnummer:");
@@ -1906,7 +1906,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         kapazitaet_pruefen_button4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button4.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button4);
-        kapazitaet_pruefen_button4.setBounds(420, 260, 120, 27);
+        kapazitaet_pruefen_button4.setBounds(420, 260, 120, 23);
 
         label_splitten_nummer4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer4.setText("4.");
@@ -1921,7 +1921,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         fachnummer_textfeld4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld4.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld4);
-        fachnummer_textfeld4.setBounds(150, 260, 80, 25);
+        fachnummer_textfeld4.setBounds(150, 260, 80, 21);
 
         label_fachnummer5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer5.setText("Fachnummer:");
@@ -1932,16 +1932,16 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         kapazitaet_pruefen_button5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button5.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button5);
-        kapazitaet_pruefen_button5.setBounds(420, 290, 120, 27);
+        kapazitaet_pruefen_button5.setBounds(420, 290, 120, 23);
 
         fachnummer_textfeld5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld5.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld5);
-        fachnummer_textfeld5.setBounds(150, 290, 80, 25);
+        fachnummer_textfeld5.setBounds(150, 290, 80, 21);
 
         menge_textfeld5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld5);
-        menge_textfeld5.setBounds(320, 290, 80, 25);
+        menge_textfeld5.setBounds(320, 290, 80, 21);
 
         label_splitten_nummer5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer5.setText("5.");
@@ -1961,7 +1961,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         menge_textfeld6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld6);
-        menge_textfeld6.setBounds(320, 320, 80, 25);
+        menge_textfeld6.setBounds(320, 320, 80, 21);
 
         label_menge6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge6.setText("Menge:");
@@ -1976,16 +1976,16 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         fachnummer_textfeld6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld6.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld6);
-        fachnummer_textfeld6.setBounds(150, 320, 80, 25);
+        fachnummer_textfeld6.setBounds(150, 320, 80, 21);
 
         kapazitaet_pruefen_button6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button6.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button6);
-        kapazitaet_pruefen_button6.setBounds(420, 320, 120, 27);
+        kapazitaet_pruefen_button6.setBounds(420, 320, 120, 23);
 
         menge_textfeld7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld7);
-        menge_textfeld7.setBounds(320, 350, 80, 25);
+        menge_textfeld7.setBounds(320, 350, 80, 21);
 
         label_splitten_nummer7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer7.setText("7.");
@@ -1995,12 +1995,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         fachnummer_textfeld7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld7.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld7);
-        fachnummer_textfeld7.setBounds(150, 350, 80, 25);
+        fachnummer_textfeld7.setBounds(150, 350, 80, 21);
 
         kapazitaet_pruefen_button7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button7.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button7);
-        kapazitaet_pruefen_button7.setBounds(420, 350, 120, 27);
+        kapazitaet_pruefen_button7.setBounds(420, 350, 120, 23);
 
         label_menge7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge7.setText("Menge:");
@@ -2027,11 +2027,11 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         fachnummer_textfeld8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld8.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld8);
-        fachnummer_textfeld8.setBounds(150, 380, 80, 25);
+        fachnummer_textfeld8.setBounds(150, 380, 80, 21);
 
         menge_textfeld8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld8);
-        menge_textfeld8.setBounds(320, 380, 80, 25);
+        menge_textfeld8.setBounds(320, 380, 80, 21);
 
         label_menge8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge8.setText("Menge:");
@@ -2041,7 +2041,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         kapazitaet_pruefen_button8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button8.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button8);
-        kapazitaet_pruefen_button8.setBounds(420, 380, 120, 27);
+        kapazitaet_pruefen_button8.setBounds(420, 380, 120, 23);
 
         label_fachnummer9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_fachnummer9.setText("Fachnummer:");
@@ -2052,12 +2052,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         fachnummer_textfeld9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld9.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld9);
-        fachnummer_textfeld9.setBounds(150, 410, 80, 25);
+        fachnummer_textfeld9.setBounds(150, 410, 80, 21);
 
         kapazitaet_pruefen_button9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button9.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button9);
-        kapazitaet_pruefen_button9.setBounds(420, 410, 120, 27);
+        kapazitaet_pruefen_button9.setBounds(420, 410, 120, 23);
 
         label_splitten_nummer9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_splitten_nummer9.setText("9.");
@@ -2066,7 +2066,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         menge_textfeld9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld9);
-        menge_textfeld9.setBounds(320, 410, 80, 25);
+        menge_textfeld9.setBounds(320, 410, 80, 21);
 
         label_menge9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge9.setText("Menge:");
@@ -2075,17 +2075,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         menge_textfeld10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_Splitten.add(menge_textfeld10);
-        menge_textfeld10.setBounds(320, 440, 80, 25);
+        menge_textfeld10.setBounds(320, 440, 80, 21);
 
         fachnummer_textfeld10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         fachnummer_textfeld10.setFocusTraversalPolicyProvider(true);
         Teile_Splitten.add(fachnummer_textfeld10);
-        fachnummer_textfeld10.setBounds(150, 440, 80, 25);
+        fachnummer_textfeld10.setBounds(150, 440, 80, 21);
 
         kapazitaet_pruefen_button10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         kapazitaet_pruefen_button10.setText("Kapazität prüfen");
         Teile_Splitten.add(kapazitaet_pruefen_button10);
-        kapazitaet_pruefen_button10.setBounds(420, 440, 120, 27);
+        kapazitaet_pruefen_button10.setBounds(420, 440, 120, 23);
 
         label_menge10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_menge10.setText("Menge:");
@@ -2106,7 +2106,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         splitten_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         splitten_button.setText("Splitten");
         Teile_Splitten.add(splitten_button);
-        splitten_button.setBounds(30, 490, 110, 27);
+        splitten_button.setBounds(30, 490, 110, 23);
 
         label_mindestgroesse.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_mindestgroesse.setText("Mindestgröße:");
@@ -2143,12 +2143,12 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         FachnrTextfield.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_umlagern.add(FachnrTextfield);
-        FachnrTextfield.setBounds(124, 52, 113, 25);
+        FachnrTextfield.setBounds(124, 52, 113, 21);
 
         BestätigenButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BestätigenButton.setText("Bestätigen");
         Teile_umlagern.add(BestätigenButton);
-        BestätigenButton.setBounds(470, 50, 71, 27);
+        BestätigenButton.setBounds(470, 50, 91, 23);
 
         BezeichnungLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         BezeichnungLabel2.setText("Bezeichnung:");
@@ -2167,29 +2167,29 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         FachnrTextfield_Ziel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teile_umlagern.add(FachnrTextfield_Ziel);
-        FachnrTextfield_Ziel.setBounds(120, 190, 113, 25);
+        FachnrTextfield_Ziel.setBounds(120, 190, 113, 21);
 
         UmlagernButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         UmlagernButton.setText("Umlagern");
         Teile_umlagern.add(UmlagernButton);
-        UmlagernButton.setBounds(10, 440, 67, 27);
+        UmlagernButton.setBounds(10, 440, 87, 23);
 
         MengeTextfield.setText("text");
         Teile_umlagern.add(MengeTextfield);
-        MengeTextfield.setBounds(540, 90, 29, 18);
+        MengeTextfield.setBounds(540, 90, 20, 14);
 
         BezeichnungTextfield.setText("text");
         Teile_umlagern.add(BezeichnungTextfield);
-        BezeichnungTextfield.setBounds(400, 90, 29, 18);
+        BezeichnungTextfield.setBounds(400, 90, 20, 14);
 
         IDTextfield2.setText("text");
         Teile_umlagern.add(IDTextfield2);
-        IDTextfield2.setBounds(130, 90, 29, 18);
+        IDTextfield2.setBounds(130, 90, 20, 14);
 
         SuchenButton1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         SuchenButton1.setText("Suche Fachnummer");
         Teile_umlagern.add(SuchenButton1);
-        SuchenButton1.setBounds(282, 52, 124, 27);
+        SuchenButton1.setBounds(282, 52, 145, 23);
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2228,7 +2228,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teilestamm_verwalten.add(textfeld_id1);
-        textfeld_id1.setBounds(130, 70, 59, 25);
+        textfeld_id1.setBounds(130, 70, 59, 21);
 
         label_bezeichnung4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_bezeichnung4.setText("Bezeichnnung:");
@@ -2257,19 +2257,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         textfeld_bezeichnung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_bezeichnung1);
-        textfeld_bezeichnung1.setBounds(130, 110, 161, 25);
+        textfeld_bezeichnung1.setBounds(130, 110, 161, 21);
 
         textfeld_materialgruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_materialgruppe1);
-        textfeld_materialgruppe1.setBounds(130, 170, 161, 25);
+        textfeld_materialgruppe1.setBounds(130, 170, 161, 21);
 
         textfeld_zeichnungsnummer1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_zeichnungsnummer1);
-        textfeld_zeichnungsnummer1.setBounds(130, 200, 161, 25);
+        textfeld_zeichnungsnummer1.setBounds(130, 200, 161, 21);
 
         textfeld_baugruppe1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_baugruppe1);
-        textfeld_baugruppe1.setBounds(130, 230, 161, 25);
+        textfeld_baugruppe1.setBounds(130, 230, 161, 21);
 
         label_preis1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_preis1.setText("Preis:");
@@ -2298,19 +2298,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
         textfeld_preis1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_preis1);
-        textfeld_preis1.setBounds(400, 110, 161, 25);
+        textfeld_preis1.setBounds(400, 110, 161, 21);
 
         textfeld_max_anz_klein1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_max_anz_klein1);
-        textfeld_max_anz_klein1.setBounds(400, 140, 161, 25);
+        textfeld_max_anz_klein1.setBounds(400, 140, 161, 21);
 
         textfeld_max_anz_mittel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_max_anz_mittel1);
-        textfeld_max_anz_mittel1.setBounds(400, 170, 161, 25);
+        textfeld_max_anz_mittel1.setBounds(400, 170, 161, 21);
 
         textfeld_max_anz_gross1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Teilestamm_verwalten.add(textfeld_max_anz_gross1);
-        textfeld_max_anz_gross1.setBounds(400, 200, 161, 25);
+        textfeld_max_anz_gross1.setBounds(400, 200, 161, 21);
 
         label_waehrung1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label_waehrung1.setText("€");
@@ -2320,9 +2320,9 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         button_loeschen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_loeschen.setText("Löschen");
         Teilestamm_verwalten.add(button_loeschen);
-        button_loeschen.setBounds(480, 70, 60, 27);
+        button_loeschen.setBounds(480, 70, 81, 23);
         Teilestamm_verwalten.add(textfeld_teiltyp);
-        textfeld_teiltyp.setBounds(130, 140, 161, 28);
+        textfeld_teiltyp.setBounds(130, 140, 161, 20);
 
         button_suchen.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         button_suchen.setText("Suchen");
@@ -2332,24 +2332,24 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
             }
         });
         Teilestamm_verwalten.add(button_suchen);
-        button_suchen.setBounds(210, 70, 54, 27);
+        button_suchen.setBounds(210, 70, 75, 23);
 
         anzeigen_button.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         anzeigen_button.setText("Anzeigen");
         Teilestamm_verwalten.add(anzeigen_button);
-        anzeigen_button.setBounds(310, 70, 62, 27);
+        anzeigen_button.setBounds(310, 70, 83, 23);
 
         aendern_button.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         aendern_button.setText("Ändern");
         Teilestamm_verwalten.add(aendern_button);
-        aendern_button.setBounds(30, 350, 53, 27);
+        aendern_button.setBounds(30, 350, 73, 23);
 
         textarea_bemerkung_verwalten.setColumns(20);
         textarea_bemerkung_verwalten.setRows(5);
         jScrollPane6.setViewportView(textarea_bemerkung_verwalten);
 
         Teilestamm_verwalten.add(jScrollPane6);
-        jScrollPane6.setBounds(400, 240, 262, 92);
+        jScrollPane6.setBounds(400, 240, 166, 96);
 
         Teilentf_tabbedpane.addTab("Teilestammdaten verwalten", Teilestamm_verwalten);
 
@@ -2549,7 +2549,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                     label_mittel_einlagern1.setText(sst.get_max_anzahl_mittel_ausDB(id));
                     label_gross_einlagern1.setText(sst.get_max_anzahl_gross_ausDB(id));
                 } catch (SQLException ex) {
-                    Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Uebersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 button_manuell_einlagern.setEnabled(true);
 
@@ -2680,7 +2680,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
 
             } catch (Exception ex) {
-                Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Uebersicht_Lagerverwaltung.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_button_manuell_einlagernActionPerformed
@@ -3013,13 +3013,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Uebersicht_Lagerverwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Uebersicht_Lagerverwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Uebersicht_Lagerverwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Übersicht_Lagerverwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Uebersicht_Lagerverwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -3029,7 +3029,7 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new Übersicht_Lagerverwaltung().setVisible(true);
+                new Uebersicht_Lagerverwaltung().setVisible(true);
             }
         });
     }

@@ -19,7 +19,7 @@ public class TeileStamm_erweitern_controller {
     private convert converter =new convert();
     private model.DB_schreiben dbwriter=new model.DB_schreiben();
     private String[] idarr;
-    private view.Übersicht_Lagerverwaltung Hauptfenster;
+    private view.Uebersicht_Lagerverwaltung Hauptfenster;
     
     private model.DB_schreiben db_s =new model.DB_schreiben();
    
@@ -32,7 +32,7 @@ public class TeileStamm_erweitern_controller {
      * 
      * @param Hauptfenster das GUI mit dem gearbeitet wird. 
      */
-    public TeileStamm_erweitern_controller(view.Übersicht_Lagerverwaltung Hauptfenster){
+    public TeileStamm_erweitern_controller(view.Uebersicht_Lagerverwaltung Hauptfenster){
         this.Hauptfenster=Hauptfenster;
     }
    /**Hauptmethode: hier wird die Nutzeranforderung ein neues Teil anzulegen aufgenommen, geprüft und weiterverarbeitet
