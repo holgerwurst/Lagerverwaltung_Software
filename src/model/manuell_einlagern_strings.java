@@ -8,7 +8,10 @@ import control.convert;
 
 /**
  *
- * @author Wayne
+ * @author Franz Selent
+ * 
+ * Eine Model Klasse um ein Array zu erzeugen. Das Array wird beim einlagern Manuell benötigt
+ * 
  */
 public class manuell_einlagern_strings {
     convert cv = new convert();

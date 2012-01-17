@@ -590,7 +590,7 @@ public void erste_einlagerung(int id) throws SQLException {
                 }
 
             }
-            if (einlagern == true) {
+            if (einlagern == true) {            //einlagern oder update der daten in der db
                 if (einlagern_neu == true) {
                     einlagern_bestand.set_Fachnummer(fachstamm.get(pif).get_Fachnummer());
                     einlagern_bestand.set_Anschaffungsgrund(anschaffungsgrund);
@@ -651,7 +651,7 @@ public void erste_einlagerung(int id) throws SQLException {
     public String fehlerausgabe(manuell_einlagern_strings[] mes) {
         String fehlerliste = "";
         for (int i = 0; i < mes.length; i++) {
-            if (mes[i].get_fehler() == 2) {
+            if (mes[i].get_fehler() == 2) {         //wenn ein Fehler an der stelle im array vorliegt wird der string zusammengesetzt
                 fehlerliste = fehlerliste + "Fach " + mes[i].get_fnr_gui() + ": " + mes[i].get_fehler_text();
             }
         }

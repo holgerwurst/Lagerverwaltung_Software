@@ -107,6 +107,7 @@ public class TeileStamm_erweitern_controller {
     */ 
    public boolean bezSchonDa(String bez){
        boolean returnval=false;
+       
        String bezAUSdb[]=db_s.getSpalteAusTabelle("bezeichnung", "Teilestammdaten");//bezeichnungen aus der DB beziehen
        for(int i=bezAUSdb.length-1;i>=0;i--)//durchlauf, ob dier Bez schon da 
        {
@@ -165,25 +166,35 @@ public class TeileStamm_erweitern_controller {
      * @return eien freie id
      */
     public int getEXAMPLEid(){
-        int returnval;
+        int returnval=-1;
         String[] idarr2=dbwriter.get_alle_freie_IDs(); 
        
-      //fix start
+      try{
        if(idarr2.length==0){ 
                               JOptionPane.showMessageDialog(null, 
-                                      "Keine IDs oder Datenbankzugriff mehr verfügbar! \nWenden Sie sich bitte an den Hersteller zur Generierung neuer IDs.\n"
-                                      + "Sollten noch keine TeileStammdaten angelegt sein müssen neue IDs geschrieben werden.\n"
-                                      + "Schnelle Lösung: im File TeileStamm_erweitern_controller.java in der methode getEXAMPLEid() den Kommentar wieder gültig machen.\n"
-                                      );
+                                      "Keine IDs mehr verfügbar! Das Limit verfügbarer Teilestammdaten ist erreicht oder die Datenbank ist nicht verfügbar."
+                                      + "\nWenden Sie sich bitte an den Hersteller zur Generierung neuer IDs.\n"
+                                      + "Sollten noch keine TeileStammdaten angelegt sein müssen neue IDs geschrieben werden.\n");
+      
+                                      
+                                      
+           //fix start                   
            //System.out.println("keine ids in der tabelle! fixe 0-200 hinzu");
            //generierefreieIDS(0,200); 
            //generierefreieIDS(201,20000); 
-
+            //fix end
        }
-       //fix end
+      
         
        idarr=new model.DB_schreiben().get_alle_freie_IDs();      
        returnval=converter.StringTOint(idarr[0]);
+      }catch(java.lang.ArrayIndexOutOfBoundsException ex){
+          JOptionPane.showMessageDialog(null, 
+                                      "Kein Datenbankzugriff mehr verfügbar! "
+                  + "\n Die Datei Lagerverwaltung.db könnte beschädigt sein.");
+          Hauptfenster.button_anlegen_sperren();
+          
+      }
        return returnval;
     }
     
