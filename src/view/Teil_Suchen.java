@@ -670,18 +670,26 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Es sollen alle Teilestammdaten in dem JTable angezeigt werden
+     * @param evt 
+     */
     private void alle_teile_suchen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alle_teile_suchen
         try {
+            // Erstellung eines leeren TableModels das erst noch mitt allen Stammdaten gefüllt werden muss
             DefaultTableModel table_model = new DefaultTableModel();
+            // Es wird in der Datenbank nach Teilen gesucht und das Ergebnis in ein Array von Teilstammdaten abgespeichert
             ArrayList<Teil_Stammdaten> teile = suchen_controller.alle_teile_ausgeben();
+            // Dem TableModel werden die Spaltennamen der Tabelle für Teilestammdaten hinzugefügt
             for (String columnname : suchen_controller.table_column_names_teilestamm) {
                 table_model.addColumn(columnname);
             }
-
+            // Es werden die Zeilen einzeln zu dem TableModel hinzugefügt indem ein Teilstammdaten
+            // Objekt zu einem Array umgewandelt wird.
             for (Teil_Stammdaten teil : teile) {
                 table_model.addRow(teil.toArray());
             }
+            // Es wird das Model auf die Tabelle angewendet
             this.TeilSuchenJtable.setModel(table_model);
 
         } catch (ClassNotFoundException ex) {
@@ -691,12 +699,20 @@ public class Teil_Suchen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_alle_teile_suchen
 
+    /**
+     * Es sollen nach bestimmten Teilen mit Hilf der Teilestammdaten in der Datenbank gesucht werden
+     * @param evt 
+     */
     private void teile_suchen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teile_suchen
         // Werte werden aus den Textfeldern und anderen Eingabefeldern ausgelesen und in ein zweidimensionales Array geschrieben
         // Es wird das Array erstellt was für die Erstellung des SELECTS wichtig ist
         String[][] suchwerte = new String[11][];
+        // Der erste Wert in dem Array (hier "id") wird später genutzt um herauszufinden was für eine Spalte durchsucht wird
+        // Er kann den Namen der Spalte haben, was bei der Erstellung des SELECTS benutzt wird
+        // Die meisten Suchwerte werden aus den Textfeldern ausgelesen.
         String[] id = {"id", TeileIdlagerTextfield.getText()};
         String teilstring = (String) TeiletypComboBox.getSelectedItem();
+        // Wenn die ComboBox alle als Item zurückgibt wird der Suchwert ein leerer String sein (wie in einem leeren textfeld)
         if ("alle".equals(teilstring)) {
             teilstring = "";
         }
@@ -712,6 +728,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         String[] maxanzahlmittel = {"max_anz_mittel", MaximaleAnzahlMittellagerTextfield.getText()};
         String[] maxanzahlgross = {"max_anz_gross", MaximaleAnzahlGroßlagerTextfield.getText()};
 
+        // Die Arrays von {Spaltenname, Suchwert] werden zu einem Array hinzugefügt
         suchwerte[0] = id;
         suchwerte[1] = teiletyp;
         suchwerte[2] = zeichnungsnummer;
@@ -734,10 +751,11 @@ public class Teil_Suchen extends javax.swing.JFrame {
             for (String columnname : suchen_controller.table_column_names_teilestamm) {
                 table_model.addColumn(columnname);
             }
-            // JTable wird mit Werten gefüllt
+            // Model wird mit Werten gefüllt
             for (Teil_Stammdaten teil : teile) {
                 table_model.addRow(teil.toArray());
             }
+            // Das Model wird zu dem JTable zugewiesen was den Inhalt ändert
             this.TeilSuchenJtable.setModel(table_model);
         } catch (ClassNotFoundException e) {
             Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, e);
@@ -747,6 +765,10 @@ public class Teil_Suchen extends javax.swing.JFrame {
 
     }//GEN-LAST:event_teile_suchen
 
+    /**
+     * Es soll nach Lagerbeständen gesucht werden
+     * @param evt 
+     */
     private void TeilImFachSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeilImFachSuchenActionPerformed
 
         // Es wird das Array erstellt was für die Erstellung des SELECTS wichtig ist
@@ -758,6 +780,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         String[] mindestens_menge = {"mind_menge", MindestensMengeimFachlagerTextfield2.getText()};
         //String[] haltbarkeitsdatum = {"haltbarkeitsdatum", HaltbarkeitsdatumlagerTextfield2.getText()};
 
+        // Die Arrays von {Spaltenname, Suchwert] werden zu einem Array hinzugefügt
         String[][] suchwerte = new String[6][];
         suchwerte[0] = fachnummer;
         suchwerte[1] = teileid;
@@ -772,17 +795,19 @@ public class Teil_Suchen extends javax.swing.JFrame {
         for (String columnname : suchen_controller.table_column_names_lagerbestandskonto) {
             table_model.addColumn(columnname);
         }
-        System.out.println(suchwerte[0][0] + "  " + suchwerte[0][1]);
         try {
+            // Lagerbestände werden aus der Datenbank in ein eine ArrayList gespeichert
             ArrayList<Lagerbestandskonto> lagerbestandskontos = suchen_controller.teile_im_fach_suchen(suchwerte);
             for (Lagerbestandskonto lagerbestandskonto : lagerbestandskontos) {
+                
                 lagerbestandskonto.toArray();
+                // Die Attribute eines Lagerbestandskontos werden zu dem Inhalt der tabelle hinzugefügt
                 table_model.addRow(lagerbestandskonto.get_Attribute());
             }
         } catch (Exception ex) {
             Logger.getLogger(Teil_Suchen.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        // Das TableModel wird zu dem JTable zugewiesen, was den Inhalt auch zuweist
         this.TeileImFachSuchenJtable.setModel(table_model);
 
 

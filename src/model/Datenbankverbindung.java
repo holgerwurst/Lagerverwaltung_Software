@@ -410,7 +410,7 @@ public class Datenbankverbindung {
                          teil_stamm.set_Teiletyp(TeileTypET.valueOf(teiletyp));
                 }
                 else teil_stamm.set_Teiletyp(null);
-
+                // Aus dem ResultSet werden die Attribute entnommen und dem Teilestamm Objekt hinzugefügt
                 teil_stamm.set_zeichnungsnummer(rs.getString(3));
                 teil_stamm.set_preis(rs.getDouble(4));
                 teil_stamm.set_Bezeichnung(rs.getString(5));
