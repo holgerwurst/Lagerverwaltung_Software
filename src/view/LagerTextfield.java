@@ -15,7 +15,8 @@ import javax.swing.JToolTip;
  * @author Arthas
  */
 public class LagerTextfield extends JTextField {
-
+    
+    
     class LagerKeyListener implements KeyListener {
 
         private String Zeichenfolge;
@@ -41,7 +42,7 @@ public class LagerTextfield extends JTextField {
             }
             boolean isValid = false;
             
-            //vilides zeichen, ENTER, Backspace ...erkannt
+            //valides zeichen, ENTER, Backspace ...erkannt
             if (isCharInString(key, Zeichenfolge) || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_BACK_SPACE || key == KeyEvent.VK_DELETE) {
                 isValid = true;
             }

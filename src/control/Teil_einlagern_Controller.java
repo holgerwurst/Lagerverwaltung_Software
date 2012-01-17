@@ -39,7 +39,7 @@ public class Teil_einlagern_Controller {
     public Teil_einlagern_Controller(Übersicht_Lagerverwaltung lv) {
         this.lv = lv;
     }
-    String[] komplett = new String[0]; 
+    String[] komplett = new String[0];
     String[] fach = new String[0]; // Enthält alle Fachnummern, wo das bereits eingelagert ist
     String[] menge = new String[0]; //Aktuelle Menge in dem jeweiligen Fach
     String[] ergebnis = new String[0]; //Enthält alle verfügbaren Fächer, in denen Platz zum einlagern ist.
@@ -52,14 +52,16 @@ public class Teil_einlagern_Controller {
     int zahlmittel = 0;//Die maximale Anzahl von Teilen, die in ein mittleres Fach passen. (Wert kommt aus den Stammdaten) (gleicher Wert wie maxmittel, aber als int)
     int zahlgross = 0;//Die maximale Anzahl von Teilen, die in ein großes Fach passen. (Wert kommt aus den Stammdaten) (gleicher Wert wie maxgross, aber als int)
 
-    
-    /*
-     * Dies Methode wird aufgerufen sobald in dem Bezeichnungstextfeld bei Teile einlagern (aus Tabelle wählen, eine bezeihcnung eingebeben wurde.
-     * Zuerst werden alle IDs in ein Array (String[] id) gespeichert, die genau die eingegeben Bezeichnung bzw. ähnliche Bezeichnungen enthalten.
-     * Danach wird anhand der ID die Bezeichnugn aus der Datenbank entnommen  (bezeichnung = st.get_Bezeichnung_ausDB(zahl));.
-     * Alle Ids und Bezeichnungen werden in der Tabelle (jTable) angeziegt. Der Benutzer kann sich nun ein Teil aussuchen, welches er einlagern möchte.
+    /**
+     * Dies Methode wird aufgerufen sobald in dem Bezeichnungstextfeld bei Teile
+     * einlagern (aus Tabelle wählen, eine bezeihcnung eingebeben wurde. Zuerst
+     * werden alle IDs in ein Array (String[] id) gespeichert, die genau die
+     * eingegeben Bezeichnung bzw. ähnliche Bezeichnungen enthalten. Danach wird
+     * anhand der ID die Bezeichnugn aus der Datenbank entnommen (bezeichnung =
+     * st.get_Bezeichnung_ausDB(zahl));. Alle Ids und Bezeichnungen werden in
+     * der Tabelle (jTable) angeziegt. Der Benutzer kann sich nun ein Teil
+     * aussuchen, welches er einlagern möchte.
      */
-    
     public void teil_auswaehlen(String bez) {
         table = lv.table_einlagern;
 
@@ -74,7 +76,7 @@ public class Teil_einlagern_Controller {
             for (int i = 0; i < id.length; i++) {
 
                 int zahl = cv.StringTOint(id[i]);
-             
+
                 bezeichnung = st.get_Bezeichnung_ausDB(zahl);
                 System.out.println(bezeichnung);
 
@@ -93,33 +95,44 @@ public class Teil_einlagern_Controller {
         } catch (SQLException e) {
             System.out.println(e);
         }
-      
+
     }
-    
-/*
- * Diese Methode wird aufgerufen sobald eien gültige ID in das Textfeld eingegeben wurde bzw. ein gültiges Teil aus der Tabelle ausgewählt wurde anhand der Bezeichnung. 
- * In dem String Array fach werden alle Fachnummern gespeichert, wo das Teil bereits eingelagert ist. Sollte fach.length leer sein, ist dieses Teil noch nicht eingelagert wurde
- * und die Methode erste_einlagerung(int id) wird aufgerufen.
- * Falls das Teil bereits eingelagert ist, wird zuerst geprüft, ob es sich um ein kleines, mittleres, oder großes Fach handelt. Danach wird die jetzige (int menge), in dem Fach befindliche Menge ausgelsen 
- * und mit der maximalen Anzahl pro Fach (klein, mittel oder groß) verglichen. Ist die eingelagerte Menge kleiener als die maximale, wird das Fach in die Arraylist eingetargen.
- * Diese wird später in ein Array geschrieben, welches an die jTable zur Ausgabe übergeben wird. 
- * 
- * Im zweiten Teil dieser Methode werden die freien Fächer ausgelsen. Dabei wird die maximale Anzahl pro kleines, mittleres und großes Fach geholt. Falls z.B. 
- * die maximale Menge in einem kleien und mittleren Fach 0 ist (Fall 1:if (zahlklein == 0 && zahlmittel == 0)) werden nur große Fächer, die noch nicht belegt sind, ausgelsen.
- * Dies wird auch mit allen anderen denkbaren Möglichkeiten gemacht.
- * Die gültigen Fächer werden in dem Array belegung gespeichert und and die Methode freiFächer(String [] belegung) übergeben. 
- * Am Ende der Methode werden alle "gesammelten" gültigen Mengen aus der Arraylist in ein Array geschrieben und der jTable übergeben. 
- */
+
+    /**
+     * Diese Methode wird aufgerufen sobald eien gültige ID in das Textfeld
+     * eingegeben wurde bzw. ein gültiges Teil aus der Tabelle ausgewählt wurde
+     * anhand der Bezeichnung. In dem String Array fach werden alle Fachnummern
+     * gespeichert, wo das Teil bereits eingelagert ist. Sollte fach.length leer
+     * sein, ist dieses Teil noch nicht eingelagert wurde und die Methode
+     * erste_einlagerung(int id) wird aufgerufen. Falls das Teil bereits
+     * eingelagert ist, wird zuerst geprüft, ob es sich um ein kleines,
+     * mittleres, oder großes Fach handelt. Danach wird die jetzige (int menge),
+     * in dem Fach befindliche Menge ausgelsen und mit der maximalen Anzahl pro
+     * Fach (klein, mittel oder groß) verglichen. Ist die eingelagerte Menge
+     * kleiener als die maximale, wird das Fach in die Arraylist eingetargen.
+     * Diese wird später in ein Array geschrieben, welches an die jTable zur
+     * Ausgabe übergeben wird.
+     *
+     * Im zweiten Teil dieser Methode werden die freien Fächer ausgelsen. Dabei
+     * wird die maximale Anzahl pro kleines, mittleres und großes Fach geholt.
+     * Falls z.B. die maximale Menge in einem kleien und mittleren Fach 0 ist
+     * (Fall 1:if (zahlklein == 0 && zahlmittel == 0)) werden nur große Fächer,
+     * die noch nicht belegt sind, ausgelsen. Dies wird auch mit allen anderen
+     * denkbaren Möglichkeiten gemacht. Die gültigen Fächer werden in dem Array
+     * belegung gespeichert und and die Methode freiFächer(String [] belegung)
+     * übergeben. Am Ende der Methode werden alle "gesammelten" gültigen Mengen
+     * aus der Arraylist in ein Array geschrieben und der jTable übergeben.
+     */
     public void einlagern_vorbereiten(int id) {
         table = lv.table_einlagern;
 
         try {
-            
+
             lagerbes = new Select_Lagerbestandskonto();
-              fach = lagerbes.get_Fachnummer_ausDB(id);
+            fach = lagerbes.get_Fachnummer_ausDB(id);
             cv = new convert();
 
-       //     System.out.println("fach  " + fach.length);
+            //     System.out.println("fach  " + fach.length);
 
             if (fach.length == 0) {
                 erste_einlagerung(id);
@@ -138,7 +151,7 @@ public class Teil_einlagern_Controller {
 
                             menge_aktuell.add(mengeS);
                             werte.add(fach[i]);
-                           // System.out.println("K  " + fach[i]);
+                            // System.out.println("K  " + fach[i]);
                         }
                     } else if (fach[i].endsWith("M")) {
 
@@ -148,7 +161,7 @@ public class Teil_einlagern_Controller {
                             String mengeS = String.valueOf(menge);
                             menge_aktuell.add(mengeS);
                             werte.add(fach[i]);
-                          //  System.out.println("M  " + fach[i]);
+                            //  System.out.println("M  " + fach[i]);
                         }
                     } else if (fach[i].endsWith("G")) {
 
@@ -158,7 +171,7 @@ public class Teil_einlagern_Controller {
                             String mengeS = String.valueOf(menge);
                             menge_aktuell.add(mengeS);
                             werte.add(fach[i]);
-                        //    System.out.println("G  " + fach[i]);
+                            //    System.out.println("G  " + fach[i]);
                         }
                     }
 
@@ -214,7 +227,7 @@ public class Teil_einlagern_Controller {
                 menge = new String[menge_aktuell.size()];
                 for (int i = 0; i < menge_aktuell.size(); i++) {
                     menge[i] = menge_aktuell.get(i);
-                  //  System.out.println("Menge " + menge[i]);
+                    //  System.out.println("Menge " + menge[i]);
                 }
 
 
@@ -235,11 +248,11 @@ public class Teil_einlagern_Controller {
 
     }
 
-    /*
-     * Diese Methode holt sich nur die maximale Anzahl pro kleinem, mittlerem und großem Fach anhand der ID. 
-     * Danch wird der String Wert in einen Integer Wert umgewandelt. 
+    /**
+     * Diese Methode holt sich nur die maximale Anzahl pro kleinem, mittlerem
+     * und großem Fach anhand der ID. Danch wird der String Wert in einen
+     * Integer Wert umgewandelt.
      */
-
     public void parse(int id) throws SQLException {
 
         maxklein = st.get_max_anzahl_klein_ausDB(id);
@@ -251,22 +264,23 @@ public class Teil_einlagern_Controller {
         zahlgross = cv.StringTOint(maxgross);
 
     }
-    
-    /*
-     * Sollte das Teil noch nicht eingelagert sein, wird diese Methode aufgerufen. 
-     * Die maximale Anzahl pro kleinem, mittlerem und großem Fach anhand der ID wird ausgelsen. Danach wird geschaut ob irgendwo eine 0 eingetaregn ist.
-     * Sollte dies der Fall sein, wird diese Fachgröße nicht als Empfehlung für die Einlagerung vorgeschlagen.
-     * Das Array mit den gültigen freien Fächern wird an die jTable übergeben. 
+
+    /**
+     * Sollte das Teil noch nicht eingelagert sein, wird diese Methode
+     * aufgerufen. Die maximale Anzahl pro kleinem, mittlerem und großem Fach
+     * anhand der ID wird ausgelsen. Danach wird geschaut ob irgendwo eine 0
+     * eingetaregn ist. Sollte dies der Fall sein, wird diese Fachgröße nicht
+     * als Empfehlung für die Einlagerung vorgeschlagen. Das Array mit den
+     * gültigen freien Fächern wird an die jTable übergeben.
      */
-    
-public void erste_einlagerung(int id) throws SQLException {
+    public void erste_einlagerung(int id) throws SQLException {
         lf = new Select_Lagerfachstamm();
 
         String[] maxarrayklein = new String[1];
         String[] maxarraymittel = new String[1];
         String[] maxarraygross = new String[1];
-       
-        
+
+
         parse(id);
 
         if (zahlklein == 0 || zahlmittel == 0 || zahlgross == 0) {
@@ -278,49 +292,49 @@ public void erste_einlagerung(int id) throws SQLException {
                 //   System.out.println("Für dieses Teil gibt es kein passendes Fach");
             } else if (zahlklein == 0 && zahlmittel == 0) {
 
-               String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
-                 model.addColumn("Freie Fächer", belegung);
-            
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "G");
+                model.addColumn("Freie Fächer", belegung);
+
                 lv.label_mindestgroesse2.setText("Einzige Fachgröße:");
                 lv.label_anzeige_mindestgroesse2.setText("Große Fächer");
             } else if (zahlklein == 0 && zahlgross == 0) {
-               String[]  belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
-                 model.addColumn("Freie Fächer", belegung);
-           
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M");
+                model.addColumn("Freie Fächer", belegung);
+
                 lv.label_mindestgroesse2.setText("Einzige Fachgröße:");
                 lv.label_anzeige_mindestgroesse2.setText("Mittlere Fächer");
             } else if (zahlmittel == 0 && zahlgross == 0) {
-               String[]  belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
-                 model.addColumn("Freie Fächer", belegung);
-             
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K");
+                model.addColumn("Freie Fächer", belegung);
+
                 lv.label_mindestgroesse2.setText("Einzige Fachgröße:");
                 lv.label_anzeige_mindestgroesse2.setText("Kleine Fächer");
             } else if (zahlklein == 0) {
-              String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','G");
                 model.addColumn("Freie Fächer", belegung);
-           
+
                 lv.label_anzeige_mindestgroesse2.setText("Mittlere Fächer");
             } else if (zahlmittel == 0) {
-               String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
-                 model.addColumn("Freie Fächer", belegung);
-           
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "K','G");
+                model.addColumn("Freie Fächer", belegung);
+
                 lv.label_mindestgroesse2.setText("Fachgrößen:");
                 lv.label_anzeige_mindestgroesse2.setText("Kleine und große Fächer");
             } else if (zahlgross == 0) {
-              String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
-              model.addColumn("Freie Fächer", belegung);
-           
+                String[] belegung = lf.get_fachnummer_2groessen_ausDB(false, "M','K");
+                model.addColumn("Freie Fächer", belegung);
+
                 lv.label_mindestgroesse2.setText("Fachgrößen:");
                 lv.label_anzeige_mindestgroesse2.setText("Kleine und mittlere Fächer");
             }
 
         } else {
-            String[]belegung = lf.get_fachnummer_ausDB(false);
-              model.addColumn("Freie Fächer", belegung);
-              lv.label_anzeige_mindestgroesse2.setText("Kleine Fächer");
+            String[] belegung = lf.get_fachnummer_ausDB(false);
+            model.addColumn("Freie Fächer", belegung);
+            lv.label_anzeige_mindestgroesse2.setText("Kleine Fächer");
         }
-        
-        
+
+
         lv.label_mindestgroesse2.setVisible(true);
         lv.label_anzeige_mindestgroesse2.setVisible(true);
 
@@ -339,16 +353,20 @@ public void erste_einlagerung(int id) throws SQLException {
         lv.label_klein_einlagern.setText(maxklein);
         lv.label_mittel_einlagern.setText(maxmittel);
         lv.label_gross_einlagern.setText(maxgross);
-        
+
 
     }
 
- 
-    /*
-     * Hier werden zuerst alle gültigen Fächer, in denen noch ausreichend Platz vorhanden ist aus der Arraylist (werte) in ein Array (ergebnis) geschrieben.
-     * Danach werden dem Array (ergebnis) die freien Fächer hinzugefügt. Die Fächer werden in der Methode einlagern_vorbereiten ausgelesen. Jenachdem ob
-     * in einem kleinen, mittleren oder großem Fach 0 eingetragen ist, bei der maximalen Menge, enthält das Array belegung andere Fachnummern.
-     * Zum schluss wird das Array (ergebnis) der jTable übergeben.
+    /**
+     *
+     * Hier werden zuerst alle gültigen Fächer, in denen noch ausreichend Platz
+     * vorhanden ist aus der Arraylist (werte) in ein Array (ergebnis)
+     * geschrieben. Danach werden dem Array (ergebnis) die freien Fächer
+     * hinzugefügt. Die Fächer werden in der Methode einlagern_vorbereiten
+     * ausgelesen. Jenachdem ob in einem kleinen, mittleren oder großem Fach 0
+     * eingetragen ist, bei der maximalen Menge, enthält das Array belegung
+     * andere Fachnummern. Zum schluss wird das Array (ergebnis) der jTable
+     * übergeben.
      */
     public void freieFaecher(String[] belegung) throws SQLException {
 
@@ -372,7 +390,17 @@ public void erste_einlagerung(int id) throws SQLException {
 
     }
 
-
+    /**
+     * Die Methode dient für die Einlagerung der eigegebenen Menge in die
+     * Datenbank. Zuerst wird die bereits eingelagerte Menge für das Teil aus der Datenbank bezogen (int menge_eingelagert). Danach
+     * die Menge, die insgesamt einzulagern ist (int einzulagern) aus dem Textfeld bzw, aus dem label "label_menge_übrig".
+     * Als nächstes wird nachgeschaut welche größe das Fach hat. Die jeweilige maximale einzulagernde Menge (max_menge) wird aus der Datenbank aus den teile Stammdaten bezogen.
+     * Bei den if-Abfragen wird geprüft wieviel eingelagert werden soll, wie groß die maximale Menge ist und wieviel bereits eingelagert ist. Jenachdem welche Bedingung 
+     * zutrifft wird die bestimmte Menge eingelagert und von der maximal einzulagernden Menge abgezogen.
+     *
+     * @param fachnummer
+     * @param id
+     */
     public void einlagern(String fachnummer, int id) {
         try {
             lagerbes = new Select_Lagerbestandskonto();
@@ -384,15 +412,8 @@ public void erste_einlagerung(int id) throws SQLException {
             int max_menge = 0;
             int neueMenge = 0;
 
-            // String inhalt = lv.menge_textfeld_einlagern.getText();
 
-            //    lv.label_menge_übrig.setText(inhalt);
             int einzulagern = cv.StringTOint(lv.label_menge_übrig.getText());
-
-            // System.out.println("zahl  " + inhalt);
-
-            //String mar = (String) (table.getValueAt(table.getSelectedRow(), 0));
-            System.out.println("Fachnummer " + fachnummer);
 
             if (fachnummer.endsWith("K")) {
                 max_menge = zahlklein;
@@ -408,71 +429,69 @@ public void erste_einlagerung(int id) throws SQLException {
 
 //if(menge_eingelagert!=0){
             String text = "";
-            String asg="";
+            String asg = "";
             asg = lv.textfeld_asg_einlagern.getText();
-       
-                if (einzulagern <= max_menge) { 
 
-                    if (menge_eingelagert != 0) {
-                        if (einzulagern <= max_menge - menge_eingelagert) {
-                            neueMenge = einzulagern + menge_eingelagert;
-                            text = String.valueOf(einzulagern - einzulagern);
-                            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
-                            dbs.delete_lagerbestandskonto(id, fachnummer);
-                            dbs.insert_lagerbestandskonto(lbk);
-                            if (einzulagern == max_menge - menge_eingelagert) {
-                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert. Es steht nun nicht mehr zur Verfügung\n");
-                            } else {
-                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+(neueMenge)+" eingelagert.\n");
-                            }
-                            // lv.TextArea_einlagern.setVisible(true);
-                        } else {
-                            neueMenge = max_menge;
-                            text = String.valueOf(einzulagern - (max_menge - menge_eingelagert));
-                            Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
-                            dbs.delete_lagerbestandskonto(id, fachnummer);
-                            dbs.insert_lagerbestandskonto(lbk);
-                            dbs.update_lagerbestand(lbk);
-                            lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+(neueMenge-menge_eingelagert)+" eingelagert.  Es steht nun nicht mehr zur Verfügung\n");
-                        }
+            if (einzulagern <= max_menge) {
 
-                    } else {
-                        neueMenge = einzulagern;
+                if (menge_eingelagert != 0) {
+                    if (einzulagern <= max_menge - menge_eingelagert) {
+                        neueMenge = einzulagern + menge_eingelagert;
+                        text = String.valueOf(einzulagern - einzulagern);
                         Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
-                        text = String.valueOf(einzulagern - neueMenge);
+                        dbs.delete_lagerbestandskonto(id, fachnummer);
                         dbs.insert_lagerbestandskonto(lbk);
-                        dbs.update_lagerfachstamm(fachnummer, true);
-                     //   System.out.println("geringer");
                         if (einzulagern == max_menge - menge_eingelagert) {
-                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert. Es steht nun nicht mehr zur Verfügung\n");
-                            } else {
-                                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+neueMenge+" eingelagert.\n");
-                            }
+                            lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + neueMenge + " eingelagert. Es steht nun nicht mehr zur Verfügung\n");
+                        } else {
+                            lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + (neueMenge) + " eingelagert.\n");
+                        }
+                        // lv.TextArea_einlagern.setVisible(true);
+                    } else {
+                        neueMenge = max_menge;
+                        text = String.valueOf(einzulagern - (max_menge - menge_eingelagert));
+                        Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
+                        dbs.delete_lagerbestandskonto(id, fachnummer);
+                        dbs.insert_lagerbestandskonto(lbk);
+                        dbs.update_lagerbestand(lbk);
+                        lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + (neueMenge - menge_eingelagert) + " eingelagert.  Es steht nun nicht mehr zur Verfügung\n");
                     }
+
                 } else {
-                    neueMenge = max_menge; 
-                    text = String.valueOf(einzulagern - (max_menge - menge_eingelagert));
+                    neueMenge = einzulagern;
                     Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
-                    dbs.delete_lagerbestandskonto(id, fachnummer);
+                    text = String.valueOf(einzulagern - neueMenge);
                     dbs.insert_lagerbestandskonto(lbk);
                     dbs.update_lagerfachstamm(fachnummer, true);
-                 //   System.out.println("hier");
-                    lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge "+(neueMenge-menge_eingelagert)+" eingelagert. Es steht nun nicht mehr zur Verfügung\n");
-
+                    //   System.out.println("geringer");
+                    if (einzulagern == max_menge - menge_eingelagert) {
+                        lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + neueMenge + " eingelagert. Es steht nun nicht mehr zur Verfügung\n");
+                    } else {
+                        lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + neueMenge + " eingelagert.\n");
+                    }
                 }
-               // JOptionPane.showMessageDialog(lv.label_auswahl, "Teil erfolgreich eingelagert", "Teil eingelagert", 2);
-               
-                lv.label_menge_übrig.setVisible(true);
-                lv.label_menge_übrig.setText(text);
-             
-            } 
-            //     }
+            } else {
+                neueMenge = max_menge;
+                text = String.valueOf(einzulagern - (max_menge - menge_eingelagert));
+                Lagerbestandskonto lbk = new Lagerbestandskonto(fachnummer, id, neueMenge, asg, null);
+                dbs.delete_lagerbestandskonto(id, fachnummer);
+                dbs.insert_lagerbestandskonto(lbk);
+                dbs.update_lagerfachstamm(fachnummer, true);
+                //   System.out.println("hier");
+                lv.TextArea_einlagern.append("Das Teil mit der ID " + id + " wurde erfolgreich in das Fach " + fachnummer + " mit der Menge " + (neueMenge - menge_eingelagert) + " eingelagert. Es steht nun nicht mehr zur Verfügung\n");
+
+            }
+            // JOptionPane.showMessageDialog(lv.label_auswahl, "Teil erfolgreich eingelagert", "Teil eingelagert", 2);
+
+            lv.label_menge_übrig.setVisible(true);
+            lv.label_menge_übrig.setText(text);
+
+        } //     }
         catch (Exception e) {
         }
 
     }
 
-  
     public String manuell_einlagern(String f1, int m1, int id, String anschaffungsgrund) throws ClassNotFoundException, SQLException, Exception {
         //Anlegen neuer Controller 
         Pruefen_Controller pr = new Pruefen_Controller();

@@ -2840,7 +2840,13 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
     private void makLTFPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makLTFPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_makLTFPActionPerformed
-
+/**
+ * Sobald auf den Bestätigen button gecklickt wurde wird geprüft ob eien id oder eine Bezeichnung eingetragen wurde.
+ * Danach wird geprüft, ob das Teil mit der ID bzw. mit der Bezeichnung vorhanden ist. Sollte dies nicht der Fall sein, erscheint Hinweis. Ansosnten wird die ID an
+ * die Methode teile_einlagern der Klasse Teil_einlgern_controller übergeben. Die Bezeichnung wird an die Methode teil_auswaehlen der Klasse Teil_einlagern_controller
+ * übergeben.
+ * @param evt 
+ */
     private void bestaetigen_button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestaetigen_button2ActionPerformed
         pr = new control.Pruefen_Controller();
         te = new Teil_einlagern_Controller(this);
@@ -2855,7 +2861,6 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
                 Boolean vorhanden = pr.pruefe_id(id);
                 if (vorhanden == true) {
                     te.einlagern_vorbereiten(id);
-
                 }
             } catch (NumberFormatException ex) {
                 System.out.println("Bitte eine Zahl eingeben");
@@ -2887,10 +2892,17 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         Teil_Suchen ts = new Teil_Suchen();
         ts.setVisible(true);
     }//GEN-LAST:event_suchen_button2ActionPerformed
-
+/**
+ * Diese Methode wird aufgerufen nachdem auf den Button "einlagern" gecklickt wurde. Sollte keien Zeile markiert sein, erscheint eine Fehlermeldung.
+ * Ansonsten wird die Anzahl der markierten Zeilen in einem Array (int[] rowindex) gespeichert. Jede Fachnummer wird an die Methode einlagern der 
+ * Klasse Teile_einlagern_controller übergeben.
+ * 
+ * @param evt 
+ */
     private void einlagern_button_tabelleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_einlagern_button_tabelleActionPerformed
         te = new Teil_einlagern_Controller(this);
         cv = new convert();
+        
         if (table_einlagern.getSelectedRow() == -1) {
             JOptionPane.showMessageDialog(this, "Bitte eine Zeile markieren !", "Information", 1);
         } else {
@@ -2904,15 +2916,19 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
 
                     for (int i = 0; i < rowIndex.length; i++) {
                         int menge = cv.StringTOint(label_menge_übrig.getText());
-                        label_menge_übrig.setText(label_menge_übrig.getText());
+                       
                         if (menge != 0) {
                             String mar = (String) (table_einlagern.getValueAt(rowIndex[i], 0));
 
                             te.einlagern(mar, id);
                         } else {
-                            //falls es mindestens 1 Fach gibt, in welches keine Menge eingelagert werden soll die Meldung nur einmal und nicht für jedes Fach kommen
-                            //z.B. Menge die eingelagert werden soll =6, max. Meneg pro Fach 5, es wurden 4 Fächer markiert obwohl nur 2 nötig sind, da wird dann bei i von 3 die meldung ausgegegebn da,
-                            // 4-3 = 1. Beim 2. leeren FAch wäre es 4-4, da 4-4 !=1 ist, wir die Meldung nicht mehr ausgeworfen.
+                            
+                           /**
+                            * falls es mindestens 1 Fach gibt, in welches keine Menge eingelagert werden soll die Meldung nur einmal und nicht für jedes Fach kommen
+                            z.B. Menge die eingelagert werden soll =6, max. Meneg pro Fach 5, es wurden 4 Fächer markiert obwohl nur 2 nötig sind, da wird dann bei i von 3 die meldung ausgegegebn da,
+                             4-3 = 1. Beim 2. leeren FAch wäre es 4-4, da 4-4 !=1 ist, wir die Meldung nicht mehr ausgeworfen.
+                            */
+                             
                             if (rowIndex.length - i == 1) {
                                 JOptionPane.showMessageDialog(bestaetigen_button2, "Die gesamte Menge wurde eingelagert.", "Hinweis", 1);
                             }
@@ -2939,7 +2955,10 @@ public class Übersicht_Lagerverwaltung extends javax.swing.JFrame {
         label_menge_übrig.setText(menge_textfeld_einlagern.getText());
         label_menge_übrig.setVisible(true);
     }//GEN-LAST:event_menge_textfeld_einlagernFocusLost
-
+/**
+ * Diese Methode wird aufgreufen wenn in dem Bezeichnungstextfeld etwas eingetragen wurde. Die id der markierten Zeile wird an die Methode einlagern_vorbereiten
+ * übergeben. 
+ */
     private void table_einlagernMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_einlagernMouseClicked
         te = new Teil_einlagern_Controller(this);
         cv = new convert();

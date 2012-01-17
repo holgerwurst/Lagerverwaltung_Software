@@ -18,7 +18,8 @@ import view.Übersicht_Lagerverwaltung;
 
 /**
  *
- * @author Arthas
+ * @author Matthias
+ * Hier wird geprüft, ob die ID vorhanden ist. Falls ja wird true als return-Wert zurückgegeben. Ansonsten false.
  */
 public class Pruefen_Controller {
 
@@ -51,7 +52,11 @@ public class Pruefen_Controller {
 
 
     }
-
+/**
+ * Hier wird geprüft, ob die Bezeichnung vorhanden ist. Falls ja wird true als return wert zurückgegeben. Ansonsten false.
+ * @param bezeichnung
+ * @return 
+ */
     public Boolean pruefe_bezeichnung(String bezeichnung) {
         try {
             String[] vergleich = std.get_ID_array_ausDB(bezeichnung);
