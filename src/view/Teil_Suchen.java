@@ -322,7 +322,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(KeineAngabeLagerortJRadioButton))))
                             .addComponent(SuchenmitteButton))
-                        .addGap(0, 30, Short.MAX_VALUE)))
+                        .addGap(0, 77, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         suche_Fach_lagerplatzLayout.setVerticalGroup(
@@ -431,7 +431,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                             .addComponent(TeileIDLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TeileIdlagerTextfield2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(TeileIdlagerTextfield2, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
                             .addComponent(LagerbestandlagerTextfield2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -439,7 +439,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                             .addComponent(AnschaffungsgrundLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FachnummerlagerTextfield2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(FachnummerlagerTextfield2, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
                             .addComponent(AnschaffungsgrundlagerTextfield2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -447,7 +447,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                             .addComponent(MinMengeLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(suche_InhaltLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MindestensMengeimFachlagerTextfield2, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(MindestensMengeimFachlagerTextfield2, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
                             .addComponent(MaximaleMengeimFachlagerTextfield2, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE))
                         .addGap(108, 108, 108))
                     .addGroup(suche_InhaltLayout.createSequentialGroup()
@@ -477,7 +477,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SuchenrechtsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -511,7 +511,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
         IDlinksLabel.setText("Teile ID:");
 
         MaterialgruppeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        MaterialgruppeLabel.setText("Materialgrupe:");
+        MaterialgruppeLabel.setText("Materialgruppe:");
 
         TeiletypLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         TeiletypLabel.setText("Teiletyp:");
@@ -646,7 +646,7 @@ public class Teil_Suchen extends javax.swing.JFrame {
                     .addComponent(AlleTeileAnzeigenButton)
                     .addComponent(SuchenlinksButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
