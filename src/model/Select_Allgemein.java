@@ -53,9 +53,9 @@ public class Select_Allgemein {
         db.disconnect();
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    /*public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Select_Allgemein sa = new Select_Allgemein();
 
         sa.test_rmsd();
-    }
+    }*/
 }

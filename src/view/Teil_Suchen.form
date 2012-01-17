@@ -158,7 +158,7 @@
                                   </Group>
                                   <Component id="SuchenmitteButton" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="30" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="77" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -540,7 +540,7 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TeileIdlagerTextfield2" pref="150" max="32767" attributes="0"/>
+                                  <Component id="TeileIdlagerTextfield2" pref="157" max="32767" attributes="0"/>
                                   <Component id="LagerbestandlagerTextfield2" pref="150" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -550,7 +550,7 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="FachnummerlagerTextfield2" pref="150" max="32767" attributes="0"/>
+                                  <Component id="FachnummerlagerTextfield2" pref="157" max="32767" attributes="0"/>
                                   <Component id="AnschaffungsgrundlagerTextfield2" pref="150" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
@@ -560,7 +560,7 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="MindestensMengeimFachlagerTextfield2" pref="149" max="32767" attributes="0"/>
+                                  <Component id="MindestensMengeimFachlagerTextfield2" pref="157" max="32767" attributes="0"/>
                                   <Component id="MaximaleMengeimFachlagerTextfield2" pref="149" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
@@ -598,7 +598,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="SuchenrechtsButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane5" pref="455" max="32767" attributes="0"/>
+                      <Component id="jScrollPane5" pref="456" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -837,7 +837,7 @@
                           <Component id="SuchenlinksButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" pref="264" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" pref="296" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>

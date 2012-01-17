@@ -13,7 +13,6 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Datenbankverbindung;
 import model.Select_Stammdaten;
-import view.Nutzerhinweis1;
 import view.Übersicht_Lagerverwaltung;
 
 /**
